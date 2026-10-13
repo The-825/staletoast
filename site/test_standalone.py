@@ -22,7 +22,7 @@ class StandaloneTests(unittest.TestCase):
             data.mkdir(parents=True)
             for name in ('research', 'repositories', 'claims', 'charts'):
                 (data / (name + '.json')).write_text('[]', encoding='utf-8')
-            with patch.object(build_export, 'ROOT', root), patch.object(build_export, 'DATA', data), patch.object(build_export.subprocess, 'check_output', return_value=b''), patch.object(build_export, 'catalog_revision', return_value='a' * 40):
+            with patch.object(build_export, 'ROOT', root), patch.object(build_export, 'DATA', data), patch.object(build_export.subprocess, 'check_output', side_effect=lambda *a, **k: 'a' * 40 if k.get('text') else b''), patch.object(build_export, 'catalog_revision', return_value='a' * 40):
                 build_export.build(freeze=True)
                 first = root / 'exports' / ('a' * 40 + '.json')
                 before = first.read_bytes()
