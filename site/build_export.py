@@ -2,6 +2,7 @@
 import json
 import argparse
 import shutil
+import hashlib
 import subprocess
 from pathlib import Path
 
@@ -17,14 +18,33 @@ INPUTS = ['docs/collaborative-intelligence-research-ledger.md',
           'site/build_export.py']
 
 
+def input_hashes():
+    files = []
+    for name in INPUTS:
+        path = ROOT / name
+        files.extend(sorted(path.rglob('*')) if path.is_dir() else [path])
+    return {path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_text(encoding='utf-8').encode('utf-8')).hexdigest()
+            for path in files if path.is_file()}
+
+
 def catalog_revision():
-    return subprocess.check_output(['git', 'log', '-1', '--format=%H', 'HEAD', '--'] + INPUTS,
-                                   cwd=ROOT, text=True).strip()
+    pin = json.loads((ROOT / 'catalog-export-pin.json').read_text(encoding='utf-8'))
+    if pin['inputs_sha256'] != input_hashes():
+        raise ValueError('Catalog inputs changed; freeze a reviewed new export before publishing')
+    return pin['source_revision']
 
 
 def build(freeze=False):
     if subprocess.check_output(['git', 'diff', 'HEAD', '--'] + INPUTS, cwd=ROOT):
         raise ValueError('Commit catalog inputs before freezing a revision-bound export')
+    pin_path = ROOT / 'catalog-export-pin.json'
+    if freeze:
+        hashes = input_hashes()
+        existing = json.loads(pin_path.read_text(encoding='utf-8')) if pin_path.exists() else {}
+        if existing.get('inputs_sha256') != hashes:
+            revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+            pin_path.write_text(json.dumps({'schema_version': '1.0', 'source_revision': revision,
+                                           'inputs_sha256': hashes}, indent=2) + '\n', encoding='utf-8')
     revision = catalog_revision()
     payload = {'schema_version': '1.0', 'canonical_owner': 'The-825/staletoast',
                'authority': 'evidence-only', 'source_revision': revision,
