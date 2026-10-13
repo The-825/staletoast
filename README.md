@@ -50,6 +50,13 @@ research, repository, claim and chart data, bound to the published Git revision.
 Consumers pin its revision and SHA-256 digest before use. A failed integrity or
 freshness check must fail the build rather than substitute stale local data.
 
+After committing reviewed catalog inputs, run `python site/build_export.py
+--freeze` and commit the new immutable `exports/<catalog-revision>.json` snapshot
+in the same PR. Publication retains all earlier snapshots at
+`exports/<catalog-revision>.json`, so a consumer's existing pin stays available
+after a later edition publishes. The export revision covers catalog sources
+and generators; a website-only change does not invent a new catalog revision.
+
 Public and synthetic content only. MIT license, with upstream attribution kept
 at the source. No private or production records, automatic source execution,
 contact with authors, or implied consumer adoption.
