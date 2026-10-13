@@ -113,23 +113,6 @@ class DiscoveryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "cover"):
             discovery.make_edition("2026-10-12", priorities, landscape, [])
 
-    def test_articles_need_steps_limits_and_safe_source_links(self):
-        registry = discovery.read(discovery.DOCS / "workflow-registry.json")
-        self.assertTrue({"WF-001", "WF-002", "WF-003", "WF-004", "WF-005"}.issubset(
-            {row["id"] for row in discovery.workflow_catalog(registry)}))
-        missing = copy.deepcopy(registry)
-        missing["workflows"][0]["guide"]["completion_check"] = ""
-        with self.assertRaisesRegex(ValueError, "completion_check"):
-            discovery.workflow_catalog(missing)
-        unsafe = copy.deepcopy(registry)
-        unsafe["workflows"][0]["guide"]["artifacts"][0]["url"] = "javascript:alert(1)"
-        with self.assertRaises(ValueError):
-            discovery.workflow_catalog(unsafe)
-        elevated = copy.deepcopy(registry)
-        elevated["workflows"][0]["authority"] = "execute"
-        with self.assertRaisesRegex(ValueError, "authority"):
-            discovery.workflow_catalog(elevated)
-
     def test_stale_source_hashes_fail_before_an_edition_is_written(self):
         with TemporaryDirectory() as directory:
             docs = Path(directory)

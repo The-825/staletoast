@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "canonical_owner": "The-825/staletoast",
+  "authority": "evidence-only",
+  "owns": ["research-ledger", "repository-landscape", "source-appraisals", "editorial-priorities", "chart-history", "discovery-pool"],
+  "consumers": ["The-825/breadcrumbs"],
+  "companion_owns": ["workflow-guides", "prompt-library", "implementation-templates"],
+  "export_path": "data/catalog-export.json",
+  "export_schema_version": "1.0",
+  "source_revision_required": true,
+  "digest_required": true,
+  "data_boundary": "public-and-synthetic-only",
+  "private_records": "prohibited",
+  "runtime_execution": "not-authorized-by-intake",
+  "adoption": "requires-owning-consumer-validation"
+}

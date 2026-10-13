@@ -1,0 +1,71 @@
+name: Publish StaleToast site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Auto-merge agent PRs"]
+    types: [completed]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  resolve:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      pull-requests: read
+    outputs:
+      publish: ${{ steps.release.outputs.publish }}
+      sha: ${{ steps.release.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python ci-kit/workflows/pages_release_gate.py
+  deploy:
+    needs: resolve
+    if: needs.resolve.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.resolve.outputs.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python site/build_priorities.py --check
+      - run: python site/build_catalogs.py
+      - run: python site/build_discovery.py
+      - run: python site/build_discovery.py --check
+      - run: python site/build_export.py
+      - run: python -m unittest discover -s site -p 'test_*.py'
+      - run: python scripts/repository_landscape.py --check
+      - run: python scripts/repository_review_promotions.py --check
+      - run: python scripts/repository_triage.py --check
+      - name: Check release revision
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_SHA: ${{ needs.resolve.outputs.sha }}
+        run: python ci-kit/workflows/pages_release_gate.py --verify-sha "$RELEASE_SHA"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

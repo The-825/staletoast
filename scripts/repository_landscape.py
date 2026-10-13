@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LANDSCAPE = ROOT / "docs" / "collaborative-intelligence-repository-landscape.json"
-PORTFOLIO_OWNER = "The-825/breadcrumbs"
+PORTFOLIO_OWNER = "The-825/staletoast"
 TRANSFER_SCHEMA_VERSION = "1.0"
 PRODUCER_CONTRACT_VERSION = "2.0"
 LANDSCAPE_SCHEMA_VERSION = "2.0"
