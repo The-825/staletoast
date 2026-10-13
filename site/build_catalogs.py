@@ -4,6 +4,7 @@ import json
 import re
 from pathlib import Path
 from ledger_markdown import cells, source_link
+from build_priorities import identified_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
@@ -41,8 +42,12 @@ def table_rows(path: Path, width: int) -> list[list[str]]:
 
 
 def research_catalog() -> list[dict[str, object]]:
-    ledger = table_rows(DOCS / "collaborative-intelligence-research-ledger.md", 6)
-    appraisals = {row[0]: row for row in table_rows(DOCS / "collaborative-intelligence-source-appraisals.md", 7)}
+    text = (DOCS / "collaborative-intelligence-research-ledger.md").read_text(encoding="utf-8")
+    text = text.split("## Source ledger", 1)[1].split("### Entry metadata", 1)[0]
+    ledger = identified_rows(text, {6, 7})
+    appraisals = identified_rows((DOCS / "collaborative-intelligence-source-appraisals.md").read_text(encoding="utf-8"), {7, 8})
+    if set(ledger) != set(appraisals):
+        raise ValueError("Research sources and appraisals must cover the same identities")
     proximity = {"D3": 0, "D2": 1, "D1": 2, "D0": 3}
     horizon_order = {"longitudinal": 0, "repeated": 1, "single": 2, "technical": 3, "retrospective": 4, "not observed": 5}
     horizon_value = {"longitudinal": 3, "repeated": 2, "single": 1, "technical": 1, "retrospective": 1, "not observed": 0}
@@ -60,7 +65,10 @@ def research_catalog() -> list[dict[str, object]]:
         "XAI-BEHAVIOR": "Explainability and behavior", "XAI-GUIDANCE": "Explainability guidance",
     }
     output = []
-    for source_id, source, level, finding, impact, boundary in ledger:
+    for source_id, row in ledger.items():
+        _, source, level, finding, impact, boundary = row[:6]
+        if len(row) == 7:
+            boundary += " " + row[6]
         app = appraisals[source_id]
         title, url = source_link(source)
         claims = [x.strip() for x in app[6].split(",") if x.strip()]
@@ -70,8 +78,10 @@ def research_catalog() -> list[dict[str, object]]:
             "design": app[1], "directness": app[2], "directnessValue": int(app[2][1]),
             "family": app[3], "familyLabel": family_labels.get(app[3], app[3]), "horizon": app[4], "horizonValue": horizon_value.get(app[4], 0),
             "flags": app[5], "claims": claims, "claimCount": len(claims),
+            "record_state": "reviewed-catalog" if source_id.isdigit() else "candidate-not-promoted",
+            "review_depth": (re.match(r"(selected-full-text|abstract-only):", app[5])[1] if re.match(r"(selected-full-text|abstract-only):", app[5]) else "screened-structural" if source_id.isdigit() else "prior-screened-candidate"),
             "citationSignal": "not collected",
-            "_sort": [proximity.get(app[2][:2], 9), horizon_order.get(app[4], 9), int(source_id)],
+            "_sort": [proximity.get(app[2][:2], 9), horizon_order.get(app[4], 9), 0 if source_id.isdigit() else 1, int(source_id.split("-")[-1])],
         })
     output.sort(key=lambda item: item["_sort"])
     for rank, item in enumerate(output, 1):

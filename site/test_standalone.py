@@ -79,6 +79,17 @@ class StandaloneTests(unittest.TestCase):
             self.assertEqual(100, len(chart['entries']))
             self.assertEqual(len(chart['entries']), len({r['id'] for r in chart['entries']}))
 
+    def test_research_profiles_cover_all_chart_archive_identities_without_promoting_candidates(self):
+        research = json.loads((SITE / 'data/research.json').read_text(encoding='utf-8'))
+        priorities = json.loads((ROOT / 'docs/staletoast-appraisal-priorities.json').read_text(encoding='utf-8'))
+        self.assertEqual({row['id'] for row in priorities['research']}, {row['id'] for row in research})
+        self.assertEqual(len(research), len({row['id'] for row in research}))
+        candidate = next(row for row in research if row['id'] == 'C-025')
+        self.assertEqual('https://arxiv.org/abs/2610.01160v1', candidate['url'])
+        self.assertEqual('candidate-not-promoted', candidate['record_state'])
+        self.assertEqual('abstract-only', candidate['review_depth'])
+        self.assertTrue(all(row['record_state'] == 'candidate-not-promoted' for row in research if row['id'].startswith('C-')))
+
 
 if __name__ == '__main__':
     unittest.main()
