@@ -1,0 +1,121 @@
+{
+  "observed_at_utc": "2026-10-14T16:08:17.810421+00:00",
+  "client_date": "2026-10-14",
+  "mode": "scheduled-scout handoff; actual search executed here; trigger reported by Task00, not independently authenticated",
+  "reviewed_main": "44eac5c0bdd1f1d506eca5e0449639f6262c8595",
+  "local_source": "1c4ec57244561066db912d9c5514def2f794241b",
+  "local_policy_not_published": true,
+  "gap": "Reliable recovery after interrupted agent work without duplicate effects or discarded required results",
+  "queries": [
+    "site.arxiv.org agent interrupted execution recovery checkpoint task coordination",
+    "site.github.com durable agent workflow recovery checkpoint human approval"
+  ],
+  "screen_counts": {
+    "paper_attempted": 5,
+    "paper_primary_accessible": 4,
+    "repository_primary_accessible": 5,
+    "repository_pool_recheck": 1,
+    "new_pool_papers": 4,
+    "new_pool_repositories": 4
+  },
+  "ledger_additions": {
+    "research": 0,
+    "repositories": 0
+  },
+  "shortfall": "Abstract/README screens establish promising leads, not method validity or distinct mechanism value. Source traces and full-method comparisons needed before ledger intake. Zero additions allowed.",
+  "inaccessible": [
+    {
+      "source": "https://openreview.net/forum?id=3N3BzvoLbG",
+      "reason": "Browser verification challenge; no bypass; ContinuityBench identity/content unverified"
+    }
+  ],
+  "retained_pool_ids": [
+    "Q-NEXT-037",
+    "Q-NEXT-038",
+    "Q-NEXT-039",
+    "Q-NEXT-040",
+    "Q-NEXT-041",
+    "Q-NEXT-042",
+    "Q-NEXT-043",
+    "Q-NEXT-044"
+  ],
+  "rechecks": [
+    {
+      "pool_id": "Q-NEXT-032",
+      "prior_commit": "6ec5498643c7e431aa66751f17f47a529e7f927c",
+      "current_commit": "6ec5498643c7e431aa66751f17f47a529e7f927c",
+      "readme_unchanged": true,
+      "new_growth": false
+    }
+  ],
+  "original_pool_records_preserved": 36,
+  "pool_size": 44,
+  "ranking_changes": 0,
+  "new_chart_edition": false,
+  "confidence": "discovery screen only",
+  "commercial_fit": "not assessed",
+  "adoption": "not established",
+  "lineage_tool_adoption": "pending: no private BetterMe owning checkout inspected or tool run",
+  "checks": [
+    {
+      "command": "python site/build_priorities.py --check",
+      "exit_code": 0,
+      "output": "priorities: research=123 repositories=335\n"
+    },
+    {
+      "command": "python site/build_catalogs.py",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "python site/build_discovery.py",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_discovery.py --check",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_export.py",
+      "exit_code": 0,
+      "output": "export: revision=845fa900b546ac61a81dd38339a0b6bb45a36355\n"
+    },
+    {
+      "command": "python -m unittest discover -s site -p test_*.py",
+      "exit_code": 0,
+      "output": "export: revision=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nexport: revision=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 0.841s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/repository_landscape.py --check",
+      "exit_code": 0,
+      "output": "repository_landscape: repositories=335 unresolved=0\n"
+    },
+    {
+      "command": "python scripts/repository_review_promotions.py --check",
+      "exit_code": 0,
+      "output": "repository_review_promotions: detailed_appraisal_count=230 portable_only_count=105 total_repository_count=335 latest_review_wave=R4 latest_review_wave_count=106\n"
+    },
+    {
+      "command": "python scripts/repository_triage.py --check",
+      "exit_code": 0,
+      "output": "repository_triage: portable_only=105 triaged=105 authority=descriptive-only\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": "warning: in the working copy of 'docs/staletoast-next-round-pool.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/staletoast-next-round-pool.md', LF will be replaced by CRLF the next time Git touches it\n"
+    }
+  ],
+  "unchanged_source_sha256": {
+    "docs/collaborative-intelligence-research-ledger.md": "d18113e41be004aa76b61d6c1bdfe7a38052866bb000f41185f6cf9c7c54ef45",
+    "docs/collaborative-intelligence-source-appraisals.md": "99283cdc25f3cdfe46c3968a583233db1f128442b3ba644ee97a558d24c05a77",
+    "docs/collaborative-intelligence-repository-landscape.json": "b8a562d0f8ac13cac4f400094aa1ea047040de3e52ea1917f36e3484b08b925a",
+    "docs/staletoast-appraisal-priorities.json": "37e5e009fcaab5c919cb4ee5e1758565bc96989adec89147f82e11c72d2a539c",
+    "catalog-export-pin.json": "df81a4acd3e023ebc2c648a57824e8fc6ef275ec68567e6a071abacfe7c44e24",
+    "docs/staletoast-chart-history/2026-10-12.json": "897842fe91e67af71200a9092a3940f4b80daf83f3dd3d9ade2854f116bcc5a0",
+    "docs/staletoast-chart-history/2026-10-13.json": "ef3770b8d5d3183d1fd8642567194896572eb776aa73db534908a648a94e26b9"
+  },
+  "validation_note": "A first comparison used the Windows default text encoding and failed before receipt completion. Original pool records and Markdown were rebound to exact UTF-8 Git sources; successful final checks use canonical bytes."
+}

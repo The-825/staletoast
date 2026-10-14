@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "status": "discovery pool, not ledger additions or adoption authority",
   "records": [
     {
@@ -498,6 +498,150 @@
       "linked_identity": null,
       "license_status": "Public bibliographic lead only; full-text reuse terms not appraised",
       "evidence_depth": "primary abstract only"
+    },
+    {
+      "kind": "paper",
+      "title": "AgentRewind: Recoverable Execution for Long-Horizon LLM Agents",
+      "discovery_url": "https://arxiv.org/abs/2608.14380v1",
+      "canonical_url": "https://arxiv.org/abs/2608.14380v1",
+      "publication_version": "v1",
+      "state": "verify",
+      "reason": "Primary abstract screened; methods, independent validity and incremental value versus existing recovery sources remain unappraised. Not selected for ledger intake.",
+      "next_check": "Compare aligned context/environment rollback with irreversible tool effects and equal-cost baselines.",
+      "linked_identity": null,
+      "license_status": "Public bibliographic reference; full-text reuse terms not appraised",
+      "evidence_depth": "primary abstract only",
+      "pool_id": "Q-NEXT-037",
+      "discovered_date": "2026-10-14"
+    },
+    {
+      "kind": "paper",
+      "title": "Resume Means Resume: A Machine-Checked Conformance Contract for Checkpoint, Interrupt, and Resume Semantics in Workflow Persistence Layers",
+      "discovery_url": "https://arxiv.org/abs/2608.03836v3",
+      "canonical_url": "https://arxiv.org/abs/2608.03836v3",
+      "publication_version": "v3",
+      "state": "verify",
+      "reason": "Primary abstract screened; methods, independent validity and incremental value versus existing recovery sources remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect pinned framework releases, concurrent consume-once cases and independent fault oracle; author claims are not reproduced.",
+      "linked_identity": null,
+      "license_status": "Public bibliographic reference; full-text reuse terms not appraised",
+      "evidence_depth": "primary abstract only",
+      "pool_id": "Q-NEXT-038",
+      "discovered_date": "2026-10-14"
+    },
+    {
+      "kind": "paper",
+      "title": "Crab: A Semantics-Aware Checkpoint/Restore Runtime for Agent Sandboxes",
+      "discovery_url": "https://arxiv.org/abs/2604.28138v1",
+      "canonical_url": "https://arxiv.org/abs/2604.28138v1",
+      "publication_version": "v1",
+      "state": "verify",
+      "reason": "Primary abstract screened; methods, independent validity and incremental value versus existing recovery sources remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect OS effect classifier, failed restores, workload coverage and portability beyond controlled sandboxes.",
+      "linked_identity": null,
+      "license_status": "Public bibliographic reference; full-text reuse terms not appraised",
+      "evidence_depth": "primary abstract only",
+      "pool_id": "Q-NEXT-039",
+      "discovered_date": "2026-10-14"
+    },
+    {
+      "kind": "paper",
+      "title": "When Can Agents Safely Checkpoint, Fork, Restore, and Merge? Exact Checking for Execution Edits",
+      "discovery_url": "https://arxiv.org/abs/2608.22928v1",
+      "canonical_url": "https://arxiv.org/abs/2608.22928v1",
+      "publication_version": "v1",
+      "state": "verify",
+      "reason": "Primary abstract screened; methods, independent validity and incremental value versus existing recovery sources remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect finite-model assumptions, proof-to-runtime binding and irreversible external action limits.",
+      "linked_identity": null,
+      "license_status": "Public bibliographic reference; full-text reuse terms not appraised",
+      "evidence_depth": "primary abstract only",
+      "pool_id": "Q-NEXT-040",
+      "discovered_date": "2026-10-14"
+    },
+    {
+      "kind": "repository",
+      "title": "marcospolanco/durableflow",
+      "discovery_url": "https://github.com/marcospolanco/durableflow",
+      "canonical_url": "https://github.com/marcospolanco/durableflow",
+      "state": "verify",
+      "reason": "Pinned README screened; overlaps existing durable-execution mechanisms. Source-level correctness and distinct incremental value remain unverified. Not selected for ledger intake.",
+      "next_check": "Trace side-effect log atomicity across remote-effect success and crash before durable acknowledgment; demo verdict is a source claim.",
+      "linked_identity": null,
+      "snapshot_commit": "15d4b7a8598ba0f58d070239fa68e4e5aa602e1d",
+      "license_status": "MIT reported by GitHub metadata; full pinned license terms not inspected",
+      "evidence_depth": "pinned README only; no upstream code execution",
+      "source_receipts": {
+        "README.md": {
+          "sha256": "6a24cf437b88003b76fb4239afeb5d99c4a6d453a9049d5c6b0ad6a187f34e00",
+          "bytes": 16914
+        }
+      },
+      "pool_id": "Q-NEXT-041",
+      "discovered_date": "2026-10-14"
+    },
+    {
+      "kind": "repository",
+      "title": "AleBrito124356/durable-agents",
+      "discovery_url": "https://github.com/AleBrito124356/durable-agents",
+      "canonical_url": "https://github.com/AleBrito124356/durable-agents",
+      "state": "verify",
+      "reason": "Pinned README screened; overlaps existing durable-execution mechanisms. Source-level correctness and distinct incremental value remain unverified. Not selected for ledger intake.",
+      "next_check": "Trace SQLite job leasing, stale-worker fencing and crash between external send and once-record commit; do not infer exactly-once from deterministic keys.",
+      "linked_identity": null,
+      "snapshot_commit": "2492eb14d0171f3a5f917655ac371ceb5be23fdd",
+      "license_status": "MIT reported by GitHub metadata; full pinned license terms not inspected",
+      "evidence_depth": "pinned README only; no upstream code execution",
+      "source_receipts": {
+        "README.md": {
+          "sha256": "f04bff0431518bb8b53f1216577fe5369ad2ab0948fbcec05535e499e591b422",
+          "bytes": 13180
+        }
+      },
+      "pool_id": "Q-NEXT-042",
+      "discovered_date": "2026-10-14"
+    },
+    {
+      "kind": "repository",
+      "title": "durable-workflow/ai",
+      "discovery_url": "https://github.com/durable-workflow/ai",
+      "canonical_url": "https://github.com/durable-workflow/ai",
+      "state": "verify",
+      "reason": "Pinned README screened; overlaps existing durable-execution mechanisms. Source-level correctness and distinct incremental value remain unverified. Not selected for ledger intake.",
+      "next_check": "Compare documented at-least-once external effects, retained snapshot ownership and sandbox recovery with existing Hatchet workflow.",
+      "linked_identity": null,
+      "snapshot_commit": "49073359df2ad843e1c467424e46bbdbc3abf45b",
+      "license_status": "MIT reported by GitHub metadata; full pinned license terms not inspected",
+      "evidence_depth": "pinned README only; no upstream code execution",
+      "source_receipts": {
+        "README.md": {
+          "sha256": "9d36d6251a399450872b1cd59e8c54d22f4971d653df979c54deacf314f3af83",
+          "bytes": 4518
+        }
+      },
+      "pool_id": "Q-NEXT-043",
+      "discovered_date": "2026-10-14"
+    },
+    {
+      "kind": "repository",
+      "title": "manyu-lnmiit/agent-checkpoint-runtime",
+      "discovery_url": "https://github.com/manyu-lnmiit/agent-checkpoint-runtime",
+      "canonical_url": "https://github.com/manyu-lnmiit/agent-checkpoint-runtime",
+      "state": "verify",
+      "reason": "Pinned README screened; overlaps existing durable-execution mechanisms. Source-level correctness and distinct incremental value remain unverified. Not selected for ledger intake.",
+      "next_check": "Trace approval expiry, checkpoint corruption and concurrent worker claims; distinguish educational examples from independently tested runtime guarantees.",
+      "linked_identity": null,
+      "snapshot_commit": "0b32ae971c8f3a62964f78a389abca9a339345c3",
+      "license_status": "MIT reported by GitHub metadata; full pinned license terms not inspected",
+      "evidence_depth": "pinned README only; no upstream code execution",
+      "source_receipts": {
+        "README.md": {
+          "sha256": "0702316c8fcc9f61f616c6d7c667507e62c4d1bb5f10b0883feb200fbfc027c4",
+          "bytes": 7710
+        }
+      },
+      "pool_id": "Q-NEXT-044",
+      "discovered_date": "2026-10-14"
     }
   ]
 }
