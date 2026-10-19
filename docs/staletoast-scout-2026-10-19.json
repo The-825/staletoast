@@ -1,0 +1,251 @@
+{
+  "client_date": "2026-10-19",
+  "observed_at_utc": "2026-10-19T16:04:11.663674+00:00",
+  "local_source": "c3efef20dc0fdaeef546840930c0cc45a25a722b",
+  "reviewed_main": "44eac5c0bdd1f1d506eca5e0449639f6262c8595",
+  "source_gate": "Remote main verified; generators unchanged locally",
+  "gap": "When agents should stop, escalate or reduce coordination to avoid wasted work",
+  "queries": [
+    "site.arxiv.org agent early stopping escalation cost coordination overhead",
+    "site.github.com agent budget stopping escalation loop detection"
+  ],
+  "screen_counts": {
+    "research": 3,
+    "repositories": 5,
+    "retained_research": 2,
+    "retained_repositories": 5
+  },
+  "screens": [
+    {
+      "kind": "paper",
+      "title": "Knowing When to Ask for Help: Bayesian Self-Escalation in Hierarchical LLM Agents",
+      "canonical_url": "https://arxiv.org/abs/2608.24087v1",
+      "source_version": "2608.24087v1",
+      "evidence_depth": "versioned primary abstract only",
+      "license_status": "not appraised",
+      "reason": "Full methods and fit-versus-native baseline remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect posterior calibration, unconfirmed third preregistered prediction and equal-cost model cascade baselines; code benchmark transfer to our coordination remains unknown.",
+      "pool_id": "Q-NEXT-074",
+      "discovered_date": "2026-10-19",
+      "discovery_url": "https://arxiv.org/abs/2608.24087v1",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "paper",
+      "title": "Bounded Loops: Pre-Run Spend Bounds, Proved Termination, and Verified Completion for Agent Harnesses",
+      "canonical_url": "https://arxiv.org/abs/2609.27871v1",
+      "source_version": "2609.27871v1",
+      "evidence_depth": "versioned primary abstract only",
+      "license_status": "not appraised",
+      "reason": "Full methods and fit-versus-native baseline remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect gate independence and global repair-budget proof assumptions; the abstract reports fresh-mutant false accepts after corpus saturation, limiting apparent validation.",
+      "pool_id": "Q-NEXT-075",
+      "discovered_date": "2026-10-19",
+      "discovery_url": "https://arxiv.org/abs/2609.27871v1",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "AgentBudget/agentbudget",
+      "canonical_url": "https://github.com/AgentBudget/agentbudget",
+      "snapshot_commit": "4a61a234c47fe664288d8f41c4838352007eb4a2",
+      "readme_path": "README.md",
+      "readme_sha256": "d0e092fe7e7a6295b0588d07cd1b1872d70ec6358ecab13806f4a2f50cee6a00",
+      "last_commit_date": "2026-10-01T04:13:19Z",
+      "license_status": "Apache-2.0 metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "README describes process-wide SDK patching with context-local budgets; coverage and race behavior need source appraisal.",
+      "next_check": "Inspect concurrent reservation, unknown-model pricing and interrupted-stream accounting; compare existing provider budget guards before adding a dependency.",
+      "pool_id": "Q-NEXT-076",
+      "discovered_date": "2026-10-19",
+      "discovery_url": "https://github.com/AgentBudget/agentbudget",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "major-matters/budget-guard",
+      "canonical_url": "https://github.com/major-matters/budget-guard",
+      "snapshot_commit": "7c737a4b66efd057ed8181ecfbc5266ce2c9af0d",
+      "readme_path": "README.md",
+      "readme_sha256": "b3b1c7697c92f0f04f1b92f81958bfd55a56ce34e4472f9660e070f1aefa5386",
+      "last_commit_date": "2026-10-08T20:10:50Z",
+      "license_status": "MIT metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "Caller separates check from record; concurrent overspend and failed-call reservation semantics are unverified.",
+      "next_check": "Trace atomic reservation/release and missing-price rejection, then design synthetic parallel attempts that would jointly exceed budget.",
+      "pool_id": "Q-NEXT-077",
+      "discovered_date": "2026-10-19",
+      "discovery_url": "https://github.com/major-matters/budget-guard",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "BOSSMETALIQUE/agentbrake",
+      "canonical_url": "https://github.com/BOSSMETALIQUE/agentbrake",
+      "snapshot_commit": "a7a472642c4cc676a5ca4c338c62efdb51853cce",
+      "readme_path": "README.md",
+      "readme_sha256": "2ee726509415bb5dbeb2b1f95349c447da0fb117ec1b38b095335e744920431f",
+      "last_commit_date": "2026-10-13T10:24:14Z",
+      "license_status": "MIT metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "README uses a flat per-tool dollar placeholder and notes receipt/time-out and async-test limits; this is not measured spend enforcement.",
+      "next_check": "Inspect opt-in flow/delegation scope, timeout receipts and cost estimates; ignore unverified legal-marketing claims and compare native policy limits.",
+      "pool_id": "Q-NEXT-078",
+      "discovered_date": "2026-10-19",
+      "discovery_url": "https://github.com/BOSSMETALIQUE/agentbrake",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "loop-eng/loopguard",
+      "canonical_url": "https://github.com/loop-eng/loopguard",
+      "snapshot_commit": "903e6117f2d023c2b928bb0fa586964316fadae0",
+      "readme_path": "README.md",
+      "readme_sha256": "6f579d184ba84e9fe20932f502685a57cf03f2f7ba72827848a48259747658d5",
+      "last_commit_date": "2026-10-05T16:42:26Z",
+      "license_status": "MIT metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "README describes session auto-discovery and POSIX process suspension; Windows support and state preservation are unverified.",
+      "next_check": "Inspect process attribution, missed log entries, price assumptions and platform boundary; source incident dollar claims are not independently verified and must not be repeated as evidence.",
+      "pool_id": "Q-NEXT-079",
+      "discovered_date": "2026-10-19",
+      "discovery_url": "https://github.com/loop-eng/loopguard",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "bmdhodl/agent47",
+      "canonical_url": "https://github.com/bmdhodl/agent47",
+      "snapshot_commit": "67a156934857da2fcc5122bba594edf4bdd2a6df",
+      "readme_path": "README.md",
+      "readme_sha256": "a4ed00e424c470a09cf1407db4793cc82572fef3f73c0b4ea9c7bb5cd64ace38",
+      "last_commit_date": "2026-10-19T12:44:05Z",
+      "license_status": "MIT metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "README explicitly excludes detached uninstrumented subprocesses and distinguishes trace hash from signature or prevented-spend proof.",
+      "next_check": "Inspect coverage across retries, streaming and subprocess boundaries, and local-model paid-price false stops; use synthetic calls only before any proposed adoption.",
+      "pool_id": "Q-NEXT-080",
+      "discovered_date": "2026-10-19",
+      "discovery_url": "https://github.com/bmdhodl/agent47",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    }
+  ],
+  "ledger_additions": {
+    "research": 0,
+    "repositories": 0
+  },
+  "selection_reason": "Methods, source behavior and incremental native value not appraised; no implementation-ready intake established.",
+  "research_shortfall": "Bounded query produced three directly relevant canonical research pages. One withdrawn; unrelated network-training early stopping, mirrored papers without primary identity and Reddit not substituted to reach five.",
+  "exclusions": [
+    {
+      "source": "https://arxiv.org/abs/2607.19338v2",
+      "title": "CodeRescue",
+      "disposition": "excluded, not eligible pool recommendation",
+      "reason": "Primary arXiv page marks withdrawn; recorded administrative review/approval reason is not proof of scientific invalidity. No PDF available for this version. Do not use abstract performance claims as validated evidence."
+    }
+  ],
+  "original_pool_records_preserved": 73,
+  "pool_size": 80,
+  "ranking_changes": 0,
+  "new_chart_edition": false,
+  "dedup": "Canonical arXiv IDs and repository identities searched across docs before mutation; no exact matches. Similar guard mechanisms are overlapping leads, not independent proof.",
+  "lineage": {
+    "status": "pending verification",
+    "tool_used": false,
+    "reason": "Exact reviewed BetterMe tool availability not verified; no private inspection or projection"
+  },
+  "limits": [
+    "No provider/model call, upstream execution or install",
+    "Full license and source appraisal pending",
+    "No publication, push, PR, merge, deploy or consumer adoption"
+  ],
+  "checks": [
+    {
+      "command": "python site/build_priorities.py --check",
+      "exit_code": 0,
+      "output": "priorities: research=123 repositories=335\n"
+    },
+    {
+      "command": "python site/build_catalogs.py",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "python site/build_discovery.py",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_discovery.py --check",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_export.py",
+      "exit_code": 0,
+      "output": "export: revision=845fa900b546ac61a81dd38339a0b6bb45a36355\n"
+    },
+    {
+      "command": "python -m unittest discover -s site -p test_*.py",
+      "exit_code": 0,
+      "output": "export: revision=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nexport: revision=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 1.263s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/repository_landscape.py --check",
+      "exit_code": 0,
+      "output": "repository_landscape: repositories=335 unresolved=0\n"
+    },
+    {
+      "command": "python scripts/repository_review_promotions.py --check",
+      "exit_code": 0,
+      "output": "repository_review_promotions: detailed_appraisal_count=230 portable_only_count=105 total_repository_count=335 latest_review_wave=R4 latest_review_wave_count=106\n"
+    },
+    {
+      "command": "python scripts/repository_triage.py --check",
+      "exit_code": 0,
+      "output": "repository_triage: portable_only=105 triaged=105 authority=descriptive-only\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "canonical_inputs_unchanged": true,
+  "original_pool_records_deep_equal": true
+}
