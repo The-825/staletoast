@@ -1,0 +1,328 @@
+{
+  "client_date": "2026-10-20",
+  "observed_at_utc": "2026-10-20T16:05:16.709490+00:00",
+  "local_source": "1e0dd6d0edd12c1e053a4903a59b9dca13763ae5",
+  "reviewed_source": "44eac5c0bdd1f1d506eca5e0449639f6262c8595; native generators unchanged locally",
+  "gap": "Reliable source provenance and deduplication in research-to-data pipelines",
+  "queries": [
+    "research data provenance deduplication dataset pipeline paper primary MinHash DataTrove Dolma",
+    "site.github.com research data pipeline provenance deduplication datatrove dolma datagnosis"
+  ],
+  "screen_counts": {
+    "research": 5,
+    "repositories": 5
+  },
+  "screens": [
+    {
+      "kind": "paper",
+      "title": "FAIR Data Pipeline: provenance-driven data management for traceable scientific workflows",
+      "canonical_url": "https://arxiv.org/abs/2110.07117v2",
+      "source_version": "2110.07117v2",
+      "evidence_depth": "primary abstract and version metadata",
+      "license_status": "not appraised",
+      "reason": "Relevant provenance or deduplication lead; full methods and fit to existing source identity workflow remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect registration identity, source version issues and provenance overhead; software traceability is not medical or policy validity.",
+      "pool_id": "Q-NEXT-081",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://arxiv.org/abs/2110.07117v2",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "paper",
+      "title": "Deduplicating Training Data Makes Language Models Better",
+      "canonical_url": "https://arxiv.org/abs/2107.06499v2",
+      "source_version": "2107.06499v2",
+      "evidence_depth": "primary abstract and version metadata",
+      "license_status": "not appraised",
+      "reason": "Relevant provenance or deduplication lead; full methods and fit to existing source identity workflow remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect near-duplicate thresholds, train/test overlap and lost-distinct-content controls; model-training benefits do not establish evidence-family independence.",
+      "pool_id": "Q-NEXT-082",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://arxiv.org/abs/2107.06499v2",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "paper",
+      "title": "Decision Provenance: Harnessing data flow for accountable systems",
+      "canonical_url": "https://arxiv.org/abs/1804.05741v4",
+      "source_version": "1804.05741v4",
+      "evidence_depth": "primary abstract and version metadata",
+      "license_status": "not appraised",
+      "reason": "Relevant provenance or deduplication lead; full methods and fit to existing source identity workflow remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect cross-system visibility and implementation assumptions; conceptual accountability argument is not an executed compliance guarantee.",
+      "pool_id": "Q-NEXT-083",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://arxiv.org/abs/1804.05741v4",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "paper",
+      "title": "Supporting Better Insights of Data Science Pipelines with Fine-grained Provenance",
+      "canonical_url": "https://arxiv.org/abs/2310.18079v1",
+      "source_version": "2310.18079v1",
+      "evidence_depth": "primary abstract and version metadata",
+      "license_status": "not appraised",
+      "reason": "Relevant provenance or deduplication lead; full methods and fit to existing source identity workflow remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect transformation coverage, runtime overhead and provenance completeness on unsupported operators; benchmark queries do not establish correctness for all pipelines.",
+      "pool_id": "Q-NEXT-084",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://arxiv.org/abs/2310.18079v1",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "paper",
+      "title": "Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research",
+      "canonical_url": "https://arxiv.org/abs/2402.00159v2",
+      "source_version": "2402.00159v2",
+      "evidence_depth": "primary abstract and version metadata",
+      "license_status": "not appraised",
+      "reason": "Relevant provenance or deduplication lead; full methods and fit to existing source identity workflow remain unappraised. Not selected for ledger intake.",
+      "next_check": "Inspect curation ablations, dedup false positives and separate corpus licensing; linked toolkit is the same evidence family, not independent validation.",
+      "pool_id": "Q-NEXT-085",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://arxiv.org/abs/2402.00159v2",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "huggingface/datatrove",
+      "canonical_url": "https://github.com/huggingface/datatrove",
+      "snapshot_commit": "1977fbb0f3c163d43cace334b073dda17fa3ef26",
+      "readme_path": "README.md",
+      "readme_sha256": "65add2bcb9e8405396d81f2b6b7ae97a08afe67fc454c4508a11acf0122f5860",
+      "last_commit_date": "2026-09-30T08:12:03Z",
+      "archived": false,
+      "license_status": "Apache-2.0 metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "Large-scale text processing machinery; document similarity is not evidence-family identity and may merge materially different revisions.",
+      "next_check": "Inspect MinHash survivor policy, canonical source/version retention and false merges on synthetic corrected papers before any native adaptation.",
+      "pool_id": "Q-NEXT-086",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://github.com/huggingface/datatrove",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "allenai/dolma",
+      "canonical_url": "https://github.com/allenai/dolma",
+      "snapshot_commit": "669f534823b08d266a8fff01f8a1c916a5a56576",
+      "readme_path": "README.md",
+      "readme_sha256": "a4abd5c5baf3f9f57eb09e1332daeb3168d4d23429d6c474f8c9c57e908b144e",
+      "last_commit_date": "2025-09-19T00:00:00Z",
+      "archived": false,
+      "license_status": "Apache-2.0 metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "Toolkit and dataset are separate artifacts; README identifies ODC-BY for dataset, while GitHub code metadata identifies Apache-2.0.",
+      "next_check": "Inspect code and corpus terms independently, Bloom filter false positives and retained provenance. Link paper and toolkit as one evidence family.",
+      "pool_id": "Q-NEXT-087",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://github.com/allenai/dolma",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "google-research/deduplicate-text-datasets",
+      "canonical_url": "https://github.com/google-research/deduplicate-text-datasets",
+      "snapshot_commit": "4e9888ac3f95dc4f6169867a04c4c19df02dafe3",
+      "readme_path": "README.md",
+      "readme_sha256": "acdefbd56f4aa5aa365ee17cb041a3f06e7e0f00368c7a2c2b0cdc0707288ea2",
+      "last_commit_date": "2024-05-21T17:47:37Z",
+      "archived": true,
+      "license_status": "Apache-2.0 metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "Archived research code with explicit scale/resource caveats; same evidence family as the deduplication paper.",
+      "next_check": "Inspect suffix-array byte boundaries and false deletion controls; evaluate smallest native identity check before adopting research infrastructure.",
+      "pool_id": "Q-NEXT-088",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://github.com/google-research/deduplicate-text-datasets",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "stevenblough/row-level-prov",
+      "canonical_url": "https://github.com/stevenblough/row-level-prov",
+      "snapshot_commit": "7d4dca0c813c55e5972381f34eaae695aaeb8711",
+      "readme_path": "README.md",
+      "readme_sha256": "9b4a86f1d8859ea8891e87763de9934afc5b751725951371c859a6b6ada40d38",
+      "last_commit_date": "2026-08-26T10:23:25Z",
+      "archived": false,
+      "license_status": "NOASSERTION metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "Synthetic dbt/DuckDB prototype disclaims scale and cross-engine breadth; GitHub license is NOASSERTION.",
+      "next_check": "Inspect actual license, independent detector oracle and missed-transformation cases; preserve unknowns rather than treat self-reported verified states as proof.",
+      "pool_id": "Q-NEXT-089",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://github.com/stevenblough/row-level-prov",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "allenai/dolma3",
+      "canonical_url": "https://github.com/allenai/dolma3",
+      "snapshot_commit": "1a9daced81670e0fa768e47fbed32af6694a1865",
+      "readme_path": "README.md",
+      "readme_sha256": "af56d6ac09cb9e5b8cddefd4c43c5f906290d56c55088cde12d0e26feacda1be",
+      "last_commit_date": "2026-04-20T13:58:09Z",
+      "archived": false,
+      "license_status": "Apache-2.0 metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no execution",
+      "reason": "README says reconstruction configs refer to internal Ai2 buckets and substitutes are closest public datasets only if available.",
+      "next_check": "Inspect exact public artifact availability and code/data terms separately; do not claim complete reconstruction from inaccessible internal paths.",
+      "pool_id": "Q-NEXT-090",
+      "discovered_date": "2026-10-20",
+      "discovery_url": "https://github.com/allenai/dolma3",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    }
+  ],
+  "ledger_additions": {
+    "research": 0,
+    "repositories": 0
+  },
+  "selection_reason": "Full method/source appraisal and incremental native fit remain incomplete; no forced intake.",
+  "original_pool_records_preserved": 80,
+  "pool_size": 90,
+  "ranking_changes": 0,
+  "new_chart_edition": false,
+  "dedup": "Canonical arXiv IDs and repo identities checked across docs before mutation; no exact identities matched. Paper/repo families grouped below, not independent corroboration.",
+  "evidence_families": [
+    {
+      "ids": [
+        "Q-NEXT-082",
+        "Q-NEXT-088"
+      ],
+      "relationship": "deduplication paper and its released research code"
+    },
+    {
+      "ids": [
+        "Q-NEXT-085",
+        "Q-NEXT-087",
+        "Q-NEXT-090"
+      ],
+      "relationship": "Dolma paper/toolkit and later related Dolma3 reconstruction materials; overlapping institutional lineage"
+    }
+  ],
+  "beyond_github": {
+    "primary_screen": "Five arXiv pages, independent of GitHub README screens",
+    "additional_attempt": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9376726/",
+    "result": "Browser reCAPTCHA challenge; not bypassed; published full text not read. arXiv version used for abstract screen."
+  },
+  "exclusions": [
+    "Secondary paper summaries not used as primary evidence",
+    "Dataset contents not downloaded or executed",
+    "Historical publications are new discovery for this catalog, not newly published research"
+  ],
+  "lineage": {
+    "status": "pending adoption verification",
+    "tool_used": false,
+    "reason": "Exact approved BetterMe tooling revision not verified; local public receipt only"
+  },
+  "limits": [
+    "Full code and dataset licenses not appraised",
+    "No provider/model calls or upstream code execution/install",
+    "No publication, push, PR, merge, deploy or product adoption"
+  ],
+  "checks": [
+    {
+      "command": "python site/build_priorities.py --check",
+      "exit_code": 0,
+      "output": "priorities: research=123 repositories=335\n"
+    },
+    {
+      "command": "python site/build_catalogs.py",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "python site/build_discovery.py",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_discovery.py --check",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_export.py",
+      "exit_code": 0,
+      "output": "export: revision=845fa900b546ac61a81dd38339a0b6bb45a36355\n"
+    },
+    {
+      "command": "python -m unittest discover -s site -p test_*.py",
+      "exit_code": 0,
+      "output": "export: revision=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nexport: revision=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 1.186s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/repository_landscape.py --check",
+      "exit_code": 0,
+      "output": "repository_landscape: repositories=335 unresolved=0\n"
+    },
+    {
+      "command": "python scripts/repository_review_promotions.py --check",
+      "exit_code": 0,
+      "output": "repository_review_promotions: detailed_appraisal_count=230 portable_only_count=105 total_repository_count=335 latest_review_wave=R4 latest_review_wave_count=106\n"
+    },
+    {
+      "command": "python scripts/repository_triage.py --check",
+      "exit_code": 0,
+      "output": "repository_triage: portable_only=105 triaged=105 authority=descriptive-only\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "canonical_inputs_unchanged": true,
+  "original_pool_records_deep_equal": true
+}
