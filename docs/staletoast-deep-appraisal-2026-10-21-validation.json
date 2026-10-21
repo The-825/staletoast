@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-21",
+  "status": "local review-ready proposals; not merged or deployed",
+  "proposals": [
+    "Q-NEXT-060 -> proposed R-337",
+    "Q-NEXT-075 -> proposed C-026"
+  ],
+  "ledger_additions": {
+    "research": 0,
+    "repositories": 0
+  },
+  "original_pool_records_preserved": 90,
+  "ranking_payload_unchanged": true,
+  "frozen_chart_editions_unchanged": true,
+  "initial_validation": "23-site-test run had one expected export-pin integrity failure before source commit/freeze; final suite passed after append-only freeze",
+  "checks": [
+    {
+      "command": "python site/build_priorities.py --check",
+      "exit_code": 0,
+      "output": "priorities: research=123 repositories=335\n"
+    },
+    {
+      "command": "python site/build_catalogs.py",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "python site/build_discovery.py",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_discovery.py --check",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_export.py",
+      "exit_code": 0,
+      "output": "export: revision=7280071ae414ca6faace06331122c80921c8de99\n"
+    },
+    {
+      "command": "python -m unittest discover -s site -p test_*.py",
+      "exit_code": 0,
+      "output": "export: revision=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nexport: revision=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 1.043s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/repository_landscape.py --check",
+      "exit_code": 0,
+      "output": "repository_landscape: repositories=335 unresolved=0\n"
+    },
+    {
+      "command": "python scripts/repository_review_promotions.py --check",
+      "exit_code": 0,
+      "output": "repository_review_promotions: detailed_appraisal_count=230 portable_only_count=105 total_repository_count=335 latest_review_wave=R4 latest_review_wave_count=106\n"
+    },
+    {
+      "command": "python scripts/repository_triage.py --check",
+      "exit_code": 0,
+      "output": "repository_triage: portable_only=105 triaged=105 authority=descriptive-only\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "export_revision": "7280071ae414ca6faace06331122c80921c8de99",
+  "pending": [
+    "Independent source review",
+    "Owner intake disposition and canonical ID collision check",
+    "Task24 website visual review and release",
+    "Discovery breadth configuration remains proposed, not applied"
+  ]
+}
