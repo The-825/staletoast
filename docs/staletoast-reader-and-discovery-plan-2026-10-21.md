@@ -1,6 +1,6 @@
 # Clear browsing and a discovery pipeline that reaches appraisal
 
-October 21, 2026. Local review plan, not a deployed site or changed schedule.
+October 21, 2026. Local site review plan and updated discovery instructions, not a deployed site.
 
 ## Browse on The 825
 
@@ -22,10 +22,10 @@ Use topic names instead of internal claim codes. Keep technical IDs, methods and
 
 ## Broaden discovery without starving appraisal
 
-Recommended target: up to 50 metadata-only candidates per category per daily batch, from bounded queries across publication indexes, primary research venues and canonical repository hosts. This is a discovery ceiling, not a quota or 50 full appraisals. Use provider search within available access and cost limits; do not install crawlers or bypass access controls.
+Updated discovery ceiling: up to 50 metadata-only candidates per category per daily batch, from bounded queries across publication indexes, primary research venues and canonical repository hosts. This is a discovery ceiling, not a quota or 50 full appraisals. Use provider search within available access and cost limits; do not install crawlers or bypass access controls.
 
 Normalize DOI/arXiv/repository identities, versions, aliases and evidence families before the pool. Search hits that are inaccessible, irrelevant or duplicates need a reason, not a new source identity. Retain only useful leads with a next check. Shortlist at most five primary-source screens per category. Reserve the main effort for one or two deeper appraisals, drawing from the existing pool before new leads. Keep the daily 0-2 addition cap per category and monthly pool reconsideration.
 
 Track discovered, identity-checked, duplicate/excluded, primary-screened, deeply appraised, ready for review, accepted and published separately. Measure time to appraisal and review-ready yield, not raw pool growth. After a bounded trial, adjust discovery breadth using those results. No fresh publication or popularity signal counts as quality by itself.
 
-The broader metadata ceiling is a proposal recorded here. Existing automation configuration has not been changed in this pass.
+The existing daily scout automation was updated and read back on October 21. It remains active at 9 AM Pacific with the same target chat. Its new instructions broaden metadata discovery and reserve deeper appraisal before further pool expansion. This verifies configuration, not a completed 50-candidate run.
