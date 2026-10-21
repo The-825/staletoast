@@ -71,5 +71,39 @@
     "Owner intake disposition and canonical ID collision check",
     "Task24 website visual review and release",
     "Discovery breadth configuration remains proposed, not applied"
-  ]
+  ],
+  "scheduled_reconciliation": {
+    "client_date": "2026-10-21",
+    "verified_head": "321476d2208e73c44ce58554f99321eb29ed5739",
+    "decision": "Reuse completed owner-authorized deeper appraisal; no duplicate discovery/intake",
+    "stage_counts": {
+      "new_metadata_candidates": 0,
+      "new_canonical_primary_screens": {
+        "research": 0,
+        "repositories": 0
+      },
+      "existing_pool_candidates_shortlisted": 5,
+      "existing_sources_deeply_appraised": {
+        "research": 1,
+        "repositories": 1
+      },
+      "review_ready_proposals": {
+        "research": 1,
+        "repositories": 1
+      },
+      "canonical_ledger_additions": {
+        "research": 0,
+        "repositories": 0
+      },
+      "published_additions": 0,
+      "new_pool_records": 0
+    },
+    "source_links": [
+      "https://arxiv.org/abs/2609.27871v1",
+      "https://github.com/djpapzin/agent-handoff-kit/tree/2171dcef26d203da8dc4fe9883bfe3939882e285"
+    ],
+    "validation": "Reuse same-day ten passing native commands and23 site tests; no canonical source changes since those checks",
+    "remaining_blocker": "Independent source review and owner intake disposition; proposed IDs not allocated, paper denominator explanation unresolved, repository runtime unexecuted",
+    "private_lineage": "Exact approved tooling availability unverified; no tool used and adoption remains pending"
+  }
 }
