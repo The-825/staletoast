@@ -1602,5 +1602,25 @@
       "adoption": "not established",
       "adoption_cost": "unknown"
     }
+  ],
+  "reconsideration_history": [
+    {
+      "date": "2026-10-21",
+      "pool_id": "Q-NEXT-075",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "appraise; addition proposal ready for review",
+      "receipt": "staletoast-deep-appraisal-2026-10-21.json",
+      "depth": "selected full-text claim appraisal, not complete proof audit or replication"
+    },
+    {
+      "date": "2026-10-21",
+      "pool_id": "Q-NEXT-060",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "appraise; addition proposal ready for review",
+      "receipt": "staletoast-deep-appraisal-2026-10-21.json",
+      "depth": "source-traced; tests inspected, not executed"
+    }
   ]
 }
