@@ -1621,6 +1621,24 @@
       "disposition": "appraise; addition proposal ready for review",
       "receipt": "staletoast-deep-appraisal-2026-10-21.json",
       "depth": "source-traced; tests inspected, not executed"
+    },
+    {
+      "date": "2026-10-24",
+      "pool_id": "Q-NEXT-075",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "hold in pool; direct owner instruction supersedes addition consideration until denominator reconciliation",
+      "receipt": "staletoast-agent-handoff-kit-addition-2026-10-24.json",
+      "depth": "Existing full-text/source caveats retained; no new appraisal"
+    },
+    {
+      "date": "2026-10-24",
+      "pool_id": "Q-NEXT-060",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "Separate source review accepted; ready for canonical addition at source-level tier, not inserted",
+      "receipt": "staletoast-agent-handoff-kit-addition-2026-10-24.json",
+      "depth": "README mechanism screen with supplemental pinned source trace; tests not run"
     }
   ]
 }
