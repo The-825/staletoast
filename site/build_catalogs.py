@@ -4,30 +4,12 @@ import json
 import re
 from pathlib import Path
 from ledger_markdown import cells, source_link
-from build_priorities import identified_rows
+from build_priorities import identified_rows, READER_TOPICS
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 SITE = ROOT / "site"
-READER_TOPICS = {
-    "CI-001": "When collaboration helps",
-    "CI-002": "Check each step of the work",
-    "CI-003": "When to trust or question AI",
-    "CI-004": "Time and effort required",
-    "CI-005": "Match abilities to the task",
-    "CI-006": "Understand and recover from failures",
-    "CI-007": "Who can approve each action",
-    "CI-008": "Recheck evidence when things change",
-    "CI-009": "Remember decisions and context",
-    "CI-010": "Use enough context with less private data",
-    "CI-011": "Keep people in control",
-    "CI-012": "Explanations that help people act",
-    "CI-013": "Know when to hand work to a person",
-    "CI-014": "Choose the right way to find information",
-    "CI-015": "Keep ideas and perspectives varied",
-    "CI-016": "Use more agents only when they help",
-    "CI-017": "Check AI improvements independently",
-}
+
 
 
 def table_rows(path: Path, width: int) -> list[list[str]]:

@@ -9,6 +9,26 @@ from datetime import date
 from pathlib import Path
 from ledger_markdown import cells, source_link
 
+READER_TOPICS = {
+    "CI-001": "When collaboration helps",
+    "CI-002": "Check each step of the work",
+    "CI-003": "When to trust or question AI",
+    "CI-004": "Time and effort required",
+    "CI-005": "Match abilities to the task",
+    "CI-006": "Understand and recover from failures",
+    "CI-007": "Who can approve each action",
+    "CI-008": "Recheck evidence when things change",
+    "CI-009": "Remember decisions and context",
+    "CI-010": "Use enough context with less private data",
+    "CI-011": "Keep people in control",
+    "CI-012": "Explanations that help people act",
+    "CI-013": "Know when to hand work to a person",
+    "CI-014": "Choose the right way to find information",
+    "CI-015": "Keep ideas and perspectives varied",
+    "CI-016": "Use more agents only when they help",
+    "CI-017": "Check AI improvements independently",
+}
+
 DOCS = Path(__file__).resolve().parents[1] / "docs"
 SOURCES = {
     "research_source_sha256": "collaborative-intelligence-research-ledger.md",
@@ -113,22 +133,22 @@ def render(payload):
     papers, repositories = payload['research'], payload['repositories']
     reviewed = sum(row['record_state'] == 'reviewed-catalog' for row in papers)
     screened = sum(row['review_depth'] == 'readme-screened' for row in repositories)
-    lines = ['# All-source appraisal priorities', '',
+    lines = ['# What we are reviewing next', '',
              '**Status:** derived routing projection of the existing ledgers, public-source appraisal routing. It is not a second findings ledger, a scientific confidence score or an adoption recommendation. Assumes Method v2.0 and the named recovery/authority/memory/burden question.', '',
              f'Every one of the {len(papers)} paper records and {len(repositories)} repository records appears once below. The historical {reviewed}-source catalog remains distinct from {len(papers) - reviewed} candidate papers; candidate inclusion here does not promote a finding. Repository coverage includes {screened} README screens and {len(repositories) - screened} portable-only identity records.', '',
-             'The [machine-readable projection](staletoast-appraisal-priorities.json) binds hashes of its three source files, using UTF-8 with LF line endings to match committed Git blob content. Rebuild it after any source change. Priority groups order the named claim gaps, then paper directness/horizon or repository review depth/lifecycle. Ties share a dense rank; stable IDs order display only. Stars, citation counts, recency and summed mechanism codes do not decide this priority. Potential to change conclusions is still unknown pending validity review, and family independence is not a rank bonus.', '',
+             'The [machine-readable projection](staletoast-appraisal-priorities.json) binds hashes of its three source files, using UTF-8 with LF line endings to match committed Git blob content. Rebuild it after any source change. Review order means which sources we plan to investigate first, not which are best. It considers the question a source addresses, how closely it resembles the work, and how much we have inspected. Lower numbers come first; matching numbers mean a tie. Source IDs only decide the display order within a tie. Stars, citation counts, recency and summed mechanism codes do not decide this priority. Potential to change conclusions is still unknown pending validity review, and family independence is not a rank bonus.', '',
              'The original research evidence-order chart and dated repository popularity orders remain separate views. This projection covers candidates and portable records that those views cannot fairly treat as fully appraised evidence.', '',
              '## Research priorities', '',
-             '| Priority group | ID | Source | Review state | Directness / horizon | First gap |',
+             '| Review order | ID | Source | Review state | Directness / horizon | Question to investigate |',
              '|---|---|---|---|---|---|']
     for row in papers:
         title = row['title'].replace('|', '\\|')
-        lines.append(f"| {row['appraisal_priority_rank']} | {row['id']} | [{title}]({row['url']}) | {row['record_state']}; {row['review_depth']} | {row['directness']} / {row['horizon']} | {row['priority_claim']} |")
+        lines.append(f"| {row['appraisal_priority_rank']} | {row['id']} | [{title}]({row['url']}) | {row['record_state']}; {row['review_depth']} | {row['directness']} / {row['horizon']} | {READER_TOPICS.get(row['priority_claim'], row['priority_claim'])} |")
     lines += ['', '## Repository priorities', '',
-              '| Priority group | ID | Repository | Review depth | Lifecycle | First gap |',
+              '| Review order | ID | Repository | Review depth | Lifecycle | Question to investigate |',
               '|---|---|---|---|---|---|']
     for row in repositories:
-        lines.append(f"| {row['appraisal_priority_rank']} | {row['id']} | [{row['repository']}]({row['url']}) | {row['review_depth']} | {row['lifecycle']} | {row['priority_claim']} |")
+        lines.append(f"| {row['appraisal_priority_rank']} | {row['id']} | [{row['repository']}]({row['url']}) | {row['review_depth']} | {row['lifecycle']} | {READER_TOPICS.get(row['priority_claim'], row['priority_claim'])} |")
     return '\n'.join(lines) + '\n'
 
 

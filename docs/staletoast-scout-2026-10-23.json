@@ -1,0 +1,161 @@
+{
+  "client_date": "2026-10-23",
+  "trigger": "2026-10-23T16:00:22Z",
+  "observed_at_utc": "2026-10-23T16:03:43.754323+00:00",
+  "base_revision": "b590752a332905109a1b78563ff31d3798918b6e",
+  "verified_remote_main": "44eac5c0bdd1f1d506eca5e0449639f6262c8595",
+  "review_status": "Local receipts not independently reviewed; no inherited approval",
+  "pool_id": "Q-NEXT-069",
+  "source_revision": "2c7fb9188987b9fffc5ec7dbe1c60ec305acca58",
+  "depth": "Selected contracts and schemas; static synthetic witnesses, no upstream execution",
+  "finding": "Prose support requirements exceed inspected structural schema constraints",
+  "disposition": "backlog; deeper appraisal ready for review, no canonical intake or adoption",
+  "files": [
+    {
+      "path": "docs/en/authoring/acceptance-scenarios.md",
+      "sha256": "7540d754e8f351ac7a65ca5abfa07e7b4e8184218bd419e685f1c6e8247afce0",
+      "bytes": 2335
+    },
+    {
+      "path": "docs/en/contracts/claim-map.md",
+      "sha256": "3bee3c3e6929d50b1586ddf1f01585a6ac51aa559dbd27c0ace1a00ca46f5632",
+      "bytes": 2216
+    },
+    {
+      "path": "docs/en/contracts/verification-review.md",
+      "sha256": "76c42e8ca1052fa90dc1aece4c36e20aa131b10782cd295a624d1634f5106b1b",
+      "bytes": 1458
+    },
+    {
+      "path": "docs/public/schemas/agentevidence-claim-map.schema.json",
+      "sha256": "f540c271e2410e9e691300d04b7a6006ec07cb5493fc47ff511ed63e42a8e664",
+      "bytes": 14207
+    },
+    {
+      "path": "docs/public/schemas/agentevidence-verification.schema.json",
+      "sha256": "d9c153c974640e82f87d301181d95541e75a6123079b8c81e1773656cfb56901",
+      "bytes": 14137
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    }
+  ],
+  "counts": {
+    "new_metadata": 0,
+    "new_primary_screens": 0,
+    "existing_repositories_deeply_assessed": 1,
+    "existing_research_deeply_assessed": 0,
+    "deeper_appraisals_ready_for_review": 1,
+    "new_pool_records": 0,
+    "canonical_additions_research": 0,
+    "canonical_additions_repositories": 0,
+    "published_additions": 0
+  },
+  "elapsed": "unknown",
+  "cost": "unknown; no model/provider call or spending",
+  "lineage": "Approved BetterMe scout_lineage revision not verified or used; adoption pending",
+  "checks": [
+    {
+      "command": "python site/build_priorities.py --check",
+      "exit_code": 0,
+      "output": "priorities: research=123 repositories=335\n"
+    },
+    {
+      "command": "python site/build_catalogs.py",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "python site/build_discovery.py",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_discovery.py --check",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_export.py",
+      "exit_code": 0,
+      "output": "export: revision=7280071ae414ca6faace06331122c80921c8de99\n"
+    },
+    {
+      "command": "python -m unittest discover -s site -p test_*.py",
+      "exit_code": 0,
+      "output": "export: revision=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nexport: revision=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 1.317s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/repository_landscape.py --check",
+      "exit_code": 0,
+      "output": "repository_landscape: repositories=335 unresolved=0\n"
+    },
+    {
+      "command": "python scripts/repository_review_promotions.py --check",
+      "exit_code": 0,
+      "output": "repository_review_promotions: detailed_appraisal_count=230 portable_only_count=105 total_repository_count=335 latest_review_wave=R4 latest_review_wave_count=106\n"
+    },
+    {
+      "command": "python scripts/repository_triage.py --check",
+      "exit_code": 0,
+      "output": "repository_triage: portable_only=105 triaged=105 authority=descriptive-only\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "pool_before_sha256": "7bc13bc8f4a86d59fc00bdb034a59465bdb234d48c5bfb870dfdf70d8f138195",
+  "pool_unchanged": true,
+  "synthetic_witnesses": [
+    {
+      "claim_map_id": "synthetic-map",
+      "schema_version": "0.1.0",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "All checks passed",
+          "status": "supported"
+        }
+      ]
+    },
+    {
+      "claim_map_id": "synthetic-map",
+      "schema_version": "0.1.0",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "All checks passed",
+          "status": "supported",
+          "support_edges": [
+            "e1"
+          ]
+        }
+      ],
+      "support_edges": [
+        {
+          "edge_id": "e1",
+          "claim_id": "c1",
+          "relationship": "supports",
+          "source_id": "absent-source"
+        }
+      ]
+    },
+    {
+      "claim_map_id": "synthetic-map",
+      "schema_version": "0.1.0",
+      "claims": [
+        {
+          "claim_id": "c1",
+          "text": "All checks passed",
+          "status": "unverified"
+        }
+      ]
+    }
+  ],
+  "witness_limits": "Static field and enum inspection only, no full JSON Schema validator executed; no claim that every module lacks semantic checks.",
+  "next_gate": "Existing Task22 source review and owner intake disposition in issue3; native workflow-test proposal remains separately queued with Breadcrumbs owner."
+}

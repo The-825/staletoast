@@ -1,0 +1,139 @@
+{
+  "client_date": "2026-10-22",
+  "observed_at_utc": "2026-10-22T16:01:10.138909+00:00",
+  "trigger": "2026-10-22T15:59:04.281Z",
+  "local_revision": "8626a67aaf83a7f30f8f2fc3dcadcde0961a893d",
+  "remote_main": "44eac5c0bdd1f1d506eca5e0449639f6262c8595",
+  "review_applicability": "Local unpublished appraisal receipts are not independently reviewed; remote main differs. No approval inherited.",
+  "policy": "Prioritize existing appraisal caveats before expanding discovery. Ceilings are not quotas.",
+  "scope": "Public-safe primary sources only; no private lineage access",
+  "stage_counts": {
+    "new_metadata_candidates": {
+      "research": 0,
+      "repositories": 0
+    },
+    "new_primary_screens": {
+      "research": 0,
+      "repositories": 0
+    },
+    "unique_existing_candidates_reappraised": {
+      "research": 1,
+      "repositories": 1
+    },
+    "new_pool_records": 0,
+    "new_review_ready_proposals": 0,
+    "retained_review_proposals": 2,
+    "canonical_additions": {
+      "research": 0,
+      "repositories": 0
+    },
+    "published_additions": 0
+  },
+  "deduplication": {
+    "existing_ids": [
+      "Q-NEXT-075",
+      "Q-NEXT-060"
+    ],
+    "pool_before_sha256": "7bc13bc8f4a86d59fc00bdb034a59465bdb234d48c5bfb870dfdf70d8f138195",
+    "pool_unchanged": true,
+    "prior_receipts_preserved": true
+  },
+  "appraisals": [
+    {
+      "pool_id": "Q-NEXT-075",
+      "source": "https://arxiv.org/html/2609.27871v1",
+      "depth": "Targeted full-text caveat follow-up, not proof audit or replication",
+      "finding": "Appendix C.1 lists exclusion categories totaling eleven while its caption subtracts twelve; Table4 covers57of69. Count reconciliation remains unresolved.",
+      "license": "Paper HTML labels CC BY4.0; software Apache2.0 is author declaration, separate license file not inspected today",
+      "code_tree_reference": "qualixar/bounded-loops v0.6.6 tree 1d5c07cee08bbd004d194243739e04b237295c7b inspected as metadata only",
+      "disposition": "backlog; retain qualitative candidate for review, withhold quantitative confidence",
+      "next": "Reconcile manifest-level exclusion identities at pinned source without assuming a typo explains missing case; independent source review before intake"
+    },
+    {
+      "pool_id": "Q-NEXT-060",
+      "revision": "2171dcef26d203da8dc4fe9883bfe3939882e285",
+      "depth": "Fresh source-level review of claim fencing, holder guard, read-only replay and ambiguous commit handling; no execution",
+      "finding": "Fresh latest-commit metadata matches pinned revision; three files match prior digests. Raw db.py has182lines, so original126-180 range is valid despite browser rendering165lines. Guard checks owner, generation and expiry; uncertain COMMIT halts for fresh read inspection.",
+      "files": [
+        {
+          "url": "https://raw.githubusercontent.com/djpapzin/agent-handoff-kit/2171dcef26d203da8dc4fe9883bfe3939882e285/handoff_kit/db.py",
+          "sha256": "aa6053f25a836d83973db7e11891e1be30cf717aa2c8504472574d1308697b83",
+          "matches_prior_digest": true,
+          "raw_line_count": 182
+        },
+        {
+          "url": "https://raw.githubusercontent.com/djpapzin/agent-handoff-kit/2171dcef26d203da8dc4fe9883bfe3939882e285/handoff_kit/worker.py",
+          "sha256": "3ef1249776f69c82b081628856d6653e962ed499c9b217c191bcfb4bca0e147e",
+          "matches_prior_digest": true,
+          "raw_line_count": 1193
+        },
+        {
+          "url": "https://raw.githubusercontent.com/djpapzin/agent-handoff-kit/2171dcef26d203da8dc4fe9883bfe3939882e285/LICENSE",
+          "sha256": "59d9376183300071121194f918e807fcb334239a0e84e139a0862911a076a72c",
+          "matches_prior_digest": true,
+          "raw_line_count": 21
+        }
+      ],
+      "disposition": "backlog; source-level catalog proposal retained; runtime adoption not established",
+      "next": "Independent source review and ID collision check; any future experiment requires separate upstream execution authority"
+    }
+  ],
+  "limitations": [
+    "No broader discovery search performed today; no claim of50candidates searched",
+    "No upstream code run or installed, provider calls, public post, push, merge or deployment",
+    "Task24 website live status is coordinator-reported, not independently reverified; catalog custody remains StaleToast",
+    "Browser code line rendering differs from raw source; raw digests and line ranges control"
+  ],
+  "checks": [
+    {
+      "command": "python site/build_priorities.py --check",
+      "exit_code": 0,
+      "output": "priorities: research=123 repositories=335\n"
+    },
+    {
+      "command": "python site/build_catalogs.py",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "python site/build_discovery.py",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_discovery.py --check",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_export.py",
+      "exit_code": 0,
+      "output": "export: revision=7280071ae414ca6faace06331122c80921c8de99\n"
+    },
+    {
+      "command": "python -m unittest discover -s site -p test_*.py",
+      "exit_code": 0,
+      "output": "export: revision=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nexport: revision=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 1.134s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/repository_landscape.py --check",
+      "exit_code": 0,
+      "output": "repository_landscape: repositories=335 unresolved=0\n"
+    },
+    {
+      "command": "python scripts/repository_review_promotions.py --check",
+      "exit_code": 0,
+      "output": "repository_review_promotions: detailed_appraisal_count=230 portable_only_count=105 total_repository_count=335 latest_review_wave=R4 latest_review_wave_count=106\n"
+    },
+    {
+      "command": "python scripts/repository_triage.py --check",
+      "exit_code": 0,
+      "output": "repository_triage: portable_only=105 triaged=105 authority=descriptive-only\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ]
+}
