@@ -18,6 +18,8 @@ provider call is required.
 ```sh
 python site/build_priorities.py --check
 python site/build_catalogs.py
+python site/build_reader_guide.py
+python site/build_reader_guide.py --check
 python site/build_discovery.py
 python site/build_discovery.py --check
 python site/build_export.py
@@ -42,6 +44,15 @@ under their original identity. Preserve original analysis and dated rankings.
 See [intake and pool policy](docs/staletoast-intake-policy.md).
 
 ## History and export
+
+The proposed visitor reading paths in `docs/staletoast-reader-selections.json`
+are separate from the internal appraisal queue and frozen charts. Build their
+derived `site/data/reader-guide.json` with the reader-guide command above. Each
+selection retains the existing finding, evidence depth and limitation plus an
+editorial reason. Missing sources and unpromoted papers fail the build. This is
+not a quality score, new evidence review or operational recommendation. The
+guide is not yet part of the versioned catalog export or live website; consumer
+integration must preserve its source hashes and review status.
 
 The initial import preserves selected-path Git history from Breadcrumbs.
 [Migration provenance](docs/migration-provenance.json) records the original
