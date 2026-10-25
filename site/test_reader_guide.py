@@ -1,5 +1,9 @@
 import copy
 import unittest
+import hashlib
+import json
+import subprocess
+from pathlib import Path
 
 from build_reader_guide import build
 
@@ -73,6 +77,18 @@ class ReaderGuideTests(unittest.TestCase):
         item['limits'] = item['takeaway']
         with self.assertRaises(ValueError):
             build(config, [], rows)
+
+    def test_frozen_handoff_binds_inputs_to_the_recorded_git_revision(self):
+        root = Path(__file__).resolve().parents[1]
+        archives = list((root / 'exports/reader-guide').glob('*.json'))
+        self.assertTrue(archives, 'No frozen reader guide for the consumer')
+        for archive in archives:
+            payload = json.loads(archive.read_text(encoding='utf-8'))
+            self.assertEqual(archive.stem, payload['source_revision'])
+            for path, expected in payload['source_hashes'].items():
+                committed = subprocess.check_output(
+                    ['git', 'show', payload['source_revision'] + ':' + path], cwd=root)
+                self.assertEqual(expected, hashlib.sha256(committed).hexdigest(), path)
 
 
 if __name__ == '__main__':
