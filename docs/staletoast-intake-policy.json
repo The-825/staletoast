@@ -10,7 +10,18 @@
     "candidates_per_category": 5,
     "maximum_new_additions_per_category": 2,
     "minimum_additions": 0,
-    "count_prior_same_day_additions": true
+    "count_prior_same_day_additions": true,
+    "operating_revision_date": "2026-10-21",
+    "candidate_count_meaning": "maximum primary-source screens, not metadata discovery quota",
+    "maximum_metadata_candidates_per_category": 50,
+    "maximum_primary_source_screens_per_category": 5,
+    "existing_pool_deep_appraisal_target": {
+      "minimum_target": 1,
+      "maximum": 2,
+      "priority": "reserve effort before expanding the pool",
+      "quality_boundary": "use eligible retained candidates; record shortfalls rather than force appraisal or additions"
+    },
+    "record_actual_stage_counts": true
   },
   "monthly": {
     "shortlist_per_category": 10,
@@ -30,5 +41,6 @@
     "rechecks": "append dated source-bound observations",
     "missing_history": "unknown; never fabricate"
   },
-  "authority": "evidence-only; existing review, publication and adoption gates apply"
+  "authority": "evidence-only; existing review, publication and adoption gates apply",
+  "last_reconciled": "2026-10-25"
 }

@@ -35,8 +35,10 @@ YYYY-MM-DD`. Existing dated editions cannot be overwritten. Preserve source
 versions, review limits, contrary evidence and stable IDs. A chart position
 guides attention; it does not certify findings or grant adoption authority.
 
-The daily scout screens five candidates per category and adds at most one or
-two research articles and one or two repositories when quality supports it.
+The daily scout discovers up to 50 metadata leads per category, screens at most
+five primary sources per category, and prioritizes one or two deeper appraisals
+from the existing pool. Add at most two research articles and two repositories
+per day only when quality supports it.
 Zero additions is valid. Retain unselected leads in the pool. Each month,
 rank the strongest ten eligible records per category and propose the top three
 for consideration. Sources outside the current Hot100 can return to the pool

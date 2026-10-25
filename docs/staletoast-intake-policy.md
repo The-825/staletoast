@@ -7,9 +7,14 @@ The [machine-readable policy](staletoast-intake-policy.json) records the limits.
 
 ## Daily round
 
-Screen five new canonical candidates in each category against a named gap.
-Record actual queries, source dates, exclusions, duplicates and access limits.
-Report a shortfall if five defensible screens are unavailable.
+The October 21 operating update broadens discovery without increasing additions.
+Discover up to 50 metadata-only candidates per category against a named gap; this
+is a ceiling, not a quota. Normalize identities, aliases and evidence families,
+then screen at most five primary sources per category. Reserve the main effort
+for one or two eligible existing-pool candidates before expanding the pool.
+Record actual queries, source dates, exclusions, duplicates, access limits and
+separate discovery/screen/appraisal counts. Report shortfalls rather than force
+screens or additions. The original daily and monthly addition limits still apply.
 
 Add one or two sources per category only when quality supports their inclusion.
 Two is the daily maximum, including sources already added that day. Zero is
