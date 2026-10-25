@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "status": "editorial proposal for review; not a universal quality ranking",
+  "collections": [
+    {
+      "id": "when-ai-helps",
+      "title": "Will AI actually help with this work?",
+      "description": "Start with comparisons and tradeoffs before adding more automation.",
+      "selections": [
+        {"kind": "research", "id": "010", "why_selected": "Tests the assumption that combining people and AI beats the stronger baseline."},
+        {"kind": "research", "id": "012", "why_selected": "Separates changes in individual work from changes in coordination."}
+      ]
+    },
+    {
+      "id": "trust-and-control",
+      "title": "Help people check the work and stay in control",
+      "description": "Understand where explanations and automation can mislead.",
+      "selections": [
+        {"kind": "research", "id": "005", "why_selected": "Shows why an explanation alone is not evidence of better decisions."},
+        {"kind": "research", "id": "063", "why_selected": "Connects routine automation benefits with recovery and awareness tradeoffs."}
+      ]
+    },
+    {
+      "id": "recover-work",
+      "title": "Recover interrupted work",
+      "description": "Inspect recovery mechanisms without assuming they make every action safe.",
+      "selections": [
+        {"kind": "repository", "id": "R-316", "why_selected": "An established durable-workflow example for inspecting recovery design."},
+        {"kind": "repository", "id": "R-336", "why_selected": "A second recovery design with a recorded version-specific counterexample to consider."}
+      ]
+    }
+  ]
+}
