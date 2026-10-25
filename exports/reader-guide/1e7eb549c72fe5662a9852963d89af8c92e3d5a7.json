@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-24",
+  "status": "editorial reading paths, not a universal quality ranking",
+  "ordering": "Editorial reading paths, not a quality score or internal review priority",
+  "evidence_boundary": "Selected from existing appraisals; no new reproduction or adoption claim",
+  "collections": [
+    {
+      "id": "when-ai-helps",
+      "title": "Will AI actually help with this work?",
+      "description": "Start with comparisons and tradeoffs before adding more automation.",
+      "selections": [
+        {
+          "kind": "research",
+          "id": "010",
+          "title": "When combinations of humans and AI are useful: A systematic review and meta-analysis",
+          "source_url": "https://doi.org/10.1038/s41562-024-02024-1",
+          "why_selected": "Tests the assumption that combining people and AI beats the stronger baseline.",
+          "evidence_depth": "screened-structural",
+          "takeaway": "On average, human-AI combinations performed worse than the better human-only or AI-only baseline. Effects varied: decision-making tasks showed losses, content-creation tasks showed gains, and augmentation depended on which side initially performed better.",
+          "limits": "The reviewed evidence is experimental and heterogeneous, with possible publication bias and differing study designs. Next: which coordination mechanisms improve the best-baseline comparison in sustained, privacy-constrained work?",
+          "original_evidence_note": null,
+          "counterevidence": null,
+          "profile_slug": "research-010"
+        },
+        {
+          "kind": "research",
+          "id": "012",
+          "title": "Shifting Work Patterns with Generative AI",
+          "source_url": "https://www.microsoft.com/en-us/research/publication/shifting-work-patterns-with-generative-ai/",
+          "why_selected": "Separates changes in individual work from changes in coordination.",
+          "evidence_depth": "screened-structural",
+          "takeaway": "Access to AI changed work that individuals could change independently, including less time spent on email and moderately faster document completion. It did not significantly change time spent in meetings, a coordination-dependent activity.",
+          "limits": "The report describes access and work-pattern effects, not the quality, safety, or persistence of cross-repository coordination. Next: which repeated-use measures observe handoff quality, correction, and ownership changes rather than only time use?",
+          "original_evidence_note": null,
+          "counterevidence": null,
+          "profile_slug": "research-012"
+        }
+      ]
+    },
+    {
+      "id": "trust-and-control",
+      "title": "Help people check the work and stay in control",
+      "description": "Understand where explanations and automation can mislead.",
+      "selections": [
+        {
+          "kind": "research",
+          "id": "005",
+          "title": "Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance",
+          "source_url": "https://doi.org/10.1145/3411764.3445717",
+          "why_selected": "Shows why an explanation alone is not evidence of better decisions.",
+          "evidence_depth": "screened-structural",
+          "takeaway": "AI assistance produced some complementary performance, but explanations did not increase it. Explanations increased acceptance of recommendations whether they were right or wrong.",
+          "limits": "The tasks were bounded classification and reasoning tasks. Next: which outcome set captures quality, effort, reversibility, and accountability in open-ended work?",
+          "original_evidence_note": null,
+          "counterevidence": null,
+          "profile_slug": "research-005"
+        },
+        {
+          "kind": "research",
+          "id": "063",
+          "title": "Human Performance Consequences of Stages and Levels of Automation: An Integrated Meta-Analysis",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/24930170/",
+          "why_selected": "Connects routine automation benefits with recovery and awareness tradeoffs.",
+          "evidence_depth": "screened-structural",
+          "takeaway": "Higher automation improved routine performance and workload but reduced situation awareness and failure performance, especially across the analysis-to-action-selection boundary.",
+          "limits": "The studies vary and mostly predate LLM systems. Next: do the same tradeoffs appear when generative agents move from analysis to consequential action?",
+          "original_evidence_note": null,
+          "counterevidence": null,
+          "profile_slug": "research-063"
+        }
+      ]
+    },
+    {
+      "id": "recover-work",
+      "title": "Recover interrupted work",
+      "description": "Inspect recovery mechanisms without assuming they make every action safe.",
+      "selections": [
+        {
+          "kind": "repository",
+          "id": "R-316",
+          "title": "temporalio/sdk-python",
+          "source_url": "https://github.com/temporalio/sdk-python",
+          "why_selected": "An established durable-workflow example for inspecting recovery design.",
+          "evidence_depth": "readme-screened",
+          "takeaway": "Deterministic workflows, activities and replay expose resumable state.",
+          "limits": "Requires a Temporal service and replay discipline. External effects still need idempotency. README inspected; no runtime test or adoption.",
+          "original_evidence_note": "Deterministic workflows, activities, replay and sandboxing expose resumable state. Requires a Temporal service and replay discipline; external effects still need idempotency. Pinned README screen only; no runtime test or adoption.",
+          "counterevidence": [],
+          "profile_slug": "repositories-r-316"
+        },
+        {
+          "kind": "repository",
+          "id": "R-336",
+          "title": "hatchet-dev/hatchet",
+          "source_url": "https://github.com/hatchet-dev/hatchet",
+          "why_selected": "A second recovery design with a recorded version-specific counterexample to consider.",
+          "evidence_depth": "readme-screened",
+          "takeaway": "Durable tasks, execution history and pause/resume expose a recovery design.",
+          "limits": "Old retry work advancing after replacement was reported on an earlier release. Current-head behavior was not tested. Requires server and data-retention review; no collaboration benefit established.",
+          "original_evidence_note": "Pinned README describes durable tasks, Postgres-backed execution history, retries, pause/resume and worker routing. These expose recovery mechanisms, not safe supersession or agent collaboration benefit. Open issue 4900 reports old retry work advancing after replacement on an earlier release; current-head behavior was not tested. Requires a server and data-retention review before any operational use.",
+          "counterevidence": [
+            {
+              "url": "https://github.com/hatchet-dev/hatchet/issues/4900",
+              "observed_date": "2026-10-13",
+              "state": "open",
+              "boundary": "Publicly reported behavior on an earlier release; not reproduced or verified on this snapshot."
+            }
+          ],
+          "profile_slug": "repositories-r-336"
+        }
+      ]
+    }
+  ],
+  "source_revision": "1e7eb549c72fe5662a9852963d89af8c92e3d5a7",
+  "source_hashes": {
+    "docs/staletoast-reader-selections.json": "798662d76fd7f163fb5ffe6a75d39df9345a0f05d39b0e496fbb83416d527a30",
+    "docs/collaborative-intelligence-research-ledger.md": "d18113e41be004aa76b61d6c1bdfe7a38052866bb000f41185f6cf9c7c54ef45",
+    "docs/collaborative-intelligence-source-appraisals.md": "99283cdc25f3cdfe46c3968a583233db1f128442b3ba644ee97a558d24c05a77",
+    "docs/collaborative-intelligence-repository-landscape.json": "b8a562d0f8ac13cac4f400094aa1ea047040de3e52ea1917f36e3484b08b925a",
+    "site/build_reader_guide.py": "733e985acb7c42af53961fde577690b4a273fb847a3ae5639ea836a14a221faf",
+    "site/build_catalogs.py": "a2ac7318961c49b51e7364634ceaa6daf680154ead4d052d8998a6a009d62b7c",
+    "site/build_priorities.py": "d05fa0be095af79b4d533575dd89c51eaf5c70e1ca452829420aafa09740b455",
+    "site/ledger_markdown.py": "281c9e095e74628fba79f5114e0dfdcb5601da09f56f2229c63e4d6f770614ea"
+  }
+}
