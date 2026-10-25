@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-20",
+  "updated": "2026-10-25",
   "status": "discovery pool, not ledger additions or adoption authority",
   "records": [
     {
@@ -1601,6 +1601,65 @@
       "disposition": "backlog",
       "adoption": "not established",
       "adoption_cost": "unknown"
+    },
+    {
+      "pool_id": "Q-NEXT-091",
+      "kind": "repository",
+      "title": "eclipsesource/jsonforms",
+      "discovery_url": "https://github.com/eclipsesource/jsonforms",
+      "canonical_url": "https://github.com/eclipsesource/jsonforms",
+      "state": "verify",
+      "discovered_date": "2026-10-25",
+      "snapshot_commit": "7fb14064800bdaa09f8d0eb9501abe15f1cc99cc",
+      "readme_sha256": "c7bef08a853ada9a4802ff7cc7e382fc0fac125ca591b2bc4eb694c74e8d5617",
+      "license_status": "Pinned root MIT terms inspected; transitive dependency terms not appraised",
+      "evidence_depth": "pinned README and root license inspected; implementation/tests not inspected or run",
+      "reason": "Schema-driven UI equivalent; does not establish follow-up state, authority or remote-action recovery. Dependency/setup burden unmeasured.",
+      "next_check": "Inspect pinned schema validation implementation and test definitions, permission boundaries and equivalent spreadsheet/form path; benchmark synthetic adaptation before adoption.",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "pool_id": "Q-NEXT-092",
+      "kind": "repository",
+      "title": "jsonform/jsonform",
+      "discovery_url": "https://github.com/jsonform/jsonform",
+      "canonical_url": "https://github.com/jsonform/jsonform",
+      "state": "verify",
+      "discovered_date": "2026-10-25",
+      "snapshot_commit": "59c8ca8690ea4c15d3baf3a21252048ae61c7883",
+      "readme_sha256": "dbe5131e219d8e18e673706859755edc64252622320f44ac69b626e6fe802e6c",
+      "license_status": "Pinned root MIT terms inspected; transitive dependency terms not appraised",
+      "evidence_depth": "pinned README and root license inspected; implementation/tests not inspected or run",
+      "reason": "Schema-driven form equivalent with documented Bootstrap 3/jQuery dependencies; follow-up/history and modern compatibility unverified.",
+      "next_check": "Inspect pinned schema validation implementation and test definitions, permission boundaries and equivalent spreadsheet/form path; benchmark synthetic adaptation before adoption.",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "pool_id": "Q-NEXT-093",
+      "kind": "paper",
+      "title": "Talk Freely, Execute Strictly: Schema-Gated Agentic AI for Flexible and Reproducible Scientific Workflows",
+      "discovery_url": "https://arxiv.org/abs/2603.06394v1",
+      "canonical_url": "https://arxiv.org/abs/2603.06394v1",
+      "source_version": "2603.06394v1",
+      "state": "verify",
+      "discovered_date": "2026-10-25",
+      "license_status": "Full-text reuse terms not appraised; bibliographic reference only",
+      "evidence_depth": "primary abstract and version metadata only",
+      "reason": "Composed-action schema gating is relevant; model-judge agreement is not independent evidence of execution correctness or effort savings.",
+      "next_check": "Inspect full methods, actual execution-boundary implementation and human/operational baselines; distinguish architecture scoring from validated workflow behavior.",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
     }
   ],
   "reconsideration_history": [
@@ -1639,6 +1698,15 @@
       "disposition": "Separate source review accepted; ready for canonical addition at source-level tier, not inserted",
       "receipt": "staletoast-agent-handoff-kit-addition-2026-10-24.json",
       "depth": "README mechanism screen with supplemental pinned source trace; tests not run"
+    },
+    {
+      "date": "2026-10-25",
+      "pool_id": "Q-NEXT-038",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "Selected full-text methods/threats appraisal; retain in pool pending artifact-level verification",
+      "receipt": "staletoast-scout-2026-10-25.md",
+      "depth": "selected full-text, no artifact test/proof execution or independent reproduction"
     }
   ]
 }
