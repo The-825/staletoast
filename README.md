@@ -51,8 +51,15 @@ derived `site/data/reader-guide.json` with the reader-guide command above. Each
 selection retains the existing finding, evidence depth and limitation plus an
 editorial reason. Missing sources and unpromoted papers fail the build. This is
 not a quality score, new evidence review or operational recommendation. The
-guide is not yet part of the versioned catalog export or live website; consumer
-integration must preserve its source hashes and review status.
+guide is separate from the versioned catalog export. Commit its reviewed inputs
+before building, then use `python site/build_reader_guide.py --freeze` to retain
+an immutable `exports/reader-guide/<source-revision>.json`. Consumers must pin
+that exact revision and the frozen file's SHA-256 digest. Never consume a mutable
+working copy as an approved guide. Its website integration and review status
+remain separate from source generation.
+Input hashes use UTF-8 with LF line endings; the frozen output digest binds the
+actual exported file bytes. An absent structured counterevidence list does not
+mean no contrary evidence exists: findings and limitations remain authoritative.
 
 The initial import preserves selected-path Git history from Breadcrumbs.
 [Migration provenance](docs/migration-provenance.json) records the original

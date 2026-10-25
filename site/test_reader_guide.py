@@ -6,7 +6,7 @@ from build_reader_guide import build
 
 class ReaderGuideTests(unittest.TestCase):
     def fixtures(self):
-        config = {'date': '2026-10-24', 'status': 'proposal', 'collections': [
+        config = {'schema_version': 1, 'date': '2026-10-24', 'status': 'proposal', 'collections': [
             {'id': 'question', 'title': 'A question', 'description': 'Context',
              'selections': [{'kind': 'research', 'id': '010', 'why_selected': 'Reason'}]}]}
         rows = [{'id': '010', 'record_state': 'reviewed-catalog', 'title': 'Study',
@@ -39,6 +39,40 @@ class ReaderGuideTests(unittest.TestCase):
         config['collections'][0]['selections'][0].update(kind='repository', id='R-001')
         with self.assertRaises(ValueError):
             build(config, [], [{'id': 'R-001', 'evidence_depth': 'source-assessment'}])
+
+    def test_empty_editorial_reason_is_rejected(self):
+        config, rows = self.fixtures()
+        config['collections'][0]['selections'][0]['why_selected'] = '  '
+        with self.assertRaises(ValueError):
+            build(config, rows, [])
+
+    def test_malformed_editorial_schema_is_rejected(self):
+        for change in ['version', 'title', 'description', 'identity', 'empty-selections', 'empty-collections']:
+            config, rows = self.fixtures()
+            if change == 'version':
+                config['schema_version'] = 2
+            elif change == 'empty-collections':
+                config['collections'] = []
+            elif change == 'empty-selections':
+                config['collections'][0]['selections'] = []
+            else:
+                config['collections'][0][{'identity': 'id'}.get(change, change)] = '  '
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                build(config, rows, [])
+
+    def test_repository_summary_keeps_original_evidence_without_repeating_it(self):
+        config, _ = self.fixtures()
+        item = config['collections'][0]['selections'][0]
+        item.update(kind='repository', id='R-001', takeaway='Visible recovery mechanism',
+                    limits='Not executed')
+        rows = [{'id': 'R-001', 'repository': 'example/project', 'url': 'https://example.org',
+                 'evidence_depth': 'readme-screened', 'evidence_note': 'Original bounded source note'}]
+        card = build(config, [], rows)['collections'][0]['selections'][0]
+        self.assertEqual('Original bounded source note', card['original_evidence_note'])
+        self.assertNotEqual(card['takeaway'], card['limits'])
+        item['limits'] = item['takeaway']
+        with self.assertRaises(ValueError):
+            build(config, [], rows)
 
 
 if __name__ == '__main__':
