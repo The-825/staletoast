@@ -1707,6 +1707,41 @@
       "disposition": "Selected full-text methods/threats appraisal; retain in pool pending artifact-level verification",
       "receipt": "staletoast-scout-2026-10-25.md",
       "depth": "selected full-text, no artifact test/proof execution or independent reproduction"
+    },
+    {
+      "date": "2026-10-25",
+      "pool_id": "Q-NEXT-006",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "retain in pool; selected static appraisal; existing native equivalent, no new matcher or adoption",
+      "receipt": "staletoast-q006-reconsideration-2026-10-25.md",
+      "depth": "selected pinned scorer/matcher/package/license source and test definitions inspected by separate appraiser; not executed or independently retrieved by this update",
+      "canonical_url": "https://github.com/langchain-ai/agentevals",
+      "snapshot_commit": "946ad15b9f2ce9bc9843edd2bb773bd07d78ca7e",
+      "source_change": "stored pin unchanged; deeper evidence, not upstream improvement",
+      "license_status": "Pinned root MIT inspected by source appraiser; dependency/runtime terms not appraised",
+      "native_consumer": {
+        "component": "task-outcome-projection.js",
+        "revision": "1d0f95d52e161822df6778947d224c1fad70ccce",
+        "disposition": "existing native equivalent; reuse contract",
+        "evidence_basis": "consumer-owner disposition, not independent native-source review by this update",
+        "coverage": [
+          "completed digest plus current passing validation and applicable independence",
+          "explicit prerequisite DAG; independent reorder need not preserve provenance digest",
+          "typed exact key sets distinguish absent and invalid null",
+          "unknown/duplicate references and retries after validated completion refused",
+          "invalid fields and malformed input held without accepted event"
+        ],
+        "retained_owner_check_counts": {
+          "source": 39,
+          "integration": 7
+        },
+        "checks_rerun": false,
+        "remaining_boundary": "authenticated actual effects and durable consumer integration"
+      },
+      "upstream_execution": false,
+      "new_canonical_additions": 0,
+      "adoption": "not established"
     }
   ]
 }
