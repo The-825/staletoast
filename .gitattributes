@@ -1,0 +1,6 @@
+site/concept_lineage_runtime.py text eol=lf
+site/build_concept_lineage.py text eol=lf
+docs/staletoast-concept-links.json text eol=lf
+site/data/concept-lineage.json text eol=lf
+site/data/concept-lineage-input-manifest.json text eol=lf
+concept-lineage-pin.json text eol=lf
