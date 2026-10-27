@@ -66,10 +66,11 @@ def git_bytes(*args):
     return result.stdout
 
 
-def revision(value, label):
+def revision(value, label, local=True):
     if not HEX40.fullmatch(value or ''):
         raise BuildError(label + ' must be a full lowercase 40 hex commit')
-    git_bytes('cat-file', '-e', value + '^{commit}')
+    if local:
+        git_bytes('cat-file', '-e', value + '^{commit}')
     return value
 
 
@@ -163,7 +164,8 @@ def build_outputs(catalog_rev, builder_rev, supplier_rev, input_rev):
     rt = load_runtime()
     catalog_rev = revision(catalog_rev, 'catalog revision')
     builder_rev = revision(builder_rev, 'builder revision')
-    supplier_rev = revision(supplier_rev, 'supplier revision')
+    # The supplier commit lives in another repository, so only its shape and the pinned constant are checked.
+    supplier_rev = revision(supplier_rev, 'supplier revision', local=False)
     input_rev = revision(input_rev, 'input revision')
     verify_revisions(catalog_rev, builder_rev, supplier_rev, input_rev)
     landscape = json.loads(working(LANDSCAPE, True).decode('utf-8'))
