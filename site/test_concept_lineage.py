@@ -56,6 +56,13 @@ class SourceMappingTests(unittest.TestCase):
         idx = self.rt.validate_graph(packet)
         self.assertEqual(len(idx['sources']), 335)
 
+    def test_catalog_revision_is_tagged_and_string_spelling_fails(self):
+        packet = self.packet()
+        self.assertEqual(packet['sources'][0]['catalog_revision'], builder.tagged_git(self.catalog))
+        packet['sources'][0]['catalog_revision'] = self.catalog
+        with self.assertRaises(self.rt.LineageError):
+            self.rt.validate_graph(packet)
+
     def test_identity_depth_and_version_are_copied_exactly(self):
         rows = {r['record_id']: r for r in self.packet()['sources']}
         for item in self.ledger['repositories']:
@@ -100,7 +107,7 @@ class SourceMappingTests(unittest.TestCase):
     def test_synthetic_mapping_joins_real_sources(self):
         packet = self.packet()
         first = packet['sources'][0]['id']
-        packet['concepts'] = [{'id': OWNER + ':concept:synthetic', 'owner': 'example', 'title': 'Synthetic',
+        packet['concepts'] = [{'id': OWNER + ':concept:synthetic', 'owner': OWNER, 'title': 'Synthetic',
                                'summary': 'Synthetic mapping for the test.', 'source_ids': [first],
                                'relationship': 'conceptual_similarity', 'origin_evidence_id': None}]
         self.rt.validate_graph(packet)
@@ -116,7 +123,7 @@ class SourceMappingTests(unittest.TestCase):
                 'id': sid, 'owner': OWNER, 'record_kind': 'advisory', 'record_id': 'adv-%03d' % n,
                 'title': 'Advisory %d' % n, 'url': 'https://arxiv.org/abs/0000.%05d' % n,
                 'upstream_version': {'kind': 'unknown', 'value': None, 'reason': 'not_captured'},
-                'catalog_revision': self.catalog, 'aliases': [], 'evidence_depth': 'unverified'})
+                'catalog_revision': builder.tagged_git(self.catalog), 'aliases': [], 'evidence_depth': 'unverified'})
         view = self.rt.derive(packet)
         self.assertEqual(sum(view['totals'].values()), 0)
         self.assertEqual(view['source_count'], 415)
@@ -158,7 +165,20 @@ class MappingFileTests(unittest.TestCase):
         def bad_ref(doc):
             doc['admission']['review_record_ref'] = 'not an id'
 
-        for mutate in (add_concept, extra_key, bad_policy, bad_class, bad_ref):
+        def dot_segment_ref(doc):
+            doc['admission']['review_record_ref'] = OWNER + ':evidence:review/../other'
+
+        def admission_extra(doc):
+            doc['admission']['reviewer'] = 'x'
+
+        def admission_version(doc):
+            doc['admission']['schema_version'] = 'concept-lineage-admission/2'
+
+        def mappings_type(doc):
+            doc['mappings']['uses'] = {}
+
+        for mutate in (add_concept, extra_key, bad_policy, bad_class, bad_ref, dot_segment_ref,
+                       admission_extra, admission_version, mappings_type):
             with self.assertRaises((builder.BuildError, RT.LineageError)):
                 self.read_with(mutate)
 
@@ -201,17 +221,31 @@ class GeneratedArtifactTests(unittest.TestCase):
         self.assertEqual(self.pin['runtime_sha256'], hashlib.sha256((ROOT / builder.RUNTIME).read_bytes()).hexdigest())
         self.assertEqual(self.pin['builder_sha256'], hashlib.sha256((ROOT / builder.BUILDER).read_bytes()).hexdigest())
         self.assertEqual(self.pin['projection_sha256'], hashlib.sha256((ROOT / builder.PROJECTION).read_bytes()).hexdigest())
-        self.assertNotEqual(self.pin['projection_revision']['value'], self.pin['builder_revision'])
+        self.assertNotEqual(self.pin['projection_revision'], self.pin['builder_revision'])
+        RT.verify_pin_chain(self.pin, (ROOT / builder.MANIFEST).read_bytes(), (ROOT / builder.PROJECTION).read_bytes())
+
+    def test_string_revisions_and_unknown_fields_fail_in_envelopes(self):
+        manifest = json.loads((ROOT / builder.MANIFEST).read_text(encoding='utf-8'))
+        for name in ('catalog_revision', 'builder_revision', 'supplier_revision'):
+            self.assertEqual(manifest[name]['kind'], 'git')
+            with self.assertRaises(RT.LineageError):
+                RT.validate_input_manifest(dict(manifest, **{name: manifest[name]['value']}))
+            with self.assertRaises(RT.LineageError):
+                RT.validate_pin(dict(self.pin, **{name: self.pin[name]['value']}))
+        with self.assertRaises(RT.LineageError):
+            RT.validate_pin(dict(self.pin, latest=True))
+        with self.assertRaises(RT.LineageError):
+            RT.validate_input_manifest(dict(manifest, extra=1))
 
     def run_cli(self, *args):
         return subprocess.run([sys.executable, str(ROOT / 'site' / 'build_concept_lineage.py')] + list(args),
                               cwd=str(ROOT), capture_output=True, text=True)
 
     def test_real_builder_cli_reproduces_committed_outputs(self):
-        result = self.run_cli('build', '--check', '--catalog-revision', self.pin['catalog_revision'],
-                              '--builder-revision', self.pin['builder_revision'],
-                              '--supplier-revision', self.pin['supplier_revision'],
-                              '--input-revision', self.pin['builder_revision'])
+        result = self.run_cli('build', '--check', '--catalog-revision', self.pin['catalog_revision']['value'],
+                              '--builder-revision', self.pin['builder_revision']['value'],
+                              '--supplier-revision', self.pin['supplier_revision']['value'],
+                              '--input-revision', self.pin['builder_revision']['value'])
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('"repositories": 335', result.stdout)
 
@@ -221,15 +255,16 @@ class GeneratedArtifactTests(unittest.TestCase):
 
     def test_wrong_revisions_are_refused(self):
         bad = '0' * 40
-        result = self.run_cli('build', '--catalog-revision', bad, '--builder-revision', self.pin['builder_revision'],
-                              '--supplier-revision', self.pin['supplier_revision'],
-                              '--input-revision', self.pin['builder_revision'])
+        builder_rev = self.pin['builder_revision']['value']
+        result = self.run_cli('build', '--catalog-revision', bad, '--builder-revision', builder_rev,
+                              '--supplier-revision', self.pin['supplier_revision']['value'],
+                              '--input-revision', builder_rev)
         self.assertEqual(result.returncode, 2)
         self.assertNotIn('Traceback', result.stderr)
-        result = self.run_cli('build', '--catalog-revision', self.pin['catalog_revision'],
-                              '--builder-revision', self.pin['builder_revision'],
-                              '--supplier-revision', self.pin['builder_revision'],
-                              '--input-revision', self.pin['builder_revision'])
+        result = self.run_cli('build', '--catalog-revision', self.pin['catalog_revision']['value'],
+                              '--builder-revision', builder_rev,
+                              '--supplier-revision', builder_rev,
+                              '--input-revision', builder_rev)
         self.assertEqual(result.returncode, 2)
 
 

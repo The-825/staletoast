@@ -21,7 +21,7 @@ Each of the 335 repository records in `docs/collaborative-intelligence-repositor
 
 ## Commit order
 
-Three ordered commits follow the catalog base so nothing references itself: the builder, runtime copy, mappings and attributes; then the generated projection and manifest; then the pin that names the projection commit. Revisions are explicit builder arguments checked against Git blob bytes, never read from mutable HEAD.
+Three ordered commits follow the catalog base so nothing references itself: the builder, runtime copy, mappings and attributes; then the generated projection and manifest; then the pin that names the projection commit. Revisions are explicit builder arguments checked against Git blob bytes, never read from mutable HEAD. Command-line flags take raw 40-hex commits; every persisted revision (source `catalog_revision`, manifest and pin catalog/builder/supplier/projection revisions) is a tagged `{kind: "git", value, reason: null}` version. The mapping file, input manifest and pin are checked with the engine's shared exact-envelope validators, so unknown keys, other schema versions and string revisions fail. A later correction adds a new builder, projection and pin commit in the same order; earlier commits stay in history.
 
 ```
 python site/build_concept_lineage.py build --catalog-revision <sha> --builder-revision <sha> --supplier-revision <sha> --input-revision <sha> --check

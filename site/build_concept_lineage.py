@@ -31,9 +31,9 @@ PIN = 'concept-lineage-pin.json'
 INPUTS = [LANDSCAPE, MAPPINGS, RUNTIME, BUILDER]
 
 # Pinned supplier artifacts: the portable engine copy and its contract.
-SUPPLIER_REVISION = '9fd1ab3180b5de1cb293a7c3f27734fb8c7cde4c'
-RUNTIME_SHA256 = 'aecf4942251461be29d9e6ad3354cbfe32f6e6e5f72bb75ba4f97f388ca80d1a'
-CONTRACT_SHA256 = '516523b784f49a2c0112084b8ab87a902120898915d38aeeec4816981e8fcfb5'
+SUPPLIER_REVISION = 'e039684e53c3fa020f9c594990a99bd882b2d946'
+RUNTIME_SHA256 = '46665aa683527a66d02941ded6efedebd2c54065afaee53a53e2c0c670916ed4'
+CONTRACT_SHA256 = 'b4c54fb0af5b4a6388da717afdf5ebd5b9513c348e403d90a39cb841b84b8106'
 
 MAPPING_ARRAYS = ('concepts', 'consumers', 'uses', 'evidence', 'refinements')
 HEX40 = re.compile(r'[0-9a-f]{40}')
@@ -88,28 +88,8 @@ def tagged_git(value):
 
 
 def read_mappings(rt):
-    doc = rt.parse_json_bytes(working(MAPPINGS))
-    if not isinstance(doc, dict) or set(doc) != {'schema_version', 'mappings', 'admission'}:
-        raise BuildError('mapping wrapper keys are not exact')
-    if doc['schema_version'] != 'concept-lineage-mappings/1':
-        raise BuildError('mapping schema version')
-    mappings, admission = doc['mappings'], doc['admission']
-    if not isinstance(mappings, dict) or set(mappings) != set(MAPPING_ARRAYS):
-        raise BuildError('mapping arrays are not exact')
-    if not isinstance(admission, dict) or set(admission) != {
-            'schema_version', 'packet_sha256', 'policy_sha256', 'classification', 'review_record_ref'}:
-        raise BuildError('admission keys are not exact')
-    if admission['schema_version'] != 'concept-lineage-admission/1':
-        raise BuildError('admission schema version')
-    if admission['classification'] not in ('public', 'synthetic_public'):
-        raise BuildError('admission classification')
-    if not isinstance(admission['review_record_ref'], str) or not re.fullmatch(rt.ID_PATTERN, admission['review_record_ref']):
-        raise BuildError('review record reference grammar')
-    if admission['packet_sha256'] != rt.canonical_sha256(mappings):
-        raise BuildError('mapping digest does not match admission')
-    if admission['policy_sha256'] != CONTRACT_SHA256:
-        raise BuildError('admission policy digest does not match the pinned contract')
-    return mappings, admission
+    """Exact mapping wrapper and admission, checked by the shared supplier validator."""
+    return rt.validate_mapping_document(rt.parse_json_bytes(working(MAPPINGS)), CONTRACT_SHA256)
 
 
 def source_rows(landscape, catalog_revision):
@@ -126,7 +106,7 @@ def source_rows(landscape, catalog_revision):
             'title': item['repository'],
             'url': item['url'],
             'upstream_version': tagged_git(version),
-            'catalog_revision': catalog_revision,
+            'catalog_revision': tagged_git(catalog_revision),
             'aliases': ['%s:repository:%s' % (OWNER, alias['key']) for alias in item['aliases']],
             'evidence_depth': item['evidence_depth'],
         })
@@ -178,8 +158,8 @@ def build_outputs(catalog_rev, builder_rev, supplier_rev, input_rev):
               for path in sorted(INPUTS)]
     manifest = {
         'schema_version': 'concept-lineage-input/1',
-        'catalog_revision': catalog_rev,
-        'builder_revision': builder_rev,
+        'catalog_revision': tagged_git(catalog_rev),
+        'builder_revision': tagged_git(builder_rev),
         'supplier_revision': tagged_git(supplier_rev),
         'contract_sha256': CONTRACT_SHA256,
         'runtime_sha256': RUNTIME_SHA256,
@@ -187,7 +167,7 @@ def build_outputs(catalog_rev, builder_rev, supplier_rev, input_rev):
         'mapping_sha256': admission['packet_sha256'],
         'inputs': inputs,
     }
-    manifest_bytes = rt.canonical_bytes(manifest)
+    manifest_bytes = rt.canonical_bytes(rt.validate_input_manifest(manifest))
     projection = rt.build_projection(packet, sha(manifest_bytes))
     return manifest_bytes, rt.canonical_bytes(projection), ledger_report(landscape)
 
@@ -216,22 +196,17 @@ def pin_document(projection_rev):
     projection_bytes = working(PROJECTION)
     if blob(projection_rev, MANIFEST) != manifest_bytes or blob(projection_rev, PROJECTION) != projection_bytes:
         raise BuildError('projection revision does not contain the working projection and manifest bytes')
-    manifest = rt.parse_json_bytes(manifest_bytes)
-    projection = rt.validate_projection(rt.parse_json_bytes(projection_bytes))
-    if manifest_bytes != rt.canonical_bytes(manifest) or projection_bytes != rt.canonical_bytes(projection):
-        raise BuildError('generated files are not canonical')
-    if projection['input_manifest_sha256'] != sha(manifest_bytes):
-        raise BuildError('projection does not reference this input manifest')
+    manifest = rt.validate_input_manifest(rt.parse_json_bytes(manifest_bytes))
     if manifest['runtime_sha256'] != RUNTIME_SHA256 or manifest['contract_sha256'] != CONTRACT_SHA256:
         raise BuildError('manifest pins differ from the supplier pins')
     if manifest['supplier_revision'] != tagged_git(SUPPLIER_REVISION):
         raise BuildError('manifest supplier revision differs')
-    return {
+    pin = {
         'schema_version': 'concept-lineage-pin/1',
         'owner_repository': OWNER,
         'catalog_revision': manifest['catalog_revision'],
         'builder_revision': manifest['builder_revision'],
-        'supplier_revision': SUPPLIER_REVISION,
+        'supplier_revision': manifest['supplier_revision'],
         'projection_revision': tagged_git(projection_rev),
         'contract_sha256': CONTRACT_SHA256,
         'runtime_sha256': RUNTIME_SHA256,
@@ -240,6 +215,9 @@ def pin_document(projection_rev):
         'input_manifest_sha256': sha(manifest_bytes),
         'projection_sha256': sha(projection_bytes),
     }
+    # Exact envelope shapes, canonical bytes and digest bindings, via the shared supplier helper.
+    rt.verify_pin_chain(pin, manifest_bytes, projection_bytes)
+    return pin
 
 
 def command_pin(args):
@@ -249,7 +227,7 @@ def command_pin(args):
     if args.check:
         if not (ROOT / PIN).exists():
             raise BuildError('pin file is missing')
-        existing = rt.parse_json_bytes((ROOT / PIN).read_bytes())
+        existing = rt.validate_pin(rt.parse_json_bytes((ROOT / PIN).read_bytes()))
         if (ROOT / PIN).read_bytes() != rt.canonical_bytes(pin_document(existing['projection_revision']['value'])):
             raise BuildError('pin differs from the verified projection')
     print('pin ok')

@@ -10,7 +10,7 @@
   "admission": {
     "schema_version": "concept-lineage-admission/1",
     "packet_sha256": "d89a416cd3c485f29c5bd6f30a53f0461d80c6a89e80b886392ca21629dc7b66",
-    "policy_sha256": "516523b784f49a2c0112084b8ab87a902120898915d38aeeec4816981e8fcfb5",
+    "policy_sha256": "b4c54fb0af5b4a6388da717afdf5ebd5b9513c348e403d90a39cb841b84b8106",
     "classification": "public",
     "review_record_ref": "The-825/staletoast:evidence:empty-mapping-admission"
   }
