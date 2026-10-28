@@ -56,6 +56,18 @@ class SourceMappingTests(unittest.TestCase):
         idx = self.rt.validate_graph(packet)
         self.assertEqual(len(idx['sources']), 335)
 
+    def test_source_order_does_not_change_projection_or_render(self):
+        packet = self.packet()
+        permuted = copy.deepcopy(packet)
+        permuted['sources'].reverse()
+        for source in permuted['sources']:
+            source['aliases'].reverse()
+        first = self.rt.build_projection(packet, 'a' * 64)
+        second = self.rt.build_projection(permuted, 'a' * 64)
+        self.assertEqual(first['packet_sha256'], second['packet_sha256'])
+        self.assertEqual(self.rt.canonical_bytes(first), self.rt.canonical_bytes(second))
+        self.assertEqual(self.rt.render_html(first), self.rt.render_html(second))
+
     def test_catalog_revision_is_tagged_and_string_spelling_fails(self):
         packet = self.packet()
         self.assertEqual(packet['sources'][0]['catalog_revision'], builder.tagged_git(self.catalog))

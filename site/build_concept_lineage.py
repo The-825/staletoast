@@ -31,8 +31,8 @@ PIN = 'concept-lineage-pin.json'
 INPUTS = [LANDSCAPE, MAPPINGS, RUNTIME, BUILDER]
 
 # Pinned supplier artifacts: the portable engine copy and its contract.
-SUPPLIER_REVISION = 'e039684e53c3fa020f9c594990a99bd882b2d946'
-RUNTIME_SHA256 = '46665aa683527a66d02941ded6efedebd2c54065afaee53a53e2c0c670916ed4'
+SUPPLIER_REVISION = '2bb14d63d9a44c2bea38bba8c8fbdcf5e4d08d71'
+RUNTIME_SHA256 = '4d81d11cbba06b1c330bc4ead0972becb125d85e727070e1e2c3f232c5122df9'
 CONTRACT_SHA256 = 'b4c54fb0af5b4a6388da717afdf5ebd5b9513c348e403d90a39cb841b84b8106'
 
 MAPPING_ARRAYS = ('concepts', 'consumers', 'uses', 'evidence', 'refinements')
