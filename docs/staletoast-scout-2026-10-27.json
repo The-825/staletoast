@@ -1,0 +1,203 @@
+{
+  "date": "2026-10-27",
+  "wake": "2026-10-27T15:58:27.919Z",
+  "owner": "Task22 local Codex",
+  "base_head": "701a1a8c6c421e3f981863b0a911aafc895b2bf5",
+  "before_working_pool_sha256": "f9e9f234658327230fa96eeb93936798873abb866b65dbf7e457f67e357859ae",
+  "original_pool_records": 93,
+  "records_unchanged": true,
+  "prior_history_unchanged": true,
+  "appended_reconsiderations": [
+    {
+      "date": "2026-10-27",
+      "pool_id": "Q-NEXT-081",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "backlog; native synthetic comparison proposal only, no catalog addition or adoption",
+      "receipt": "staletoast-scout-2026-10-27.json",
+      "depth": "selected full-text registry/example/future-work appraisal; no software execution"
+    },
+    {
+      "date": "2026-10-27",
+      "pool_id": "Q-NEXT-089",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "backlog; native synthetic comparison proposal only, no catalog addition or adoption",
+      "receipt": "staletoast-scout-2026-10-27.json",
+      "depth": "pinned trace/completeness code,two test definitions,README and license; no execution"
+    }
+  ],
+  "external_read_attempts": 8,
+  "successful_reads": 8,
+  "failed_reads": 0,
+  "discovery_queries": 0,
+  "retries": 0,
+  "requests": [
+    {
+      "request": 1,
+      "url": "https://arxiv.org/html/2110.07117v2",
+      "tool": "Python urllib GET",
+      "resolved_url": "https://arxiv.org/html/2110.07117v2",
+      "status": "read",
+      "file": "paper.html",
+      "sha256": "a48d542cd077ad8ff2530c801aaaf85fcd7072c031bb26e06fe2e0a151bbacab"
+    },
+    {
+      "request": 2,
+      "url": "https://api.github.com/repos/stevenblough/row-level-prov/git/trees/7d4dca0c813c55e5972381f34eaae695aaeb8711?recursive=1",
+      "tool": "Python urllib GET",
+      "resolved_url": "https://api.github.com/repos/stevenblough/row-level-prov/git/trees/7d4dca0c813c55e5972381f34eaae695aaeb8711?recursive=1",
+      "status": "read",
+      "file": "tree.json",
+      "sha256": "bfd1c3991cff5e6487f581982aaa7851015655055cfcde2b533acb43a57da001"
+    },
+    {
+      "request": 3,
+      "url": "https://raw.githubusercontent.com/stevenblough/row-level-prov/7d4dca0c813c55e5972381f34eaae695aaeb8711/LICENSE.md",
+      "path": "LICENSE.md",
+      "tool": "Python urllib GET",
+      "status": "read",
+      "file": "03-LICENSE.md",
+      "sha256": "945e137ba6aa300a40a1a7b862c4bf758b9078e095e33d8f2c49fc27ab057792",
+      "git_blob_sha": "eec01733206912aa5c97dee60d2fdd39ffecb2d6",
+      "pinned_tree_match": true
+    },
+    {
+      "request": 4,
+      "url": "https://raw.githubusercontent.com/stevenblough/row-level-prov/7d4dca0c813c55e5972381f34eaae695aaeb8711/README.md",
+      "path": "README.md",
+      "tool": "Python urllib GET",
+      "status": "read",
+      "file": "04-README.md",
+      "sha256": "9b4a86f1d8859ea8891e87763de9934afc5b751725951371c859a6b6ada40d38",
+      "git_blob_sha": "f36337a9132fc1ed3a17f93d3ece90c82a1d543b",
+      "pinned_tree_match": true
+    },
+    {
+      "request": 5,
+      "url": "https://raw.githubusercontent.com/stevenblough/row-level-prov/7d4dca0c813c55e5972381f34eaae695aaeb8711/prov/trace.py",
+      "path": "prov/trace.py",
+      "tool": "Python urllib GET",
+      "status": "read",
+      "file": "05-trace.py",
+      "sha256": "a8046e72d89bcab8cd9c69537f814a19194870e325d53780410c8602e089ccae",
+      "git_blob_sha": "c060f05b54260dee4223d879187e314009d22c5f",
+      "pinned_tree_match": true
+    },
+    {
+      "request": 6,
+      "url": "https://raw.githubusercontent.com/stevenblough/row-level-prov/7d4dca0c813c55e5972381f34eaae695aaeb8711/prov/detect_completeness.py",
+      "path": "prov/detect_completeness.py",
+      "tool": "Python urllib GET",
+      "status": "read",
+      "file": "06-detect_completeness.py",
+      "sha256": "a674504d6d28151148e30248c5354dde0f8a2d0a5e0494ef3aac55a8ffc6f281",
+      "git_blob_sha": "142b031af485ac9720e95eeb5d7da595c31432d9",
+      "pinned_tree_match": true
+    },
+    {
+      "request": 7,
+      "url": "https://raw.githubusercontent.com/stevenblough/row-level-prov/7d4dca0c813c55e5972381f34eaae695aaeb8711/tests/test_soundness.py",
+      "path": "tests/test_soundness.py",
+      "tool": "Python urllib GET",
+      "status": "read",
+      "file": "07-test_soundness.py",
+      "sha256": "670753d320d7c718d0f184fa4c85c61ab8e400739bf8daf56a2c12cf9df16a61",
+      "git_blob_sha": "871874a2a3224518e84f51330c61ea07c27e8375",
+      "pinned_tree_match": true
+    },
+    {
+      "request": 8,
+      "url": "https://raw.githubusercontent.com/stevenblough/row-level-prov/7d4dca0c813c55e5972381f34eaae695aaeb8711/tests/test_predicate_soundness.py",
+      "path": "tests/test_predicate_soundness.py",
+      "tool": "Python urllib GET",
+      "status": "read",
+      "file": "08-test_predicate_soundness.py",
+      "sha256": "0980f22e7f28b5275a919ece2af1150fa517c7e7a60caa242966c0f24c98234b",
+      "git_blob_sha": "b6963e38fa1709fef9ca78d3fca1164d683f702c",
+      "pinned_tree_match": true
+    }
+  ],
+  "counts": {
+    "new_metadata": 0,
+    "primary_research_sources": 1,
+    "primary_repository_sources": 1,
+    "deep_appraisals": 2,
+    "proposed_catalog_additions": 0,
+    "accepted_catalog_additions": 0
+  },
+  "same_day_dedup_scope": "Task22outputs and listed StaleToastworktree docs only;noOct27dailyreceipt;starrefresh/graphreviews excluded",
+  "native_checks": {
+    "priorities": "pass123research/335repos",
+    "landscape": "pass0unresolved",
+    "promotions": "pass230detailed/105portable",
+    "triage": "pass105descriptive",
+    "site_unittests": "30passed",
+    "git_diff_check": "passed",
+    "pool_original93_and_history": "passed",
+    "Oct26receipts_unchanged": "passed",
+    "canonical_inputs_unchanged": "passed"
+  },
+  "upstream_tests": "definitions inspected,not executed",
+  "source_pin": "7d4dca0c813c55e5972381f34eaae695aaeb8711",
+  "paper_version": "2110.07117v2,2022-05-04",
+  "license": "Q089pinned PolyFormNoncommercial1.0.0;commercial code reuse not cleared;paper software rights unverified",
+  "limits": [
+    "Independent predicate oracle and shared helper not inspected",
+    "No cursor enforcement established",
+    "No scientific validity upgrade or adoption",
+    "No123editorial or335repository record changes",
+    "No upstreamcode/install/provider/newworker/commit/push/freeze/publication"
+  ],
+  "report_sha256": "3a147aa0fa1306ef1b8043191d96a4dbeca8d2da3568d5aedf0227a8a66ef9fc",
+  "evidence_files": [
+    {
+      "file": "03-LICENSE.md",
+      "sha256": "945e137ba6aa300a40a1a7b862c4bf758b9078e095e33d8f2c49fc27ab057792"
+    },
+    {
+      "file": "04-README.md",
+      "sha256": "9b4a86f1d8859ea8891e87763de9934afc5b751725951371c859a6b6ada40d38"
+    },
+    {
+      "file": "05-trace.py",
+      "sha256": "a8046e72d89bcab8cd9c69537f814a19194870e325d53780410c8602e089ccae"
+    },
+    {
+      "file": "06-detect_completeness.py",
+      "sha256": "a674504d6d28151148e30248c5354dde0f8a2d0a5e0494ef3aac55a8ffc6f281"
+    },
+    {
+      "file": "07-test_soundness.py",
+      "sha256": "670753d320d7c718d0f184fa4c85c61ab8e400739bf8daf56a2c12cf9df16a61"
+    },
+    {
+      "file": "08-test_predicate_soundness.py",
+      "sha256": "0980f22e7f28b5275a919ece2af1150fa517c7e7a60caa242966c0f24c98234b"
+    },
+    {
+      "file": "paper.html",
+      "sha256": "a48d542cd077ad8ff2530c801aaaf85fcd7072c031bb26e06fe2e0a151bbacab"
+    },
+    {
+      "file": "paper.txt",
+      "sha256": "a6d5ec83e5ae8f5f82619b062b9014ef1cf5a68e318841ce1ebbd1e7c4027592"
+    },
+    {
+      "file": "pool-before.json",
+      "sha256": "f9e9f234658327230fa96eeb93936798873abb866b65dbf7e457f67e357859ae"
+    },
+    {
+      "file": "pool-before.md",
+      "sha256": "9de252aef06284c5c9c7b547634cce82f72ed546d0148c6d75a6ac2ebc024214"
+    },
+    {
+      "file": "requests.json",
+      "sha256": "f7b0a2af4cae743666a6b799bb914868b2fa092a2554c4b6e28f4ff8c25c63c7"
+    },
+    {
+      "file": "tree.json",
+      "sha256": "bfd1c3991cff5e6487f581982aaa7851015655055cfcde2b533acb43a57da001"
+    }
+  ]
+}

@@ -128,3 +128,15 @@ Original records and rankings retained. Q-NEXT-038 has a later selected full-tex
 ## October 25 reconsideration: Q-NEXT-006
 
 [langchain-ai/agentevals](https://github.com/langchain-ai/agentevals/tree/946ad15b9f2ce9bc9843edd2bb773bd07d78ca7e) retains its original identity, pin and observation. The [dated selected-source appraisal and native-equivalence disposition](staletoast-q006-reconsideration-2026-10-25.md) supersedes its metadata-only limitation within the inspected scope. Existing native task-outcome acceptance already covers the proposed gap; no new matcher, package adoption or canonical addition is proposed. Actual-effect authentication and durable consumer integration remain unestablished. No upstream tests or prior native checks were rerun by this update.
+## October 26, 2026 reconsideration
+
+Q-NEXT-093 and Q-NEXT-091 remain backlog candidates after selected full-text and pinned validation-path review. Prior records and ranks are unchanged. Schema-valid form state does not establish a mandatory, authorized execution boundary. See [dated appraisal](staletoast-scout-2026-10-26.md) and its receipt for limits and the proposed synthetic consumer check. No additions or adoption.
+
+
+## October27,2026 reconsideration
+
+Q-NEXT-081 andQ-NEXT-089 remain backlog after selected methods and pinned implementation/test-definition review. Preserve original rank and analysis. Reconstruct version-bound comparison membership and report missing instrumentation; neither provenance nor checksum consistency establishes source truth or runtime adoption. Q089pinned license is PolyForm Noncommercial1.0.0,not commercial reuse clearance. See [dated appraisal](staletoast-scout-2026-10-27.md). No additions.
+
+## November 1 corpus expansion
+
+377 abstract relevance screens and 665 README relevance screens were added to the searchable source collection, not the Hot100. Original pool records and assessments remain intact. All new sources await human appraisal. See the [batch manifest](staletoast-expansion-2026-11-01.json) for stable source-to-pool links, source versions, screening limits and retrieval digests. The machine-readable pool retains each unselected source; the daily selection cap and monthly reconsideration rule remain separate from this one-time expansion.

@@ -423,6 +423,16 @@ def validate(data: dict) -> list[str]:
             continue
         keys.append(key)
         ids.append(row.get("id"))
+        depth = row.get("evidence_depth")
+        if depth not in {"readme-screened", "source-assessment", "readme-relevance-screened"}:
+            errors.append(f"{key}: unknown evidence depth")
+        if depth == "readme-relevance-screened":
+            if set(row.get("mechanisms", {}).values()) != {"U"} or row.get("claims"):
+                errors.append(f"{key}: relevance screen must not assign mechanism findings or claims")
+            if not re.fullmatch(r"[0-9a-f]{64}", row.get("readme_content_sha256", "")):
+                errors.append(f"{key}: relevance screen lacks README digest")
+            if row.get("assessment_status") != "automated-relevance-screen-only":
+                errors.append(f"{key}: relevance screen status is overstated")
         if row.get("url") != f"https://github.com/{row['repository']}":
             errors.append(f"{key}: URL does not match identity")
         if set(row.get("mechanisms", {})) != set(dimensions):
@@ -484,14 +494,23 @@ def validate(data: dict) -> list[str]:
         "detailed_appraisal_count": sum(row.get("evidence_depth") == "readme-screened" for row in rows),
         "portable_only_count": sum(row.get("evidence_depth") == "source-assessment" for row in rows),
     }
+    if any(row.get("evidence_depth") == "readme-relevance-screened" for row in rows):
+        expected_counts["relevance_screened_count"] = sum(row.get("evidence_depth") == "readme-relevance-screened" for row in rows)
     for field, expected in expected_counts.items():
         if review.get(field) != expected:
             errors.append(f"review summary {field} is stale")
     for row in rows:
         date = row.get("popularity_observed_date")
-        if row.get("id") in later_ids and row.get("stars_observed") is not None:
+        # New intake never falls back to the older global observation date.
+        intake = row.get("id") in later_ids or row.get("evidence_depth") == "readme-relevance-screened"
+        if intake and row.get("stars_observed") is not None:
             if not isinstance(date, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
                 errors.append(f"{row.get('id')}: direct intake popularity observation date is required")
+    database_ids = [row["github_database_id"] for row in rows if "github_database_id" in row]
+    if any(isinstance(value, bool) or not isinstance(value, int) or value <= 0 for value in database_ids):
+        errors.append("GitHub database IDs must be positive integers")
+    elif len(database_ids) != len(set(database_ids)):
+        errors.append("GitHub database IDs are not unique")
     if summary and not re.fullmatch(
         r"[0-9a-f]{40}", summary.get("transfer_upstream_revision", "")
     ):

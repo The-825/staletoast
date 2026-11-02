@@ -100,7 +100,8 @@ def make_edition(edition_date, priorities, landscape, prior_editions):
                   question=priorities["named_question"], charts={})
     for kind in ("research", "repositories"):
         eligible = [row for row in priorities[kind]
-                    if kind == "research" or row["review_depth"] == "readme-screened"]
+                    if (kind == "research" and not row.get("automated_screen", False) and row.get("appraisal_state") != "automated-screen") or
+                       (kind == "repositories" and row["review_depth"] == "readme-screened" and row.get("appraisal_state") != "automated-screen")]
         # Tied priority groups remain visible; position is a display order, not a score.
         eligible.sort(key=lambda row: (row["priority_key"], row["id"]))
         last = {row["id"]: row for row in prior_editions[-1]["charts"][kind]["entries"]} if prior_editions else {}

@@ -26,6 +26,7 @@ class StandaloneTests(unittest.TestCase):
                 build_export.build(freeze=True)
                 first = root / 'exports' / ('a' * 40 + '.json')
                 before = first.read_bytes()
+                self.assertEqual('2.0', json.loads(before)['schema_version'])
                 (data / 'research.json').write_text('[{"id":"new"}]', encoding='utf-8')
                 with self.assertRaisesRegex(ValueError, 'differs'):
                     build_export.build(freeze=True)
@@ -65,6 +66,14 @@ class StandaloneTests(unittest.TestCase):
         export = json.loads((SITE / 'data/catalog-export.json').read_text(encoding='utf-8'))
         self.assertEqual('The-825/staletoast', export['canonical_owner'])
         self.assertEqual('evidence-only', export['authority'])
+        contract = json.loads((ROOT / 'catalog-contract.json').read_text(encoding='utf-8'))
+        self.assertEqual('2.0', export['schema_version'])
+        self.assertEqual(contract['export_schema_version'], export['schema_version'])
+        for name in ('research', 'repositories'):
+            self.assertTrue(all(row['appraisal_state'] in {'automated-screen', 'source-screened'} for row in export['catalogs'][name]))
+        for row in export['catalogs']['research']:
+            if row['appraisal_state'] == 'automated-screen':
+                self.assertIsNone(row['evidenceOrder'])
         revision = catalog_revision()
         self.assertEqual(revision, export['source_revision'])
         archive = ROOT / 'exports' / (revision + '.json')
@@ -78,6 +87,15 @@ class StandaloneTests(unittest.TestCase):
         for chart in charts.values():
             self.assertEqual(100, len(chart['entries']))
             self.assertEqual(len(chart['entries']), len({r['id'] for r in chart['entries']}))
+
+    def test_old_frozen_exports_stay_schema_1_and_unmodified_by_the_new_schema(self):
+        revision = catalog_revision()
+        for path in (ROOT / 'exports').glob('*.json'):
+            if path.stem == revision:
+                continue
+            with path.open(encoding='utf-8') as handle:
+                head = handle.read(200)
+            self.assertIn('"schema_version": "1.0"', head, path.name)
 
     def test_research_profiles_cover_all_chart_archive_identities_without_promoting_candidates(self):
         research = json.loads((SITE / 'data/research.json').read_text(encoding='utf-8'))
