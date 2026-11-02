@@ -16780,5 +16780,44 @@
       ],
       "reason": "Keep insufficient-scope intake in history rather than the active visitor collection."
     }
+  ],
+  "system_fit_assessment_history": [
+    {
+      "date": "2026-11-01",
+      "assessment_id": "staletoast-system-fit-appraisals-2026-11-01",
+      "appraisals": "staletoast-system-fit-appraisals-2026-11-01.json",
+      "routing": "staletoast-system-fit-triage-2026-11-01.json",
+      "baseline_revision": "dd7252af3a5f6cc73296d315d50ee16f016c5ad7",
+      "source_count": 1083,
+      "proposed_research": [
+        "C-137",
+        "C-143",
+        "C-166",
+        "C-201",
+        "C-403",
+        "C-404"
+      ],
+      "proposed_repositories": [
+        "R-626",
+        "R-631",
+        "R-648",
+        "R-673",
+        "R-900",
+        "R-1005",
+        "R-1012",
+        "R-1020",
+        "R-1036",
+        "R-1037"
+      ],
+      "additional_full_text_holds": [
+        "C-055",
+        "C-102"
+      ],
+      "retained_repository_appraisals": [
+        "R-865",
+        "R-1002"
+      ],
+      "disposition": "All existing records/states/history retained. Six paper and ten repository proposals; two repository and two paper appraisals retained in pool. No chart selection or adoption."
+    }
   ]
 }
