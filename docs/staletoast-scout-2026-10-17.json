@@ -1,0 +1,278 @@
+{
+  "client_date": "2026-10-17",
+  "observed_at_utc": "2026-10-17T15:57:34.005968+00:00",
+  "local_source": "3a92bed6e00d7360611d846fd72f8b6248ef3976",
+  "reviewed_source": "44eac5c0bdd1f1d506eca5e0449639f6262c8595; generator files unchanged locally",
+  "gap": "Reliable agent handoff, evidence and state closure with small implementation burden",
+  "queries": [
+    "site.arxiv.org agent handoff state consistency evidence provenance workflow 2026",
+    "site.github.com agent handoff checkpoint evidence receipt state"
+  ],
+  "screen_counts": {
+    "research": 4,
+    "repositories": 5
+  },
+  "research_shortfall": "Four directly relevant canonical primary papers emerged from the bounded query. No fifth paper substituted from vendor guides, Reddit or inaccessible/unidentified conference text. Up to five is the cap, not a filler quota.",
+  "screens": [
+    {
+      "kind": "paper",
+      "title": "Learning to Hand Off: Provably Convergent Workflow Learning under Interface Constraints",
+      "canonical_url": "https://arxiv.org/abs/2605.19140v1",
+      "source_version": "2605.19140v1",
+      "evidence_depth": "versioned primary abstract only",
+      "license_status": "not appraised",
+      "reason": "Full methods and incremental value versus existing handoff/recovery sources not appraised; not selected for ledger intake.",
+      "next_check": "Inspect interface sufficiency, mixing assumptions and coordination-cost baselines; theoretical convergence is not a deployed handoff guarantee.",
+      "pool_id": "Q-NEXT-055",
+      "discovered_date": "2026-10-17",
+      "discovery_url": "https://arxiv.org/abs/2605.19140v1",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "paper",
+      "title": "Reasoning Provenance for Autonomous AI Agents",
+      "canonical_url": "https://arxiv.org/abs/2603.21692v2",
+      "source_version": "2603.21692v2",
+      "evidence_depth": "versioned primary abstract only",
+      "license_status": "not appraised",
+      "reason": "Full methods and incremental value versus existing handoff/recovery sources not appraised; not selected for ledger intake.",
+      "next_check": "Inspect whether observable evidence and recorded rationale are distinguished; preliminary deployment is not independent validation or authority to retain sensitive reasoning records.",
+      "pool_id": "Q-NEXT-056",
+      "discovered_date": "2026-10-17",
+      "discovery_url": "https://arxiv.org/abs/2603.21692v2",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "paper",
+      "title": "PROV-AGENT: Unified Provenance for Tracking AI Agent Interactions in Agentic Workflows",
+      "canonical_url": "https://arxiv.org/abs/2508.02866v3",
+      "source_version": "2508.02866v3",
+      "evidence_depth": "versioned primary abstract only",
+      "license_status": "not appraised",
+      "reason": "Full methods and incremental value versus existing handoff/recovery sources not appraised; not selected for ledger intake.",
+      "next_check": "Inspect provenance joins, measurement overhead, data minimization and failure cases; metadata traceability does not establish correctness.",
+      "pool_id": "Q-NEXT-057",
+      "discovered_date": "2026-10-17",
+      "discovery_url": "https://arxiv.org/abs/2508.02866v3",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "paper",
+      "title": "Reach or Solve? Deep Diving into Agentic RL Gains with Checkpoint Handoffs",
+      "canonical_url": "https://arxiv.org/abs/2609.19636v2",
+      "source_version": "2609.19636v2",
+      "evidence_depth": "versioned primary abstract only",
+      "license_status": "not appraised",
+      "reason": "Full methods and incremental value versus existing handoff/recovery sources not appraised; not selected for ledger intake.",
+      "next_check": "Inspect cloned-state validity and replay assumptions; benchmark RL attribution does not establish cross-provider continuity benefits.",
+      "pool_id": "Q-NEXT-058",
+      "discovered_date": "2026-10-17",
+      "discovery_url": "https://arxiv.org/abs/2609.19636v2",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "agent-runtime-evidence/operational-evidence-plane",
+      "canonical_url": "https://github.com/agent-runtime-evidence/operational-evidence-plane",
+      "snapshot_commit": "331e39e7bb188899e8145161e60d07cdb984efab",
+      "readme_path": "README.md",
+      "readme_sha256": "4b4a4ada7e8a547cba6f4446a6d8ec2e50c0362177491f9a8ab431f8172c331a",
+      "last_commit_date": "2026-10-11T17:58:37Z",
+      "license_status": "Apache-2.0 metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no runtime execution",
+      "reason": "Bounded deterministic mock-agent demonstration, not production-grade reconstruction or independent runtime validation.",
+      "next_check": "Inspect release-to-runtime joins, missing evidence rejection and replay identity against existing checkpoint/authority mechanisms.",
+      "pool_id": "Q-NEXT-059",
+      "discovered_date": "2026-10-17",
+      "discovery_url": "https://github.com/agent-runtime-evidence/operational-evidence-plane",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "djpapzin/agent-handoff-kit",
+      "canonical_url": "https://github.com/djpapzin/agent-handoff-kit",
+      "snapshot_commit": "2171dcef26d203da8dc4fe9883bfe3939882e285",
+      "readme_path": "README.md",
+      "readme_sha256": "af7bf1a70341e4ee376150ee1f0c7688c5bdc1e489b9777909915cebfea3a529",
+      "last_commit_date": "2026-09-27T20:50:25Z",
+      "license_status": "MIT metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no runtime execution",
+      "reason": "Local SQLite receipt atomicity explicitly excludes external exactly-once effects; POSIX demo does not establish Windows behavior.",
+      "next_check": "Trace receipt/checkpoint transaction and stale-generation fencing, compare existing recovery sources and test synthetic ambiguous commit outcomes before adoption.",
+      "pool_id": "Q-NEXT-060",
+      "discovered_date": "2026-10-17",
+      "discovery_url": "https://github.com/djpapzin/agent-handoff-kit",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "shakacode/agent-workflows",
+      "canonical_url": "https://github.com/shakacode/agent-workflows",
+      "snapshot_commit": "d85eceaecac1b8c4d55a7889a806bd89a612a493",
+      "readme_path": "README.md",
+      "readme_sha256": "8e3acc661bd86a80bd7eac267d2b8621620808c2fe748a8d30ba5c726ab8da4e",
+      "last_commit_date": "2026-09-29T03:08:46Z",
+      "license_status": "MIT metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no runtime execution",
+      "reason": "README explicitly retires this workflow pack in favor of Shaka; not a current new-adopter recommendation.",
+      "next_check": "Preserve predecessor lineage and inspect successor separately in a future round; compare repo-owned policy seams with existing native config.",
+      "pool_id": "Q-NEXT-061",
+      "discovered_date": "2026-10-17",
+      "discovery_url": "https://github.com/shakacode/agent-workflows",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "44-pixels/handover-mcp",
+      "canonical_url": "https://github.com/44-pixels/handover-mcp",
+      "snapshot_commit": "b036340342ee64c009231378dc1a288b820474c6",
+      "readme_path": "README.md",
+      "readme_sha256": "3e0caf4d3805886a6fa947f72b5e71bbe18661c3962f08d60ef174180704ae60",
+      "last_commit_date": "2026-08-05T05:33:55Z",
+      "license_status": "MIT metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no runtime execution",
+      "reason": "Hosted shared context and first-party continuity research; independence and data boundary remain unresolved.",
+      "next_check": "Inspect local-versus-hosted persistence, access/deletion/export and benchmark methods; do not upload private context or enable storage.",
+      "pool_id": "Q-NEXT-062",
+      "discovered_date": "2026-10-17",
+      "discovery_url": "https://github.com/44-pixels/handover-mcp",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    },
+    {
+      "kind": "repository",
+      "title": "Jettlin927/agentcarry",
+      "canonical_url": "https://github.com/Jettlin927/agentcarry",
+      "snapshot_commit": "7569460fd6a748c05fd0dfe631ffbf033fa67b76",
+      "readme_path": "README.md",
+      "readme_sha256": "640d49671edbf7ad474369244b37ac00a52d71a0dea13ed6774f652813cb4982",
+      "last_commit_date": "2026-08-03T03:50:39Z",
+      "license_status": "Apache-2.0 metadata only; full terms not appraised",
+      "evidence_depth": "pinned README and metadata; no runtime execution",
+      "reason": "README reports capsule benchmark modes failing next-action and token-ratio gates; continuity benefit is not established.",
+      "next_check": "Inspect loss receipt and freshness checks with synthetic source changes; retain failed benchmark evidence and compare native handoff before any implementation.",
+      "pool_id": "Q-NEXT-063",
+      "discovered_date": "2026-10-17",
+      "discovery_url": "https://github.com/Jettlin927/agentcarry",
+      "state": "verify",
+      "linked_identity": null,
+      "original_rank": null,
+      "disposition": "backlog",
+      "adoption": "not established",
+      "adoption_cost": "unknown"
+    }
+  ],
+  "ledger_additions": {
+    "research": 0,
+    "repositories": 0
+  },
+  "selection_reason": "Full methods/source traces and incremental-value appraisal incomplete. No implementation-ready candidate established.",
+  "original_pool_records_preserved": 54,
+  "pool_size": 63,
+  "ranking_changes": 0,
+  "new_chart_edition": false,
+  "dedup": "Canonical IDs and repo identities checked across docs; no exact matches. Recovery mechanisms overlap prior retained sources and are not counted as corroboration.",
+  "exclusions": [
+    "Reddit posts are discovery signals, not primary research",
+    "Vendor handoff and GitHub workflow guides remain workflow leads, not research papers",
+    "No private BetterMe lineage inspected or projected"
+  ],
+  "limits": [
+    "No upstream execution, installation or provider calls",
+    "License metadata screened; full terms not appraised",
+    "No publication, push, merge or deploy"
+  ],
+  "checks": [
+    {
+      "command": "python site/build_priorities.py --check",
+      "exit_code": 0,
+      "output": "priorities: research=123 repositories=335\n"
+    },
+    {
+      "command": "python site/build_catalogs.py",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "python site/build_discovery.py",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_discovery.py --check",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_export.py",
+      "exit_code": 0,
+      "output": "export: revision=845fa900b546ac61a81dd38339a0b6bb45a36355\n"
+    },
+    {
+      "command": "python -m unittest discover -s site -p test_*.py",
+      "exit_code": 0,
+      "output": "export: revision=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nexport: revision=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 1.220s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/repository_landscape.py --check",
+      "exit_code": 0,
+      "output": "repository_landscape: repositories=335 unresolved=0\n"
+    },
+    {
+      "command": "python scripts/repository_review_promotions.py --check",
+      "exit_code": 0,
+      "output": "repository_review_promotions: detailed_appraisal_count=230 portable_only_count=105 total_repository_count=335 latest_review_wave=R4 latest_review_wave_count=106\n"
+    },
+    {
+      "command": "python scripts/repository_triage.py --check",
+      "exit_code": 0,
+      "output": "repository_triage: portable_only=105 triaged=105 authority=descriptive-only\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "canonical_inputs_unchanged": true,
+  "original_pool_records_deep_equal": true
+}

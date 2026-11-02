@@ -1,0 +1,180 @@
+{
+  "assignment": "SCOUT-20261024",
+  "client_date": "2026-10-24",
+  "trigger": "2026-10-24T16:02:05.472Z",
+  "observed_at_utc": "2026-10-24T16:05:14.781434+00:00",
+  "base_revision": "c29d31f9263cab782b7a5641849f7d80d7189574",
+  "remote_main_verified": "44eac5c0bdd1f1d506eca5e0449639f6262c8595",
+  "review_applicability": "Unpublished local appraisals are not independently reviewed; unchanged main grants no approval",
+  "question": "Can support and dangling-source checks distinguish report completeness from schema validity?",
+  "queries": [],
+  "access": "GitHub recursive tree metadata and selected pinned raw files; no search engine queries. Browser access not needed.",
+  "discovery_counts": {
+    "new_metadata_identities": 0,
+    "new_primary_screens": 0,
+    "existing_repositories_deeper_followup": 1,
+    "existing_research_deeper_followup": 1,
+    "rediscovered_existing_identities": 2,
+    "new_exclusions": 0,
+    "new_pool_records": 0,
+    "new_proposals": 0,
+    "existing_proposals_refined": 1,
+    "canonical_additions_research": 0,
+    "canonical_additions_repositories": 0,
+    "published_additions": 0
+  },
+  "dedup": "Existing Q-NEXT069 and Q-NEXT075 reused; no new identity, alias, fork or evidence family created; prior90pool records retained",
+  "appraisals": [
+    {
+      "pool_id": "Q-NEXT-069",
+      "revision": "2c7fb9188987b9fffc5ec7dbe1c60ec305acca58",
+      "depth": "Pinned complete tree inventory, package scripts, CI, runtime scenario specification and validation guidance; no execution",
+      "finding": "Package scripts and Pages CI build documentation. Inspected tree contains schemas and narrative test matrices, not a located executable semantic validation implementation.",
+      "contrary_evidence": "docs/en/reference/json-schemas.md explicitly requires relationship invariants after structural validation and says structure alone is insufficient for trust. Yesterday schema gap is an implementation boundary, not evidence of a violated implementation promise.",
+      "decision": "Refine existing proposal, do not count yesterday negative controls as new yield",
+      "existing_equivalent": "Native method already retains contradictions and unknowns; D68 separates evidence stages. No new metadata format needed.",
+      "native_acceptance": [
+        "Missing support cannot establish supported status",
+        "Dangling evidence target must remain unresolved",
+        "Evidence from old revision cannot approve changed source",
+        "Unverified control remains unknown",
+        "Schema pass cannot overwrite needs_changes review"
+      ],
+      "license": "Apache2.0 file inspected October23, same pin; no code copied; applicable notices needed before future copying",
+      "cost": "Unknown; native negative fixtures are smallest proposed scope",
+      "disposition": "backlog; refined source appraisal ready for owner review, no implementation or adoption"
+    },
+    {
+      "pool_id": "Q-NEXT-075",
+      "revision": "1d5c07cee08bbd004d194243739e04b237295c7b",
+      "tag": "v0.6.6",
+      "paper": "https://arxiv.org/html/2609.27871v1",
+      "depth": "Pinned corpus enumeration, exclusion logic and test source inspected, not run; individual manifest enumeration incomplete",
+      "finding": "Corpus enumerates loop.yaml files; excluded_reason names negative-requirement, external-tool and unshipped-package paths. Test source lines246-251 permits at most10excluded and requires at least58eligible, versus paper57.",
+      "decision": "Denominator unresolved; preserve11versus12 caveat and withhold quantitative confidence. Source threshold discrepancy is not an observed failing test.",
+      "next": "Owner reconcile manifest-level exclusion identities and eligible population before quantitative interpretation"
+    }
+  ],
+  "files": [
+    {
+      "url": "https://github.com/limecloud/agentevidence/blob/2c7fb9188987b9fffc5ec7dbe1c60ec305acca58/.github/workflows/pages.yml",
+      "path": ".github/workflows/pages.yml",
+      "sha256": "966459c57629ffee9bf4069217999e62b2513da7d498faf2dd65d2993c0dde0e",
+      "bytes": 978
+    },
+    {
+      "url": "https://github.com/limecloud/agentevidence/blob/2c7fb9188987b9fffc5ec7dbe1c60ec305acca58/docs/en/authoring/runtime-profile-test-cases.md",
+      "path": "docs/en/authoring/runtime-profile-test-cases.md",
+      "sha256": "4a20e811c5aeb7b924caeb6ca0c838670101c4e7a6a702a7d7acfa6c65a21e2f",
+      "bytes": 4302
+    },
+    {
+      "url": "https://github.com/limecloud/agentevidence/blob/2c7fb9188987b9fffc5ec7dbe1c60ec305acca58/docs/en/contracts/interoperability.md",
+      "path": "docs/en/contracts/interoperability.md",
+      "sha256": "981ce773bb60b327793c097cd0ee3aab61fe9b85d0b9307970f513c0bff98cce",
+      "bytes": 2330
+    },
+    {
+      "url": "https://github.com/limecloud/agentevidence/blob/2c7fb9188987b9fffc5ec7dbe1c60ec305acca58/docs/en/reference/json-schemas.md",
+      "path": "docs/en/reference/json-schemas.md",
+      "sha256": "7d4b05ee013257f8bd04f957d3f6619083bfbf8dd58c5428a3de152ff589189c",
+      "bytes": 1289
+    },
+    {
+      "url": "https://github.com/limecloud/agentevidence/blob/2c7fb9188987b9fffc5ec7dbe1c60ec305acca58/package.json",
+      "path": "package.json",
+      "sha256": "f117cb3f0d87e5a603869e7dffc7f87100157f7bca9ce46f25771368c73b519d",
+      "bytes": 1014
+    },
+    {
+      "url": "https://github.com/qualixar/bounded-loops/blob/1d5c07cee08bbd004d194243739e04b237295c7b/bounded_loops/catalog_access.py",
+      "path": "bounded_loops/catalog_access.py",
+      "sha256": "59d1b0733277cf52219217f655ed4a6daf6622f3c390fd1bd96a4defa5c92b26",
+      "bytes": 5666
+    },
+    {
+      "url": "https://github.com/qualixar/bounded-loops/blob/1d5c07cee08bbd004d194243739e04b237295c7b/bounded_loops/evaluation/corpus.py",
+      "path": "bounded_loops/evaluation/corpus.py",
+      "sha256": "d51a024a8fe2bc08326c1d4e42e2c201fcbacc4cc14210ab97afe29238442281",
+      "bytes": 9058
+    },
+    {
+      "url": "https://github.com/qualixar/bounded-loops/blob/1d5c07cee08bbd004d194243739e04b237295c7b/bounded_loops/evaluation/harness.py",
+      "path": "bounded_loops/evaluation/harness.py",
+      "sha256": "1233b48363d991da9cc178c23263d90b8d41f2e52da80f418269bdaea89d08f9",
+      "bytes": 25936
+    },
+    {
+      "url": "https://github.com/qualixar/bounded-loops/blob/1d5c07cee08bbd004d194243739e04b237295c7b/tests/evaluation/test_corpus_finds_no_false_accepts.py",
+      "path": "tests/evaluation/test_corpus_finds_no_false_accepts.py",
+      "sha256": "20a55470c2da7eb67f3d9f1e56118d1af6266e597ccb3aebd610b8212e8a62c4",
+      "bytes": 12774
+    }
+  ],
+  "limits": [
+    "No upstream imports, tests, install or source commands executed",
+    "Static source inspection is not schema validation or observed behavior",
+    "Raw file printing initially hit local console encoding error; saved bytes retained and subsequent reads escaped safely",
+    "No new broad discovery; metadata ceiling is not a quota",
+    "Q-NEXT060 gates unchanged, not reappraised",
+    "BetterMe reviewed scout_lineage revision unverified/not used; adoption pending",
+    "Task24 reader hosting remains separate from StaleToast source custody"
+  ],
+  "timing": "Approximately bounded session; end-to-end measured duration unavailable, no efficiency claim",
+  "costs": "Unknown; no paid model/provider calls or spending",
+  "checks": [
+    {
+      "command": "python site/build_priorities.py --check",
+      "exit_code": 0,
+      "output": "priorities: research=123 repositories=335\n"
+    },
+    {
+      "command": "python site/build_catalogs.py",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "python site/build_discovery.py",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_discovery.py --check",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_export.py",
+      "exit_code": 0,
+      "output": "export: revision=7280071ae414ca6faace06331122c80921c8de99\n"
+    },
+    {
+      "command": "python -m unittest discover -s site -p test_*.py",
+      "exit_code": 0,
+      "output": "export: revision=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nexport: revision=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 1.093s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/repository_landscape.py --check",
+      "exit_code": 0,
+      "output": "repository_landscape: repositories=335 unresolved=0\n"
+    },
+    {
+      "command": "python scripts/repository_review_promotions.py --check",
+      "exit_code": 0,
+      "output": "repository_review_promotions: detailed_appraisal_count=230 portable_only_count=105 total_repository_count=335 latest_review_wave=R4 latest_review_wave_count=106\n"
+    },
+    {
+      "command": "python scripts/repository_triage.py --check",
+      "exit_code": 0,
+      "output": "repository_triage: portable_only=105 triaged=105 authority=descriptive-only\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "next_owner_gate": "Existing Task22 issue3 source review/disposition; Breadcrumbs negative-test implementation remains separate owner proposal, not executed",
+  "pool_before_sha256": "7bc13bc8f4a86d59fc00bdb034a59465bdb234d48c5bfb870dfdf70d8f138195",
+  "pool_unchanged": true
+}

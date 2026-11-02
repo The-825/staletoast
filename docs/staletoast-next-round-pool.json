@@ -16819,5 +16819,14 @@
       ],
       "disposition": "All existing records/states/history retained. Six paper and ten repository proposals; two repository and two paper appraisals retained in pool. No chart selection or adoption."
     }
+  ],
+  "preservation_reconciliations": [
+    {
+      "date": "2026-11-02",
+      "reviewed_branch_head": "701a1a8c6c421e3f981863b0a911aafc895b2bf5",
+      "canonical_rows_changed": 0,
+      "earlier_reconsideration_events_retained": 0,
+      "meaning": "Restore reviewed dated evidence; no new source, grade, adoption or fresh primary check."
+    }
   ]
 }
