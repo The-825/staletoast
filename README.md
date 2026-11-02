@@ -12,6 +12,8 @@ versioned StaleToast catalog exports and cites stable source IDs.
 
 ## Build and check
 
+The [November 1 expansion](docs/staletoast-expansion-2026-11-01.md) brings the source collection to 500 research records and 1,000 repository records. New automated abstract and README relevance screens await human appraisal; they are distinct from mechanism reviews and Hot100 selections. Existing analyses and chart history are preserved. Run `python scripts/validate_corpus_expansion.py` to check the batch, source identities, count targets and history preservation.
+
 Python 3.9 or newer, standard library only. No upstream package installation or
 provider call is required.
 

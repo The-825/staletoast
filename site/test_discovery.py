@@ -88,6 +88,17 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(2, chart["eligible_count"])
         self.assertNotIn("TEST-000", {row["id"] for row in chart["entries"]})
 
+    def test_automated_screens_never_inherit_hot100_eligibility(self):
+        priorities, landscape = inputs(3)
+        priorities["research"][0]["automated_screen"] = True
+        priorities["repositories"][0]["review_depth"] = "readme-relevance-screened"
+        edition = discovery.make_edition("2026-11-01", priorities, landscape, [])
+        for kind in ("research", "repositories"):
+            chart = edition["charts"][kind]
+            self.assertEqual(3, chart["archive_count"])
+            self.assertEqual(2, chart["eligible_count"])
+            self.assertNotIn("TEST-000", {row["id"] for row in chart["entries"]})
+
     def test_frozen_editions_are_immutable(self):
         priorities, landscape = inputs(2)
         edition = discovery.make_edition("2026-10-12", priorities, landscape, [])

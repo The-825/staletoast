@@ -87,7 +87,8 @@ def build(docs, as_of):
         research.append(dict(id=identity, title=title, url=url,
                              claims=[value.strip() for value in appraisal[6].split(',') if value.strip()],
                              directness=appraisal[2], family=appraisal[3], horizon=appraisal[4],
-                             review_depth=depth, record_state='reviewed-catalog' if identity.isdigit() else 'candidate-not-promoted'))
+                             review_depth=depth, record_state='reviewed-catalog' if identity.isdigit() else 'candidate-not-promoted',
+                             automated_screen='automated relevance screen' in appraisal[5]))
     research = rank(research, lambda row: (claim_priority(row['claims']), directness[row['directness'][:2]], horizons[row['horizon']]))
     landscape = json.loads(texts['repository_source_sha256'])
     repositories = [dict(id=row['id'], repository=row['repository'], url=row['url'], claims=row['claims'],
@@ -113,9 +114,10 @@ def render(payload):
     papers, repositories = payload['research'], payload['repositories']
     reviewed = sum(row['record_state'] == 'reviewed-catalog' for row in papers)
     screened = sum(row['review_depth'] == 'readme-screened' for row in repositories)
+    relevance = sum(row['review_depth'] == 'readme-relevance-screened' for row in repositories)
     lines = ['# All-source appraisal priorities', '',
              '**Status:** derived routing projection of the existing ledgers, public-source appraisal routing. It is not a second findings ledger, a scientific confidence score or an adoption recommendation. Assumes Method v2.0 and the named recovery/authority/memory/burden question.', '',
-             f'Every one of the {len(papers)} paper records and {len(repositories)} repository records appears once below. The historical {reviewed}-source catalog remains distinct from {len(papers) - reviewed} candidate papers; candidate inclusion here does not promote a finding. Repository coverage includes {screened} README screens and {len(repositories) - screened} portable-only identity records.', '',
+             f'Every one of the {len(papers)} paper records and {len(repositories)} repository records appears once below. The historical {reviewed}-source catalog remains distinct from {len(papers) - reviewed} candidate papers; candidate inclusion here does not promote a finding. Repository coverage includes {screened} mechanism screens, {relevance} automated README relevance screens and {len(repositories) - screened - relevance} portable-only identity records. Automated screens have no appraised mechanism or finding and are not Hot100 selections.', '',
              'The [machine-readable projection](staletoast-appraisal-priorities.json) binds hashes of its three source files, using UTF-8 with LF line endings to match committed Git blob content. Rebuild it after any source change. Priority groups order the named claim gaps, then paper directness/horizon or repository review depth/lifecycle. Ties share a dense rank; stable IDs order display only. Stars, citation counts, recency and summed mechanism codes do not decide this priority. Potential to change conclusions is still unknown pending validity review, and family independence is not a rank bonus.', '',
              'The original research evidence-order chart and dated repository popularity orders remain separate views. This projection covers candidates and portable records that those views cannot fairly treat as fully appraised evidence.', '',
              '## Research priorities', '',

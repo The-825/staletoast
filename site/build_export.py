@@ -14,6 +14,7 @@ INPUTS = ['docs/collaborative-intelligence-research-ledger.md',
           'docs/collaborative-intelligence-claim-register.md',
           'docs/staletoast-appraisal-priorities.json', 'docs/staletoast-chart-history',
           'docs/staletoast-chart-link-corrections.json', 'site/build_catalogs.py',
+          'docs/staletoast-expansion-2026-11-01.json',
           'site/build_priorities.py', 'site/build_discovery.py', 'site/ledger_markdown.py',
           'site/build_export.py']
 

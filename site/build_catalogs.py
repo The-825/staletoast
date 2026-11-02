@@ -83,6 +83,9 @@ def research_catalog() -> list[dict[str, object]]:
             "citationSignal": "not collected",
             "_sort": [proximity.get(app[2][:2], 9), horizon_order.get(app[4], 9), 0 if source_id.isdigit() else 1, int(source_id.split("-")[-1])],
         })
+        if "automated relevance screen" in app[5]:
+            output[-1]["directnessValue"] = None
+            output[-1]["horizonValue"] = None
     output.sort(key=lambda item: item["_sort"])
     for rank, item in enumerate(output, 1):
         item["evidenceOrder"] = rank
@@ -93,7 +96,7 @@ def research_catalog() -> list[dict[str, object]]:
 def repository_catalog() -> list[dict[str, object]]:
     landscape = json.loads((DOCS / "collaborative-intelligence-repository-landscape.json").read_text(encoding="utf-8"))
     output = landscape["repositories"]
-    unknown_depths = {item["evidence_depth"] for item in output} - {"readme-screened", "source-assessment"}
+    unknown_depths = {item["evidence_depth"] for item in output} - {"readme-screened", "source-assessment", "readme-relevance-screened"}
     if unknown_depths:
         raise ValueError(f"unknown repository evidence depths: {sorted(unknown_depths)}")
     output.sort(key=lambda item: (item["stars_observed"] is None, -(item["stars_observed"] or 0), item["repository"]))

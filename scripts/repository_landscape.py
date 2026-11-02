@@ -423,6 +423,16 @@ def validate(data: dict) -> list[str]:
             continue
         keys.append(key)
         ids.append(row.get("id"))
+        depth = row.get("evidence_depth")
+        if depth not in {"readme-screened", "source-assessment", "readme-relevance-screened"}:
+            errors.append(f"{key}: unknown evidence depth")
+        if depth == "readme-relevance-screened":
+            if set(row.get("mechanisms", {}).values()) != {"U"} or row.get("claims"):
+                errors.append(f"{key}: relevance screen must not assign mechanism findings or claims")
+            if not re.fullmatch(r"[0-9a-f]{64}", row.get("readme_content_sha256", "")):
+                errors.append(f"{key}: relevance screen lacks README digest")
+            if row.get("assessment_status") != "automated-relevance-screen-only":
+                errors.append(f"{key}: relevance screen status is overstated")
         if row.get("url") != f"https://github.com/{row['repository']}":
             errors.append(f"{key}: URL does not match identity")
         if set(row.get("mechanisms", {})) != set(dimensions):
@@ -484,6 +494,8 @@ def validate(data: dict) -> list[str]:
         "detailed_appraisal_count": sum(row.get("evidence_depth") == "readme-screened" for row in rows),
         "portable_only_count": sum(row.get("evidence_depth") == "source-assessment" for row in rows),
     }
+    if any(row.get("evidence_depth") == "readme-relevance-screened" for row in rows):
+        expected_counts["relevance_screened_count"] = sum(row.get("evidence_depth") == "readme-relevance-screened" for row in rows)
     for field, expected in expected_counts.items():
         if review.get(field) != expected:
             errors.append(f"review summary {field} is stale")

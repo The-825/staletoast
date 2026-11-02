@@ -149,6 +149,9 @@ def apply_promotions(landscape: dict, manifest: dict) -> dict:
         "latest_review_wave": manifest["review_wave"],
         "latest_review_wave_count": len(manifest["reviews"]),
     }
+    relevance = sum(row["evidence_depth"] == "readme-relevance-screened" for row in rows.values())
+    if relevance:
+        landscape["review_summary"]["relevance_screened_count"] = relevance
     return landscape
 
 

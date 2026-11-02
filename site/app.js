@@ -11,12 +11,13 @@ const claimLinks = claims => claims.map(claim => `<a class="pill" href="claims.h
 const label = value => value.replaceAll("-", " ").replace(/\b\w/g, letter => letter.toUpperCase());
 
 function researchRow(item) {
+  const automated = item.flags.includes("automated relevance screen");
   return `<tr>
     <td class="rank">${escapeHtml(item.id)}</td>
     <td class="rank">${item.evidenceOrder}<small> / ${items.length}</small></td>
     <td><strong>${detailLink("research", item.id, item.title)}</strong>${item.record_state === "candidate-not-promoted" ? '<br><span class="pill">Candidate, not promoted</span>' : ""}<br><a href="${escapeHtml(item.url)}">Original source</a></td>
-    <td><strong>${item.directnessValue} / 3</strong><br><span class="pill">${escapeHtml(item.directness)}</span></td>
-    <td><strong>${item.horizonValue} / 3</strong><br><span class="pill">${escapeHtml(item.horizon)}</span></td>
+    <td><strong>${automated ? "Not appraised" : `${item.directnessValue} / 3`}</strong><br><span class="pill">${escapeHtml(item.directness)}</span></td>
+    <td><strong>${automated ? "Not appraised" : `${item.horizonValue} / 3`}</strong><br><span class="pill">${escapeHtml(item.horizon)}</span></td>
     <td><strong>${item.claimCount}</strong><br>${claimLinks(item.claims)}</td>
     <td>${escapeHtml(item.citationSignal)}</td>
     <td>${escapeHtml(EvidenceTopics.text(item.finding))}</td>
@@ -71,15 +72,19 @@ async function catalog() {
   items = await response.json();
   if (type === "research") {
     document.querySelector(".catalog-head .eyebrow").textContent =
-      `Research Trail · ${items.length} reviewed sources and counting`;
+      `Research Trail · ${items.length} source records`;
+    const automated = items.filter(item => item.flags.includes("automated relevance screen")).length;
+    document.querySelector(".catalog-head .lede").textContent =
+      `${items.length - automated} records retain their existing review depth. ${automated} have automated abstract relevance screens awaiting appraisal. Screening finds material to inspect; it does not validate findings or select the Hot 100.`;
   } else {
     const detailed = items.filter(item => item.evidence_depth === "readme-screened").length;
     const portable = items.filter(item => item.evidence_depth === "source-assessment").length;
-    if (detailed + portable !== items.length) throw new Error("Unknown repository evidence depth");
+    const relevance = items.filter(item => item.evidence_depth === "readme-relevance-screened").length;
+    if (detailed + portable + relevance !== items.length) throw new Error("Unknown repository evidence depth");
     document.querySelector(".catalog-head .eyebrow").textContent =
-      `Repository Trail · ${items.length} assessed repositories`;
+      `Repository Trail · ${items.length} repository records`;
     document.querySelector(".catalog-head .lede").textContent =
-      `${detailed} repositories have pinned mechanism reviews. Another ${portable} preserve portable-only public assessment evidence for deeper review. Unknown fields stay unknown, and popularity is shown only where it was actually observed.`;
+      `${detailed} repositories have pinned mechanism reviews, ${portable} retain portable assessment evidence, and ${relevance} have automated README relevance screens awaiting appraisal. Mechanisms remain unknown for relevance screens. Popularity does not establish quality.`;
   }
   const claims = await fetch("data/claims.json").then(result => result.json());
   EvidenceTopics.install(claims);

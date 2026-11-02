@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-26",
+  "wake": "2026-10-26T16:33:44.725Z",
+  "owner": "Task22 local Codex",
+  "base_head": "701a1a8c6c421e3f981863b0a911aafc895b2bf5",
+  "gap": "When does schema-gated interaction enforce execution limits rather than merely valid shapes?",
+  "request_count_observed": 8,
+  "request_ceiling": 8,
+  "external_requests": [
+    {
+      "request": 1,
+      "url": "https://arxiv.org/html/2603.06394v1",
+      "tool": "web.open",
+      "status": "read",
+      "ref": "turn109view0"
+    },
+    {
+      "request": 2,
+      "url": "https://api.github.com/repos/eclipsesource/jsonforms/git/trees/7fb14064800bdaa09f8d0eb9501abe15f1cc99cc?recursive=1",
+      "tool": "web.open",
+      "status": "inaccessible",
+      "ref": "turn109view1"
+    },
+    {
+      "request": 3,
+      "url": "https://api.github.com/repos/eclipsesource/jsonforms/git/trees/7fb14064800bdaa09f8d0eb9501abe15f1cc99cc?recursive=1",
+      "tool": "Python urllib GET",
+      "status": "read",
+      "file": "jsonforms-tree.json"
+    },
+    {
+      "request": 4,
+      "url": "https://arxiv.org/html/2603.06394v1",
+      "tool": "Python urllib GET",
+      "status": "read",
+      "file": "paper.html"
+    },
+    {
+      "request": 5,
+      "url": "https://raw.githubusercontent.com/eclipsesource/jsonforms/7fb14064800bdaa09f8d0eb9501abe15f1cc99cc/LICENSE",
+      "path": "LICENSE",
+      "local_file": "05-LICENSE",
+      "bytes": 1079,
+      "sha256": "78f32d1422681b26b70f5b5a4094ceeb8bbd04c6eea98bb2f7f7f7f8e063539e",
+      "git_blob_sha": "598473d713b6c793f61408c9fcf589e6d20645ab",
+      "matches_pinned_tree": true
+    },
+    {
+      "request": 6,
+      "url": "https://raw.githubusercontent.com/eclipsesource/jsonforms/7fb14064800bdaa09f8d0eb9501abe15f1cc99cc/packages/core/src/reducers/core.ts",
+      "path": "packages/core/src/reducers/core.ts",
+      "local_file": "06-core.ts",
+      "bytes": 8694,
+      "sha256": "f6d431fbecc404f8329ed925f7b6bd7a3a9b6e5ead34b10003022a6f6c0af2fe",
+      "git_blob_sha": "efb3fbda036c41fd75abbda20d5dba6cd69de40c",
+      "matches_pinned_tree": true
+    },
+    {
+      "request": 7,
+      "url": "https://raw.githubusercontent.com/eclipsesource/jsonforms/7fb14064800bdaa09f8d0eb9501abe15f1cc99cc/packages/core/test/reducers/core.test.ts",
+      "path": "packages/core/test/reducers/core.test.ts",
+      "local_file": "07-core.test.ts",
+      "bytes": 63172,
+      "sha256": "9f5e043cc21f90dfd28943e2cdee1afb83ba1a887acedf5407421f5efa6b5029",
+      "git_blob_sha": "7ba5d74aaec254b21168777c41b62e6870f7debf",
+      "matches_pinned_tree": true
+    },
+    {
+      "request": 8,
+      "url": "https://raw.githubusercontent.com/eclipsesource/jsonforms/7fb14064800bdaa09f8d0eb9501abe15f1cc99cc/packages/core/src/reducers/middleware.ts",
+      "path": "packages/core/src/reducers/middleware.ts",
+      "local_file": "08-middleware.ts",
+      "bytes": 1552,
+      "sha256": "e538a7ef1af3b9006dbb2f7ada152bbba46515ce3570e87e9b46ec1b3e7f6b93",
+      "git_blob_sha": "ef3d9cb6a923fd87fbf7e7514d4f78efc51d0f46",
+      "matches_pinned_tree": true
+    }
+  ],
+  "discovery_queries": 0,
+  "new_metadata_leads": 0,
+  "existing_pool_deep_appraisals": [
+    "Q-NEXT-093",
+    "Q-NEXT-091"
+  ],
+  "primary_sources_inspected_by_category": {
+    "research": 1,
+    "repositories": 1
+  },
+  "canonical_additions": {
+    "research": 0,
+    "repositories": 0
+  },
+  "same_day_additions_observed_in_checked_receipts": 0,
+  "pool_original_records_preserved": true,
+  "pool_original_history_preserved": true,
+  "appended_reconsiderations": [
+    {
+      "date": "2026-10-26",
+      "pool_id": "Q-NEXT-093",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "backlog; bounded consumer experiment proposed, no addition or adoption",
+      "receipt": "staletoast-scout-2026-10-26.json",
+      "depth": "selected full-text architecture/methods/limits; no runnable implementation inspected or executed"
+    },
+    {
+      "date": "2026-10-26",
+      "pool_id": "Q-NEXT-091",
+      "original_rank": null,
+      "proposed_rank": null,
+      "disposition": "backlog; bounded consumer experiment proposed, no addition or adoption",
+      "receipt": "staletoast-scout-2026-10-26.json",
+      "depth": "pinned validation reducer/middleware/test definitions/license inspected; no upstream execution"
+    }
+  ],
+  "source_evidence_files": [
+    {
+      "file": "05-LICENSE",
+      "sha256": "78f32d1422681b26b70f5b5a4094ceeb8bbd04c6eea98bb2f7f7f7f8e063539e",
+      "bytes": 1079
+    },
+    {
+      "file": "06-core.ts",
+      "sha256": "f6d431fbecc404f8329ed925f7b6bd7a3a9b6e5ead34b10003022a6f6c0af2fe",
+      "bytes": 8694
+    },
+    {
+      "file": "07-core.test.ts",
+      "sha256": "9f5e043cc21f90dfd28943e2cdee1afb83ba1a887acedf5407421f5efa6b5029",
+      "bytes": 63172
+    },
+    {
+      "file": "08-middleware.ts",
+      "sha256": "e538a7ef1af3b9006dbb2f7ada152bbba46515ce3570e87e9b46ec1b3e7f6b93",
+      "bytes": 1552
+    },
+    {
+      "file": "jsonforms-tree.json",
+      "sha256": "92fda173a79ed2b07bfac854c9c37a463a74547119c065dc7c67ea600b1c4e98",
+      "bytes": 260803
+    },
+    {
+      "file": "paper-text.txt",
+      "sha256": "5579c7e39984929f5abc777ac479853c29e1f04e3d9f0658ea5f339763b9a289",
+      "bytes": 113868
+    },
+    {
+      "file": "paper.html",
+      "sha256": "948d9138863a13ab7fbf036ff535777f1457dfe2ee1ec9ecad50cb31c7c6a2b5",
+      "bytes": 580466
+    },
+    {
+      "file": "pinned-reads.json",
+      "sha256": "567b23c28e67a00af3a928811c276419e7dad7744d62bfcfc180ffc9c925be4a",
+      "bytes": 1843
+    }
+  ],
+  "paper_identity": "2603.06394v1,2026-03-06",
+  "jsonforms_pin": "7fb14064800bdaa09f8d0eb9501abe15f1cc99cc",
+  "upstream_tests": "definitions inspected; not executed",
+  "adoption": "not established; backlog",
+  "betterme_pr526_lineage": "reviewed exact tooling absent in owning checkout; adoption pending",
+  "local_deduplication": "No current-day scout receipt found in task workspace or four StaleToast worktree docs; editorial artifacts excluded; not an all-owner global audit",
+  "native_checks": {
+    "priorities": "passed;123research/335repositories",
+    "repository_landscape": "passed;zero unresolved",
+    "repository_review_promotions": "passed;230detailed/105portable",
+    "repository_triage": "passed;105descriptive",
+    "site_unittests": "30passed",
+    "git_diff_check": "passed",
+    "pool_append_only_assertions": "passed"
+  },
+  "boundaries": [
+    "No upstream commands/install/model/provider/newworker",
+    "No modification of123research/335repository records or editorial notes",
+    "No rank/confidence/promotion/commit/push/freeze/publication",
+    "No posted Discussion522 message"
+  ],
+  "changed_paths": [
+    "docs/staletoast-next-round-pool.json",
+    "docs/staletoast-next-round-pool.md",
+    "docs/staletoast-scout-2026-10-26.md",
+    "docs/staletoast-scout-2026-10-26.json"
+  ],
+  "canonical_inputs_unchanged": true,
+  "pool_markdown_original_prefix_preserved": true,
+  "report_sha256": "a5978920837c1a0243d9936984d8c1073a30524bb9fa1dcc27782e7cbcc1e6ee"
+}
