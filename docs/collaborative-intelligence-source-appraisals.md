@@ -581,3 +581,5 @@ These candidate rows identify relevant primary abstracts. They do not appraise f
 | C-400 | Study design not appraised | D0 unappraised | agent-safety | not observed | abstract-only: automated relevance screen; no findings appraisal; full text and limitations unreviewed |  |
 | C-401 | Study design not appraised | D0 unappraised | agent-safety | not observed | abstract-only: automated relevance screen; no findings appraisal; full text and limitations unreviewed |  |
 | C-402 | Study design not appraised | D0 unappraised | agent-safety | not observed | abstract-only: automated relevance screen; no findings appraisal; full text and limitations unreviewed |  |
+| C-403 | Study design not appraised | D0 unappraised | agent-evaluation | not observed | abstract-only: automated relevance screen; no findings appraisal; full text and limitations unreviewed |  |
+| C-404 | Study design not appraised | D0 unappraised | agent-evaluation | not observed | abstract-only: automated relevance screen; no findings appraisal; full text and limitations unreviewed |  |

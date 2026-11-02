@@ -2,6 +2,10 @@
 
 This intake grows the searchable collection to 500 research records and 1,000 repository records. It adds 377 automated primary-abstract relevance screens and 665 automated, commit-pinned README relevance screens. The earlier 123 research records, 335 repository records and dated chart history retain their original evidence and analysis.
 
+Release review held two papers and 39 repositories outside the active collection and added distinct replacement identities. All held source rows, earlier analysis and pool links remain in the historical intake. The ledgers therefore retain 502 research and 1,039 repository records, while the visitor collection contains 500 and 1,000 active records. The [held-source decisions](staletoast-source-dispositions.json) record reasons and replacement IDs. Holding a source is a scope or appraisal decision, not a claim that the source is malicious or its findings are false.
+
+Automated research is unranked and has no directness or horizon grade. A separate Unappraised filter finds it. Explicit `appraisal_state` fields and [export schema 2.0](../catalog-contract.json) distinguish automatic intake from existing source screens. Frozen 1.0 consumer exports remain available unchanged; an existing consumer must deliberately validate the new schema before changing its pin.
+
 These additions identify relevant material to appraise. They are not 1,042 new expert reviews, validated findings, quality ratings or Hot100 selections. All new repository mechanism observations remain unknown. Research directness, study design and observation horizon remain unappraised. Topic matches route attention; they do not establish support for a claim. GitHub stars help discover candidates and remain dated popularity observations, not quality scores.
 
 ## What was collected

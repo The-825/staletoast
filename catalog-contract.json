@@ -1,16 +1,45 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "canonical_owner": "The-825/staletoast",
   "authority": "evidence-only",
   "owns": ["research-ledger", "repository-landscape", "source-appraisals", "editorial-priorities", "chart-history", "discovery-pool"],
   "consumers": ["The-825/breadcrumbs"],
   "companion_owns": ["workflow-guides", "prompt-library", "implementation-templates"],
   "export_path": "data/catalog-export.json",
-  "export_schema_version": "1.0",
+  "export_schema_version": "2.0",
   "source_revision_required": true,
   "digest_required": true,
+  "digest_rule": "Consumers compute SHA-256 over the exact bytes of the pinned export file; the export payload does not embed its own digest.",
   "data_boundary": "public-and-synthetic-only",
   "private_records": "prohibited",
   "runtime_execution": "not-authorized-by-intake",
-  "adoption": "requires-owning-consumer-validation"
+  "adoption": "requires-owning-consumer-validation",
+  "export_schema_2_0": {
+    "breaking_from": "1.0",
+    "consumer_rule": "A consumer pinned to 1.0 must fail closed on a 2.0 export and must be re-validated before any repin. Frozen 1.0 exports in exports/ are immutable and unchanged.",
+    "appraisal_state": {
+      "applies_to": ["research", "repositories"],
+      "values": {
+        "source-screened": "Records that existed before the 2026-11-01 expansion, with their original review depth. Not an expert-appraisal claim.",
+        "automated-screen": "Intake from an automated topic or README relevance screen (structured batch screen_method). Awaiting appraisal; no finding, grade or mechanism."
+      },
+      "unknown_values": "Consumers must reject any other value."
+    },
+    "nullable_fields": {
+      "research": ["evidenceOrder", "directness", "directnessValue", "horizon", "horizonValue"],
+      "meaning": "null means not appraised, never zero or lowest tier. Automated research has evidenceOrder null and no directness or horizon grade."
+    },
+    "ordering": {
+      "research_evidenceOrder": "Contiguous 1..evidenceOrderCount for source-screened records only, retaining the prior 1..123 order. Automated screens are unranked and listed after all ranked records.",
+      "repository_popularityOrder": "Observed stars only. Not a quality ranking. Positions and denominators are relative to the current collection and can change as it grows.",
+      "automated_priority": "Appraisal-priority projections give automated intake one constant key described as intake awaiting appraisal."
+    },
+    "repository_fields": {
+      "evidence_depth_added": "readme-relevance-screened",
+      "automated_mechanisms": "All mechanisms are U (unknown) and claims are empty for automated screens.",
+      "licenseBasis": "github-reported-unverified for automated screens: GitHub metadata only, license text not inspected. ledger-recorded otherwise.",
+      "starsObservedDate": "Per-record observation date; new intake never inherits an older global date."
+    },
+    "held_sources": "Sources held in docs/staletoast-source-dispositions.json are excluded from the research and repositories catalogs but retained in source ledgers and the expansion batch."
+  }
 }

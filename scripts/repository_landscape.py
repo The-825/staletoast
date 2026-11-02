@@ -501,9 +501,16 @@ def validate(data: dict) -> list[str]:
             errors.append(f"review summary {field} is stale")
     for row in rows:
         date = row.get("popularity_observed_date")
-        if row.get("id") in later_ids and row.get("stars_observed") is not None:
+        # New intake never falls back to the older global observation date.
+        intake = row.get("id") in later_ids or row.get("evidence_depth") == "readme-relevance-screened"
+        if intake and row.get("stars_observed") is not None:
             if not isinstance(date, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
                 errors.append(f"{row.get('id')}: direct intake popularity observation date is required")
+    database_ids = [row["github_database_id"] for row in rows if "github_database_id" in row]
+    if any(isinstance(value, bool) or not isinstance(value, int) or value <= 0 for value in database_ids):
+        errors.append("GitHub database IDs must be positive integers")
+    elif len(database_ids) != len(set(database_ids)):
+        errors.append("GitHub database IDs are not unique")
     if summary and not re.fullmatch(
         r"[0-9a-f]{40}", summary.get("transfer_upstream_revision", "")
     ):

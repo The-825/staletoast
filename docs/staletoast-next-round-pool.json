@@ -15858,6 +15858,539 @@
       "evidence_depth": "automated-readme-relevance-screen-v1",
       "license_status": "not appraised",
       "snapshot_commit": "0b305e96e3485a3cb01e9dec8f794041bc81defa"
+    },
+    {
+      "pool_id": "Q-NEXT-1135",
+      "kind": "research",
+      "discovery_url": "https://arxiv.org/abs/2609.17842v1",
+      "canonical_url": "https://arxiv.org/abs/2609.17842v1",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "C-403",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-abstract-topic-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1136",
+      "kind": "research",
+      "discovery_url": "https://arxiv.org/abs/2610.22243v1",
+      "canonical_url": "https://arxiv.org/abs/2610.22243v1",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "C-404",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-abstract-topic-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1137",
+      "kind": "repository",
+      "discovery_url": "https://github.com/mozilla-ai/any-agent",
+      "canonical_url": "https://github.com/mozilla-ai/any-agent",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1002",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1138",
+      "kind": "repository",
+      "discovery_url": "https://github.com/Ricky-7-Yan/intelligent-audit-system",
+      "canonical_url": "https://github.com/Ricky-7-Yan/intelligent-audit-system",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1003",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1139",
+      "kind": "repository",
+      "discovery_url": "https://github.com/chirpz-ai/pandaprobe",
+      "canonical_url": "https://github.com/chirpz-ai/pandaprobe",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1004",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1140",
+      "kind": "repository",
+      "discovery_url": "https://github.com/NVIDIA/SkillEvaluator",
+      "canonical_url": "https://github.com/NVIDIA/SkillEvaluator",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1005",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1141",
+      "kind": "repository",
+      "discovery_url": "https://github.com/zgcagi/Harness-RSI",
+      "canonical_url": "https://github.com/zgcagi/Harness-RSI",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1006",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1142",
+      "kind": "repository",
+      "discovery_url": "https://github.com/reacher-z/Awesome-CUA",
+      "canonical_url": "https://github.com/reacher-z/Awesome-CUA",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1007",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1143",
+      "kind": "repository",
+      "discovery_url": "https://github.com/AI45Lab/OpenART",
+      "canonical_url": "https://github.com/AI45Lab/OpenART",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1008",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1144",
+      "kind": "repository",
+      "discovery_url": "https://github.com/amitshekhariitbhu/ai-agents-tutorial",
+      "canonical_url": "https://github.com/amitshekhariitbhu/ai-agents-tutorial",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1009",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1145",
+      "kind": "repository",
+      "discovery_url": "https://github.com/alanhuangyoo/crux",
+      "canonical_url": "https://github.com/alanhuangyoo/crux",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1010",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1146",
+      "kind": "repository",
+      "discovery_url": "https://github.com/yzhao062/awesome-auditable-ai",
+      "canonical_url": "https://github.com/yzhao062/awesome-auditable-ai",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1011",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1147",
+      "kind": "repository",
+      "discovery_url": "https://github.com/UiPath/coder_eval",
+      "canonical_url": "https://github.com/UiPath/coder_eval",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1012",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1148",
+      "kind": "repository",
+      "discovery_url": "https://github.com/hwfengcs/DM-Code-Agent",
+      "canonical_url": "https://github.com/hwfengcs/DM-Code-Agent",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1013",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1149",
+      "kind": "repository",
+      "discovery_url": "https://github.com/hidai25/eval-view",
+      "canonical_url": "https://github.com/hidai25/eval-view",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1014",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1150",
+      "kind": "repository",
+      "discovery_url": "https://github.com/evaleval/every_eval_ever",
+      "canonical_url": "https://github.com/evaleval/every_eval_ever",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1015",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1151",
+      "kind": "repository",
+      "discovery_url": "https://github.com/NVIDIA-NeMo/nemo-helix",
+      "canonical_url": "https://github.com/NVIDIA-NeMo/nemo-helix",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1016",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1152",
+      "kind": "repository",
+      "discovery_url": "https://github.com/AMD-AGI/AgentKernelArena",
+      "canonical_url": "https://github.com/AMD-AGI/AgentKernelArena",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1017",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1153",
+      "kind": "repository",
+      "discovery_url": "https://github.com/deeplethe/fde-gym",
+      "canonical_url": "https://github.com/deeplethe/fde-gym",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1018",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1154",
+      "kind": "repository",
+      "discovery_url": "https://github.com/Towow-ai/Flowness",
+      "canonical_url": "https://github.com/Towow-ai/Flowness",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1019",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1155",
+      "kind": "repository",
+      "discovery_url": "https://github.com/Ta0p1/ResolveLab",
+      "canonical_url": "https://github.com/Ta0p1/ResolveLab",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1020",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1156",
+      "kind": "repository",
+      "discovery_url": "https://github.com/coval-ai/benchmarks",
+      "canonical_url": "https://github.com/coval-ai/benchmarks",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1021",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1157",
+      "kind": "repository",
+      "discovery_url": "https://github.com/thiientv/godmode",
+      "canonical_url": "https://github.com/thiientv/godmode",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1022",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1158",
+      "kind": "repository",
+      "discovery_url": "https://github.com/Calibre-Labs/reforge-ai-evals",
+      "canonical_url": "https://github.com/Calibre-Labs/reforge-ai-evals",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1023",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1159",
+      "kind": "repository",
+      "discovery_url": "https://github.com/WaseemGhanem98/AgentCheck",
+      "canonical_url": "https://github.com/WaseemGhanem98/AgentCheck",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1024",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1160",
+      "kind": "repository",
+      "discovery_url": "https://github.com/kling01/human-value-allocation",
+      "canonical_url": "https://github.com/kling01/human-value-allocation",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1025",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1161",
+      "kind": "repository",
+      "discovery_url": "https://github.com/on-panda/on-panda",
+      "canonical_url": "https://github.com/on-panda/on-panda",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1026",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1162",
+      "kind": "repository",
+      "discovery_url": "https://github.com/reacher-z/HarnessBench",
+      "canonical_url": "https://github.com/reacher-z/HarnessBench",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1027",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1163",
+      "kind": "repository",
+      "discovery_url": "https://github.com/Cre4T3Tiv3/ai-agents-reality-check",
+      "canonical_url": "https://github.com/Cre4T3Tiv3/ai-agents-reality-check",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1028",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1164",
+      "kind": "repository",
+      "discovery_url": "https://github.com/dokimos-dev/dokimos",
+      "canonical_url": "https://github.com/dokimos-dev/dokimos",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1029",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1165",
+      "kind": "repository",
+      "discovery_url": "https://github.com/ChaoYue0307/awesome-loop-engineering",
+      "canonical_url": "https://github.com/ChaoYue0307/awesome-loop-engineering",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1030",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1166",
+      "kind": "repository",
+      "discovery_url": "https://github.com/Kotlin/kotlin-swe-bench",
+      "canonical_url": "https://github.com/Kotlin/kotlin-swe-bench",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1031",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1167",
+      "kind": "repository",
+      "discovery_url": "https://github.com/acoyfellow/cloudbox",
+      "canonical_url": "https://github.com/acoyfellow/cloudbox",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1032",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1168",
+      "kind": "repository",
+      "discovery_url": "https://github.com/chaosync-org/awesome-ai-agent-testing",
+      "canonical_url": "https://github.com/chaosync-org/awesome-ai-agent-testing",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1033",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1169",
+      "kind": "repository",
+      "discovery_url": "https://github.com/however-yir/tianji-ai-agent",
+      "canonical_url": "https://github.com/however-yir/tianji-ai-agent",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1034",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1170",
+      "kind": "repository",
+      "discovery_url": "https://github.com/VectorSpaceLab/AgentSWE",
+      "canonical_url": "https://github.com/VectorSpaceLab/AgentSWE",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1035",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1171",
+      "kind": "repository",
+      "discovery_url": "https://github.com/datamllab/A2E",
+      "canonical_url": "https://github.com/datamllab/A2E",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1036",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1172",
+      "kind": "repository",
+      "discovery_url": "https://github.com/kling01/RubricLoop",
+      "canonical_url": "https://github.com/kling01/RubricLoop",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1037",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1173",
+      "kind": "repository",
+      "discovery_url": "https://github.com/ChaoYue0307/awesome-graph-engineering",
+      "canonical_url": "https://github.com/ChaoYue0307/awesome-graph-engineering",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1038",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1174",
+      "kind": "repository",
+      "discovery_url": "https://github.com/semi-hollow/NanoHarness",
+      "canonical_url": "https://github.com/semi-hollow/NanoHarness",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1039",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
+    },
+    {
+      "pool_id": "Q-NEXT-1175",
+      "kind": "repository",
+      "discovery_url": "https://github.com/SparkBeyond/agentune",
+      "canonical_url": "https://github.com/SparkBeyond/agentune",
+      "state": "held",
+      "discovered_date": "2026-11-01",
+      "linked_identity": "R-1040",
+      "reason": "Replacement relevance screen; retained for human appraisal, not selected for Hot100.",
+      "next_check": "Appraise primary methods or code and license terms before proposing a selection.",
+      "evidence_depth": "automated-readme-relevance-screen-v1",
+      "license_status": "not appraised"
     }
   ],
   "reconsideration_history": [
@@ -15950,6 +16483,302 @@
       "repositories_added": 665,
       "manifest": "docs/staletoast-expansion-2026-11-01.json",
       "selected": 0
+    }
+  ],
+  "disposition_history": [
+    {
+      "date": "2026-11-01",
+      "basis": "source-owner resolution of Claude expansion review",
+      "held_sources": [
+        {
+          "id": "C-078",
+          "kind": "research",
+          "state": "held",
+          "reason": "Held for scope review: study of public engagement with paintings is adjacent perception research; relevance to this collaboration/evaluation collection needs a deliberate appraisal.",
+          "replacement_id": "C-403"
+        },
+        {
+          "id": "C-092",
+          "kind": "research",
+          "state": "held",
+          "reason": "Held for evidence-family reconciliation with C-091: overlapping Evaluation Agent study and authors with additional Open-EA work; do not count as independent evidence without appraisal.",
+          "replacement_id": "C-404"
+        },
+        {
+          "id": "R-354",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1002"
+        },
+        {
+          "id": "R-371",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1003"
+        },
+        {
+          "id": "R-372",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1004"
+        },
+        {
+          "id": "R-374",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1005"
+        },
+        {
+          "id": "R-375",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1006"
+        },
+        {
+          "id": "R-397",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1007"
+        },
+        {
+          "id": "R-409",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1008"
+        },
+        {
+          "id": "R-411",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1009"
+        },
+        {
+          "id": "R-415",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1010"
+        },
+        {
+          "id": "R-421",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1011"
+        },
+        {
+          "id": "R-651",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1012"
+        },
+        {
+          "id": "R-689",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1013"
+        },
+        {
+          "id": "R-703",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1014"
+        },
+        {
+          "id": "R-763",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1015"
+        },
+        {
+          "id": "R-788",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1016"
+        },
+        {
+          "id": "R-789",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1017"
+        },
+        {
+          "id": "R-790",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1018"
+        },
+        {
+          "id": "R-793",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1019"
+        },
+        {
+          "id": "R-796",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1020"
+        },
+        {
+          "id": "R-797",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1021"
+        },
+        {
+          "id": "R-800",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1022"
+        },
+        {
+          "id": "R-803",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1023"
+        },
+        {
+          "id": "R-807",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1024"
+        },
+        {
+          "id": "R-809",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1025"
+        },
+        {
+          "id": "R-810",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1026"
+        },
+        {
+          "id": "R-815",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1027"
+        },
+        {
+          "id": "R-817",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1028"
+        },
+        {
+          "id": "R-819",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1029"
+        },
+        {
+          "id": "R-827",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1030"
+        },
+        {
+          "id": "R-833",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+          "replacement_id": "R-1031"
+        },
+        {
+          "id": "R-909",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1032"
+        },
+        {
+          "id": "R-915",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1033"
+        },
+        {
+          "id": "R-917",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1034"
+        },
+        {
+          "id": "R-920",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1035"
+        },
+        {
+          "id": "R-922",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1036"
+        },
+        {
+          "id": "R-927",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1037"
+        },
+        {
+          "id": "R-933",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1038"
+        },
+        {
+          "id": "R-935",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1039"
+        },
+        {
+          "id": "R-958",
+          "kind": "repository",
+          "state": "held",
+          "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+          "replacement_id": "R-1040"
+        }
+      ],
+      "reason": "Keep insufficient-scope intake in history rather than the active visitor collection."
     }
   ]
 }

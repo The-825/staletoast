@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import re
@@ -142,16 +143,20 @@ def apply_promotions(landscape: dict, manifest: dict) -> dict:
         }
     detailed = sum(row["evidence_depth"] == "readme-screened" for row in rows.values())
     portable = sum(row["evidence_depth"] == "source-assessment" for row in rows.values())
-    landscape["review_summary"] = {
+    # Merge so historical additive summary fields survive; only the counted fields are recomputed.
+    summary = landscape.setdefault("review_summary", {})
+    summary.update({
         "detailed_appraisal_count": detailed,
         "portable_only_count": portable,
         "total_repository_count": len(rows),
         "latest_review_wave": manifest["review_wave"],
         "latest_review_wave_count": len(manifest["reviews"]),
-    }
+    })
     relevance = sum(row["evidence_depth"] == "readme-relevance-screened" for row in rows.values())
     if relevance:
-        landscape["review_summary"]["relevance_screened_count"] = relevance
+        summary["relevance_screened_count"] = relevance
+    else:
+        summary.pop("relevance_screened_count", None)
     return landscape
 
 
@@ -172,7 +177,18 @@ def main() -> int:
     if errors:
         print("\n".join(f"repository_review_promotions: {error}" for error in errors))
         return 1
+    if args.check and args.write:
+        parser.error("--check and --write are mutually exclusive")
+    on_disk = copy.deepcopy(landscape)
     updated = apply_promotions(landscape, manifest)
+    if args.check and updated != on_disk:
+        drifted = sorted(
+            row["id"] for row in updated["repositories"]
+            if row != next((old for old in on_disk["repositories"] if old["id"] == row["id"]), None)
+        )
+        detail = f"promoted rows differ from the manifest: {', '.join(drifted[:10])}" if drifted else "review summary differs from the manifest"
+        print(f"repository_review_promotions: landscape drifted; {detail}")
+        return 1
     if args.write:
         LANDSCAPE.write_text(json.dumps(updated, indent=2) + "\n", encoding="utf-8")
     summary = updated["review_summary"]

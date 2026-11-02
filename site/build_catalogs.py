@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 from ledger_markdown import cells, source_link
 from build_priorities import identified_rows
+from intake_state import AUTOMATED, IntakeState, validate_catalog_semantics
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
@@ -41,13 +42,17 @@ def table_rows(path: Path, width: int) -> list[list[str]]:
     return found
 
 
-def research_catalog() -> list[dict[str, object]]:
-    text = (DOCS / "collaborative-intelligence-research-ledger.md").read_text(encoding="utf-8")
+def research_catalog(docs: Path | None = None) -> list[dict[str, object]]:
+    docs = docs or DOCS
+    text = (docs / "collaborative-intelligence-research-ledger.md").read_text(encoding="utf-8")
     text = text.split("## Source ledger", 1)[1].split("### Entry metadata", 1)[0]
     ledger = identified_rows(text, {6, 7})
-    appraisals = identified_rows((DOCS / "collaborative-intelligence-source-appraisals.md").read_text(encoding="utf-8"), {7, 8})
+    appraisals = identified_rows((docs / "collaborative-intelligence-source-appraisals.md").read_text(encoding="utf-8"), {7, 8})
     if set(ledger) != set(appraisals):
         raise ValueError("Research sources and appraisals must cover the same identities")
+    state = IntakeState(docs)
+    if not state.held_ids("research") <= set(ledger):
+        raise ValueError("Held research source is missing from the ledger")
     proximity = {"D3": 0, "D2": 1, "D1": 2, "D0": 3}
     horizon_order = {"longitudinal": 0, "repeated": 1, "single": 2, "technical": 3, "retrospective": 4, "not observed": 5}
     horizon_value = {"longitudinal": 3, "repeated": 2, "single": 1, "technical": 1, "retrospective": 1, "not observed": 0}
@@ -66,36 +71,52 @@ def research_catalog() -> list[dict[str, object]]:
     }
     output = []
     for source_id, row in ledger.items():
+        if state.is_held("research", source_id):
+            continue
         _, source, level, finding, impact, boundary = row[:6]
         if len(row) == 7:
             boundary += " " + row[6]
         app = appraisals[source_id]
         title, url = source_link(source)
         claims = [x.strip() for x in app[6].split(",") if x.strip()]
+        appraisal_state = state.appraisal_state("research", source_id)
+        automated = appraisal_state == AUTOMATED
+        number = int(source_id.split("-")[-1])
         output.append({
             "id": source_id, "title": title, "url": url, "levelEvidence": level,
             "finding": finding, "impact": impact.replace("**", ""), "boundary": boundary,
-            "design": app[1], "directness": app[2], "directnessValue": int(app[2][1]),
-            "family": app[3], "familyLabel": family_labels.get(app[3], app[3]), "horizon": app[4], "horizonValue": horizon_value.get(app[4], 0),
+            "design": app[1],
+            # Automated screens carry no grade; the ledger placeholder is never published.
+            "directness": None if automated else app[2], "directnessValue": None if automated else int(app[2][1]),
+            "family": app[3], "familyLabel": family_labels.get(app[3], app[3]),
+            "horizon": None if automated else app[4], "horizonValue": None if automated else horizon_value.get(app[4], 0),
             "flags": app[5], "claims": claims, "claimCount": len(claims),
+            "appraisal_state": appraisal_state,
             "record_state": "reviewed-catalog" if source_id.isdigit() else "candidate-not-promoted",
             "review_depth": (re.match(r"(selected-full-text|abstract-only):", app[5])[1] if re.match(r"(selected-full-text|abstract-only):", app[5]) else "screened-structural" if source_id.isdigit() else "prior-screened-candidate"),
             "citationSignal": "not collected",
-            "_sort": [proximity.get(app[2][:2], 9), horizon_order.get(app[4], 9), 0 if source_id.isdigit() else 1, int(source_id.split("-")[-1])],
+            "_sort": [1, number] if automated else [0, proximity.get(app[2][:2], 9), horizon_order.get(app[4], 9), 0 if source_id.isdigit() else 1, number],
         })
-        if "automated relevance screen" in app[5]:
-            output[-1]["directnessValue"] = None
-            output[-1]["horizonValue"] = None
     output.sort(key=lambda item: item["_sort"])
-    for rank, item in enumerate(output, 1):
-        item["evidenceOrder"] = rank
+    ranked = sum(item["appraisal_state"] != AUTOMATED for item in output)
+    for position, item in enumerate(output, 1):
+        # Appraised records keep their prior 1..N order; automated intake is unranked and sorted last.
+        item["evidenceOrder"] = position if item["appraisal_state"] != AUTOMATED else None
+        item["evidenceOrderCount"] = ranked
         del item["_sort"]
     return output
 
 
-def repository_catalog() -> list[dict[str, object]]:
-    landscape = json.loads((DOCS / "collaborative-intelligence-repository-landscape.json").read_text(encoding="utf-8"))
-    output = landscape["repositories"]
+def repository_catalog(docs: Path | None = None) -> list[dict[str, object]]:
+    docs = docs or DOCS
+    landscape = json.loads((docs / "collaborative-intelligence-repository-landscape.json").read_text(encoding="utf-8"))
+    state = IntakeState(docs)
+    if not state.held_ids("repository") <= {item["id"] for item in landscape["repositories"]}:
+        raise ValueError("Held repository is missing from the landscape")
+    output = [item for item in landscape["repositories"] if not state.is_held("repository", item["id"])]
+    later_ids = set(landscape.get("post_import_repository_ids", []))
+    for item in output:
+        item["appraisal_state"] = state.appraisal_state("repository", item["id"])
     unknown_depths = {item["evidence_depth"] for item in output} - {"readme-screened", "source-assessment", "readme-relevance-screened"}
     if unknown_depths:
         raise ValueError(f"unknown repository evidence depths: {sorted(unknown_depths)}")
@@ -119,10 +140,16 @@ def repository_catalog() -> list[dict[str, object]]:
         item["mechanismTotal"] = len(item["mechanisms"])
         item["claimCount"] = len(item["claims"])
         item["lastReviewed"] = item["snapshot_date"]
-        item["starsObservedDate"] = (
-            item.get("popularity_observed_date", item.get("stars_observed_date", landscape["popularity_observed_date"]))
-            if item["stars_observed"] is not None else None
-        )
+        if item["stars_observed"] is None:
+            item["starsObservedDate"] = None
+        elif item["appraisal_state"] == AUTOMATED or item["id"] in later_ids:
+            # New intake never inherits the older global observation date.
+            if not item.get("popularity_observed_date"):
+                raise ValueError(f"{item['id']}: new intake needs its own popularity observation date")
+            item["starsObservedDate"] = item["popularity_observed_date"]
+        else:
+            item["starsObservedDate"] = item.get("popularity_observed_date", item.get("stars_observed_date", landscape["popularity_observed_date"]))
+        item["licenseBasis"] = "github-reported-unverified" if item["appraisal_state"] == AUTOMATED else "ledger-recorded"
         item["popularityCount"] = popularity_count
         item["categoryPopularityCount"] = category_popularity_counts.get(category, 0)
         item["ledgerRepositoryCount"] = len(output)
@@ -170,6 +197,8 @@ def write(name: str, value: object) -> None:
 
 
 if __name__ == "__main__":
-    write("research.json", research_catalog())
-    write("repositories.json", repository_catalog())
+    research, repositories = research_catalog(), repository_catalog()
+    validate_catalog_semantics(research, repositories)
+    write("research.json", research)
+    write("repositories.json", repositories)
     write("claims.json", claim_catalog())

@@ -1,4 +1,10 @@
-"""Publish a revision-bound, evidence-only catalog export for consumers."""
+"""Publish a revision-bound, evidence-only catalog export for consumers.
+
+Export schema 2.0 is a breaking change from 1.0: directness, horizon and evidenceOrder
+are nullable for automated screens, every catalog row carries appraisal_state, and
+repositories add the readme-relevance-screened depth. See catalog-contract.json.
+Frozen 1.0 exports stay in exports/ unchanged; consumers pinned to 1.0 must fail closed.
+"""
 import json
 import argparse
 import shutil
@@ -8,15 +14,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'site' / 'data'
-INPUTS = ['docs/collaborative-intelligence-research-ledger.md',
+INPUTS = ['catalog-contract.json', 'docs/collaborative-intelligence-research-ledger.md',
           'docs/collaborative-intelligence-source-appraisals.md',
           'docs/collaborative-intelligence-repository-landscape.json',
           'docs/collaborative-intelligence-claim-register.md',
           'docs/staletoast-appraisal-priorities.json', 'docs/staletoast-chart-history',
           'docs/staletoast-chart-link-corrections.json', 'site/build_catalogs.py',
-          'docs/staletoast-expansion-2026-11-01.json',
+          'docs/staletoast-expansion-2026-11-01.json', 'docs/staletoast-source-dispositions.json',
           'site/build_priorities.py', 'site/build_discovery.py', 'site/ledger_markdown.py',
-          'site/build_export.py']
+          'site/intake_state.py', 'site/build_export.py']
+EXPORT_SCHEMA_VERSION = '2.0'
 
 
 def input_hashes():
@@ -47,7 +54,7 @@ def build(freeze=False):
             pin_path.write_text(json.dumps({'schema_version': '1.0', 'source_revision': revision,
                                            'inputs_sha256': hashes}, indent=2) + '\n', encoding='utf-8')
     revision = catalog_revision()
-    payload = {'schema_version': '1.0', 'canonical_owner': 'The-825/staletoast',
+    payload = {'schema_version': EXPORT_SCHEMA_VERSION, 'canonical_owner': 'The-825/staletoast',
                'authority': 'evidence-only', 'source_revision': revision,
                'catalogs': {name: json.loads((DATA / (name + '.json')).read_text(encoding='utf-8'))
                             for name in ('research', 'repositories', 'claims', 'charts')}}
