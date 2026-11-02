@@ -182,7 +182,7 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 
 **Evidence inspected.** TraceBundleV1 defines provenance, harness, session, identity, repository, project, namespace and model fields. A substantial redaction engine and model-normalization tests are present; tests were inspected, not run.
 
-**Compared with our system.** Our checkpoint receipts already carry ownership and evidence. A small adapter could reveal missing or differently named fields across harnesses without replacing the handoff contract.
+**Compared with our system.** Our checkpoint receipts already carry scope, authority and evidence. A small adapter could reveal missing or differently named fields across harnesses without replacing the handoff contract.
 
 **Limits and burden.** Collector coverage is not proved across all harnesses. Pattern redaction cannot guarantee removal of every secret. Persistence, destinations and raw content capture need owning-runtime review before use. Inspected usage fields use omitempty, collapsing zero and unknown; the model field lacks a requested/observed split, and normalization removes provider prefixes. Our checkpoint measurement states and exact model evidence are stronger on these points. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 

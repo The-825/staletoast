@@ -764,7 +764,7 @@
       "theme": "Cross-tool coordination",
       "priority": "Strong practical fit",
       "mechanism": "TraceBundleV1 defines provenance, harness, session, identity, repository, project, namespace and model fields. A substantial redaction engine and model-normalization tests are present; tests were inspected, not run.",
-      "comparison": "Our checkpoint receipts already carry ownership and evidence. A small adapter could reveal missing or differently named fields across harnesses without replacing the handoff contract.",
+      "comparison": "Our checkpoint receipts already carry scope, authority and evidence. A small adapter could reveal missing or differently named fields across harnesses without replacing the handoff contract.",
       "limits": "Collector coverage is not proved across all harnesses. Pattern redaction cannot guarantee removal of every secret. Persistence, destinations and raw content capture need owning-runtime review before use. Inspected usage fields use omitempty, collapsing zero and unknown; the model field lacks a requested/observed split, and normalization removes provider prefixes. Our checkpoint measurement states and exact model evidence are stronger on these points.",
       "experiment": "Map two fictional harness records, one with missing served-model identity and one failed tool call, into a minimal common receipt without copying prompts.",
       "acceptance": "Preserve the raw observed model string alongside any normalized label. Keep requested/configured/observed identity and measured/estimated/unknown usage separate; absent data must not become zero. Preserve errors and prove that redacted values do not reach the exported fictional receipt.",
