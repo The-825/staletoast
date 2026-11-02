@@ -125,6 +125,9 @@ Original records and rankings retained. Q-NEXT-038 has a later selected full-tex
 | Q-NEXT-093 | paper | [Talk Freely, Execute Strictly: Schema-Gated Agentic AI for Flexible and Reproducible Scientific Workflows](https://arxiv.org/abs/2603.06394v1) | verify: Composed-action schema gating is relevant; model-judge agreement is not independent evidence of execution correctness or effort savings. | Inspect full methods, actual execution-boundary implementation and human/operational baselines; distinguish architecture scoring from validated workflow behavior. |
 
 
+## October 25 reconsideration: Q-NEXT-006
+
+[langchain-ai/agentevals](https://github.com/langchain-ai/agentevals/tree/946ad15b9f2ce9bc9843edd2bb773bd07d78ca7e) retains its original identity, pin and observation. The [dated selected-source appraisal and native-equivalence disposition](staletoast-q006-reconsideration-2026-10-25.md) supersedes its metadata-only limitation within the inspected scope. Existing native task-outcome acceptance already covers the proposed gap; no new matcher, package adoption or canonical addition is proposed. Actual-effect authentication and durable consumer integration remain unestablished. No upstream tests or prior native checks were rerun by this update.
 ## October 26, 2026 reconsideration
 
 Q-NEXT-093 and Q-NEXT-091 remain backlog candidates after selected full-text and pinned validation-path review. Prior records and ranks are unchanged. Schema-valid form state does not establish a mandatory, authorized execution boundary. See [dated appraisal](staletoast-scout-2026-10-26.md) and its receipt for limits and the proposed synthetic consumer check. No additions or adoption.
