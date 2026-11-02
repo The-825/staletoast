@@ -1,0 +1,187 @@
+{
+  "date": "2026-10-21",
+  "status": "two addition proposals ready for review; no ledger promotion or publication",
+  "new_discovery": 0,
+  "selected": [
+    {
+      "pool_id": "Q-NEXT-075",
+      "proposed_ledger_id": "C-026",
+      "source": "https://arxiv.org/abs/2609.27871v1",
+      "fulltext": "https://arxiv.org/html/2609.27871v1",
+      "depth": "selected full-text claim appraisal, not complete proof audit or replication",
+      "recommendation": "ready for candidate catalog review with bounded finding",
+      "claims": [
+        "CI-006",
+        "CI-004",
+        "CI-017"
+      ],
+      "directness": "D2 adjacent",
+      "family": "BOUNDED-LOOPS; same-project gates and corpus",
+      "sections_read": [
+        "3 definitions and authority boundary",
+        "6 deterministic bound experiment",
+        "7 completion invariant",
+        "10 measurement/independence",
+        "12 setup, tier results and post-freeze comparison",
+        "14 enforcement counterexamples",
+        "15.3 validity threats"
+      ],
+      "appraisal": "Design: formal contracts plus mutation experiments. Comparator: repaired gates tested with original versus fresh operators. Completion guarantees require bounded repair and protected checker state; they do not imply correct work. The selected results show post-repair corpus success can miss a fresh defect family. Shared authorship, gate-conditioned seeds, incomplete label audit and no conforming Tier-2 cases limit inference. The setup text also describes 57 of 69 loops with eleven exclusions, leaving its denominator explanation unreconciled. Treat this as an evidence gap. No proof, code or result was independently reproduced. Use as a candidate for adversarial-check design, not a reliable failure-rate estimate or permission to run more agents.",
+      "next_check": "Reconcile catalogue/exclusion counts at pinned v0.6.6 and independently label a fresh synthetic operator family before promoting quantitative confidence.",
+      "reuse": "Paper license not appraised; no text/code copied into implementation. Cite source; inspect code/corpus terms separately before reuse."
+    },
+    {
+      "pool_id": "Q-NEXT-060",
+      "proposed_ledger_id": "R-337",
+      "source": "https://github.com/djpapzin/agent-handoff-kit",
+      "revision": "2171dcef26d203da8dc4fe9883bfe3939882e285",
+      "review_date": "2026-10-21",
+      "depth": "source-traced; tests inspected, not executed",
+      "recommendation": "ready for source-level catalog review; not operational adoption",
+      "claim_fit": [
+        "CI-006",
+        "CI-007",
+        "CI-008"
+      ],
+      "directness": "D2 adjacent: synthetic local worker recovery",
+      "license": "Pinned MIT LICENSE inspected; retain copyright and permission notice for copied substantial portions",
+      "evidence": [
+        {
+          "path": "handoff_kit/db.py",
+          "start": 126,
+          "end": 180,
+          "observation": "Write body and commit enclosed by BEGIN IMMEDIATE; uncertain commit acknowledgment triggers fresh read inspection and CommitUncertain."
+        },
+        {
+          "path": "handoff_kit/worker.py",
+          "start": 210,
+          "end": 327,
+          "observation": "Claim compares canonical input before mutation, rejects live holders, increments generation on takeover. Holder guard checks status, owner, generation and lease expiry under write lock."
+        },
+        {
+          "path": "handoff_kit/worker.py",
+          "start": 770,
+          "end": 930,
+          "observation": "Receipt creation, checkpoint update and history append share run_immediate transaction; final completion requires full prefix and receipt."
+        },
+        {
+          "path": "handoff_kit/worker.py",
+          "start": 1046,
+          "end": 1095,
+          "observation": "Replay uses read-only connection and rejects nonterminal/held states and mismatching input."
+        },
+        {
+          "path": "handoff_kit/schema.py",
+          "start": 59,
+          "end": 125,
+          "observation": "Receipt job primary key and uniqueness; append-only triggers, subject to database owner control."
+        },
+        {
+          "path": "tests/test_handoff.py",
+          "start": 700,
+          "end": 749,
+          "observation": "Test definitions inject worker death around receipt insertion; inspected only, no passing-run claim."
+        },
+        {
+          "path": "tests/test_handoff.py",
+          "start": 811,
+          "end": 902,
+          "observation": "Test definitions cover corruption and unknown outcomes remaining held; inspected only."
+        }
+      ],
+      "limits": [
+        "Local SQLite atomicity does not cover a remote API, email, payment or other external side effect.",
+        "Generation fencing is a local write guard, not authorization to act or authenticated worker identity.",
+        "Database owner can alter schema/triggers; append-only is not independent witness or signature.",
+        "Wall-clock lease assumptions and POSIX demo do not prove Windows process-death behavior or power-loss recovery.",
+        "No measured collaboration benefit, latency advantage or cost saving established."
+      ],
+      "existing_equivalents": [
+        "R-316 Temporal: replay and durable workflow identity already cataloged",
+        "R-336 Hatchet: durable task recovery already cataloged",
+        "Q-NEXT-041 through Q-NEXT-044: retained recovery mechanisms need comparison"
+      ],
+      "incremental_value": "Small inspectable transaction and uncertain-commit boundary, rather than adding another broad orchestration platform.",
+      "smallest_native_experiment": "In an owning synthetic fixture, compare naive checkpoint-after-effect with atomic local receipt/checkpoint/history; inject failure before insert, after insert and after commit acknowledgment. Do not send external effects.",
+      "acceptance": [
+        "Stale generation cannot write after takeover",
+        "Replay makes zero writes and preserves prior receipt/history hashes",
+        "Ambiguous acknowledgment remains unknown until fresh committed evidence resolves it",
+        "Baseline and candidate checked with identical fault points; report execution time and all misses"
+      ],
+      "files": [
+        {
+          "path": "docs/BASELINE.md",
+          "sha256": "31d4c1b5ca4972eb594bafd96ce8cb8a4283cab2bff115ba93ea6ab87aa97604",
+          "bytes": 886
+        },
+        {
+          "path": "handoff_kit/db.py",
+          "sha256": "aa6053f25a836d83973db7e11891e1be30cf717aa2c8504472574d1308697b83",
+          "bytes": 6064
+        },
+        {
+          "path": "handoff_kit/schema.py",
+          "sha256": "b3881c63fa97d10070c0848e2881c25486bf55d6d1bfabb43895acedf6deda0e",
+          "bytes": 5868
+        },
+        {
+          "path": "handoff_kit/steps.py",
+          "sha256": "26e78cb915e2d78f9425b0f7b0a8e6f0b612f7fa066dddef2ad72361e34081dc",
+          "bytes": 7561
+        },
+        {
+          "path": "handoff_kit/worker.py",
+          "sha256": "3ef1249776f69c82b081628856d6653e962ed499c9b217c191bcfb4bca0e147e",
+          "bytes": 41286
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "59d9376183300071121194f918e807fcb334239a0e84e139a0862911a076a72c",
+          "bytes": 1087
+        },
+        {
+          "path": "tests/test_codex_review.py",
+          "sha256": "1211fec75f89f8b2050b5b743d79678eb039c99b0bf58ff0b3ebe15b4ef9ade2",
+          "bytes": 11597
+        },
+        {
+          "path": "tests/test_handoff.py",
+          "sha256": "21089097580e1839faae43738848e5b7b7db0443debf2c8ebf78201f48c1c102",
+          "bytes": 45801
+        }
+      ]
+    }
+  ],
+  "selection": {
+    "question": "Which retained sources reduce uncertainty about interrupted-work completion with the smallest inspectable mechanism?",
+    "shortlist": [
+      {
+        "id": "Q-NEXT-060",
+        "decision": "select",
+        "reason": "Concrete transaction boundary and small source trace"
+      },
+      {
+        "id": "Q-NEXT-075",
+        "decision": "select",
+        "reason": "Direct challenge to validity of completion checks; contrary evidence changes interpretation"
+      },
+      {
+        "id": "Q-NEXT-047",
+        "decision": "defer",
+        "reason": "Judge drift remains valuable but full paired-statistical appraisal and patch-label review still needed"
+      },
+      {
+        "id": "Q-NEXT-070",
+        "decision": "defer",
+        "reason": "Grounding parser scope is less direct to handoff completion"
+      },
+      {
+        "id": "Q-NEXT-086",
+        "decision": "defer",
+        "reason": "Training-corpus scale exceeds current catalog identity/dedup needs"
+      }
+    ]
+  },
+  "review_boundary": "No claim-register confidence upgrade, runtime adoption, model/provider call or upstream execution. IDs are proposals, not allocated canonical records; recheck collision before intake."
+}

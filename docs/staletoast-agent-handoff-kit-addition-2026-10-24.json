@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-24",
+  "candidate": "Q-NEXT-060",
+  "status": "Source review complete; ready for canonical addition, not yet inserted or published",
+  "proposed_repository_record": {
+    "id": "R-337",
+    "repository": "djpapzin/agent-handoff-kit",
+    "url": "https://github.com/djpapzin/agent-handoff-kit",
+    "snapshot_commit": "2171dcef26d203da8dc4fe9883bfe3939882e285",
+    "snapshot_date": "2026-10-24",
+    "stars_observed": 0,
+    "popularity_observed_date": "2026-10-24",
+    "selection_aspect": "small-local-transaction-and-uncertain-commit-recovery",
+    "category": "workflow-runtime",
+    "lifecycle": "current",
+    "evidence_depth": "readme-screened",
+    "evidence_pointer": "README.md; handoff_kit/db.py:126-180; handoff_kit/worker.py:210-327,770-930,1046-1110",
+    "evidence_note": "README mechanism screen supplemented by pinned source trace. SQLite claim fencing, atomic local receipt/checkpoint/history and read-only replay are visible. Tests inspected but not run. Local receipts do not cover remote side effects, authenticated identity or human authority; no measured collaboration or cost advantage.",
+    "claims": [
+      "CI-006",
+      "CI-007",
+      "CI-008"
+    ],
+    "mechanisms": {
+      "collaboration_topology": "P",
+      "workflow_state": "V",
+      "human_authority": "N",
+      "memory_context": "P",
+      "trace_recovery": "V",
+      "evaluation_surface": "V",
+      "collaboration_baseline": "N",
+      "cost_burden": "N",
+      "change_expiry": "P",
+      "independent_verification": "N",
+      "interoperability": "P"
+    },
+    "upstream_revision": "2171dcef26d203da8dc4fe9883bfe3939882e285",
+    "assessment_status": "mechanism-screened",
+    "license_status": "MIT; pinned root license inspected, retain notices if copying",
+    "aliases": [],
+    "evidence_family": "AGENT-HANDOFF-KIT",
+    "related_paper_ids": [],
+    "upstream_commit_date": "2026-09-27T20:50:25Z",
+    "maintenance_observed_pushed_at": "2026-09-27T20:50:56Z",
+    "readme_content_sha256": "af7bf1a70341e4ee376150ee1f0c7688c5bdc1e489b9777909915cebfea3a529",
+    "license_content_sha256": "59d9376183300071121194f918e807fcb334239a0e84e139a0862911a076a72c",
+    "counterevidence": []
+  },
+  "catalog_depth_note": "Keep existing compatible README mechanism-screen tier; supplemental code trace is explicit, not execution. No code-traced schema taxonomy change in this packet.",
+  "source_appraisal": "staletoast-deep-appraisal-2026-10-21.json",
+  "overlap": "R-316 Temporal and R-336 Hatchet cover broad durable orchestration; distinct small inspectable local transaction and ambiguous acknowledgment boundary. No novelty or superiority claim.",
+  "review": {
+    "owner": "Task22 final synthesis accepted",
+    "separate_reviewer": "Existing Task48, separate local Codex receiver",
+    "verdict": "Ready for source-level catalog addition at existing README mechanism tier",
+    "source_revision": "2171dcef26d203da8dc4fe9883bfe3939882e285",
+    "review_receipt_sha256": "0b9c4b3fe491062d923a676823301dc75534717a260494dbef9b793467b16f63",
+    "review_limit": "Reviewer inspected author-collected pinned files and hashes, did not independently fetch upstream or execute tests",
+    "reviewed_record_sha256": "8ecebbdf7cd1add219eb9f6e99e8fec5aced412cc910b84882bf6dadfc91cfaa",
+    "rounds": "One focused source review plus owner resolution and synthesis; no unresolved material issue requiring adversarial round"
+  },
+  "canonical_additions": 0,
+  "publication": "none",
+  "bounded_loops": {
+    "pool_id": "Q-NEXT-075",
+    "disposition": "Hold in pool by direct user instruction until denominator resolved",
+    "quantitative_confidence": "withheld",
+    "not_in_addition_packet": true
+  },
+  "acceptance": [
+    "Separate source review accepted on exact pin",
+    "Recheck R337 identity immediately before canonical insertion",
+    "Apply ledger, appraisal and priorities consistently under daily cap",
+    "Commit canonical inputs then freeze new immutable export if intake proceeds",
+    "Native checks pass; publication authority separate"
+  ],
+  "limits": [
+    "Source inspection, not test execution or adoption",
+    "No benchmark/cost/remote-exactly-once claim",
+    "No empty issue list safety inference"
+  ],
+  "checks": [
+    {
+      "command": "python site/build_priorities.py --check",
+      "exit_code": 0,
+      "output": "priorities: research=123 repositories=335\n"
+    },
+    {
+      "command": "python site/build_catalogs.py",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "python site/build_discovery.py",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_discovery.py --check",
+      "exit_code": 0,
+      "output": "discovery: research=100 repositories=100 editions=2\n"
+    },
+    {
+      "command": "python site/build_export.py",
+      "exit_code": 0,
+      "output": "export: revision=7280071ae414ca6faace06331122c80921c8de99\n"
+    },
+    {
+      "command": "python -m unittest discover -s site -p test_*.py",
+      "exit_code": 0,
+      "output": "export: revision=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nexport: revision=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n.......................\n----------------------------------------------------------------------\nRan 23 tests in 0.784s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/repository_landscape.py --check",
+      "exit_code": 0,
+      "output": "repository_landscape: repositories=335 unresolved=0\n"
+    },
+    {
+      "command": "python scripts/repository_review_promotions.py --check",
+      "exit_code": 0,
+      "output": "repository_review_promotions: detailed_appraisal_count=230 portable_only_count=105 total_repository_count=335 latest_review_wave=R4 latest_review_wave_count=106\n"
+    },
+    {
+      "command": "python scripts/repository_triage.py --check",
+      "exit_code": 0,
+      "output": "repository_triage: portable_only=105 triaged=105 authority=descriptive-only\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "acceptance_state": {
+    "source_review": "passed within stated scope",
+    "author_synthesis": "accepted",
+    "license": "MIT pinned inspected",
+    "overlap": "Distinct compact local recovery example; no novelty or superiority claim",
+    "identity": "R337 absent at preparation, recheck before insertion",
+    "native_checks": "Ten commands passed including23site tests; catalog unchanged",
+    "canonical_insertion": "not performed; ready addition packet only",
+    "publication": "not performed",
+    "runtime_execution_and_adoption": "not performed; not prerequisite for source-level catalog listing"
+  }
+}
