@@ -1,8 +1,15 @@
 # Collaborative intelligence repository landscape
 
-**Status:** public ledger of 335 assessed repositories. Two hundred thirty records are
+**Status:** public collection of 1,000 repository records. Two hundred thirty records are
 pinned, README-screened mechanism appraisals. Another 105 are portable-only
 records preserving positively verified public identity and assessment evidence.
+The [November 1 expansion](staletoast-expansion-2026-11-01.md) adds 665 automated,
+commit-pinned README relevance screens awaiting human appraisal. Their mechanism
+fields remain unknown; they are not new detailed appraisals or Hot100 selections.
+Another 39 intake records remain held for scope or boundary appraisal, with their
+original rows preserved in the register and their reasons in the
+[source dispositions](staletoast-source-dispositions.json). They are outside the
+1,000-record active collection.
 None are runtime tests, product
 endorsements, or proof that collaboration improves outcomes.
 

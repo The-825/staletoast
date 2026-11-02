@@ -123,3 +123,17 @@ Original records and rankings retained. Q-NEXT-038 has a later selected full-tex
 | Q-NEXT-091 | repository | [eclipsesource/jsonforms](https://github.com/eclipsesource/jsonforms) | verify: Schema-driven UI equivalent; does not establish follow-up state, authority or remote-action recovery. Dependency/setup burden unmeasured. | Inspect pinned schema validation implementation and test definitions, permission boundaries and equivalent spreadsheet/form path; benchmark synthetic adaptation before adoption. |
 | Q-NEXT-092 | repository | [jsonform/jsonform](https://github.com/jsonform/jsonform) | verify: Schema-driven form equivalent with documented Bootstrap 3/jQuery dependencies; follow-up/history and modern compatibility unverified. | Inspect pinned schema validation implementation and test definitions, permission boundaries and equivalent spreadsheet/form path; benchmark synthetic adaptation before adoption. |
 | Q-NEXT-093 | paper | [Talk Freely, Execute Strictly: Schema-Gated Agentic AI for Flexible and Reproducible Scientific Workflows](https://arxiv.org/abs/2603.06394v1) | verify: Composed-action schema gating is relevant; model-judge agreement is not independent evidence of execution correctness or effort savings. | Inspect full methods, actual execution-boundary implementation and human/operational baselines; distinguish architecture scoring from validated workflow behavior. |
+
+
+## October 26, 2026 reconsideration
+
+Q-NEXT-093 and Q-NEXT-091 remain backlog candidates after selected full-text and pinned validation-path review. Prior records and ranks are unchanged. Schema-valid form state does not establish a mandatory, authorized execution boundary. See [dated appraisal](staletoast-scout-2026-10-26.md) and its receipt for limits and the proposed synthetic consumer check. No additions or adoption.
+
+
+## October27,2026 reconsideration
+
+Q-NEXT-081 andQ-NEXT-089 remain backlog after selected methods and pinned implementation/test-definition review. Preserve original rank and analysis. Reconstruct version-bound comparison membership and report missing instrumentation; neither provenance nor checksum consistency establishes source truth or runtime adoption. Q089pinned license is PolyForm Noncommercial1.0.0,not commercial reuse clearance. See [dated appraisal](staletoast-scout-2026-10-27.md). No additions.
+
+## November 1 corpus expansion
+
+377 abstract relevance screens and 665 README relevance screens were added to the searchable source collection, not the Hot100. Original pool records and assessments remain intact. All new sources await human appraisal. See the [batch manifest](staletoast-expansion-2026-11-01.json) for stable source-to-pool links, source versions, screening limits and retrieval digests. The machine-readable pool retains each unselected source; the daily selection cap and monthly reconsideration rule remain separate from this one-time expansion.

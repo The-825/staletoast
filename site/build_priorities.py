@@ -8,26 +8,7 @@ import re
 from datetime import date
 from pathlib import Path
 from ledger_markdown import cells, source_link
-
-READER_TOPICS = {
-    "CI-001": "When collaboration helps",
-    "CI-002": "Check each step of the work",
-    "CI-003": "When to trust or question AI",
-    "CI-004": "Time and effort required",
-    "CI-005": "Match abilities to the task",
-    "CI-006": "Understand and recover from failures",
-    "CI-007": "Who can approve each action",
-    "CI-008": "Recheck evidence when things change",
-    "CI-009": "Remember decisions and context",
-    "CI-010": "Use enough context with less private data",
-    "CI-011": "Keep people in control",
-    "CI-012": "Explanations that help people act",
-    "CI-013": "Know when to hand work to a person",
-    "CI-014": "Choose the right way to find information",
-    "CI-015": "Keep ideas and perspectives varied",
-    "CI-016": "Use more agents only when they help",
-    "CI-017": "Check AI improvements independently",
-}
+from intake_state import AUTOMATED, INTAKE_LABEL, IntakeState
 
 DOCS = Path(__file__).resolve().parents[1] / "docs"
 SOURCES = {
@@ -40,6 +21,9 @@ GAPS = ['CI-006', 'CI-007', 'CI-008', 'CI-009', 'CI-004', 'CI-017', 'CI-001',
         'CI-005', 'CI-013', 'CI-014']
 QUESTION = "Which evidence reduces uncertainty about handoff recovery, authority, revision-sensitive memory, and total evaluation burden?"
 IDENTITY = re.compile(r"(?:\d{3}|C-\d{3})")
+# Automated intake shares one constant key after every named gap and unclaimed appraised record.
+INTAKE_RANK = len(GAPS) + 1
+INTAKE_KEY = (INTAKE_RANK, 0, 0)
 
 
 def identified_rows(text, widths):
@@ -66,8 +50,8 @@ def rank(rows, key):
         if current != previous:
             group += 1
             previous = current
-        row.update(appraisal_priority_rank=group, priority_key=list(current),
-                   priority_claim=GAPS[current[0]] if current[0] < len(GAPS) else 'unknown')
+        claim = GAPS[current[0]] if current[0] < len(GAPS) else INTAKE_LABEL if current[0] == INTAKE_RANK else 'unknown'
+        row.update(appraisal_priority_rank=group, priority_key=list(current), priority_claim=claim)
     return rows
 
 
@@ -89,16 +73,22 @@ def build(docs, as_of):
     appraisals = identified_rows(texts['appraisal_source_sha256'], {7, 8})
     if set(sources) != set(appraisals):
         raise ValueError("research and appraisal IDs do not match")
+    state = IntakeState(docs)
+    if not state.held_ids('research') <= set(sources):
+        raise ValueError("held research source is missing from the ledger")
     research = []
     directness = {'D3': 0, 'D2': 1, 'D1': 2, 'D0': 3}
     horizons = {'longitudinal': 0, 'repeated': 1, 'single': 2, 'technical': 3,
                 'retrospective': 4, 'not observed': 5, 'short sequence': 6}
     for identity, row in sources.items():
+        if state.is_held('research', identity):
+            continue
         appraisal = appraisals[identity]
+        automated = state.appraisal_state('research', identity) == AUTOMATED
         title, url = source_link(row[1])
         if not url.startswith('https://'):
             raise ValueError(f"{identity}: primary source link is missing")
-        if appraisal[2][:2] not in directness or appraisal[4] not in horizons:
+        if not automated and (appraisal[2][:2] not in directness or appraisal[4] not in horizons):
             raise ValueError(f"{identity}: unknown directness or horizon")
         depth = 'screened-structural' if identity.isdigit() else 'prior-screened-candidate'
         explicit = re.match(r'(selected-full-text|abstract-only):', appraisal[5])
@@ -106,23 +96,31 @@ def build(docs, as_of):
             depth = explicit[1]
         research.append(dict(id=identity, title=title, url=url,
                              claims=[value.strip() for value in appraisal[6].split(',') if value.strip()],
-                             directness=appraisal[2], family=appraisal[3], horizon=appraisal[4],
-                             review_depth=depth, record_state='reviewed-catalog' if identity.isdigit() else 'candidate-not-promoted'))
-    research = rank(research, lambda row: (claim_priority(row['claims']), directness[row['directness'][:2]], horizons[row['horizon']]))
+                             directness=None if automated else appraisal[2], family=appraisal[3],
+                             horizon=None if automated else appraisal[4],
+                             review_depth=depth, record_state='reviewed-catalog' if identity.isdigit() else 'candidate-not-promoted',
+                             appraisal_state=state.appraisal_state('research', identity), automated_screen=automated))
+    research = rank(research, lambda row: INTAKE_KEY if row['automated_screen'] else
+                    (claim_priority(row['claims']), directness[row['directness'][:2]], horizons[row['horizon']]))
     landscape = json.loads(texts['repository_source_sha256'])
+    if not state.held_ids('repository') <= {row['id'] for row in landscape['repositories']}:
+        raise ValueError('held repository is missing from the landscape')
     repositories = [dict(id=row['id'], repository=row['repository'], url=row['url'], claims=row['claims'],
                          family=row.get('evidence_family', 'unresolved-lineage'), review_depth=row['evidence_depth'],
-                         lifecycle=row['lifecycle'], selection_aspect=row.get('selection_aspect', 'not specified'))
-                    for row in landscape['repositories']]
+                         lifecycle=row['lifecycle'], selection_aspect=row.get('selection_aspect', 'not specified'),
+                         appraisal_state=state.appraisal_state('repository', row['id']))
+                    for row in landscape['repositories'] if not state.is_held('repository', row['id'])]
     if len({row['id'] for row in repositories}) != len(repositories):
         raise ValueError('duplicate repository IDs')
-    repositories = rank(repositories, lambda row: (claim_priority(row['claims']),
-                        0 if row['review_depth'] == 'readme-screened' else 1, 0 if row['lifecycle'] == 'current' else 1))
+    repositories = rank(repositories, lambda row: INTAKE_KEY if row['appraisal_state'] == AUTOMATED else (
+        claim_priority(row['claims']), 0 if row['review_depth'] == 'readme-screened' else 1, 0 if row['lifecycle'] == 'current' else 1))
     return dict(schema_version=1, date=as_of, kind='derived appraisal routing projection, not a second findings ledger',
                 **{field: hashlib.sha256(text.encode('utf-8')).hexdigest() for field, text in texts.items()},
+                **state.source_hashes(),
                 rank_meaning='dense priority groups; ties remain ties, stable IDs order display only',
                 named_question=QUESTION, ordered_claim_gaps=GAPS,
-                rank_dimensions=['named claim gap', 'paper directness then observed horizon OR repository appraisal depth then lifecycle'],
+                rank_dimensions=['named claim gap', 'paper directness then observed horizon OR repository appraisal depth then lifecycle',
+                                 f'automated screens share one constant key after every appraised record ({INTAKE_LABEL}); no grade or finding'],
                 unmeasured_dimensions={'potential_to_change_conclusion': 'unknown until claim-specific validity review',
                                       'independence': 'families retained; not a rank bonus', 'adoption_readiness': 'not inferred'},
                 research=research, repositories=repositories,
@@ -133,22 +131,25 @@ def render(payload):
     papers, repositories = payload['research'], payload['repositories']
     reviewed = sum(row['record_state'] == 'reviewed-catalog' for row in papers)
     screened = sum(row['review_depth'] == 'readme-screened' for row in repositories)
-    lines = ['# What we are reviewing next', '',
+    relevance = sum(row['review_depth'] == 'readme-relevance-screened' for row in repositories)
+    automated_papers = sum(row['appraisal_state'] == AUTOMATED for row in papers)
+    lines = ['# All-source appraisal priorities', '',
              '**Status:** derived routing projection of the existing ledgers, public-source appraisal routing. It is not a second findings ledger, a scientific confidence score or an adoption recommendation. Assumes Method v2.0 and the named recovery/authority/memory/burden question.', '',
-             f'Every one of the {len(papers)} paper records and {len(repositories)} repository records appears once below. The historical {reviewed}-source catalog remains distinct from {len(papers) - reviewed} candidate papers; candidate inclusion here does not promote a finding. Repository coverage includes {screened} README screens and {len(repositories) - screened} portable-only identity records.', '',
-             'The [machine-readable projection](staletoast-appraisal-priorities.json) binds hashes of its three source files, using UTF-8 with LF line endings to match committed Git blob content. Rebuild it after any source change. Review order means which sources we plan to investigate first, not which are best. It considers the question a source addresses, how closely it resembles the work, and how much we have inspected. Lower numbers come first; matching numbers mean a tie. Source IDs only decide the display order within a tie. Stars, citation counts, recency and summed mechanism codes do not decide this priority. Potential to change conclusions is still unknown pending validity review, and family independence is not a rank bonus.', '',
+             f'Every one of the {len(papers)} paper records and {len(repositories)} repository records appears once below. The historical {reviewed}-source catalog remains distinct from {len(papers) - reviewed} candidate papers; candidate inclusion here does not promote a finding. Repository coverage includes {screened} mechanism screens, {relevance} automated README relevance screens and {len(repositories) - screened - relevance} portable-only identity records. Automated screens have no appraised mechanism or finding and are not Hot100 selections. The {automated_papers} automated paper screens and {relevance} automated repository screens are {INTAKE_LABEL}: they share one constant priority group after every appraised record, carry no directness, horizon or finding, and are shown as unappraised. Held sources recorded in the dispositions file are excluded from this projection.', '',
+             'The [machine-readable projection](staletoast-appraisal-priorities.json) binds hashes of its three source files, using UTF-8 with LF line endings to match committed Git blob content. Rebuild it after any source change. Priority groups order the named claim gaps, then paper directness/horizon or repository review depth/lifecycle. Ties share a dense rank; stable IDs order display only. Stars, citation counts, recency and summed mechanism codes do not decide this priority. Potential to change conclusions is still unknown pending validity review, and family independence is not a rank bonus.', '',
              'The original research evidence-order chart and dated repository popularity orders remain separate views. This projection covers candidates and portable records that those views cannot fairly treat as fully appraised evidence.', '',
              '## Research priorities', '',
-             '| Review order | ID | Source | Review state | Directness / horizon | Question to investigate |',
+             '| Priority group | ID | Source | Review state | Directness / horizon | First gap |',
              '|---|---|---|---|---|---|']
     for row in papers:
         title = row['title'].replace('|', '\\|')
-        lines.append(f"| {row['appraisal_priority_rank']} | {row['id']} | [{title}]({row['url']}) | {row['record_state']}; {row['review_depth']} | {row['directness']} / {row['horizon']} | {READER_TOPICS.get(row['priority_claim'], row['priority_claim'])} |")
+        grade = 'unappraised' if row['appraisal_state'] == AUTOMATED else f"{row['directness']} / {row['horizon']}"
+        lines.append(f"| {row['appraisal_priority_rank']} | {row['id']} | [{title}]({row['url']}) | {row['record_state']}; {row['review_depth']}; {row['appraisal_state']} | {grade} | {row['priority_claim']} |")
     lines += ['', '## Repository priorities', '',
-              '| Review order | ID | Repository | Review depth | Lifecycle | Question to investigate |',
+              '| Priority group | ID | Repository | Review depth | Lifecycle | First gap |',
               '|---|---|---|---|---|---|']
     for row in repositories:
-        lines.append(f"| {row['appraisal_priority_rank']} | {row['id']} | [{row['repository']}]({row['url']}) | {row['review_depth']} | {row['lifecycle']} | {READER_TOPICS.get(row['priority_claim'], row['priority_claim'])} |")
+        lines.append(f"| {row['appraisal_priority_rank']} | {row['id']} | [{row['repository']}]({row['url']}) | {row['review_depth']}; {row['appraisal_state']} | {row['lifecycle']} | {row['priority_claim']} |")
     return '\n'.join(lines) + '\n'
 
 

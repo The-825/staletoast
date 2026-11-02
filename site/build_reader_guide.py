@@ -17,7 +17,9 @@ INPUTS = ['docs/staletoast-reader-selections.json',
           'docs/collaborative-intelligence-source-appraisals.md',
           'docs/collaborative-intelligence-repository-landscape.json',
           'site/build_reader_guide.py', 'site/build_catalogs.py',
-          'site/build_priorities.py', 'site/ledger_markdown.py']
+          'site/build_priorities.py', 'site/ledger_markdown.py',
+          'site/intake_state.py', 'docs/staletoast-expansion-2026-11-01.json',
+          'docs/staletoast-source-dispositions.json']
 
 
 def required_text(value, name):

@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "purpose": "Hold selected intake outside the active collection without deleting original records, analysis or pool history.",
+  "records": [
+    {
+      "id": "C-078",
+      "kind": "research",
+      "state": "held",
+      "reason": "Held for scope review: study of public engagement with paintings is adjacent perception research; relevance to this collaboration/evaluation collection needs a deliberate appraisal.",
+      "replacement_id": "C-403"
+    },
+    {
+      "id": "C-092",
+      "kind": "research",
+      "state": "held",
+      "reason": "Held for evidence-family reconciliation with C-091: overlapping Evaluation Agent study and authors with additional Open-EA work; do not count as independent evidence without appraisal.",
+      "replacement_id": "C-404"
+    },
+    {
+      "id": "R-354",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1002"
+    },
+    {
+      "id": "R-371",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1003"
+    },
+    {
+      "id": "R-372",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1004"
+    },
+    {
+      "id": "R-374",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1005"
+    },
+    {
+      "id": "R-375",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1006"
+    },
+    {
+      "id": "R-397",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1007"
+    },
+    {
+      "id": "R-409",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1008"
+    },
+    {
+      "id": "R-411",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1009"
+    },
+    {
+      "id": "R-415",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1010"
+    },
+    {
+      "id": "R-421",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1011"
+    },
+    {
+      "id": "R-651",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1012"
+    },
+    {
+      "id": "R-689",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1013"
+    },
+    {
+      "id": "R-703",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1014"
+    },
+    {
+      "id": "R-763",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1015"
+    },
+    {
+      "id": "R-788",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1016"
+    },
+    {
+      "id": "R-789",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1017"
+    },
+    {
+      "id": "R-790",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1018"
+    },
+    {
+      "id": "R-793",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1019"
+    },
+    {
+      "id": "R-796",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1020"
+    },
+    {
+      "id": "R-797",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1021"
+    },
+    {
+      "id": "R-800",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1022"
+    },
+    {
+      "id": "R-803",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1023"
+    },
+    {
+      "id": "R-807",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1024"
+    },
+    {
+      "id": "R-809",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1025"
+    },
+    {
+      "id": "R-810",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1026"
+    },
+    {
+      "id": "R-815",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1027"
+    },
+    {
+      "id": "R-817",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1028"
+    },
+    {
+      "id": "R-819",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1029"
+    },
+    {
+      "id": "R-827",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1030"
+    },
+    {
+      "id": "R-833",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for separate scope and misuse-boundary appraisal: source emphasizes offensive security, evasion, bypass or unverified access claims; not a public workflow recommendation.",
+      "replacement_id": "R-1031"
+    },
+    {
+      "id": "R-909",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1032"
+    },
+    {
+      "id": "R-915",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1033"
+    },
+    {
+      "id": "R-917",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1034"
+    },
+    {
+      "id": "R-920",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1035"
+    },
+    {
+      "id": "R-922",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1036"
+    },
+    {
+      "id": "R-927",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1037"
+    },
+    {
+      "id": "R-933",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1038"
+    },
+    {
+      "id": "R-935",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1039"
+    },
+    {
+      "id": "R-958",
+      "kind": "repository",
+      "state": "held",
+      "reason": "Held for relevance review: generic application, course, serializer, form binding or domain example does not establish a sufficient collaborative-intelligence mechanism or evaluation focus.",
+      "replacement_id": "R-1040"
+    }
+  ]
+}

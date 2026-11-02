@@ -19,10 +19,14 @@ jobs:
           python-version: '3.12'
       - run: python site/build_priorities.py --check
       - run: python site/build_catalogs.py
+      - run: python site/build_reader_guide.py
+      - run: python site/build_reader_guide.py --check
       - run: python site/build_discovery.py
       - run: python site/build_discovery.py --check
       - run: python site/build_export.py
       - run: python -m unittest discover -s site -p 'test_*.py'
       - run: python scripts/repository_landscape.py --check
+      - run: python scripts/validate_corpus_expansion.py
+      - run: python scripts/validate_system_fit_appraisals.py
       - run: python scripts/repository_review_promotions.py --check
       - run: python scripts/repository_triage.py --check
