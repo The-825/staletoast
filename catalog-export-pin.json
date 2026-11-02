@@ -1,20 +1,23 @@
 {
   "schema_version": "1.0",
-  "source_revision": "80ecb3a46d8d5371c6aeb647575b6d50dfe8fe53",
+  "source_revision": "c1284e4b5b07c35eecff723d736fa7d9e37e09d7",
   "inputs_sha256": {
-    "docs/collaborative-intelligence-research-ledger.md": "2f77c0c4f8edbf7c907bf9a18ad19590ce48f30661e8678d7a7b1534991b0dcc",
-    "docs/collaborative-intelligence-source-appraisals.md": "db78b5a946454bfde26604415d79b67ec09bed7415568263a48342932a398b2e",
-    "docs/collaborative-intelligence-repository-landscape.json": "8693ea159186219fa8026157e5237477cd9690e295ec62b1dad4787736d89e10",
+    "catalog-contract.json": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
+    "docs/collaborative-intelligence-research-ledger.md": "8ad19fcae64fc0d92093e62a8afb96ceef268e0e7654845f1402c5d398195193",
+    "docs/collaborative-intelligence-source-appraisals.md": "bb6287fd75d39b1885b7a53932b7c6bb8b754ec5c5136d0fc8dfee6cbdd39945",
+    "docs/collaborative-intelligence-repository-landscape.json": "cab5a19ad7153eefcd1c554a628b029572f643a2db41b35f42831fe369bb7847",
     "docs/collaborative-intelligence-claim-register.md": "6c866dafaadd59432e74047b5354e659dd604ea943754278cd73d94d48d7583b",
-    "docs/staletoast-appraisal-priorities.json": "c0f69b036c0303b3dd8c25106fd46ec71f570925369d7e19ad4cb5e2334afde4",
+    "docs/staletoast-appraisal-priorities.json": "67d00a2f6ae26deb30e9107cf88c9ea7e6406507a3ea3572c9ee218c81e9f45d",
     "docs/staletoast-chart-history/2026-10-12.json": "897842fe91e67af71200a9092a3940f4b80daf83f3dd3d9ade2854f116bcc5a0",
     "docs/staletoast-chart-history/2026-10-13.json": "ef3770b8d5d3183d1fd8642567194896572eb776aa73db534908a648a94e26b9",
     "docs/staletoast-chart-link-corrections.json": "35c0c3fc7ccb4a655f51ad43f35e25a9977786e7a913437a6d1ad0ddc0a70622",
-    "site/build_catalogs.py": "fdd0bdc770b3fa3d3b4f24e6600115f776dc61301374aafb5a67863e20095627",
-    "docs/staletoast-expansion-2026-11-01.json": "c63e03ab1f00930668429e3caa98ad239a5b43f22a26641933db33767f3e87e7",
-    "site/build_priorities.py": "d1d4e3aef8912e3273364b329619ab5a7cd3f621379cabaa077527a3c34e4bad",
-    "site/build_discovery.py": "a6b4dde2f13f5d0bb7facdcbdf716c7d61fb2be5243acf4c91841bddf4e2b7ec",
+    "site/build_catalogs.py": "2e5c7f354c40c952ebe151196988450594d8af693df8e82a2ecdfe07877e14a3",
+    "docs/staletoast-expansion-2026-11-01.json": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
+    "docs/staletoast-source-dispositions.json": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
+    "site/build_priorities.py": "be51f8da7a1abbfddb7aad51a22751746f50e22b35df205920ae7c202ee9267a",
+    "site/build_discovery.py": "62102170a9a5a70018e4af5acfe61a0414f4ee8d0488e415e07d4fe39a8057d5",
     "site/ledger_markdown.py": "281c9e095e74628fba79f5114e0dfdcb5601da09f56f2229c63e4d6f770614ea",
-    "site/build_export.py": "5a861f1579e781978f7a2c07626e1216c7d0d7b12ef7edbe6614e8d6667adf02"
+    "site/intake_state.py": "958e04c77e1b0167f1100e2847a9ec9f695b9e02298abed5972dcf46ea119b55",
+    "site/build_export.py": "c530298c535411179d0e900b0656ac2793ad519b8a8ca7732f88844b0b9adf45"
   }
 }
