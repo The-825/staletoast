@@ -16,6 +16,9 @@ def require(condition, message):
         raise ValueError(message)
 def sha(raw):
     return hashlib.sha256(raw).hexdigest()
+def review_text_sha(path):
+    # Review JSON is Git text. Source PDF/blob checks below remain exact bytes.
+    return sha(path.read_bytes().replace(b'\r\n',b'\n'))
 def git_bytes(ref, path):
     return subprocess.check_output(['git','show',ref+':'+path],cwd=ROOT)
 
@@ -71,8 +74,9 @@ def validate(evidence=None):
     receipt_path=DOCS/'staletoast-system-fit-review-2026-11-01.json'
     if receipt_path.exists():
         receipt=load(receipt_path)
-        require(receipt['appraisal_sha256']==sha((DOCS/(NAME+'.json')).read_bytes()),'Stale appraisal review receipt')
-        require(receipt['routing_sha256']==sha((DOCS/'staletoast-system-fit-triage-2026-11-01.json').read_bytes()),'Stale routing review receipt')
+        require(receipt['review_digest_rule']=='UTF-8 text with CRLF normalized to LF; no other changes','Unknown review digest rule')
+        require(receipt['appraisal_sha256']==review_text_sha(DOCS/(NAME+'.json')),'Stale appraisal review receipt')
+        require(receipt['routing_sha256']==review_text_sha(DOCS/'staletoast-system-fit-triage-2026-11-01.json'),'Stale routing review receipt')
     # No ranked source, generated site asset, export or historical edition changes.
     changed=subprocess.check_output(['git','diff','--name-only',base],cwd=ROOT,text=True).splitlines()
     allow={'docs/staletoast-next-round-pool.json','docs/'+NAME+'.json','docs/'+NAME+'.md','docs/staletoast-system-fit-triage-2026-11-01.json','docs/staletoast-system-fit-review-2026-11-01.json','scripts/validate_system_fit_appraisals.py','README.md','.github/workflows/ci.yml'}

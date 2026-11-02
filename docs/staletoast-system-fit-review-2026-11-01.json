@@ -70,6 +70,7 @@
     "checks.json": "23a0f823b04587efe40a927d00a97e61924f3e394f7309a31d9a990460466532",
     "negative-validation.json": "261990f4e991162b078191072482c17905888bbea0d078cd9cb687756a0a7c86"
   },
-  "appraisal_sha256": "0a9319c7cb7bb7fa807b3c6aa5d859c61c31106499b6855bb5f502560b1fa354",
-  "routing_sha256": "4f8ebba281281f6236c67041f9b2a82ed9635db6f7f7b3168615b3109e0432dc"
+  "appraisal_sha256": "7bd39a962a1825acbab79866cf590543edbdcc3c15dbc05a4b46a450bcc9644f",
+  "routing_sha256": "02de07ebaffc29eede6f986cbd19a2444b456152df5039459a8591ce42829da7",
+  "review_digest_rule": "UTF-8 text with CRLF normalized to LF; no other changes"
 }
