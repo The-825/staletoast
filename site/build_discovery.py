@@ -13,6 +13,7 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 from ledger_markdown import source_link
+from intake_state import IntakeState
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
@@ -82,7 +83,7 @@ def editions(history=None):
     return result
 
 
-def make_edition(edition_date, priorities, landscape, prior_editions):
+def make_edition(edition_date, priorities, landscape, prior_editions, held_repository_ids=None):
     if date.fromisoformat(edition_date).isoformat() != edition_date:
         raise ValueError("chart dates must use YYYY-MM-DD")
     if prior_editions and edition_date <= prior_editions[-1]["edition_date"]:
@@ -90,6 +91,10 @@ def make_edition(edition_date, priorities, landscape, prior_editions):
     repositories = {row["id"]: row for row in landscape["repositories"]}
     if len(repositories) != len(landscape["repositories"]):
         raise ValueError("duplicate source repository IDs")
+    held = set(held_repository_ids or ())
+    if not held <= repositories.keys():
+        raise ValueError("held repository is absent from the retained ledger")
+    repositories = {identity: row for identity, row in repositories.items() if identity not in held}
     for kind in ("research", "repositories"):
         ids = [row["id"] for row in priorities[kind]]
         if len(ids) != len(set(ids)):
@@ -161,7 +166,11 @@ def main():
         if any(priorities[field] != digest(DOCS / name) for field, name in sources.items()):
             raise ValueError("appraisal priorities are stale; rebuild before freezing an edition")
         earlier = [record for record in previous if record["edition_date"] < args.edition_date]
-        edition = make_edition(args.edition_date, priorities, read(DOCS / "collaborative-intelligence-repository-landscape.json"), earlier)
+        state = IntakeState(DOCS)
+        if any(priorities.get(field) != value for field, value in state.source_hashes().items()):
+            raise ValueError("appraisal priorities have stale intake or held-source hashes")
+        edition = make_edition(args.edition_date, priorities, read(DOCS / "collaborative-intelligence-repository-landscape.json"), earlier,
+                               state.held_ids('repository'))
         edition["source_hashes"] = {field: priorities[field] for field in sources}
         path = HISTORY / f"{args.edition_date}.json"
         if args.check:

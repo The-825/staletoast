@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "8ad19fcae64fc0d92093e62a8afb96ceef268e0e7654845f1402c5d398195193",
   "appraisal_source_sha256": "bb6287fd75d39b1885b7a53932b7c6bb8b754ec5c5136d0fc8dfee6cbdd39945",
