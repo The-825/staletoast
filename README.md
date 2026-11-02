@@ -45,7 +45,9 @@ python scripts/repository_triage.py --check
 
 For a reviewed new intake, rebuild priorities with `--write --date YYYY-MM-DD`,
 then freeze a new chart with `python site/build_discovery.py --edition-date
-YYYY-MM-DD`. Existing dated editions cannot be overwritten. Preserve source
+YYYY-MM-DD`. For the weekly offline preparation of both steps with a dated
+review receipt, see [weekly Hot100 preparation](docs/weekly-hot100.md).
+Existing dated editions cannot be overwritten. Preserve source
 versions, review limits, contrary evidence and stable IDs. A chart position
 guides attention; it does not certify findings or grant adoption authority.
 

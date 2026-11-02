@@ -88,14 +88,20 @@ class StandaloneTests(unittest.TestCase):
             self.assertEqual(100, len(chart['entries']))
             self.assertEqual(len(chart['entries']), len({r['id'] for r in chart['entries']}))
 
-    def test_old_frozen_exports_stay_schema_1_and_unmodified_by_the_new_schema(self):
-        revision = catalog_revision()
-        for path in (ROOT / 'exports').glob('*.json'):
-            if path.stem == revision:
+    def test_prior_frozen_exports_preserve_git_content_and_recorded_schema(self):
+        paths = subprocess.check_output(
+            ['git', 'ls-tree', '-r', '--name-only', 'HEAD', 'exports'],
+            cwd=ROOT, text=True).splitlines()
+        for name in paths:
+            path = Path(name)
+            if path.parent != Path('exports') or path.suffix != '.json':
                 continue
-            with path.open(encoding='utf-8') as handle:
-                head = handle.read(200)
-            self.assertIn('"schema_version": "1.0"', head, path.name)
+            original = subprocess.check_output(['git', 'show', 'HEAD:' + name], cwd=ROOT)
+            self.assertEqual(original.decode('utf-8').replace('\r\n', '\n'),
+                             (ROOT / name).read_text(encoding='utf-8'), name)
+            record = json.loads(original)
+            self.assertIn(record['schema_version'], {'1.0', '2.0'}, name)
+            self.assertEqual(path.stem, record['source_revision'], name)
 
     def test_research_profiles_cover_all_chart_archive_identities_without_promoting_candidates(self):
         research = json.loads((SITE / 'data/research.json').read_text(encoding='utf-8'))

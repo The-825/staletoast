@@ -1,0 +1,336 @@
+{
+  "date": "2026-11-02",
+  "execution": "on-demand primary metadata recheck; not a scheduled run or full evidence reassessment",
+  "research": {
+    "date": "2026-11-02",
+    "observed_utc": "2026-11-02T16:50:26.382458+00:00",
+    "status": "metadata version check complete",
+    "response_sha256": "4bfd531e657b97d748234338464318adf1218ac01168d3a71abb80cb7261a932",
+    "records": [
+      {
+        "id": "C-137",
+        "appraised_version": "https://arxiv.org/abs/2606.08275v1",
+        "observed_version": "https://arxiv.org/abs/2606.08275v1",
+        "version_changed": false,
+        "updated": "2026-06-06T17:44:23Z"
+      },
+      {
+        "id": "C-143",
+        "appraised_version": "https://arxiv.org/abs/2508.02866v3",
+        "observed_version": "https://arxiv.org/abs/2508.02866v3",
+        "version_changed": false,
+        "updated": "2025-08-20T15:00:50Z"
+      },
+      {
+        "id": "C-166",
+        "appraised_version": "https://arxiv.org/abs/2609.08258v1",
+        "observed_version": "https://arxiv.org/abs/2609.08258v1",
+        "version_changed": false,
+        "updated": "2026-09-08T05:03:09Z"
+      },
+      {
+        "id": "C-201",
+        "appraised_version": "https://arxiv.org/abs/2606.27472v1",
+        "observed_version": "https://arxiv.org/abs/2606.27472v1",
+        "version_changed": false,
+        "updated": "2026-06-25T18:50:32Z"
+      },
+      {
+        "id": "C-403",
+        "appraised_version": "https://arxiv.org/abs/2609.17842v1",
+        "observed_version": "https://arxiv.org/abs/2609.17842v1",
+        "version_changed": false,
+        "updated": "2026-09-15T21:02:24Z"
+      },
+      {
+        "id": "C-404",
+        "appraised_version": "https://arxiv.org/abs/2610.22243v1",
+        "observed_version": "https://arxiv.org/abs/2610.22243v1",
+        "version_changed": false,
+        "updated": "2026-10-15T17:18:05Z"
+      }
+    ],
+    "limits": "Version/index metadata only; no new full-text or independent retraction/correction investigation and no evidence-grade change."
+  },
+  "repositories": {
+    "date": "2026-11-02",
+    "observed_utc": "2026-11-02T16:49:27.476770+00:00",
+    "execution": "on-demand, not scheduler trigger",
+    "scope": "12 previously appraised repository identities, not entire Hot100 or archive",
+    "response_sha256": "92274e8dcee5afad436259d921c32fd848f04362b2d0089f09e1e7f3b768f57d",
+    "new_identities_added": 0,
+    "records": [
+      {
+        "id": "R-626",
+        "repository": "aiming-lab/SimpleMem",
+        "appraised_pin": "db80b6a7c591e0ea730a058e9f5fc4eb06572299",
+        "observed_head": "db80b6a7c591e0ea730a058e9f5fc4eb06572299",
+        "changed_since_appraisal": false,
+        "archived": false,
+        "pushed_at": "2026-07-24T07:40:38Z",
+        "license_metadata": {
+          "spdxId": "MIT",
+          "name": "MIT License"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here"
+      },
+      {
+        "id": "R-631",
+        "repository": "Asymptote-Labs/agent-beacon",
+        "appraised_pin": "e0989909e3169cd82066d051f3aa9642ae2bad1e",
+        "observed_head": "bd672bd6f2ba7f76524133e5c3f97548c8f25940",
+        "changed_since_appraisal": true,
+        "archived": false,
+        "pushed_at": "2026-11-02T15:43:07Z",
+        "license_metadata": {
+          "spdxId": "MIT",
+          "name": "MIT License"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here",
+        "reviewed_path_recheck": [
+          {
+            "path": "pkg/asymptoteobserve/trace.go",
+            "appraised_blob": "364a6c75199336e005e4bf41906a43989c3a264a",
+            "current_blob": "364a6c75199336e005e4bf41906a43989c3a264a",
+            "changed": false
+          },
+          {
+            "path": "pkg/asymptoteobserve/redact_engine.go",
+            "appraised_blob": "6c835bc9e838082dd30df4b3a645a19805b6e8d1",
+            "current_blob": "6c835bc9e838082dd30df4b3a645a19805b6e8d1",
+            "changed": false
+          },
+          {
+            "path": "pkg/asymptoteobserve/model_test.go",
+            "appraised_blob": "66763df24120ee14bb3ee754cf420e3dce54a2b8",
+            "current_blob": "66763df24120ee14bb3ee754cf420e3dce54a2b8",
+            "changed": false
+          }
+        ],
+        "reviewed_path_change": false,
+        "limit": "Only these three selected paths were identity-checked. Other changes and dependency/license text updates are unappraised."
+      },
+      {
+        "id": "R-648",
+        "repository": "temporalio/temporal",
+        "appraised_pin": "ed5ad7be640621faad089fcc14c112af6dc699d0",
+        "observed_head": "0f0cc219190b9957ee93aab0f0bf6c5a7c5c1f0e",
+        "changed_since_appraisal": true,
+        "archived": false,
+        "pushed_at": "2026-11-02T16:39:38Z",
+        "license_metadata": {
+          "spdxId": "MIT",
+          "name": "MIT License"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here",
+        "reviewed_path_recheck": [
+          {
+            "path": "common/definition/resource_dedup.go",
+            "appraised_blob": "adcc96d18b089b8d8ace0d51792b17e534b9f4d7",
+            "current_blob": "adcc96d18b089b8d8ace0d51792b17e534b9f4d7",
+            "changed": false
+          },
+          {
+            "path": "service/history/api/workflow_id_dedup.go",
+            "appraised_blob": "1592f68d555905fa8ad66acf1118ff8bb98fa7c0",
+            "current_blob": "1592f68d555905fa8ad66acf1118ff8bb98fa7c0",
+            "changed": false
+          },
+          {
+            "path": "common/definition/resource_dedup_test.go",
+            "appraised_blob": "ab6ea770a45569cc7baf5b816ca45ada1e8340e3",
+            "current_blob": "ab6ea770a45569cc7baf5b816ca45ada1e8340e3",
+            "changed": false
+          }
+        ],
+        "reviewed_path_change": false,
+        "limit": "Only these three selected paths were identity-checked. Other changes and dependency/license text updates are unappraised."
+      },
+      {
+        "id": "R-673",
+        "repository": "shepherd-agents/shepherd",
+        "appraised_pin": "d34d5ca334871dfcb5a3dc76dd78045829fa4e56",
+        "observed_head": "d34d5ca334871dfcb5a3dc76dd78045829fa4e56",
+        "changed_since_appraisal": false,
+        "archived": false,
+        "pushed_at": "2026-09-09T10:53:02Z",
+        "license_metadata": {
+          "spdxId": "MIT",
+          "name": "MIT License"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here"
+      },
+      {
+        "id": "R-865",
+        "repository": "cyberark/agentwatch",
+        "appraised_pin": "56012207e0b2570c1a9716b6fec72288c3958d48",
+        "observed_head": "56012207e0b2570c1a9716b6fec72288c3958d48",
+        "changed_since_appraisal": false,
+        "archived": false,
+        "pushed_at": "2025-05-14T06:19:06Z",
+        "license_metadata": {
+          "spdxId": "Apache-2.0",
+          "name": "Apache License 2.0"
+        },
+        "proposal": false,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here"
+      },
+      {
+        "id": "R-900",
+        "repository": "DataRecce/recce",
+        "appraised_pin": "1b121299076e6ba794e02eac1557c1932b5fbf52",
+        "observed_head": "4b4abf8e96f3abd961ef22ce1cf8748ac9859c7f",
+        "changed_since_appraisal": true,
+        "archived": false,
+        "pushed_at": "2026-11-02T10:00:33Z",
+        "license_metadata": {
+          "spdxId": "Apache-2.0",
+          "name": "Apache License 2.0"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here",
+        "reviewed_path_recheck": [
+          {
+            "path": "recce/schema_evidence.py",
+            "appraised_blob": "f097e043e2b38d560e757bc6025324c2d9b23e5a",
+            "current_blob": "f097e043e2b38d560e757bc6025324c2d9b23e5a",
+            "changed": false
+          },
+          {
+            "path": "recce/diff.py",
+            "appraised_blob": "50e91d020b77da67e8973b22fec5bddbea2c9ec3",
+            "current_blob": "50e91d020b77da67e8973b22fec5bddbea2c9ec3",
+            "changed": false
+          },
+          {
+            "path": "tests/test_schema_evidence.py",
+            "appraised_blob": "add10b25cc5f25b05e93208c6f162f9b747872d8",
+            "current_blob": "add10b25cc5f25b05e93208c6f162f9b747872d8",
+            "changed": false
+          }
+        ],
+        "reviewed_path_change": false,
+        "limit": "Only these three selected paths were identity-checked. Other changes and dependency/license text updates are unappraised."
+      },
+      {
+        "id": "R-1002",
+        "repository": "mozilla-ai/any-agent",
+        "appraised_pin": "a469723ac4a0518ab0696d57e09e4dc407c826ec",
+        "observed_head": "a469723ac4a0518ab0696d57e09e4dc407c826ec",
+        "changed_since_appraisal": false,
+        "archived": false,
+        "pushed_at": "2026-11-01T00:38:29Z",
+        "license_metadata": {
+          "spdxId": "Apache-2.0",
+          "name": "Apache License 2.0"
+        },
+        "proposal": false,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here"
+      },
+      {
+        "id": "R-1005",
+        "repository": "NVIDIA/SkillEvaluator",
+        "appraised_pin": "6d5d57f35c333030368cc4c7533cf68976f5ac7d",
+        "observed_head": "36339548c6d718b7a8f79468f68a6a5056b24c65",
+        "changed_since_appraisal": true,
+        "archived": false,
+        "pushed_at": "2026-11-02T09:02:51Z",
+        "license_metadata": {
+          "spdxId": "Apache-2.0",
+          "name": "Apache License 2.0"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here",
+        "reviewed_path_recheck": [
+          {
+            "path": "src/skillevaluator/evidence.py",
+            "appraised_blob": "b7c62a7de035ecad0b84c5779ee1bda3200348c7",
+            "current_blob": "b7c62a7de035ecad0b84c5779ee1bda3200348c7",
+            "changed": false
+          },
+          {
+            "path": "src/skillevaluator/evaluation/service.py",
+            "appraised_blob": "72b23b1df788f68d6a2404220117f2b37e9d6b12",
+            "current_blob": "72b23b1df788f68d6a2404220117f2b37e9d6b12",
+            "changed": false
+          },
+          {
+            "path": "tests/test_local_mode_contract.py",
+            "appraised_blob": "36f7c32cc2efedf462097ce978e7c001f754f16b",
+            "current_blob": "36f7c32cc2efedf462097ce978e7c001f754f16b",
+            "changed": false
+          }
+        ],
+        "reviewed_path_change": false,
+        "limit": "Only these three selected paths were identity-checked. Other changes and dependency/license text updates are unappraised."
+      },
+      {
+        "id": "R-1012",
+        "repository": "UiPath/coder_eval",
+        "appraised_pin": "484c3d5db6434392ba8baa60378f3f900d7d0924",
+        "observed_head": "484c3d5db6434392ba8baa60378f3f900d7d0924",
+        "changed_since_appraisal": false,
+        "archived": false,
+        "pushed_at": "2026-11-01T23:11:11Z",
+        "license_metadata": {
+          "spdxId": "Apache-2.0",
+          "name": "Apache License 2.0"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here"
+      },
+      {
+        "id": "R-1020",
+        "repository": "Ta0p1/ResolveLab",
+        "appraised_pin": "68e90402f3a42b51cb927967da1f8008697d3e8f",
+        "observed_head": "68e90402f3a42b51cb927967da1f8008697d3e8f",
+        "changed_since_appraisal": false,
+        "archived": false,
+        "pushed_at": "2026-11-02T16:31:50Z",
+        "license_metadata": {
+          "spdxId": "MIT",
+          "name": "MIT License"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here"
+      },
+      {
+        "id": "R-1036",
+        "repository": "datamllab/A2E",
+        "appraised_pin": "ef86ec507f66a8fd6a2223b351b95444ab701f6b",
+        "observed_head": "ef86ec507f66a8fd6a2223b351b95444ab701f6b",
+        "changed_since_appraisal": false,
+        "archived": false,
+        "pushed_at": "2026-10-11T02:14:06Z",
+        "license_metadata": {
+          "spdxId": "MIT",
+          "name": "MIT License"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here"
+      },
+      {
+        "id": "R-1037",
+        "repository": "kling01/RubricLoop",
+        "appraised_pin": "782b58af56594d9c49fd1fa6410ddf29e29650c7",
+        "observed_head": "782b58af56594d9c49fd1fa6410ddf29e29650c7",
+        "changed_since_appraisal": false,
+        "archived": false,
+        "pushed_at": "2026-10-20T08:54:27Z",
+        "license_metadata": {
+          "spdxId": "MIT",
+          "name": "MIT License"
+        },
+        "proposal": true,
+        "depth": "canonical GitHub metadata recheck only; code changes not appraised here"
+      }
+    ]
+  },
+  "new_canonical_identities": 0,
+  "catalog_promotions": 0,
+  "limits": "Versions and selected path identities only. No independent retraction investigation, whole-repository review, runtime execution or new grades."
+}
