@@ -17,7 +17,8 @@ appraises six research articles and twelve repositories against the public
 Breadcrumbs kit. It preserves all remaining leads in the pool and records
 system-fit routing for all 1,083 retained expansion sources. Routing is not a
 full appraisal, and review proposals do not change the live charts or authorize
-software adoption. Check the package with
+software adoption. Six papers and ten repositories are proposed; two inspected
+repositories remain in the pool. Check the package with
 `python scripts/validate_system_fit_appraisals.py`.
 
 The [November 1 expansion](docs/staletoast-expansion-2026-11-01.md) brings the source collection to 500 research records and 1,000 repository records. New automated abstract and README relevance screens await human appraisal; they are distinct from mechanism reviews and Hot100 selections. Existing analyses and chart history are preserved. Run `python scripts/validate_corpus_expansion.py` to check the batch, source identities, count targets and history preservation.

@@ -16802,9 +16802,7 @@
         "R-631",
         "R-648",
         "R-673",
-        "R-865",
         "R-900",
-        "R-1002",
         "R-1005",
         "R-1012",
         "R-1020",
@@ -16815,7 +16813,11 @@
         "C-055",
         "C-102"
       ],
-      "disposition": "All existing records/states/history retained. Eighteen review proposals, no chart selection or adoption."
+      "retained_repository_appraisals": [
+        "R-865",
+        "R-1002"
+      ],
+      "disposition": "All existing records/states/history retained. Six paper and ten repository proposals; two repository and two paper appraisals retained in pool. No chart selection or adoption."
     }
   ]
 }

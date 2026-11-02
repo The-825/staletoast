@@ -66,9 +66,13 @@
       ],
       "paths": [
         "templates/ledger-tools/memory_engine.py",
-        "templates/ledger-tools/scoped_context.py"
+        "templates/ledger-tools/scoped_context.py",
+        "templates/ledger-tools/shared_work_checkpoint.py",
+        "templates/ledger-tools/retrieval_exam.py",
+        "templates/ledger-tools/memory_engine_exam.py",
+        "templates/ledger-tools/memory_engine_golden.json"
       ],
-      "existing": "Portable memory/context machinery and correction-oriented evaluation. These are mechanisms and design principles, not proof of correction survival or tool authority enforcement. The checkpoint manifest can omit old active items under its byte cap without an omitted-active count.",
+      "existing": "MemoryEngine and existing forbidden-hit exams provide correction mechanisms, not runtime proof. Unscoped episodes can expose historical prior/rejected values; the current golden supersession case uses public audience and omits episodes. Checkpoint manifests slice active items to 24 and then byte-cap them without an omitted-active counter.",
       "question": "Does the source improve retrieval or update behavior without losing source versions, correction survival or access boundaries?",
       "experiment": "Compare the existing memory fixture with a bounded source-inspired variant on changed facts, superseded facts, abstention and one cross-task isolation case; retain failures, latency and token burden.",
       "baseline_artifacts": [
@@ -81,6 +85,26 @@
           "path": "templates/ledger-tools/scoped_context.py",
           "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/scoped_context.py",
           "sha256": "fd61f254bc82f6c90083ce7065197204aab6885c83ef1599b8b2213b4ec7b8ef"
+        },
+        {
+          "path": "templates/ledger-tools/shared_work_checkpoint.py",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/shared_work_checkpoint.py",
+          "sha256": "4261088e57c8e1f4e5341c8a216939881622b2348b58e91e2b47cd33fbf53048"
+        },
+        {
+          "path": "templates/ledger-tools/retrieval_exam.py",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/retrieval_exam.py",
+          "sha256": "e0c9fee1438f4d3713838ce789818e24d093813bab80fb664a5f1919faf1cae2"
+        },
+        {
+          "path": "templates/ledger-tools/memory_engine_exam.py",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_exam.py",
+          "sha256": "48cff0fd2d6868c0b005a0322fb0b2e9ff14de367345a13ceaa01cf20948d640"
+        },
+        {
+          "path": "templates/ledger-tools/memory_engine_golden.json",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_golden.json",
+          "sha256": "310b7dc4dcf4f5401bbc71b4faaa09712c9190882339c77dbe5671b18892f1cd"
         }
       ]
     },
@@ -183,6 +207,30 @@
           "path": "docs/cooperative-intelligence-evaluation.md",
           "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/docs/cooperative-intelligence-evaluation.md",
           "sha256": "e2051315480a63c777566ee5c20e177a1927fa66d84e3c9254e6d80adfeb2023"
+        },
+        {
+          "path": "catalog-contract.json",
+          "repository": "The-825/staletoast",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/catalog-contract.json",
+          "sha256": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38"
+        },
+        {
+          "path": "scripts/validate_corpus_expansion.py",
+          "repository": "The-825/staletoast",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/scripts/validate_corpus_expansion.py",
+          "sha256": "8aeb067f19dd261161cd5871dd1383f11e2f0b678989bf3b1e3cac7c75043433"
+        },
+        {
+          "path": "site/build_discovery.py",
+          "repository": "The-825/staletoast",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_discovery.py",
+          "sha256": "62102170a9a5a70018e4af5acfe61a0414f4ee8d0488e415e07d4fe39a8057d5"
+        },
+        {
+          "path": "site/build_export.py",
+          "repository": "The-825/staletoast",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_export.py",
+          "sha256": "c530298c535411179d0e900b0656ac2793ad519b8a8ca7732f88844b0b9adf45"
         }
       ]
     },

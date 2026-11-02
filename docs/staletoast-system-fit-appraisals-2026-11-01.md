@@ -1,6 +1,6 @@
 # Sources for the next Hot 100 review
 
-Six research articles and twelve repositories are appraised for review. They are proposals, not new chart entries or adopted software. The rest remain in the pool.
+Six research articles and ten repositories are proposed for the next update. Twelve repositories were appraised; AgentWatch and soft-deprecated any-agent remain in the pool with their assessments preserved. These are proposals, not new chart entries or adopted software.
 
 Every one of the 1,083 retained expansion sources has a system-fit routing assessment: 1,042 active sources and 41 previously held sources. Routing is a comparison prompt based on primary text, not a full appraisal or quality score. The shortlist is purposive, not a proven global ranking.
 
@@ -31,11 +31,11 @@ The comparison uses the public Breadcrumbs kit at `dd7252af3a5f6cc73296d315d50ee
 | --- | --- | --- |
 | [aiming-lab/SimpleMem](https://github.com/aiming-lab/SimpleMem/tree/db80b6a7c591e0ea730a058e9f5fc4eb06572299) | Memory that keeps context useful | Compare before adopting |
 | [Asymptote-Labs/agent-beacon](https://github.com/Asymptote-Labs/agent-beacon/tree/e0989909e3169cd82066d051f3aa9642ae2bad1e) | Comparable run receipts across coding tools | Strong practical fit |
-| [temporalio/temporal](https://github.com/temporalio/temporal/tree/ed5ad7be640621faad089fcc14c112af6dc699d0) | Retry work without doing it twice | Strong pattern, heavy platform |
+| [temporalio/temporal](https://github.com/temporalio/temporal/tree/ed5ad7be640621faad089fcc14c112af6dc699d0) | Reconcile uncertain effects after a retry | Strong pattern, heavy platform |
 | [shepherd-agents/shepherd](https://github.com/shepherd-agents/shepherd/tree/d34d5ca334871dfcb5a3dc76dd78045829fa4e56) | Explain and resume an interrupted agent run | Promising early implementation |
 | [cyberark/agentwatch](https://github.com/cyberark/agentwatch/tree/56012207e0b2570c1a9716b6fec72288c3958d48) | See which tools an agent actually contacted | Watch, inspect before any use |
 | [DataRecce/recce](https://github.com/DataRecce/recce/tree/1b121299076e6ba794e02eac1557c1932b5fbf52) | Show what changed and what was actually checked | Strong practical fit |
-| [mozilla-ai/any-agent](https://github.com/mozilla-ai/any-agent/tree/a469723ac4a0518ab0696d57e09e4dc407c826ec) | Compare agent frameworks with the same task | Useful comparison, dependency gap |
+| [mozilla-ai/any-agent](https://github.com/mozilla-ai/any-agent/tree/a469723ac4a0518ab0696d57e09e4dc407c826ec) | Compare agent frameworks with the same task | Retain in pool: soft-deprecated |
 | [NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator/tree/6d5d57f35c333030368cc4c7533cf68976f5ac7d) | Separate static checks from a real successful run | Strong practical fit |
 | [UiPath/coder_eval](https://github.com/UiPath/coder_eval/tree/484c3d5db6434392ba8baa60378f3f900d7d0924) | Test what a coding agent really produced | Strong practical fit |
 | [Ta0p1/ResolveLab](https://github.com/Ta0p1/ResolveLab/tree/68e90402f3a42b51cb927967da1f8008697d3e8f) | Recover safely when a tool response is misleading | Strong practical fit |
@@ -78,7 +78,7 @@ Primary PDF pages: 2, 3, 4, 5. Synthetic counterfactual attribution; no independ
 
 **Done when.** Require exact local source/version and affected-decision IDs where evidence exists; mark unavailable relations and prompt contents unknown. Confirm forward/backward traversal on the new synthetic relations. No new service unless the file-based baseline fails.
 
-Primary PDF pages: 2, 3, 4, 5. Single workflow demonstration; not independent validation of memory or recovery papers.
+Primary PDF pages: 2, 3, 4, 5, 6. Single workflow demonstration; not independent validation of memory or recovery papers.
 
 ### Stop revoked memory from authorizing work
 
@@ -88,11 +88,11 @@ Primary PDF pages: 2, 3, 4, 5. Single workflow demonstration; not independent va
 
 **Reported result.** In the two directly exposed configurations, revoked records ranked first in all 81 scenario/model retrieval checks. Table 6 reports unsafe-action rates of 44.2% and 42.1% without defense and 0% with retrieval filtering for those conditions. These are author-measured cells, not a universal safety guarantee.
 
-**Compared with our system.** Published rules distinguish recall from permission, but the inspected checkpoint manifest keeps the original authority block and supplies no dynamic revocation event. Its release approval is bound to an exact head and invalidated by a changed head, the closest implemented mechanism. Test retrieval-time revocation and downstream scope separately; policy is not runtime proof.
+**Compared with our system.** The current memory engine records prior values in SUPERSEDED episodes and rejected values in REJECTED episodes. Unscoped build_context ranks and emits episode outcomes, creating a historical-value exposure path; the action label remains visible, so exposure is not proof of later misuse. Tombstones block store_fact reassertion, not that episodic retrieval. scoped_context supplies audience rules; checkpoint release is exact-head-bound, not dynamic permission revocation.
 
 **Limits and burden.** Small authored scenario set, ten trials per cell, pooled rates without confidence intervals and configuration-specific revocation semantics. Experimental mem0 differs from default. Read-path guard results are author-evaluated. Table 10 reports 44,550 main-grid and 49,121 total calls, including reported supplementary studies plus unreported persistence/parse diagnostics; reconciliation with the separate Section C run counts is unresolved. These totals are not independent participant counts. Low for synthetic fixtures, medium for enforcement in an owning runtime after separate review.
 
-**Bounded next check.** Create fictional old permission, revocation and replacement records. Compare current context/checkpoint behavior against an explicit retrieval-time status check and a downstream tool scope check under direct and indirect insertion.
+**Bounded next check.** Extend the existing memory_engine_exam, not a new harness. Its current supersession golden case uses audience=public and excludes episodes; it does not exercise the unscoped SUPERSEDED/REJECTED episode path. retrieval_exam checks obsoleted_by entries through its own probe model, not MemoryEngine execution. Add original synthetic unscoped rejected/superseded and revoked-authority cases, then compare exposure, action choice and performed effects separately. The paper's command-pattern tool refuser is not the proposed status-aware tool scope check.
 
 **Done when.** A revoked record may remain in historical evidence but cannot grant action. Record retrieval exposure and attempted/performed effects separately. Valid replacement authority still works; missing status fails closed.
 
@@ -106,11 +106,11 @@ Primary PDF pages: 4, 5, 6, 7, 8, 9, 10, 18, 19, 20. Authored revocation benchma
 
 **Reported result.** The reported training comparison changes held-out accuracy from 7/78 to 13/78. The diagnostic exposes memory-update loss under compression; the split between stale facts surviving, corrected facts disappearing and other failures is not quantified. Training benefit is not established by one seed.
 
-**Compared with our system.** The public checkpoint manifest drops oldest active items under its byte cap without an omitted-active counter; its digest covers IDs before truncation. A receipt therefore does not establish that a critical correction was loaded. Add a fixture where truncation drops an early correction, without claiming the private runtime has this defect.
+**Compared with our system.** The checkpoint manifest first slices active items to 24, then drops oldest active items under its byte cap, without an omitted-active counter; its digest covers checkpoint IDs before truncation. MemoryEngine also exposes historical values through unscoped episodes. The existing golden supersession test scopes audience=public and omits episodes. Extend those specific surfaces rather than assuming no correction tests exist.
 
 **Limits and burden.** Single training seed, small held-out denominator, synthetic training data and no reliable general improvement claim. A 25-case history-size study cannot establish that more history harms all memory systems. No local reproduction. Low for a diagnostic fixture; training is excluded.
 
-**Bounded next check.** Run a fictional changed-fact sequence through the current fixture with a fixed small memory budget. Include a critical early correction later pushed beyond the context cap; record whether it was stored, selected, omitted, loaded and used.
+**Bounded next check.** Extend memory_engine_exam with an original unscoped SUPERSEDED/REJECTED episode case, and the checkpoint fixture with more than 24 active items plus byte-cap pressure. Track stored, selected, omitted, loaded and used evidence, including a critical early correction. Compare with the existing public-scoped golden test; preserve deliberate historical evidence without treating it as current authority.
 
 **Done when.** The latest supported fact survives required compaction; an old statement stays traceable as superseded. Abstention when source evidence never existed is safe uncertainty, but abstention after required evidence was dropped is a recorded compaction failure. Keep judge and exact-matcher accuracy separate.
 
@@ -160,7 +160,7 @@ Primary PDF pages: 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14. Audit of existing benchm
 
 **Compared with our system.** Existing scoped memory is the baseline. The possible addition is a retrieval/compaction comparison, not a replacement store based on README accuracy claims.
 
-**Limits and burden.** LLM extraction, embeddings and retrieval planning add model/dependency cost. Benchmark claims are not reproduced. Hosted services and private conversation upload are excluded; recall does not prove correction or access enforcement. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
+**Limits and burden.** LLM extraction, embeddings and retrieval planning add model/dependency cost. Benchmark claims are not reproduced. Hosted services and private conversation upload are excluded; recall does not prove correction or access enforcement. Extraction failure can return an empty entry list after the dialogue window advances; the parallel path can count failed windows as processed. Supersession/validity status was not found in the inspected files, not established absent repository-wide. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
 **Bounded next check.** Use identical fictional changed-fact tasks with current scoped memory and a minimal retrieval variant. Count correction failures, source-version loss, abstentions, tokens and latency.
 
@@ -184,11 +184,11 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 
 **Compared with our system.** Our checkpoint receipts already carry ownership and evidence. A small adapter could reveal missing or differently named fields across harnesses without replacing the handoff contract.
 
-**Limits and burden.** Collector coverage is not proved across all harnesses. Pattern redaction cannot guarantee removal of every secret. Persistence, destinations and raw content capture need owning-runtime review before use. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
+**Limits and burden.** Collector coverage is not proved across all harnesses. Pattern redaction cannot guarantee removal of every secret. Persistence, destinations and raw content capture need owning-runtime review before use. Inspected usage fields use omitempty, collapsing zero and unknown; the model field lacks a requested/observed split, and normalization removes provider prefixes. Our checkpoint measurement states and exact model evidence are stronger on these points. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
 **Bounded next check.** Map two fictional harness records, one with missing served-model identity and one failed tool call, into a minimal common receipt without copying prompts.
 
-**Done when.** Preserve unknowns and errors, retain source format/version and demonstrate that redacted values do not reach the exported receipt.
+**Done when.** Preserve the raw observed model string alongside any normalized label. Keep requested/configured/observed identity and measured/estimated/unknown usage separate; absent data must not become zero. Preserve errors and prove that redacted values do not reach the exported fictional receipt.
 
 **Rights.** MIT. Repository license only; preserve attribution/notices for any later reuse and review dependency/data/model terms separately. No upstream code copied into the product.
 
@@ -200,17 +200,17 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 
 Upstream tests were inspected, not executed. Current head matched the reviewed pin at observation.
 
-### Retry work without doing it twice
+### Reconcile uncertain effects after a retry
 
 [temporalio/temporal](https://github.com/temporalio/temporal) | R-648 | Strong pattern, heavy platform
 
 **Evidence inspected.** Inspected code derives deduplication keys for reapplied events and handles workflow-ID reuse/conflict policies. A focused unit test checks event-key identity.
 
-**Compared with our system.** Checkpoint and replay evidence alone do not make an external write idempotent. Borrow stable operation IDs and reconciliation cases before considering a workflow server.
+**Compared with our system.** The checkpoint tool already has stable operation IDs, identical-retry reuse and changed-evidence rejection in _append/release. Temporal's inspected files deduplicate workflow starts and reapplied history events, not arbitrary external effects. The incremental gap is effect receipts and reconciliation for an uncertain external write, which these files do not solve by themselves.
 
 **Limits and burden.** Operating Temporal adds a server, durable state, SDK integration and maintenance. These files do not prove every downstream tool effect is deduplicated or rolled back. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
-**Bounded next check.** Extend a fictional lost-acknowledgment case with operation ID, request hash, restart and reconciliation. Compare checkpoint-only retry with a durable synthetic effect receipt.
+**Bounded next check.** Keep the existing operation-ID behavior as the baseline. Add a fictional external-effect receipt, lost acknowledgment, restart and changed payload, then compare explicit reconciliation with blindly repeating an uncertain write.
 
 **Done when.** One effect for duplicate identical requests; changed payload under the same key is rejected; uncertain effects trigger reconciliation rather than blind retry.
 
@@ -230,13 +230,13 @@ Upstream tests were inspected, not executed. The repository head had moved since
 
 **Evidence inspected.** SQLiteTraceStore provides append/conflict handling, content-addressed facts and intent state. Conformance tests cover restart idempotence and conflicting batches. The schema_library file inspected is only a re-export.
 
-**Compared with our system.** Our public checkpoint/replay patterns already describe resume boundaries. Concrete trace-store conformance cases may expose missing restart and conflict fixtures.
+**Compared with our system.** The checkpoint tool already implements identical-retry reuse and rejection of changed evidence under one operation ID. Its selftest does not exercise the changed-content rejection. Shepherd conformance tests offer a concrete conflicting-content/restart fixture, not evidence of conflicting-owner resolution.
 
 **Limits and burden.** Early alpha, substantial trace-store/runtime machinery and changing APIs. A reversible trace is not proof that external side effects can be undone. Credential and writable workspace grants remain separate. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
-**Bounded next check.** Translate three existing checkpoint cases into restart, duplicate append and conflicting-owner cases with fictional data; compare current file-based behavior first.
+**Bounded next check.** Add same-operation-ID/different-content and restart cases to the existing checkpoint fixture using fictional data. Define any owner mapping separately: current scope/authority fields are not an acknowledged-owner protocol.
 
-**Done when.** Resume preserves the acknowledged owner and exact receipt; conflicting histories are rejected visibly; no external write is inferred reversible.
+**Done when.** An identical retry reuses its receipt; conflicting evidence under the same operation ID is rejected visibly across restart. Preserve scope and authority fields exactly. No claim of acknowledged ownership or reversible external effects.
 
 **Rights.** MIT. Repository license only; preserve attribution/notices for any later reuse and review dependency/data/model terms separately. No upstream code copied into the product.
 
@@ -280,7 +280,7 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 
 **Compared with our system.** Our pinned snapshots and counts preserve identity. A small coverage-aware catalog diff would make incomplete ingestion visible and avoid interpreting an empty result as no change.
 
-**Limits and burden.** The full dbt/Pandas application and cloud artifact upload exceed this catalog need. The strict coverage gate applies to schema comparisons; other result types keep caller-dependent behavior and must not be represented as universally fail-closed. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
+**Limits and burden.** The full dbt/Pandas application and cloud artifact upload exceed this catalog need. The strict coverage gate applies to schema comparisons; other result types keep caller-dependent behavior and must not be represented as universally fail-closed. The coverage producer recce.artifact_health was not inspected, so a complete claim remains dependent on that classifier. diff.py is only a general diff helper and supplies no additional coverage evidence. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
 **Bounded next check.** Diff two fictional source ledgers with one missing page, duplicate ID and changed appraisal. Separate a genuinely empty complete diff from a truncated or unexecuted comparison.
 
@@ -298,17 +298,17 @@ Upstream tests were inspected, not executed. The repository head had moved since
 
 ### Compare agent frameworks with the same task
 
-[mozilla-ai/any-agent](https://github.com/mozilla-ai/any-agent) | R-1002 | Useful comparison, dependency gap
+[mozilla-ai/any-agent](https://github.com/mozilla-ai/any-agent) | R-1002 | Retain in pool: soft-deprecated
 
 **Evidence inspected.** README exposes a common agent interface. Inspected AgentTrace is a tinyagent re-export; EvaluationOutput contains passed/reasoning. Local trace tests check token/cost cache invalidation and empty spans.
 
 **Compared with our system.** Could provide comparable receipt inputs for our same-task baseline comparisons. The inspected wrapper is not independent evidence of full tracing or authority enforcement in each framework.
 
-**Limits and burden.** The actual trace implementation lives in an uninspected dependency. Framework adapters, provider behavior and execution coverage remain unverified. Estimated cost is not an actual billing receipt; capture can expose prompts. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
+**Limits and burden.** README explicitly declares soft deprecation: security/bug-fix PRs continue but no new features are planned; tinyagent is recommended for new projects. The inspected trace wrapper is only a re-export, and the actual dependency was not appraised. Framework execution coverage, private-content capture and billing evidence remain unverified. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
-**Bounded next check.** Compare fictional normalized outputs from two harnesses with identical task, acceptance criteria and missing-model case. Review the pinned dependency before a real adapter trial.
+**Bounded next check.** Retain this appraisal as historical comparison. Appraise the exact tinyagent dependency separately if a concrete cross-harness gap remains after current receipt tests.
 
-**Done when.** Report unsupported fields and missing identity as unknown, distinguish observed tokens from estimated money, and do not claim framework parity from a wrapper alone.
+**Done when.** Do not propose any-agent as a new implementation dependency. Preserve its source pin and the deprecation reason in the pool; new tinyagent review needs its own primary code and license evidence.
 
 **Rights.** Apache-2.0. Repository license only; preserve attribution/notices for any later reuse and review dependency/data/model terms separately. No upstream code copied into the product.
 
@@ -324,11 +324,11 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 
 [NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator) | R-1005 | Strong practical fit
 
-**Evidence inspected.** Evidence IDs can resolve by explicit ID, JSON pointer or path. Live-evaluation service rejects empty/nonmapping/error-bearing or non-succeeded run envelopes. Local-mode tests explicitly reject native Windows.
+**Evidence inspected.** evidence_ref_identity derives the first non-empty identity string among evidence_id, json_pointer and path; it does not resolve or verify the target. failure_reason returns a reason for empty/nonmapping/error-bearing or non-succeeded envelopes; the caller must apply the gate. Local-mode tests explicitly reject native Windows.
 
 **Compared with our system.** Our evidence-first acceptance already separates review from execution. Borrow the artifact-status contract and static/overlap/live separation, not the project grade as an overall intelligence score.
 
-**Limits and burden.** Live evaluation requires supported sandbox/provider setup and dependencies. Native Windows is unsupported at this pin; WSL2/Docker is a different environment. Third-party dependencies have separate terms; skill docs may leave the host during model review. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
+**Limits and burden.** Live evaluation requires supported sandbox/provider setup and dependencies. Native Windows is unsupported at this pin; WSL2/Docker is a different environment. Third-party dependencies have separate terms; skill docs may leave the host during model review. README labels support Experimental. Inspected helper functions do not themselves verify evidence existence or reject a command. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
 **Bounded next check.** Feed fictional static-pass, overlap-warning, failed live run and missing-artifact receipts into the current acceptance template without installing upstream.
 
@@ -352,7 +352,7 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 
 **Compared with our system.** Our test harness defines task and baseline outcomes. A small reusable result schema could preserve evaluated/not-run distinction and per-criterion evidence across agent tools.
 
-**Limits and burden.** Python 3.13+, agent runtime and possible sandbox/provider dependencies. Full tool telemetry can contain sensitive data. Weighted scores and model judges do not establish authority, safety or human usefulness. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
+**Limits and burden.** Python 3.13+, agent runtime and possible sandbox/provider dependencies. Full tool telemetry can contain sensitive data. Weighted scores and model judges do not establish authority, safety or human usefulness. not_evaluated and checker exceptions can carry score 0.0. Borrow the evaluation_status and error evidence, not a convention that treats errors or unexecuted work as measured failure scores. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
 **Bounded next check.** Express three existing fictional acceptance cases as explicit artifact assertions, including valid output with missing evidence and a criterion that was not run.
 
@@ -376,7 +376,7 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 
 **Compared with our system.** These are concrete adversarial fixtures for our checkpoint and replay rules. The immediate transfer is a synthetic failure suite, not post-training or another orchestration platform.
 
-**Limits and burden.** Tests were inspected, not executed. Reported agent success rates and training comparisons are author claims, not locally reproduced results. Provider/sandbox integration and synthetic-to-real transfer remain unknown. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
+**Limits and burden.** Tests were inspected, not executed. Reported agent success rates and training comparisons are author claims, not locally reproduced results. Provider/sandbox integration and synthetic-to-real transfer remain unknown. The inspected recovery tests cover the v0.1-v0.3 SQLite service; they do not validate the v0.4 HTTP benchmark headlined in the README. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
 **Bounded next check.** Port the lost-ack, stale-success, concurrent-retry and post-write-verification scenarios as fictional cases against the current receipt workflow.
 
@@ -396,11 +396,11 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 
 [datamllab/A2E](https://github.com/datamllab/A2E) | R-1036 | Useful design, substantial stack
 
-**Evidence inspected.** Trace schemas encode spans, status, context, events and exceptions. SQLite SpanStore flattens attributes/usage and fetches traces. A small grader-contract test checks a terminal benchmark result boundary.
+**Evidence inspected.** Trace schemas encode spans, status, context, events and exceptions. span_store.py is a read-only SQLite fallback loader that flattens usage attributes and fetches spans; it returns an empty mapping when its database path is absent. The selected grader-contract test imports ageneval.task while source paths use a2e; runnability at this pin is unknown.
 
 **Compared with our system.** Our evidence pointers could gain a clearer task-to-run-to-evaluation relation and explicit missing-span state. Full server/UI adoption is not yet justified.
 
-**Limits and burden.** Persistent server, instrumented full trajectories, provider credentials and benchmark containers increase storage/privacy/maintenance burden. One-run examples are not reliability estimates; selected tests do not prove all instrumentation coverage. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
+**Limits and burden.** Persistent server, instrumented full trajectories, provider credentials and benchmark containers increase storage/privacy/maintenance burden. One-run examples are not reliability estimates; selected tests do not prove all instrumentation coverage. Explicit missing-span state is a local gap to add, not a mechanism already demonstrated by the loader. Schema file provenance appears related to Arize Phoenix and was not fully traced; repository MIT terms do not settle every file/dependency. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
 **Bounded next check.** Build a fictional task/run/evaluation mapping with one missing span and failed grader. Compare with current checkpoint pointers before proposing any server.
 
@@ -420,11 +420,11 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 
 [kling01/RubricLoop](https://github.com/kling01/RubricLoop) | R-1037 | Strong practical fit
 
-**Evidence inspected.** Evaluator specs have IDs, versions/content hashes and compile/validation paths. Release-contract tests require default network blocking, distinct not-applicable/errors, duplicate-ID rejection, explicit model configuration and escaped report text.
+**Evidence inspected.** Evaluator specs have IDs, versions/content hashes and compile/validation paths. Release tests install a network-refusal fixture within the test environment; this does not prove product-default network blocking. Tests separately exercise not-applicable/errors, duplicate-ID rejection, explicit model configuration and escaped report text.
 
 **Compared with our system.** Our separate evidence dimensions can gain versioned executable clauses and a clearer inspectable result. Use it to explain decisions, not replace dimensions with a universal rank score.
 
-**Limits and burden.** Early 0.1 release and configuration churn. LLM judges require explicit provider/funding/data authority. Inspected release tests are not a security audit and were not run locally. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
+**Limits and burden.** Early 0.1 release and configuration churn. LLM judges require explicit provider/funding/data authority. Inspected release tests are not a security audit and were not run locally. README says code-rule check expressions are trusted Python executed locally without a sandbox. Use only original reviewed fixture rules; never execute an untrusted rubric file. Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.
 
 **Bounded next check.** Turn three existing acceptance clauses into versioned rules on fictional traces; include not-applicable, malformed evidence, judge failure and untrusted HTML-like text.
 
@@ -448,3 +448,7 @@ Upstream tests were inspected, not executed. Current head matched the reviewed p
 All other retained sources stay eligible for later rounds under the existing pool policy. Prior rankings and analysis remain attached to the same source identities. Sources outside the board may be reconsidered after update checks; this proposal does not itself rerank them.
 
 Machine-readable [appraisals](staletoast-system-fit-appraisals-2026-11-01.json) and [all-source routing](staletoast-system-fit-triage-2026-11-01.json) retain exact pins, hashes, pool IDs, source limits and baseline comparisons. Independent review status is recorded in the companion review receipt.
+
+## Review status
+
+Claude completed independent source review with changes requested. Local Codex verified and resolved those findings, including retaining two repository candidates in the pool. No fresh independent PASS is claimed. [Review receipt](staletoast-system-fit-review-2026-11-01.json) records the fixes and checks. This package is ready for editorial selection, not publication or software adoption.

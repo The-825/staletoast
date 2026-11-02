@@ -41,6 +41,8 @@ def validate(evidence=None):
     records=package['records'];ids={r['id'] for r in records}
     require(len(ids)==len(records)==18,'Appraisal count or uniqueness')
     require(Counter(r['kind'] for r in records)=={'research':6,'repository':12},'Wrong source mix')
+    require(Counter(r['kind'] for r in records if r['proposed_next_edition'])=={'research':6,'repository':10},'Wrong proposed source mix')
+    require({r['id'] for r in records if not r['proposed_next_edition']}=={'R-865','R-1002'},'Repository hold mismatch')
     require(not ids & held,'Previously held source silently shortlisted')
     require({sid for sid,r in routes.items() if r['disposition']=='deeper-appraisal-shortlist'}==ids,'Shortlist/routing mismatch')
     for sid,r in routes.items():
@@ -66,15 +68,22 @@ def validate(evidence=None):
         else:
             require(r['source_evidence']['status']=='primary-full-text-collected' and r['pages'],'Missing paper evidence '+sid)
     require({r['id'] for r in package['additional_full_text_holds']}=={'C-055','C-102'},'Deeper hold history missing')
+    receipt_path=DOCS/'staletoast-system-fit-review-2026-11-01.json'
+    if receipt_path.exists():
+        receipt=load(receipt_path)
+        require(receipt['appraisal_sha256']==sha((DOCS/(NAME+'.json')).read_bytes()),'Stale appraisal review receipt')
+        require(receipt['routing_sha256']==sha((DOCS/'staletoast-system-fit-triage-2026-11-01.json').read_bytes()),'Stale routing review receipt')
     # No ranked source, generated site asset, export or historical edition changes.
     changed=subprocess.check_output(['git','diff','--name-only',base],cwd=ROOT,text=True).splitlines()
-    allow={'docs/staletoast-next-round-pool.json','docs/'+NAME+'.json','docs/'+NAME+'.md','docs/staletoast-system-fit-triage-2026-11-01.json','docs/staletoast-system-fit-review-2026-11-01.json','scripts/validate_system_fit_appraisals.py','README.md'}
+    allow={'docs/staletoast-next-round-pool.json','docs/'+NAME+'.json','docs/'+NAME+'.md','docs/staletoast-system-fit-triage-2026-11-01.json','docs/staletoast-system-fit-review-2026-11-01.json','scripts/validate_system_fit_appraisals.py','README.md','.github/workflows/ci.yml'}
     require(not set(changed)-allow,'Unexpected canonical/chart change: '+str(set(changed)-allow))
     if evidence:
         baseline=load(evidence/'baseline-receipt.json')
         require(baseline['head']==package['baseline_revision'],'Evidence baseline mismatch')
         for name,r in baseline['files'].items():
             require(sha((evidence/'sources'/r['cache']).read_bytes())==r['sha256'],'Baseline hash '+name)
+        for r in load(evidence/'staletoast-baseline-receipt.json'):
+            require(r['head']==base and sha((evidence/'sources'/r['cache']).read_bytes())==r['sha256'],'StaleToast baseline hash '+r['path'])
         for r in records+package['additional_full_text_holds']:
             sid=r['id']
             if sid.startswith('C-'):
@@ -97,7 +106,7 @@ def validate(evidence=None):
                     require(sha(raw)==e['sha256'],'Code digest '+sid+' '+e['path'])
                     blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
                     require(blob==e['git_blob']==entries[e['path']],'Code Git tree binding '+sid+' '+e['path'])
-    return dict(status='pass',research=6,repositories=12,retained_routed=1083,active_routed=1042,prior_held=41,pool_records_preserved=len(pool['records']),primary_cache_verified=bool(evidence),ranked_catalogs_and_charts='unchanged')
+    return dict(status='pass',research_proposed=6,repositories_proposed=10,repositories_appraised=12,repository_holds=2,retained_routed=1083,active_routed=1042,prior_held=41,pool_records_preserved=len(pool['records']),primary_cache_verified=bool(evidence),ranked_catalogs_and_charts='unchanged')
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--evidence-dir',type=Path)

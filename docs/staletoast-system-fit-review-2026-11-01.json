@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-01",
+  "owning_pr": "https://github.com/The-825/staletoast/pull/9",
+  "turn_owner": "local Codex",
+  "independent_reviewer": "Claude Sonnet 5.5, medium, tools disabled",
+  "funding_route": "Verified claude.ai Max subscription; no API-key fallback",
+  "returned_model": "claude-sonnet-5-5",
+  "independent_verdict": "CHANGES_REQUIRED",
+  "owner_resolution": "All six blocking groups resolved after local inspection; no fresh independent PASS is claimed. Prepared for editorial review only.",
+  "review_rounds": {
+    "initial_research_draft": "Completed drafting, not approval",
+    "focused_research_review": "Substantive findings and end marker, missing explicit verdict; preserved as incomplete",
+    "combined_resolution_and_repository_review": "Complete CHANGES_REQUIRED; unchanged paper facts accepted, concrete baseline/repository corrections requested",
+    "local_owner_closure": "No further provider call; narrow source-supported repairs verified locally, two repository candidates retained in pool"
+  },
+  "resolutions": [
+    {
+      "id": "B1",
+      "fix": "Added exact StaleToast contract and validation/generator references with SHA-256, distinct from Breadcrumbs evidence."
+    },
+    {
+      "id": "B2",
+      "fix": "any-agent soft-deprecation recorded; retained in pool, no new implementation recommendation; tinyagent requires its own appraisal."
+    },
+    {
+      "id": "B3",
+      "fix": "Named historical-value episodic exposure, 24-item and byte-cap omission, existing retrieval/memory exams and public-scoped golden-case limits. No private-runtime defect asserted."
+    },
+    {
+      "id": "B4",
+      "fix": "Temporal compared with existing operation IDs; effect reconciliation remains a gap. Shepherd mapped to conflicting content, not unsupported acknowledged-owner semantics."
+    },
+    {
+      "id": "B5",
+      "fix": "SkillEvaluator identity/reason helpers described precisely; RubricLoop test-only network fixture and unsandboxed trusted expressions disclosed; A2E read-only loader and unknown grader-test compatibility disclosed."
+    },
+    {
+      "id": "nonblocking",
+      "fix": "Added PROV-AGENT p6, SimpleMem extraction-loss limits, agent-beacon unknown/zero and identity loss, Recce producer dependency, coder_eval error-to-zero risk, experimental/version scope, file-level license uncertainty and explicit catalog non-promotion."
+    }
+  ],
+  "validation": {
+    "readme_checks": "all passed",
+    "unit_tests": 45,
+    "appraisal_validator": "pass with primary cache",
+    "primary_pdfs": 8,
+    "repository_license_snapshots": 12,
+    "exact_code_blobs": 36,
+    "negative_checks": 5,
+    "pool_records_unchanged": 1175,
+    "routing_records": 1083,
+    "proposed_research": 6,
+    "proposed_repositories": 10,
+    "repository_appraisals_retained_in_pool": 2,
+    "ranked_sources_charts_and_exports": "unchanged",
+    "upstream_tests": "inspected, not executed",
+    "preview": "HTML/JavaScript and filter DOM-model checks passed; browser visual layout not verified"
+  },
+  "release_boundary": "Draft review proposal only; no merge, live chart update, implementation, provider experiment or adoption authority.",
+  "evidence_hashes": {
+    "claude-research-draft.json": "bca239cb64cef35a5e95f5147856736572302afc38d307777275a78ff84ca813",
+    "peer-review-research.json": "058ddb9f0cd4d03ea457e9997a133a0c23cdd4fc20b381af720135e3ad5cc705",
+    "closure-review.json": "6ce6f490c5b1adbb27a75ffe8772f4571daf43095d7b426d25f723a1b951cf00",
+    "baseline-receipt.json": "4ab44d1371b6d914abca0c3973cb857695ede89f50a52279fc7cffa1611a50ae",
+    "staletoast-baseline-receipt.json": "b6c76842225aae4c4f525573ac1bff83f6a9c1ff05a47610d3ad958402e629e2",
+    "paper-retrieval.json": "7e2a2d4b5852d351e117d00afe17677f9680a3c9abbe658ea497e6299b6172bb",
+    "repository-retrieval.json": "948602ad0cbdbf9881c8ccbed0634c68d38a8d3f91660fabfbddebdbb3346601",
+    "code-retrieval.json": "ffe092adeee9d4f4af2ffc2103189975c5dd0ad2eeb03910629bf0facd736269",
+    "checks.json": "23a0f823b04587efe40a927d00a97e61924f3e394f7309a31d9a990460466532",
+    "negative-validation.json": "261990f4e991162b078191072482c17905888bbea0d078cd9cb687756a0a7c86"
+  },
+  "appraisal_sha256": "0a9319c7cb7bb7fa807b3c6aa5d859c61c31106499b6855bb5f502560b1fa354",
+  "routing_sha256": "4f8ebba281281f6236c67041f9b2a82ed9635db6f7f7b3168615b3109e0432dc"
+}

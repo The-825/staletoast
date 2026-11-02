@@ -4,19 +4,52 @@
   "owner": "local Codex",
   "source_base": "552ebdf984628fb74959f24910d426619e2b343d",
   "baseline_revision": "dd7252af3a5f6cc73296d315d50ee16f016c5ad7",
-  "status": "appraised proposal; independent review pending",
-  "scope": "Six full-text research appraisals and twelve exact-commit selected-code repository appraisals. All 1,083 retained expansion sources have source-text system-fit routing; this is not 1,083 full appraisals.",
+  "status": "ready-for-editorial-review; independent source findings resolved by local owner",
+  "scope": "Six research articles and ten repositories proposed for the next edition. Twelve repositories were appraised; AgentWatch and soft-deprecated any-agent remain in the pool. All 1,083 retained expansion sources have source-text system-fit routing; this is not 1,083 full appraisals.",
   "selection_basis": "Prioritize a concrete incremental mechanism against the public Breadcrumbs baseline, inspectable primary evidence, bounded transfer and explicit limits. Priority labels describe local relevance, not evidence strength. Stars and term matches are discovery signals, not quality scores. This is a purposive shortlist, not a proven global top 18.",
   "release_boundary": "No live chart selection, ranking, source adoption, private runtime claim, provider experiment, merge or deployment is implied.",
   "evidence_boundary": "Primary papers, exact README/license/code snapshots and the published public kit. No upstream project tests or tools executed; supplied policy is a design constraint, not proof of runtime enforcement.",
   "counts": {
     "research": 6,
-    "repositories": 12,
+    "repositories_appraised": 12,
+    "repositories_proposed": 10,
+    "repositories_retained_after_appraisal": 2,
     "pool_routed": 1083,
     "active_routed": 1042,
     "previously_held": 41,
     "additional_paper_holds": 2
   },
+  "catalog_mapping": "This proposal sidecar has not promoted catalog appraisal_state, evidence_depth, mechanism fields or visibility-proof claims. All existing automated screens retain their prior state. A later catalog promotion must satisfy its own source/visibility contract; selected-code appraisal does not automatically map to an approved mechanism.",
+  "staletoast_baseline_evidence": [
+    {
+      "repository": "The-825/staletoast",
+      "head": "552ebdf984628fb74959f24910d426619e2b343d",
+      "path": "catalog-contract.json",
+      "sha256": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
+      "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/catalog-contract.json"
+    },
+    {
+      "repository": "The-825/staletoast",
+      "head": "552ebdf984628fb74959f24910d426619e2b343d",
+      "path": "scripts/validate_corpus_expansion.py",
+      "sha256": "8aeb067f19dd261161cd5871dd1383f11e2f0b678989bf3b1e3cac7c75043433",
+      "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/scripts/validate_corpus_expansion.py"
+    },
+    {
+      "repository": "The-825/staletoast",
+      "head": "552ebdf984628fb74959f24910d426619e2b343d",
+      "path": "site/build_discovery.py",
+      "sha256": "62102170a9a5a70018e4af5acfe61a0414f4ee8d0488e415e07d4fe39a8057d5",
+      "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_discovery.py"
+    },
+    {
+      "repository": "The-825/staletoast",
+      "head": "552ebdf984628fb74959f24910d426619e2b343d",
+      "path": "site/build_export.py",
+      "sha256": "c530298c535411179d0e900b0656ac2793ad519b8a8ca7732f88844b0b9adf45",
+      "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_export.py"
+    }
+  ],
   "records": [
     {
       "id": "C-137",
@@ -76,7 +109,8 @@
       "rights": {
         "basis": "Ideas paraphrased; original synthetic fixtures only.",
         "boundary": "No paper text, scenarios, released corpus or code reused in the product. Upstream reuse licenses are unknown/not relied on; review them before any later copying or execution."
-      }
+      },
+      "proposed_next_edition": true
     },
     {
       "id": "C-143",
@@ -111,7 +145,8 @@
         2,
         3,
         4,
-        5
+        5,
+        6
       ],
       "family": "Single workflow demonstration; not independent validation of memory or recovery papers",
       "baseline_comparisons": [
@@ -136,7 +171,38 @@
       "rights": {
         "basis": "Ideas paraphrased; original synthetic fixtures only.",
         "boundary": "No paper text, scenarios, released corpus or code reused in the product. Upstream reuse licenses are unknown/not relied on; review them before any later copying or execution."
-      }
+      },
+      "proposed_next_edition": true,
+      "local_ingestion_evidence": [
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "catalog-contract.json",
+          "sha256": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/catalog-contract.json"
+        },
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "scripts/validate_corpus_expansion.py",
+          "sha256": "8aeb067f19dd261161cd5871dd1383f11e2f0b678989bf3b1e3cac7c75043433",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/scripts/validate_corpus_expansion.py"
+        },
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "site/build_discovery.py",
+          "sha256": "62102170a9a5a70018e4af5acfe61a0414f4ee8d0488e415e07d4fe39a8057d5",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_discovery.py"
+        },
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "site/build_export.py",
+          "sha256": "c530298c535411179d0e900b0656ac2793ad519b8a8ca7732f88844b0b9adf45",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_export.py"
+        }
+      ]
     },
     {
       "id": "C-166",
@@ -163,8 +229,8 @@
       "method": "Five agent-memory systems, nine authored scenarios, nine decision models and ten trials per cell, with direct/indirect insertion and multiple defenses. The reported main grid has 44,550 decision calls; 49,121 is the broader total including supplementary and unreported diagnostics.",
       "finding": "In the two directly exposed configurations, revoked records ranked first in all 81 scenario/model retrieval checks. Table 6 reports unsafe-action rates of 44.2% and 42.1% without defense and 0% with retrieval filtering for those conditions. These are author-measured cells, not a universal safety guarantee.",
       "limits": "Small authored scenario set, ten trials per cell, pooled rates without confidence intervals and configuration-specific revocation semantics. Experimental mem0 differs from default. Read-path guard results are author-evaluated. Table 10 reports 44,550 main-grid and 49,121 total calls, including reported supplementary studies plus unreported persistence/parse diagnostics; reconciliation with the separate Section C run counts is unresolved. These totals are not independent participant counts.",
-      "comparison": "Published rules distinguish recall from permission, but the inspected checkpoint manifest keeps the original authority block and supplies no dynamic revocation event. Its release approval is bound to an exact head and invalidated by a changed head, the closest implemented mechanism. Test retrieval-time revocation and downstream scope separately; policy is not runtime proof.",
-      "experiment": "Create fictional old permission, revocation and replacement records. Compare current context/checkpoint behavior against an explicit retrieval-time status check and a downstream tool scope check under direct and indirect insertion.",
+      "comparison": "The current memory engine records prior values in SUPERSEDED episodes and rejected values in REJECTED episodes. Unscoped build_context ranks and emits episode outcomes, creating a historical-value exposure path; the action label remains visible, so exposure is not proof of later misuse. Tombstones block store_fact reassertion, not that episodic retrieval. scoped_context supplies audience rules; checkpoint release is exact-head-bound, not dynamic permission revocation.",
+      "experiment": "Extend the existing memory_engine_exam, not a new harness. Its current supersession golden case uses audience=public and excludes episodes; it does not exercise the unscoped SUPERSEDED/REJECTED episode path. retrieval_exam checks obsoleted_by entries through its own probe model, not MemoryEngine execution. Add original synthetic unscoped rejected/superseded and revoked-authority cases, then compare exposure, action choice and performed effects separately. The paper's command-pattern tool refuser is not the proposed status-aware tool scope check.",
       "acceptance": "A revoked record may remain in historical evidence but cannot grant action. Record retrieval exposure and attempted/performed effects separately. Valid replacement authority still works; missing status fails closed.",
       "effort": "Low for synthetic fixtures, medium for enforcement in an owning runtime after separate review.",
       "pages": [
@@ -184,7 +250,7 @@
         {
           "capability": "memory-and-correction",
           "basis": "Owner comparison after primary full-text or selected-code appraisal; distinct from automated routing.",
-          "existing_equivalent": "Portable memory/context machinery and correction-oriented evaluation. These are mechanisms and design principles, not proof of correction survival or tool authority enforcement. The checkpoint manifest can omit old active items under its byte cap without an omitted-active count.",
+          "existing_equivalent": "MemoryEngine and existing forbidden-hit exams provide correction mechanisms, not runtime proof. Unscoped episodes can expose historical prior/rejected values; the current golden supersession case uses public audience and omits episodes. Checkpoint manifests slice active items to 24 and then byte-cap them without an omitted-active counter.",
           "baseline_artifacts": [
             {
               "path": "templates/ledger-tools/memory_engine.py",
@@ -195,6 +261,26 @@
               "path": "templates/ledger-tools/scoped_context.py",
               "sha256": "fd61f254bc82f6c90083ce7065197204aab6885c83ef1599b8b2213b4ec7b8ef",
               "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/scoped_context.py"
+            },
+            {
+              "path": "templates/ledger-tools/shared_work_checkpoint.py",
+              "sha256": "4261088e57c8e1f4e5341c8a216939881622b2348b58e91e2b47cd33fbf53048",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/shared_work_checkpoint.py"
+            },
+            {
+              "path": "templates/ledger-tools/retrieval_exam.py",
+              "sha256": "e0c9fee1438f4d3713838ce789818e24d093813bab80fb664a5f1919faf1cae2",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/retrieval_exam.py"
+            },
+            {
+              "path": "templates/ledger-tools/memory_engine_exam.py",
+              "sha256": "48cff0fd2d6868c0b005a0322fb0b2e9ff14de367345a13ceaa01cf20948d640",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_exam.py"
+            },
+            {
+              "path": "templates/ledger-tools/memory_engine_golden.json",
+              "sha256": "310b7dc4dcf4f5401bbc71b4faaa09712c9190882339c77dbe5671b18892f1cd",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_golden.json"
             }
           ]
         },
@@ -219,7 +305,40 @@
       "rights": {
         "basis": "Ideas paraphrased; original synthetic fixtures only.",
         "boundary": "No paper text, scenarios, released corpus or code reused in the product. Upstream reuse licenses are unknown/not relied on; review them before any later copying or execution."
-      }
+      },
+      "proposed_next_edition": true,
+      "additional_baseline_evidence": [
+        {
+          "path": "templates/ledger-tools/memory_engine.py",
+          "sha256": "2b82d1dc0139e61f8e27292b9896266a70d3920d768ce9e4c07d3a0a21ed2067",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine.py"
+        },
+        {
+          "path": "templates/ledger-tools/scoped_context.py",
+          "sha256": "fd61f254bc82f6c90083ce7065197204aab6885c83ef1599b8b2213b4ec7b8ef",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/scoped_context.py"
+        },
+        {
+          "path": "templates/ledger-tools/shared_work_checkpoint.py",
+          "sha256": "4261088e57c8e1f4e5341c8a216939881622b2348b58e91e2b47cd33fbf53048",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/shared_work_checkpoint.py"
+        },
+        {
+          "path": "templates/ledger-tools/retrieval_exam.py",
+          "sha256": "e0c9fee1438f4d3713838ce789818e24d093813bab80fb664a5f1919faf1cae2",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/retrieval_exam.py"
+        },
+        {
+          "path": "templates/ledger-tools/memory_engine_exam.py",
+          "sha256": "48cff0fd2d6868c0b005a0322fb0b2e9ff14de367345a13ceaa01cf20948d640",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_exam.py"
+        },
+        {
+          "path": "templates/ledger-tools/memory_engine_golden.json",
+          "sha256": "310b7dc4dcf4f5401bbc71b4faaa09712c9190882339c77dbe5671b18892f1cd",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_golden.json"
+        }
+      ]
     },
     {
       "id": "C-201",
@@ -246,8 +365,8 @@
       "method": "Knowledge-update subset of LongMemEval: 78 oracle cases with a 300-character persistent-memory budget; a smaller 25-case scale study and one-seed GRPO training experiment on Qwen2.5-3B with 2,000 synthetic episodes.",
       "finding": "The reported training comparison changes held-out accuracy from 7/78 to 13/78. The diagnostic exposes memory-update loss under compression; the split between stale facts surviving, corrected facts disappearing and other failures is not quantified. Training benefit is not established by one seed.",
       "limits": "Single training seed, small held-out denominator, synthetic training data and no reliable general improvement claim. A 25-case history-size study cannot establish that more history harms all memory systems. No local reproduction.",
-      "comparison": "The public checkpoint manifest drops oldest active items under its byte cap without an omitted-active counter; its digest covers IDs before truncation. A receipt therefore does not establish that a critical correction was loaded. Add a fixture where truncation drops an early correction, without claiming the private runtime has this defect.",
-      "experiment": "Run a fictional changed-fact sequence through the current fixture with a fixed small memory budget. Include a critical early correction later pushed beyond the context cap; record whether it was stored, selected, omitted, loaded and used.",
+      "comparison": "The checkpoint manifest first slices active items to 24, then drops oldest active items under its byte cap, without an omitted-active counter; its digest covers checkpoint IDs before truncation. MemoryEngine also exposes historical values through unscoped episodes. The existing golden supersession test scopes audience=public and omits episodes. Extend those specific surfaces rather than assuming no correction tests exist.",
+      "experiment": "Extend memory_engine_exam with an original unscoped SUPERSEDED/REJECTED episode case, and the checkpoint fixture with more than 24 active items plus byte-cap pressure. Track stored, selected, omitted, loaded and used evidence, including a critical early correction. Compare with the existing public-scoped golden test; preserve deliberate historical evidence without treating it as current authority.",
       "acceptance": "The latest supported fact survives required compaction; an old statement stays traceable as superseded. Abstention when source evidence never existed is safe uncertainty, but abstention after required evidence was dropped is a recorded compaction failure. Keep judge and exact-matcher accuracy separate.",
       "effort": "Low for a diagnostic fixture; training is excluded.",
       "pages": [
@@ -263,7 +382,7 @@
         {
           "capability": "memory-and-correction",
           "basis": "Owner comparison after primary full-text or selected-code appraisal; distinct from automated routing.",
-          "existing_equivalent": "Portable memory/context machinery and correction-oriented evaluation. These are mechanisms and design principles, not proof of correction survival or tool authority enforcement. The checkpoint manifest can omit old active items under its byte cap without an omitted-active count.",
+          "existing_equivalent": "MemoryEngine and existing forbidden-hit exams provide correction mechanisms, not runtime proof. Unscoped episodes can expose historical prior/rejected values; the current golden supersession case uses public audience and omits episodes. Checkpoint manifests slice active items to 24 and then byte-cap them without an omitted-active counter.",
           "baseline_artifacts": [
             {
               "path": "templates/ledger-tools/memory_engine.py",
@@ -274,6 +393,26 @@
               "path": "templates/ledger-tools/scoped_context.py",
               "sha256": "fd61f254bc82f6c90083ce7065197204aab6885c83ef1599b8b2213b4ec7b8ef",
               "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/scoped_context.py"
+            },
+            {
+              "path": "templates/ledger-tools/shared_work_checkpoint.py",
+              "sha256": "4261088e57c8e1f4e5341c8a216939881622b2348b58e91e2b47cd33fbf53048",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/shared_work_checkpoint.py"
+            },
+            {
+              "path": "templates/ledger-tools/retrieval_exam.py",
+              "sha256": "e0c9fee1438f4d3713838ce789818e24d093813bab80fb664a5f1919faf1cae2",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/retrieval_exam.py"
+            },
+            {
+              "path": "templates/ledger-tools/memory_engine_exam.py",
+              "sha256": "48cff0fd2d6868c0b005a0322fb0b2e9ff14de367345a13ceaa01cf20948d640",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_exam.py"
+            },
+            {
+              "path": "templates/ledger-tools/memory_engine_golden.json",
+              "sha256": "310b7dc4dcf4f5401bbc71b4faaa09712c9190882339c77dbe5671b18892f1cd",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_golden.json"
             }
           ]
         }
@@ -281,7 +420,40 @@
       "rights": {
         "basis": "Ideas paraphrased; original synthetic fixtures only.",
         "boundary": "No paper text, scenarios, released corpus or code reused in the product. Upstream reuse licenses are unknown/not relied on; review them before any later copying or execution."
-      }
+      },
+      "proposed_next_edition": true,
+      "additional_baseline_evidence": [
+        {
+          "path": "templates/ledger-tools/memory_engine.py",
+          "sha256": "2b82d1dc0139e61f8e27292b9896266a70d3920d768ce9e4c07d3a0a21ed2067",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine.py"
+        },
+        {
+          "path": "templates/ledger-tools/scoped_context.py",
+          "sha256": "fd61f254bc82f6c90083ce7065197204aab6885c83ef1599b8b2213b4ec7b8ef",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/scoped_context.py"
+        },
+        {
+          "path": "templates/ledger-tools/shared_work_checkpoint.py",
+          "sha256": "4261088e57c8e1f4e5341c8a216939881622b2348b58e91e2b47cd33fbf53048",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/shared_work_checkpoint.py"
+        },
+        {
+          "path": "templates/ledger-tools/retrieval_exam.py",
+          "sha256": "e0c9fee1438f4d3713838ce789818e24d093813bab80fb664a5f1919faf1cae2",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/retrieval_exam.py"
+        },
+        {
+          "path": "templates/ledger-tools/memory_engine_exam.py",
+          "sha256": "48cff0fd2d6868c0b005a0322fb0b2e9ff14de367345a13ceaa01cf20948d640",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_exam.py"
+        },
+        {
+          "path": "templates/ledger-tools/memory_engine_golden.json",
+          "sha256": "310b7dc4dcf4f5401bbc71b4faaa09712c9190882339c77dbe5671b18892f1cd",
+          "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_golden.json"
+        }
+      ]
     },
     {
       "id": "C-403",
@@ -345,7 +517,38 @@
       "rights": {
         "basis": "Ideas paraphrased; original synthetic fixtures only.",
         "boundary": "No paper text, scenarios, released corpus or code reused in the product. Upstream reuse licenses are unknown/not relied on; review them before any later copying or execution."
-      }
+      },
+      "proposed_next_edition": true,
+      "local_ingestion_evidence": [
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "catalog-contract.json",
+          "sha256": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/catalog-contract.json"
+        },
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "scripts/validate_corpus_expansion.py",
+          "sha256": "8aeb067f19dd261161cd5871dd1383f11e2f0b678989bf3b1e3cac7c75043433",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/scripts/validate_corpus_expansion.py"
+        },
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "site/build_discovery.py",
+          "sha256": "62102170a9a5a70018e4af5acfe61a0414f4ee8d0488e415e07d4fe39a8057d5",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_discovery.py"
+        },
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "site/build_export.py",
+          "sha256": "c530298c535411179d0e900b0656ac2793ad519b8a8ca7732f88844b0b9adf45",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_export.py"
+        }
+      ]
     },
     {
       "id": "C-404",
@@ -417,7 +620,8 @@
       "rights": {
         "basis": "Ideas paraphrased; original synthetic fixtures only.",
         "boundary": "No paper text, scenarios, released corpus or code reused in the product. Upstream reuse licenses are unknown/not relied on; review them before any later copying or execution."
-      }
+      },
+      "proposed_next_edition": true
     },
     {
       "id": "R-626",
@@ -436,7 +640,7 @@
       "priority": "Compare before adopting",
       "mechanism": "The inspected memory builder extracts entries from windows; the retriever combines semantic, keyword and structured searches with planning/reflection and deduplication. Session lifecycle tests use stubs.",
       "comparison": "Existing scoped memory is the baseline. The possible addition is a retrieval/compaction comparison, not a replacement store based on README accuracy claims.",
-      "limits": "LLM extraction, embeddings and retrieval planning add model/dependency cost. Benchmark claims are not reproduced. Hosted services and private conversation upload are excluded; recall does not prove correction or access enforcement.",
+      "limits": "LLM extraction, embeddings and retrieval planning add model/dependency cost. Benchmark claims are not reproduced. Hosted services and private conversation upload are excluded; recall does not prove correction or access enforcement. Extraction failure can return an empty entry list after the dialogue window advances; the parallel path can count failed windows as processed. Supersession/validity status was not found in the inspected files, not established absent repository-wide.",
       "experiment": "Use identical fictional changed-fact tasks with current scoped memory and a minimal retrieval variant. Count correction failures, source-version loss, abstentions, tokens and latency.",
       "acceptance": "Proceed only if the variant reduces missed relevant facts without worsening correction survival or isolation, at a stated extra cost.",
       "source_evidence": {
@@ -507,7 +711,7 @@
         {
           "capability": "memory-and-correction",
           "basis": "Owner comparison after primary full-text or selected-code appraisal; distinct from automated routing.",
-          "existing_equivalent": "Portable memory/context machinery and correction-oriented evaluation. These are mechanisms and design principles, not proof of correction survival or tool authority enforcement. The checkpoint manifest can omit old active items under its byte cap without an omitted-active count.",
+          "existing_equivalent": "MemoryEngine and existing forbidden-hit exams provide correction mechanisms, not runtime proof. Unscoped episodes can expose historical prior/rejected values; the current golden supersession case uses public audience and omits episodes. Checkpoint manifests slice active items to 24 and then byte-cap them without an omitted-active counter.",
           "baseline_artifacts": [
             {
               "path": "templates/ledger-tools/memory_engine.py",
@@ -518,10 +722,31 @@
               "path": "templates/ledger-tools/scoped_context.py",
               "sha256": "fd61f254bc82f6c90083ce7065197204aab6885c83ef1599b8b2213b4ec7b8ef",
               "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/scoped_context.py"
+            },
+            {
+              "path": "templates/ledger-tools/shared_work_checkpoint.py",
+              "sha256": "4261088e57c8e1f4e5341c8a216939881622b2348b58e91e2b47cd33fbf53048",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/shared_work_checkpoint.py"
+            },
+            {
+              "path": "templates/ledger-tools/retrieval_exam.py",
+              "sha256": "e0c9fee1438f4d3713838ce789818e24d093813bab80fb664a5f1919faf1cae2",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/retrieval_exam.py"
+            },
+            {
+              "path": "templates/ledger-tools/memory_engine_exam.py",
+              "sha256": "48cff0fd2d6868c0b005a0322fb0b2e9ff14de367345a13ceaa01cf20948d640",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_exam.py"
+            },
+            {
+              "path": "templates/ledger-tools/memory_engine_golden.json",
+              "sha256": "310b7dc4dcf4f5401bbc71b4faaa09712c9190882339c77dbe5671b18892f1cd",
+              "url": "https://github.com/The-825/breadcrumbs/blob/dd7252af3a5f6cc73296d315d50ee16f016c5ad7/templates/ledger-tools/memory_engine_golden.json"
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": true
     },
     {
       "id": "R-631",
@@ -540,9 +765,9 @@
       "priority": "Strong practical fit",
       "mechanism": "TraceBundleV1 defines provenance, harness, session, identity, repository, project, namespace and model fields. A substantial redaction engine and model-normalization tests are present; tests were inspected, not run.",
       "comparison": "Our checkpoint receipts already carry ownership and evidence. A small adapter could reveal missing or differently named fields across harnesses without replacing the handoff contract.",
-      "limits": "Collector coverage is not proved across all harnesses. Pattern redaction cannot guarantee removal of every secret. Persistence, destinations and raw content capture need owning-runtime review before use.",
+      "limits": "Collector coverage is not proved across all harnesses. Pattern redaction cannot guarantee removal of every secret. Persistence, destinations and raw content capture need owning-runtime review before use. Inspected usage fields use omitempty, collapsing zero and unknown; the model field lacks a requested/observed split, and normalization removes provider prefixes. Our checkpoint measurement states and exact model evidence are stronger on these points.",
       "experiment": "Map two fictional harness records, one with missing served-model identity and one failed tool call, into a minimal common receipt without copying prompts.",
-      "acceptance": "Preserve unknowns and errors, retain source format/version and demonstrate that redacted values do not reach the exported receipt.",
+      "acceptance": "Preserve the raw observed model string alongside any normalized label. Keep requested/configured/observed identity and measured/estimated/unknown usage separate; absent data must not become zero. Preserve errors and prove that redacted values do not reach the exported fictional receipt.",
       "source_evidence": {
         "id": "R-631",
         "repository": "Asymptote-Labs/agent-beacon",
@@ -625,7 +850,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": true
     },
     {
       "id": "R-648",
@@ -639,13 +865,13 @@
       "quality_score": null,
       "proposed_chart_rank": null,
       "adoption": "not adopted",
-      "label": "Retry work without doing it twice",
+      "label": "Reconcile uncertain effects after a retry",
       "theme": "Recovery and safe retries",
       "priority": "Strong pattern, heavy platform",
       "mechanism": "Inspected code derives deduplication keys for reapplied events and handles workflow-ID reuse/conflict policies. A focused unit test checks event-key identity.",
-      "comparison": "Checkpoint and replay evidence alone do not make an external write idempotent. Borrow stable operation IDs and reconciliation cases before considering a workflow server.",
+      "comparison": "The checkpoint tool already has stable operation IDs, identical-retry reuse and changed-evidence rejection in _append/release. Temporal's inspected files deduplicate workflow starts and reapplied history events, not arbitrary external effects. The incremental gap is effect receipts and reconciliation for an uncertain external write, which these files do not solve by themselves.",
       "limits": "Operating Temporal adds a server, durable state, SDK integration and maintenance. These files do not prove every downstream tool effect is deduplicated or rolled back.",
-      "experiment": "Extend a fictional lost-acknowledgment case with operation ID, request hash, restart and reconciliation. Compare checkpoint-only retry with a durable synthetic effect receipt.",
+      "experiment": "Keep the existing operation-ID behavior as the baseline. Add a fictional external-effect receipt, lost acknowledgment, restart and changed payload, then compare explicit reconciliation with blindly repeating an uncertain write.",
       "acceptance": "One effect for duplicate identical requests; changed payload under the same key is rejected; uncertain effects trigger reconciliation rather than blind retry.",
       "source_evidence": {
         "id": "R-648",
@@ -729,7 +955,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": true
     },
     {
       "id": "R-673",
@@ -747,10 +974,10 @@
       "theme": "Recovery and ownership",
       "priority": "Promising early implementation",
       "mechanism": "SQLiteTraceStore provides append/conflict handling, content-addressed facts and intent state. Conformance tests cover restart idempotence and conflicting batches. The schema_library file inspected is only a re-export.",
-      "comparison": "Our public checkpoint/replay patterns already describe resume boundaries. Concrete trace-store conformance cases may expose missing restart and conflict fixtures.",
+      "comparison": "The checkpoint tool already implements identical-retry reuse and rejection of changed evidence under one operation ID. Its selftest does not exercise the changed-content rejection. Shepherd conformance tests offer a concrete conflicting-content/restart fixture, not evidence of conflicting-owner resolution.",
       "limits": "Early alpha, substantial trace-store/runtime machinery and changing APIs. A reversible trace is not proof that external side effects can be undone. Credential and writable workspace grants remain separate.",
-      "experiment": "Translate three existing checkpoint cases into restart, duplicate append and conflicting-owner cases with fictional data; compare current file-based behavior first.",
-      "acceptance": "Resume preserves the acknowledged owner and exact receipt; conflicting histories are rejected visibly; no external write is inferred reversible.",
+      "experiment": "Add same-operation-ID/different-content and restart cases to the existing checkpoint fixture using fictional data. Define any owner mapping separately: current scope/authority fields are not an acknowledged-owner protocol.",
+      "acceptance": "An identical retry reuses its receipt; conflicting evidence under the same operation ID is rejected visibly across restart. Preserve scope and authority fields exactly. No claim of acknowledged ownership or reversible external effects.",
       "source_evidence": {
         "id": "R-673",
         "repository": "shepherd-agents/shepherd",
@@ -850,7 +1077,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": true
     },
     {
       "id": "R-865",
@@ -859,7 +1087,7 @@
       "source_url": "https://github.com/cyberark/agentwatch",
       "source_version": "56012207e0b2570c1a9716b6fec72288c3958d48",
       "pool_id": "Q-NEXT-998",
-      "review_state": "ready-for-next-edition-review",
+      "review_state": "retain-in-pool-after-selected-code-review",
       "proposal_only": true,
       "quality_score": null,
       "proposed_chart_rank": null,
@@ -954,7 +1182,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": false
     },
     {
       "id": "R-900",
@@ -973,7 +1202,7 @@
       "priority": "Strong practical fit",
       "mechanism": "Schema-evidence predicates require valid complete coverage and an exact empty schema-diff frame before approval. Tests distinguish unknown, partial, truncated, contradictory and malformed results.",
       "comparison": "Our pinned snapshots and counts preserve identity. A small coverage-aware catalog diff would make incomplete ingestion visible and avoid interpreting an empty result as no change.",
-      "limits": "The full dbt/Pandas application and cloud artifact upload exceed this catalog need. The strict coverage gate applies to schema comparisons; other result types keep caller-dependent behavior and must not be represented as universally fail-closed.",
+      "limits": "The full dbt/Pandas application and cloud artifact upload exceed this catalog need. The strict coverage gate applies to schema comparisons; other result types keep caller-dependent behavior and must not be represented as universally fail-closed. The coverage producer recce.artifact_health was not inspected, so a complete claim remains dependent on that classifier. diff.py is only a general diff helper and supplies no additional coverage evidence.",
       "experiment": "Diff two fictional source ledgers with one missing page, duplicate ID and changed appraisal. Separate a genuinely empty complete diff from a truncated or unexecuted comparison.",
       "acceptance": "No-change requires explicit complete coverage; unknown/partial cannot auto-pass. Preserve both catalog versions and identify every changed source ID.",
       "source_evidence": {
@@ -1058,6 +1287,37 @@
             }
           ]
         }
+      ],
+      "proposed_next_edition": true,
+      "local_ingestion_evidence": [
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "catalog-contract.json",
+          "sha256": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/catalog-contract.json"
+        },
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "scripts/validate_corpus_expansion.py",
+          "sha256": "8aeb067f19dd261161cd5871dd1383f11e2f0b678989bf3b1e3cac7c75043433",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/scripts/validate_corpus_expansion.py"
+        },
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "site/build_discovery.py",
+          "sha256": "62102170a9a5a70018e4af5acfe61a0414f4ee8d0488e415e07d4fe39a8057d5",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_discovery.py"
+        },
+        {
+          "repository": "The-825/staletoast",
+          "head": "552ebdf984628fb74959f24910d426619e2b343d",
+          "path": "site/build_export.py",
+          "sha256": "c530298c535411179d0e900b0656ac2793ad519b8a8ca7732f88844b0b9adf45",
+          "url": "https://github.com/The-825/staletoast/blob/552ebdf984628fb74959f24910d426619e2b343d/site/build_export.py"
+        }
       ]
     },
     {
@@ -1067,19 +1327,19 @@
       "source_url": "https://github.com/mozilla-ai/any-agent",
       "source_version": "a469723ac4a0518ab0696d57e09e4dc407c826ec",
       "pool_id": "Q-NEXT-1137",
-      "review_state": "ready-for-next-edition-review",
+      "review_state": "retain-in-pool-after-selected-code-review",
       "proposal_only": true,
       "quality_score": null,
       "proposed_chart_rank": null,
       "adoption": "not adopted",
       "label": "Compare agent frameworks with the same task",
       "theme": "Cross-tool evaluation",
-      "priority": "Useful comparison, dependency gap",
+      "priority": "Retain in pool: soft-deprecated",
       "mechanism": "README exposes a common agent interface. Inspected AgentTrace is a tinyagent re-export; EvaluationOutput contains passed/reasoning. Local trace tests check token/cost cache invalidation and empty spans.",
       "comparison": "Could provide comparable receipt inputs for our same-task baseline comparisons. The inspected wrapper is not independent evidence of full tracing or authority enforcement in each framework.",
-      "limits": "The actual trace implementation lives in an uninspected dependency. Framework adapters, provider behavior and execution coverage remain unverified. Estimated cost is not an actual billing receipt; capture can expose prompts.",
-      "experiment": "Compare fictional normalized outputs from two harnesses with identical task, acceptance criteria and missing-model case. Review the pinned dependency before a real adapter trial.",
-      "acceptance": "Report unsupported fields and missing identity as unknown, distinguish observed tokens from estimated money, and do not claim framework parity from a wrapper alone.",
+      "limits": "README explicitly declares soft deprecation: security/bug-fix PRs continue but no new features are planned; tinyagent is recommended for new projects. The inspected trace wrapper is only a re-export, and the actual dependency was not appraised. Framework execution coverage, private-content capture and billing evidence remain unverified.",
+      "experiment": "Retain this appraisal as historical comparison. Appraise the exact tinyagent dependency separately if a concrete cross-harness gap remains after current receipt tests.",
+      "acceptance": "Do not propose any-agent as a new implementation dependency. Preserve its source pin and the deprecation reason in the pool; new tinyagent review needs its own primary code and license evidence.",
       "source_evidence": {
         "id": "R-1002",
         "repository": "mozilla-ai/any-agent",
@@ -1141,7 +1401,7 @@
         "archived_at_observation": false,
         "observed_current_head": "a469723ac4a0518ab0696d57e09e4dc407c826ec",
         "changed_since_pin": false,
-        "boundary": "Snapshot observation, not a maintainer responsiveness or future support guarantee. Recheck before implementation."
+        "boundary": "Snapshot observation, not a maintainer responsiveness or future support guarantee. Recheck before implementation. README declares soft deprecation; no new features planned, tinyagent recommended for new projects."
       },
       "effort": "Pattern extraction is low to medium effort; adopting the full runtime requires a separate dependency, privacy and maintenance review.",
       "baseline_comparisons": [
@@ -1184,7 +1444,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": false
     },
     {
       "id": "R-1005",
@@ -1201,9 +1462,9 @@
       "label": "Separate static checks from a real successful run",
       "theme": "Evaluation and skill quality",
       "priority": "Strong practical fit",
-      "mechanism": "Evidence IDs can resolve by explicit ID, JSON pointer or path. Live-evaluation service rejects empty/nonmapping/error-bearing or non-succeeded run envelopes. Local-mode tests explicitly reject native Windows.",
+      "mechanism": "evidence_ref_identity derives the first non-empty identity string among evidence_id, json_pointer and path; it does not resolve or verify the target. failure_reason returns a reason for empty/nonmapping/error-bearing or non-succeeded envelopes; the caller must apply the gate. Local-mode tests explicitly reject native Windows.",
       "comparison": "Our evidence-first acceptance already separates review from execution. Borrow the artifact-status contract and static/overlap/live separation, not the project grade as an overall intelligence score.",
-      "limits": "Live evaluation requires supported sandbox/provider setup and dependencies. Native Windows is unsupported at this pin; WSL2/Docker is a different environment. Third-party dependencies have separate terms; skill docs may leave the host during model review.",
+      "limits": "Live evaluation requires supported sandbox/provider setup and dependencies. Native Windows is unsupported at this pin; WSL2/Docker is a different environment. Third-party dependencies have separate terms; skill docs may leave the host during model review. README labels support Experimental. Inspected helper functions do not themselves verify evidence existence or reject a command.",
       "experiment": "Feed fictional static-pass, overlap-warning, failed live run and missing-artifact receipts into the current acceptance template without installing upstream.",
       "acceptance": "A static pass never becomes runtime success; missing/non-succeeded evidence remains unresolved. Every claim points to its own artifact and environment.",
       "source_evidence": {
@@ -1293,7 +1554,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": true
     },
     {
       "id": "R-1012",
@@ -1312,7 +1574,7 @@
       "priority": "Strong practical fit",
       "mechanism": "SuccessChecker dispatches registered criteria; JSON checks support schema and JMESPath assertions. Round-trip tests preserve criterion status and result types, including fallback and failure evidence.",
       "comparison": "Our test harness defines task and baseline outcomes. A small reusable result schema could preserve evaluated/not-run distinction and per-criterion evidence across agent tools.",
-      "limits": "Python 3.13+, agent runtime and possible sandbox/provider dependencies. Full tool telemetry can contain sensitive data. Weighted scores and model judges do not establish authority, safety or human usefulness.",
+      "limits": "Python 3.13+, agent runtime and possible sandbox/provider dependencies. Full tool telemetry can contain sensitive data. Weighted scores and model judges do not establish authority, safety or human usefulness. not_evaluated and checker exceptions can carry score 0.0. Borrow the evaluation_status and error evidence, not a convention that treats errors or unexecuted work as measured failure scores.",
       "experiment": "Express three existing fictional acceptance cases as explicit artifact assertions, including valid output with missing evidence and a criterion that was not run.",
       "acceptance": "Do not pass an unexecuted criterion; retain exact evaluated artifact, criterion version and failure reason. Keep human review and permission gates separate.",
       "source_evidence": {
@@ -1402,7 +1664,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": true
     },
     {
       "id": "R-1020",
@@ -1421,7 +1684,7 @@
       "priority": "Strong practical fit",
       "mechanism": "Recovery tests cover lost acknowledgments across restart, duplicate/concurrent commits, changed requests under reused keys, partial commits, stale/fabricated status, read-only denials and verification after the last write.",
       "comparison": "These are concrete adversarial fixtures for our checkpoint and replay rules. The immediate transfer is a synthetic failure suite, not post-training or another orchestration platform.",
-      "limits": "Tests were inspected, not executed. Reported agent success rates and training comparisons are author claims, not locally reproduced results. Provider/sandbox integration and synthetic-to-real transfer remain unknown.",
+      "limits": "Tests were inspected, not executed. Reported agent success rates and training comparisons are author claims, not locally reproduced results. Provider/sandbox integration and synthetic-to-real transfer remain unknown. The inspected recovery tests cover the v0.1-v0.3 SQLite service; they do not validate the v0.4 HTTP benchmark headlined in the README.",
       "experiment": "Port the lost-ack, stale-success, concurrent-retry and post-write-verification scenarios as fictional cases against the current receipt workflow.",
       "acceptance": "At most one intended effect; stale status never closes a changed task; final verification follows the latest mutation; uncertainty escalates with preserved evidence.",
       "source_evidence": {
@@ -1506,7 +1769,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": true
     },
     {
       "id": "R-1036",
@@ -1523,9 +1787,9 @@
       "label": "Keep task, trace and evaluation connected",
       "theme": "Traceable evaluation",
       "priority": "Useful design, substantial stack",
-      "mechanism": "Trace schemas encode spans, status, context, events and exceptions. SQLite SpanStore flattens attributes/usage and fetches traces. A small grader-contract test checks a terminal benchmark result boundary.",
+      "mechanism": "Trace schemas encode spans, status, context, events and exceptions. span_store.py is a read-only SQLite fallback loader that flattens usage attributes and fetches spans; it returns an empty mapping when its database path is absent. The selected grader-contract test imports ageneval.task while source paths use a2e; runnability at this pin is unknown.",
       "comparison": "Our evidence pointers could gain a clearer task-to-run-to-evaluation relation and explicit missing-span state. Full server/UI adoption is not yet justified.",
-      "limits": "Persistent server, instrumented full trajectories, provider credentials and benchmark containers increase storage/privacy/maintenance burden. One-run examples are not reliability estimates; selected tests do not prove all instrumentation coverage.",
+      "limits": "Persistent server, instrumented full trajectories, provider credentials and benchmark containers increase storage/privacy/maintenance burden. One-run examples are not reliability estimates; selected tests do not prove all instrumentation coverage. Explicit missing-span state is a local gap to add, not a mechanism already demonstrated by the loader. Schema file provenance appears related to Arize Phoenix and was not fully traced; repository MIT terms do not settle every file/dependency.",
       "experiment": "Build a fictional task/run/evaluation mapping with one missing span and failed grader. Compare with current checkpoint pointers before proposing any server.",
       "acceptance": "A score always resolves to exact task/run/source versions; missing trace and grader failure remain visible. Store only the minimum synthetic/public fixture.",
       "source_evidence": {
@@ -1610,7 +1874,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": true
     },
     {
       "id": "R-1037",
@@ -1627,9 +1892,9 @@
       "label": "Make every review criterion inspectable",
       "theme": "Evaluation and review clarity",
       "priority": "Strong practical fit",
-      "mechanism": "Evaluator specs have IDs, versions/content hashes and compile/validation paths. Release-contract tests require default network blocking, distinct not-applicable/errors, duplicate-ID rejection, explicit model configuration and escaped report text.",
+      "mechanism": "Evaluator specs have IDs, versions/content hashes and compile/validation paths. Release tests install a network-refusal fixture within the test environment; this does not prove product-default network blocking. Tests separately exercise not-applicable/errors, duplicate-ID rejection, explicit model configuration and escaped report text.",
       "comparison": "Our separate evidence dimensions can gain versioned executable clauses and a clearer inspectable result. Use it to explain decisions, not replace dimensions with a universal rank score.",
-      "limits": "Early 0.1 release and configuration churn. LLM judges require explicit provider/funding/data authority. Inspected release tests are not a security audit and were not run locally.",
+      "limits": "Early 0.1 release and configuration churn. LLM judges require explicit provider/funding/data authority. Inspected release tests are not a security audit and were not run locally. README says code-rule check expressions are trusted Python executed locally without a sandbox. Use only original reviewed fixture rules; never execute an untrusted rubric file.",
       "experiment": "Turn three existing acceptance clauses into versioned rules on fictional traces; include not-applicable, malformed evidence, judge failure and untrusted HTML-like text.",
       "acceptance": "Preserve clause version and trace evidence, keep errors out of pass denominators unless the stated policy says otherwise, and render untrusted content as text.",
       "source_evidence": {
@@ -1719,7 +1984,8 @@
             }
           ]
         }
-      ]
+      ],
+      "proposed_next_edition": true
     }
   ],
   "additional_full_text_holds": [
