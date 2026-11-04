@@ -12,6 +12,11 @@ versioned StaleToast catalog exports and cites stable source IDs.
 
 ## Build and check
 
+The [November 3 source review batch](docs/staletoast-system-fit-appraisals-2026-11-03.md)
+adds two paper assessments, two repository assessments and the reviewed Agent Beacon
+follow-up. It proposes one synthetic outcome-evidence audit and retains the rest
+in the pool. Source assessments do not change chart eligibility or authorize adoption.
+
 The [next-update source review](docs/staletoast-system-fit-appraisals-2026-11-01.md)
 appraises six research articles and twelve repositories against the public
 Breadcrumbs kit. It preserves all remaining leads in the pool and records
