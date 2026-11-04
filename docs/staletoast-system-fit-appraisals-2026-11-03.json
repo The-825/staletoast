@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "owner": "local Codex",
+  "status": "source assessments complete; owner resolved independent review findings; catalog and native validation separate",
+  "selection_basis": "Purposive existing-pool batch for outcome verification, evaluation contracts, durable recovery and metadata privacy. Automated term routing informed discovery only; not a global top-five claim.",
+  "source_base": "3b4a5779a83add7588f8f917bcd00bc11b541a83",
+  "baseline_revision": "b3b3ce4a497ebb02702864fd9e82716f62e1384f",
+  "counts": {
+    "research": 2,
+    "repositories": 3,
+    "new_deep_assessments": 4,
+    "additional_scope_reassessments": 1,
+    "new_canonical_identities": 0,
+    "catalog_promotions": 0,
+    "native_adoptions": 0
+  },
+  "records": [
+    {
+      "id": "C-110",
+      "title": "The Evaluation Context Protocol (ECP): A Portable Contract for AI Agent Evaluation",
+      "source_version": "arXiv 2608.19263v1, submitted 18 Aug 2026, 14 pages (receipt sha256 8579ef61...; text sha256 5896aa85...). Code repository is named but not cached or pinned.",
+      "reviewed_scope": "Full extracted text C-110.txt, pages 1 to 14 including Tables I to IV, Figs 1 to 4 and references, plus C-110-abs.html. The ECP reference implementation, spec site and schemas were NOT inspected, so every claim about CLI commands, adapters, graders and conformance is paper-reported and unverified here. Baseline files read in full: governed_replay.py, retrieval_exam.py, shared_work_checkpoint.py, task-outcome.md, SESSION_STATE_TEMPLATE.md, scout-to-implementation.md (revision b3b3ce4a per baseline-receipts.json).",
+      "mechanism": "A JSON-RPC 2.0 contract (agent/initialize, agent/step, agent/reset) over stdio or Streamable HTTP. The step result carries public_output, tool_calls (name plus arguments), evaluation_context (free-text 'evaluator-safe' evidence) and an optional ungraded logs field. A manifest.yaml declares graders (text_match, llm_judge, tool_usage with name match plus argument-subset match). Scenario verdict is a logical AND over all declared checks, and a failed check gives a non-zero CI exit. Roadmap (not implemented): pass^k reporting, policy_check grader, signed reports, sealed manifests, delegation fields.",
+      "locator": "p.1 abstract; p.6 Sec VI-A, VI-B (surface and methods); p.7 Fig 2, Sec VI-C (adapters, evaluation_context is 'a concatenation of captured reasoning text' in several cases); p.8 Fig 3, Sec VI-D, VI-E ('What does not yet exist is evidence that the protocol measurably improves defect detection'); p.11 to 13 Sec X and Table IV (roadmap, threats to validity at Sec X-H on p.13).",
+      "finding_vs_hypothesis": "FINDING (self-reported, unverified here): a small reference runtime with four framework adapters exists, and the authors state the current surface is provisional. HYPOTHESES (explicitly unvalidated by the authors): that checking tool_calls and evaluation_context catches defects outcome-only grading misses, that one manifest gives equal verdicts across frameworks, and that overhead is acceptable. Sec VII results (MAESTRO 12 frameworks, MOYA CloudOps, AIDev 52.17% vs 83.59% intervention rates, healthcare scoping review 1,070 records to 43 studies) are secondary citations of other work, not ECP results. Figures like pass@3 97% vs pass^3 about 34%, kappa >= 0.6, 100 labeled examples and 10 to 15% of LLM budget are attributed to grey-literature reference [16].",
+      "result_denominator": "No validation of ECP itself: no experiment, no denominator, no deployment outside the authors' testing (p.9 and p.13 say so). Planned but unrun: fault-injection study (share of injected faults that give a correct answer yet fail an ECP check), portability study, overhead study.",
+      "prior_kit_equivalent": "Partial. governed_replay.rehearse_proposal already runs expected_outcomes and forbidden_outcomes with tri-state passed/failed/unknown (failed outranks unknown; missing simulator stays unknown). retrieval_exam.run_forbidden_check flags superseded entries that still win retrieval and distinguishes clean from unexercised. shared_work_checkpoint.py stores bounded evidence, requested/configured/observed model evidence and operation-ID idempotency. task-outcome.md separates performing from validating. None of the six inspected baseline files checks a tool-call log for forbidden tools or argument subsets, and none has a cross-framework result envelope.",
+      "incremental_value_and_overlap": "Incremental: the explicit three-way split of what the user sees, what the agent did, and what evidence it exposes, each with a separate assertion, plus 'right answer through a prohibited path' failing deterministically. Overlap: forbidden/expected outcomes and unknown-is-not-pass already exist in governed_replay and retrieval_exam. The JSON-RPC transport, adapters and LLM judge add no value for a native kit.",
+      "limitations_contrary_transfer": "Authors state the surface is provisional and has no versioning or deprecation policy (p.11). evaluation_context is free text, so its check is weakest exactly where the value claim sits. llm_judge assumes a single commercial provider and one credential variable (p.12). Multi-agent delegation has no native representation. Vendor-neutrality claim requires two independent conformance passes, which the authors say have not happened. Paper reads partly as a survey with promotional framing ('cryptographically secure accountability' on p.11 vs unsigned reports on p.12). Transfer: native kit has no agent subprocess protocol to standardize.",
+      "rights_dependency_boundary": "Paper: arXiv nonexclusive-distrib license (C-110-abs.html line 182), so read and cite only, no text reuse grant beyond arXiv terms. Reference code license: paper says only 'open-source license' with 'experimental' label; SPDX UNKNOWN, not inspected. HTML (experimental) version exists, not cached. No dependency should be taken; pattern only.",
+      "maintenance_snapshot": "Not applicable (paper). Repository activity unknown, not inspected. Paper v1 only.",
+      "adoption_effort": "Pattern only: low (a forbidden-tool and argument-subset check over fictional logs). Adopting the runtime, SDK or adapters: high and unjustified (new dependency, unstable surface, license unknown).",
+      "disposition": "backlog",
+      "smallest_native_synthetic_experiment": "In a disposable copy, add a stdlib-only deterministic check over 8 fictional tool-call envelopes (list of {name, arguments}, plus a final answer string): declare allowed tools, forbidden tools and required argument subsets, and return pass/fail/unknown, with unknown when the envelope is missing or malformed. Include 3 'right answer, forbidden tool used' envelopes, 2 correct paths, 1 wrong answer, 1 missing tool log, 1 malformed log. Reuse governed_replay's failed-outranks-unknown aggregation.",
+      "acceptance_stop_criterion": "Accept for further design only if: all 3 wrong-path envelopes fail while an outcome-only comparison passes them (3 of 3); the missing and malformed logs return unknown, never pass (2 of 2); verdicts are identical on a second run; no network, subprocess or dependency used. This shows only that the check is implementable on 8 fictional records, not that ECP or this method improves real defect detection. Stop if the check needs free-text judgment of evaluation_context to reach a verdict.",
+      "kind": "research",
+      "pool_id": "Q-NEXT-178",
+      "source_url": "https://arxiv.org/abs/2608.19263v1",
+      "quality_score": null,
+      "proposed_chart_rank": null,
+      "adoption": "not adopted",
+      "proposal_only": true,
+      "review_state": "retained-pool-after-assessment",
+      "reviewed_baseline_boundary": "Only the six named public Breadcrumbs baseline artifacts were inspected; absence claims do not cover the full kit or private agent runtimes."
+    },
+    {
+      "id": "C-125",
+      "title": "Auditing Web Agent Evaluation on WebArena-Lite: Human Review of Outcomes and Trajectories",
+      "source_version": "arXiv 2610.01491v1, submitted 1 Oct 2026, 13 pages; abs comment: accepted as a poster at the NeurIPS 2026 Workshop 'Who Verifies the Agents?' (receipt sha256 a6eb4d55...; text sha256 ca0c86e6...)",
+      "reviewed_scope": "Full extracted text C-125.txt pages 1 to 13 including Tables 1 to 8, Appendices A to H, and C-125-abs.html. The 165-task outcome matrix referenced in Appendix A is described but its rows are not present in the extracted text: UNKNOWN. No artifact or code release location is stated in the extracted text: UNKNOWN. Baseline files read in full as listed under C-110.",
+      "mechanism": "Human audit over all 165 WebArena-Lite tasks under 6 conditions (GPT 5.5 + MASM or Guide Text + MASM at 15 and 25 steps; untrained Qwen3.5 9B with and without MASM at 25 steps). Original evaluator score is kept. A failed run is flipped to success only when the requirement is demonstrably met but the evaluator rejected it (format, strict string match). Evidence hierarchy: environment state, then screenshots, action results, final answer, and model memory last as auxiliary only. Failed runs get a first-consequential-error and one of 16 primary failure labels. Step-level progress P_i(t)=(1/m_i)*sum z_{i,k,t} counts only subgoals supported by environment transitions, and missing evidence counts as incomplete. MASM adds a per-action intent-vs-observed analysis and memory update.",
+      "locator": "p.4 Sec 4.1 (correction rule and evidence hierarchy); p.4 to 5 Sec 4.2 to 4.3 (first consequential error, Eq. 1); p.5 to 6 Sec 5.1 and Table 1; p.6 to 7 Sec 5.3, Tables 2 to 5; p.7 to 8 Sec 5.5 to 5.6, Tables 6 to 8; p.8 to 9 Sec 6 (limitations); p.12 to 13 Appendices B, C, E.",
+      "finding_vs_hypothesis": "FINDINGS (observed, single rollout): evaluator false negatives of 9 to 14 of 165 per GPT 5.5 setting; self-reported 100% progress not backed by environment evidence. HYPOTHESES / observational: Guide Text benefit (paired exact tests reported non-significant), MASM benefit on Qwen (original evaluator only, no human correction), and the practical recommendations in Sec 5.7.",
+      "result_denominator": "All counts are out of 165 tasks. Raw vs corrected: GPT+MASM@15 49 to 58 (+9); GPT+Guide+MASM@15 49 to 61 (+12); GPT+MASM@25 43 to 57 (+14); GPT+Guide+MASM@25 51 to 63 (+12); total recovered 47 (mean 11.75, 7.12 pp). Guide Text paired: @15 8 gains vs 5 losses (p=.549 reported), @25 20 vs 14 (p=.392), 34 of 165 (20.61%) flip. Guide available 143 tasks: 53 to 56 (7 gains, 4 losses); no guide 22 tasks: 5 to 5. Qwen MASM 23 to 31 of 165 (13.90% to 18.80%), uncorrected. Failure audit: 102 failed runs in the GPT+Guide+MASM@25 condition (scroll oscillation 32, exploration unfinished 13, premature answer 13, invalid action format 9, incomplete form 8). Progress: structured progress extractable for 91 of 165; failed runs claiming >=80%: 18 of 102; claiming 100%: 7 of 102; of 40 analyzable action-limit failures, mean max verified progress 56.2%, 8 reach >=80%, 0 reach 100%. Reviewer arithmetic check (by hand, not tool-verified): Tables 1 to 6 sums are internally consistent; the 25-step p=.392 is consistent with a two-sided exact binomial on 20 vs 14, but my hand computation for 8 vs 5 gives about 0.58, not .549, so the 15-step test statistic is unresolved. Not material, since both are non-significant.",
+      "prior_kit_equivalent": "Principle-level overlap is high. task-outcome.md already says a worker's statement does not prove the result, separates performed from validated, and says unmeasured savings stay hypotheses. shared_work_checkpoint.py requires non-empty evidence for completion and a verified-recovery flag, and release states bind to exact commit heads. Gap in code: evidence is a list of free-text strings of at most 512 chars (lines 281 to 282, _text/_items), so a self-report and an environment-verified observation are indistinguishable, and recovery_verified is a caller-asserted boolean.",
+      "incremental_value_and_overlap": "Incremental: (a) an explicit evidence rank (environment state above screenshots above action result above final answer above agent memory) with agent memory never sufficient to accept; (b) keeping raw and corrected outcomes side by side with a correction code; (c) distinguishing false negative, completion-before-stopping, and genuine failure; (d) first-consequential-error as a single label. Overlap: separation of doing and validating, and unknown-over-assumed, already exist as prose and partly as code.",
+      "limitations_contrary_transfer": "One rollout per task and condition (p.9), so flips describe observed runs, not distributions. 15 and 25 step budgets not comparable. Qwen ablation not human-corrected. Human labels are judgment-based; agreement statistics are said to be computed on a double-annotated subset, but no kappa or subset size appears in the extracted text: UNKNOWN. Reviewers are the authors. Guide Text is observational, built from prior procedures, with admitted possible state carryover on at least one task and answer leakage risk in one guide. Only 55.2% of tasks have extractable progress. Model names (GPT 5.5, Qwen3.5 9B) and API behavior cannot be independently checked from this package. Transfer: web-task evaluator false-negative rates say nothing about our checkpoint ledger; only the evidence-rank idea transfers.",
+      "rights_dependency_boundary": "arXiv nonexclusive-distrib license (C-125-abs.html line 174), read and cite only. Paper states records are used solely for academic evaluation and not to build a commercial product (Ethical Consideration, p.9), a statement about the authors' data, not a license to us. Study artifact exists per Appendix H but no location or license is given: UNKNOWN. No dependency taken.",
+      "maintenance_snapshot": "Not applicable (paper v1 only; workshop poster per abs comment).",
+      "adoption_effort": "Low: add an evidence-source field and a one-line acceptance rule to a copy of the checkpoint or task-outcome fixture. No reviewer-interface tooling needed.",
+      "disposition": "experiment",
+      "smallest_native_synthetic_experiment": "Prepare twelve fictional outcome records against a disposable copy of the current checkpoint fixtures: four with typed environment observations, three containing only statements or agent memory, two raw failures with independently recorded state that could justify a correction, two claims of complete progress without observations, and one missing evidence record. Run no model or external action. Keep raw and corrected verdicts, correction reason and observation pointer separate. This is a proposed design check, not a change to shipped checkpoint code.",
+      "acceptance_stop_criterion": "Five self-report or unsupported-completion fixtures remain unverified; the missing-evidence case remains unknown; two corrections retain the raw failure and require an observation pointer plus correction code; all four supplied-state fixtures are assessed against explicit requirements. Reject a self-asserted label as proof of observed state. Stop if the check needs prose judgment or changes the existing receipt schema without its owning review. No accuracy or productivity benefit is established by these fixtures.",
+      "kind": "research",
+      "pool_id": "Q-NEXT-193",
+      "source_url": "https://arxiv.org/abs/2610.01491v1",
+      "quality_score": null,
+      "proposed_chart_rank": null,
+      "adoption": "not adopted",
+      "proposal_only": true,
+      "review_state": "ready-for-next-edition-review",
+      "reviewed_baseline_boundary": "Only the six named public Breadcrumbs baseline artifacts were inspected; absence claims do not cover the full kit or private agent runtimes.",
+      "owner_resolution": {
+        "arithmetic": "Independently computed two-sided exact binomial from discordant pairs:8vs5 gives0.5810546875, while paper reports0.549;20vs14 gives0.3915283051, consistent with0.392. Preserve discrepancy, do not substitute a paper correction without authors. Neither supports an established intervention effect.",
+        "native_rule": "Environment, artifact or action-result labels require a typed observation pointer and declared observer; statement and agent-memory alone are never sufficient. Evidence rank is a routing aid, not proof that an observation is authentic. Preserve raw verdict and append any corrected verdict with code and supporting observation. Missing evidence remains unknown."
+      }
+    },
+    {
+      "id": "R-717",
+      "title": "dbos-inc/dbos-transact-ts (DBOS Transact, durable workflows on Postgres)",
+      "source_version": "Pin 627990fc59619d3584ce88511ab546bc7483f4b9 (retained original). Current head at metadata capture: 306b7324a050d3fc661aec4c4eef774c8bd38336, pushed_at 2026-11-04T04:05:25Z (UTC; November 3 Pacific observation), so the head differs from the pin and the diff is not inspected.",
+      "reviewed_scope": "Cached files at the pin: LICENSE, README.md, src/step.ts (39 lines, read in full), src/workflow.ts (377 lines, read in full), tests/recovery.test.ts (505 lines, read in full), tests/stepfuncs.test.ts (test names and retry/timeout lines only via search, not read line by line), plus R-717-tree.json and metadata. NOT cached or inspected: the recovery and executor implementation (dbos-executor, system_database), tests/helpers.ts, tests/recoveryRecvWorker.ts, Postgres schema. Recovery mechanics are therefore inferred from tests and type comments, not from implementation. Tests inspected, never run (they require Postgres per beforeAll setUpDBOSTestSysDb).",
+      "mechanism": "Steps and workflow state are checkpointed in Postgres; a restarted program resumes workflows from the last completed step (README Durable Workflows). Recovery re-enqueues orphaned PENDING workflows onto an internal queue. After maxRecoveryAttempts (default 100, workflow.ts line 73) the workflow moves to MAX_RECOVERY_ATTEMPTS_EXCEEDED (a dead-letter status) and can be resumed with attempts reset. Re-enqueue is ownership-conditional: a sweep naming a different executor returns an empty list, and a duplicate sweep for the same dead executor returns empty once the row is PENDING under a live executor. Workflow IDs act as idempotency keys with policy 'return-existing' or 'reject'. Step retry is opt-in with interval, backoff and a shouldRetry predicate; timeouts do not forcibly terminate step code.",
+      "locator": "src/workflow.ts lines 48 to 49 (workflowIDReusePolicy), 73 (default 100), 113 to 192 (WorkflowStatus incl. recoveryAttempts, forkedFrom, executorId), 245 to 262 (status enum). src/step.ts lines 7 to 28 (StepConfig), 18 to 24 (timeout caveat). tests/recovery.test.ts lines 118 to 171 (dead-letter-queue), 212 to 225 (dead-letter-spares-a-row-given-a-fresh-budget), 248 to 292 (recovery-reenqueue-is-ownership-conditional), 294 to 344 (duplicate-recovery-hands-a-running-workflow-to-a-new-execution), 389 to 461 (two-process recv recovery, repro comment at 445 to 449). README.md 'Durable Workflows' and 'Exactly-Once Event Processing'.",
+      "finding_vs_hypothesis": "FINDINGS (from test source, not run): bounded recovery with a dead-letter state; ownership-conditional re-enqueue; a dead-letter write that spares a row given a fresh budget; idempotent workflow-ID reuse. HYPOTHESES: that these properties transfer to a file-based JSONL checkpoint store; that 'exactly-once' in the README holds for external side effects (the tests below suggest it holds for recorded step outputs only).",
+      "result_denominator": "No validation by this review (tests not run). Test inventory: recovery.test.ts has 7 test blocks; stepfuncs.test.ts lists about 20 named tests. No benchmark, reliability rate or denominator is claimed by the source in the cached files. Upstream CI status: UNKNOWN (badge only).",
+      "prior_kit_equivalent": "Partial. shared_work_checkpoint.py has operation_id idempotency (_append returns the prior row, errors if content differs), a bounded retry (MAX_RETRIES=3), failure/workaround/recovery links, manifest digest states fresh/reused/invalidated, per-scope MAX_EVENTS_PER_SCOPE=500, and exact-head release gating. It has no lease or executor ownership, and its docstring says concurrent writers need an external process lock; record() has no precondition on the current head (only revise_plan checks supersedes_event_id against the latest plan).",
+      "incremental_value_and_overlap": "Incremental: the stale-writer fence idea (a state change succeeds only if the row is still in the state and owner the caller read) and the explicit dead-letter terminal state with a budgeted, resettable retry count. Overlap: idempotent operation IDs, bounded retries and supersession already exist. The Postgres runtime itself is out of scope for a stdlib kit.",
+      "limitations_contrary_transfer": "Contrary evidence in the tests: recovery of a live executor is not prevented, and the stale and new executions run side by side until the stale one parks at its next write (recovery.test.ts lines 294 to 344, comments at 296 and 319 to 334). A dev comment records a repro where one recovery worker returned NULL for recv while the checkpoint held 'testmsg' (445 to 449). So durable-execution guarantees cover recorded step outputs, not external side effects. Step timeout leaves code running (step.ts line 23). workflow.ts line 109 says autoUpgrade 'Requires Transact Enterprise', so some features sit behind a commercial tier. Many tests need a live Postgres and spawn ts-node worker processes, so they cannot run in our offline stdlib setting. Transfer: a JSONL file has no transactions, so a fence would be advisory unless a lock is used.",
+      "rights_dependency_boundary": "MIT, Copyright (c) 2023 DBOS, Inc. (LICENSE read at the pin; metadata SPDX MIT). Keep the notice for any copied portion. Runtime needs Postgres, Node/TypeScript and the npm dependency tree, none of whose terms were reviewed. Enterprise-gated features are outside the MIT text reviewed. No code to be copied; pattern only.",
+      "maintenance_snapshot": "Not archived. pushed_at 2026-11-04T04:05:25Z; head 306b7324 vs pin 627990fc, so the repository has moved since the pin by an unknown amount. Snapshot activity only, not evidence of stability or responsiveness.",
+      "adoption_effort": "Pattern only: low to medium (a compare-and-append precondition in a copy of the checkpoint store plus a lock decision). Runtime adoption: high (Postgres, TypeScript, service operations, enterprise boundary) and not justified by this evidence.",
+      "disposition": "backlog",
+      "smallest_native_synthetic_experiment": "In a temp copy of shared_work_checkpoint.py, add an optional expected_head_event_id precondition to record(). Using a fictional scope and a temp JSONL, enumerate the interleavings of two simulated writers (A and B) that both read head H, then each append a progress event: 6 orderings including a retry of the same operation_id and a stale-writer retry with a new operation_id. No threads, network or Postgres; ordering is simulated sequentially.",
+      "acceptance_stop_criterion": "Accept for a design note only if: in all 6 orderings exactly one writer succeeds and the stale writer raises a distinct error (6 of 6); same-operation_id retry returns the identical event_id with zero extra rows (2 of 2); the append count equals the number of successful distinct operations. Stop if a correct fence needs a lock or database transaction to be meaningful, and record that the idea is advisory only in a single-file store.",
+      "kind": "repository",
+      "pool_id": "Q-NEXT-850",
+      "source_url": "https://github.com/dbos-inc/dbos-transact-ts",
+      "quality_score": null,
+      "proposed_chart_rank": null,
+      "adoption": "not adopted",
+      "proposal_only": true,
+      "review_state": "retained-pool-after-assessment",
+      "reviewed_baseline_boundary": "Only the six named public Breadcrumbs baseline artifacts were inspected; absence claims do not cover the full kit or private agent runtimes.",
+      "owner_resolution": "Do not infer atomic concurrency safety from sequentially simulated interleavings. A head-event precondition needs a lock/transaction around read-check-append to be an enforcement boundary. Existing operation IDs already address local retry identity. Evaluate the consumer concurrency owner and its existing equivalent before any new fencing implementation. Full DBOS adoption is not recommended from this source assessment."
+    },
+    {
+      "id": "R-516",
+      "title": "strands-agents/evals (Strands Evaluation: deterministic output, trajectory and environment-state evaluators)",
+      "source_version": "Pin 32e72bb0639fc69d6763a671b461b12bc08c83af (retained original). Current head at metadata capture: 69d85c55866d27784d6ffdd80254beaa390d02c4, pushed_at 2026-11-04T04:10:08Z (UTC); head differs from pin, diff not inspected.",
+      "reviewed_scope": "Cached files at the pin read in full: src/strands_evals/case.py, evaluators/deterministic/output.py, trajectory.py, environment_state.py, tests test_environment_state.py (17 tests) and test_trajectory.py (11 tests, helpers and first tests read; remainder by test-name search), LICENSE head, README.md (searched for evaluator, chaos, deterministic and license sections, not read line by line). NOT cached: evaluator base class, types/evaluation.py, deterministic/skill_invoked.py and structured_output.py (exist in tree), the chaos evaluators and LLM-judge evaluators, NOTICE, pyproject.toml. Tests inspected, never run.",
+      "mechanism": "Evaluator subclasses return a list of EvaluationOutput(score 0.0 or 1.0, test_pass, reason) with no model call. Equals, Contains and StartsWith compare actual_output to a value or to Case.expected_output. ToolCalled checks only that a named tool appears anywhere in a list or a Session's ToolExecutionSpans (no arguments, count or order). StateEquals finds a named EnvironmentState in actual_environment_state and compares it by == to an explicit value or to expected_environment_state; a missing actual state scores 0.0 with a reason, and a missing expected value raises ValueError. Case carries input, expected_output, expected_trajectory and expected_environment_state as separate optional fields.",
+      "locator": "output.py lines 7 to 80; trajectory.py lines 6 to 47 (_check_session lines 39 to 44); environment_state.py lines 15 to 74 (expected-value precedence lines 50 to 62); case.py lines 48 to 56; tests/test_environment_state.py test names lines 8 to 172; tests/test_trajectory.py lines 38 to 108; README.md 'Deterministic and offline: no LLM judge, no credentials, no per-call cost' (line 538).",
+      "finding_vs_hypothesis": "FINDINGS (source read): the deterministic evaluators are small exact-comparison checks with a uniform output shape. Quirk read from source: `if self.value is not None` means an explicit constructor value of None is indistinguishable from an omitted override; a None target can still arrive through expected_output or a named expected_environment_state. Equals can pass when actual_output and expected_output are both None. HYPOTHESES: that name-keyed state equality would catch real stale-state defects in our workflows; no evidence either way.",
+      "result_denominator": "No validation. No performance claims in the cached evaluator files. Test inventory only: 17 environment-state tests and 11 trajectory tests, not run. No tests for output.py (Equals, Contains, StartsWith) were cached.",
+      "prior_kit_equivalent": "High overlap. governed_replay.rehearse_proposal compares observed_outcomes with expected_outcomes and forbidden_outcomes, and reports passed/failed/unknown with failed outranking unknown; retrieval_exam.py runs offline fixture self-tests and a forbidden-hit check; shared_work_checkpoint.py keeps usage and evidence states tri-valued (measured/estimated/unknown, verified/unknown/unavailable).",
+      "incremental_value_and_overlap": "Low. The only distinct points are the named-state map (several independent state keys compared separately, with a per-key reason) and the plain Case schema separating expected_output, expected_trajectory and expected_environment_state. The Strands evaluators are binary and have no unknown state: an absent actual state is a failure, which is weaker than the kit's could-not-run-is-not-a-pass rule. No argument-level tool check.",
+      "limitations_contrary_transfer": "ToolCalled ignores arguments, ordering and forbidden tools. Binary scoring loses the unknown case. Equality only, no tolerance or schema checks in the cached files. Coverage of the other deterministic evaluators and the chaos and LLM-judge evaluators is uninspected. Transfer: the kit has no Strands agent runtime, trace Session types or pydantic generics, and the value here is a fixture shape, not code.",
+      "rights_dependency_boundary": "Apache-2.0 (LICENSE header read; metadata SPDX Apache-2.0). A NOTICE file exists in the tree but was not cached, so attribution obligations for any copying are unresolved. Runtime dependencies (pydantic, typing_extensions, the Strands SDK) not reviewed. Pattern only, no code copied.",
+      "maintenance_snapshot": "Not archived. pushed_at 2026-11-04T04:10:08Z; head 69d85c55 vs pin 32e72bb0, so changed since pin by an unknown amount. Snapshot only.",
+      "adoption_effort": "Pattern only: very low. Runtime adoption: medium to high and not justified (new framework dependency for checks the kit already implements).",
+      "disposition": "backlog",
+      "smallest_native_synthetic_experiment": "Add, in a temp copy of governed_replay.py's rehearsal fixtures, one named-state comparison: 6 fictional cases each carrying 2 named states (for example 'cart' and 'balance') compared per key, with a tri-state result (pass, fail, unknown when the actual state is absent or the expected value is not supplied). Include one case whose expected value is legitimately null.",
+      "acceptance_stop_criterion": "Accept as a note only if: per-key verdicts are reported separately in all 6 cases; absent actual state returns unknown in the 2 such cases (not fail, not pass); the null-expected case is distinguishable from 'no expected supplied' (1 of 1). Stop and reject if the result is already expressible as governed_replay expected/forbidden outcomes without a new field, which is the likely outcome.",
+      "kind": "repository",
+      "pool_id": "Q-NEXT-649",
+      "source_url": "https://github.com/strands-agents/evals",
+      "quality_score": null,
+      "proposed_chart_rank": null,
+      "adoption": "not adopted",
+      "proposal_only": true,
+      "review_state": "retained-pool-after-assessment",
+      "reviewed_baseline_boundary": "Only the six named public Breadcrumbs baseline artifacts were inspected; absence claims do not cover the full kit or private agent runtimes.",
+      "owner_resolution": "Preserve the distinction between absent fields and explicit null. StateEquals can compare against expected_state.state=None when a named expected state exists. ToolCalled proves only name presence, not success, permitted arguments or state change. Duplicate state names select the first match in the inspected helper; a native consumer should reject ambiguous duplicates."
+    },
+    {
+      "schema_version": 1,
+      "date": "2026-11-03",
+      "identity": "R-631",
+      "pool_id": "Q-NEXT-764",
+      "repository": "Asymptote-Labs/agent-beacon",
+      "source_pin": "a2c3c8070edfd3de088db0efee82f22c8a2eb54d",
+      "status": "additional selected-code appraisal prepared for independent source review; not promoted",
+      "prior_analysis": "docs/staletoast-system-fit-appraisals-2026-11-01.json at StaleToast main 3b4a5779a83add7588f8f917bcd00bc11b541a83; original receipt, source pin and ranking unchanged",
+      "scope": "New inspection of collector privacy processor, its tests, writer, configuration and license. Prior trace schema/model-normalization findings reused without repeating their review.",
+      "findings": [
+        {
+          "finding": "Redact before telemetry fan-out, not only in a local exporter",
+          "evidence": "privacyprocessor/processor.go handles logs, trace resources/scopes/spans/events/links and metric points/exemplars; processor_test.go contains downstream sink assertions for synthetic credentials and preserved identifiers/numeric usage",
+          "incremental_value": "A sink-local scrub cannot protect a sibling destination. Breadcrumbs source-to-adoption and handoff boundaries could include one explicit pre-fan-out check rather than inferring privacy from an exported file alone.",
+          "limit": "Tests inspected, not run. Pipeline wiring, every destination and default deployment activation were not inspected, so this is a component-level pattern, not verified end-to-end privacy."
+        },
+        {
+          "finding": "Secret redaction and minimum content collection are separate controls",
+          "evidence": "config.go defaults RedactSecrets true but ContentRetention is a deprecated no-op. writer.go sanitizes and may write prompt text, command output, diffs, tool arguments/results and raw event content. Size fallback clears retained text only when the serialized event exceeds its size cap.",
+          "incremental_value": "Our minimum-necessary and default-off persistence boundary must remain independent of any redaction flag. A proposed adapter should allowlist receipt metadata and exclude raw prompts, outputs, identifiers and free text before serialization.",
+          "limit": "No claim that all content is captured by default: producer settings, event population and full collector configuration were not inspected. No security vulnerability or compliance certification inferred."
+        },
+        {
+          "finding": "Coverage gaps stay explicit",
+          "evidence": "Selected processor leaves arbitrary binary bytes intact in tests; selected source does not show sanitization of metric names/units, scope name/version or all schema metadata.",
+          "incremental_value": "Native synthetic acceptance should account for every serialized field and destination, including names and binary values, rather than equating the supplied fixture set with universal secret removal.",
+          "limit": "A missing assertion or visible scrub is not proof of real-world disclosure; complete capture and destination paths remain unreviewed."
+        }
+      ],
+      "rights": {
+        "spdx": "MIT",
+        "copyright": "2026 Asymptote Labs",
+        "license_text_reviewed": true,
+        "dependency_terms": "not reviewed",
+        "product_code_copied": false
+      },
+      "maintenance": {
+        "observed_pushed_at": "2026-11-03T18:04:35Z",
+        "archived": false,
+        "head": "a2c3c8070edfd3de088db0efee82f22c8a2eb54d",
+        "limit": "Snapshot activity only, not maintainer responsiveness or stability evidence"
+      },
+      "native_check": {
+        "status": "proposed, not implemented or run",
+        "fixture": "Two in-memory fictional harness receipts, one missing observed model identity and one failed tool call; synthetic sentinel values in raw text, nested maps, names and binary fields; two fictional downstream sinks",
+        "acceptance": [
+          "Only allowlisted receipt metadata reaches either sink; no raw text or synthetic sentinel is serialized",
+          "Both sinks receive the same minimized representation; exporter-local sanitation cannot substitute for the shared boundary",
+          "Requested/configured/observed model identity remain separate; missing usage stays unknown and measured zero stays zero",
+          "Failure state survives transformation; persistence and network remain disabled",
+          "Record field coverage and unsupported binary/metadata cases explicitly instead of claiming comprehensive redaction",
+          "Use enumerated or pattern-limited metadata values as well as allowed field names. Put synthetic sentinels inside source, provenance, evidence, remaining and next_action text; exclude or reject free text before either fictional sink.",
+          "The new scope relative to the original experiment is two destinations plus sentinels in otherwise permitted free-text fields. This does not assert an existing multi-sink path or leak."
+        ],
+        "baseline": "templates/ledger-tools/shared_work_checkpoint.py at Breadcrumbs b3b3ce4a497ebb02702864fd9e82716f62e1384f, SHA2564261088e57c8e1f4e5341c8a216939881622b2348b58e91e2b47cd33fbf53048. It permits bounded free-text evidence fields and has a single JSONL sink; no claim of baseline redaction or existing fan-out."
+      },
+      "disposition": "backlog",
+      "unresolved": [
+        "Independent review of this new selected-code addendum",
+        "Pipeline wiring and sibling exporters",
+        "Capture defaults, storage lifecycle, access/retention/export/deletion and sensitivity review before any adoption",
+        "Actual native synthetic acceptance execution"
+      ],
+      "source_receipt": "sources.json",
+      "quality_score": null,
+      "proposed_chart_rank": null,
+      "id": "R-631",
+      "kind": "repository",
+      "title": "Asymptote-Labs/agent-beacon: privacy before telemetry fan-out",
+      "review_state": "ready-for-next-edition-review",
+      "proposal_only": true,
+      "adoption": "not adopted",
+      "reviewed_baseline_boundary": "Six public Breadcrumbs artifacts only; current checkpoint has one JSONL sink, so fan-out is a proposed transfer scenario, not an observed existing leak.",
+      "source_versions": {
+        "original": "e0989909e3169cd82066d051f3aa9642ae2bad1e",
+        "addendum": "a2c3c8070edfd3de088db0efee82f22c8a2eb54d",
+        "relationship": "Different revisions. Original analysis remains historical; trace schema, model normalization and core redaction behavior are not reverified at the new pin."
+      },
+      "scope_limits": [
+        "Current pkg/asymptoteobserve redaction implementation is outside the five-file addendum; the delegated functions and complete secret patterns are unverified at this pin.",
+        "Fixtures place the sentinel under sensitive keys or after token/Bearer prefixes; bare unlabelled secret detection is not established.",
+        "Processor mutation and error returns are visible, but collector forwarding/drop behavior on errors is unverified.",
+        "Pipeline registration/order and sibling exporter paths were not inspected.",
+        "Metric names/units, scope metadata and arbitrary binary payload coverage are not proved."
+      ],
+      "additional_source_observations": [
+        {
+          "locator": "privacyprocessor/processor.go:Config, privacy and preConversionStringLimit",
+          "finding": "Processor Config is empty, with fixed RedactSecrets true and64MiB pre-conversion limit. Redaction does not establish minimum collection. Exporter config.go permits a separate RedactSecrets boolean."
+        },
+        {
+          "locator": "config.go:createDefaultConfig and Config; writer.go:compactRetainedContent and runtimeFileMode",
+          "finding": "Exporter defaults include64KiB event limit,10MiB rotation and5archives. CaptureModelContext is an explicit opt-in flag and false in the zero-valued default; other producer capture defaults are not inspected. ContentRetention is deprecated/no-op. Compact markers retain the redacted content hash and byte count; system log mode is shared, with its numeric mode uninspected. These are source observations, not verified live settings."
+        }
+      ],
+      "adoption_effort": "Low to medium for a bounded synthetic metadata-only design note; substantial separate reviews for collector capture, access, lifecycle and destinations. No collector adoption proposed.",
+      "finding_vs_hypothesis": "Findings are selected-code observations and inspected test assertions only. The proposed pre-fan-out minimization check is a hypothesis for a future adapter; end-to-end privacy and failure handling are unknown.",
+      "owner_resolution": "All seven substantive Claude finding groups resolved by explicit scope, pin, core-delegation, fixture-coverage, value-level filtering and adoption-effort limits. This is owner resolution, not a second Claude PASS. Historical addendum preserved unchanged in the daily output folder."
+    }
+  ],
+  "source_evidence": [
+    {
+      "id": "R-717",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/dbos-inc/dbos-transact-ts/627990fc59619d3584ce88511ab546bc7483f4b9/LICENSE",
+      "source_version": "627990fc59619d3584ce88511ab546bc7483f4b9",
+      "git_blob": "b3d39200a2a6a10fb4a57c5f8a8d7e0f3c0d1b80",
+      "sha256": "503e404dfddb2f1ec81ade7bb601e54c05a3bb8e7b657a0e0444069bc00fd86a",
+      "bytes": 1067,
+      "cache": "R-717-LICENSE"
+    },
+    {
+      "id": "R-717",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/dbos-inc/dbos-transact-ts/627990fc59619d3584ce88511ab546bc7483f4b9/README.md",
+      "source_version": "627990fc59619d3584ce88511ab546bc7483f4b9",
+      "git_blob": "bc2084a920ec8ff62a3b34e51d7fac31afb8a7a5",
+      "sha256": "3ab6841b72b91260d4b45413445827286c68c49aea8179288354a578e7686950",
+      "bytes": 13872,
+      "cache": "R-717-README.md"
+    },
+    {
+      "id": "R-717",
+      "path": "src/step.ts",
+      "url": "https://raw.githubusercontent.com/dbos-inc/dbos-transact-ts/627990fc59619d3584ce88511ab546bc7483f4b9/src/step.ts",
+      "source_version": "627990fc59619d3584ce88511ab546bc7483f4b9",
+      "git_blob": "16d93718e2324d2da547bb268218ceed9a75ebe8",
+      "sha256": "e416f76458ab280c8791e02306d1e8ff14bcf366e438f249002f07c1fbe8ea3d",
+      "bytes": 2143,
+      "cache": "R-717-src__step.ts"
+    },
+    {
+      "id": "R-717",
+      "path": "src/workflow.ts",
+      "url": "https://raw.githubusercontent.com/dbos-inc/dbos-transact-ts/627990fc59619d3584ce88511ab546bc7483f4b9/src/workflow.ts",
+      "source_version": "627990fc59619d3584ce88511ab546bc7483f4b9",
+      "git_blob": "28673d194b80a2c1ebb32b8f641a5f2994774474",
+      "sha256": "e2bc913262482a9fa1931371bdd17ee851e6f4a1491090151f5aa0bc8e42906d",
+      "bytes": 17398,
+      "cache": "R-717-src__workflow.ts"
+    },
+    {
+      "id": "R-717",
+      "path": "tests/recovery.test.ts",
+      "url": "https://raw.githubusercontent.com/dbos-inc/dbos-transact-ts/627990fc59619d3584ce88511ab546bc7483f4b9/tests/recovery.test.ts",
+      "source_version": "627990fc59619d3584ce88511ab546bc7483f4b9",
+      "git_blob": "020ba53b7e54ed2a42cfe7d5da6c733f5dd7ad24",
+      "sha256": "5aa46c48c6d228d246808fb9da428d16b765655ead4786608484864f18930eb7",
+      "bytes": 20525,
+      "cache": "R-717-tests__recovery.test.ts"
+    },
+    {
+      "id": "R-717",
+      "path": "tests/stepfuncs.test.ts",
+      "url": "https://raw.githubusercontent.com/dbos-inc/dbos-transact-ts/627990fc59619d3584ce88511ab546bc7483f4b9/tests/stepfuncs.test.ts",
+      "source_version": "627990fc59619d3584ce88511ab546bc7483f4b9",
+      "git_blob": "f04a54db2abae961bfce0a769764ae6019f5bb06",
+      "sha256": "00e8c1fd771955b4be4530535f7ff7a8e28b4ca7ef44b28ea38e91efd4999ff3",
+      "bytes": 29899,
+      "cache": "R-717-tests__stepfuncs.test.ts"
+    },
+    {
+      "id": "R-516",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/strands-agents/evals/32e72bb0639fc69d6763a671b461b12bc08c83af/LICENSE",
+      "source_version": "32e72bb0639fc69d6763a671b461b12bc08c83af",
+      "git_blob": "19dc35b2433851a0e8fd866a5d323b2ba18c12ed",
+      "sha256": "c8858a5a76440bbca484e134cf7df46385d090dd18b2c58e650f939258802e5b",
+      "bytes": 10141,
+      "cache": "R-516-LICENSE"
+    },
+    {
+      "id": "R-516",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/strands-agents/evals/32e72bb0639fc69d6763a671b461b12bc08c83af/README.md",
+      "source_version": "32e72bb0639fc69d6763a671b461b12bc08c83af",
+      "git_blob": "c3401793f0cf5ba2c3a717bb057ecab3dc8e2596",
+      "sha256": "317a7af0f9d3172e7acbae0fe3b396611425f0eefd59f06653862fd772285315",
+      "bytes": 35911,
+      "cache": "R-516-README.md"
+    },
+    {
+      "id": "R-516",
+      "path": "src/strands_evals/evaluators/deterministic/environment_state.py",
+      "url": "https://raw.githubusercontent.com/strands-agents/evals/32e72bb0639fc69d6763a671b461b12bc08c83af/src/strands_evals/evaluators/deterministic/environment_state.py",
+      "source_version": "32e72bb0639fc69d6763a671b461b12bc08c83af",
+      "git_blob": "f70391c15103049b24169bcb3e5f6ffdba10b828",
+      "sha256": "c6ef7d7cc903fdad17d9a358bef7ef6d19785c3ada3c236c8b2b82d26f3a4795",
+      "bytes": 2943,
+      "cache": "R-516-src__strands_evals__evaluators__deterministic__environment_state.py"
+    },
+    {
+      "id": "R-516",
+      "path": "tests/strands_evals/evaluators/deterministic/test_environment_state.py",
+      "url": "https://raw.githubusercontent.com/strands-agents/evals/32e72bb0639fc69d6763a671b461b12bc08c83af/tests/strands_evals/evaluators/deterministic/test_environment_state.py",
+      "source_version": "32e72bb0639fc69d6763a671b461b12bc08c83af",
+      "git_blob": "867ceb8255d2e2d041de7ce1d264766c9ae3d8d6",
+      "sha256": "c3a26381781b9316e4044ca803cc9292f01bee7492f416bbcba6e460af9497a8",
+      "bytes": 7463,
+      "cache": "R-516-tests__strands_evals__evaluators__deterministic__test_environment_state.py"
+    },
+    {
+      "id": "R-516",
+      "path": "src/strands_evals/evaluators/deterministic/trajectory.py",
+      "url": "https://raw.githubusercontent.com/strands-agents/evals/32e72bb0639fc69d6763a671b461b12bc08c83af/src/strands_evals/evaluators/deterministic/trajectory.py",
+      "source_version": "32e72bb0639fc69d6763a671b461b12bc08c83af",
+      "git_blob": "0995ee299a79f09049bb575f3a9d5672882f4720",
+      "sha256": "fd958f6dc79df7543718512894c1ac4d98426cf221046a090b2b8dad87d923e8",
+      "bytes": 1841,
+      "cache": "R-516-src__strands_evals__evaluators__deterministic__trajectory.py"
+    },
+    {
+      "id": "R-516",
+      "path": "tests/strands_evals/evaluators/deterministic/test_trajectory.py",
+      "url": "https://raw.githubusercontent.com/strands-agents/evals/32e72bb0639fc69d6763a671b461b12bc08c83af/tests/strands_evals/evaluators/deterministic/test_trajectory.py",
+      "source_version": "32e72bb0639fc69d6763a671b461b12bc08c83af",
+      "git_blob": "e386c9c7744dde91a19f81924291b5b45696c0c1",
+      "sha256": "ff2a84b087f36fd0f64e411a1e8866b6cff3bb969e7f30bc4f9af3ba968e9e05",
+      "bytes": 4279,
+      "cache": "R-516-tests__strands_evals__evaluators__deterministic__test_trajectory.py"
+    },
+    {
+      "id": "R-516",
+      "path": "src/strands_evals/evaluators/deterministic/output.py",
+      "url": "https://raw.githubusercontent.com/strands-agents/evals/32e72bb0639fc69d6763a671b461b12bc08c83af/src/strands_evals/evaluators/deterministic/output.py",
+      "source_version": "32e72bb0639fc69d6763a671b461b12bc08c83af",
+      "git_blob": "174628a916f337a3ebefce3503e1bf267a2eb46b",
+      "sha256": "c6382921130d064ff2bd5f399a94ff77e34f0e81d7fc55c4cce1e35ad6832643",
+      "bytes": 3136,
+      "cache": "R-516-src__strands_evals__evaluators__deterministic__output.py"
+    },
+    {
+      "id": "R-516",
+      "path": "src/strands_evals/case.py",
+      "url": "https://raw.githubusercontent.com/strands-agents/evals/32e72bb0639fc69d6763a671b461b12bc08c83af/src/strands_evals/case.py",
+      "source_version": "32e72bb0639fc69d6763a671b461b12bc08c83af",
+      "git_blob": "d344380ef3083d97b03b7c4031b4d556d5c5f135",
+      "sha256": "0d23142dbff2bcdc085880f38299ce02158439332a3dc8d0ce061b1d5cdc9798",
+      "bytes": 2543,
+      "cache": "R-516-src__strands_evals__case.py"
+    },
+    {
+      "id": "C-110",
+      "url": "https://arxiv.org/pdf/2608.19263v1",
+      "source_version": "2608.19263v1",
+      "sha256": "8579ef61f97b99206f3e26856a70a8cfdaa2f2f388a065401757eaab7f4b4754",
+      "bytes": 258577,
+      "cache": "C-110.pdf",
+      "pages": 14,
+      "text_cache": "C-110.txt",
+      "text_sha256": "5896aa8507ddbb9a11997a46969afc6926744f3baab901d2fd99f83ffc7216d9"
+    },
+    {
+      "id": "C-125",
+      "url": "https://arxiv.org/pdf/2610.01491v1",
+      "source_version": "2610.01491v1",
+      "sha256": "a6eb4d550204825582dd0da428692968a443de99a6b8ff43fa5626d0c20de04f",
+      "bytes": 254264,
+      "cache": "C-125.pdf",
+      "pages": 13,
+      "text_cache": "C-125.txt",
+      "text_sha256": "ca0c86e62c64f49bb5ceff061584ea5fd31a5a688854e14f90cf0c28f1c57f44"
+    }
+  ],
+  "agent_beacon_source_evidence": {
+    "repository": "Asymptote-Labs/agent-beacon",
+    "pin": "a2c3c8070edfd3de088db0efee82f22c8a2eb54d",
+    "files": [
+      {
+        "path": "collector-builder/exporter/beaconjsonexporter/privacyprocessor/processor.go",
+        "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/a2c3c8070edfd3de088db0efee82f22c8a2eb54d/collector-builder/exporter/beaconjsonexporter/privacyprocessor/processor.go",
+        "sha256": "88fc8494f5f41ff587f0deb21ad088b6a00c619bc0f3ab31abce1aafe975ba7c",
+        "git_blob": "269854c00a70062b6887e3b293a0360f2950633a",
+        "bytes": 7894,
+        "cache": "collector-builder__exporter__beaconjsonexporter__privacyprocessor__processor.go.txt"
+      },
+      {
+        "path": "collector-builder/exporter/beaconjsonexporter/privacyprocessor/processor_test.go",
+        "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/a2c3c8070edfd3de088db0efee82f22c8a2eb54d/collector-builder/exporter/beaconjsonexporter/privacyprocessor/processor_test.go",
+        "sha256": "db26bf32d1520ce4f0f0d5f9b7b62939c5d9082602f6fc82442c38236892a1e7",
+        "git_blob": "79f782e51f7f1182cca5e2b975f5dbb7786e770e",
+        "bytes": 8332,
+        "cache": "collector-builder__exporter__beaconjsonexporter__privacyprocessor__processor_test.go.txt"
+      },
+      {
+        "path": "collector-builder/exporter/beaconjsonexporter/writer.go",
+        "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/a2c3c8070edfd3de088db0efee82f22c8a2eb54d/collector-builder/exporter/beaconjsonexporter/writer.go",
+        "sha256": "bd63b009031c109119a04a18d6199e5db97b50db9c6b2d00c4747f364b15d15c",
+        "git_blob": "f744132b70f121d74d555b0ebe602e2ccecdee4e",
+        "bytes": 6443,
+        "cache": "collector-builder__exporter__beaconjsonexporter__writer.go.txt"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/a2c3c8070edfd3de088db0efee82f22c8a2eb54d/LICENSE",
+        "sha256": "083b5d7f980521a76359c5bf9892ae051e3b6c31838a86e197e20f7879100457",
+        "git_blob": "7ab28593d69dc5c0d20f994a1d8502effa7c2918",
+        "bytes": 1071,
+        "cache": "LICENSE.txt"
+      },
+      {
+        "path": "collector-builder/exporter/beaconjsonexporter/config.go",
+        "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/a2c3c8070edfd3de088db0efee82f22c8a2eb54d/collector-builder/exporter/beaconjsonexporter/config.go",
+        "sha256": "d45f7e81830124c6e3b9c6a79ce92f5e83a38e8427a3a0df653949a24ea67c0a",
+        "git_blob": "9ac0d952c66cd76189c6f4cf6dcf874ce90c7984",
+        "bytes": 1428,
+        "cache": "collector-builder__exporter__beaconjsonexporter__config.go.txt"
+      }
+    ]
+  },
+  "baseline_evidence": [
+    {
+      "path": "templates/ledger-tools/shared_work_checkpoint.py",
+      "revision": "b3b3ce4a497ebb02702864fd9e82716f62e1384f",
+      "sha256": "4261088e57c8e1f4e5341c8a216939881622b2348b58e91e2b47cd33fbf53048",
+      "cache": "baseline-shared_work_checkpoint.py",
+      "url": "https://github.com/The-825/breadcrumbs/blob/b3b3ce4a497ebb02702864fd9e82716f62e1384f/templates/ledger-tools/shared_work_checkpoint.py"
+    },
+    {
+      "path": "templates/ledger-tools/governed_replay.py",
+      "revision": "b3b3ce4a497ebb02702864fd9e82716f62e1384f",
+      "sha256": "73d4d2db2d55158ad51aff57f95d54f613f6be1c1ec1a043b2c7eebbe7bfcc39",
+      "cache": "baseline-governed_replay.py",
+      "url": "https://github.com/The-825/breadcrumbs/blob/b3b3ce4a497ebb02702864fd9e82716f62e1384f/templates/ledger-tools/governed_replay.py"
+    },
+    {
+      "path": "templates/ledger-tools/retrieval_exam.py",
+      "revision": "b3b3ce4a497ebb02702864fd9e82716f62e1384f",
+      "sha256": "e0c9fee1438f4d3713838ce789818e24d093813bab80fb664a5f1919faf1cae2",
+      "cache": "baseline-retrieval_exam.py",
+      "url": "https://github.com/The-825/breadcrumbs/blob/b3b3ce4a497ebb02702864fd9e82716f62e1384f/templates/ledger-tools/retrieval_exam.py"
+    },
+    {
+      "path": "templates/workflow-worksheets/task-outcome.md",
+      "revision": "b3b3ce4a497ebb02702864fd9e82716f62e1384f",
+      "sha256": "a7406c5aa8cf4239fe09448067edee8b66f6975bcaa0e644dd92c6048bc33e77",
+      "cache": "baseline-task-outcome.md",
+      "url": "https://github.com/The-825/breadcrumbs/blob/b3b3ce4a497ebb02702864fd9e82716f62e1384f/templates/workflow-worksheets/task-outcome.md"
+    },
+    {
+      "path": "templates/SESSION_STATE_TEMPLATE.md",
+      "revision": "b3b3ce4a497ebb02702864fd9e82716f62e1384f",
+      "sha256": "52fa04f12e4d3c2389f372a6eef901a4e8e2960dca486ac6761b78475dcac082",
+      "cache": "baseline-SESSION_STATE_TEMPLATE.md",
+      "url": "https://github.com/The-825/breadcrumbs/blob/b3b3ce4a497ebb02702864fd9e82716f62e1384f/templates/SESSION_STATE_TEMPLATE.md"
+    },
+    {
+      "path": "docs/practice/scout-to-implementation.md",
+      "revision": "b3b3ce4a497ebb02702864fd9e82716f62e1384f",
+      "sha256": "15a168aefc8db0f4b43f4e6b0b553cae6b2163fc5a5c1ec27bc230358f51c13b",
+      "cache": "baseline-scout-to-implementation.md",
+      "url": "https://github.com/The-825/breadcrumbs/blob/b3b3ce4a497ebb02702864fd9e82716f62e1384f/docs/practice/scout-to-implementation.md"
+    }
+  ],
+  "review": {
+    "claude_model": "claude-sonnet-5-5",
+    "effort": "medium",
+    "route": "human-authorized claude.ai Max subscription; no API or overage fallback",
+    "round1": "Claude source assessments for four identities and independent R-631 CHANGES_REQUIRED",
+    "round2": "Local Codex source checks and resolution; no second Claude PASS claimed",
+    "optional_adversarial": "Considered and not called: remaining risks are explicitly held source/runtime boundaries, and the reported arithmetic discrepancy was deterministically checked."
+  },
+  "recommendation": "First prepare the C-125 synthetic outcome-evidence audit with preserved original verdict and explicit observed-state evidence. Retain ECP, DBOS and Strands in the pool for named unmet checks. Agent Beacon stays in the pool with the corrected addendum. No source is adopted.",
+  "release_boundary": "Review package only. No new chart, changed catalog grade, consumer export pin, native implementation or private-runtime result."
+}
