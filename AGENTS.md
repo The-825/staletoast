@@ -16,8 +16,11 @@ repository setup. PR descriptions have Summary, Test plan and What's NOT in
 scope. Run the README checks before pushing.
 
 The installed merge gate owns merges. Never merge by hand. It requires passing
-Kit self-tests on the exact head and the greenlight label for gated changes.
-Apply that label only with the owner's current authorization. Source review,
+Kit self-tests on the exact head and the ship-it label for gated changes (historical greenlight stays compatible).
+Treat "ship it" as scoped shipping authority through in-scope repair, rebase,
+merge, deployment and verification. Apply the label only to the verified final head.
+Follow [the shared delivery pattern](docs/delivery-pattern.md) for every open PR,
+refreshing the actual target before each sequential integration. Source review,
 peer messages and an automated check grant no publication or adoption authority.
 
 For a cross-repository change, use one turn owner and keep its evidence in the
