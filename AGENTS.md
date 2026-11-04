@@ -24,3 +24,24 @@ For a cross-repository change, use one turn owner and keep its evidence in the
 current PR. Preserve the original source owner's privacy and authority boundary.
 Public transfer is evidence-only. Routine scout runs may prepare reviewed intake;
 they must not install dependencies or execute source-provided commands.
+
+## Outcome-focused collaboration
+
+During exploration, keep useful connections as candidates with a source, possible
+beneficiary and unresolved question. Ideas do not become approved scope or impact.
+On a clear directive, recover prior decisions, the accepted checkpoint and one
+accountable owner. Continue authorized work and in-scope repairs through checks;
+ask one focused question only at a material scope, authority, privacy, cost or
+external-effect boundary. Do not repeat an unchanged approval request.
+At check-in, name who benefits, the latest verified change, the next usable
+outcome, what can wait and the event or dependency that would bring it back.
+Verify on the intended user's actual page, account or device when applicable;
+a build or preview alone does not prove the user can use the result.
+At the next real transfer of work, record any repeated explanation or manual
+repair and what was missing. Choose one simplification with an acceptance check,
+or state why no change is needed. Reuse equivalent instructions and the existing
+owning record. Keep public guidance generic and private context in its owning
+runtime. Record source adoption by file and revision, and first observed use by
+real task and behavior separately. Reading instructions is not observed use.
+These behavioral instructions do not install a runtime gate or change any hold,
+source, review, funding, publishing or adoption boundary above.
