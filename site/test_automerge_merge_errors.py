@@ -70,7 +70,7 @@ async function scenario(status, message, afterMerge, moveHead = false) {
     },
   };
   const context = { repo: { owner: 'The-825', repo: 'staletoast' },
-    eventName: 'pull_request', payload: { pull_request: { number: 7 } } };
+    eventName: 'pull_request_target', payload: { pull_request: { number: 7 } } };
   const runtimeRequire = name => {
     // Injected instant delay: records requested waits, never really waits.
     if (name === 'timers/promises') return { setTimeout: async (ms) => { sleeps.push(ms); } };

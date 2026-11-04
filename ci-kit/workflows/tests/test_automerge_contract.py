@@ -2,6 +2,7 @@
 
 import pathlib
 import subprocess
+import sys
 import unittest
 
 
@@ -275,6 +276,13 @@ async function reconciliation() {
 
 
 class AutoMergeContractTests(unittest.TestCase):
+    def test_existing_site_merge_error_contract(self):
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "site/test_automerge_merge_errors.py")],
+            cwd=ROOT, capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_privileged_workflow_uses_base_revision(self):
         for workflow in WORKFLOWS:
             with self.subTest(workflow=workflow):
