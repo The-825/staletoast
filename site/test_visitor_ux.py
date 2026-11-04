@@ -14,7 +14,7 @@ import subprocess
 import unittest
 
 SITE = Path(__file__).resolve().parent
-NAV = ["Home", "Research", "Repositories", "Hot 100", "How to read", "Breadcrumbs"]
+NAV = ["Home", "Research", "Repositories", "Hot 100", "How to read", "Breadcrumbs", "The 825"]
 CURRENT = {"index.html": "Home", "research.html": "Research", "repositories.html": "Repositories",
            "charts.html": "Hot 100", "methodology.html": "How to read"}
 HARNESS = r'''
@@ -216,6 +216,7 @@ class StaticTests(unittest.TestCase):
         for page in sorted(SITE.glob("*.html")):
             refs = parse(page.name)
             self.assertEqual(NAV, [text for text, _ in refs.nav], page.name)
+            self.assertIn(("The 825", "https://the825.co/"), refs.nav, page.name)
             if page.name in CURRENT:
                 labels = [text for text, href in refs.nav if href in refs.current]
                 self.assertEqual([CURRENT[page.name]], labels, page.name)
