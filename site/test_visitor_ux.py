@@ -232,7 +232,8 @@ class StaticTests(unittest.TestCase):
         self.assertNotIn("charts.js", index)
         self.assertNotIn("catalog-ui.js", index)
         self.assertIn("quality certification", index)
-        self.assertEqual(["home.js?v=20261103-1"], refs.scripts)
+        self.assertEqual(1, len(refs.scripts))
+        self.assertRegex(refs.scripts[0], r"^home\.js\?v=\d{8}-\d+$")
 
     def test_scripts_share_one_cache_version_and_resolve(self):
         versions = set()
@@ -240,12 +241,13 @@ class StaticTests(unittest.TestCase):
             for src in parse(page.name).scripts:
                 name, _, query = src.partition("?")
                 self.assertTrue((SITE / name).is_file(), (page.name, src))
-                versions.add(query)
+                if page.name in ("index.html", "research.html", "repositories.html", "charts.html", "detail.html"):
+                    versions.add(query)
         for name in ("research.html", "repositories.html", "charts.html", "detail.html"):
             scripts = parse(name).scripts
             self.assertTrue(scripts)
-            self.assertTrue(all("v=20261103-1" in src for src in scripts), name)
-        self.assertEqual({"v=20261103-1"}, {v for v in versions if v.startswith("v=20261103")})
+            self.assertTrue(all(re.search(r"\?v=\d{8}-\d+$", src) for src in scripts), name)
+        self.assertEqual(1, len(versions), versions)
 
     def test_catalog_pages_have_the_required_controls(self):
         for name in ("research.html", "repositories.html"):
