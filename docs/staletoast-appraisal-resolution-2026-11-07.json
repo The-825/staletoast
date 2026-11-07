@@ -68,7 +68,7 @@
         }
       ],
       "finding": "ConfigYAML inserts beacon_privacy before batch/fanout for HEC destinations. Separate OTLP forward pipelines include a harness filter and privacy processor. Local-only main pipelines rely on local writer sanitation. Render tests assert selected processor order/exporter lists.",
-      "version_boundaries": "Earlier November1/3/4 observations retain their original pins. The selected matching writer at0450ec2 sets Truncated when oversized in sanitize; previous size-fallback content-clearing wording must not be carried forward to this pin.",
+      "version_boundaries": "Earlier November1/3/4 observations retain their original pins. At0450ec2 sanitize marks oversized events as Truncated. The later append size fallback removes Raw and shortens Message, then compactRetainedContent clears file diffs, command output, prompt text and GenAI input/output/tool arguments/results if still oversized. Content is marked excluded and truncated; a final size excess returns an error. Marking and retained-content clearing both occur at this pin.",
       "rights": "MIT license at the selected pin reviewed; dependency terms unreviewed.",
       "limits": [
         "Selected generated configuration and tests were read, not run. Installed wiring and delivery unverified.",
@@ -87,6 +87,6 @@
     "new_repository_identities": 0
   },
   "grade_rank_export_changes": false,
-  "peer_review": "No independent review performed in this resolution. Existing provider holds retained.",
+  "peer_review": "A001 independently reviewed head89674663683a72c03970f2dda27147be26e67755 and required the same-pin append-stage content-clearing correction. Corrected wording awaits focused final-head readback. Existing provider holds retained.",
   "owner": "B003 / local Codex"
 }
