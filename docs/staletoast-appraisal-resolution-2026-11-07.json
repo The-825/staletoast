@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-07",
+  "stage": "owner source-check resolution prepared for independent review",
+  "prior_analysis_preserved": true,
+  "sources": [
+    {
+      "key": "METR-2026-11-05-AECI",
+      "identity_state": "canonical URL retained; no new ledger ID allocated",
+      "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+      "public_source_sha256": "60e4c3fd81d8db839384e52a0cb147c485ba73e1f1f5aa7413b5c8c41cf02bbc",
+      "original_snapshot_sha256": "30ccfeb36b1a6d4c96e6953ca2f78539c151fa502c2944f8e6c9f8f842f73906",
+      "disposition": "retain as contextual organizational-evaluation candidate; exclude from quantitative workflow grading",
+      "design": "One-organization observational assessment with retrospective benchmark growth comparisons, sensitivity checks, interviews and self-report.",
+      "source_correction": {
+        "published_update_date": "2026-11-06",
+        "section": "AEF-1 checklist item 1.1",
+        "before": "Yes",
+        "after": "No",
+        "reason": "Evaluator lacked query access to unreleased models; report says such access was not central to the assessment.",
+        "scope": "Access checklist correction, not an announced revision to the numerical headline."
+      },
+      "measured_endpoint": "Rate of internal AECI benchmark-score growth. Distinct from individual task duration or accepted customer outcomes.",
+      "effect_summary": "Reported ratio1.9,95% interval1.5-2.8; sensitivity range1.1-2.9.",
+      "confidence": "Limited transfer to typical teams. Attribution depends partly on redacted evidence. Researcher self-report remains a separate evidence stream.",
+      "rights": "All rights reserved on observed page. Link/cite and original analysis only; no source-body redistribution proposed.",
+      "native_check": "Reclassify existing authorized historical observations by measured endpoint, self-report and attribution. Missing comparator keeps a benefit estimate unavailable. Proposed review check, not executed in this resolution.",
+      "remaining_review": "Independent source review before canonical intake or evidence promotion."
+    },
+    {
+      "key": "R-631",
+      "pool_id": "Q-NEXT-764",
+      "canonical_repository": "Asymptote-Labs/agent-beacon",
+      "pin": "0450ec2382083722a8e1a564d027b230347dcc96",
+      "newer_observed_head": "0cc344bdb8b1d7f377559aca9102c241d8740ad7",
+      "newer_head_scope": "Metadata observation only; newer diff unreviewed. Findings remain pinned to0450ec2.",
+      "disposition": "retain in pool; source-level pipeline gap resolved for selected pin; collector adoption held",
+      "selected_source_files": [
+        {
+          "path": "cli/beacon/internal/endpoint/collector/collector.go",
+          "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/0450ec2382083722a8e1a564d027b230347dcc96/cli/beacon/internal/endpoint/collector/collector.go",
+          "sha256": "f810889541160dac614af2226d44956d85058fcfda75f9ec6b75b7badb464e65"
+        },
+        {
+          "path": "cli/beacon/internal/endpoint/collector/collector_test.go",
+          "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/0450ec2382083722a8e1a564d027b230347dcc96/cli/beacon/internal/endpoint/collector/collector_test.go",
+          "sha256": "eae1e8350d0ecd2796977619785a08ddcc9c20cc500b52dcef303c01bb6aca8b"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/0450ec2382083722a8e1a564d027b230347dcc96/LICENSE",
+          "sha256": "083b5d7f980521a76359c5bf9892ae051e3b6c31838a86e197e20f7879100457"
+        },
+        {
+          "path": "collector-builder/exporter/beaconjsonexporter/privacyprocessor/processor.go",
+          "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/0450ec2382083722a8e1a564d027b230347dcc96/collector-builder/exporter/beaconjsonexporter/privacyprocessor/processor.go",
+          "sha256": "88fc8494f5f41ff587f0deb21ad088b6a00c619bc0f3ab31abce1aafe975ba7c"
+        },
+        {
+          "path": "collector-builder/exporter/beaconjsonexporter/config.go",
+          "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/0450ec2382083722a8e1a564d027b230347dcc96/collector-builder/exporter/beaconjsonexporter/config.go",
+          "sha256": "d45f7e81830124c6e3b9c6a79ce92f5e83a38e8427a3a0df653949a24ea67c0a"
+        },
+        {
+          "path": "collector-builder/exporter/beaconjsonexporter/writer.go",
+          "url": "https://raw.githubusercontent.com/Asymptote-Labs/agent-beacon/0450ec2382083722a8e1a564d027b230347dcc96/collector-builder/exporter/beaconjsonexporter/writer.go",
+          "sha256": "92e6e339561469b24932698c663f86cabc7a39bfaf60178fbaebe3fdc227547b"
+        }
+      ],
+      "finding": "ConfigYAML inserts beacon_privacy before batch/fanout for HEC destinations. Separate OTLP forward pipelines include a harness filter and privacy processor. Local-only main pipelines rely on local writer sanitation. Render tests assert selected processor order/exporter lists.",
+      "version_boundaries": "Earlier November1/3/4 observations retain their original pins. At0450ec2 sanitize marks oversized events as Truncated. The later append size fallback removes Raw and shortens Message, then compactRetainedContent clears file diffs, command output, prompt text and GenAI input/output/tool arguments/results if still oversized. Content is marked excluded and truncated; a final size excess returns an error. Marking and retained-content clearing both occur at this pin.",
+      "rights": "MIT license at the selected pin reviewed; dependency terms unreviewed.",
+      "limits": [
+        "Selected generated configuration and tests were read, not run. Installed wiring and delivery unverified.",
+        "Shared privacy processor delegates sanitization to helpers whose internals were not reviewed in this pass.",
+        "Writer can sanitize retained prompt/output/raw content; redaction is not a metadata-only collection policy.",
+        "Binary/default value handling and all schema/name fields lack comprehensive reviewed coverage.",
+        "A capture-model-context opt-in is rendered, but the selected code does not establish absence of all other content capture."
+      ],
+      "incremental_value": "Place a minimum-field boundary before each destination receives an event. Treat local and forwarded paths as distinct cases. Reuse existing raw-verdict and observation semantics.",
+      "native_check": "Proposed synthetic local/two-sink/forward-only check with zero sentinel leakage and zero disabled-sink delivery; preserve raw verdict/provenance. No upstream run or product adapter implemented.",
+      "remaining_review": "Independent review for appraisal publication; adoption requires owning privacy/storage review and actual native evidence."
+    }
+  ],
+  "growth": {
+    "new_research_identities": 0,
+    "new_repository_identities": 0
+  },
+  "grade_rank_export_changes": false,
+  "peer_review": "A001 independently reviewed head89674663683a72c03970f2dda27147be26e67755 and required the same-pin append-stage content-clearing correction. Corrected wording awaits focused final-head readback. Existing provider holds retained.",
+  "owner": "B003 / local Codex"
+}
