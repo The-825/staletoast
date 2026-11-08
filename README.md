@@ -12,7 +12,9 @@ versioned StaleToast catalog exports and cites stable source IDs.
 
 ## Build and check
 
-The [METR and Agent Beacon resolution](docs/staletoast-appraisal-resolution-2026-11-07.md) records a corrected research access checklist and version-matched collector findings. Independent review remains open; catalog grades and chart eligibility are unchanged.
+The [report-validity and coverage review](docs/staletoast-appraisal-resolution-2026-11-08.md) resolves C-004 and R-900 source questions while keeping proposed checks separate from executed results and adoption.
+
+The [METR and Agent Beacon resolution](docs/staletoast-appraisal-resolution-2026-11-07.md) records a corrected research access checklist and version-matched collector findings. Independent review accepted the corrected appraisal in PR #17; catalog grades and chart eligibility are unchanged.
 
 The [November 3 source review batch](docs/staletoast-system-fit-appraisals-2026-11-03.md)
 adds two paper assessments, two repository assessments and the reviewed Agent Beacon

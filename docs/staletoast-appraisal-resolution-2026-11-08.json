@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "date_pacific": "2026-11-08",
+  "stage": "bounded appraisal review-resolution proposal",
+  "sources": [
+    {
+      "date_pacific": "2026-11-07",
+      "id": "C-004",
+      "version": "arxiv:2609.11224v1",
+      "method_findings": "Single-system study, no controlled baseline; fixed L1-to-L3 task order and participant-chosen questions confound complexity comparisons.23recruited,16completed the procedure. Completion means report generation, not correctness. Reported wall-clock durations can include waiting and contention; token use is not quality. Appendix task counts agree with33/48completion:12,11,10by level. Incomplete-task ratings exist but are excluded from completed-task rating tests.",
+      "interpretation": "Retain as domain-adjacent design evidence. Do not derive a causal collaboration benefit, time-saving estimate or universal grading threshold. A separate context in the same model family is not independently validated truth.",
+      "incremental_value": "A source-linked teaching example can distinguish report generation, verified result, and regeneration after a changed analysis definition. Reuse the current correction/checkpoint tools rather than adopt the paper's backend.",
+      "native_check_proposal": "Proposed six-case teaching fixture using existing checkpoint/replay. Blocked means not presented as current or verified in a manifest or reviewer-facing record, not an installed runtime enforcement. Bind source_revision to an author-supplied definition digest and list affected artifacts in invalidated_by. Predeclare unchanged-baseline expectations and permit no difference. Synthetic effort is anecdotal, not a time saving or comparable study completion rate.",
+      "rights_and_maintenance": "Prior observed CC BY-NC-SA4.0 paper label retained. Link and original analysis only. Code reuse rights, dependency terms and implementation maintenance remain unknown; no code adoption proposed.",
+      "disposition": "backlog: bounded teaching/check proposal ready for independent review",
+      "independent_review": "pending; author cannot self-promote",
+      "review_question": "Does the proposed example add value beyond the existing correction/replay pattern while preserving all-task denominators and avoiding causal/time-saving claims?",
+      "full_bounded_appraisal_completed": true,
+      "catalog_promotion": false,
+      "new_identity": false,
+      "grade_or_rank_changes": false,
+      "publication": false,
+      "upstream_execution": false,
+      "attribution_boundary": "Stage-routed regeneration is reported by the paper; preserved historical revisions and stale-output blocking are proposed local design choices, not implemented paper capabilities. Paper implementation replaces current artifacts; retaining branches is future work.",
+      "baseline_expectation": "Existing correction/replay already surfaces stale/unknown evidence and records supersession. It does not authenticate result-to-definition binding or enforce a runtime block. Proposed explicit definitions add a teaching example, not a claimed new runtime.",
+      "source_body_sha256": "ca557458b5ee69824be5913705adfe133cc2baf48ef6eef3f80677bd17e4c407",
+      "source_url": "https://arxiv.org/html/2609.11224v1",
+      "review_state": "Initial Claude PASS with cautions; caution resolution included for final readback."
+    },
+    {
+      "date_pacific": "2026-11-08",
+      "id": "R-900",
+      "pool_id": "Q-NEXT-1033",
+      "repository": "DataRecce/recce",
+      "pin": "1b121299076e6ba794e02eac1557c1932b5fbf52",
+      "current_observed_head": "3fdc2d32bb276b6215f4c7fa36ea3cbc6ca14610",
+      "current_head_scope": "One metadata request only; changed since prior observed91806b8. Diff uninspected. Findings remain at original pin.",
+      "new_gap_addressed": "Inspected previously uninspected artifact-health classifier and selected test definitions at the original assessment pin. No repeated full appraisal.",
+      "static_findings": [
+        "Artifact health derives expected relation IDs from manifest models/seeds/snapshots, excluding ephemeral and semantic_view. Coverage is set intersection with catalog IDs; orphan IDs are recorded separately.",
+        "Missing or malformed mappings produce unknown; absent catalog with expected IDs is absent. No expected relations is not_applicable, not proof of a completed comparison.",
+        "Schema classifier records checked, unchecked and one-sided IDs separately; empty/noncomparable selection is unknown. Serialized schema_coverage_payload omits one-sided IDs. Whether the uninspected diff-frame producer emits corresponding differences remains unknown; no end-to-end deletion protection is claimed.",
+        "Two-sided schema classification trusts both lineage nodes' catalog_status == covered. This selected classifier does not prove how that status was originally produced or validate actual column contents.",
+        "Selected tests assert malformed/missing unknown cases and mixed partial coverage. Tests were read, not executed."
+      ],
+      "limitations": [
+        "Lineage/catalog_status construction and complete caller propagation remain uninspected. The producer gap narrows, but end-to-end completeness is not proven.",
+        "Artifact-health complete concerns manifest-relative ID presence, not data correctness, content completeness or a universally fail-closed application.",
+        "Duplicate IDs already collapsed by an upstream mapping cannot be detected by this set-based classifier.",
+        "Current-head changes, runtime behavior, dependency terms and maintenance responsiveness remain unverified."
+      ],
+      "rights": "Reuse prior pinned Apache-2.0 assessment. No source copied into a product. Any later copying still requires notices and dependency/data-term review.",
+      "native_check_proposal": "Use a separately versioned owner-approved expected-ID fixture, never a set derived from the same fetch. Separate a confirmed deletion under complete inputs from absence under incomplete acquisition. Withhold verified no-change for unknown inputs or unclassified orphans. Check duplicates before mapping. Report passed, failed, unknown for all declared synthetic cases. Not implemented or run.",
+      "review_state": "Claude requested B1/B2/B3 corrections. Bounded owner corrections included; final readback pending.",
+      "review_question": "Does the supplement accurately distinguish manifest-ID coverage from schema comparison and upstream catalog_status provenance, without claiming all completeness gaps are closed?",
+      "new_identity": false,
+      "catalog_promotion": false,
+      "publication": false,
+      "adoption": false,
+      "upstream_execution": false,
+      "layer_mapping": [
+        {
+          "case": "empty selection",
+          "layer": "schema coverage",
+          "expected": "unknown, not verified no-change"
+        },
+        {
+          "case": "confirmed deletion under independently complete inputs",
+          "layer": "one-sided classifier plus diff-frame producer",
+          "expected": "one-sided tracked internally; downstream frame behavior unknown"
+        },
+        {
+          "case": "absence from incomplete acquisition",
+          "layer": "acquisition evidence",
+          "expected": "unknown, never infer deletion"
+        },
+        {
+          "case": "mixed checked/unchecked",
+          "layer": "schema coverage",
+          "expected": "partial"
+        },
+        {
+          "case": "orphan IDs",
+          "layer": "artifact health",
+          "expected": "informational upstream; local proposal withholds no-change pending classification"
+        },
+        {
+          "case": "duplicate list IDs",
+          "layer": "pre-mapping identity validation, not Recce classifier",
+          "expected": "reject duplicate input, preserve original list"
+        }
+      ],
+      "classifier_boundaries": "Artifact health compares manifest relation IDs with catalog nodes in one environment, excludes catalog sources, and is not consulted by the inspected schema-result approval predicate. Schema coverage can evaluate catalogued source lineage and trusts covered statuses, whose creation remains uninspected. Approval additionally checks a shaped empty diff frame. No universal coverage or correctness claim.",
+      "baseline_expectation": "Current expansion validator rejects below-target active counts, mismatched paper/appraisal IDs, duplicates, changed historical rows and incomplete pool links. Removing one batch row while retaining declared targets must fail those static checks. It does not authenticate upstream page acquisition or prove an empty comparison. Empty selection and one-sided changes are not this validator's defined API. Coverage-aware diff usefulness remains a proposed comparison, not demonstrated gain.",
+      "source_evidence": [
+        {
+          "path": "recce/artifact_health.py",
+          "url": "https://raw.githubusercontent.com/DataRecce/recce/1b121299076e6ba794e02eac1557c1932b5fbf52/recce/artifact_health.py",
+          "sha256": "43e97604747369f524969ad9e709d134975629ed61a399acd2a6a690bd6fdbae",
+          "bytes": 10017,
+          "status": 200,
+          "pin": "1b121299076e6ba794e02eac1557c1932b5fbf52"
+        },
+        {
+          "path": "tests/test_artifact_health.py",
+          "url": "https://raw.githubusercontent.com/DataRecce/recce/1b121299076e6ba794e02eac1557c1932b5fbf52/tests/test_artifact_health.py",
+          "sha256": "4f1861462f9c1848d77334461e97824c228e9931d0fba9e98bb99abd29f30562",
+          "bytes": 24987,
+          "status": 200,
+          "pin": "1b121299076e6ba794e02eac1557c1932b5fbf52"
+        }
+      ]
+    }
+  ],
+  "public_baselines": [
+    {
+      "repository": "The-825/breadcrumbs",
+      "revision": "28749d568156516db3338efdb2899ff81c6a90a7",
+      "path": "docs/cooperative-intelligence-evaluation.md",
+      "sha256": "e2051315480a63c777566ee5c20e177a1927fa66d84e3c9254e6d80adfeb2023",
+      "url": "https://github.com/The-825/breadcrumbs/blob/28749d568156516db3338efdb2899ff81c6a90a7/docs/cooperative-intelligence-evaluation.md"
+    },
+    {
+      "repository": "The-825/breadcrumbs",
+      "revision": "28749d568156516db3338efdb2899ff81c6a90a7",
+      "path": "templates/ledger-tools/shared_work_checkpoint.py",
+      "sha256": "4261088e57c8e1f4e5341c8a216939881622b2348b58e91e2b47cd33fbf53048",
+      "url": "https://github.com/The-825/breadcrumbs/blob/28749d568156516db3338efdb2899ff81c6a90a7/templates/ledger-tools/shared_work_checkpoint.py"
+    },
+    {
+      "repository": "The-825/breadcrumbs",
+      "revision": "28749d568156516db3338efdb2899ff81c6a90a7",
+      "path": "templates/ledger-tools/governed_replay.py",
+      "sha256": "73d4d2db2d55158ad51aff57f95d54f613f6be1c1ec1a043b2c7eebbe7bfcc39",
+      "url": "https://github.com/The-825/breadcrumbs/blob/28749d568156516db3338efdb2899ff81c6a90a7/templates/ledger-tools/governed_replay.py"
+    },
+    {
+      "repository": "The-825/staletoast",
+      "revision": "2e5c0a908aa1b7a4abdbe7a48036865b3f57fd0f",
+      "path": "catalog-contract.json",
+      "sha256": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
+      "url": "https://github.com/The-825/staletoast/blob/2e5c0a908aa1b7a4abdbe7a48036865b3f57fd0f/catalog-contract.json"
+    },
+    {
+      "repository": "The-825/staletoast",
+      "revision": "2e5c0a908aa1b7a4abdbe7a48036865b3f57fd0f",
+      "path": "scripts/validate_corpus_expansion.py",
+      "sha256": "8aeb067f19dd261161cd5871dd1383f11e2f0b678989bf3b1e3cac7c75043433",
+      "url": "https://github.com/The-825/staletoast/blob/2e5c0a908aa1b7a4abdbe7a48036865b3f57fd0f/scripts/validate_corpus_expansion.py"
+    },
+    {
+      "repository": "The-825/staletoast",
+      "revision": "2e5c0a908aa1b7a4abdbe7a48036865b3f57fd0f",
+      "path": "site/build_export.py",
+      "sha256": "c530298c535411179d0e900b0656ac2793ad519b8a8ca7732f88844b0b9adf45",
+      "url": "https://github.com/The-825/staletoast/blob/2e5c0a908aa1b7a4abdbe7a48036865b3f57fd0f/site/build_export.py"
+    }
+  ],
+  "baseline_binding": "Public committed blobs, not uncommitted local product drafts. Original C004 df5040e baseline files equal these28749d5 committed blobs.",
+  "review": "Initial independent Claude findings and owner corrections; final exact-head disposition recorded in PR.",
+  "new_canonical_identities": 0,
+  "catalog_grades_rankings_exports_changed": false,
+  "runtime_execution": false,
+  "adoption": false
+}
