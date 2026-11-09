@@ -1,6 +1,19 @@
-# StaleToast citation proposal for two ACL handoff studies
+# Candidate appraisals for two ACL handoff studies
 
-These candidate appraisals cite the October 2026 ACL proceedings. They propose native checks for future evaluation. Alternate preprint aliases remain unverified.
+These citation-only appraisals use the October 2026 ACL proceedings. Alternate preprint aliases, artifact licenses and maintenance remain unverified. The checks below are proposals.
 
-- acl:2026.emnlp-main.738. Handoff Debt, Dipesh KC and Anjila Budathoki. DOI 10.18653/2026.emnlp-main.738. https://aclanthology.org/2026.emnlp-main.738/ . Holding the interrupted repository state fixed, the authors compared four handoff formats across 181 checkpoints from 75 source tasks. Predecessor context reduced measured successor effort in this harness, while solved-rate effects varied. One runtime and repeated checkpoints from the same source tasks limit transfer. Proposed native check compares redundant work and completion separately, preserving already correct results.
-- acl:2026.findings-emnlp.422. Facts Without Rules, Yian Wang, Agam Goyal, Eshwar Chandrasekharan, and Hari Sundaram. https://aclanthology.org/2026.findings-emnlp.422/ . Controlled experiments show that successful fact transfer can coexist with loss of audience restrictions. The gold-label and corrupted-allowlist comparisons motivate testing boundary integrity directly. Semi-synthetic external traces and judge-dependent measures leave production leakage unknown. Proposed synthetic check exercises a valid audience, an unauthorized audience, a malformed audience key, and flipped negation. Require authorized completion and block every prohibited disclosure.
+## Handoff Debt
+
+Dipesh KC and Anjila Budathoki. ACL Anthology 2026.emnlp-main.738. DOI 10.18653/2026.emnlp-main.738. https://aclanthology.org/2026.emnlp-main.738/
+
+The authors held repository state fixed across four handoff views at 181 checkpoints from 75 tasks. Context reduced median agent events and cumulative prompt tokens across three successor models. Solved-rate effects varied. The main study used one attempt per view per checkpoint in one runtime. A repeated subset supported the direction of the effort result. Official test passage measured resolution, leaving maintainability and human usefulness unmeasured.
+
+Breadcrumbs already binds evidence to revisions and scopes retesting. This adds a measure of repeated work. Compare paired synthetic takeovers from identical checkpoints with the current handoff and with repository state alone. Require fewer redundant inspections or validations in at least one pair and no increase in any pair. Require the same or better completion and preserve every already solved case.
+
+## Facts Without Rules
+
+Yian Wang, Agam Goyal, Eshwar Chandrasekharan, and Hari Sundaram. ACL Anthology 2026.findings-emnlp.422. https://aclanthology.org/2026.findings-emnlp.422/
+
+The authors observed loss of audience restrictions even where operational facts survived compression. The single-agent control also showed leakage. Table 32 reports leakage in 0, 1 and 4 of 48 cases across three models with clean allowlists, versus 44, 38 and 35 of 48 when negation was flipped. The allowlists use gold audience labels, leaving live boundary inference untested by that comparison. Judge-dependent measures and semi-synthetic external traces leave production leakage rates unknown.
+
+Breadcrumbs already records receiver acknowledgment. This adds an explicit check of whether the receiver can act only within the transferred restrictions. Use synthetic cases covering a valid audience, an unauthorized audience, a malformed audience key and flipped negation. Require successful completion for the valid case and zero prohibited disclosures for the other cases.
