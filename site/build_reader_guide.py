@@ -94,7 +94,8 @@ def main():
     args = parser.parse_args()
     payload = build(json.loads(CONFIG.read_text(encoding='utf-8')),
                     research_catalog(), repository_catalog())
-    if subprocess.check_output(['git', 'diff', 'HEAD', '--'] + INPUTS, cwd=ROOT):
+    # Porcelain status also reports untracked inputs, which git diff HEAD ignores.
+    if subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=all', '--'] + INPUTS, cwd=ROOT):
         raise SystemExit('Commit reviewed guide inputs before building a revision-bound guide')
     revision = subprocess.check_output(['git', 'log', '-1', '--format=%H', '--'] + INPUTS,
                                        cwd=ROOT, text=True).strip()

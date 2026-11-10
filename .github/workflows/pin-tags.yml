@@ -1,0 +1,32 @@
+# Tag every pinned export revision so it stays fetchable after its feature
+# branch is deleted. Frozen exports bind to PR-branch commits that a squash
+# merge leaves off main. Runs the script from main only, never from a PR ref.
+# Adds frozen/<revision> tags; never moves or deletes a tag.
+name: Tag pinned revisions
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Gate merges use the workflow token and emit no push event.
+  workflow_run:
+    workflows: ["Auto-merge agent PRs"]
+    types: [completed]
+permissions:
+  contents: write
+concurrency:
+  group: pin-tags
+  cancel-in-progress: false
+jobs:
+  tag:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: python ci-kit/workflows/pin_revision_tags.py

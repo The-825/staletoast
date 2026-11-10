@@ -43,7 +43,8 @@ def catalog_revision():
 
 
 def build(freeze=False):
-    if subprocess.check_output(['git', 'diff', 'HEAD', '--'] + INPUTS, cwd=ROOT):
+    # Porcelain status also reports untracked inputs, which git diff HEAD ignores.
+    if subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=all', '--'] + INPUTS, cwd=ROOT):
         raise ValueError('Commit catalog inputs before freezing a revision-bound export')
     pin_path = ROOT / 'catalog-export-pin.json'
     if freeze:
