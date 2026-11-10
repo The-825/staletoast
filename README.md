@@ -111,7 +111,9 @@ leaves off `main`. The `Tag pinned revisions` workflow adds a permanent
 `frozen/<revision>` tag for every snapshot and the current pin after each merge,
 so a pin stays fetchable once its branch is gone. Fetch tags (`git fetch --tags
 origin`) before verifying a pin locally. Do not delete a merged branch that holds
-a frozen revision until its tag exists. Both freeze commands refuse uncommitted
+a frozen revision until its tag exists. If a frozen commit carries workflow
+files that never reached `main`, the workflow token is refused: the run still
+tags the rest, fails, and prints the one `git push` a maintainer must run. Both freeze commands refuse uncommitted
 or untracked inputs.
 
 Public and synthetic content only. MIT license, with upstream attribution kept
