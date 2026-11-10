@@ -15,6 +15,24 @@ SITE = ROOT / 'site'
 
 
 class StandaloneTests(unittest.TestCase):
+    def test_freeze_refuses_untracked_catalog_inputs(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            git = lambda *args: subprocess.check_call(
+                ['git', '-c', 'user.name=t', '-c', 'user.email=t@example.invalid', *args],
+                cwd=root, stdout=subprocess.DEVNULL)
+            git('init', '-q')
+            (root / 'catalog-contract.json').write_text('{}', encoding='utf-8')
+            git('add', '.')
+            git('commit', '-q', '-m', 'base')
+            history = root / 'docs/staletoast-chart-history'
+            history.mkdir(parents=True)
+            (history / '2026-01-01.json').write_text('{}', encoding='utf-8')
+            with patch.object(build_export, 'ROOT', root):
+                with self.assertRaisesRegex(ValueError, 'Commit catalog inputs'):
+                    build_export.build(freeze=True)
+            self.assertFalse((root / 'catalog-export-pin.json').exists())
+
     def test_new_exports_retain_prior_bytes_and_reject_rewriting_a_pin(self):
         with TemporaryDirectory() as directory:
             root = Path(directory)

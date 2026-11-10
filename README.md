@@ -106,6 +106,14 @@ in the same PR. Publication retains all earlier snapshots at
 after a later edition publishes. The export revision covers catalog sources
 and generators; a website-only change does not invent a new catalog revision.
 
+A frozen revision is the PR-branch commit it was frozen on, which a squash merge
+leaves off `main`. The `Tag pinned revisions` workflow adds a permanent
+`frozen/<revision>` tag for every snapshot and the current pin after each merge,
+so a pin stays fetchable once its branch is gone. Fetch tags (`git fetch --tags
+origin`) before verifying a pin locally. Do not delete a merged branch that holds
+a frozen revision until its tag exists. Both freeze commands refuse uncommitted
+or untracked inputs.
+
 Public and synthetic content only. MIT license, with upstream attribution kept
 at the source. No private or production records, automatic source execution,
 contact with authors, or implied consumer adoption.

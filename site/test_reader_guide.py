@@ -2,6 +2,7 @@ import copy
 import unittest
 import hashlib
 import json
+import os
 import subprocess
 from pathlib import Path
 
@@ -85,6 +86,13 @@ class ReaderGuideTests(unittest.TestCase):
         for archive in archives:
             payload = json.loads(archive.read_text(encoding='utf-8'))
             self.assertEqual(archive.stem, payload['source_revision'])
+            if subprocess.run(['git', 'cat-file', '-e', archive.stem + '^{commit}'], cwd=root,
+                              capture_output=True).returncode:
+                # Frozen revisions sit on frozen/<revision> tags (or their original branch), not main.
+                hint = f'{archive.stem} is not in this clone; run git fetch --tags origin'
+                if os.environ.get('CI'):
+                    self.fail(hint)
+                self.skipTest(hint)
             for path, expected in payload['source_hashes'].items():
                 committed = subprocess.check_output(
                     ['git', 'show', payload['source_revision'] + ':' + path], cwd=root)
