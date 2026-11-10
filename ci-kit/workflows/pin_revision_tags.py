@@ -54,6 +54,11 @@ def ensure_tags(revisions, api, write=True):
             outcome[revision] = 'missing'
         else:
             status, _ = api('POST', 'git/refs', {'ref': f'refs/tags/{TAG_PREFIX}{revision}', 'sha': revision})
+            if status == 403:
+                # The workflow token cannot publish a commit whose workflow files never reached
+                # main. Keep tagging the rest; this one needs a one-time push by a maintainer.
+                outcome[revision] = 'refused'
+                continue
             # 422 also covers a concurrent run that created the same tag; confirm by reading it back.
             if status != 201 and not (status == 422 and existing(revision)):
                 raise ValueError(f'could not tag {revision}: HTTP {status}')
@@ -79,14 +84,17 @@ def main():
             with urlopen(request, timeout=30) as response:
                 return response.status, json.load(response)
         except HTTPError as error:
-            if error.code in (404, 422):
+            if error.code in (403, 404, 422):
                 return error.code, None
             raise
 
     outcome = ensure_tags(pinned_revisions(), api, write=not args.check)
     for revision, state in outcome.items():
         print(f'{state}: {TAG_PREFIX}{revision}')
-    if 'missing' in outcome.values():
+    refused = [revision for revision, state in outcome.items() if state == 'refused']
+    for revision in refused:
+        print(f'push by hand: git push origin {revision}:refs/tags/{TAG_PREFIX}{revision}')
+    if refused or 'missing' in outcome.values():
         raise SystemExit('pinned revisions without a permanent tag')
 
 

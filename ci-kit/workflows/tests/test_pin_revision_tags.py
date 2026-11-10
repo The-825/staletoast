@@ -14,7 +14,7 @@ SPEC.loader.exec_module(tags)
 A, B, C = 'a' * 40, 'b' * 40, 'c' * 40
 
 
-def fake_api(present, wrong=(), create_status=201):
+def fake_api(present, wrong=(), create_status=201, refuse=()):
     calls = []
 
     def api(method, suffix, body):
@@ -26,6 +26,8 @@ def fake_api(present, wrong=(), create_status=201):
             if revision in present:
                 return 200, {'object': {'sha': revision, 'type': 'commit'}}
             return 404, None
+        if body['sha'] in refuse:
+            return 403, None
         if create_status == 201:
             present.add(body['sha'])
         return create_status, None
@@ -70,6 +72,11 @@ class PinRevisionTagTests(unittest.TestCase):
         api, _ = fake_api(set(), create_status=422)
         with self.assertRaises(ValueError):
             tags.ensure_tags([A], api)
+
+    def test_refused_revision_is_reported_and_the_rest_are_still_tagged(self):
+        api, calls = fake_api(set(), refuse={A})
+        self.assertEqual({A: 'refused', B: 'created', C: 'created'}, tags.ensure_tags([A, B, C], api))
+        self.assertEqual(3, len([call for call in calls if call[0] == 'POST']))
 
     def test_workflow_runs_from_main_with_the_installed_script(self):
         text = (ROOT / '.github/workflows/pin-tags.yml').read_text(encoding='utf-8')
