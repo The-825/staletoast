@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "source_revision": "29bd83cc95f8d633ad719a840408ac4255dcd5b0",
+  "source_revision": "351ce5f9284023944190004afd24ab50b24539ab",
   "inputs_sha256": {
     "catalog-contract.json": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
     "docs/collaborative-intelligence-research-ledger.md": "8ad19fcae64fc0d92093e62a8afb96ceef268e0e7654845f1402c5d398195193",
@@ -19,6 +19,6 @@
     "site/build_discovery.py": "ee6a3c04a35fbc2a6013c0cd55a4175ad477f5147b40a57e7d0da02df209e360",
     "site/ledger_markdown.py": "281c9e095e74628fba79f5114e0dfdcb5601da09f56f2229c63e4d6f770614ea",
     "site/intake_state.py": "958e04c77e1b0167f1100e2847a9ec9f695b9e02298abed5972dcf46ea119b55",
-    "site/build_export.py": "c530298c535411179d0e900b0656ac2793ad519b8a8ca7732f88844b0b9adf45"
+    "site/build_export.py": "9bd53f661d244ef50ad2a4de37d22915712987f4536689c12421263f5540a670"
   }
 }
