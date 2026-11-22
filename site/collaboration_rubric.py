@@ -1,7 +1,9 @@
 """Evidence-backed collaborative intelligence scoring for weekly editions."""
 
 import json
+import re
 from pathlib import Path
+from urllib.parse import urlsplit
 
 METHOD = "collaborative-intelligence-v1"
 FIRST_EDITION = "2026-11-23"
@@ -32,7 +34,14 @@ def assess(card):
         if name != "evidence" and rating > 0 and rating >= highest:
             strongest = [name] if rating > highest else strongest + [name]
             highest = rating
-    return dict(established=points, unresolved=unresolved, strongest=strongest,
+    family = card.get("evidence_family")
+    revision = card.get("source_revision")
+    bound = isinstance(revision, str) and re.fullmatch(r"(?:[0-9a-f]{40}|sha256:[0-9a-f]{64})", revision)
+    source = urlsplit(card["source"])
+    cited = source.scheme == "https" and bool(source.hostname)
+    attributed = isinstance(family, str) and bool(family.strip())
+    return dict(evidence_bound=bool(cited and bound and attributed), evidence_family=family,
+                source_revision=revision, established=points, unresolved=unresolved, strongest=strongest,
                 strongest_rating=highest or None, ratings=ratings, source=card["source"], patterns=card["patterns"])
 
 
@@ -46,7 +55,7 @@ def prepare(rows, cards):
         score = assess(card)
         if not isinstance(card["source"], str) or not card["source"].strip():
             raise ValueError("scorecard requires a pinned evidence reference")
-        if score["unresolved"]:
+        if score["unresolved"] or not score["evidence_bound"]:
             provisional.append(dict(id=row["id"], **score))
             continue
         key = (-score["established"], *(-score["ratings"][k]["rating"]

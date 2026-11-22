@@ -5,6 +5,8 @@
     {
       "id": "R-031",
       "source": "https://github.com/invariantlabs-ai/invariant/blob/2340fe2d9cd619f73d5b67fa05bf8a08c7cad515/README.md",
+      "source_revision": "2340fe2d9cd619f73d5b67fa05bf8a08c7cad515",
+      "evidence_family": "github:invariantlabs-ai/invariant",
       "patterns": [],
       "ratings": {
         "direction": null,
