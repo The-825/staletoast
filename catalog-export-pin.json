@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "source_revision": "15bf6080e3af9d4c8196ed3dbfa256053779267f",
+  "source_revision": "77bfce5aec6df2427523b84c0cf0dd416615bd5b",
   "inputs_sha256": {
     "catalog-contract.json": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
     "docs/collaborative-intelligence-research-ledger.md": "8ad19fcae64fc0d92093e62a8afb96ceef268e0e7654845f1402c5d398195193",
@@ -20,7 +20,7 @@
     "site/ledger_markdown.py": "281c9e095e74628fba79f5114e0dfdcb5601da09f56f2229c63e4d6f770614ea",
     "site/intake_state.py": "958e04c77e1b0167f1100e2847a9ec9f695b9e02298abed5972dcf46ea119b55",
     "site/build_export.py": "38c7318ddfe4754e15d6e10d35f205edacca176a3dbfa7be00938fed93669024",
-    "site/collaboration_rubric.py": "620adbd511dd55b1af1efd9d64ef73034c54a423e9bf1df41d9e48bf7c891c12",
-    "docs/staletoast-scorecards/2026-11-23.json": "d0048f5304c9e469cf894bfc0cf00f607c6fb0290011a45a7268a6b9493436ac"
+    "site/collaboration_rubric.py": "16e08478ca0aa6a8da24e2d2ca7b5fac17712e7227e817938ce8517c3082247f",
+    "docs/staletoast-scorecards/2026-11-23.json": "3b9c53aac5b983a7ce0e7f9231708c666dcb6482be8beec825e2d1c96dc8e82b"
   }
 }
