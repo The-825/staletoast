@@ -22,7 +22,8 @@ INPUTS = ['catalog-contract.json', 'docs/collaborative-intelligence-research-led
           'docs/staletoast-chart-link-corrections.json', 'site/build_catalogs.py',
           'docs/staletoast-expansion-2026-11-01.json', 'docs/staletoast-source-dispositions.json',
           'site/build_priorities.py', 'site/build_discovery.py', 'site/ledger_markdown.py',
-          'site/intake_state.py', 'site/build_export.py']
+          'site/intake_state.py', 'site/build_export.py', 'site/collaboration_rubric.py',
+          'docs/staletoast-scorecards']
 EXPORT_SCHEMA_VERSION = '2.0'
 
 

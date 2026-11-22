@@ -101,6 +101,49 @@ class WeeklyTests(unittest.TestCase):
             self.assertEqual(2, weekly.main(['--date', 'tomorrow', '--root', str(self.root)]))
         self.assertEqual(before, tree(self.root))
 
+    def test_rubric_comparison_uses_claim_evidence_without_writing(self):
+        write_sources(self.docs, (('001', D3), ('002', ('D3 direct', 'single'))))
+        appraisal_path = self.docs / priorities.SOURCES['appraisal_source_sha256']
+        appraisal = appraisal_path.read_text(encoding='utf-8').replace(
+            '002 | design | D3 direct | SYNTHETIC | single | limits',
+            '002 | design | D3 direct | SYNTHETIC | single | selected-full-text: limits',
+        )
+        put(appraisal_path, appraisal)
+        path = self.docs / priorities.SOURCES['repository_source_sha256']
+        landscape = discovery.read(path)
+        landscape['repositories'][0]['mechanisms'] = {'trace_recovery': 'U', 'human_authority': 'V'}
+        landscape['repositories'][1]['mechanisms'] = {'trace_recovery': 'V'}
+        landscape['repositories'].append(repository('R-HELD', 'readme-relevance-screened', ()))
+        put(path, json.dumps(landscape))
+        batch_path = self.docs / 'staletoast-expansion-2026-11-01.json'
+        batch = discovery.read(batch_path)
+        batch['repositories'].append(dict(
+            id='R-HELD', kind='repository', screen_method='automated-readme-relevance-screen-v1',
+        ))
+        put(batch_path, json.dumps(batch))
+        put(self.docs / 'staletoast-source-dispositions.json', json.dumps(dict(
+            schema_version=1, records=[dict(
+                id='R-HELD', kind='repository', state='held', reason='Synthetic hold',
+            )],
+        )))
+        before = tree(self.root)
+        args = ['--date', NEW, '--root', str(self.root), '--compare-rubric']
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            self.assertEqual(0, weekly.main(args))
+        comparison = json.loads(out.getvalue())
+        self.assertEqual('editorial-routing-v2-preview', comparison['preview_method'])
+        research = comparison['comparisons']['research']
+        repos = comparison['comparisons']['repositories']
+        self.assertEqual(['002', '001'], [row['id'] for row in research['positions']])
+        self.assertEqual(['R-002', 'R-001'], [row['id'] for row in repos['positions']])
+        self.assertEqual([2, 1], [row['baseline_position'] for row in repos['positions']])
+        self.assertEqual('U', repos['positions'][1]['evidence_basis']['observed_status'])
+        self.assertEqual(comparison, weekly.compare_rubric(self.root, NEW))
+        with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
+            weekly.main([*args, '--write'])
+        self.assertEqual(before, tree(self.root))
+
     def test_write_records_movements_counts_hashes_and_limits(self):
         write_sources(self.docs, (('001', D2), ('002', D3)))
         before = tree(self.root)

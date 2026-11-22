@@ -1,0 +1,20 @@
+{
+  "edition_date": "2026-11-23",
+  "method": "collaborative-intelligence-v1",
+  "cards": [
+    {
+      "id": "R-031",
+      "source": "https://github.com/invariantlabs-ai/invariant/blob/2340fe2d9cd619f73d5b67fa05bf8a08c7cad515/README.md",
+      "patterns": [],
+      "ratings": {
+        "direction": null,
+        "authority": {"rating": 1, "basis": "The catalog appraisal of this README records contextual policy rules for intercepting tool calls. Consent, revocation and real-world enforcement remain unassessed."},
+        "coordination": null,
+        "execution": null,
+        "outcomes": null,
+        "evidence": null,
+        "contribution": null
+      }
+    }
+  ]
+}

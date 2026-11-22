@@ -30,6 +30,25 @@ The first form is the default dry run. It validates everything, lists each file 
 
 `--root` points the command at another checkout, which the tests use with temporary roots. A refusal prints a reason and exits 2.
 
+## Preview the candidate ranking rubric
+
+Run the comparison before considering a change to the published method.
+
+```sh
+python scripts/weekly_hot100.py --date 2026-11-23 --compare-rubric
+```
+
+The date must follow the latest frozen edition. The comparison uses the same current ledgers, held dispositions and eligibility rules for both methods. The JSON includes source hashes, evidence basis, changes in chart membership, prior-method positions and ties outside the cutoff. It cannot be combined with `--write`.
+
+The chart guides what to read or appraise against the named question. The active registry already records the claim gap and source review. The candidate uses those fields as follows.
+
+- **Question fit first.** Keep the published order of named claim gaps. A record uses its first applicable gap. No credit for tagging more claims.
+- **Research.** Within the same gap, use existing directness first, then prefer explicitly recorded selected-full-text review. Historical records whose review depth lacks that marker stay tied with other records of the same directness. Study horizon remains visible as context because longer observation does not always provide a better test of the claim.
+- **Repositories.** Within the same gap, use the existing observation for the mechanism that bears on it. For example, use recorded authority evidence for CI-007 and recorded trace recovery for CI-006. Explicit coverage sorts before partial coverage. Unobserved, outside-scope, unknown and unmapped records receive no positive preference. Their recorded distinctions stay visible. Lifecycle and popularity remain context. A README observation cannot establish runtime behavior.
+- **Editorial review at the cutoff.** Equal inputs remain tied. Stable IDs make the preview repeatable. When a tie crosses the cutoff, review the listed alternatives for specific decision value, contrary evidence and known shared evidence families. Do not assume unknown families are independent. Record why an alternative would change a decision. Preserve holds and record unresolved ties explicitly.
+
+Use a same-input comparison to separate changes due to the rubric from changes due to new sources or corrections. Review entrants and removals, material moves, and ties across the cutoff before approving a version change. The versioned weekly scoring method below supersedes this diagnostic comparison for new editions.
+
 ## The receipt
 
 The receipt records:
@@ -74,3 +93,21 @@ The command does not commit, freeze an export or push. A person or the Codex own
 - The date is trusted as supplied. A mistyped future date freezes a future edition, and the next honest date will then be refused as older. Check the date before `--write`.
 - Sidecar discovery uses the `staletoast-system-fit-appraisals-*.json` file name pattern. A sidecar with another name is not listed.
 - Output files use LF line endings. A checkout with CRLF conversion still compares equal because comparison reads text.
+
+## Collaborative intelligence scoring from November 23, 2026
+
+The standard weekly command scores both charts with collaborative-intelligence-v1. Historical editions retain their recorded method. The older comparison switch above replays the two earlier editorial orderings for diagnostic purposes.
+
+| Dimension | Weight | Evidence to consider |
+| --- | ---: | --- |
+| Human goals and direction | 15 | People express constraints, define success, and redirect work. |
+| Delegated authority and consent | 15 | Participants know who can commit, approve, intervene or revoke. |
+| Coordination and orchestration | 20 | Contributions change another participant's action. Handoffs and conflicts can be resolved. |
+| Idea into action | 15 | Trace a decision or design change into real use or a verified production change. |
+| Outcomes and learning | 15 | Compare results and effort with a credible alternative. Include failures and lessons. |
+| Strength of evidence | 15 | Inspect methods, comparisons, pinned code or tests appropriate to the specific claim. |
+| Distinct contribution and applicability | 5 | Identify added value, intended beneficiary and an observable local check. |
+
+Prepare the dated JSON under docs/staletoast-scorecards using the November 23 card as the file format. For each edition, carry forward applicable ratings after checking their pins and scope. Each known dimension needs a rating and its evidence basis. Use 0 for checked absence or out-of-scope with the reason, 1 for a described intention or mechanism, 2 for a worked example, 3 for a demonstrated contribution with a known limit, and 4 for evidence explaining the difference against an alternative or failure case. Leave unknowns null. Record relationship patterns and the existing evidence family. Participant count carries zero weight. Cite linked artifacts from the same family together.
+
+Points equal weight times rating divided by four. The chart ranks complete cards by total, evidence, outcomes and contribution in order. Identical values share a rank group, with IDs providing display order. Each entry exposes its strongest contribution dimensions and the evidence behind them. Provisional rows show established and unresolved points. A dry run reports coverage. Publication requires enough completed cards to fill the available chart places.
