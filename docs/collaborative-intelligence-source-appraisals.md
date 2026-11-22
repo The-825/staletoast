@@ -198,6 +198,12 @@ MemoryAgentBench and MemoryArena share authors and a research lineage; reused Lo
 |---|---|---|---|---|---|---|
 | C-025 | arXiv v1, submitted 2026-10-01; serving control-plane proposal | D2 adjacent | RETIRE-SERVING | technical | abstract-only: full methods, correctness envelope, comparator fairness and total resource burden are unreviewed. Serving publication authority is narrower than human authorization. | CI-006, CI-007, CI-008 |
 
+## AskBench methods appraisal
+
+| ID | Design and publication state | Directness | Evidence family | Horizon | Limits and reviewed depth | Linked claims |
+|---|---|---|---|---|---|---|
+| C-406 | Findings of ACL 2026, simulated dialogue benchmark | D2 adjacent | ASKBENCH | technical | selected-full-text: Table 4 measures clarification accuracy and question burden with a shared judge and user simulator. Clear requests received fewer direct answers. Transfer to human workflows remains untested. | CI-004 |
+
 ## November 1 automated abstract relevance screens
 
 These candidate rows identify relevant primary abstracts. They do not appraise findings, establish claim support or promote candidates.
