@@ -93,4 +93,3 @@ def compare(edition_date, payload, landscape, earlier, held_repository_ids):
                 prior_frozen_edition=earlier[-1]["edition_date"],
                 source_hashes={k: v for k, v in payload.items() if k.endswith("_source_sha256")},
                 comparisons=comparisons)
-

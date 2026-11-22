@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "source_revision": "351ce5f9284023944190004afd24ab50b24539ab",
+  "source_revision": "15bf6080e3af9d4c8196ed3dbfa256053779267f",
   "inputs_sha256": {
     "catalog-contract.json": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
     "docs/collaborative-intelligence-research-ledger.md": "8ad19fcae64fc0d92093e62a8afb96ceef268e0e7654845f1402c5d398195193",
@@ -16,9 +16,11 @@
     "docs/staletoast-expansion-2026-11-01.json": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
     "docs/staletoast-source-dispositions.json": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
     "site/build_priorities.py": "be51f8da7a1abbfddb7aad51a22751746f50e22b35df205920ae7c202ee9267a",
-    "site/build_discovery.py": "ee6a3c04a35fbc2a6013c0cd55a4175ad477f5147b40a57e7d0da02df209e360",
+    "site/build_discovery.py": "451d28063085ed0ede44447bcf3f98afd22908035f3dc04c164018fc92e68e1e",
     "site/ledger_markdown.py": "281c9e095e74628fba79f5114e0dfdcb5601da09f56f2229c63e4d6f770614ea",
     "site/intake_state.py": "958e04c77e1b0167f1100e2847a9ec9f695b9e02298abed5972dcf46ea119b55",
-    "site/build_export.py": "9bd53f661d244ef50ad2a4de37d22915712987f4536689c12421263f5540a670"
+    "site/build_export.py": "38c7318ddfe4754e15d6e10d35f205edacca176a3dbfa7be00938fed93669024",
+    "site/collaboration_rubric.py": "620adbd511dd55b1af1efd9d64ef73034c54a423e9bf1df41d9e48bf7c891c12",
+    "docs/staletoast-scorecards/2026-11-23.json": "d0048f5304c9e469cf894bfc0cf00f607c6fb0290011a45a7268a6b9493436ac"
   }
 }
