@@ -135,3 +135,13 @@ the claim register or grants adoption authority.
 |---|---|---|
 | Q-P-005 | [Serving a Revisable World v1](https://arxiv.org/abs/2610.01160v1), C-025, retained lead Q-NEXT-018 | promoted into candidate intake at abstract depth; full methods remain to appraise |
 | Q-R-003 | [Hatchet pinned README](https://github.com/hatchet-dev/hatchet/blob/4a02006a40cff43180ca2f56c59113a1b12eca76/README.md), R-336 | promoted as a README screen; test current cancellation and recovery before any use |
+
+## Project-aware scout feedback, 2026-11-22
+
+**State:** experiment feedback awaiting appraisal. The design question is whether a named repository problem and inspected baseline make a broad source screen more useful for choosing a pilot.
+
+The [Claude Code skills documentation](https://code.claude.com/docs/en/skills#inject-dynamic-context) describes supplying current project context when a skill runs. The [pinned Breadcrumbs worksheet](https://github.com/The-825/breadcrumbs/blob/f07fbd51cbe22321005bdcbd05e48582281bf7ec/templates/workflow-worksheets/source-to-adoption.md) already asks for an existing capability, baseline, and done condition. One consumer experiment added a revision-bound assessment step after source screening and grouped outcomes as gap, existing equivalent, outside the project, or needs review. Breadcrumbs has documented guidance for that decision. Its executable adoption of the pilot remains unverified.
+
+In one frozen batch of 33 public leads, the existing screen and pilot agreed on source qualification: three qualified, fourteen awaited primary verification, and sixteen fell outside the broad facet. The project step retained one for the named experiment and routed two to other concerns. Both runs reported zero source duplicates. The result shows the effect of supplying project assessments on this batch. Independent relevance, decision time, cost, runtime adoption and general improvement remain unmeasured.
+
+**Next check:** use a different repository and pre-label relevant gaps independently, then compare missed gaps, repeated recommendations and time to a testable decision. Keep this result with the design question and use the existing appraisal process before assigning a grade or updating chart eligibility.
