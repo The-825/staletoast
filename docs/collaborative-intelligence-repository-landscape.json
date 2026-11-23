@@ -48630,6 +48630,45 @@
       "license_status": "MIT for repository software at the pinned revision. Fetched text has separate rights. Continued maintenance unknown.",
       "aliases": [],
       "readme_content_sha256": "498ed19d382982379020f9356a7e439cd13afe62e9d144c48ad77b2cf4d7f883"
+    },
+    {
+      "id": "R-1047",
+      "repository": "node-and-norm/trust-autonomy-evidence",
+      "url": "https://github.com/node-and-norm/trust-autonomy-evidence",
+      "snapshot_commit": "bd55ebd19cd36ea5444a157c50688e66c85935e2",
+      "upstream_revision": "bd55ebd19cd36ea5444a157c50688e66c85935e2",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "practical-human-control",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/node-and-norm/trust-autonomy-evidence/blob/bd55ebd19cd36ea5444a157c50688e66c85935e2/README.md",
+      "evidence_note": "The README reconstructs whether a human reviewer could intervene in a specific decision. Six supported conditions yield Pass, a justified failure of any necessary condition yields Fail, and other combinations remain Unresolved. A proposed synthetic check holds five conditions supported. If the record leaves intervention delivery unknown, expect Unresolved. If a reliable receipt establishes that the intervention failed to reach the action, expect Fail. Independent reliability and transfer remain unestablished.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Pinned README identifies Apache-2.0. License text and third-party evidence rights were not independently checked. The methods phase is closed and independent validation remains open.",
+      "aliases": [
+        {
+          "key": "mj3b/trust-autonomy-evidence",
+          "evidence": "https://github.com/mj3b/trust-autonomy-evidence"
+        }
+      ],
+      "readme_content_sha256": "8556f60844dc7ffd9a85b667e6cf934549ea3be737509b31ad671320e253b520"
     }
   ],
   "unresolved_identities": [],
@@ -48656,9 +48695,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 235,
+    "detailed_appraisal_count": 236,
     "portable_only_count": 105,
-    "total_repository_count": 1044,
+    "total_repository_count": 1045,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49397,6 +49436,7 @@
     "R-1043",
     "R-1044",
     "R-1045",
-    "R-1046"
+    "R-1046",
+    "R-1047"
   ]
 }
