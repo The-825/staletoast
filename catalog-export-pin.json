@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "source_revision": "f03ceabdffa1d972110eb1139b698a9456ae829c",
+  "source_revision": "32f6bc8ed27ad6dd668ea22f69dce1a4bef49df2",
   "inputs_sha256": {
     "catalog-contract.json": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
     "docs/collaborative-intelligence-research-ledger.md": "312e2a37b2ffb1b5b26e59b3690a6592bc908279aac6688265734b0e737d6fce",
@@ -11,6 +11,7 @@
     "docs/staletoast-chart-history/2026-10-12.json": "897842fe91e67af71200a9092a3940f4b80daf83f3dd3d9ade2854f116bcc5a0",
     "docs/staletoast-chart-history/2026-10-13.json": "ef3770b8d5d3183d1fd8642567194896572eb776aa73db534908a648a94e26b9",
     "docs/staletoast-chart-history/2026-11-02.json": "4de9771b07ecd5d3c21a53952146d1edaed842bd6ac59168a2fd7182b1413fd9",
+    "docs/staletoast-chart-history/2026-11-23.json": "a333dfb235386dbce15218f06ff3f9c048fa879d9bc8bfccc5273e5d9ffd627a",
     "docs/staletoast-chart-link-corrections.json": "35c0c3fc7ccb4a655f51ad43f35e25a9977786e7a913437a6d1ad0ddc0a70622",
     "site/build_catalogs.py": "2e5c7f354c40c952ebe151196988450594d8af693df8e82a2ecdfe07877e14a3",
     "docs/staletoast-expansion-2026-11-01.json": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
