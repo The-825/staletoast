@@ -48941,6 +48941,40 @@
       "license_status": "Apache License 2.0 at the pinned revision. Continuing maintenance and dependency rights unassessed.",
       "aliases": [],
       "readme_content_sha256": "55962968df65558cff0c5e89707e58378fe37a3108eeb59dd031afa95f5f5b0b"
+    },
+    {
+      "id": "R-1056",
+      "repository": "plainjane20/taskloom",
+      "url": "https://github.com/plainjane20/taskloom",
+      "snapshot_commit": "4387e8fd4337f08699f9504a361498ef351809fa",
+      "upstream_revision": "4387e8fd4337f08699f9504a361498ef351809fa",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "approval-before-agent-execution",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/plainjane20/taskloom/blob/4387e8fd4337f08699f9504a361498ef351809fa/tests/test_engine.py",
+      "evidence_note": "The README describes two approval modes. In test_approve_plan_pauses_then_executes_all_agents, a synthetic target stays unchanged and FakeLLM receives zero calls until a matching plan decision. After approval the test expects three calls, completed steps and a changed target. A separate change-rejection test expects cancellation and an unchanged file. This distinguishes authority over the whole plan from authority over one proposed edit. For a native check, count model calls and file changes before approval, after approval and after rejection on a synthetic workflow. The catalog category records README coverage. The additional evidence is static inspection of test code. Runtime behavior, restart durability, stale-decision handling and human outcomes remain unverified.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT License at the pinned revision. Continuing maintenance and dependency rights unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "72139d677be7ecd9fabe0d08a79e3685b3108d0dacad5d9b9e7e8b3d1d499974"
     }
   ],
   "unresolved_identities": [],
@@ -48967,9 +49001,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 244,
+    "detailed_appraisal_count": 245,
     "portable_only_count": 105,
-    "total_repository_count": 1053,
+    "total_repository_count": 1054,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49717,6 +49751,7 @@
     "R-1052",
     "R-1053",
     "R-1054",
-    "R-1055"
+    "R-1055",
+    "R-1056"
   ]
 }
