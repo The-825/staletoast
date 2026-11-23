@@ -48771,6 +48771,40 @@
       "license_status": "MIT for repository software. Rights for linked project material are separate. Continued maintenance unknown.",
       "aliases": [],
       "readme_content_sha256": "d425de1426187a64bfa3f390966f5d904d6934199543fc0ccc0de38aa8cd96c3"
+    },
+    {
+      "id": "R-1051",
+      "repository": "ankohr/decision-ledger",
+      "url": "https://github.com/ankohr/decision-ledger",
+      "snapshot_commit": "7e8dd7da21c79491de41ef69670e1b5a4880ee75",
+      "upstream_revision": "7e8dd7da21c79491de41ef69670e1b5a4880ee75",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "decision-outcome-linkage",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/ankohr/decision-ledger/blob/7e8dd7da21c79491de41ef69670e1b5a4880ee75/decision_ledger/core.py",
+      "evidence_note": "The synthetic-only ledger links a later outcome to an earlier decision. The scorecard keeps the overall band unassessed until an outcome exists. Tests cover rejected unknown outcomes, a pending outcome and edits to recorded history. A self-reported checklist and one outcome cannot establish decision quality or calibration. Read and append are separate steps. A native check would compare an unlinked log with linked decision and outcome records on matched fictional cases, counting false completions and incorrect associations, including two concurrent writers. Selected code and tests inspected without execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "No license file or README license statement identified at the pinned revision. Reuse rights and continued maintenance unknown.",
+      "aliases": [],
+      "readme_content_sha256": "99c8665218dc50a0042bd1f36b6c5a2d9cd222663578fa2537c96c22e37a4e82"
     }
   ],
   "unresolved_identities": [],
@@ -48797,9 +48831,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 239,
+    "detailed_appraisal_count": 240,
     "portable_only_count": 105,
-    "total_repository_count": 1048,
+    "total_repository_count": 1049,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49542,6 +49576,7 @@
     "R-1047",
     "R-1048",
     "R-1049",
-    "R-1050"
+    "R-1050",
+    "R-1051"
   ]
 }

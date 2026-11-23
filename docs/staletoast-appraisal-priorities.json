@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "7970ea84fe0782a9885dac8f20ed8540c9ce8fbf448358fec554f3a146a71e84",
   "appraisal_source_sha256": "182aec162ab4a589cb4e9435d17ff85060636c6384cfda36d79362639bf34eb3",
-  "repository_source_sha256": "60b9621a1bb5eb9b678839a722998a1d8ea19f3b7fb8eb2dd51cfa53b23c45b0",
+  "repository_source_sha256": "bc476dd52c7ae581f462b0c13ea02b0713195e58b22a8a3a8231be9e5eb4d140",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16126,6 +16126,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "continuation-view-consistency",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1051",
+      "repository": "ankohr/decision-ledger",
+      "url": "https://github.com/ankohr/decision-ledger",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "decision-outcome-linkage",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
