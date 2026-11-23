@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "312e2a37b2ffb1b5b26e59b3690a6592bc908279aac6688265734b0e737d6fce",
-  "appraisal_source_sha256": "e2ea64150158d8913a817d6c947afbf5220f759e8de83c54ae320c1d8af14c5c",
+  "research_source_sha256": "7970ea84fe0782a9885dac8f20ed8540c9ce8fbf448358fec554f3a146a71e84",
+  "appraisal_source_sha256": "182aec162ab4a589cb4e9435d17ff85060636c6384cfda36d79362639bf34eb3",
   "repository_source_sha256": "60b9621a1bb5eb9b678839a722998a1d8ea19f3b7fb8eb2dd51cfa53b23c45b0",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -1616,6 +1616,28 @@
       ],
       "directness": "D2 adjacent",
       "family": "HOMOGENEOUS-FORECAST-DELIBERATION",
+      "horizon": "technical",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 20,
+      "priority_key": [
+        4,
+        1,
+        3
+      ],
+      "priority_claim": "CI-004"
+    },
+    {
+      "id": "C-414",
+      "title": "A Contextual Measure of Ambiguity in Prescriptive Texts",
+      "url": "https://aclanthology.org/2026.emnlp-main.2483/",
+      "claims": [
+        "CI-004"
+      ],
+      "directness": "D2 adjacent",
+      "family": "CASE-BASED-POLICY-DISAGREEMENT",
       "horizon": "technical",
       "review_depth": "selected-full-text",
       "record_state": "candidate-not-promoted",
