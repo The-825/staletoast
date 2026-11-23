@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "8f56e733b2ba1bb60d357a5f13a52bd0f628399a03933ae3fec60bca7c75c7a1",
   "appraisal_source_sha256": "0f44e855dcbcfb0dcb20a613888b3575df73b61aa9d2714758c191858c198412",
-  "repository_source_sha256": "d475f4827e8c72347adb2e60446cf99304b7a450c82895c0c4f074e1c8f5558a",
+  "repository_source_sha256": "9834a2858504b7451ec2b208e3bc0d08f6d88607e0f9a18bd72573784222a219",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16220,6 +16220,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "deferred-evidence-follow-up",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1055",
+      "repository": "logicoflife/decision-trace",
+      "url": "https://github.com/logicoflife/decision-trace",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "nested-decision-lineage",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [

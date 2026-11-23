@@ -48907,6 +48907,40 @@
       "license_status": "Apache License 2.0 at the pinned revision. Continuing maintenance and dependency rights unassessed.",
       "aliases": [],
       "readme_content_sha256": "1029fc02eee5fa746bc231109412d8f17a45f4be569f79084c76285f13b0f8c9"
+    },
+    {
+      "id": "R-1055",
+      "repository": "logicoflife/decision-trace",
+      "url": "https://github.com/logicoflife/decision-trace",
+      "snapshot_commit": "e00d8fd8deab1fb486f14ccab25d373c12c08571",
+      "upstream_revision": "e00d8fd8deab1fb486f14ccab25d373c12c08571",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "nested-decision-lineage",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/logicoflife/decision-trace/blob/e00d8fd8deab1fb486f14ccab25d373c12c08571/sdk/java/decision-trace-core/src/main/java/io/decisiontrace/core/DecisionScope.java",
+      "evidence_note": "The Java SDK records trace, decision and parent decision IDs on events emitted inside a decision scope. A test opens nested scopes on one thread and checks their lineage using a fixed clock and in-memory emitter. This can help distinguish a delegated subdecision from a later outcome recorded against a single decision. The test leaves cross-thread propagation, durable delivery and human decision quality unverified. On synthetic handoffs, compare reconstructed parent-child relationships with a known event tree across nested calls and asynchronous boundaries. Count lost links and wrongly attributed children separately. Selected source and tests inspected without execution. The catalog's readme-screened category records the README review. Additional evidence here is a static inspection of DecisionScope.java and DecisionScopeTest.java. The derived priority retains the existing category.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Apache License 2.0 at the pinned revision. Continuing maintenance and dependency rights unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "55962968df65558cff0c5e89707e58378fe37a3108eeb59dd031afa95f5f5b0b"
     }
   ],
   "unresolved_identities": [],
@@ -48933,9 +48967,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 243,
+    "detailed_appraisal_count": 244,
     "portable_only_count": 105,
-    "total_repository_count": 1052,
+    "total_repository_count": 1053,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49682,6 +49716,7 @@
     "R-1051",
     "R-1052",
     "R-1053",
-    "R-1054"
+    "R-1054",
+    "R-1055"
   ]
 }
