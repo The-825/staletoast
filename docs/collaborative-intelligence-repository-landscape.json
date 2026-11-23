@@ -48703,6 +48703,40 @@
       "license_status": "MIT license for the pinned repository. External model services and separately supplied materials have their own terms. Continued maintenance unknown.",
       "aliases": [],
       "readme_content_sha256": "f601cf48d129465f32cbc9ee730bf98f4ed4749f68b93df7b2aa374cda5b2da4"
+    },
+    {
+      "id": "R-1049",
+      "repository": "AhmetIsk/decision-tracker",
+      "url": "https://github.com/AhmetIsk/decision-tracker",
+      "snapshot_commit": "9d3ab9d3ecd2bfb1235e5a14f80a7b730cd0dc79",
+      "upstream_revision": "9d3ab9d3ecd2bfb1235e5a14f80a7b730cd0dc79",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "decision-supersession-evidence",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/AhmetIsk/decision-tracker/blob/9d3ab9d3ecd2bfb1235e5a14f80a7b730cd0dc79/README.md",
+      "evidence_note": "The README describes versioned decision records. Static inspection of validation.py and test_validate_negative.py shows a check for a superseded decision lacking an incoming replacement link. A link alone cannot show that the replacement rationale is correct. In a synthetic handoff, measure whether the next reviewer finds the current decision and supporting artifact, and flags a superseded record with no replacement link. No upstream execution or observed team benefit.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT for pinned software. Rights for linked artifacts are separate. Continued maintenance unknown.",
+      "aliases": [],
+      "readme_content_sha256": "6c17c26049ee2708b419898e69d638b13ccc70e1fbbd08d7e65ab5ff4a84648f"
     }
   ],
   "unresolved_identities": [],
@@ -48729,9 +48763,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 237,
+    "detailed_appraisal_count": 238,
     "portable_only_count": 105,
-    "total_repository_count": 1046,
+    "total_repository_count": 1047,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49472,6 +49506,7 @@
     "R-1045",
     "R-1046",
     "R-1047",
-    "R-1048"
+    "R-1048",
+    "R-1049"
   ]
 }
