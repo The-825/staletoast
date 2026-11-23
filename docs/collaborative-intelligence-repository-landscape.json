@@ -48528,6 +48528,40 @@
       "license_status": "MIT text inspected at the pinned revision. Third-party inputs, dependencies and trace sharing rights remain unverified.",
       "aliases": [],
       "readme_content_sha256": "f7516cfd169188173d09aa5cf7eb29bc4ab3e1833d3fcfbdc8951556b4cac21d"
+    },
+    {
+      "id": "R-1044",
+      "repository": "Cygnux-Labs/Tracekit",
+      "url": "https://github.com/Cygnux-Labs/Tracekit",
+      "snapshot_commit": "9355200c88903a998a69161e09ac5521310f7c89",
+      "upstream_revision": "9355200c88903a998a69161e09ac5521310f7c89",
+      "snapshot_date": "2026-11-22",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "approval-binding-and-refusal-history",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/Cygnux-Labs/Tracekit/blob/9355200c88903a998a69161e09ac5521310f7c89/README.md",
+      "evidence_note": "README describes single-use approval for held calls, bound to the exact arguments. A proposed synthetic check would submit altered arguments, then the approved arguments twice. Require one authorized effect and distinguishable mismatch and consumed refusals in the audit history. Adapter enforcement and restart behavior remain unverified.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT license at pinned revision. Dependency and trace-data rights and ongoing maintenance unknown.",
+      "aliases": [],
+      "readme_content_sha256": "c571de755a1f79613ae8db92d7ae44ca99c6ef004d51e011d0fb99cc67b7d14c"
     }
   ],
   "unresolved_identities": [],
@@ -48554,9 +48588,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 232,
+    "detailed_appraisal_count": 233,
     "portable_only_count": 105,
-    "total_repository_count": 1041,
+    "total_repository_count": 1042,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49292,6 +49326,7 @@
     "R-1039",
     "R-1040",
     "R-1042",
-    "R-1043"
+    "R-1043",
+    "R-1044"
   ]
 }
