@@ -48737,6 +48737,40 @@
       "license_status": "MIT for pinned software. Rights for linked artifacts are separate. Continued maintenance unknown.",
       "aliases": [],
       "readme_content_sha256": "6c17c26049ee2708b419898e69d638b13ccc70e1fbbd08d7e65ab5ff4a84648f"
+    },
+    {
+      "id": "R-1050",
+      "repository": "dlxeva/flowgrid",
+      "url": "https://github.com/dlxeva/flowgrid",
+      "snapshot_commit": "5038bd95107214c211bbfc3fc778abffc4f7298e",
+      "upstream_revision": "5038bd95107214c211bbfc3fc778abffc4f7298e",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "continuation-view-consistency",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/dlxeva/flowgrid/blob/5038bd95107214c211bbfc3fc778abffc4f7298e/evals/results/continuation-v2-three-project-20260812.md",
+      "evidence_note": "The project compares fresh-agent handoffs on three owner-operated projects. Its report describes one continuation per mode and project, with same-family model scoring. A known-issue report documents an accepted patch still appearing pending in a handoff. Later replay results reported by the authors concern repaired views. A proposed native check compares a resumed agent action with the current decision ledger and counts attempts to repeat completed work. External reliability and independent replication remain unknown.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT for repository software. Rights for linked project material are separate. Continued maintenance unknown.",
+      "aliases": [],
+      "readme_content_sha256": "d425de1426187a64bfa3f390966f5d904d6934199543fc0ccc0de38aa8cd96c3"
     }
   ],
   "unresolved_identities": [],
@@ -48763,9 +48797,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 238,
+    "detailed_appraisal_count": 239,
     "portable_only_count": 105,
-    "total_repository_count": 1047,
+    "total_repository_count": 1048,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49507,6 +49541,7 @@
     "R-1046",
     "R-1047",
     "R-1048",
-    "R-1049"
+    "R-1049",
+    "R-1050"
   ]
 }

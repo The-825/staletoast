@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "312e2a37b2ffb1b5b26e59b3690a6592bc908279aac6688265734b0e737d6fce",
   "appraisal_source_sha256": "e2ea64150158d8913a817d6c947afbf5220f759e8de83c54ae320c1d8af14c5c",
-  "repository_source_sha256": "a315fd4de8712b3bf40b79a9ae88d4bc32aed4483c5ecece7cf8b597b7cd75b2",
+  "repository_source_sha256": "60b9621a1bb5eb9b678839a722998a1d8ea19f3b7fb8eb2dd51cfa53b23c45b0",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16086,6 +16086,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "decision-supersession-evidence",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1050",
+      "repository": "dlxeva/flowgrid",
+      "url": "https://github.com/dlxeva/flowgrid",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "continuation-view-consistency",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
