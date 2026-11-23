@@ -48669,6 +48669,40 @@
         }
       ],
       "readme_content_sha256": "8556f60844dc7ffd9a85b667e6cf934549ea3be737509b31ad671320e253b520"
+    },
+    {
+      "id": "R-1048",
+      "repository": "ericrisco/rsc-harness",
+      "url": "https://github.com/ericrisco/rsc-harness",
+      "snapshot_commit": "28a51a9100380a7fc53848a17604cebc0d2cf364",
+      "upstream_revision": "28a51a9100380a7fc53848a17604cebc0d2cf364",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "checkout-scoped-session-handoff",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/ericrisco/rsc-harness/blob/28a51a9100380a7fc53848a17604cebc0d2cf364/README.md",
+      "evidence_note": "On supported local targets, the README describes a bounded handoff from repository metadata for the same checkout. A proposed synthetic check starts two sessions on different worktrees and verifies that the next session identifies its own branch, HEAD and changes. Preexisting dirty files should not be attributed to a quiet session. Actual hook behavior, privacy across configurations and effects on task completion remain unverified.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "P",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT license for the pinned repository. External model services and separately supplied materials have their own terms. Continued maintenance unknown.",
+      "aliases": [],
+      "readme_content_sha256": "f601cf48d129465f32cbc9ee730bf98f4ed4749f68b93df7b2aa374cda5b2da4"
     }
   ],
   "unresolved_identities": [],
@@ -48695,9 +48729,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 236,
+    "detailed_appraisal_count": 237,
     "portable_only_count": 105,
-    "total_repository_count": 1045,
+    "total_repository_count": 1046,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49437,6 +49471,7 @@
     "R-1044",
     "R-1045",
     "R-1046",
-    "R-1047"
+    "R-1047",
+    "R-1048"
   ]
 }
