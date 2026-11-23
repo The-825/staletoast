@@ -48975,6 +48975,40 @@
       "license_status": "MIT License at the pinned revision. Continuing maintenance and dependency rights unassessed.",
       "aliases": [],
       "readme_content_sha256": "72139d677be7ecd9fabe0d08a79e3685b3108d0dacad5d9b9e7e8b3d1d499974"
+    },
+    {
+      "id": "R-1057",
+      "repository": "timmcleod/agent-workflows",
+      "url": "https://github.com/timmcleod/agent-workflows",
+      "snapshot_commit": "50a4c79b73a98753c63c37b748e07ac4860f60cf",
+      "upstream_revision": "50a4c79b73a98753c63c37b748e07ac4860f60cf",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "expiry-of-human-workflow-interrupts",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/timmcleod/agent-workflows/blob/50a4c79b73a98753c63c37b748e07ac4860f60cf/tests/Feature/AwaitHumanTimeoutTest.php",
+      "evidence_note": "The README describes parking a workflow for a human response. Static inspection of Interrupter.php shows a conditional state transition inside a database transaction. AwaitHumanTimeoutTest.php defines a pre-deadline sweep, a gate without a deadline, and a timed-out gate with a configured rejection response. That last workflow can continue after an automatic response. Completion alone does not establish human consent. Compared with pre-execution plan approval, these cases expose what happens when nobody responds. On a synthetic clock, count early transitions, duplicate timeout actions and automatic responses incorrectly recorded as human decisions. No upstream code ran. Production concurrency and human outcomes remain unknown. The legacy depth records README coverage; selected source and tests were additionally inspected.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "P",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT License at the pinned revision. Continuing maintenance and dependency rights unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "5cfd05e413380ecc5357a994560a2f67c7b5383730644a7171229f38954d40aa"
     }
   ],
   "unresolved_identities": [],
@@ -49001,9 +49035,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 245,
+    "detailed_appraisal_count": 246,
     "portable_only_count": 105,
-    "total_repository_count": 1054,
+    "total_repository_count": 1055,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49752,6 +49786,7 @@
     "R-1053",
     "R-1054",
     "R-1055",
-    "R-1056"
+    "R-1056",
+    "R-1057"
   ]
 }
