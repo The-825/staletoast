@@ -48460,6 +48460,40 @@
       "maintenance_observed_pushed_at": "2026-01-14T17:42:47Z",
       "screen_method": "automated-readme-relevance-screen-v1",
       "intake_batch": "2026-11-01"
+    },
+    {
+      "id": "R-1042",
+      "repository": "ownasquare/human-in-the-loop-agent",
+      "url": "https://github.com/ownasquare/human-in-the-loop-agent",
+      "snapshot_commit": "527c90c333660c38d35f18609c40fc97f7f959b2",
+      "upstream_revision": "527c90c333660c38d35f18609c40fc97f7f959b2",
+      "snapshot_date": "2026-11-22",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "revision-bound-consent-and-ambiguous-write-outcomes",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/ownasquare/human-in-the-loop-agent/blob/527c90c333660c38d35f18609c40fc97f7f959b2/src/relay/persistence.py",
+      "evidence_note": "Static inspection found proposal version and payload checks, persisted decisions and explicit unknown outcomes. Tests describe stale hash rejection and reopening pending proposals. Production enforcement, multi-party consent and external duplicate suppression are unverified. For a synthetic check, submit a stale version or payload hash for a pending proposal, then separately simulate a timeout after an external write.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT license inspected at this revision. Third-party rights and ongoing maintenance unknown.",
+      "aliases": [],
+      "readme_content_sha256": "69c290fb3f46b77b25255578b8efec5cce3a7bb9f016d690f1952d116a6c1825"
     }
   ],
   "unresolved_identities": [],
@@ -48486,9 +48520,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 230,
+    "detailed_appraisal_count": 231,
     "portable_only_count": 105,
-    "total_repository_count": 1039,
+    "total_repository_count": 1040,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49222,6 +49256,7 @@
     "R-1037",
     "R-1038",
     "R-1039",
-    "R-1040"
+    "R-1040",
+    "R-1042"
   ]
 }
