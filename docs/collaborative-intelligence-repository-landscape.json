@@ -48805,6 +48805,40 @@
       "license_status": "No license file or README license statement identified at the pinned revision. Reuse rights and continued maintenance unknown.",
       "aliases": [],
       "readme_content_sha256": "99c8665218dc50a0042bd1f36b6c5a2d9cd222663578fa2537c96c22e37a4e82"
+    },
+    {
+      "id": "R-1052",
+      "repository": "shafaypro/DecisionOS",
+      "url": "https://github.com/shafaypro/DecisionOS",
+      "snapshot_commit": "af288e9f1e6c6c097e3eccd30f3b97a85ac22a69",
+      "upstream_revision": "af288e9f1e6c6c097e3eccd30f3b97a85ac22a69",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "decision-retrieval-fallback",
+      "category": "application-control-plane",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/shafaypro/DecisionOS/blob/af288e9f1e6c6c097e3eccd30f3b97a85ac22a69/src/app/api/decisions/ask/route.ts",
+      "evidence_note": "The question route applies a session visibility filter before ranking up to 500 decision records and selecting up to six source cards. When synthesis fails it returns the retrieved sources with a null answer. The retrieval smoke tests use fictional decisions. Selected source and tests were inspected without execution. A source card or parsed citation does not establish that an answer follows from the record. On matched synthetic questions, compare source-only lookup with synthesis for correct record selection, unsupported answers and disclosures outside the fixture role. End-to-end access isolation, answer accuracy and human benefit remain unverified.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "P",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT license at the pinned revision. Dependency rights and ongoing maintenance were not assessed.",
+      "aliases": [],
+      "readme_content_sha256": "90a775f20f1b3fcc829b771f9db6bcb1f22dea57797fa0eebcd6c29a278f5a00"
     }
   ],
   "unresolved_identities": [],
@@ -48831,9 +48865,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 240,
+    "detailed_appraisal_count": 241,
     "portable_only_count": 105,
-    "total_repository_count": 1049,
+    "total_repository_count": 1050,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49577,6 +49611,7 @@
     "R-1048",
     "R-1049",
     "R-1050",
-    "R-1051"
+    "R-1051",
+    "R-1052"
   ]
 }
