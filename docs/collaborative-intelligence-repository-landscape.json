@@ -48873,6 +48873,40 @@
       "license_status": "Apache License 2.0 at the pinned revision. Continuing maintenance and dependency rights unassessed.",
       "aliases": [],
       "readme_content_sha256": "0f3a25e5f2f0f80342fd24da37bfbd028826a1600636b3c2bb472f81f4439a3a"
+    },
+    {
+      "id": "R-1054",
+      "repository": "node-and-norm/rgds",
+      "url": "https://github.com/node-and-norm/rgds",
+      "snapshot_commit": "6d29766868038bf23529b2f9cd380ca0e397396c",
+      "upstream_revision": "6d29766868038bf23529b2f9cd380ca0e397396c",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "deferred-evidence-follow-up",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/node-and-norm/rgds/blob/6d29766868038bf23529b2f9cd380ca0e397396c/scripts/validate_decision_log.py",
+      "evidence_note": "RGDS distinguishes a conditional decision to proceed from a deferral pending required evidence. The validator rejects a conditional go without conditions and requires a human review record when AI assistance is declared. The validation tests remove follow-up actions from a required-evidence deferral and expect rejection. This adds a check on what must happen after deferral. The same publisher also maintains trust-autonomy-evidence; the two projects are related evidence. Fields can be complete while the named reviewer lacks authority or a cited item is wrong. On matched synthetic decisions, remove a condition or follow-up action and count missing obligations detected separately from unsupported claims accepted. Selected validator and tests inspected without execution. Operational outcomes remain unknown.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Apache License 2.0 at the pinned revision. Continuing maintenance and dependency rights unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "1029fc02eee5fa746bc231109412d8f17a45f4be569f79084c76285f13b0f8c9"
     }
   ],
   "unresolved_identities": [],
@@ -48899,9 +48933,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 242,
+    "detailed_appraisal_count": 243,
     "portable_only_count": 105,
-    "total_repository_count": 1051,
+    "total_repository_count": 1052,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49647,6 +49681,7 @@
     "R-1050",
     "R-1051",
     "R-1052",
-    "R-1053"
+    "R-1053",
+    "R-1054"
   ]
 }
