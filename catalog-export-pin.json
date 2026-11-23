@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "source_revision": "f997e8812c6eca37555df0c5b3613af91a541913",
+  "source_revision": "f53c16718295d5c278a9929bd85a7a5ebf73d0b4",
   "inputs_sha256": {
     "catalog-contract.json": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
     "docs/collaborative-intelligence-research-ledger.md": "c8445fcc81d4436822bb2fd4e790f520905c10aec45155b589200cb1dadaeada",
     "docs/collaborative-intelligence-source-appraisals.md": "852ffda0c0f9acf136bcdf87c68ec8aa0217c736553a0b5f61b99ceb959bfac4",
-    "docs/collaborative-intelligence-repository-landscape.json": "2586d9ca5b1bb7f72a1d5130a794d8bbec3f4599ad298ef03379662feea84137",
+    "docs/collaborative-intelligence-repository-landscape.json": "f93c0b8a9d7748d267e6158b1e8773c42a9c352b7f076f412007ec583dad87bf",
     "docs/collaborative-intelligence-claim-register.md": "6c866dafaadd59432e74047b5354e659dd604ea943754278cd73d94d48d7583b",
-    "docs/staletoast-appraisal-priorities.json": "f6b4c0f250b347ad39f1056d6b67f3d274110d315b983e007491d3ed8de9e22e",
+    "docs/staletoast-appraisal-priorities.json": "c9844b6d08446693284b790b76665c35a9473b3677a2d16ece334880daf76679",
     "docs/staletoast-chart-history/2026-10-12.json": "897842fe91e67af71200a9092a3940f4b80daf83f3dd3d9ade2854f116bcc5a0",
     "docs/staletoast-chart-history/2026-10-13.json": "ef3770b8d5d3183d1fd8642567194896572eb776aa73db534908a648a94e26b9",
     "docs/staletoast-chart-history/2026-11-02.json": "4de9771b07ecd5d3c21a53952146d1edaed842bd6ac59168a2fd7182b1413fd9",
