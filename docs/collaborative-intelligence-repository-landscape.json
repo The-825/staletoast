@@ -48494,6 +48494,40 @@
       "license_status": "MIT license inspected at this revision. Third-party rights and ongoing maintenance unknown.",
       "aliases": [],
       "readme_content_sha256": "69c290fb3f46b77b25255578b8efec5cce3a7bb9f016d690f1952d116a6c1825"
+    },
+    {
+      "id": "R-1043",
+      "repository": "jlov7/branchlab",
+      "url": "https://github.com/jlov7/branchlab",
+      "snapshot_commit": "0d0d872d40c49b7dfbee579e7cbacb1669515309",
+      "upstream_revision": "0d0d872d40c49b7dfbee579e7cbacb1669515309",
+      "snapshot_date": "2026-11-22",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "synthetic-branch-replay-and-outcome-provenance",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/jlov7/branchlab/blob/0d0d872d40c49b7dfbee579e7cbacb1669515309/README.md",
+      "evidence_note": "README describes comparing a recorded trace with an edited branch using fingerprints and first divergence. Treat model-asserted success as a hypothesis. Proposed synthetic check: branch a trace with a missing terminal event, model-asserted success and a failed comparator. Require display and export to identify replay mode, qualify the success, preserve the missing event and failed comparator, and expose zero synthetic sensitive sentinels. Execution, export-wide redaction and maintenance remain unverified.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT text inspected at the pinned revision. Third-party inputs, dependencies and trace sharing rights remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "f7516cfd169188173d09aa5cf7eb29bc4ab3e1833d3fcfbdc8951556b4cac21d"
     }
   ],
   "unresolved_identities": [],
@@ -48520,9 +48554,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 231,
+    "detailed_appraisal_count": 232,
     "portable_only_count": 105,
-    "total_repository_count": 1040,
+    "total_repository_count": 1041,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49257,6 +49291,7 @@
     "R-1038",
     "R-1039",
     "R-1040",
-    "R-1042"
+    "R-1042",
+    "R-1043"
   ]
 }

@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "fca1085a4519bd61fb981e9345cc8529d88eda66d798413aecd5c2ba2ec07e67",
   "appraisal_source_sha256": "fbb14041febf968e4d6ba504df9708aaceb80e6af73ca248e14b7a3d75d9cadd",
-  "repository_source_sha256": "13dfc81c25075d4ed280c0a07f94777516eeab96714dc68b772219f3c7d56b43",
+  "repository_source_sha256": "55329333cf12a6135e52cef010f1101da54a7d7eee5ad7c08a5275855aca4bc8",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -15850,6 +15850,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "revision-bound-consent-and-ambiguous-write-outcomes",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1043",
+      "repository": "jlov7/branchlab",
+      "url": "https://github.com/jlov7/branchlab",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "synthetic-branch-replay-and-outcome-provenance",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
