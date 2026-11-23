@@ -48562,6 +48562,40 @@
       "license_status": "MIT license at pinned revision. Dependency and trace-data rights and ongoing maintenance unknown.",
       "aliases": [],
       "readme_content_sha256": "c571de755a1f79613ae8db92d7ae44ca99c6ef004d51e011d0fb99cc67b7d14c"
+    },
+    {
+      "id": "R-1045",
+      "repository": "jinxuansama/evidence-ledger",
+      "url": "https://github.com/jinxuansama/evidence-ledger",
+      "snapshot_commit": "15f1751d285b0d6bddc00a6b779c08995453203d",
+      "upstream_revision": "15f1751d285b0d6bddc00a6b779c08995453203d",
+      "snapshot_date": "2026-11-22",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "claim-level-source-provenance",
+      "category": "evaluation-platform",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/jinxuansama/evidence-ledger/blob/15f1751d285b0d6bddc00a6b779c08995453203d/README.md",
+      "evidence_note": "The README describes checking local source hashes, exact excerpts and explicit draft claim references. A proposed synthetic check changes the source while preserving the excerpt and expects a hash mismatch. Reversing an interpretation while preserving the excerpt can pass provenance checks and still require human correction. Unmarked claims are outside scope.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT for project software and original examples at the pinned revision. Third-party sources require separate rights. Continued maintenance unknown.",
+      "aliases": [],
+      "readme_content_sha256": "72fc16122ac64bbac9e17d6e256d3a27fb85c7595ad9d0d91df9348afd076f10"
     }
   ],
   "unresolved_identities": [],
@@ -48588,9 +48622,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 233,
+    "detailed_appraisal_count": 234,
     "portable_only_count": 105,
-    "total_repository_count": 1042,
+    "total_repository_count": 1043,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49327,6 +49361,7 @@
     "R-1040",
     "R-1042",
     "R-1043",
-    "R-1044"
+    "R-1044",
+    "R-1045"
   ]
 }

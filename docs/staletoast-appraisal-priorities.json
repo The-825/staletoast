@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "c8445fcc81d4436822bb2fd4e790f520905c10aec45155b589200cb1dadaeada",
   "appraisal_source_sha256": "852ffda0c0f9acf136bcdf87c68ec8aa0217c736553a0b5f61b99ceb959bfac4",
-  "repository_source_sha256": "8e074fe2ed8e651087b0024eb72b333af3d6031e6f2951b64b389e5088377eca",
+  "repository_source_sha256": "2586d9ca5b1bb7f72a1d5130a794d8bbec3f4599ad298ef03379662feea84137",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -15908,6 +15908,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "approval-binding-and-refusal-history",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1045",
+      "repository": "jinxuansama/evidence-ledger",
+      "url": "https://github.com/jinxuansama/evidence-ledger",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "claim-level-source-provenance",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
