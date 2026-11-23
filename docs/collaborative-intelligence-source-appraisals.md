@@ -203,6 +203,7 @@ MemoryAgentBench and MemoryArena share authors and a research lineage; reused Lo
 | ID | Design and publication state | Directness | Evidence family | Horizon | Limits and reviewed depth | Linked claims |
 |---|---|---|---|---|---|---|
 | C-406 | Findings of ACL 2026, simulated dialogue benchmark | D2 adjacent | ASKBENCH | technical | selected-full-text: Table 4 measures clarification accuracy and question burden with a shared judge and user simulator. Clear requests received fewer direct answers. Transfer to human workflows remains untested. | CI-004 |
+| C-407 | IWSDS 2026, simulated task-oriented dialogue | D2 adjacent | MAC | technical | selected-full-text: Table 2 compares supervisor and expert clarification across five runs. Enabling both improved mean task success and reduced average dialogue length from 6.53 to 4.86 turns. Supervisor-only success averaged 55.50 percent and expert-only averaged 54.88 percent. The evaluation used simulated users. Human effort and satisfaction remain unknown. | CI-004 |
 
 ## November 1 automated abstract relevance screens
 
