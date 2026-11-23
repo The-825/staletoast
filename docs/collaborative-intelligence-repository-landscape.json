@@ -49043,6 +49043,40 @@
       "license_status": "GNU Affero General Public License version 3 at the pinned revision. Continuing maintenance and dependency rights unassessed.",
       "aliases": [],
       "readme_content_sha256": "a003c580295051736b69aeb20cf5c70ca528c94b059a434b46e41de65136768e"
+    },
+    {
+      "id": "R-1059",
+      "repository": "manyu-lnmiit/agent-checkpoint-runtime",
+      "url": "https://github.com/manyu-lnmiit/agent-checkpoint-runtime",
+      "snapshot_commit": "0b32ae971c8f3a62964f78a389abca9a339345c3",
+      "upstream_revision": "0b32ae971c8f3a62964f78a389abca9a339345c3",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "checkpoint-reuse-across-agent-handoffs",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/manyu-lnmiit/agent-checkpoint-runtime/blob/0b32ae971c8f3a62964f78a389abca9a339345c3/agentflow/core.py",
+      "evidence_note": "The README describes resuming an agent workflow across an approval pause. In core.py, a completed step is looked up by run ID and step name before the function is called. In test_core.py a second Workflow object shares an in-memory store, supplies a different function under the same name, and receives the first result. A separate test requires an external gate decision before the run can finish. Compared with a version-bound approval, this illustrates a different handoff risk: changed work can reuse an older result under stable keys. Completion is recorded after the function returns, leaving a possible gap between an external effect and its checkpoint. On synthetic inputs, vary the function or input while keeping the key and count stale results and duplicate effects after an interrupted commit. These are proposed checks. Static inspection does not establish crash durability, authenticated approval or human outcomes. The catalog depth records README coverage; source and test inspection are additional.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "MIT License at the pinned revision. Continuing maintenance and dependency rights unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "0702316c8fcc9f61f616c6d7c667507e62c4d1bb5f10b0883feb200fbfc027c4"
     }
   ],
   "unresolved_identities": [],
@@ -49069,9 +49103,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 247,
+    "detailed_appraisal_count": 248,
     "portable_only_count": 105,
-    "total_repository_count": 1056,
+    "total_repository_count": 1057,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49822,6 +49856,7 @@
     "R-1055",
     "R-1056",
     "R-1057",
-    "R-1058"
+    "R-1058",
+    "R-1059"
   ]
 }
