@@ -49485,6 +49485,40 @@
       "license_status": "Pinned pyproject.toml declares MIT. The inspected archive contains no separately named license or copying file. Dependency rights and ongoing maintenance are unassessed.",
       "aliases": [],
       "readme_content_sha256": "78b0269057ba869ffafb1d12c968418c975538d3ac5b565b7a371dc0b8811a85"
+    },
+    {
+      "id": "R-1074",
+      "repository": "goldentrii/agentrecall-x",
+      "url": "https://github.com/goldentrii/agentrecall-x",
+      "snapshot_commit": "bc03054aa12e1e766bac0780ef4a80e9a4dfb841",
+      "upstream_revision": "bc03054aa12e1e766bac0780ef4a80e9a4dfb841",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "operator-confirmation-of-proposed-corrections",
+      "category": "agent-memory",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/goldentrii/agentrecall-x/blob/bc03054aa12e1e766bac0780ef4a80e9a4dfb841/packages/core/test/correction-owner-gate.test.mjs",
+      "evidence_note": "A scoped agent proposes a correction to a pending ledger. In packages/core/src/tools-logic/check.ts, confirmPendingCorrection declines confirmation inside the staged agent context. The named fixture compares pending and active records across staged and operator contexts. Unflagged callers can still activate corrections directly for compatibility. This in-process fixture does not establish operator authentication or hosted isolation. A native check would compare the active correction text with the reviewed proposal before and after operator confirmation using synthetic records. Selected source and test inspection only.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "P",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root MIT license, copyright Tongwu. Dependency rights and ongoing maintenance unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "fcc3c41ed0f27afb59763a6e33a5ac9e2a5b2d247fe853c659784288be3e9a03"
     }
   ],
   "unresolved_identities": [],
@@ -49511,9 +49545,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 260,
+    "detailed_appraisal_count": 261,
     "portable_only_count": 105,
-    "total_repository_count": 1069,
+    "total_repository_count": 1070,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50277,6 +50311,7 @@
     "R-1069",
     "R-1070",
     "R-1072",
-    "R-1073"
+    "R-1073",
+    "R-1074"
   ]
 }
