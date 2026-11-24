@@ -49383,6 +49383,40 @@
       "license_status": "The pinned root LICENSE is MIT, copyright 2026 Cui Chen. Dependency rights and ongoing maintenance are unassessed.",
       "aliases": [],
       "readme_content_sha256": "88435ef8da6ea5e430e64dd028314e10a4cc36dee8173b8a9e8e900163808c62"
+    },
+    {
+      "id": "R-1070",
+      "repository": "truespar/scriptor",
+      "url": "https://github.com/truespar/scriptor",
+      "snapshot_commit": "7d67ae99cfaf1cd342fb4949889fd681ee713c30",
+      "upstream_revision": "7d67ae99cfaf1cd342fb4949889fd681ee713c30",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "tracked-change-attribution-in-word-documents",
+      "category": "writing-workflow",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/truespar/scriptor/blob/7d67ae99cfaf1cd342fb4949889fd681ee713c30/crates/scriptor-crdt/src/tests/tracked.rs",
+      "evidence_note": "Scriptor describes collaborative Word editing by people and agents. In the selected Rust test, a single supplied author label is retained when listing an insertion and deletion. A separate header test checks that exported XML contains an insertion wrapper and original text. It does not assert the exported author or distinguish authenticated actors. Separate fixtures do not establish authorship preservation across concurrent edits. A synthetic check could apply overlapping edits under two distinct author labels, then compare the operation, author and resolution before and after a DOCX round trip. No upstream execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The pinned root LICENSE offers MIT or Apache-2.0. Dependency rights and ongoing maintenance are unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "6dd953918f1580d44cec014d1752bdc7b58883c4620aa75241908c20c27ec264"
     }
   ],
   "unresolved_identities": [],
@@ -49409,9 +49443,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 257,
+    "detailed_appraisal_count": 258,
     "portable_only_count": 105,
-    "total_repository_count": 1066,
+    "total_repository_count": 1067,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50172,6 +50206,7 @@
     "R-1066",
     "R-1067",
     "R-1068",
-    "R-1069"
+    "R-1069",
+    "R-1070"
   ]
 }

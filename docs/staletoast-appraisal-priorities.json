@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "dbe60b9eee3f1cda59081cea384b6b6f5f50c49ec46e505b8884dcda8827ad63",
   "appraisal_source_sha256": "d3a4407564f85e28e59de741f53f51472abf26305b31c4ce022eac207e0d9d19",
-  "repository_source_sha256": "134f907eeff1ad21bb8dadea52a8b5f8c4a573c244a51b9f518b236b2e14e69c",
+  "repository_source_sha256": "a13038b51b767ad48b145dca0e060d160b1574631fa4aaae9ea89cd6a63f646f",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16516,6 +16516,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "queued-rejection-of-agent-manuscript-edits",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1070",
+      "repository": "truespar/scriptor",
+      "url": "https://github.com/truespar/scriptor",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "tracked-change-attribution-in-word-documents",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
