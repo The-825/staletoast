@@ -49417,6 +49417,40 @@
       "license_status": "The pinned root LICENSE offers MIT or Apache-2.0. Dependency rights and ongoing maintenance are unassessed.",
       "aliases": [],
       "readme_content_sha256": "6dd953918f1580d44cec014d1752bdc7b58883c4620aa75241908c20c27ec264"
+    },
+    {
+      "id": "R-1072",
+      "repository": "everyinc/proof-sdk",
+      "url": "https://github.com/everyinc/proof-sdk",
+      "snapshot_commit": "fb2578758f1c62776301209131181643c5f4a19a",
+      "upstream_revision": "fb2578758f1c62776301209131181643c5f4a19a",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "revision-bound-agent-edit-during-live-markdown-collaboration",
+      "category": "writing-workflow",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/everyinc/proof-sdk/blob/fb2578758f1c62776301209131181643c5f4a19a/src/tests/agent-edit-live-human-race-regression.test.ts",
+      "evidence_note": "Proof SDK provides a shared Markdown editor and agent edit bridge. The selected regression test simulates a human edit in a live document. It expects a legacy agent request to return 409, then submits a block insertion against a fresh snapshot revision. It checks for both text markers in server state and the connected document. The fixture uses an owner credential and tests one edit sequence. It does not establish independent author authentication, human approval, or preservation of arbitrary overlapping replacements. A synthetic check would compare outcomes under fresh and stale revisions and verify both clients retain the human edit. Selected source and test inspection only.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Pinned root MIT license. Dependency rights and ongoing maintenance are unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "a99461bca8befeb0cf433583f707c03ed224daef3ba6be542776747721ea118b"
     }
   ],
   "unresolved_identities": [],
@@ -49443,9 +49477,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 258,
+    "detailed_appraisal_count": 259,
     "portable_only_count": 105,
-    "total_repository_count": 1067,
+    "total_repository_count": 1068,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50207,6 +50241,7 @@
     "R-1067",
     "R-1068",
     "R-1069",
-    "R-1070"
+    "R-1070",
+    "R-1072"
   ]
 }

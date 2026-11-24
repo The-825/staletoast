@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "192f9c9721b60e5568d3d00438edfcf44768b0eb80398bf030eb7f0733189371",
   "appraisal_source_sha256": "ce1f787455f888f6e790c3a4940f2e70c331f55b919646c80d13f9fb4aa780ff",
-  "repository_source_sha256": "a13038b51b767ad48b145dca0e060d160b1574631fa4aaae9ea89cd6a63f646f",
+  "repository_source_sha256": "8d2e71f75483d87043d29b6996f626fda8930d1521af105de2ec9ec900dcfd76",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16578,6 +16578,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "tracked-change-attribution-in-word-documents",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1072",
+      "repository": "everyinc/proof-sdk",
+      "url": "https://github.com/everyinc/proof-sdk",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "revision-bound-agent-edit-during-live-markdown-collaboration",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
