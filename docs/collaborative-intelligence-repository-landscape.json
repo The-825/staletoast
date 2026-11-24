@@ -49451,6 +49451,40 @@
       "license_status": "Pinned root MIT license. Dependency rights and ongoing maintenance are unassessed.",
       "aliases": [],
       "readme_content_sha256": "a99461bca8befeb0cf433583f707c03ed224daef3ba6be542776747721ea118b"
+    },
+    {
+      "id": "R-1073",
+      "repository": "jkbehrens/cobos",
+      "url": "https://github.com/jkbehrens/cobos",
+      "snapshot_commit": "09f83e38db58978dc49c5205ecb0d8f3be6d5d4e",
+      "upstream_revision": "09f83e38db58978dc49c5205ecb0d8f3be6d5d4e",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "reactive-task-allocation-in-human-robot-simulation",
+      "category": "task-coordination",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/jkbehrens/cobos/blob/09f83e38db58978dc49c5205ecb0d8f3be6d5d4e/tests/test_control_logic.py",
+      "evidence_note": "CoBOS schedules tasks between simulated human and robot agents. In OverlapSchedule.refresh_variables, tasks already started or completed can have their assignment constrained to the recorded agent. A seeded test compares common job descriptions across four methods in seven cases and asserts job validity and full progress. It does not assert a shorter makespan or measure human workload. A synthetic check would delay one task with the workload and seeds held fixed, then compare assignment stability, feasible completion and makespan with a fixed schedule. Selected source and test inspection only. The linked paper and implementation share an evidence family.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Pinned pyproject.toml declares MIT. The inspected archive contains no separately named license or copying file. Dependency rights and ongoing maintenance are unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "78b0269057ba869ffafb1d12c968418c975538d3ac5b565b7a371dc0b8811a85"
     }
   ],
   "unresolved_identities": [],
@@ -49477,9 +49511,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 259,
+    "detailed_appraisal_count": 260,
     "portable_only_count": 105,
-    "total_repository_count": 1068,
+    "total_repository_count": 1069,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50242,6 +50276,7 @@
     "R-1068",
     "R-1069",
     "R-1070",
-    "R-1072"
+    "R-1072",
+    "R-1073"
   ]
 }
