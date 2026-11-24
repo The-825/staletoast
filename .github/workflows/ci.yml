@@ -28,6 +28,10 @@ jobs:
       - run: python site/build_discovery.py
       - run: python site/build_discovery.py --check
       - run: python site/build_export.py
+      - if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: python site/build_export.py --check-freeze-scope "origin/$BASE_REF"
       - run: python -m unittest discover -s site -p 'test_*.py'
       - run: python scripts/repository_landscape.py --check
       - run: python scripts/validate_corpus_expansion.py

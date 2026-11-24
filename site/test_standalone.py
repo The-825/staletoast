@@ -53,6 +53,37 @@ class StandaloneTests(unittest.TestCase):
                 self.assertEqual(before, first.read_bytes())
                 self.assertEqual(before, (root / 'site/exports' / first.name).read_bytes())
 
+    def test_unfrozen_catalog_changes_publish_the_pinned_export_unchanged(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            data = root / 'site/data'
+            data.mkdir(parents=True)
+            revision = 'c' * 40
+            frozen = json.dumps({'schema_version': '2.0', 'source_revision': revision}) + '\n'
+            (root / 'exports').mkdir()
+            (root / 'exports' / (revision + '.json')).write_text(frozen, encoding='utf-8')
+            (root / 'catalog-export-pin.json').write_text(json.dumps(
+                {'schema_version': '1.0', 'source_revision': revision, 'inputs_sha256': {'stale': 'x'}}), encoding='utf-8')
+            with patch.object(build_export, 'ROOT', root), patch.object(build_export, 'DATA', data), \
+                    patch.object(build_export.subprocess, 'check_output', return_value=b''):
+                build_export.build()
+                self.assertEqual(frozen, (data / 'catalog-export.json').read_text(encoding='utf-8'))
+                self.assertEqual(frozen, (root / 'site/exports' / (revision + '.json')).read_text(encoding='utf-8'))
+                (root / 'exports' / (revision + '.json')).unlink()
+                with self.assertRaisesRegex(ValueError, 'Pinned export is missing'):
+                    build_export.build()
+
+    def test_only_a_weekly_edition_pr_may_freeze_the_export(self):
+        pin = ('M', 'catalog-export-pin.json')
+        snapshot = ('A', 'exports/' + 'd' * 40 + '.json')
+        record = ('M', 'docs/collaborative-intelligence-research-ledger.md')
+        edition = ('A', 'docs/staletoast-chart-history/2026-11-30.json')
+        self.assertIsNone(build_export.freeze_scope_violation([record]))
+        self.assertIsNone(build_export.freeze_scope_violation([record, edition, pin, snapshot]))
+        self.assertIn('catalog-export-pin.json', build_export.freeze_scope_violation([record, pin, snapshot]))
+        self.assertIsNotNone(build_export.freeze_scope_violation([('M', 'docs/staletoast-chart-history/2026-11-02.json'), pin]))
+        self.assertIsNone(build_export.freeze_scope_violation([('A', 'exports/reader-guide/' + 'e' * 40 + '.json')]))
+
     def test_imported_history_and_frozen_charts_preserve_original_bytes(self):
         receipt = json.loads((ROOT / 'docs/migration-provenance.json').read_text(encoding='utf-8'))
         for path, expected in receipt['original_source_sha256'].items():
@@ -92,13 +123,17 @@ class StandaloneTests(unittest.TestCase):
         for row in export['catalogs']['research']:
             if row['appraisal_state'] == 'automated-screen':
                 self.assertIsNone(row['evidenceOrder'])
-        revision = catalog_revision()
+        pin = json.loads((ROOT / 'catalog-export-pin.json').read_text(encoding='utf-8'))
+        revision = pin['source_revision']
         self.assertEqual(revision, export['source_revision'])
         archive = ROOT / 'exports' / (revision + '.json')
+        self.assertEqual(archive.read_bytes(), (SITE / 'data' / 'catalog-export.json').read_bytes())
         self.assertEqual(archive.read_bytes(), (SITE / 'exports' / archive.name).read_bytes())
         self.assertEqual({'research', 'repositories', 'claims', 'charts'}, set(export['catalogs']))
-        for name, catalog in export['catalogs'].items():
-            self.assertEqual(json.loads((SITE / 'data' / (name + '.json')).read_text(encoding='utf-8')), catalog)
+        if pin['inputs_sha256'] == build_export.input_hashes():
+            self.assertEqual(revision, catalog_revision())
+            for name, catalog in export['catalogs'].items():
+                self.assertEqual(json.loads((SITE / 'data' / (name + '.json')).read_text(encoding='utf-8')), catalog)
         self.assertFalse((ROOT / 'docs/workflow-registry.json').exists())
         self.assertFalse((ROOT / 'docs/prompt-library.json').exists())
         charts = export['catalogs']['charts']['latest']['charts']

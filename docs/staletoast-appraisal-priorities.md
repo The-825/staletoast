@@ -2,7 +2,7 @@
 
 **Status:** derived routing projection of the existing ledgers, public-source appraisal routing. It is not a second findings ledger, a scientific confidence score or an adoption recommendation. Assumes Method v2.0 and the named recovery/authority/memory/burden question.
 
-Every one of the 500 paper records and 1000 repository records appears once below. The historical 100-source catalog remains distinct from 400 candidate papers; candidate inclusion here does not promote a finding. Repository coverage includes 230 mechanism screens, 665 automated README relevance screens and 105 portable-only identity records. Automated screens have no appraised mechanism or finding and are not Hot100 selections. The 377 automated paper screens and 665 automated repository screens are intake awaiting appraisal: they share one constant priority group after every appraised record, carry no directness, horizon or finding, and are shown as unappraised. Held sources recorded in the dispositions file are excluded from this projection.
+Every one of the 511 paper records and 1026 repository records appears once below. The historical 100-source catalog remains distinct from 411 candidate papers; candidate inclusion here does not promote a finding. Repository coverage includes 256 mechanism screens, 665 automated README relevance screens and 105 portable-only identity records. Automated screens have no appraised mechanism or finding and are not Hot100 selections. The 377 automated paper screens and 665 automated repository screens are intake awaiting appraisal: they share one constant priority group after every appraised record, carry no directness, horizon or finding, and are shown as unappraised. Held sources recorded in the dispositions file are excluded from this projection.
 
 The [machine-readable projection](staletoast-appraisal-priorities.json) binds hashes of its three source files, using UTF-8 with LF line endings to match committed Git blob content. Rebuild it after any source change. Priority groups order the named claim gaps, then paper directness/horizon or repository review depth/lifecycle. Ties share a dense rank; stable IDs order display only. Stars, citation counts, recency and summed mechanism codes do not decide this priority. Potential to change conclusions is still unknown pending validity review, and family independence is not a rank bonus.
 
@@ -73,6 +73,15 @@ The original research evidence-order chart and dated repository popularity order
 | 20 | C-011 | [An open source machine learning framework for efficient and transparent systematic reviews](https://doi.org/10.1038/s42256-020-00287-7) | candidate-not-promoted; prior-screened-candidate; source-screened | D2 adjacent / technical | CI-004 |
 | 20 | C-012 | [The Automated Systematic Search Deduplicator (ASySD): a rapid, open-source, interoperable tool to remove duplicate citations in biomedical systematic reviews](https://doi.org/10.1186/s12915-023-01686-z) | candidate-not-promoted; prior-screened-candidate; source-screened | D2 adjacent / technical | CI-004 |
 | 20 | C-024 | [RE-Bench: Evaluating frontier AI R&D capabilities of language model agents against human experts](https://arxiv.org/abs/2411.15114v2) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-406 | [When and What to Ask: AskBench and Rubric-Guided RLVR for LLM Clarification](https://aclanthology.org/2026.findings-acl.845/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-407 | [MAC: A Multi-Agent Framework for Interactive User Clarification in Multi-turn Conversations](https://aclanthology.org/2026.iwsds-1.1/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-408 | [Clarify When Necessary: Resolving Ambiguity Through Interaction with LMs](https://aclanthology.org/2025.findings-naacl.306/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-409 | [When Should AI Agents Ask? Clarification Requests Under Limited Human Attention](https://arxiv.org/html/2610.41129v1) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-410 | [Referential ambiguity and clarification requests: comparing human and LLM behaviour](https://aclanthology.org/2025.crac-1.1/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-411 | [Belief Updating and Delegation in Multi-Task Human-AI Interaction](https://arxiv.org/pdf/2602.01986v1) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-412 | [Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives](https://aclanthology.org/2026.acl-long.1756/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-413 | [Diversity and Deliberation in Homogeneous LLM Prediction Polls](https://aclanthology.org/2026.realm-1.85/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-414 | [A Contextual Measure of Ambiguity in Prescriptive Texts](https://aclanthology.org/2026.emnlp-main.2483/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
 | 21 | C-007 | [greCAPTCHA: Assessing Understanding as Evidence of Research Authorship Under Generative AI](https://arxiv.org/abs/2609.20481) | candidate-not-promoted; prior-screened-candidate; source-screened | D2 adjacent / single | CI-017 |
 | 22 | 049 | [Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-017 |
 | 22 | 050 | [Self-Refine: Iterative Refinement with Self-Feedback](https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-017 |
@@ -96,6 +105,8 @@ The original research evidence-order chart and dated repository popularity order
 | 31 | 013 | [The Cybernetic Teammate: A Field Experiment on Generative AI and Teamwork](https://doi.org/10.1287/orsc.2025.20702) | reviewed-catalog; screened-structural; source-screened | D3 target-like / single | CI-002 |
 | 32 | 091 | [ChatDev: Communicative Agents for Software Development](https://aclanthology.org/2024.acl-long.810/) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-002 |
 | 32 | 092 | [AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors](https://arxiv.org/abs/2308.10848) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-002 |
+| 32 | C-415 | [Hidden Configuration Effects on Fairness in LLM-Based Multi-Agent Decision Systems](https://aclanthology.org/2026.emnlp-main.2531/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-002 |
+| 32 | C-416 | [Debate-of-Thoughts: Resolving Knowledge Conflicts in LLMs Through Internal Deliberation](https://aclanthology.org/2026.acl-long.1651/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-002 |
 | 33 | 016 | [Human-AI teaming in healthcare: 1 + 1 > 2?](https://doi.org/10.1038/s44387-025-00052-4) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / not observed | CI-002 |
 | 34 | 058 | [Distributed Cognition: Toward a New Foundation for Human-Computer Interaction Research](https://escholarship.org/uc/item/8sb9s5rm) | reviewed-catalog; screened-structural; source-screened | D0 conceptual / not observed | CI-002 |
 | 35 | 089 | [CAMEL: Communicative Agents for Mind Exploration of Large Scale Language Model Society](https://proceedings.neurips.cc/paper/2023/hash/a3621ee907def47c1b952ade25c67698-Abstract-Conference.html) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-010 |
@@ -747,773 +758,799 @@ The original research evidence-order chart and dated repository popularity order
 | 15 | R-305 | [vitali87/code-graph-rag](https://github.com/vitali87/code-graph-rag) | readme-screened; source-screened | current | CI-011 |
 | 16 | R-279 | [stablyai/orca](https://github.com/stablyai/orca) | readme-screened; source-screened | current | CI-016 |
 | 17 | R-156 | [datopian/portaljs](https://github.com/datopian/portaljs) | readme-screened; source-screened | current | CI-005 |
-| 18 | R-101 | [1771-technologies/lytenyte](https://github.com/1771-technologies/lytenyte) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-106 | [actions/dependency-review-action](https://github.com/actions/dependency-review-action) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-110 | [agent-rl/recall](https://github.com/agent-rl/recall) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-113 | [akullpp/awesome-java](https://github.com/akullpp/awesome-java) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-114 | [alexiocassanifm/anthropic-certifications](https://github.com/alexiocassanifm/anthropic-certifications) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-115 | [amrmkayid/friday](https://github.com/amrmkayid/friday) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-117 | [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-118 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-119 | [anthropics/courses](https://github.com/anthropics/courses) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-120 | [anthropics/skills](https://github.com/anthropics/skills) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-122 | [arkivanov/decompose](https://github.com/arkivanov/decompose) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-123 | [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-125 | [avelino/awesome-go](https://github.com/avelino/awesome-go) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-126 | [aws/serverless-application-model](https://github.com/aws/serverless-application-model) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-127 | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-130 | [binhnguyennus/awesome-scalability](https://github.com/binhnguyennus/awesome-scalability) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-133 | [blakeblackshear/frigate](https://github.com/blakeblackshear/frigate) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-137 | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-139 | [btw-so/open-source-alternatives](https://github.com/btw-so/open-source-alternatives) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-141 | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-143 | [cdmorozov/claude-tutors](https://github.com/cdmorozov/claude-tutors) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-145 | [cloud-custodian/cloud-custodian](https://github.com/cloud-custodian/cloud-custodian) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-146 | [cncf/landscape](https://github.com/cncf/landscape) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-147 | [codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-149 | [composiohq/awesome-claude-skills](https://github.com/composiohq/awesome-claude-skills) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-154 | [datakind/student-success-tool](https://github.com/datakind/student-success-tool) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-155 | [datopian/portal-apple](https://github.com/datopian/portal-apple) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-158 | [dbeaver/dbeaver](https://github.com/dbeaver/dbeaver) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-159 | [decalage2/awesome-security-hardening](https://github.com/decalage2/awesome-security-hardening) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-160 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-161 | [devoteamgcloud/dataform-assertions](https://github.com/devoteamgcloud/dataform-assertions) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-164 | [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-165 | [dovamir/awesome-design-patterns](https://github.com/dovamir/awesome-design-patterns) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-167 | [easystats/report](https://github.com/easystats/report) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-168 | [ebookfoundation/free-programming-books](https://github.com/ebookfoundation/free-programming-books) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-169 | [eriklindernoren/ml-from-scratch](https://github.com/eriklindernoren/ml-from-scratch) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-170 | [etiennepasteur/jean-claude](https://github.com/etiennepasteur/jean-claude) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-172 | [featbit/featbit](https://github.com/featbit/featbit) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-175 | [flowiseai/flowise](https://github.com/flowiseai/flowise) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-181 | [gokumohandas/made-with-ml](https://github.com/gokumohandas/made-with-ml) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-182 | [googlecloudplatform/cloud-data-quality](https://github.com/googlecloudplatform/cloud-data-quality) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-183 | [googlecloudplatform/generative-ai](https://github.com/googlecloudplatform/generative-ai) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-184 | [googlecloudplatform/knowledge-catalog](https://github.com/googlecloudplatform/knowledge-catalog) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-185 | [googlecloudplatform/terraform-google-dataplex-auto-data-quality](https://github.com/googlecloudplatform/terraform-google-dataplex-auto-data-quality) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-187 | [hack-with-github/awesome-hacking](https://github.com/hack-with-github/awesome-hacking) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-189 | [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-192 | [huggingface/transformers](https://github.com/huggingface/transformers) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-195 | [immo2n/friday-ai](https://github.com/immo2n/friday-ai) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-197 | [ismailsaoulaj/reddit-mcp-server](https://github.com/ismailsaoulaj/reddit-mcp-server) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-198 | [jamiepine/voicebox](https://github.com/jamiepine/voicebox) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-199 | [jaspersoft/jasperreports](https://github.com/jaspersoft/jasperreports) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-202 | [jcarterjohnson/vibecoded-design-tells](https://github.com/jcarterjohnson/vibecoded-design-tells) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-203 | [jobsta/reportbro-lib](https://github.com/jobsta/reportbro-lib) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-204 | [julian-ivanov/jarvis-voice-assistant](https://github.com/julian-ivanov/jarvis-voice-assistant) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-205 | [kedacore/keda](https://github.com/kedacore/keda) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-206 | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-209 | [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-211 | [kristenzhang/triggerbench-official](https://github.com/kristenzhang/triggerbench-official) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-214 | [makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-222 | [milvus-io/milvus](https://github.com/milvus-io/milvus) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-223 | [mohammedayanrafiq/friday](https://github.com/mohammedayanrafiq/friday) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-224 | [mono424/punktraster](https://github.com/mono424/punktraster) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-228 | [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-229 | [neeeophytee/agent-stylebooks](https://github.com/neeeophytee/agent-stylebooks) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-232 | [netlify-templates/astro-platform-starter](https://github.com/netlify-templates/astro-platform-starter) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-236 | [nilbuild/developer-roadmap](https://github.com/nilbuild/developer-roadmap) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-238 | [obra/superpowers-skills](https://github.com/obra/superpowers-skills) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-239 | [ollama/ollama](https://github.com/ollama/ollama) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-244 | [ossf/scorecard](https://github.com/ossf/scorecard) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-245 | [ossu/computer-science](https://github.com/ossu/computer-science) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-247 | [papers-we-love/papers-we-love](https://github.com/papers-we-love/papers-we-love) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-249 | [pentaho/pentaho-reporting](https://github.com/pentaho/pentaho-reporting) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-250 | [philterd/phileas](https://github.com/philterd/phileas) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-251 | [pilastdigit/code-with-claude](https://github.com/pilastdigit/code-with-claude) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-253 | [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-255 | [public-apis/public-apis](https://github.com/public-apis/public-apis) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-257 | [rasbt/llms-from-scratch](https://github.com/rasbt/llms-from-scratch) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-259 | [redis/redis](https://github.com/redis/redis) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-261 | [rhysd/actionlint](https://github.com/rhysd/actionlint) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-263 | [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-264 | [rohanadwankar/ws-term](https://github.com/rohanadwankar/ws-term) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-266 | [sagar-tamang/friday-tony-stark-demo](https://github.com/sagar-tamang/friday-tony-stark-demo) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-268 | [sdmg15/best-websites-a-programmer-should-visit](https://github.com/sdmg15/best-websites-a-programmer-should-visit) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-270 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-271 | [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-273 | [sindresorhus/awesome](https://github.com/sindresorhus/awesome) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-275 | [sohailkhan0525/skills](https://github.com/sohailkhan0525/skills) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-276 | [sqlfluff/sqlfluff](https://github.com/sqlfluff/sqlfluff) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-278 | [sruthik27/creating-claude-md](https://github.com/sruthik27/creating-claude-md) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-280 | [stanford-earth/stanford_r25](https://github.com/stanford-earth/stanford_r25) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-281 | [step-security/harden-runner](https://github.com/step-security/harden-runner) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-283 | [sukeesh/jarvis](https://github.com/sukeesh/jarvis) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-284 | [supabase/supabase](https://github.com/supabase/supabase) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-286 | [teng-lin/notebooklm-py](https://github.com/teng-lin/notebooklm-py) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-291 | [thomaspoignant/go-feature-flag](https://github.com/thomaspoignant/go-feature-flag) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-292 | [tiimgreen/github-cheat-sheet](https://github.com/tiimgreen/github-cheat-sheet) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-294 | [tl-its-umich-edu/my-learning-analytics](https://github.com/tl-its-umich-edu/my-learning-analytics) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-295 | [trimstray/the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-296 | [uber/piranha](https://github.com/uber/piranha) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-297 | [unitime/unitime](https://github.com/unitime/unitime) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-298 | [unleash/unleash](https://github.com/unleash/unleash) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-299 | [ussumant/useful-agent-skills](https://github.com/ussumant/useful-agent-skills) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-302 | [vinta/awesome-python](https://github.com/vinta/awesome-python) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-307 | [voltagent/awesome-agent-skills](https://github.com/voltagent/awesome-agent-skills) | source-assessment; source-screened | unknown | unknown |
-| 18 | R-311 | [zizmorcore/zizmor](https://github.com/zizmorcore/zizmor) | source-assessment; source-screened | unknown | unknown |
-| 19 | R-1000 | [crate/crate](https://github.com/crate/crate) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1001 | [Ontos-AI/knowhere](https://github.com/Ontos-AI/knowhere) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1002 | [mozilla-ai/any-agent](https://github.com/mozilla-ai/any-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1003 | [Ricky-7-Yan/intelligent-audit-system](https://github.com/Ricky-7-Yan/intelligent-audit-system) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1004 | [chirpz-ai/pandaprobe](https://github.com/chirpz-ai/pandaprobe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1005 | [NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1006 | [zgcagi/Harness-RSI](https://github.com/zgcagi/Harness-RSI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1007 | [reacher-z/Awesome-CUA](https://github.com/reacher-z/Awesome-CUA) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1008 | [AI45Lab/OpenART](https://github.com/AI45Lab/OpenART) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1009 | [amitshekhariitbhu/ai-agents-tutorial](https://github.com/amitshekhariitbhu/ai-agents-tutorial) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1010 | [alanhuangyoo/crux](https://github.com/alanhuangyoo/crux) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1011 | [yzhao062/awesome-auditable-ai](https://github.com/yzhao062/awesome-auditable-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1012 | [UiPath/coder_eval](https://github.com/UiPath/coder_eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1013 | [hwfengcs/DM-Code-Agent](https://github.com/hwfengcs/DM-Code-Agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1014 | [hidai25/eval-view](https://github.com/hidai25/eval-view) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1015 | [evaleval/every_eval_ever](https://github.com/evaleval/every_eval_ever) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1016 | [NVIDIA-NeMo/nemo-helix](https://github.com/NVIDIA-NeMo/nemo-helix) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1017 | [AMD-AGI/AgentKernelArena](https://github.com/AMD-AGI/AgentKernelArena) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1018 | [deeplethe/fde-gym](https://github.com/deeplethe/fde-gym) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1019 | [Towow-ai/Flowness](https://github.com/Towow-ai/Flowness) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1020 | [Ta0p1/ResolveLab](https://github.com/Ta0p1/ResolveLab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1021 | [coval-ai/benchmarks](https://github.com/coval-ai/benchmarks) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1022 | [thiientv/godmode](https://github.com/thiientv/godmode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1023 | [Calibre-Labs/reforge-ai-evals](https://github.com/Calibre-Labs/reforge-ai-evals) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1024 | [WaseemGhanem98/AgentCheck](https://github.com/WaseemGhanem98/AgentCheck) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1025 | [kling01/human-value-allocation](https://github.com/kling01/human-value-allocation) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1026 | [on-panda/on-panda](https://github.com/on-panda/on-panda) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1027 | [reacher-z/HarnessBench](https://github.com/reacher-z/HarnessBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1028 | [Cre4T3Tiv3/ai-agents-reality-check](https://github.com/Cre4T3Tiv3/ai-agents-reality-check) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1029 | [dokimos-dev/dokimos](https://github.com/dokimos-dev/dokimos) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1030 | [ChaoYue0307/awesome-loop-engineering](https://github.com/ChaoYue0307/awesome-loop-engineering) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1031 | [Kotlin/kotlin-swe-bench](https://github.com/Kotlin/kotlin-swe-bench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1032 | [acoyfellow/cloudbox](https://github.com/acoyfellow/cloudbox) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1033 | [chaosync-org/awesome-ai-agent-testing](https://github.com/chaosync-org/awesome-ai-agent-testing) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1034 | [however-yir/tianji-ai-agent](https://github.com/however-yir/tianji-ai-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1035 | [VectorSpaceLab/AgentSWE](https://github.com/VectorSpaceLab/AgentSWE) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1036 | [datamllab/A2E](https://github.com/datamllab/A2E) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1037 | [kling01/RubricLoop](https://github.com/kling01/RubricLoop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1038 | [ChaoYue0307/awesome-graph-engineering](https://github.com/ChaoYue0307/awesome-graph-engineering) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1039 | [semi-hollow/NanoHarness](https://github.com/semi-hollow/NanoHarness) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-1040 | [SparkBeyond/agentune](https://github.com/SparkBeyond/agentune) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-337 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-338 | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-339 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-340 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-341 | [unclecode/crawl4ai](https://github.com/unclecode/crawl4ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-342 | [bytedance/deer-flow](https://github.com/bytedance/deer-flow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-343 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-344 | [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-345 | [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-346 | [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-347 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-348 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-349 | [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-350 | [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-351 | [ai-job-search-dev/ai-job-search](https://github.com/ai-job-search-dev/ai-job-search) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-352 | [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-353 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-355 | [HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-356 | [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-357 | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-358 | [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-359 | [zhayujie/CowAgent](https://github.com/zhayujie/CowAgent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-360 | [herdrdev/herdr](https://github.com/herdrdev/herdr) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-361 | [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-362 | [wshobson/agents](https://github.com/wshobson/agents) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-363 | [Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-364 | [VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-365 | [ashishpatel26/500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-366 | [JCodesMore/ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-367 | [ItzCrazyKns/Vane](https://github.com/ItzCrazyKns/Vane) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-368 | [agentscope-ai/QwenPaw](https://github.com/agentscope-ai/QwenPaw) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-369 | [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-370 | [Fincept-Corporation/FinceptTerminal](https://github.com/Fincept-Corporation/FinceptTerminal) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-373 | [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-376 | [titanwings/distilly](https://github.com/titanwings/distilly) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-377 | [letta-ai/letta](https://github.com/letta-ai/letta) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-378 | [HKUDS/DeepCode](https://github.com/HKUDS/DeepCode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-379 | [lsdefine/GenericAgent](https://github.com/lsdefine/GenericAgent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-380 | [The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge](https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-381 | [The-Pocket/PocketFlow](https://github.com/The-Pocket/PocketFlow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-382 | [strands-agents/harness-sdk](https://github.com/strands-agents/harness-sdk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-383 | [EvoMap/evolver](https://github.com/EvoMap/evolver) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-384 | [Mai-with-u/MaiBot](https://github.com/Mai-with-u/MaiBot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-385 | [jeinlee1991/chinese-llm-benchmark](https://github.com/jeinlee1991/chinese-llm-benchmark) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-386 | [areal-project/AReaL](https://github.com/areal-project/AReaL) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-387 | [ATH-MaaS/ComfyUI-Copilot](https://github.com/ATH-MaaS/ComfyUI-Copilot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-388 | [pguso/ai-agents-from-scratch](https://github.com/pguso/ai-agents-from-scratch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-389 | [gptme/gptme](https://github.com/gptme/gptme) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-390 | [langroid/langroid](https://github.com/langroid/langroid) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-391 | [shroominic/codeinterpreter-api](https://github.com/shroominic/codeinterpreter-api) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-392 | [THUDM/AgentBench](https://github.com/THUDM/AgentBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-393 | [HolmesGPT/holmesgpt](https://github.com/HolmesGPT/holmesgpt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-394 | [xiaobright/dsh-anchored-standard](https://github.com/xiaobright/dsh-anchored-standard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-395 | [filipecalegario/awesome-generative-ai](https://github.com/filipecalegario/awesome-generative-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-396 | [yilewang/llm-for-zotero](https://github.com/yilewang/llm-for-zotero) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-398 | [genieincodebottle/generative-ai](https://github.com/genieincodebottle/generative-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-399 | [Weizhena/Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-400 | [AGI-Edgerunners/LLM-Agents-Papers](https://github.com/AGI-Edgerunners/LLM-Agents-Papers) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-401 | [SqueezeAILab/LLMCompiler](https://github.com/SqueezeAILab/LLMCompiler) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-402 | [stakpak/agent](https://github.com/stakpak/agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-403 | [asinghcsu/AgenticRAG-Survey](https://github.com/asinghcsu/AgenticRAG-Survey) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-404 | [xingyaoww/code-act](https://github.com/xingyaoww/code-act) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-405 | [jundizhou/easy-stock](https://github.com/jundizhou/easy-stock) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-406 | [AgentEra/Agently](https://github.com/AgentEra/Agently) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-407 | [Mirascope/mirascope](https://github.com/Mirascope/mirascope) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-408 | [myshell-ai/AIlice](https://github.com/myshell-ai/AIlice) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-410 | [hhyqhh/inno-agent](https://github.com/hhyqhh/inno-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-412 | [ongridio/ongrid](https://github.com/ongridio/ongrid) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-413 | [showlab/Awesome-GUI-Agent](https://github.com/showlab/Awesome-GUI-Agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-414 | [ant-research/AntOmniEvo](https://github.com/ant-research/AntOmniEvo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-416 | [Zen4-bit/Proxima](https://github.com/Zen4-bit/Proxima) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-417 | [Xiangyue-Zhang/auto-deep-researcher-24x7](https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-418 | [StreetLamb/tribe](https://github.com/StreetLamb/tribe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-419 | [Pan-Chera/Multi-Agent-CAD](https://github.com/Pan-Chera/Multi-Agent-CAD) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-420 | [mbzuai-oryx/groundingLMM](https://github.com/mbzuai-oryx/groundingLMM) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-422 | [SakanaAI/doc-to-lora](https://github.com/SakanaAI/doc-to-lora) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-423 | [helixml/helix](https://github.com/helixml/helix) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-424 | [AaronWong1999/hermesclaw](https://github.com/AaronWong1999/hermesclaw) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-425 | [AkshitIreddy/Interactive-LLM-Powered-NPCs](https://github.com/AkshitIreddy/Interactive-LLM-Powered-NPCs) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-426 | [mnemon-dev/mnemon](https://github.com/mnemon-dev/mnemon) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-427 | [Gen-Verse/Open-AgentRL](https://github.com/Gen-Verse/Open-AgentRL) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-428 | [ValueByte-AI/Awesome-LLM-in-Social-Science](https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-429 | [AgentEra/Agently-Daily-News-Collector](https://github.com/AgentEra/Agently-Daily-News-Collector) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-430 | [SalesforceAIResearch/xLAM](https://github.com/SalesforceAIResearch/xLAM) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-431 | [ifixai-ai/iFixAi](https://github.com/ifixai-ai/iFixAi) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-432 | [comet-ml/opik](https://github.com/comet-ml/opik) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-433 | [oumi-ai/oumi](https://github.com/oumi-ai/oumi) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-434 | [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-435 | [Q00/ouroboros](https://github.com/Q00/ouroboros) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-436 | [Helicone/helicone](https://github.com/Helicone/helicone) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-437 | [PacktPublishing/LLM-Engineers-Handbook](https://github.com/PacktPublishing/LLM-Engineers-Handbook) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-438 | [EvolvingLMMs-Lab/lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-439 | [hemansnation/AI-Engineer-Headquarters](https://github.com/hemansnation/AI-Engineer-Headquarters) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-440 | [lmnr-ai/lmnr](https://github.com/lmnr-ai/lmnr) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-441 | [future-agi/future-agi](https://github.com/future-agi/future-agi) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-442 | [huggingface/aisheets](https://github.com/huggingface/aisheets) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-443 | [cyberark/FuzzyAI](https://github.com/cyberark/FuzzyAI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-444 | [microsoft/prompty](https://github.com/microsoft/prompty) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-445 | [cvs-health/uqlm](https://github.com/cvs-health/uqlm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-446 | [jwuthri-cloud/Tracely-ai](https://github.com/jwuthri-cloud/Tracely-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-447 | [TIGER-AI-Lab/ClawBench](https://github.com/TIGER-AI-Lab/ClawBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-448 | [xinxuxin/keystone-bench](https://github.com/xinxuxin/keystone-bench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-449 | [JudgmentLabs/judgeval](https://github.com/JudgmentLabs/judgeval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-450 | [benchflow-ai/awesome-evals](https://github.com/benchflow-ai/awesome-evals) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-451 | [superwesleyhys-ux/factcircuit](https://github.com/superwesleyhys-ux/factcircuit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-452 | [darkrishabh/agent-skills-eval](https://github.com/darkrishabh/agent-skills-eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-453 | [keli-wen/agy-staff](https://github.com/keli-wen/agy-staff) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-454 | [v-modal/awesome-jev-tools](https://github.com/v-modal/awesome-jev-tools) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-455 | [overmind-core/overmind](https://github.com/overmind-core/overmind) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-456 | [EverMind-AI/SkillCorpus](https://github.com/EverMind-AI/SkillCorpus) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-457 | [onejune2018/Awesome-LLM-Eval](https://github.com/onejune2018/Awesome-LLM-Eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-458 | [HowieHwong/TrustLLM](https://github.com/HowieHwong/TrustLLM) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-459 | [onyx-dot-app/EnterpriseRAG-Bench](https://github.com/onyx-dot-app/EnterpriseRAG-Bench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-460 | [juanjuandog/FinSight-AI](https://github.com/juanjuandog/FinSight-AI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-461 | [harish-gaggar/mcp-server-gateway](https://github.com/harish-gaggar/mcp-server-gateway) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-462 | [relari-ai/continuous-eval](https://github.com/relari-ai/continuous-eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-463 | [OmniJev/awesome-jev-gallery](https://github.com/OmniJev/awesome-jev-gallery) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-464 | [BichengWang/ai-decision-system](https://github.com/BichengWang/ai-decision-system) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-465 | [wanghao-SunSky/cs329z-chinese](https://github.com/wanghao-SunSky/cs329z-chinese) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-466 | [scaleapi/agentenv-framework](https://github.com/scaleapi/agentenv-framework) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-467 | [ukanwat/overtime](https://github.com/ukanwat/overtime) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-468 | [verifywise-ai/verifywise](https://github.com/verifywise-ai/verifywise) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-469 | [alphadl/AdaRubrics](https://github.com/alphadl/AdaRubrics) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-470 | [JonathanChavezTamales/llm-leaderboard](https://github.com/JonathanChavezTamales/llm-leaderboard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-471 | [palico-ai/palico-ai](https://github.com/palico-ai/palico-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-472 | [PetroIvaniuk/llms-tools](https://github.com/PetroIvaniuk/llms-tools) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-473 | [OpenBMB/UltraEval-Audio](https://github.com/OpenBMB/UltraEval-Audio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-474 | [ktwu01/benchmark-radar](https://github.com/ktwu01/benchmark-radar) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-475 | [Danielxu0208/rsi_eval](https://github.com/Danielxu0208/rsi_eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-476 | [aaron-for-value/VeriRun](https://github.com/aaron-for-value/VeriRun) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-477 | [Continuum-AI-Corp/OrcaReplay](https://github.com/Continuum-AI-Corp/OrcaReplay) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-478 | [Tencent/WeKnora](https://github.com/Tencent/WeKnora) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-479 | [open-compass/opencompass](https://github.com/open-compass/opencompass) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-480 | [langwatch/langwatch](https://github.com/langwatch/langwatch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-481 | [open-compass/VLMEvalKit](https://github.com/open-compass/VLMEvalKit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-482 | [modelscope/evalscope](https://github.com/modelscope/evalscope) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-483 | [ianarawjo/ChainForge](https://github.com/ianarawjo/ChainForge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-484 | [huggingface/lighteval](https://github.com/huggingface/lighteval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-485 | [1517005260/graph-rag-agent](https://github.com/1517005260/graph-rag-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-486 | [Xnhyacinth/Awesome-LLM-Long-Context-Modeling](https://github.com/Xnhyacinth/Awesome-LLM-Long-Context-Modeling) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-487 | [huggingface/evaluation-guidebook](https://github.com/huggingface/evaluation-guidebook) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-488 | [trpc-group/trpc-agent-go](https://github.com/trpc-group/trpc-agent-go) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-489 | [onestardao/WFGY](https://github.com/onestardao/WFGY) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-490 | [SmartFlowAI/EmoLLM](https://github.com/SmartFlowAI/EmoLLM) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-491 | [MLGroupJLU/LLM-eval-survey](https://github.com/MLGroupJLU/LLM-eval-survey) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-492 | [NVIDIA-NeMo/Gym](https://github.com/NVIDIA-NeMo/Gym) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-493 | [ScalingIntelligence/KernelBench](https://github.com/ScalingIntelligence/KernelBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-494 | [chunxiaoxx/nautilus-compass](https://github.com/chunxiaoxx/nautilus-compass) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-495 | [prometheus-eval/prometheus-eval](https://github.com/prometheus-eval/prometheus-eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-496 | [agentscope-ai/OpenJudge](https://github.com/agentscope-ai/OpenJudge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-497 | [suyoumo/ClawProBench](https://github.com/suyoumo/ClawProBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-498 | [ModelTC/LightCompress](https://github.com/ModelTC/LightCompress) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-499 | [robocurve/inspect-robots](https://github.com/robocurve/inspect-robots) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-500 | [chrisliu298/awesome-llm-unlearning](https://github.com/chrisliu298/awesome-llm-unlearning) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-501 | [run-llama/ParseBench](https://github.com/run-llama/ParseBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-502 | [DocAILab/XRAG](https://github.com/DocAILab/XRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-503 | [MMMU-Benchmark/MMMU](https://github.com/MMMU-Benchmark/MMMU) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-504 | [facebookresearch/meta-agents-research-environments](https://github.com/facebookresearch/meta-agents-research-environments) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-505 | [SeekingDream/Static-to-Dynamic-LLMEval](https://github.com/SeekingDream/Static-to-Dynamic-LLMEval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-506 | [CodeSoul-co/Hypha](https://github.com/CodeSoul-co/Hypha) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-507 | [TIGER-AI-Lab/MMLU-Pro](https://github.com/TIGER-AI-Lab/MMLU-Pro) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-508 | [ByteDance-Seed/EvaLearn](https://github.com/ByteDance-Seed/EvaLearn) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-509 | [microsoft/genaiops-promptflow-template](https://github.com/microsoft/genaiops-promptflow-template) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-510 | [Ayanami0730/arag](https://github.com/Ayanami0730/arag) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-511 | [langfuse/skills](https://github.com/langfuse/skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-512 | [microsoft/rag-experiment-accelerator](https://github.com/microsoft/rag-experiment-accelerator) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-513 | [rentruewang/bocoel](https://github.com/rentruewang/bocoel) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-514 | [InternScience/ResearchClawBench](https://github.com/InternScience/ResearchClawBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-515 | [CAS-SIAT-XinHai/CPsyCoun](https://github.com/CAS-SIAT-XinHai/CPsyCoun) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-516 | [strands-agents/evals](https://github.com/strands-agents/evals) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-517 | [lechmazur/nyt-connections](https://github.com/lechmazur/nyt-connections) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-518 | [arklexai/arksim](https://github.com/arklexai/arksim) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-519 | [datawhalechina/code-your-own-llm](https://github.com/datawhalechina/code-your-own-llm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-520 | [rungalileo/agent-leaderboard](https://github.com/rungalileo/agent-leaderboard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-521 | [SeekingDream/DyCodeEval](https://github.com/SeekingDream/DyCodeEval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-522 | [kaistAI/FLASK](https://github.com/kaistAI/FLASK) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-523 | [MMStar-Benchmark/MMStar](https://github.com/MMStar-Benchmark/MMStar) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-524 | [IBM/unitxt](https://github.com/IBM/unitxt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-525 | [open-webui/open-webui](https://github.com/open-webui/open-webui) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-526 | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-527 | [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-528 | [datawhalechina/hello-agents](https://github.com/datawhalechina/hello-agents) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-529 | [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-530 | [pathwaycom/serviette](https://github.com/pathwaycom/serviette) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-531 | [bojieli/ai-agent-book](https://github.com/bojieli/ai-agent-book) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-532 | [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-533 | [The-Vibe-Company/quivr](https://github.com/The-Vibe-Company/quivr) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-534 | [chatchat-space/Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-535 | [khoj-ai/khoj](https://github.com/khoj-ai/khoj) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-536 | [datawhalechina/happy-llm](https://github.com/datawhalechina/happy-llm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-537 | [ScrapeGraphAI/Scrapegraph-ai](https://github.com/ScrapeGraphAI/Scrapegraph-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-538 | [NirDiamant/RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-539 | [opendataloader-project/opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-540 | [labring/FastGPT](https://github.com/labring/FastGPT) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-541 | [simstudioai/sim](https://github.com/simstudioai/sim) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-542 | [Cinnamon/kotaemon](https://github.com/Cinnamon/kotaemon) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-543 | [NirDiamant/GenAI_Agents](https://github.com/NirDiamant/GenAI_Agents) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-544 | [1Panel-dev/MaxKB](https://github.com/1Panel-dev/MaxKB) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-545 | [dipakkr/awesome-ai-engineering](https://github.com/dipakkr/awesome-ai-engineering) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-546 | [NirDiamant/agents-towards-production](https://github.com/NirDiamant/agents-towards-production) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-547 | [coze-dev/coze-studio](https://github.com/coze-dev/coze-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-548 | [eosphoros-ai/DB-GPT](https://github.com/eosphoros-ai/DB-GPT) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-549 | [elizaOS/eliza](https://github.com/elizaOS/eliza) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-550 | [xerj-org/xerj](https://github.com/xerj-org/xerj) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-551 | [langbot-app/LangBot](https://github.com/langbot-app/LangBot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-552 | [arc53/DocsGPT](https://github.com/arc53/DocsGPT) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-553 | [Canner/WrenAI](https://github.com/Canner/WrenAI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-554 | [RyanCodrai/turbovec](https://github.com/RyanCodrai/turbovec) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-555 | [MemoriLabs/Memori](https://github.com/MemoriLabs/Memori) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-556 | [MODSetter/SurfSense](https://github.com/MODSetter/SurfSense) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-557 | [alibaba/zvec](https://github.com/alibaba/zvec) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-558 | [stanford-oval/storm](https://github.com/stanford-oval/storm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-559 | [llmware-ai/llmware](https://github.com/llmware-ai/llmware) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-560 | [StarTrail-org/LEANN](https://github.com/StarTrail-org/LEANN) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-561 | [simular-ai/Agent-S](https://github.com/simular-ai/Agent-S) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-562 | [FlagOpen/FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-563 | [LearningCircuit/local-deep-research](https://github.com/LearningCircuit/local-deep-research) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-564 | [WangRongsheng/awesome-LLM-resources](https://github.com/WangRongsheng/awesome-LLM-resources) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-565 | [TaskingAI/TaskingAI](https://github.com/TaskingAI/TaskingAI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-566 | [Marker-Inc-Korea/AutoRAG](https://github.com/Marker-Inc-Korea/AutoRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-567 | [GiovanniPasq/agentic-rag-for-dummies](https://github.com/GiovanniPasq/agentic-rag-for-dummies) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-568 | [NVIDIA/GenerativeAIExamples](https://github.com/NVIDIA/GenerativeAIExamples) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-569 | [bragai/bRAG-langchain](https://github.com/bragai/bRAG-langchain) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-570 | [RUC-NLPIR/FlashRAG](https://github.com/RUC-NLPIR/FlashRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-571 | [HKUDS/VideoRAG](https://github.com/HKUDS/VideoRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-572 | [superlinked/sie](https://github.com/superlinked/sie) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-573 | [qdrant/fastembed](https://github.com/qdrant/fastembed) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-574 | [swirlai/swirl-search](https://github.com/swirlai/swirl-search) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-575 | [illuin-tech/colpali](https://github.com/illuin-tech/colpali) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-576 | [devflowinc/trieve](https://github.com/devflowinc/trieve) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-577 | [DEEP-PolyU/Awesome-GraphRAG](https://github.com/DEEP-PolyU/Awesome-GraphRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-578 | [vearch/vearch](https://github.com/vearch/vearch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-579 | [samchon/nestia](https://github.com/samchon/nestia) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-580 | [HKUDS/MiniRAG](https://github.com/HKUDS/MiniRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-581 | [Andrew-Jang/RAGHub](https://github.com/Andrew-Jang/RAGHub) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-582 | [NVIDIA-AI-Blueprints/video-search-and-summarization](https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-583 | [BAI-LAB/MemoryOS](https://github.com/BAI-LAB/MemoryOS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-584 | [felladrin/awesome-ai-web-search](https://github.com/felladrin/awesome-ai-web-search) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-585 | [KalyanKS-NLP/rag-zero-to-hero-guide](https://github.com/KalyanKS-NLP/rag-zero-to-hero-guide) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-586 | [Danielskry/Awesome-RAG](https://github.com/Danielskry/Awesome-RAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-587 | [jxzhangjhu/Awesome-LLM-RAG](https://github.com/jxzhangjhu/Awesome-LLM-RAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-588 | [SmythOS/sre](https://github.com/SmythOS/sre) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-589 | [gomate-community/TrustRAG](https://github.com/gomate-community/TrustRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-590 | [superlinear-ai/raglite](https://github.com/superlinear-ai/raglite) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-591 | [NovaSearch-Team/RAG-Retrieval](https://github.com/NovaSearch-Team/RAG-Retrieval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-592 | [EmbeddedLLM/JamAIBase](https://github.com/EmbeddedLLM/JamAIBase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-593 | [philippgille/chromem-go](https://github.com/philippgille/chromem-go) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-594 | [anush008/fastembed-rs](https://github.com/anush008/fastembed-rs) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-595 | [PrithivirajDamodaran/FlashRank](https://github.com/PrithivirajDamodaran/FlashRank) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-596 | [souvikmajumder26/Multi-Agent-Medical-Assistant](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-597 | [louisfb01/start-llms](https://github.com/louisfb01/start-llms) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-598 | [OpenBMB/VisRAG](https://github.com/OpenBMB/VisRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-599 | [Raudaschl/rag-fusion](https://github.com/Raudaschl/rag-fusion) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-600 | [weiwill88/Local_Pdf_Chat_RAG](https://github.com/weiwill88/Local_Pdf_Chat_RAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-601 | [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-602 | [mksglu/context-mode](https://github.com/mksglu/context-mode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-603 | [nanocoai/nanoclaw](https://github.com/nanocoai/nanoclaw) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-604 | [TencentCloud/TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-605 | [EverMind-AI/EverOS](https://github.com/EverMind-AI/EverOS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-606 | [holaboss-ai/holaOS](https://github.com/holaboss-ai/holaOS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-607 | [MervinPraison/PraisonAI](https://github.com/MervinPraison/PraisonAI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-608 | [Gentleman-Programming/gentle-ai](https://github.com/Gentleman-Programming/gentle-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-609 | [osaurus-ai/osaurus](https://github.com/osaurus-ai/osaurus) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-610 | [plastic-labs/honcho](https://github.com/plastic-labs/honcho) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-611 | [Gentleman-Programming/engram](https://github.com/Gentleman-Programming/engram) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-612 | [liliMozi/openhanako](https://github.com/liliMozi/openhanako) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-613 | [outsourc-e/hermes-workspace](https://github.com/outsourc-e/hermes-workspace) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-614 | [Anil-matcha/open-duet](https://github.com/Anil-matcha/open-duet) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-615 | [ModelEngine-Group/nexent](https://github.com/ModelEngine-Group/nexent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-616 | [macro-inc/macro](https://github.com/macro-inc/macro) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-617 | [0xNyk/awesome-hermes-agent](https://github.com/0xNyk/awesome-hermes-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-618 | [breferrari/obsidian-mind](https://github.com/breferrari/obsidian-mind) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-619 | [eugeniughelbur/obsidian-second-brain](https://github.com/eugeniughelbur/obsidian-second-brain) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-620 | [ai-boost/awesome-harness-engineering](https://github.com/ai-boost/awesome-harness-engineering) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-621 | [ruvnet/RuVector](https://github.com/ruvnet/RuVector) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-622 | [memgraph/memgraph](https://github.com/memgraph/memgraph) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-623 | [panaversity/learn-agentic-ai](https://github.com/panaversity/learn-agentic-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-624 | [tigerless-labs/agent-memory](https://github.com/tigerless-labs/agent-memory) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-625 | [code-yeongyu/lazycodex](https://github.com/code-yeongyu/lazycodex) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-626 | [aiming-lab/SimpleMem](https://github.com/aiming-lab/SimpleMem) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-627 | [agentscope-ai/ReMe](https://github.com/agentscope-ai/ReMe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-628 | [Ar9av/obsidian-wiki](https://github.com/Ar9av/obsidian-wiki) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-629 | [Mirix-AI/MIRIX](https://github.com/Mirix-AI/MIRIX) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-630 | [MemMachine/MemMachine](https://github.com/MemMachine/MemMachine) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-631 | [Asymptote-Labs/agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-632 | [MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials](https://github.com/MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-633 | [moltis-org/moltis](https://github.com/moltis-org/moltis) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-634 | [rohitg00/pro-workflow](https://github.com/rohitg00/pro-workflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-635 | [compozy/compozy](https://github.com/compozy/compozy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-636 | [xzf-thu/VoiceMem](https://github.com/xzf-thu/VoiceMem) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-637 | [zilliztech/memsearch](https://github.com/zilliztech/memsearch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-638 | [felinics/Memoh](https://github.com/felinics/Memoh) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-639 | [kingjulio8238/Memary](https://github.com/kingjulio8238/Memary) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-640 | [griptape-ai/griptape](https://github.com/griptape-ai/griptape) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-641 | [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-642 | [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-643 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-644 | [conductor-oss/conductor](https://github.com/conductor-oss/conductor) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-645 | [Budibase/budibase](https://github.com/Budibase/budibase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-646 | [enescingoz/awesome-n8n-templates](https://github.com/enescingoz/awesome-n8n-templates) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-647 | [activepieces/activepieces](https://github.com/activepieces/activepieces) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-648 | [temporalio/temporal](https://github.com/temporalio/temporal) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-649 | [HBAI-Ltd/Toonflow-app](https://github.com/HBAI-Ltd/Toonflow-app) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-650 | [cft0808/edict](https://github.com/cft0808/edict) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-652 | [keephq/keep](https://github.com/keephq/keep) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-653 | [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-654 | [cadence-workflow/cadence](https://github.com/cadence-workflow/cadence) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-655 | [bytedance/flowgram.ai](https://github.com/bytedance/flowgram.ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-656 | [superplanehq/superplane](https://github.com/superplanehq/superplane) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-657 | [Osmantic/ODS](https://github.com/Osmantic/ODS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-658 | [czlonkowski/n8n-skills](https://github.com/czlonkowski/n8n-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-659 | [breaking-brake/cc-wf-studio](https://github.com/breaking-brake/cc-wf-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-660 | [ScrapeCreators/social-media-research-skills](https://github.com/ScrapeCreators/social-media-research-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-661 | [Agenta-AI/agenta](https://github.com/Agenta-AI/agenta) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-662 | [AlexAnys/awesome-openclaw-usecases-zh](https://github.com/AlexAnys/awesome-openclaw-usecases-zh) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-663 | [composio-community/open-claude-cowork](https://github.com/composio-community/open-claude-cowork) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-664 | [foryourhealth111-pixel/Vibe-Skills](https://github.com/foryourhealth111-pixel/Vibe-Skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-665 | [Arcenox-co/TickerQ](https://github.com/Arcenox-co/TickerQ) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-666 | [KhazP/vibe-coding-prompt-template](https://github.com/KhazP/vibe-coding-prompt-template) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-667 | [MaxMiksa/Autonomous-Company](https://github.com/MaxMiksa/Autonomous-Company) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-668 | [lowdefy/lowdefy](https://github.com/lowdefy/lowdefy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-669 | [yaojingang/yao-meta-skill](https://github.com/yaojingang/yao-meta-skill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-670 | [wanikua/danghuangshang](https://github.com/wanikua/danghuangshang) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-671 | [argoproj/argo-events](https://github.com/argoproj/argo-events) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-672 | [moazbuilds/CodeMachine-CLI](https://github.com/moazbuilds/CodeMachine-CLI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-673 | [shepherd-agents/shepherd](https://github.com/shepherd-agents/shepherd) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-674 | [pydoit/doit](https://github.com/pydoit/doit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-675 | [OpenAdaptAI/OpenAdapt](https://github.com/OpenAdaptAI/OpenAdapt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-676 | [codeaholicguy/ai-devkit](https://github.com/codeaholicguy/ai-devkit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-677 | [869413421/ai-moive-studio](https://github.com/869413421/ai-moive-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-678 | [EtienneLescot/n8n-as-code](https://github.com/EtienneLescot/n8n-as-code) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-679 | [rulego/rulego](https://github.com/rulego/rulego) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-680 | [najmuzzaman-mohammad/gawkbot](https://github.com/najmuzzaman-mohammad/gawkbot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-681 | [nocode-js/sequential-workflow-designer](https://github.com/nocode-js/sequential-workflow-designer) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-682 | [ovh/utask](https://github.com/ovh/utask) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-683 | [amplifthq/openmeld](https://github.com/amplifthq/openmeld) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-684 | [qdhenry/Claude-Command-Suite](https://github.com/qdhenry/Claude-Command-Suite) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-685 | [durable-workflow/workflow](https://github.com/durable-workflow/workflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-686 | [heymrun/heym](https://github.com/heymrun/heym) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-687 | [dariubs/awesome-workflow-automation](https://github.com/dariubs/awesome-workflow-automation) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-688 | [Spielewoy/autoprompt-skill](https://github.com/Spielewoy/autoprompt-skill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-690 | [bubblelabai/BubbleLab](https://github.com/bubblelabai/BubbleLab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-691 | [openops-cloud/openops](https://github.com/openops-cloud/openops) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-692 | [bytechefhq/bytechef](https://github.com/bytechefhq/bytechef) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-693 | [kdlbs/kandev](https://github.com/kdlbs/kandev) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-694 | [Evolink-AI/awesome-openclaw-usecases-moltbook](https://github.com/Evolink-AI/awesome-openclaw-usecases-moltbook) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-695 | [apache/airflow](https://github.com/apache/airflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-696 | [dapr/dapr](https://github.com/dapr/dapr) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-697 | [nocobase/nocobase](https://github.com/nocobase/nocobase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-698 | [windmill-labs/windmill](https://github.com/windmill-labs/windmill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-699 | [argoproj/argo-workflows](https://github.com/argoproj/argo-workflows) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-700 | [dtm-labs/dtm](https://github.com/dtm-labs/dtm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-701 | [flowable/flowable-engine](https://github.com/flowable/flowable-engine) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-702 | [iflytek/astron-agent](https://github.com/iflytek/astron-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-704 | [danielgerlag/workflow-core](https://github.com/danielgerlag/workflow-core) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-705 | [devtron-labs/devtron](https://github.com/devtron-labs/devtron) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-706 | [ergo-services/ergo](https://github.com/ergo-services/ergo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-707 | [restatedev/restate](https://github.com/restatedev/restate) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-708 | [dagucloud/dagu](https://github.com/dagucloud/dagu) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-709 | [azkaban/azkaban](https://github.com/azkaban/azkaban) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-710 | [camunda/camunda](https://github.com/camunda/camunda) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-711 | [Netflix/maestro](https://github.com/Netflix/maestro) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-712 | [nextflow-io/nextflow](https://github.com/nextflow-io/nextflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-713 | [viewflow/viewflow](https://github.com/viewflow/viewflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-714 | [akuity/awesome-argo](https://github.com/akuity/awesome-argo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-715 | [blackholll/loonflow](https://github.com/blackholll/loonflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-716 | [galaxyproject/galaxy](https://github.com/galaxyproject/galaxy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-717 | [dbos-inc/dbos-transact-ts](https://github.com/dbos-inc/dbos-transact-ts) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-718 | [s8sg/goflow](https://github.com/s8sg/goflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-719 | [TencentBlueKing/bk-sops](https://github.com/TencentBlueKing/bk-sops) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-720 | [scipipe/scipipe](https://github.com/scipipe/scipipe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-721 | [temporalio/sdk-go](https://github.com/temporalio/sdk-go) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-722 | [optimajet/WorkflowEngine.NET](https://github.com/optimajet/WorkflowEngine.NET) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-723 | [alikon-art/DeterminFlow](https://github.com/alikon-art/DeterminFlow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-724 | [couler-proj/couler](https://github.com/couler-proj/couler) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-725 | [commsor/titanoboa](https://github.com/commsor/titanoboa) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-726 | [besley/Slickflow](https://github.com/besley/Slickflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-727 | [risesoft-y9/WorkFlow-Engine](https://github.com/risesoft-y9/WorkFlow-Engine) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-728 | [dbos-inc/dbos-transact-golang](https://github.com/dbos-inc/dbos-transact-golang) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-729 | [aelassas/wexflow](https://github.com/aelassas/wexflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-730 | [nipy/nipype](https://github.com/nipy/nipype) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-731 | [runabol/tork](https://github.com/runabol/tork) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-732 | [obeli-sk/obelisk](https://github.com/obeli-sk/obelisk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-733 | [indeedeng/iwf](https://github.com/indeedeng/iwf) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-734 | [sbhooley/ainativelang](https://github.com/sbhooley/ainativelang) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-735 | [openinterpreter/openinterpreter](https://github.com/openinterpreter/openinterpreter) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-736 | [codewhale-hq/Codewhale](https://github.com/codewhale-hq/Codewhale) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-737 | [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-738 | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-739 | [1jehuang/jcode](https://github.com/1jehuang/jcode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-740 | [NanmiCoder/cc-haha](https://github.com/NanmiCoder/cc-haha) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-741 | [YaoApp/yao](https://github.com/YaoApp/yao) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-742 | [algorithmicsuperintelligence/openevolve](https://github.com/algorithmicsuperintelligence/openevolve) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-743 | [vastsa/PI-Desktop](https://github.com/vastsa/PI-Desktop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-744 | [anus-dev/ANUS](https://github.com/anus-dev/ANUS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-745 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-746 | [KunAgent/Kun](https://github.com/KunAgent/Kun) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-747 | [google/agents-cli](https://github.com/google/agents-cli) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-748 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-749 | [cloudflare/vibesdk](https://github.com/cloudflare/vibesdk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-750 | [nexu-io/html-video](https://github.com/nexu-io/html-video) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-751 | [kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-752 | [CommandCodeAI/command-code](https://github.com/CommandCodeAI/command-code) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-753 | [microsoft/TokenEconomizer](https://github.com/microsoft/TokenEconomizer) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-754 | [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-755 | [tutti-os/tutti](https://github.com/tutti-os/tutti) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-756 | [HarnessRouter/harnessrouter](https://github.com/HarnessRouter/harnessrouter) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-757 | [Windy3f3f3f3f/how-claude-code-works](https://github.com/Windy3f3f3f3f/how-claude-code-works) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-758 | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-759 | [SeemSeam/claude_codex_bridge](https://github.com/SeemSeam/claude_codex_bridge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-760 | [superagent-ai/grok-cli](https://github.com/superagent-ai/grok-cli) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-761 | [zeronsh/zeron](https://github.com/zeronsh/zeron) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-762 | [fuxicodex/Fuxi](https://github.com/fuxicodex/Fuxi) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-764 | [cocoindex-io/cocoindex-code](https://github.com/cocoindex-io/cocoindex-code) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-765 | [DSH-APP/DSHA](https://github.com/DSH-APP/DSHA) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-766 | [teaql/teaql-agent-kit](https://github.com/teaql/teaql-agent-kit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-767 | [Windy3f3f3f3f/claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-768 | [itayinbarr/little-coder](https://github.com/itayinbarr/little-coder) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-769 | [NeuralNomadsAI/CodeNomad](https://github.com/NeuralNomadsAI/CodeNomad) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-770 | [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-771 | [CoderLuii/HolyClaude](https://github.com/CoderLuii/HolyClaude) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-772 | [amElnagdy/delegate-skills](https://github.com/amElnagdy/delegate-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-773 | [777genius/agent-teams-ai](https://github.com/777genius/agent-teams-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-774 | [OpenCoworkAI/open-cowork](https://github.com/OpenCoworkAI/open-cowork) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-775 | [inferstep/ATLAS](https://github.com/inferstep/ATLAS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-776 | [happier-dev/happier](https://github.com/happier-dev/happier) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-777 | [nimbalyst/nimbalyst](https://github.com/nimbalyst/nimbalyst) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-778 | [kenryu42/cc-safety-net](https://github.com/kenryu42/cc-safety-net) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-779 | [he-yufeng/CoreCoder](https://github.com/he-yufeng/CoreCoder) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-780 | [aoci-spec/aoci-code](https://github.com/aoci-spec/aoci-code) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-781 | [Twigpine/zero](https://github.com/Twigpine/zero) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-782 | [gi-dellav/zerostack](https://github.com/gi-dellav/zerostack) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-783 | [DataTalksClub/ai-dev-tools-zoomcamp](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-784 | [morganlinton/BeautifulRust](https://github.com/morganlinton/BeautifulRust) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-785 | [LodyAI/Lody](https://github.com/LodyAI/Lody) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-786 | [nicobailon/pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-787 | [razzant/ouroboros](https://github.com/razzant/ouroboros) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-791 | [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-792 | [openai/codex-security](https://github.com/openai/codex-security) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-794 | [beenuar/AiSOC](https://github.com/beenuar/AiSOC) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-795 | [FlorianBruniaux/claude-code-ultimate-guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-798 | [nolabs-ai/nono](https://github.com/nolabs-ai/nono) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-799 | [yvgude/lean-ctx](https://github.com/yvgude/lean-ctx) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-801 | [skills/secure-code-game](https://github.com/skills/secure-code-game) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-802 | [Kritt-ai/open-kritt](https://github.com/Kritt-ai/open-kritt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-804 | [stacklok/toolhive](https://github.com/stacklok/toolhive) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-805 | [ai-for-developers/awesome-ai-coding-tools](https://github.com/ai-for-developers/awesome-ai-coding-tools) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-806 | [uber/ADR](https://github.com/uber/ADR) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-808 | [akto-api-security/akto](https://github.com/akto-api-security/akto) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-811 | [tophant-ai/aibeat](https://github.com/tophant-ai/aibeat) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-812 | [utkusen/sast-skills](https://github.com/utkusen/sast-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-813 | [pashov/skills](https://github.com/pashov/skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-814 | [utkusen/promptmap](https://github.com/utkusen/promptmap) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-816 | [mrwadams/attackgen](https://github.com/mrwadams/attackgen) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-818 | [THUYimingLi/backdoor-learning-resources](https://github.com/THUYimingLi/backdoor-learning-resources) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-820 | [mrwadams/stride-gpt](https://github.com/mrwadams/stride-gpt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-821 | [splx-ai/agentic-radar](https://github.com/splx-ai/agentic-radar) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-822 | [hashgraph-online/hol-guard](https://github.com/hashgraph-online/hol-guard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-823 | [Pantheon-Security/medusa](https://github.com/Pantheon-Security/medusa) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-824 | [reconmap/reconmap](https://github.com/reconmap/reconmap) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-825 | [Commando-X/vuln-bank](https://github.com/Commando-X/vuln-bank) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-826 | [pipelab-org/pipelock](https://github.com/pipelab-org/pipelock) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-828 | [toby-bridges/api-relay-audit](https://github.com/toby-bridges/api-relay-audit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-829 | [h5i-dev/h5i](https://github.com/h5i-dev/h5i) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-830 | [asamassekou10/ship-safe](https://github.com/asamassekou10/ship-safe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-831 | [Yeti-791/Tsec-Hackathon](https://github.com/Yeti-791/Tsec-Hackathon) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-832 | [FrancescoStabile/numasec](https://github.com/FrancescoStabile/numasec) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-834 | [arcjet/arcjet-js](https://github.com/arcjet/arcjet-js) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-835 | [jagmarques/asqav-sdk](https://github.com/jagmarques/asqav-sdk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-836 | [DrHazemAli/enterprise-system-design](https://github.com/DrHazemAli/enterprise-system-design) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-837 | [pashov/ai-web3-security](https://github.com/pashov/ai-web3-security) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-838 | [emiliaprotocol/emilia-protocol](https://github.com/emiliaprotocol/emilia-protocol) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-839 | [secureagentics/Adrian](https://github.com/secureagentics/Adrian) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-840 | [KeyValueSoftwareSystems/agent-opfor](https://github.com/KeyValueSoftwareSystems/agent-opfor) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-841 | [alex-ilgayev/MCPSpy](https://github.com/alex-ilgayev/MCPSpy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-842 | [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-843 | [maximhq/bifrost](https://github.com/maximhq/bifrost) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-844 | [mnfst/llm-gateway](https://github.com/mnfst/llm-gateway) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-845 | [FailproofAI/failproofai](https://github.com/FailproofAI/failproofai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-846 | [coze-dev/coze-loop](https://github.com/coze-dev/coze-loop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-847 | [latitude-dev/latitude-llm](https://github.com/latitude-dev/latitude-llm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-848 | [traceroot-ai/traceroot](https://github.com/traceroot-ai/traceroot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-849 | [ThinkWatchProject/ThinkWatch](https://github.com/ThinkWatchProject/ThinkWatch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-850 | [Abilityai/trinity](https://github.com/Abilityai/trinity) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-851 | [comet-ml/opik-openclaw](https://github.com/comet-ml/opik-openclaw) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-852 | [databufflabs/databuff](https://github.com/databufflabs/databuff) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-853 | [ThinkWatchProject/ThinkWatch-Lite](https://github.com/ThinkWatchProject/ThinkWatch-Lite) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-854 | [Justin0504/Aegis](https://github.com/Justin0504/Aegis) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-855 | [vivekchand/clawmetry](https://github.com/vivekchand/clawmetry) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-856 | [evilmartians/agent-prism](https://github.com/evilmartians/agent-prism) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-857 | [taichuy/1flowbase](https://github.com/taichuy/1flowbase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-858 | [alibaba/loongsuite-pilot](https://github.com/alibaba/loongsuite-pilot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-859 | [comet-ml/opik-mcp](https://github.com/comet-ml/opik-mcp) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-860 | [scasella/claude-flightdeck](https://github.com/scasella/claude-flightdeck) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-861 | [QuesmaOrg/awesome-ai-tokenomics](https://github.com/QuesmaOrg/awesome-ai-tokenomics) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-862 | [douglasmonsky/codex-usage-tracker](https://github.com/douglasmonsky/codex-usage-tracker) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-863 | [splunk/token-meter](https://github.com/splunk/token-meter) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-864 | [sina2266/Gozar](https://github.com/sina2266/Gozar) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-865 | [cyberark/agentwatch](https://github.com/cyberark/agentwatch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-866 | [tma1-ai/tma1](https://github.com/tma1-ai/tma1) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-867 | [Necmttn/ax](https://github.com/Necmttn/ax) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-868 | [inferock/inferock-bench](https://github.com/inferock/inferock-bench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-869 | [Netis/heron](https://github.com/Netis/heron) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-870 | [radicalbit/radicalbit-ai-monitoring](https://github.com/radicalbit/radicalbit-ai-monitoring) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-871 | [shyftlabs/continuum](https://github.com/shyftlabs/continuum) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-872 | [vstorm-co/agentcanvas](https://github.com/vstorm-co/agentcanvas) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-873 | [TaewoooPark/Agent-Blackbox](https://github.com/TaewoooPark/Agent-Blackbox) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-874 | [Sheltercosmo/Rilldex-RL-Studio](https://github.com/Sheltercosmo/Rilldex-RL-Studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-875 | [last9/gpu-telemetry](https://github.com/last9/gpu-telemetry) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-876 | [langfuse/langfuse-java](https://github.com/langfuse/langfuse-java) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-877 | [dunetrace/dunetrace](https://github.com/dunetrace/dunetrace) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-878 | [ByteYellow/AgentProvenance](https://github.com/ByteYellow/AgentProvenance) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-879 | [langfuse/langfuse-workshop](https://github.com/langfuse/langfuse-workshop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-880 | [myscale/myscale-telemetry](https://github.com/myscale/myscale-telemetry) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-881 | [alizahidraja/isnad](https://github.com/alizahidraja/isnad) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-882 | [ewsun22/codex-manager](https://github.com/ewsun22/codex-manager) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-883 | [nujovich/hermes-telemetry](https://github.com/nujovich/hermes-telemetry) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-884 | [ioc-project/mas-lab](https://github.com/ioc-project/mas-lab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-885 | [vicarious11/agenttop](https://github.com/vicarious11/agenttop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-886 | [VoltAgent/ai-agent-platform](https://github.com/VoltAgent/ai-agent-platform) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-887 | [duqaXxX/seedeep](https://github.com/duqaXxX/seedeep) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-888 | [CollieAi/llm-firewall](https://github.com/CollieAi/llm-firewall) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-889 | [cristianodabc/aludel](https://github.com/cristianodabc/aludel) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-890 | [cleanlab/cleanlab](https://github.com/cleanlab/cleanlab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-891 | [evidentlyai/evidently](https://github.com/evidentlyai/evidently) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-892 | [unionai-oss/pandera](https://github.com/unionai-oss/pandera) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-893 | [deepchecks/deepchecks](https://github.com/deepchecks/deepchecks) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-894 | [pyeve/cerberus](https://github.com/pyeve/cerberus) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-895 | [sodadata/soda-core](https://github.com/sodadata/soda-core) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-896 | [cleanlab/cleanvision](https://github.com/cleanlab/cleanvision) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-897 | [rstudio/pointblank](https://github.com/rstudio/pointblank) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-898 | [MigoXLab/dingo](https://github.com/MigoXLab/dingo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-899 | [posit-dev/pointblank](https://github.com/posit-dev/pointblank) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-900 | [DataRecce/recce](https://github.com/DataRecce/recce) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-901 | [EXXETA/openapi-cop](https://github.com/EXXETA/openapi-cop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-902 | [lucono/xtypejs](https://github.com/lucono/xtypejs) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-903 | [okfn/opendataeditor](https://github.com/okfn/opendataeditor) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-904 | [kjam/data-cleaning-101](https://github.com/kjam/data-cleaning-101) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-905 | [MAIF/eurybia](https://github.com/MAIF/eurybia) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-906 | [atrocore/atropim](https://github.com/atrocore/atropim) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-907 | [datachecks/dcs-core](https://github.com/datachecks/dcs-core) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-908 | [AKSW/RDFUnit](https://github.com/AKSW/RDFUnit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-910 | [DataKitchen/data-observability-installer](https://github.com/DataKitchen/data-observability-installer) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-911 | [medtagger/MedTagger](https://github.com/medtagger/MedTagger) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-912 | [germanbisurgi/jedison](https://github.com/germanbisurgi/jedison) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-913 | [target/data-validator](https://github.com/target/data-validator) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-914 | [fiverr/passable](https://github.com/fiverr/passable) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-916 | [akmalsoliev/Validoopsie](https://github.com/akmalsoliev/Validoopsie) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-918 | [DataKitchen/dataops-testgen](https://github.com/DataKitchen/dataops-testgen) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-919 | [sparkdq-community/sparkdq](https://github.com/sparkdq-community/sparkdq) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-921 | [vertti/daffy](https://github.com/vertti/daffy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-923 | [thomaseibner/snowflake-provisioning](https://github.com/thomaseibner/snowflake-provisioning) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-924 | [dengxianghua888-ops/preference-lab](https://github.com/dengxianghua888-ops/preference-lab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-925 | [jwadow/mcp-excel](https://github.com/jwadow/mcp-excel) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-926 | [fafa-ai-data-lab/ai-data-analyst-agent](https://github.com/fafa-ai-data-lab/ai-data-analyst-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-928 | [piashcse/ZodKmp](https://github.com/piashcse/ZodKmp) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-929 | [pete-lee6071/excel-workbook-automation-helper](https://github.com/pete-lee6071/excel-workbook-automation-helper) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-930 | [zimmerman-team/IATI.cloud](https://github.com/zimmerman-team/IATI.cloud) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-931 | [NatanMish/data_validation](https://github.com/NatanMish/data_validation) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-932 | [nshkrdotcom/json_remedy](https://github.com/nshkrdotcom/json_remedy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-934 | [emilyriederer/convo](https://github.com/emilyriederer/convo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-936 | [withterm/term-guard](https://github.com/withterm/term-guard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-937 | [eugeneyan/applied-ml](https://github.com/eugeneyan/applied-ml) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-938 | [open-metadata/OpenMetadata](https://github.com/open-metadata/OpenMetadata) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-939 | [Data-Centric-AI-Community/fg-data-profiling](https://github.com/Data-Centric-AI-Community/fg-data-profiling) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-940 | [fivetran/great_expectations](https://github.com/fivetran/great_expectations) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-941 | [voxel51/fiftyone](https://github.com/voxel51/fiftyone) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-942 | [feast-dev/feast](https://github.com/feast-dev/feast) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-943 | [treeverse/lakeFS](https://github.com/treeverse/lakeFS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-944 | [GokuMohandas/mlops-course](https://github.com/GokuMohandas/mlops-course) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-945 | [featureform/featureform](https://github.com/featureform/featureform) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-946 | [NVIDIA-NeMo/Curator](https://github.com/NVIDIA-NeMo/Curator) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-947 | [slothflowlabs/duckle](https://github.com/slothflowlabs/duckle) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-948 | [opendatadiscovery/odd-platform](https://github.com/opendatadiscovery/odd-platform) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-949 | [bitol-io/open-data-contract-standard](https://github.com/bitol-io/open-data-contract-standard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-950 | [daochenzha/data-centric-AI](https://github.com/daochenzha/data-centric-AI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-951 | [datacontract/datacontract-cli](https://github.com/datacontract/datacontract-cli) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-952 | [opendatadiscovery/awesome-data-catalogs](https://github.com/opendatadiscovery/awesome-data-catalogs) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-953 | [limingrui679-design/high-stakes-analytics-decision-lab](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-954 | [WeBankFinTech/Qualitis](https://github.com/WeBankFinTech/Qualitis) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-955 | [datavane/datavines](https://github.com/datavane/datavines) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-956 | [kennethleungty/Failed-ML](https://github.com/kennethleungty/Failed-ML) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-957 | [JulietMirambo/Units_of_Measure_Harmonization-intelligence-platform](https://github.com/JulietMirambo/Units_of_Measure_Harmonization-intelligence-platform) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-959 | [polyaxon/traceml](https://github.com/polyaxon/traceml) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-960 | [InfuseAI/piperider](https://github.com/InfuseAI/piperider) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-961 | [databrickslabs/dqx](https://github.com/databrickslabs/dqx) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-962 | [duoan/mega-data-factory](https://github.com/duoan/mega-data-factory) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-963 | [Data-Centric-AI-Community/awesome-data-centric-ai](https://github.com/Data-Centric-AI-Community/awesome-data-centric-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-964 | [alibaba/feathub](https://github.com/alibaba/feathub) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-965 | [data-drift/data-drift](https://github.com/data-drift/data-drift) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-966 | [rocky-data/rocky](https://github.com/rocky-data/rocky) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-967 | [Hebbian-Robotics/hflow](https://github.com/Hebbian-Robotics/hflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-968 | [adidas/lakehouse-engine](https://github.com/adidas/lakehouse-engine) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-969 | [znxzsy/VeriInk](https://github.com/znxzsy/VeriInk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-970 | [wzn1118/AsteriaAnalyst](https://github.com/wzn1118/AsteriaAnalyst) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-971 | [GAIR-NLP/ProX](https://github.com/GAIR-NLP/ProX) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-972 | [ubisoft/mobydq](https://github.com/ubisoft/mobydq) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-973 | [BdR76/CSVLint](https://github.com/BdR76/CSVLint) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-974 | [canimus/cuallee](https://github.com/canimus/cuallee) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-975 | [atrocore/atrocore](https://github.com/atrocore/atrocore) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-976 | [dqops/dqo](https://github.com/dqops/dqo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-977 | [OHDSI/DataQualityDashboard](https://github.com/OHDSI/DataQualityDashboard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-978 | [arpitg1304/forge](https://github.com/arpitg1304/forge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-979 | [GrayboxTech/weightslab](https://github.com/GrayboxTech/weightslab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-980 | [Longado/ontopoc](https://github.com/Longado/ontopoc) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-981 | [Niki9001/purview-unified-sdk](https://github.com/Niki9001/purview-unified-sdk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-982 | [meilisearch/meilisearch](https://github.com/meilisearch/meilisearch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-983 | [qdrant/qdrant](https://github.com/qdrant/qdrant) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-984 | [weaviate/weaviate](https://github.com/weaviate/weaviate) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-985 | [langchain4j/langchain4j](https://github.com/langchain4j/langchain4j) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-986 | [zilliztech/claude-context](https://github.com/zilliztech/claude-context) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-987 | [oramasearch/orama](https://github.com/oramasearch/orama) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-988 | [oceanbase/oceanbase](https://github.com/oceanbase/oceanbase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-989 | [databendlabs/databend](https://github.com/databendlabs/databend) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-990 | [paradedb/paradedb](https://github.com/paradedb/paradedb) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-991 | [activeloopai/deeplake](https://github.com/activeloopai/deeplake) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-992 | [zilliztech/deep-searcher](https://github.com/zilliztech/deep-searcher) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-993 | [postgresml/postgresml](https://github.com/postgresml/postgresml) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-994 | [genkit-ai/genkit](https://github.com/genkit-ai/genkit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-995 | [HelixDB/helix-db](https://github.com/HelixDB/helix-db) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-996 | [RediSearch/RediSearch](https://github.com/RediSearch/RediSearch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-997 | [volcengine/MineContext](https://github.com/volcengine/MineContext) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-998 | [infiniflow/infinity](https://github.com/infiniflow/infinity) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
-| 19 | R-999 | [CaviraOSS/LongMemory](https://github.com/CaviraOSS/LongMemory) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 18 | R-1042 | [ownasquare/human-in-the-loop-agent](https://github.com/ownasquare/human-in-the-loop-agent) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1043 | [jlov7/branchlab](https://github.com/jlov7/branchlab) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1044 | [Cygnux-Labs/Tracekit](https://github.com/Cygnux-Labs/Tracekit) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1045 | [jinxuansama/evidence-ledger](https://github.com/jinxuansama/evidence-ledger) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1046 | [jitutarafder/research-assistant](https://github.com/jitutarafder/research-assistant) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1047 | [node-and-norm/trust-autonomy-evidence](https://github.com/node-and-norm/trust-autonomy-evidence) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1048 | [ericrisco/rsc-harness](https://github.com/ericrisco/rsc-harness) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1049 | [AhmetIsk/decision-tracker](https://github.com/AhmetIsk/decision-tracker) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1050 | [dlxeva/flowgrid](https://github.com/dlxeva/flowgrid) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1051 | [ankohr/decision-ledger](https://github.com/ankohr/decision-ledger) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1052 | [shafaypro/DecisionOS](https://github.com/shafaypro/DecisionOS) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1053 | [mskazemi/scrutable](https://github.com/mskazemi/scrutable) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1054 | [node-and-norm/rgds](https://github.com/node-and-norm/rgds) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1055 | [logicoflife/decision-trace](https://github.com/logicoflife/decision-trace) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1056 | [plainjane20/taskloom](https://github.com/plainjane20/taskloom) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1057 | [timmcleod/agent-workflows](https://github.com/timmcleod/agent-workflows) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1058 | [hkwuks/TaskFlow](https://github.com/hkwuks/TaskFlow) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1059 | [manyu-lnmiit/agent-checkpoint-runtime](https://github.com/manyu-lnmiit/agent-checkpoint-runtime) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1060 | [awaithumans/awaithumans-human-in-the-loop-ai-agents](https://github.com/awaithumans/awaithumans-human-in-the-loop-ai-agents) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1061 | [ducpahm03/ai-business-workflow-agent](https://github.com/ducpahm03/ai-business-workflow-agent) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1062 | [marvinjbb/agent-mcp-workflow-platform](https://github.com/marvinjbb/agent-mcp-workflow-platform) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1063 | [murillo-consulting/langgraph-resilient-agent](https://github.com/murillo-consulting/langgraph-resilient-agent) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1064 | [therajtiwari/durable-agents](https://github.com/therajtiwari/durable-agents) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1066 | [cloudflare/agents](https://github.com/cloudflare/agents) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1067 | [openwop/openwop](https://github.com/openwop/openwop) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1068 | [eclipse-inception/inception](https://github.com/eclipse-inception/inception) | readme-screened; source-screened | unknown | unknown |
+| 19 | R-101 | [1771-technologies/lytenyte](https://github.com/1771-technologies/lytenyte) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-106 | [actions/dependency-review-action](https://github.com/actions/dependency-review-action) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-110 | [agent-rl/recall](https://github.com/agent-rl/recall) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-113 | [akullpp/awesome-java](https://github.com/akullpp/awesome-java) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-114 | [alexiocassanifm/anthropic-certifications](https://github.com/alexiocassanifm/anthropic-certifications) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-115 | [amrmkayid/friday](https://github.com/amrmkayid/friday) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-117 | [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-118 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-119 | [anthropics/courses](https://github.com/anthropics/courses) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-120 | [anthropics/skills](https://github.com/anthropics/skills) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-122 | [arkivanov/decompose](https://github.com/arkivanov/decompose) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-123 | [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-125 | [avelino/awesome-go](https://github.com/avelino/awesome-go) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-126 | [aws/serverless-application-model](https://github.com/aws/serverless-application-model) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-127 | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-130 | [binhnguyennus/awesome-scalability](https://github.com/binhnguyennus/awesome-scalability) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-133 | [blakeblackshear/frigate](https://github.com/blakeblackshear/frigate) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-137 | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-139 | [btw-so/open-source-alternatives](https://github.com/btw-so/open-source-alternatives) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-141 | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-143 | [cdmorozov/claude-tutors](https://github.com/cdmorozov/claude-tutors) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-145 | [cloud-custodian/cloud-custodian](https://github.com/cloud-custodian/cloud-custodian) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-146 | [cncf/landscape](https://github.com/cncf/landscape) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-147 | [codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-149 | [composiohq/awesome-claude-skills](https://github.com/composiohq/awesome-claude-skills) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-154 | [datakind/student-success-tool](https://github.com/datakind/student-success-tool) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-155 | [datopian/portal-apple](https://github.com/datopian/portal-apple) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-158 | [dbeaver/dbeaver](https://github.com/dbeaver/dbeaver) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-159 | [decalage2/awesome-security-hardening](https://github.com/decalage2/awesome-security-hardening) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-160 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-161 | [devoteamgcloud/dataform-assertions](https://github.com/devoteamgcloud/dataform-assertions) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-164 | [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-165 | [dovamir/awesome-design-patterns](https://github.com/dovamir/awesome-design-patterns) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-167 | [easystats/report](https://github.com/easystats/report) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-168 | [ebookfoundation/free-programming-books](https://github.com/ebookfoundation/free-programming-books) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-169 | [eriklindernoren/ml-from-scratch](https://github.com/eriklindernoren/ml-from-scratch) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-170 | [etiennepasteur/jean-claude](https://github.com/etiennepasteur/jean-claude) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-172 | [featbit/featbit](https://github.com/featbit/featbit) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-175 | [flowiseai/flowise](https://github.com/flowiseai/flowise) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-181 | [gokumohandas/made-with-ml](https://github.com/gokumohandas/made-with-ml) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-182 | [googlecloudplatform/cloud-data-quality](https://github.com/googlecloudplatform/cloud-data-quality) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-183 | [googlecloudplatform/generative-ai](https://github.com/googlecloudplatform/generative-ai) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-184 | [googlecloudplatform/knowledge-catalog](https://github.com/googlecloudplatform/knowledge-catalog) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-185 | [googlecloudplatform/terraform-google-dataplex-auto-data-quality](https://github.com/googlecloudplatform/terraform-google-dataplex-auto-data-quality) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-187 | [hack-with-github/awesome-hacking](https://github.com/hack-with-github/awesome-hacking) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-189 | [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-192 | [huggingface/transformers](https://github.com/huggingface/transformers) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-195 | [immo2n/friday-ai](https://github.com/immo2n/friday-ai) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-197 | [ismailsaoulaj/reddit-mcp-server](https://github.com/ismailsaoulaj/reddit-mcp-server) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-198 | [jamiepine/voicebox](https://github.com/jamiepine/voicebox) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-199 | [jaspersoft/jasperreports](https://github.com/jaspersoft/jasperreports) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-202 | [jcarterjohnson/vibecoded-design-tells](https://github.com/jcarterjohnson/vibecoded-design-tells) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-203 | [jobsta/reportbro-lib](https://github.com/jobsta/reportbro-lib) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-204 | [julian-ivanov/jarvis-voice-assistant](https://github.com/julian-ivanov/jarvis-voice-assistant) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-205 | [kedacore/keda](https://github.com/kedacore/keda) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-206 | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-209 | [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-211 | [kristenzhang/triggerbench-official](https://github.com/kristenzhang/triggerbench-official) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-214 | [makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-222 | [milvus-io/milvus](https://github.com/milvus-io/milvus) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-223 | [mohammedayanrafiq/friday](https://github.com/mohammedayanrafiq/friday) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-224 | [mono424/punktraster](https://github.com/mono424/punktraster) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-228 | [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-229 | [neeeophytee/agent-stylebooks](https://github.com/neeeophytee/agent-stylebooks) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-232 | [netlify-templates/astro-platform-starter](https://github.com/netlify-templates/astro-platform-starter) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-236 | [nilbuild/developer-roadmap](https://github.com/nilbuild/developer-roadmap) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-238 | [obra/superpowers-skills](https://github.com/obra/superpowers-skills) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-239 | [ollama/ollama](https://github.com/ollama/ollama) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-244 | [ossf/scorecard](https://github.com/ossf/scorecard) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-245 | [ossu/computer-science](https://github.com/ossu/computer-science) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-247 | [papers-we-love/papers-we-love](https://github.com/papers-we-love/papers-we-love) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-249 | [pentaho/pentaho-reporting](https://github.com/pentaho/pentaho-reporting) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-250 | [philterd/phileas](https://github.com/philterd/phileas) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-251 | [pilastdigit/code-with-claude](https://github.com/pilastdigit/code-with-claude) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-253 | [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-255 | [public-apis/public-apis](https://github.com/public-apis/public-apis) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-257 | [rasbt/llms-from-scratch](https://github.com/rasbt/llms-from-scratch) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-259 | [redis/redis](https://github.com/redis/redis) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-261 | [rhysd/actionlint](https://github.com/rhysd/actionlint) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-263 | [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-264 | [rohanadwankar/ws-term](https://github.com/rohanadwankar/ws-term) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-266 | [sagar-tamang/friday-tony-stark-demo](https://github.com/sagar-tamang/friday-tony-stark-demo) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-268 | [sdmg15/best-websites-a-programmer-should-visit](https://github.com/sdmg15/best-websites-a-programmer-should-visit) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-270 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-271 | [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-273 | [sindresorhus/awesome](https://github.com/sindresorhus/awesome) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-275 | [sohailkhan0525/skills](https://github.com/sohailkhan0525/skills) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-276 | [sqlfluff/sqlfluff](https://github.com/sqlfluff/sqlfluff) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-278 | [sruthik27/creating-claude-md](https://github.com/sruthik27/creating-claude-md) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-280 | [stanford-earth/stanford_r25](https://github.com/stanford-earth/stanford_r25) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-281 | [step-security/harden-runner](https://github.com/step-security/harden-runner) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-283 | [sukeesh/jarvis](https://github.com/sukeesh/jarvis) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-284 | [supabase/supabase](https://github.com/supabase/supabase) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-286 | [teng-lin/notebooklm-py](https://github.com/teng-lin/notebooklm-py) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-291 | [thomaspoignant/go-feature-flag](https://github.com/thomaspoignant/go-feature-flag) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-292 | [tiimgreen/github-cheat-sheet](https://github.com/tiimgreen/github-cheat-sheet) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-294 | [tl-its-umich-edu/my-learning-analytics](https://github.com/tl-its-umich-edu/my-learning-analytics) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-295 | [trimstray/the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-296 | [uber/piranha](https://github.com/uber/piranha) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-297 | [unitime/unitime](https://github.com/unitime/unitime) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-298 | [unleash/unleash](https://github.com/unleash/unleash) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-299 | [ussumant/useful-agent-skills](https://github.com/ussumant/useful-agent-skills) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-302 | [vinta/awesome-python](https://github.com/vinta/awesome-python) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-307 | [voltagent/awesome-agent-skills](https://github.com/voltagent/awesome-agent-skills) | source-assessment; source-screened | unknown | unknown |
+| 19 | R-311 | [zizmorcore/zizmor](https://github.com/zizmorcore/zizmor) | source-assessment; source-screened | unknown | unknown |
+| 20 | R-1000 | [crate/crate](https://github.com/crate/crate) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1001 | [Ontos-AI/knowhere](https://github.com/Ontos-AI/knowhere) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1002 | [mozilla-ai/any-agent](https://github.com/mozilla-ai/any-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1003 | [Ricky-7-Yan/intelligent-audit-system](https://github.com/Ricky-7-Yan/intelligent-audit-system) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1004 | [chirpz-ai/pandaprobe](https://github.com/chirpz-ai/pandaprobe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1005 | [NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1006 | [zgcagi/Harness-RSI](https://github.com/zgcagi/Harness-RSI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1007 | [reacher-z/Awesome-CUA](https://github.com/reacher-z/Awesome-CUA) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1008 | [AI45Lab/OpenART](https://github.com/AI45Lab/OpenART) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1009 | [amitshekhariitbhu/ai-agents-tutorial](https://github.com/amitshekhariitbhu/ai-agents-tutorial) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1010 | [alanhuangyoo/crux](https://github.com/alanhuangyoo/crux) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1011 | [yzhao062/awesome-auditable-ai](https://github.com/yzhao062/awesome-auditable-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1012 | [UiPath/coder_eval](https://github.com/UiPath/coder_eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1013 | [hwfengcs/DM-Code-Agent](https://github.com/hwfengcs/DM-Code-Agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1014 | [hidai25/eval-view](https://github.com/hidai25/eval-view) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1015 | [evaleval/every_eval_ever](https://github.com/evaleval/every_eval_ever) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1016 | [NVIDIA-NeMo/nemo-helix](https://github.com/NVIDIA-NeMo/nemo-helix) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1017 | [AMD-AGI/AgentKernelArena](https://github.com/AMD-AGI/AgentKernelArena) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1018 | [deeplethe/fde-gym](https://github.com/deeplethe/fde-gym) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1019 | [Towow-ai/Flowness](https://github.com/Towow-ai/Flowness) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1020 | [Ta0p1/ResolveLab](https://github.com/Ta0p1/ResolveLab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1021 | [coval-ai/benchmarks](https://github.com/coval-ai/benchmarks) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1022 | [thiientv/godmode](https://github.com/thiientv/godmode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1023 | [Calibre-Labs/reforge-ai-evals](https://github.com/Calibre-Labs/reforge-ai-evals) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1024 | [WaseemGhanem98/AgentCheck](https://github.com/WaseemGhanem98/AgentCheck) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1025 | [kling01/human-value-allocation](https://github.com/kling01/human-value-allocation) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1026 | [on-panda/on-panda](https://github.com/on-panda/on-panda) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1027 | [reacher-z/HarnessBench](https://github.com/reacher-z/HarnessBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1028 | [Cre4T3Tiv3/ai-agents-reality-check](https://github.com/Cre4T3Tiv3/ai-agents-reality-check) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1029 | [dokimos-dev/dokimos](https://github.com/dokimos-dev/dokimos) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1030 | [ChaoYue0307/awesome-loop-engineering](https://github.com/ChaoYue0307/awesome-loop-engineering) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1031 | [Kotlin/kotlin-swe-bench](https://github.com/Kotlin/kotlin-swe-bench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1032 | [acoyfellow/cloudbox](https://github.com/acoyfellow/cloudbox) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1033 | [chaosync-org/awesome-ai-agent-testing](https://github.com/chaosync-org/awesome-ai-agent-testing) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1034 | [however-yir/tianji-ai-agent](https://github.com/however-yir/tianji-ai-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1035 | [VectorSpaceLab/AgentSWE](https://github.com/VectorSpaceLab/AgentSWE) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1036 | [datamllab/A2E](https://github.com/datamllab/A2E) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1037 | [kling01/RubricLoop](https://github.com/kling01/RubricLoop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1038 | [ChaoYue0307/awesome-graph-engineering](https://github.com/ChaoYue0307/awesome-graph-engineering) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1039 | [semi-hollow/NanoHarness](https://github.com/semi-hollow/NanoHarness) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-1040 | [SparkBeyond/agentune](https://github.com/SparkBeyond/agentune) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-337 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-338 | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-339 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-340 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-341 | [unclecode/crawl4ai](https://github.com/unclecode/crawl4ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-342 | [bytedance/deer-flow](https://github.com/bytedance/deer-flow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-343 | [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-344 | [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-345 | [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-346 | [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-347 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-348 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-349 | [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-350 | [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-351 | [ai-job-search-dev/ai-job-search](https://github.com/ai-job-search-dev/ai-job-search) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-352 | [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-353 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-355 | [HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-356 | [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-357 | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-358 | [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-359 | [zhayujie/CowAgent](https://github.com/zhayujie/CowAgent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-360 | [herdrdev/herdr](https://github.com/herdrdev/herdr) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-361 | [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-362 | [wshobson/agents](https://github.com/wshobson/agents) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-363 | [Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-364 | [VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-365 | [ashishpatel26/500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-366 | [JCodesMore/ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-367 | [ItzCrazyKns/Vane](https://github.com/ItzCrazyKns/Vane) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-368 | [agentscope-ai/QwenPaw](https://github.com/agentscope-ai/QwenPaw) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-369 | [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-370 | [Fincept-Corporation/FinceptTerminal](https://github.com/Fincept-Corporation/FinceptTerminal) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-373 | [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-376 | [titanwings/distilly](https://github.com/titanwings/distilly) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-377 | [letta-ai/letta](https://github.com/letta-ai/letta) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-378 | [HKUDS/DeepCode](https://github.com/HKUDS/DeepCode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-379 | [lsdefine/GenericAgent](https://github.com/lsdefine/GenericAgent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-380 | [The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge](https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-381 | [The-Pocket/PocketFlow](https://github.com/The-Pocket/PocketFlow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-382 | [strands-agents/harness-sdk](https://github.com/strands-agents/harness-sdk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-383 | [EvoMap/evolver](https://github.com/EvoMap/evolver) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-384 | [Mai-with-u/MaiBot](https://github.com/Mai-with-u/MaiBot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-385 | [jeinlee1991/chinese-llm-benchmark](https://github.com/jeinlee1991/chinese-llm-benchmark) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-386 | [areal-project/AReaL](https://github.com/areal-project/AReaL) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-387 | [ATH-MaaS/ComfyUI-Copilot](https://github.com/ATH-MaaS/ComfyUI-Copilot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-388 | [pguso/ai-agents-from-scratch](https://github.com/pguso/ai-agents-from-scratch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-389 | [gptme/gptme](https://github.com/gptme/gptme) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-390 | [langroid/langroid](https://github.com/langroid/langroid) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-391 | [shroominic/codeinterpreter-api](https://github.com/shroominic/codeinterpreter-api) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-392 | [THUDM/AgentBench](https://github.com/THUDM/AgentBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-393 | [HolmesGPT/holmesgpt](https://github.com/HolmesGPT/holmesgpt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-394 | [xiaobright/dsh-anchored-standard](https://github.com/xiaobright/dsh-anchored-standard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-395 | [filipecalegario/awesome-generative-ai](https://github.com/filipecalegario/awesome-generative-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-396 | [yilewang/llm-for-zotero](https://github.com/yilewang/llm-for-zotero) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-398 | [genieincodebottle/generative-ai](https://github.com/genieincodebottle/generative-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-399 | [Weizhena/Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-400 | [AGI-Edgerunners/LLM-Agents-Papers](https://github.com/AGI-Edgerunners/LLM-Agents-Papers) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-401 | [SqueezeAILab/LLMCompiler](https://github.com/SqueezeAILab/LLMCompiler) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-402 | [stakpak/agent](https://github.com/stakpak/agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-403 | [asinghcsu/AgenticRAG-Survey](https://github.com/asinghcsu/AgenticRAG-Survey) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-404 | [xingyaoww/code-act](https://github.com/xingyaoww/code-act) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-405 | [jundizhou/easy-stock](https://github.com/jundizhou/easy-stock) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-406 | [AgentEra/Agently](https://github.com/AgentEra/Agently) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-407 | [Mirascope/mirascope](https://github.com/Mirascope/mirascope) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-408 | [myshell-ai/AIlice](https://github.com/myshell-ai/AIlice) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-410 | [hhyqhh/inno-agent](https://github.com/hhyqhh/inno-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-412 | [ongridio/ongrid](https://github.com/ongridio/ongrid) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-413 | [showlab/Awesome-GUI-Agent](https://github.com/showlab/Awesome-GUI-Agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-414 | [ant-research/AntOmniEvo](https://github.com/ant-research/AntOmniEvo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-416 | [Zen4-bit/Proxima](https://github.com/Zen4-bit/Proxima) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-417 | [Xiangyue-Zhang/auto-deep-researcher-24x7](https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-418 | [StreetLamb/tribe](https://github.com/StreetLamb/tribe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-419 | [Pan-Chera/Multi-Agent-CAD](https://github.com/Pan-Chera/Multi-Agent-CAD) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-420 | [mbzuai-oryx/groundingLMM](https://github.com/mbzuai-oryx/groundingLMM) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-422 | [SakanaAI/doc-to-lora](https://github.com/SakanaAI/doc-to-lora) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-423 | [helixml/helix](https://github.com/helixml/helix) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-424 | [AaronWong1999/hermesclaw](https://github.com/AaronWong1999/hermesclaw) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-425 | [AkshitIreddy/Interactive-LLM-Powered-NPCs](https://github.com/AkshitIreddy/Interactive-LLM-Powered-NPCs) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-426 | [mnemon-dev/mnemon](https://github.com/mnemon-dev/mnemon) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-427 | [Gen-Verse/Open-AgentRL](https://github.com/Gen-Verse/Open-AgentRL) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-428 | [ValueByte-AI/Awesome-LLM-in-Social-Science](https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-429 | [AgentEra/Agently-Daily-News-Collector](https://github.com/AgentEra/Agently-Daily-News-Collector) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-430 | [SalesforceAIResearch/xLAM](https://github.com/SalesforceAIResearch/xLAM) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-431 | [ifixai-ai/iFixAi](https://github.com/ifixai-ai/iFixAi) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-432 | [comet-ml/opik](https://github.com/comet-ml/opik) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-433 | [oumi-ai/oumi](https://github.com/oumi-ai/oumi) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-434 | [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-435 | [Q00/ouroboros](https://github.com/Q00/ouroboros) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-436 | [Helicone/helicone](https://github.com/Helicone/helicone) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-437 | [PacktPublishing/LLM-Engineers-Handbook](https://github.com/PacktPublishing/LLM-Engineers-Handbook) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-438 | [EvolvingLMMs-Lab/lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-439 | [hemansnation/AI-Engineer-Headquarters](https://github.com/hemansnation/AI-Engineer-Headquarters) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-440 | [lmnr-ai/lmnr](https://github.com/lmnr-ai/lmnr) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-441 | [future-agi/future-agi](https://github.com/future-agi/future-agi) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-442 | [huggingface/aisheets](https://github.com/huggingface/aisheets) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-443 | [cyberark/FuzzyAI](https://github.com/cyberark/FuzzyAI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-444 | [microsoft/prompty](https://github.com/microsoft/prompty) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-445 | [cvs-health/uqlm](https://github.com/cvs-health/uqlm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-446 | [jwuthri-cloud/Tracely-ai](https://github.com/jwuthri-cloud/Tracely-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-447 | [TIGER-AI-Lab/ClawBench](https://github.com/TIGER-AI-Lab/ClawBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-448 | [xinxuxin/keystone-bench](https://github.com/xinxuxin/keystone-bench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-449 | [JudgmentLabs/judgeval](https://github.com/JudgmentLabs/judgeval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-450 | [benchflow-ai/awesome-evals](https://github.com/benchflow-ai/awesome-evals) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-451 | [superwesleyhys-ux/factcircuit](https://github.com/superwesleyhys-ux/factcircuit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-452 | [darkrishabh/agent-skills-eval](https://github.com/darkrishabh/agent-skills-eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-453 | [keli-wen/agy-staff](https://github.com/keli-wen/agy-staff) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-454 | [v-modal/awesome-jev-tools](https://github.com/v-modal/awesome-jev-tools) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-455 | [overmind-core/overmind](https://github.com/overmind-core/overmind) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-456 | [EverMind-AI/SkillCorpus](https://github.com/EverMind-AI/SkillCorpus) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-457 | [onejune2018/Awesome-LLM-Eval](https://github.com/onejune2018/Awesome-LLM-Eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-458 | [HowieHwong/TrustLLM](https://github.com/HowieHwong/TrustLLM) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-459 | [onyx-dot-app/EnterpriseRAG-Bench](https://github.com/onyx-dot-app/EnterpriseRAG-Bench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-460 | [juanjuandog/FinSight-AI](https://github.com/juanjuandog/FinSight-AI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-461 | [harish-gaggar/mcp-server-gateway](https://github.com/harish-gaggar/mcp-server-gateway) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-462 | [relari-ai/continuous-eval](https://github.com/relari-ai/continuous-eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-463 | [OmniJev/awesome-jev-gallery](https://github.com/OmniJev/awesome-jev-gallery) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-464 | [BichengWang/ai-decision-system](https://github.com/BichengWang/ai-decision-system) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-465 | [wanghao-SunSky/cs329z-chinese](https://github.com/wanghao-SunSky/cs329z-chinese) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-466 | [scaleapi/agentenv-framework](https://github.com/scaleapi/agentenv-framework) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-467 | [ukanwat/overtime](https://github.com/ukanwat/overtime) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-468 | [verifywise-ai/verifywise](https://github.com/verifywise-ai/verifywise) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-469 | [alphadl/AdaRubrics](https://github.com/alphadl/AdaRubrics) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-470 | [JonathanChavezTamales/llm-leaderboard](https://github.com/JonathanChavezTamales/llm-leaderboard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-471 | [palico-ai/palico-ai](https://github.com/palico-ai/palico-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-472 | [PetroIvaniuk/llms-tools](https://github.com/PetroIvaniuk/llms-tools) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-473 | [OpenBMB/UltraEval-Audio](https://github.com/OpenBMB/UltraEval-Audio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-474 | [ktwu01/benchmark-radar](https://github.com/ktwu01/benchmark-radar) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-475 | [Danielxu0208/rsi_eval](https://github.com/Danielxu0208/rsi_eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-476 | [aaron-for-value/VeriRun](https://github.com/aaron-for-value/VeriRun) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-477 | [Continuum-AI-Corp/OrcaReplay](https://github.com/Continuum-AI-Corp/OrcaReplay) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-478 | [Tencent/WeKnora](https://github.com/Tencent/WeKnora) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-479 | [open-compass/opencompass](https://github.com/open-compass/opencompass) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-480 | [langwatch/langwatch](https://github.com/langwatch/langwatch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-481 | [open-compass/VLMEvalKit](https://github.com/open-compass/VLMEvalKit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-482 | [modelscope/evalscope](https://github.com/modelscope/evalscope) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-483 | [ianarawjo/ChainForge](https://github.com/ianarawjo/ChainForge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-484 | [huggingface/lighteval](https://github.com/huggingface/lighteval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-485 | [1517005260/graph-rag-agent](https://github.com/1517005260/graph-rag-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-486 | [Xnhyacinth/Awesome-LLM-Long-Context-Modeling](https://github.com/Xnhyacinth/Awesome-LLM-Long-Context-Modeling) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-487 | [huggingface/evaluation-guidebook](https://github.com/huggingface/evaluation-guidebook) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-488 | [trpc-group/trpc-agent-go](https://github.com/trpc-group/trpc-agent-go) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-489 | [onestardao/WFGY](https://github.com/onestardao/WFGY) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-490 | [SmartFlowAI/EmoLLM](https://github.com/SmartFlowAI/EmoLLM) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-491 | [MLGroupJLU/LLM-eval-survey](https://github.com/MLGroupJLU/LLM-eval-survey) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-492 | [NVIDIA-NeMo/Gym](https://github.com/NVIDIA-NeMo/Gym) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-493 | [ScalingIntelligence/KernelBench](https://github.com/ScalingIntelligence/KernelBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-494 | [chunxiaoxx/nautilus-compass](https://github.com/chunxiaoxx/nautilus-compass) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-495 | [prometheus-eval/prometheus-eval](https://github.com/prometheus-eval/prometheus-eval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-496 | [agentscope-ai/OpenJudge](https://github.com/agentscope-ai/OpenJudge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-497 | [suyoumo/ClawProBench](https://github.com/suyoumo/ClawProBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-498 | [ModelTC/LightCompress](https://github.com/ModelTC/LightCompress) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-499 | [robocurve/inspect-robots](https://github.com/robocurve/inspect-robots) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-500 | [chrisliu298/awesome-llm-unlearning](https://github.com/chrisliu298/awesome-llm-unlearning) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-501 | [run-llama/ParseBench](https://github.com/run-llama/ParseBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-502 | [DocAILab/XRAG](https://github.com/DocAILab/XRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-503 | [MMMU-Benchmark/MMMU](https://github.com/MMMU-Benchmark/MMMU) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-504 | [facebookresearch/meta-agents-research-environments](https://github.com/facebookresearch/meta-agents-research-environments) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-505 | [SeekingDream/Static-to-Dynamic-LLMEval](https://github.com/SeekingDream/Static-to-Dynamic-LLMEval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-506 | [CodeSoul-co/Hypha](https://github.com/CodeSoul-co/Hypha) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-507 | [TIGER-AI-Lab/MMLU-Pro](https://github.com/TIGER-AI-Lab/MMLU-Pro) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-508 | [ByteDance-Seed/EvaLearn](https://github.com/ByteDance-Seed/EvaLearn) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-509 | [microsoft/genaiops-promptflow-template](https://github.com/microsoft/genaiops-promptflow-template) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-510 | [Ayanami0730/arag](https://github.com/Ayanami0730/arag) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-511 | [langfuse/skills](https://github.com/langfuse/skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-512 | [microsoft/rag-experiment-accelerator](https://github.com/microsoft/rag-experiment-accelerator) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-513 | [rentruewang/bocoel](https://github.com/rentruewang/bocoel) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-514 | [InternScience/ResearchClawBench](https://github.com/InternScience/ResearchClawBench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-515 | [CAS-SIAT-XinHai/CPsyCoun](https://github.com/CAS-SIAT-XinHai/CPsyCoun) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-516 | [strands-agents/evals](https://github.com/strands-agents/evals) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-517 | [lechmazur/nyt-connections](https://github.com/lechmazur/nyt-connections) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-518 | [arklexai/arksim](https://github.com/arklexai/arksim) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-519 | [datawhalechina/code-your-own-llm](https://github.com/datawhalechina/code-your-own-llm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-520 | [rungalileo/agent-leaderboard](https://github.com/rungalileo/agent-leaderboard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-521 | [SeekingDream/DyCodeEval](https://github.com/SeekingDream/DyCodeEval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-522 | [kaistAI/FLASK](https://github.com/kaistAI/FLASK) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-523 | [MMStar-Benchmark/MMStar](https://github.com/MMStar-Benchmark/MMStar) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-524 | [IBM/unitxt](https://github.com/IBM/unitxt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-525 | [open-webui/open-webui](https://github.com/open-webui/open-webui) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-526 | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-527 | [PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-528 | [datawhalechina/hello-agents](https://github.com/datawhalechina/hello-agents) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-529 | [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-530 | [pathwaycom/serviette](https://github.com/pathwaycom/serviette) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-531 | [bojieli/ai-agent-book](https://github.com/bojieli/ai-agent-book) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-532 | [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-533 | [The-Vibe-Company/quivr](https://github.com/The-Vibe-Company/quivr) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-534 | [chatchat-space/Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-535 | [khoj-ai/khoj](https://github.com/khoj-ai/khoj) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-536 | [datawhalechina/happy-llm](https://github.com/datawhalechina/happy-llm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-537 | [ScrapeGraphAI/Scrapegraph-ai](https://github.com/ScrapeGraphAI/Scrapegraph-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-538 | [NirDiamant/RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-539 | [opendataloader-project/opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-540 | [labring/FastGPT](https://github.com/labring/FastGPT) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-541 | [simstudioai/sim](https://github.com/simstudioai/sim) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-542 | [Cinnamon/kotaemon](https://github.com/Cinnamon/kotaemon) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-543 | [NirDiamant/GenAI_Agents](https://github.com/NirDiamant/GenAI_Agents) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-544 | [1Panel-dev/MaxKB](https://github.com/1Panel-dev/MaxKB) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-545 | [dipakkr/awesome-ai-engineering](https://github.com/dipakkr/awesome-ai-engineering) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-546 | [NirDiamant/agents-towards-production](https://github.com/NirDiamant/agents-towards-production) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-547 | [coze-dev/coze-studio](https://github.com/coze-dev/coze-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-548 | [eosphoros-ai/DB-GPT](https://github.com/eosphoros-ai/DB-GPT) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-549 | [elizaOS/eliza](https://github.com/elizaOS/eliza) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-550 | [xerj-org/xerj](https://github.com/xerj-org/xerj) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-551 | [langbot-app/LangBot](https://github.com/langbot-app/LangBot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-552 | [arc53/DocsGPT](https://github.com/arc53/DocsGPT) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-553 | [Canner/WrenAI](https://github.com/Canner/WrenAI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-554 | [RyanCodrai/turbovec](https://github.com/RyanCodrai/turbovec) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-555 | [MemoriLabs/Memori](https://github.com/MemoriLabs/Memori) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-556 | [MODSetter/SurfSense](https://github.com/MODSetter/SurfSense) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-557 | [alibaba/zvec](https://github.com/alibaba/zvec) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-558 | [stanford-oval/storm](https://github.com/stanford-oval/storm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-559 | [llmware-ai/llmware](https://github.com/llmware-ai/llmware) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-560 | [StarTrail-org/LEANN](https://github.com/StarTrail-org/LEANN) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-561 | [simular-ai/Agent-S](https://github.com/simular-ai/Agent-S) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-562 | [FlagOpen/FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-563 | [LearningCircuit/local-deep-research](https://github.com/LearningCircuit/local-deep-research) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-564 | [WangRongsheng/awesome-LLM-resources](https://github.com/WangRongsheng/awesome-LLM-resources) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-565 | [TaskingAI/TaskingAI](https://github.com/TaskingAI/TaskingAI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-566 | [Marker-Inc-Korea/AutoRAG](https://github.com/Marker-Inc-Korea/AutoRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-567 | [GiovanniPasq/agentic-rag-for-dummies](https://github.com/GiovanniPasq/agentic-rag-for-dummies) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-568 | [NVIDIA/GenerativeAIExamples](https://github.com/NVIDIA/GenerativeAIExamples) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-569 | [bragai/bRAG-langchain](https://github.com/bragai/bRAG-langchain) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-570 | [RUC-NLPIR/FlashRAG](https://github.com/RUC-NLPIR/FlashRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-571 | [HKUDS/VideoRAG](https://github.com/HKUDS/VideoRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-572 | [superlinked/sie](https://github.com/superlinked/sie) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-573 | [qdrant/fastembed](https://github.com/qdrant/fastembed) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-574 | [swirlai/swirl-search](https://github.com/swirlai/swirl-search) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-575 | [illuin-tech/colpali](https://github.com/illuin-tech/colpali) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-576 | [devflowinc/trieve](https://github.com/devflowinc/trieve) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-577 | [DEEP-PolyU/Awesome-GraphRAG](https://github.com/DEEP-PolyU/Awesome-GraphRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-578 | [vearch/vearch](https://github.com/vearch/vearch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-579 | [samchon/nestia](https://github.com/samchon/nestia) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-580 | [HKUDS/MiniRAG](https://github.com/HKUDS/MiniRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-581 | [Andrew-Jang/RAGHub](https://github.com/Andrew-Jang/RAGHub) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-582 | [NVIDIA-AI-Blueprints/video-search-and-summarization](https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-583 | [BAI-LAB/MemoryOS](https://github.com/BAI-LAB/MemoryOS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-584 | [felladrin/awesome-ai-web-search](https://github.com/felladrin/awesome-ai-web-search) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-585 | [KalyanKS-NLP/rag-zero-to-hero-guide](https://github.com/KalyanKS-NLP/rag-zero-to-hero-guide) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-586 | [Danielskry/Awesome-RAG](https://github.com/Danielskry/Awesome-RAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-587 | [jxzhangjhu/Awesome-LLM-RAG](https://github.com/jxzhangjhu/Awesome-LLM-RAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-588 | [SmythOS/sre](https://github.com/SmythOS/sre) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-589 | [gomate-community/TrustRAG](https://github.com/gomate-community/TrustRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-590 | [superlinear-ai/raglite](https://github.com/superlinear-ai/raglite) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-591 | [NovaSearch-Team/RAG-Retrieval](https://github.com/NovaSearch-Team/RAG-Retrieval) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-592 | [EmbeddedLLM/JamAIBase](https://github.com/EmbeddedLLM/JamAIBase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-593 | [philippgille/chromem-go](https://github.com/philippgille/chromem-go) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-594 | [anush008/fastembed-rs](https://github.com/anush008/fastembed-rs) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-595 | [PrithivirajDamodaran/FlashRank](https://github.com/PrithivirajDamodaran/FlashRank) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-596 | [souvikmajumder26/Multi-Agent-Medical-Assistant](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-597 | [louisfb01/start-llms](https://github.com/louisfb01/start-llms) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-598 | [OpenBMB/VisRAG](https://github.com/OpenBMB/VisRAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-599 | [Raudaschl/rag-fusion](https://github.com/Raudaschl/rag-fusion) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-600 | [weiwill88/Local_Pdf_Chat_RAG](https://github.com/weiwill88/Local_Pdf_Chat_RAG) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-601 | [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-602 | [mksglu/context-mode](https://github.com/mksglu/context-mode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-603 | [nanocoai/nanoclaw](https://github.com/nanocoai/nanoclaw) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-604 | [TencentCloud/TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-605 | [EverMind-AI/EverOS](https://github.com/EverMind-AI/EverOS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-606 | [holaboss-ai/holaOS](https://github.com/holaboss-ai/holaOS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-607 | [MervinPraison/PraisonAI](https://github.com/MervinPraison/PraisonAI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-608 | [Gentleman-Programming/gentle-ai](https://github.com/Gentleman-Programming/gentle-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-609 | [osaurus-ai/osaurus](https://github.com/osaurus-ai/osaurus) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-610 | [plastic-labs/honcho](https://github.com/plastic-labs/honcho) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-611 | [Gentleman-Programming/engram](https://github.com/Gentleman-Programming/engram) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-612 | [liliMozi/openhanako](https://github.com/liliMozi/openhanako) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-613 | [outsourc-e/hermes-workspace](https://github.com/outsourc-e/hermes-workspace) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-614 | [Anil-matcha/open-duet](https://github.com/Anil-matcha/open-duet) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-615 | [ModelEngine-Group/nexent](https://github.com/ModelEngine-Group/nexent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-616 | [macro-inc/macro](https://github.com/macro-inc/macro) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-617 | [0xNyk/awesome-hermes-agent](https://github.com/0xNyk/awesome-hermes-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-618 | [breferrari/obsidian-mind](https://github.com/breferrari/obsidian-mind) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-619 | [eugeniughelbur/obsidian-second-brain](https://github.com/eugeniughelbur/obsidian-second-brain) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-620 | [ai-boost/awesome-harness-engineering](https://github.com/ai-boost/awesome-harness-engineering) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-621 | [ruvnet/RuVector](https://github.com/ruvnet/RuVector) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-622 | [memgraph/memgraph](https://github.com/memgraph/memgraph) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-623 | [panaversity/learn-agentic-ai](https://github.com/panaversity/learn-agentic-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-624 | [tigerless-labs/agent-memory](https://github.com/tigerless-labs/agent-memory) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-625 | [code-yeongyu/lazycodex](https://github.com/code-yeongyu/lazycodex) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-626 | [aiming-lab/SimpleMem](https://github.com/aiming-lab/SimpleMem) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-627 | [agentscope-ai/ReMe](https://github.com/agentscope-ai/ReMe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-628 | [Ar9av/obsidian-wiki](https://github.com/Ar9av/obsidian-wiki) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-629 | [Mirix-AI/MIRIX](https://github.com/Mirix-AI/MIRIX) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-630 | [MemMachine/MemMachine](https://github.com/MemMachine/MemMachine) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-631 | [Asymptote-Labs/agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-632 | [MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials](https://github.com/MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-633 | [moltis-org/moltis](https://github.com/moltis-org/moltis) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-634 | [rohitg00/pro-workflow](https://github.com/rohitg00/pro-workflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-635 | [compozy/compozy](https://github.com/compozy/compozy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-636 | [xzf-thu/VoiceMem](https://github.com/xzf-thu/VoiceMem) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-637 | [zilliztech/memsearch](https://github.com/zilliztech/memsearch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-638 | [felinics/Memoh](https://github.com/felinics/Memoh) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-639 | [kingjulio8238/Memary](https://github.com/kingjulio8238/Memary) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-640 | [griptape-ai/griptape](https://github.com/griptape-ai/griptape) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-641 | [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-642 | [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-643 | [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-644 | [conductor-oss/conductor](https://github.com/conductor-oss/conductor) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-645 | [Budibase/budibase](https://github.com/Budibase/budibase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-646 | [enescingoz/awesome-n8n-templates](https://github.com/enescingoz/awesome-n8n-templates) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-647 | [activepieces/activepieces](https://github.com/activepieces/activepieces) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-648 | [temporalio/temporal](https://github.com/temporalio/temporal) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-649 | [HBAI-Ltd/Toonflow-app](https://github.com/HBAI-Ltd/Toonflow-app) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-650 | [cft0808/edict](https://github.com/cft0808/edict) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-652 | [keephq/keep](https://github.com/keephq/keep) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-653 | [EKKOLearnAI/ekko-studio](https://github.com/EKKOLearnAI/ekko-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-654 | [cadence-workflow/cadence](https://github.com/cadence-workflow/cadence) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-655 | [bytedance/flowgram.ai](https://github.com/bytedance/flowgram.ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-656 | [superplanehq/superplane](https://github.com/superplanehq/superplane) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-657 | [Osmantic/ODS](https://github.com/Osmantic/ODS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-658 | [czlonkowski/n8n-skills](https://github.com/czlonkowski/n8n-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-659 | [breaking-brake/cc-wf-studio](https://github.com/breaking-brake/cc-wf-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-660 | [ScrapeCreators/social-media-research-skills](https://github.com/ScrapeCreators/social-media-research-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-661 | [Agenta-AI/agenta](https://github.com/Agenta-AI/agenta) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-662 | [AlexAnys/awesome-openclaw-usecases-zh](https://github.com/AlexAnys/awesome-openclaw-usecases-zh) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-663 | [composio-community/open-claude-cowork](https://github.com/composio-community/open-claude-cowork) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-664 | [foryourhealth111-pixel/Vibe-Skills](https://github.com/foryourhealth111-pixel/Vibe-Skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-665 | [Arcenox-co/TickerQ](https://github.com/Arcenox-co/TickerQ) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-666 | [KhazP/vibe-coding-prompt-template](https://github.com/KhazP/vibe-coding-prompt-template) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-667 | [MaxMiksa/Autonomous-Company](https://github.com/MaxMiksa/Autonomous-Company) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-668 | [lowdefy/lowdefy](https://github.com/lowdefy/lowdefy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-669 | [yaojingang/yao-meta-skill](https://github.com/yaojingang/yao-meta-skill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-670 | [wanikua/danghuangshang](https://github.com/wanikua/danghuangshang) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-671 | [argoproj/argo-events](https://github.com/argoproj/argo-events) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-672 | [moazbuilds/CodeMachine-CLI](https://github.com/moazbuilds/CodeMachine-CLI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-673 | [shepherd-agents/shepherd](https://github.com/shepherd-agents/shepherd) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-674 | [pydoit/doit](https://github.com/pydoit/doit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-675 | [OpenAdaptAI/OpenAdapt](https://github.com/OpenAdaptAI/OpenAdapt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-676 | [codeaholicguy/ai-devkit](https://github.com/codeaholicguy/ai-devkit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-677 | [869413421/ai-moive-studio](https://github.com/869413421/ai-moive-studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-678 | [EtienneLescot/n8n-as-code](https://github.com/EtienneLescot/n8n-as-code) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-679 | [rulego/rulego](https://github.com/rulego/rulego) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-680 | [najmuzzaman-mohammad/gawkbot](https://github.com/najmuzzaman-mohammad/gawkbot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-681 | [nocode-js/sequential-workflow-designer](https://github.com/nocode-js/sequential-workflow-designer) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-682 | [ovh/utask](https://github.com/ovh/utask) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-683 | [amplifthq/openmeld](https://github.com/amplifthq/openmeld) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-684 | [qdhenry/Claude-Command-Suite](https://github.com/qdhenry/Claude-Command-Suite) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-685 | [durable-workflow/workflow](https://github.com/durable-workflow/workflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-686 | [heymrun/heym](https://github.com/heymrun/heym) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-687 | [dariubs/awesome-workflow-automation](https://github.com/dariubs/awesome-workflow-automation) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-688 | [Spielewoy/autoprompt-skill](https://github.com/Spielewoy/autoprompt-skill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-690 | [bubblelabai/BubbleLab](https://github.com/bubblelabai/BubbleLab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-691 | [openops-cloud/openops](https://github.com/openops-cloud/openops) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-692 | [bytechefhq/bytechef](https://github.com/bytechefhq/bytechef) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-693 | [kdlbs/kandev](https://github.com/kdlbs/kandev) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-694 | [Evolink-AI/awesome-openclaw-usecases-moltbook](https://github.com/Evolink-AI/awesome-openclaw-usecases-moltbook) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-695 | [apache/airflow](https://github.com/apache/airflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-696 | [dapr/dapr](https://github.com/dapr/dapr) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-697 | [nocobase/nocobase](https://github.com/nocobase/nocobase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-698 | [windmill-labs/windmill](https://github.com/windmill-labs/windmill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-699 | [argoproj/argo-workflows](https://github.com/argoproj/argo-workflows) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-700 | [dtm-labs/dtm](https://github.com/dtm-labs/dtm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-701 | [flowable/flowable-engine](https://github.com/flowable/flowable-engine) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-702 | [iflytek/astron-agent](https://github.com/iflytek/astron-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-704 | [danielgerlag/workflow-core](https://github.com/danielgerlag/workflow-core) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-705 | [devtron-labs/devtron](https://github.com/devtron-labs/devtron) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-706 | [ergo-services/ergo](https://github.com/ergo-services/ergo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-707 | [restatedev/restate](https://github.com/restatedev/restate) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-708 | [dagucloud/dagu](https://github.com/dagucloud/dagu) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-709 | [azkaban/azkaban](https://github.com/azkaban/azkaban) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-710 | [camunda/camunda](https://github.com/camunda/camunda) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-711 | [Netflix/maestro](https://github.com/Netflix/maestro) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-712 | [nextflow-io/nextflow](https://github.com/nextflow-io/nextflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-713 | [viewflow/viewflow](https://github.com/viewflow/viewflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-714 | [akuity/awesome-argo](https://github.com/akuity/awesome-argo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-715 | [blackholll/loonflow](https://github.com/blackholll/loonflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-716 | [galaxyproject/galaxy](https://github.com/galaxyproject/galaxy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-717 | [dbos-inc/dbos-transact-ts](https://github.com/dbos-inc/dbos-transact-ts) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-718 | [s8sg/goflow](https://github.com/s8sg/goflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-719 | [TencentBlueKing/bk-sops](https://github.com/TencentBlueKing/bk-sops) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-720 | [scipipe/scipipe](https://github.com/scipipe/scipipe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-721 | [temporalio/sdk-go](https://github.com/temporalio/sdk-go) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-722 | [optimajet/WorkflowEngine.NET](https://github.com/optimajet/WorkflowEngine.NET) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-723 | [alikon-art/DeterminFlow](https://github.com/alikon-art/DeterminFlow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-724 | [couler-proj/couler](https://github.com/couler-proj/couler) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-725 | [commsor/titanoboa](https://github.com/commsor/titanoboa) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-726 | [besley/Slickflow](https://github.com/besley/Slickflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-727 | [risesoft-y9/WorkFlow-Engine](https://github.com/risesoft-y9/WorkFlow-Engine) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-728 | [dbos-inc/dbos-transact-golang](https://github.com/dbos-inc/dbos-transact-golang) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-729 | [aelassas/wexflow](https://github.com/aelassas/wexflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-730 | [nipy/nipype](https://github.com/nipy/nipype) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-731 | [runabol/tork](https://github.com/runabol/tork) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-732 | [obeli-sk/obelisk](https://github.com/obeli-sk/obelisk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-733 | [indeedeng/iwf](https://github.com/indeedeng/iwf) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-734 | [sbhooley/ainativelang](https://github.com/sbhooley/ainativelang) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-735 | [openinterpreter/openinterpreter](https://github.com/openinterpreter/openinterpreter) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-736 | [codewhale-hq/Codewhale](https://github.com/codewhale-hq/Codewhale) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-737 | [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-738 | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-739 | [1jehuang/jcode](https://github.com/1jehuang/jcode) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-740 | [NanmiCoder/cc-haha](https://github.com/NanmiCoder/cc-haha) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-741 | [YaoApp/yao](https://github.com/YaoApp/yao) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-742 | [algorithmicsuperintelligence/openevolve](https://github.com/algorithmicsuperintelligence/openevolve) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-743 | [vastsa/PI-Desktop](https://github.com/vastsa/PI-Desktop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-744 | [anus-dev/ANUS](https://github.com/anus-dev/ANUS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-745 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-746 | [KunAgent/Kun](https://github.com/KunAgent/Kun) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-747 | [google/agents-cli](https://github.com/google/agents-cli) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-748 | [rllm-org/rllm](https://github.com/rllm-org/rllm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-749 | [cloudflare/vibesdk](https://github.com/cloudflare/vibesdk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-750 | [nexu-io/html-video](https://github.com/nexu-io/html-video) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-751 | [kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-752 | [CommandCodeAI/command-code](https://github.com/CommandCodeAI/command-code) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-753 | [microsoft/TokenEconomizer](https://github.com/microsoft/TokenEconomizer) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-754 | [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-755 | [tutti-os/tutti](https://github.com/tutti-os/tutti) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-756 | [HarnessRouter/harnessrouter](https://github.com/HarnessRouter/harnessrouter) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-757 | [Windy3f3f3f3f/how-claude-code-works](https://github.com/Windy3f3f3f3f/how-claude-code-works) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-758 | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-759 | [SeemSeam/claude_codex_bridge](https://github.com/SeemSeam/claude_codex_bridge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-760 | [superagent-ai/grok-cli](https://github.com/superagent-ai/grok-cli) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-761 | [zeronsh/zeron](https://github.com/zeronsh/zeron) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-762 | [fuxicodex/Fuxi](https://github.com/fuxicodex/Fuxi) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-764 | [cocoindex-io/cocoindex-code](https://github.com/cocoindex-io/cocoindex-code) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-765 | [DSH-APP/DSHA](https://github.com/DSH-APP/DSHA) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-766 | [teaql/teaql-agent-kit](https://github.com/teaql/teaql-agent-kit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-767 | [Windy3f3f3f3f/claude-code-from-scratch](https://github.com/Windy3f3f3f3f/claude-code-from-scratch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-768 | [itayinbarr/little-coder](https://github.com/itayinbarr/little-coder) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-769 | [NeuralNomadsAI/CodeNomad](https://github.com/NeuralNomadsAI/CodeNomad) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-770 | [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-771 | [CoderLuii/HolyClaude](https://github.com/CoderLuii/HolyClaude) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-772 | [amElnagdy/delegate-skills](https://github.com/amElnagdy/delegate-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-773 | [777genius/agent-teams-ai](https://github.com/777genius/agent-teams-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-774 | [OpenCoworkAI/open-cowork](https://github.com/OpenCoworkAI/open-cowork) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-775 | [inferstep/ATLAS](https://github.com/inferstep/ATLAS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-776 | [happier-dev/happier](https://github.com/happier-dev/happier) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-777 | [nimbalyst/nimbalyst](https://github.com/nimbalyst/nimbalyst) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-778 | [kenryu42/cc-safety-net](https://github.com/kenryu42/cc-safety-net) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-779 | [he-yufeng/CoreCoder](https://github.com/he-yufeng/CoreCoder) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-780 | [aoci-spec/aoci-code](https://github.com/aoci-spec/aoci-code) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-781 | [Twigpine/zero](https://github.com/Twigpine/zero) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-782 | [gi-dellav/zerostack](https://github.com/gi-dellav/zerostack) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-783 | [DataTalksClub/ai-dev-tools-zoomcamp](https://github.com/DataTalksClub/ai-dev-tools-zoomcamp) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-784 | [morganlinton/BeautifulRust](https://github.com/morganlinton/BeautifulRust) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-785 | [LodyAI/Lody](https://github.com/LodyAI/Lody) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-786 | [nicobailon/pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-787 | [razzant/ouroboros](https://github.com/razzant/ouroboros) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-791 | [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-792 | [openai/codex-security](https://github.com/openai/codex-security) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-794 | [beenuar/AiSOC](https://github.com/beenuar/AiSOC) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-795 | [FlorianBruniaux/claude-code-ultimate-guide](https://github.com/FlorianBruniaux/claude-code-ultimate-guide) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-798 | [nolabs-ai/nono](https://github.com/nolabs-ai/nono) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-799 | [yvgude/lean-ctx](https://github.com/yvgude/lean-ctx) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-801 | [skills/secure-code-game](https://github.com/skills/secure-code-game) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-802 | [Kritt-ai/open-kritt](https://github.com/Kritt-ai/open-kritt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-804 | [stacklok/toolhive](https://github.com/stacklok/toolhive) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-805 | [ai-for-developers/awesome-ai-coding-tools](https://github.com/ai-for-developers/awesome-ai-coding-tools) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-806 | [uber/ADR](https://github.com/uber/ADR) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-808 | [akto-api-security/akto](https://github.com/akto-api-security/akto) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-811 | [tophant-ai/aibeat](https://github.com/tophant-ai/aibeat) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-812 | [utkusen/sast-skills](https://github.com/utkusen/sast-skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-813 | [pashov/skills](https://github.com/pashov/skills) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-814 | [utkusen/promptmap](https://github.com/utkusen/promptmap) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-816 | [mrwadams/attackgen](https://github.com/mrwadams/attackgen) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-818 | [THUYimingLi/backdoor-learning-resources](https://github.com/THUYimingLi/backdoor-learning-resources) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-820 | [mrwadams/stride-gpt](https://github.com/mrwadams/stride-gpt) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-821 | [splx-ai/agentic-radar](https://github.com/splx-ai/agentic-radar) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-822 | [hashgraph-online/hol-guard](https://github.com/hashgraph-online/hol-guard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-823 | [Pantheon-Security/medusa](https://github.com/Pantheon-Security/medusa) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-824 | [reconmap/reconmap](https://github.com/reconmap/reconmap) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-825 | [Commando-X/vuln-bank](https://github.com/Commando-X/vuln-bank) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-826 | [pipelab-org/pipelock](https://github.com/pipelab-org/pipelock) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-828 | [toby-bridges/api-relay-audit](https://github.com/toby-bridges/api-relay-audit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-829 | [h5i-dev/h5i](https://github.com/h5i-dev/h5i) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-830 | [asamassekou10/ship-safe](https://github.com/asamassekou10/ship-safe) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-831 | [Yeti-791/Tsec-Hackathon](https://github.com/Yeti-791/Tsec-Hackathon) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-832 | [FrancescoStabile/numasec](https://github.com/FrancescoStabile/numasec) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-834 | [arcjet/arcjet-js](https://github.com/arcjet/arcjet-js) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-835 | [jagmarques/asqav-sdk](https://github.com/jagmarques/asqav-sdk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-836 | [DrHazemAli/enterprise-system-design](https://github.com/DrHazemAli/enterprise-system-design) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-837 | [pashov/ai-web3-security](https://github.com/pashov/ai-web3-security) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-838 | [emiliaprotocol/emilia-protocol](https://github.com/emiliaprotocol/emilia-protocol) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-839 | [secureagentics/Adrian](https://github.com/secureagentics/Adrian) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-840 | [KeyValueSoftwareSystems/agent-opfor](https://github.com/KeyValueSoftwareSystems/agent-opfor) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-841 | [alex-ilgayev/MCPSpy](https://github.com/alex-ilgayev/MCPSpy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-842 | [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-843 | [maximhq/bifrost](https://github.com/maximhq/bifrost) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-844 | [mnfst/llm-gateway](https://github.com/mnfst/llm-gateway) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-845 | [FailproofAI/failproofai](https://github.com/FailproofAI/failproofai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-846 | [coze-dev/coze-loop](https://github.com/coze-dev/coze-loop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-847 | [latitude-dev/latitude-llm](https://github.com/latitude-dev/latitude-llm) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-848 | [traceroot-ai/traceroot](https://github.com/traceroot-ai/traceroot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-849 | [ThinkWatchProject/ThinkWatch](https://github.com/ThinkWatchProject/ThinkWatch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-850 | [Abilityai/trinity](https://github.com/Abilityai/trinity) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-851 | [comet-ml/opik-openclaw](https://github.com/comet-ml/opik-openclaw) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-852 | [databufflabs/databuff](https://github.com/databufflabs/databuff) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-853 | [ThinkWatchProject/ThinkWatch-Lite](https://github.com/ThinkWatchProject/ThinkWatch-Lite) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-854 | [Justin0504/Aegis](https://github.com/Justin0504/Aegis) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-855 | [vivekchand/clawmetry](https://github.com/vivekchand/clawmetry) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-856 | [evilmartians/agent-prism](https://github.com/evilmartians/agent-prism) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-857 | [taichuy/1flowbase](https://github.com/taichuy/1flowbase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-858 | [alibaba/loongsuite-pilot](https://github.com/alibaba/loongsuite-pilot) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-859 | [comet-ml/opik-mcp](https://github.com/comet-ml/opik-mcp) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-860 | [scasella/claude-flightdeck](https://github.com/scasella/claude-flightdeck) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-861 | [QuesmaOrg/awesome-ai-tokenomics](https://github.com/QuesmaOrg/awesome-ai-tokenomics) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-862 | [douglasmonsky/codex-usage-tracker](https://github.com/douglasmonsky/codex-usage-tracker) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-863 | [splunk/token-meter](https://github.com/splunk/token-meter) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-864 | [sina2266/Gozar](https://github.com/sina2266/Gozar) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-865 | [cyberark/agentwatch](https://github.com/cyberark/agentwatch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-866 | [tma1-ai/tma1](https://github.com/tma1-ai/tma1) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-867 | [Necmttn/ax](https://github.com/Necmttn/ax) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-868 | [inferock/inferock-bench](https://github.com/inferock/inferock-bench) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-869 | [Netis/heron](https://github.com/Netis/heron) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-870 | [radicalbit/radicalbit-ai-monitoring](https://github.com/radicalbit/radicalbit-ai-monitoring) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-871 | [shyftlabs/continuum](https://github.com/shyftlabs/continuum) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-872 | [vstorm-co/agentcanvas](https://github.com/vstorm-co/agentcanvas) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-873 | [TaewoooPark/Agent-Blackbox](https://github.com/TaewoooPark/Agent-Blackbox) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-874 | [Sheltercosmo/Rilldex-RL-Studio](https://github.com/Sheltercosmo/Rilldex-RL-Studio) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-875 | [last9/gpu-telemetry](https://github.com/last9/gpu-telemetry) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-876 | [langfuse/langfuse-java](https://github.com/langfuse/langfuse-java) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-877 | [dunetrace/dunetrace](https://github.com/dunetrace/dunetrace) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-878 | [ByteYellow/AgentProvenance](https://github.com/ByteYellow/AgentProvenance) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-879 | [langfuse/langfuse-workshop](https://github.com/langfuse/langfuse-workshop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-880 | [myscale/myscale-telemetry](https://github.com/myscale/myscale-telemetry) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-881 | [alizahidraja/isnad](https://github.com/alizahidraja/isnad) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-882 | [ewsun22/codex-manager](https://github.com/ewsun22/codex-manager) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-883 | [nujovich/hermes-telemetry](https://github.com/nujovich/hermes-telemetry) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-884 | [ioc-project/mas-lab](https://github.com/ioc-project/mas-lab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-885 | [vicarious11/agenttop](https://github.com/vicarious11/agenttop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-886 | [VoltAgent/ai-agent-platform](https://github.com/VoltAgent/ai-agent-platform) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-887 | [duqaXxX/seedeep](https://github.com/duqaXxX/seedeep) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-888 | [CollieAi/llm-firewall](https://github.com/CollieAi/llm-firewall) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-889 | [cristianodabc/aludel](https://github.com/cristianodabc/aludel) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-890 | [cleanlab/cleanlab](https://github.com/cleanlab/cleanlab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-891 | [evidentlyai/evidently](https://github.com/evidentlyai/evidently) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-892 | [unionai-oss/pandera](https://github.com/unionai-oss/pandera) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-893 | [deepchecks/deepchecks](https://github.com/deepchecks/deepchecks) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-894 | [pyeve/cerberus](https://github.com/pyeve/cerberus) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-895 | [sodadata/soda-core](https://github.com/sodadata/soda-core) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-896 | [cleanlab/cleanvision](https://github.com/cleanlab/cleanvision) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-897 | [rstudio/pointblank](https://github.com/rstudio/pointblank) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-898 | [MigoXLab/dingo](https://github.com/MigoXLab/dingo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-899 | [posit-dev/pointblank](https://github.com/posit-dev/pointblank) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-900 | [DataRecce/recce](https://github.com/DataRecce/recce) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-901 | [EXXETA/openapi-cop](https://github.com/EXXETA/openapi-cop) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-902 | [lucono/xtypejs](https://github.com/lucono/xtypejs) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-903 | [okfn/opendataeditor](https://github.com/okfn/opendataeditor) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-904 | [kjam/data-cleaning-101](https://github.com/kjam/data-cleaning-101) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-905 | [MAIF/eurybia](https://github.com/MAIF/eurybia) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-906 | [atrocore/atropim](https://github.com/atrocore/atropim) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-907 | [datachecks/dcs-core](https://github.com/datachecks/dcs-core) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-908 | [AKSW/RDFUnit](https://github.com/AKSW/RDFUnit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-910 | [DataKitchen/data-observability-installer](https://github.com/DataKitchen/data-observability-installer) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-911 | [medtagger/MedTagger](https://github.com/medtagger/MedTagger) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-912 | [germanbisurgi/jedison](https://github.com/germanbisurgi/jedison) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-913 | [target/data-validator](https://github.com/target/data-validator) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-914 | [fiverr/passable](https://github.com/fiverr/passable) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-916 | [akmalsoliev/Validoopsie](https://github.com/akmalsoliev/Validoopsie) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-918 | [DataKitchen/dataops-testgen](https://github.com/DataKitchen/dataops-testgen) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-919 | [sparkdq-community/sparkdq](https://github.com/sparkdq-community/sparkdq) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-921 | [vertti/daffy](https://github.com/vertti/daffy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-923 | [thomaseibner/snowflake-provisioning](https://github.com/thomaseibner/snowflake-provisioning) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-924 | [dengxianghua888-ops/preference-lab](https://github.com/dengxianghua888-ops/preference-lab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-925 | [jwadow/mcp-excel](https://github.com/jwadow/mcp-excel) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-926 | [fafa-ai-data-lab/ai-data-analyst-agent](https://github.com/fafa-ai-data-lab/ai-data-analyst-agent) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-928 | [piashcse/ZodKmp](https://github.com/piashcse/ZodKmp) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-929 | [pete-lee6071/excel-workbook-automation-helper](https://github.com/pete-lee6071/excel-workbook-automation-helper) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-930 | [zimmerman-team/IATI.cloud](https://github.com/zimmerman-team/IATI.cloud) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-931 | [NatanMish/data_validation](https://github.com/NatanMish/data_validation) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-932 | [nshkrdotcom/json_remedy](https://github.com/nshkrdotcom/json_remedy) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-934 | [emilyriederer/convo](https://github.com/emilyriederer/convo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-936 | [withterm/term-guard](https://github.com/withterm/term-guard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-937 | [eugeneyan/applied-ml](https://github.com/eugeneyan/applied-ml) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-938 | [open-metadata/OpenMetadata](https://github.com/open-metadata/OpenMetadata) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-939 | [Data-Centric-AI-Community/fg-data-profiling](https://github.com/Data-Centric-AI-Community/fg-data-profiling) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-940 | [fivetran/great_expectations](https://github.com/fivetran/great_expectations) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-941 | [voxel51/fiftyone](https://github.com/voxel51/fiftyone) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-942 | [feast-dev/feast](https://github.com/feast-dev/feast) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-943 | [treeverse/lakeFS](https://github.com/treeverse/lakeFS) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-944 | [GokuMohandas/mlops-course](https://github.com/GokuMohandas/mlops-course) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-945 | [featureform/featureform](https://github.com/featureform/featureform) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-946 | [NVIDIA-NeMo/Curator](https://github.com/NVIDIA-NeMo/Curator) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-947 | [slothflowlabs/duckle](https://github.com/slothflowlabs/duckle) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-948 | [opendatadiscovery/odd-platform](https://github.com/opendatadiscovery/odd-platform) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-949 | [bitol-io/open-data-contract-standard](https://github.com/bitol-io/open-data-contract-standard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-950 | [daochenzha/data-centric-AI](https://github.com/daochenzha/data-centric-AI) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-951 | [datacontract/datacontract-cli](https://github.com/datacontract/datacontract-cli) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-952 | [opendatadiscovery/awesome-data-catalogs](https://github.com/opendatadiscovery/awesome-data-catalogs) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-953 | [limingrui679-design/high-stakes-analytics-decision-lab](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-954 | [WeBankFinTech/Qualitis](https://github.com/WeBankFinTech/Qualitis) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-955 | [datavane/datavines](https://github.com/datavane/datavines) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-956 | [kennethleungty/Failed-ML](https://github.com/kennethleungty/Failed-ML) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-957 | [JulietMirambo/Units_of_Measure_Harmonization-intelligence-platform](https://github.com/JulietMirambo/Units_of_Measure_Harmonization-intelligence-platform) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-959 | [polyaxon/traceml](https://github.com/polyaxon/traceml) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-960 | [InfuseAI/piperider](https://github.com/InfuseAI/piperider) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-961 | [databrickslabs/dqx](https://github.com/databrickslabs/dqx) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-962 | [duoan/mega-data-factory](https://github.com/duoan/mega-data-factory) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-963 | [Data-Centric-AI-Community/awesome-data-centric-ai](https://github.com/Data-Centric-AI-Community/awesome-data-centric-ai) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-964 | [alibaba/feathub](https://github.com/alibaba/feathub) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-965 | [data-drift/data-drift](https://github.com/data-drift/data-drift) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-966 | [rocky-data/rocky](https://github.com/rocky-data/rocky) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-967 | [Hebbian-Robotics/hflow](https://github.com/Hebbian-Robotics/hflow) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-968 | [adidas/lakehouse-engine](https://github.com/adidas/lakehouse-engine) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-969 | [znxzsy/VeriInk](https://github.com/znxzsy/VeriInk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-970 | [wzn1118/AsteriaAnalyst](https://github.com/wzn1118/AsteriaAnalyst) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-971 | [GAIR-NLP/ProX](https://github.com/GAIR-NLP/ProX) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-972 | [ubisoft/mobydq](https://github.com/ubisoft/mobydq) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-973 | [BdR76/CSVLint](https://github.com/BdR76/CSVLint) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-974 | [canimus/cuallee](https://github.com/canimus/cuallee) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-975 | [atrocore/atrocore](https://github.com/atrocore/atrocore) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-976 | [dqops/dqo](https://github.com/dqops/dqo) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-977 | [OHDSI/DataQualityDashboard](https://github.com/OHDSI/DataQualityDashboard) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-978 | [arpitg1304/forge](https://github.com/arpitg1304/forge) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-979 | [GrayboxTech/weightslab](https://github.com/GrayboxTech/weightslab) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-980 | [Longado/ontopoc](https://github.com/Longado/ontopoc) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-981 | [Niki9001/purview-unified-sdk](https://github.com/Niki9001/purview-unified-sdk) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-982 | [meilisearch/meilisearch](https://github.com/meilisearch/meilisearch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-983 | [qdrant/qdrant](https://github.com/qdrant/qdrant) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-984 | [weaviate/weaviate](https://github.com/weaviate/weaviate) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-985 | [langchain4j/langchain4j](https://github.com/langchain4j/langchain4j) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-986 | [zilliztech/claude-context](https://github.com/zilliztech/claude-context) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-987 | [oramasearch/orama](https://github.com/oramasearch/orama) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-988 | [oceanbase/oceanbase](https://github.com/oceanbase/oceanbase) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-989 | [databendlabs/databend](https://github.com/databendlabs/databend) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-990 | [paradedb/paradedb](https://github.com/paradedb/paradedb) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-991 | [activeloopai/deeplake](https://github.com/activeloopai/deeplake) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-992 | [zilliztech/deep-searcher](https://github.com/zilliztech/deep-searcher) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-993 | [postgresml/postgresml](https://github.com/postgresml/postgresml) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-994 | [genkit-ai/genkit](https://github.com/genkit-ai/genkit) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-995 | [HelixDB/helix-db](https://github.com/HelixDB/helix-db) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-996 | [RediSearch/RediSearch](https://github.com/RediSearch/RediSearch) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-997 | [volcengine/MineContext](https://github.com/volcengine/MineContext) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-998 | [infiniflow/infinity](https://github.com/infiniflow/infinity) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
+| 20 | R-999 | [CaviraOSS/LongMemory](https://github.com/CaviraOSS/LongMemory) | readme-relevance-screened; automated-screen | current | intake awaiting appraisal |
