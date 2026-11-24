@@ -49281,6 +49281,40 @@
       "license_status": "Root LICENSE is MIT at the pin. Dependency rights and continuing maintenance unassessed.",
       "aliases": [],
       "readme_content_sha256": "881e452a2287a690e1c82c1c9cfa79cf52a6dc615ce515ce65f297f547cab1c3"
+    },
+    {
+      "id": "R-1067",
+      "repository": "openwop/openwop",
+      "url": "https://github.com/openwop/openwop",
+      "snapshot_commit": "e0adbca837ff364768f371149bfcd06204ef22a4",
+      "upstream_revision": "e0adbca837ff364768f371149bfcd06204ef22a4",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "approval-before-merging-child-output",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/openwop/openwop/blob/e0adbca837ff364768f371149bfcd06204ef22a4/conformance/src/scenarios/subrun-approval-fail-closed.test.ts",
+      "evidence_note": "The pinned fail-closed conformance test omits an approval response and asks whether the child output is withheld from the parent. It models termination without a response. It does not separately exercise expiry. The backing invariant is proposed. At the same revision, conformance/src/scenarios/subrun-approval-gate.test.ts specifies acceptance and rejection. Missing capability or host interface can skip checks, and a partially observed run can be marked blocked despite assertions. Host implementation, approver identity and adoption are unverified. A synthetic native check could count actual parent merges after acceptance, rejection and no response, recording skips and partial observations separately. No upstream execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "P",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root code and conformance harness code are Apache-2.0. LICENSE-DOCS covers root and spec Markdown, schemas, API contracts and conformance fixture JSON under CC BY 4.0. Dependency rights and continuing maintenance are unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "7130e2d4078b1b5444b0c01302b11857c374941ba91fb0d8ce630ae49cbeed9e"
     }
   ],
   "unresolved_identities": [],
@@ -49307,9 +49341,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 254,
+    "detailed_appraisal_count": 255,
     "portable_only_count": 105,
-    "total_repository_count": 1063,
+    "total_repository_count": 1064,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50067,6 +50101,7 @@
     "R-1062",
     "R-1063",
     "R-1064",
-    "R-1066"
+    "R-1066",
+    "R-1067"
   ]
 }
