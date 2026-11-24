@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "b47faaa9e004d3771b1ebf2204ee678ac29fc222a548004521b57282584e1f74",
-  "appraisal_source_sha256": "52d4ec10533dcefa749dcae5dc3a445d00e61f343539450ad900fbffbdd439cb",
+  "research_source_sha256": "192f9c9721b60e5568d3d00438edfcf44768b0eb80398bf030eb7f0733189371",
+  "appraisal_source_sha256": "ce1f787455f888f6e790c3a4940f2e70c331f55b919646c80d13f9fb4aa780ff",
   "repository_source_sha256": "a13038b51b767ad48b145dca0e060d160b1574631fa4aaae9ea89cd6a63f646f",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -2145,6 +2145,28 @@
       ],
       "directness": "D2 adjacent",
       "family": "EVIDENCE-INSPECTION-FACT-CHECKING",
+      "horizon": "single",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 32,
+      "priority_key": [
+        7,
+        1,
+        2
+      ],
+      "priority_claim": "CI-002"
+    },
+    {
+      "id": "C-419",
+      "title": "CO-FACTCHECKER: A Framework for Human-AI Collaborative Claim Verification Using Large Reasoning Models",
+      "url": "https://arxiv.org/abs/2604.13706v2",
+      "claims": [
+        "CI-002"
+      ],
+      "directness": "D2 adjacent",
+      "family": "HUMAN-FEEDBACK-TRACE-EDITING",
       "horizon": "single",
       "review_depth": "selected-full-text",
       "record_state": "candidate-not-promoted",
