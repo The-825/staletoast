@@ -31,11 +31,16 @@ they must not install dependencies or execute source-provided commands.
 ## Intake paused (Jovan, 2026-11-24)
 
 Do not open new catalog intake PRs (research records, repository records or
-appraisals that freeze an export) until the weekly Hot 100 lane is fixed: the
-export freeze moves to the weekly edition and the November 23 edition merges.
-Per-record freezes rewrite `catalog-export-pin.json` and keep the weekly PR in
-conflict. Weekly edition work and the fix itself may proceed. This note is
-removed by the PR that lifts the pause.
+appraisals) until the November 23 Hot 100 edition merges. The export freeze has
+moved to the weekly edition PR; the backlog of open weekly work lands first.
+Weekly edition work may proceed. This note is removed by the PR that lifts the
+pause.
+
+## Export freezes
+
+Only the weekly Hot100 edition PR runs `site/build_export.py --freeze` or edits
+`catalog-export-pin.json` and `exports/`. Record and code PRs never freeze; CI
+fails a freeze in a PR that adds no dated chart edition.
 
 ## Outcome-focused collaboration
 
