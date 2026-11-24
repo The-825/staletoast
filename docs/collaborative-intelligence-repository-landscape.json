@@ -49179,6 +49179,40 @@
       "license_status": "Root LICENSE is MIT at the pin. Dependency rights and continuing maintenance unassessed.",
       "aliases": [],
       "readme_content_sha256": "72325ac3cc716400980d30ea654706acd608bb6d30bdb9e9b054256ba6850069"
+    },
+    {
+      "id": "R-1063",
+      "repository": "murillo-consulting/langgraph-resilient-agent",
+      "url": "https://github.com/murillo-consulting/langgraph-resilient-agent",
+      "snapshot_commit": "0dfc29c8c8f6a6ea02812a69ae9a63b8bd7b43f5",
+      "upstream_revision": "0dfc29c8c8f6a6ea02812a69ae9a63b8bd7b43f5",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "tenant-scoped-approval-readback",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/murillo-consulting/langgraph-resilient-agent/blob/0dfc29c8c8f6a6ea02812a69ae9a63b8bd7b43f5/tests/test_api.py",
+      "evidence_note": "A deterministic reference agent pauses change requests for human approval. The API fixture starts a pending request and submits a decision to resume it. A separate test keeps the principal fixed, changes the tenant, and expects both run and audit reads to return 404. The identity dependency checks the format of caller-supplied headers. Establishing the identity behind those headers requires a trusted upstream boundary. This adds a tenant-isolation question to the prior ticket recovery case. The cited tests leave cross-tenant decision submission, process restart during approval, and production identity enforcement unverified. A synthetic native check could submit the same decision across tenant boundaries and after restart, measuring accepted decisions and duplicate effects. No upstream execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE is MIT at the pin. Dependency rights and continuing maintenance unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "65026db190228bb766266993fd6aa281a1d71ecf78ba77e5fc26c119d465f98a"
     }
   ],
   "unresolved_identities": [],
@@ -49205,9 +49239,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 251,
+    "detailed_appraisal_count": 252,
     "portable_only_count": 105,
-    "total_repository_count": 1060,
+    "total_repository_count": 1061,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49962,6 +49996,7 @@
     "R-1059",
     "R-1060",
     "R-1061",
-    "R-1062"
+    "R-1062",
+    "R-1063"
   ]
 }
