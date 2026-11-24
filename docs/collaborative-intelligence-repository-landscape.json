@@ -49247,6 +49247,40 @@
       "license_status": "Root LICENSE is MIT at the pin. Dependency rights and continuing maintenance unassessed.",
       "aliases": [],
       "readme_content_sha256": "76ef4057b34d1b2c3090ef91d3ae47aff1978f34d02583ce1e1c419c2eda90af"
+    },
+    {
+      "id": "R-1066",
+      "repository": "cloudflare/agents",
+      "url": "https://github.com/cloudflare/agents",
+      "snapshot_commit": "dfac7db03d2c745e5be7fe02cd5d8eb3cf89494f",
+      "upstream_revision": "dfac7db03d2c745e5be7fe02cd5d8eb3cf89494f",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "cancelling-or-replacing-a-pending-retry",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/cloudflare/agents/blob/dfac7db03d2c745e5be7fe02cd5d8eb3cf89494f/packages/agents/src/tests/lifecycle/job-retry-superseded.test.ts",
+      "evidence_note": "A scheduled agent retry can become obsolete while waiting after a failure. The lifecycle driver distinguishes superseded work. The selected harness cancels a queue item during retry backoff and expects only the first callback and an empty queue. Another case replaces work under the same ID. The driver checks whether the queue still owns the claim before retrying. The fixture does not establish who authorized cancellation, live eviction behavior or effects in external services. A native check could cancel or replace a synthetic failed job during backoff, then compare callback payloads and the surviving schedule. No upstream execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE is MIT at the pin. Dependency rights and continuing maintenance unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "881e452a2287a690e1c82c1c9cfa79cf52a6dc615ce515ce65f297f547cab1c3"
     }
   ],
   "unresolved_identities": [],
@@ -49273,9 +49307,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 253,
+    "detailed_appraisal_count": 254,
     "portable_only_count": 105,
-    "total_repository_count": 1062,
+    "total_repository_count": 1063,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50032,6 +50066,7 @@
     "R-1061",
     "R-1062",
     "R-1063",
-    "R-1064"
+    "R-1064",
+    "R-1066"
   ]
 }
