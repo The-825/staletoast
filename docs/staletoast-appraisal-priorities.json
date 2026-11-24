@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "b0b0480243006c5efa5018b2749700dd76bb209a01729c9e5ef2ceea74809c90",
-  "appraisal_source_sha256": "0264ef964f0d6db894c70d533b585755c30a899e5abcad7975cb04dac2b833d1",
+  "research_source_sha256": "4b62d9ad06933132e95faaef31c373941aa78739ac00976905db7275345ec044",
+  "appraisal_source_sha256": "96e15c8fbd455bbdedcd68da3865a478bc40a99c99e9f46672ab2b148aeb6e7a",
   "repository_source_sha256": "870701cb9ce856600c3b4a0549e9cc511fd580c681e6e66f417d3edb27bba223",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -2977,6 +2977,28 @@
       "horizon": "single",
       "review_depth": "screened-structural",
       "record_state": "reviewed-catalog",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 50,
+      "priority_key": [
+        13,
+        1,
+        2
+      ],
+      "priority_claim": "CI-003"
+    },
+    {
+      "id": "C-422",
+      "title": "Modeling Distinct Human Interaction in Web Agents",
+      "url": "https://aclanthology.org/2026.findings-emnlp.2029/",
+      "claims": [
+        "CI-003"
+      ],
+      "directness": "D2 adjacent",
+      "family": "COWCORPUS",
+      "horizon": "single",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
       "appraisal_state": "source-screened",
       "automated_screen": false,
       "appraisal_priority_rank": 50,
