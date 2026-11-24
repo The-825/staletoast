@@ -49349,6 +49349,40 @@
       "license_status": "The selected test carries an Apache-2.0 header attributed to Technische Universitaet Darmstadt. Repository-wide rights, dependency licenses and maintenance cadence are unverified.",
       "aliases": [],
       "readme_content_sha256": "01399c98647d46ead7a2f865bd38dc6b4deb8db96c0fdb8d8efe74d84006eebc"
+    },
+    {
+      "id": "R-1069",
+      "repository": "papilotai/papilot",
+      "url": "https://github.com/papilotai/papilot",
+      "snapshot_commit": "a1d4dfffd5284e1bbbd3d36649ff82a5de897b31",
+      "upstream_revision": "a1d4dfffd5284e1bbbd3d36649ff82a5de897b31",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "queued-rejection-of-agent-manuscript-edits",
+      "category": "writing-workflow",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/papilotai/papilot/blob/a1d4dfffd5284e1bbbd3d36649ff82a5de897b31/engine/tests/ts/queued-reject.test.ts",
+      "evidence_note": "Papilot is an AI-assisted LaTeX editor. The selected fixture records rejection while an agent is still editing. Its assertions keep the working file intact until queued decisions apply, remove the rejected text and preserve an unrelated later edit. If the agent revises the rejected unit before application, the fixture expects the queued rejection to be skipped, the newer text to survive and the decision to return to pending. Another case undoes a queued rejection before application. These tests specify local state transitions. They establish neither durability across a crash nor improved writing quality. A synthetic check could compare the predicted and final manuscript bytes and count lost unrelated edits, overwritten conflicting edits and incorrect pending decisions after reject, undo and intervening edits. No upstream execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The pinned root LICENSE is MIT, copyright 2026 Cui Chen. Dependency rights and ongoing maintenance are unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "88435ef8da6ea5e430e64dd028314e10a4cc36dee8173b8a9e8e900163808c62"
     }
   ],
   "unresolved_identities": [],
@@ -49375,9 +49409,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 256,
+    "detailed_appraisal_count": 257,
     "portable_only_count": 105,
-    "total_repository_count": 1065,
+    "total_repository_count": 1066,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50137,6 +50171,7 @@
     "R-1064",
     "R-1066",
     "R-1067",
-    "R-1068"
+    "R-1068",
+    "R-1069"
   ]
 }
