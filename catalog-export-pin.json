@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "source_revision": "593a2bfea10909db254249311e59a52cddfce8a2",
+  "source_revision": "f5579c0d31b9dec4be8f36e9cc1f809e90497a46",
   "inputs_sha256": {
     "catalog-contract.json": "95fa0097ee1061b2a5e2be647593fa1235327f848164f4fd4b56119babca2e38",
     "docs/collaborative-intelligence-research-ledger.md": "fc5129c2c4f5c547970a43217c3d47036b07c2a44c5fc46f4dfef10abafdf715",
@@ -11,6 +11,7 @@
     "docs/staletoast-chart-history/2026-10-12.json": "897842fe91e67af71200a9092a3940f4b80daf83f3dd3d9ade2854f116bcc5a0",
     "docs/staletoast-chart-history/2026-10-13.json": "ef3770b8d5d3183d1fd8642567194896572eb776aa73db534908a648a94e26b9",
     "docs/staletoast-chart-history/2026-11-02.json": "4de9771b07ecd5d3c21a53952146d1edaed842bd6ac59168a2fd7182b1413fd9",
+    "docs/staletoast-chart-history/2026-11-23.json": "a333dfb235386dbce15218f06ff3f9c048fa879d9bc8bfccc5273e5d9ffd627a",
     "docs/staletoast-chart-link-corrections.json": "35c0c3fc7ccb4a655f51ad43f35e25a9977786e7a913437a6d1ad0ddc0a70622",
     "site/build_catalogs.py": "2e5c7f354c40c952ebe151196988450594d8af693df8e82a2ecdfe07877e14a3",
     "docs/staletoast-expansion-2026-11-01.json": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -19,6 +20,6 @@
     "site/build_discovery.py": "ee6a3c04a35fbc2a6013c0cd55a4175ad477f5147b40a57e7d0da02df209e360",
     "site/ledger_markdown.py": "281c9e095e74628fba79f5114e0dfdcb5601da09f56f2229c63e4d6f770614ea",
     "site/intake_state.py": "958e04c77e1b0167f1100e2847a9ec9f695b9e02298abed5972dcf46ea119b55",
-    "site/build_export.py": "9bd53f661d244ef50ad2a4de37d22915712987f4536689c12421263f5540a670"
+    "site/build_export.py": "6110713fe1e618f9ab523b8e90fc616d223c5442a3fd329cac866265ae9d6732"
   }
 }
