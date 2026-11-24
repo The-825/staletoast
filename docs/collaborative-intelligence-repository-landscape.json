@@ -49077,6 +49077,40 @@
       "license_status": "MIT License at the pinned revision. Continuing maintenance and dependency rights unassessed.",
       "aliases": [],
       "readme_content_sha256": "0702316c8fcc9f61f616c6d7c667507e62c4d1bb5f10b0883feb200fbfc027c4"
+    },
+    {
+      "id": "R-1060",
+      "repository": "awaithumans/awaithumans-human-in-the-loop-ai-agents",
+      "url": "https://github.com/awaithumans/awaithumans-human-in-the-loop-ai-agents",
+      "snapshot_commit": "bc05b8e7121be50f59cadf18a86b9e626e79c6b3",
+      "upstream_revision": "bc05b8e7121be50f59cadf18a86b9e626e79c6b3",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "claiming-broadcast-human-tasks",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/awaithumans/awaithumans-human-in-the-loop-ai-agents/blob/bc05b8e7121be50f59cadf18a86b9e626e79c6b3/packages/python/tests/slack/test_claim_broadcast_e2e.py",
+      "evidence_note": "The README describes asking a human to resolve an agent task. The selected Slack interaction tests use an in-memory database and a fake Slack client. They check assignment and opening a modal for the first claimant, and a private error for a second claimant, an unknown user or a terminal task. This addresses which person owns a broadcast request before a decision is made. Sequential fixture interactions leave simultaneous claims, actual Slack delivery and human response quality unverified. On a synthetic broadcast, compare sequential and simultaneous requests and count assignments, conflicting winners and notifications to the wrong person. The catalog depth records README coverage with additional static test inspection. No upstream execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "P",
+        "workflow_state": "U",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE is Apache License 2.0 at the pin. Dependency rights and continuing maintenance unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "ac97163a5b184716b9ddec8309e6503bb9e8281569300abfaf03a30860e068f1"
     }
   ],
   "unresolved_identities": [],
@@ -49103,9 +49137,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 248,
+    "detailed_appraisal_count": 249,
     "portable_only_count": 105,
-    "total_repository_count": 1057,
+    "total_repository_count": 1058,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49857,6 +49891,7 @@
     "R-1056",
     "R-1057",
     "R-1058",
-    "R-1059"
+    "R-1059",
+    "R-1060"
   ]
 }
