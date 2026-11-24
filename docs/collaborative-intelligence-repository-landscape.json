@@ -49145,6 +49145,40 @@
       "license_status": "No root license file or pyproject license declaration located at the pin. Reuse rights, dependency rights and continuing maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "d90a815beeae6c956fb04e027b8d852cc42195f2e70400d6311b8efbfef773f6"
+    },
+    {
+      "id": "R-1062",
+      "repository": "marvinjbb/agent-mcp-workflow-platform",
+      "url": "https://github.com/marvinjbb/agent-mcp-workflow-platform",
+      "snapshot_commit": "35c74a2df5422ea84dd3212a86d46749b597edb3",
+      "upstream_revision": "35c74a2df5422ea84dd3212a86d46749b597edb3",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "recovering-approved-ticket-after-write",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/marvinjbb/agent-mcp-workflow-platform/blob/35c74a2df5422ea84dd3212a86d46749b597edb3/tests/test_workflow.py",
+      "evidence_note": "A deterministic planner gathers incident observations and asks a person to authorize a proposed ticket. The service binds approval to a hash of the proposed action, writes a ticket idempotently and verifies the stored result. The selected tests cover altered payloads and resumption after a write succeeds but the first verification fails. This adds a readback and recovery case beyond duplicate suppression in a simulated ledger. The code and fixtures concern local ticket persistence. Operator identity assurance, external incident systems, production reliability and human decision quality remain unverified. A native check could interrupt a synthetic ticket after persistence, resume twice, and count distinct tickets and verified outcomes. No upstream execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE is MIT at the pin. Dependency rights and continuing maintenance unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "72325ac3cc716400980d30ea654706acd608bb6d30bdb9e9b054256ba6850069"
     }
   ],
   "unresolved_identities": [],
@@ -49171,9 +49205,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 250,
+    "detailed_appraisal_count": 251,
     "portable_only_count": 105,
-    "total_repository_count": 1059,
+    "total_repository_count": 1060,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49927,6 +49961,7 @@
     "R-1058",
     "R-1059",
     "R-1060",
-    "R-1061"
+    "R-1061",
+    "R-1062"
   ]
 }
