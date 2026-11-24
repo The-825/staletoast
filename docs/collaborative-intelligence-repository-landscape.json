@@ -49315,6 +49315,40 @@
       "license_status": "Root code and conformance harness code are Apache-2.0. LICENSE-DOCS covers root and spec Markdown, schemas, API contracts and conformance fixture JSON under CC BY 4.0. Dependency rights and continuing maintenance are unassessed.",
       "aliases": [],
       "readme_content_sha256": "7130e2d4078b1b5444b0c01302b11857c374941ba91fb0d8ce630ae49cbeed9e"
+    },
+    {
+      "id": "R-1068",
+      "repository": "eclipse-inception/inception",
+      "url": "https://github.com/eclipse-inception/inception",
+      "snapshot_commit": "023e5ec36e8c3c6a682911d787deeea75fb867ad",
+      "upstream_revision": "023e5ec36e8c3c6a682911d787deeea75fb867ad",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "viewer-role-in-annotation-curation",
+      "category": "annotation-curation",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/eclipse-inception/inception/blob/023e5ec36e8c3c6a682911d787deeea75fb867ad/inception/inception-ui-curation/src/test/java/de/tudarmstadt/ukp/inception/ui/curation/sidebar/render/CurationSidebarRendererAcceptsTest.java",
+      "evidence_note": "The pinned README describes machine-assisted suggestions for text annotation. A renderer test specifies curation overlay eligibility using mocked project roles. It accepts a curator viewing the same curator's annotation, refuses an annotator viewing a curator document and refuses a request with no viewer. It does not test a curator viewing another user's document. It establishes no write authorization, suggestion quality, decision provenance or deployment behavior. A synthetic check could fix the document and vary the viewer and annotation user independently, counting unexpected grants and denials. No upstream execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The selected test carries an Apache-2.0 header attributed to Technische Universitaet Darmstadt. Repository-wide rights, dependency licenses and maintenance cadence are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "01399c98647d46ead7a2f865bd38dc6b4deb8db96c0fdb8d8efe74d84006eebc"
     }
   ],
   "unresolved_identities": [],
@@ -49341,9 +49375,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 255,
+    "detailed_appraisal_count": 256,
     "portable_only_count": 105,
-    "total_repository_count": 1064,
+    "total_repository_count": 1065,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50102,6 +50136,7 @@
     "R-1063",
     "R-1064",
     "R-1066",
-    "R-1067"
+    "R-1067",
+    "R-1068"
   ]
 }

@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "fc5129c2c4f5c547970a43217c3d47036b07c2a44c5fc46f4dfef10abafdf715",
   "appraisal_source_sha256": "3317225e171233b0b1b7025997801b596597bfc2c8a7a18c0b769a9a8c0c8fa8",
-  "repository_source_sha256": "6f4b532ae49fe994fb48c197aae5cd879646f4f6198f8a1ce122c7862db67ca5",
+  "repository_source_sha256": "55939eabd9f09c754f7369dc4b6fe1c3bd212a6284c1d1d001871d806397e7eb",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16458,6 +16458,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "approval-before-merging-child-output",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1068",
+      "repository": "eclipse-inception/inception",
+      "url": "https://github.com/eclipse-inception/inception",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "viewer-role-in-annotation-curation",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
