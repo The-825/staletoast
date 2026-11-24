@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "8f56e733b2ba1bb60d357a5f13a52bd0f628399a03933ae3fec60bca7c75c7a1",
   "appraisal_source_sha256": "0f44e855dcbcfb0dcb20a613888b3575df73b61aa9d2714758c191858c198412",
-  "repository_source_sha256": "2014a0db91066def0411a8a7324502d45c01b1206985d9a5b25cb10c0652a708",
+  "repository_source_sha256": "fec9e62f0a4f18be05ca35cd35d1bdf4893d2e97feff91e7ac586007c14c4efe",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16328,6 +16328,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "claiming-broadcast-human-tasks",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1061",
+      "repository": "ducpahm03/ai-business-workflow-agent",
+      "url": "https://github.com/ducpahm03/ai-business-workflow-agent",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "binding-approval-to-simulated-effects",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
