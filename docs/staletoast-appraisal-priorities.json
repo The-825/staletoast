@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "b0b0480243006c5efa5018b2749700dd76bb209a01729c9e5ef2ceea74809c90",
   "appraisal_source_sha256": "0264ef964f0d6db894c70d533b585755c30a899e5abcad7975cb04dac2b833d1",
-  "repository_source_sha256": "016accb77ca5942d6d47150e5b080d58d4140c8194983d936e73e02b1108c0b6",
+  "repository_source_sha256": "870701cb9ce856600c3b4a0549e9cc511fd580c681e6e66f417d3edb27bba223",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16658,6 +16658,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "reactive-task-allocation-in-human-robot-simulation",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1074",
+      "repository": "goldentrii/agentrecall-x",
+      "url": "https://github.com/goldentrii/agentrecall-x",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "operator-confirmation-of-proposed-corrections",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
