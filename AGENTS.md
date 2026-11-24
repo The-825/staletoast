@@ -28,6 +28,15 @@ current PR. Preserve the original source owner's privacy and authority boundary.
 Public transfer is evidence-only. Routine scout runs may prepare reviewed intake;
 they must not install dependencies or execute source-provided commands.
 
+## Intake paused (Jovan, 2026-11-24)
+
+Do not open new catalog intake PRs (research records, repository records or
+appraisals that freeze an export) until the weekly Hot 100 lane is fixed: the
+export freeze moves to the weekly edition and the November 23 edition merges.
+Per-record freezes rewrite `catalog-export-pin.json` and keep the weekly PR in
+conflict. Weekly edition work and the fix itself may proceed. This note is
+removed by the PR that lifts the pause.
+
 ## Outcome-focused collaboration
 
 During exploration, keep useful connections as candidates with a source, possible
