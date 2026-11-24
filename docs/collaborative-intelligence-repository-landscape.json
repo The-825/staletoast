@@ -49213,6 +49213,40 @@
       "license_status": "Root LICENSE is MIT at the pin. Dependency rights and continuing maintenance unassessed.",
       "aliases": [],
       "readme_content_sha256": "65026db190228bb766266993fd6aa281a1d71ecf78ba77e5fc26c119d465f98a"
+    },
+    {
+      "id": "R-1064",
+      "repository": "therajtiwari/durable-agents",
+      "url": "https://github.com/therajtiwari/durable-agents",
+      "snapshot_commit": "02e0515d19bbefc000f44df1df72e43890d8df7c",
+      "upstream_revision": "02e0515d19bbefc000f44df1df72e43890d8df7c",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "recipient-idempotency-after-interruption",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/therajtiwari/durable-agents/blob/02e0515d19bbefc000f44df1df72e43890d8df7c/tests/chaos/test_chaos.py",
+      "evidence_note": "A failure-injection test interrupts a synthetic refund workflow after the tool executes but before completion is recorded. It starts the scenario again with the same run ID and expects a completed state, one refund row and a recovery marker. The demo recipient records attempts separately and uses a PostgreSQL conflict check on the idempotency key when inserting a refund. Earlier local ticket-recovery fixtures cover failure of a verification read. This fixture makes the recipient-side requirement explicit across process interruption. External recipients, payment services, and operator approval quality are unverified. A native synthetic check could interrupt two identical workflows at the same point, enable deduplication on only one recipient and compare attempts, unique effects and recovered completions. No upstream execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE is MIT at the pin. Dependency rights and continuing maintenance unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "76ef4057b34d1b2c3090ef91d3ae47aff1978f34d02583ce1e1c419c2eda90af"
     }
   ],
   "unresolved_identities": [],
@@ -49239,9 +49273,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 252,
+    "detailed_appraisal_count": 253,
     "portable_only_count": 105,
-    "total_repository_count": 1061,
+    "total_repository_count": 1062,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49997,6 +50031,7 @@
     "R-1060",
     "R-1061",
     "R-1062",
-    "R-1063"
+    "R-1063",
+    "R-1064"
   ]
 }
