@@ -2,7 +2,7 @@
 
 **Status:** derived routing projection of the existing ledgers, public-source appraisal routing. It is not a second findings ledger, a scientific confidence score or an adoption recommendation. Assumes Method v2.0 and the named recovery/authority/memory/burden question.
 
-Every one of the 508 paper records and 1009 repository records appears once below. The historical 100-source catalog remains distinct from 408 candidate papers; candidate inclusion here does not promote a finding. Repository coverage includes 239 mechanism screens, 665 automated README relevance screens and 105 portable-only identity records. Automated screens have no appraised mechanism or finding and are not Hot100 selections. The 377 automated paper screens and 665 automated repository screens are intake awaiting appraisal: they share one constant priority group after every appraised record, carry no directness, horizon or finding, and are shown as unappraised. Held sources recorded in the dispositions file are excluded from this projection.
+Every one of the 511 paper records and 1025 repository records appears once below. The historical 100-source catalog remains distinct from 411 candidate papers; candidate inclusion here does not promote a finding. Repository coverage includes 255 mechanism screens, 665 automated README relevance screens and 105 portable-only identity records. Automated screens have no appraised mechanism or finding and are not Hot100 selections. The 377 automated paper screens and 665 automated repository screens are intake awaiting appraisal: they share one constant priority group after every appraised record, carry no directness, horizon or finding, and are shown as unappraised. Held sources recorded in the dispositions file are excluded from this projection.
 
 The [machine-readable projection](staletoast-appraisal-priorities.json) binds hashes of its three source files, using UTF-8 with LF line endings to match committed Git blob content. Rebuild it after any source change. Priority groups order the named claim gaps, then paper directness/horizon or repository review depth/lifecycle. Ties share a dense rank; stable IDs order display only. Stars, citation counts, recency and summed mechanism codes do not decide this priority. Potential to change conclusions is still unknown pending validity review, and family independence is not a rank bonus.
 
@@ -81,6 +81,7 @@ The original research evidence-order chart and dated repository popularity order
 | 20 | C-411 | [Belief Updating and Delegation in Multi-Task Human-AI Interaction](https://arxiv.org/pdf/2602.01986v1) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
 | 20 | C-412 | [Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives](https://aclanthology.org/2026.acl-long.1756/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
 | 20 | C-413 | [Diversity and Deliberation in Homogeneous LLM Prediction Polls](https://aclanthology.org/2026.realm-1.85/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
+| 20 | C-414 | [A Contextual Measure of Ambiguity in Prescriptive Texts](https://aclanthology.org/2026.emnlp-main.2483/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-004 |
 | 21 | C-007 | [greCAPTCHA: Assessing Understanding as Evidence of Research Authorship Under Generative AI](https://arxiv.org/abs/2609.20481) | candidate-not-promoted; prior-screened-candidate; source-screened | D2 adjacent / single | CI-017 |
 | 22 | 049 | [Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-017 |
 | 22 | 050 | [Self-Refine: Iterative Refinement with Self-Feedback](https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-017 |
@@ -104,6 +105,8 @@ The original research evidence-order chart and dated repository popularity order
 | 31 | 013 | [The Cybernetic Teammate: A Field Experiment on Generative AI and Teamwork](https://doi.org/10.1287/orsc.2025.20702) | reviewed-catalog; screened-structural; source-screened | D3 target-like / single | CI-002 |
 | 32 | 091 | [ChatDev: Communicative Agents for Software Development](https://aclanthology.org/2024.acl-long.810/) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-002 |
 | 32 | 092 | [AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors](https://arxiv.org/abs/2308.10848) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-002 |
+| 32 | C-415 | [Hidden Configuration Effects on Fairness in LLM-Based Multi-Agent Decision Systems](https://aclanthology.org/2026.emnlp-main.2531/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-002 |
+| 32 | C-416 | [Debate-of-Thoughts: Resolving Knowledge Conflicts in LLMs Through Internal Deliberation](https://aclanthology.org/2026.acl-long.1651/) | candidate-not-promoted; selected-full-text; source-screened | D2 adjacent / technical | CI-002 |
 | 33 | 016 | [Human-AI teaming in healthcare: 1 + 1 > 2?](https://doi.org/10.1038/s44387-025-00052-4) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / not observed | CI-002 |
 | 34 | 058 | [Distributed Cognition: Toward a New Foundation for Human-Computer Interaction Research](https://escholarship.org/uc/item/8sb9s5rm) | reviewed-catalog; screened-structural; source-screened | D0 conceptual / not observed | CI-002 |
 | 35 | 089 | [CAMEL: Communicative Agents for Mind Exploration of Large Scale Language Model Society](https://proceedings.neurips.cc/paper/2023/hash/a3621ee907def47c1b952ade25c67698-Abstract-Conference.html) | reviewed-catalog; screened-structural; source-screened | D2 adjacent / technical | CI-010 |
@@ -764,6 +767,22 @@ The original research evidence-order chart and dated repository popularity order
 | 18 | R-1048 | [ericrisco/rsc-harness](https://github.com/ericrisco/rsc-harness) | readme-screened; source-screened | unknown | unknown |
 | 18 | R-1049 | [AhmetIsk/decision-tracker](https://github.com/AhmetIsk/decision-tracker) | readme-screened; source-screened | unknown | unknown |
 | 18 | R-1050 | [dlxeva/flowgrid](https://github.com/dlxeva/flowgrid) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1051 | [ankohr/decision-ledger](https://github.com/ankohr/decision-ledger) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1052 | [shafaypro/DecisionOS](https://github.com/shafaypro/DecisionOS) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1053 | [mskazemi/scrutable](https://github.com/mskazemi/scrutable) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1054 | [node-and-norm/rgds](https://github.com/node-and-norm/rgds) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1055 | [logicoflife/decision-trace](https://github.com/logicoflife/decision-trace) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1056 | [plainjane20/taskloom](https://github.com/plainjane20/taskloom) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1057 | [timmcleod/agent-workflows](https://github.com/timmcleod/agent-workflows) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1058 | [hkwuks/TaskFlow](https://github.com/hkwuks/TaskFlow) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1059 | [manyu-lnmiit/agent-checkpoint-runtime](https://github.com/manyu-lnmiit/agent-checkpoint-runtime) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1060 | [awaithumans/awaithumans-human-in-the-loop-ai-agents](https://github.com/awaithumans/awaithumans-human-in-the-loop-ai-agents) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1061 | [ducpahm03/ai-business-workflow-agent](https://github.com/ducpahm03/ai-business-workflow-agent) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1062 | [marvinjbb/agent-mcp-workflow-platform](https://github.com/marvinjbb/agent-mcp-workflow-platform) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1063 | [murillo-consulting/langgraph-resilient-agent](https://github.com/murillo-consulting/langgraph-resilient-agent) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1064 | [therajtiwari/durable-agents](https://github.com/therajtiwari/durable-agents) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1066 | [cloudflare/agents](https://github.com/cloudflare/agents) | readme-screened; source-screened | unknown | unknown |
+| 18 | R-1067 | [openwop/openwop](https://github.com/openwop/openwop) | readme-screened; source-screened | unknown | unknown |
 | 19 | R-101 | [1771-technologies/lytenyte](https://github.com/1771-technologies/lytenyte) | source-assessment; source-screened | unknown | unknown |
 | 19 | R-106 | [actions/dependency-review-action](https://github.com/actions/dependency-review-action) | source-assessment; source-screened | unknown | unknown |
 | 19 | R-110 | [agent-rl/recall](https://github.com/agent-rl/recall) | source-assessment; source-screened | unknown | unknown |

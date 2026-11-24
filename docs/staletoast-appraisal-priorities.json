@@ -2,9 +2,9 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "312e2a37b2ffb1b5b26e59b3690a6592bc908279aac6688265734b0e737d6fce",
-  "appraisal_source_sha256": "e2ea64150158d8913a817d6c947afbf5220f759e8de83c54ae320c1d8af14c5c",
-  "repository_source_sha256": "60b9621a1bb5eb9b678839a722998a1d8ea19f3b7fb8eb2dd51cfa53b23c45b0",
+  "research_source_sha256": "fc5129c2c4f5c547970a43217c3d47036b07c2a44c5fc46f4dfef10abafdf715",
+  "appraisal_source_sha256": "3317225e171233b0b1b7025997801b596597bfc2c8a7a18c0b769a9a8c0c8fa8",
+  "repository_source_sha256": "6f4b532ae49fe994fb48c197aae5cd879646f4f6198f8a1ce122c7862db67ca5",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -1630,6 +1630,28 @@
       "priority_claim": "CI-004"
     },
     {
+      "id": "C-414",
+      "title": "A Contextual Measure of Ambiguity in Prescriptive Texts",
+      "url": "https://aclanthology.org/2026.emnlp-main.2483/",
+      "claims": [
+        "CI-004"
+      ],
+      "directness": "D2 adjacent",
+      "family": "CASE-BASED-POLICY-DISAGREEMENT",
+      "horizon": "technical",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 20,
+      "priority_key": [
+        4,
+        1,
+        3
+      ],
+      "priority_claim": "CI-004"
+    },
+    {
       "id": "C-007",
       "title": "greCAPTCHA: Assessing Understanding as Evidence of Research Authorship Under Generative AI",
       "url": "https://arxiv.org/abs/2609.20481",
@@ -2150,6 +2172,50 @@
       "horizon": "technical",
       "review_depth": "screened-structural",
       "record_state": "reviewed-catalog",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 32,
+      "priority_key": [
+        7,
+        1,
+        3
+      ],
+      "priority_claim": "CI-002"
+    },
+    {
+      "id": "C-415",
+      "title": "Hidden Configuration Effects on Fairness in LLM-Based Multi-Agent Decision Systems",
+      "url": "https://aclanthology.org/2026.emnlp-main.2531/",
+      "claims": [
+        "CI-002"
+      ],
+      "directness": "D2 adjacent",
+      "family": "PANEL-CHAIR-CONFIGURATION",
+      "horizon": "technical",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 32,
+      "priority_key": [
+        7,
+        1,
+        3
+      ],
+      "priority_claim": "CI-002"
+    },
+    {
+      "id": "C-416",
+      "title": "Debate-of-Thoughts: Resolving Knowledge Conflicts in LLMs Through Internal Deliberation",
+      "url": "https://aclanthology.org/2026.acl-long.1651/",
+      "claims": [
+        "CI-002"
+      ],
+      "directness": "D2 adjacent",
+      "family": "RETRIEVAL-CONFLICT-DELIBERATION",
+      "horizon": "technical",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
       "appraisal_state": "source-screened",
       "automated_screen": false,
       "appraisal_priority_rank": 32,
@@ -16104,6 +16170,294 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "continuation-view-consistency",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1051",
+      "repository": "ankohr/decision-ledger",
+      "url": "https://github.com/ankohr/decision-ledger",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "decision-outcome-linkage",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1052",
+      "repository": "shafaypro/DecisionOS",
+      "url": "https://github.com/shafaypro/DecisionOS",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "decision-retrieval-fallback",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1053",
+      "repository": "mskazemi/scrutable",
+      "url": "https://github.com/mskazemi/scrutable",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "review-question-dependencies",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1054",
+      "repository": "node-and-norm/rgds",
+      "url": "https://github.com/node-and-norm/rgds",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "deferred-evidence-follow-up",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1055",
+      "repository": "logicoflife/decision-trace",
+      "url": "https://github.com/logicoflife/decision-trace",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "nested-decision-lineage",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1056",
+      "repository": "plainjane20/taskloom",
+      "url": "https://github.com/plainjane20/taskloom",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "approval-before-agent-execution",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1057",
+      "repository": "timmcleod/agent-workflows",
+      "url": "https://github.com/timmcleod/agent-workflows",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "expiry-of-human-workflow-interrupts",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1058",
+      "repository": "hkwuks/TaskFlow",
+      "url": "https://github.com/hkwuks/TaskFlow",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "version-scoped-task-approval",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1059",
+      "repository": "manyu-lnmiit/agent-checkpoint-runtime",
+      "url": "https://github.com/manyu-lnmiit/agent-checkpoint-runtime",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "checkpoint-reuse-across-agent-handoffs",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1060",
+      "repository": "awaithumans/awaithumans-human-in-the-loop-ai-agents",
+      "url": "https://github.com/awaithumans/awaithumans-human-in-the-loop-ai-agents",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "claiming-broadcast-human-tasks",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1061",
+      "repository": "ducpahm03/ai-business-workflow-agent",
+      "url": "https://github.com/ducpahm03/ai-business-workflow-agent",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "binding-approval-to-simulated-effects",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1062",
+      "repository": "marvinjbb/agent-mcp-workflow-platform",
+      "url": "https://github.com/marvinjbb/agent-mcp-workflow-platform",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "recovering-approved-ticket-after-write",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1063",
+      "repository": "murillo-consulting/langgraph-resilient-agent",
+      "url": "https://github.com/murillo-consulting/langgraph-resilient-agent",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "tenant-scoped-approval-readback",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1064",
+      "repository": "therajtiwari/durable-agents",
+      "url": "https://github.com/therajtiwari/durable-agents",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "recipient-idempotency-after-interruption",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1066",
+      "repository": "cloudflare/agents",
+      "url": "https://github.com/cloudflare/agents",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "cancelling-or-replacing-a-pending-retry",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1067",
+      "repository": "openwop/openwop",
+      "url": "https://github.com/openwop/openwop",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "approval-before-merging-child-output",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
