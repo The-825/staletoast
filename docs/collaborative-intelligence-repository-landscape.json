@@ -49111,6 +49111,40 @@
       "license_status": "Root LICENSE is Apache License 2.0 at the pin. Dependency rights and continuing maintenance unassessed.",
       "aliases": [],
       "readme_content_sha256": "ac97163a5b184716b9ddec8309e6503bb9e8281569300abfaf03a30860e068f1"
+    },
+    {
+      "id": "R-1061",
+      "repository": "ducpahm03/ai-business-workflow-agent",
+      "url": "https://github.com/ducpahm03/ai-business-workflow-agent",
+      "snapshot_commit": "7d053ebcab71e1fde5f04df4abec774b7f06c36f",
+      "upstream_revision": "7d053ebcab71e1fde5f04df4abec774b7f06c36f",
+      "snapshot_date": "2026-11-23",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "binding-approval-to-simulated-effects",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/ducpahm03/ai-business-workflow-agent/blob/7d053ebcab71e1fde5f04df4abec774b7f06c36f/tests/unit/test_checkpoint_and_resumption.py",
+      "evidence_note": "This single-agent prototype simulates effects. The executor checks the decision against the ticket ID and approval request ID, checks expiry, and rejects a digest mismatch when the request supplies a nonempty expected digest. A unit test submits five concurrent calls to the local simulated-effect ledger and expects one recorded effect and four replays. This tests the ledger directly. End-to-end concurrent approval handling and production side effects remain unverified. Compared with caching a completed task, this mechanism also checks which approved request is being resumed. A synthetic native check could vary ticket, approval ID and payload digest on resume, then count unauthorized and duplicate effects.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "No root license file or pyproject license declaration located at the pin. Reuse rights, dependency rights and continuing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "d90a815beeae6c956fb04e027b8d852cc42195f2e70400d6311b8efbfef773f6"
     }
   ],
   "unresolved_identities": [],
@@ -49137,9 +49171,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 249,
+    "detailed_appraisal_count": 250,
     "portable_only_count": 105,
-    "total_repository_count": 1058,
+    "total_repository_count": 1059,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -49892,6 +49926,7 @@
     "R-1057",
     "R-1058",
     "R-1059",
-    "R-1060"
+    "R-1060",
+    "R-1061"
   ]
 }
