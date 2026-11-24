@@ -99,9 +99,13 @@ research, repository, claim and chart data, bound to the published Git revision.
 Consumers pin its revision and SHA-256 digest before use. A failed integrity or
 freshness check must fail the build rather than substitute stale local data.
 
-After committing reviewed catalog inputs, run `python site/build_export.py
---freeze` and commit the new immutable `exports/<catalog-revision>.json` snapshot
-in the same PR. Publication retains all earlier snapshots at
+Only the weekly Hot100 edition PR freezes the export. It runs `python
+site/build_export.py --freeze` after committing its inputs and commits the new
+immutable `exports/<catalog-revision>.json` snapshot in the same PR. Record and
+code PRs leave `exports/` and `catalog-export-pin.json` alone; CI rejects a freeze
+in a PR that adds no dated chart edition. Between editions the site keeps
+publishing the last frozen export unchanged, so consumers see a real pinned
+revision, never an unfrozen one. Publication retains all earlier snapshots at
 `exports/<catalog-revision>.json`, so a consumer's existing pin stays available
 after a later edition publishes. The export revision covers catalog sources
 and generators; a website-only change does not invent a new catalog revision.
