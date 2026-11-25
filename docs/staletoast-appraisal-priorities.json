@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "10623ea2793ea17bc5b64f7c2824b39cc0539ac8a740df7b0e30eef57fa72152",
-  "appraisal_source_sha256": "a5a7285b46aa90307ecd96f7c284310093b4de99d7ed819d049fb037d836fc3e",
+  "research_source_sha256": "d8329946c65dbfb639d4dce21f41a588f3fd27287dbbff1a434795004641223a",
+  "appraisal_source_sha256": "75e2fb71df5d585bbd47758fe482e8f837c0abab96f6b91efc45b958a272cda9",
   "repository_source_sha256": "fd6c565018a5a7a56095bdbdaa1054497381a399d0589a90884c273d9930bbac",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -3018,6 +3018,28 @@
       ],
       "directness": "D2 adjacent",
       "family": "CAI-CLINICIAN-ONBOARDING",
+      "horizon": "single",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 50,
+      "priority_key": [
+        13,
+        1,
+        2
+      ],
+      "priority_claim": "CI-003"
+    },
+    {
+      "id": "C-431",
+      "title": "Users Mispredict What Drives Their Preferences for AI Writing Assistance",
+      "url": "https://aclanthology.org/2026.emnlp-main.1622/",
+      "claims": [
+        "CI-003"
+      ],
+      "directness": "D2 adjacent",
+      "family": "LAI-EMAIL-DRAFTING-PREFERENCES",
       "horizon": "single",
       "review_depth": "selected-full-text",
       "record_state": "candidate-not-promoted",
