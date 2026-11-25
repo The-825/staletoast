@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "12c1f65910fc35b71de51d8d541bc0776eecd4681212d81d452a28c9dba68ffa",
   "appraisal_source_sha256": "c5623d7b012d26eb3667db53c8bb5a3dc1cc5d1f48797b2647472326a7fb5144",
-  "repository_source_sha256": "32f7623ecb5f094b2d523fcd84b7df2033c71bf3d10509d5368fc54a37e3a780",
+  "repository_source_sha256": "038366e1fca13333c688c2fb042ada66816c138646350c32edb1f163f0fe85b2",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16818,6 +16818,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "resuming-a-graph-after-node-approval",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1081",
+      "repository": "olivomarco/vbd-copilot",
+      "url": "https://github.com/olivomarco/vbd-copilot",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "handoff-of-a-human-brief-to-a-running-agent-job",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
