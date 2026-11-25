@@ -49961,6 +49961,40 @@
       "license_status": "Root LICENSE contains Apache License 2.0. Dependency rights and continued maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "a752541b4aa4b25ba9c9f210a0ed4aaee28305f98b46bbb091b0d7dfb8df5155"
+    },
+    {
+      "id": "R-1090",
+      "repository": "danielpdev/annotation-review-studio",
+      "url": "https://github.com/danielpdev/annotation-review-studio",
+      "snapshot_commit": "b328c09efed73ba8e248cc6f759a7115724e5fb2",
+      "upstream_revision": "b328c09efed73ba8e248cc6f759a7115724e5fb2",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "retaining-decisions-while-exporting-only-resolved-labels",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/danielpdev/annotation-review-studio/blob/b328c09efed73ba8e248cc6f759a7115724e5fb2/app/core.py",
+      "evidence_note": "With two annotations present, Studio.adjudicate rejects a supplied reviewer string matching an annotator string. It requires a nonblank reason, sets the current final label and inserts a decision row. Studio.tasks returns decisions; Studio.export includes only tasks with a final label and projects the ID, text and final label. A synthetic test expects an annotator acting as reviewer to be rejected and expects two stored decisions after a second adjudication. These functions and the test were inspected statically. No upstream test was run. Distinct strings do not establish authenticated independent humans or judgment quality. A synthetic native check would export one unresolved and one twice-adjudicated item, then compare exported labels and stored decision counts against expected values. This check has not been run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains the MIT License. Dependency rights and maintenance remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "df0db83388a6fdb2b5092ab1192df22d85f6127475a64a1fac2601e6718352f6"
     }
   ],
   "unresolved_identities": [],
@@ -49987,9 +50021,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 274,
+    "detailed_appraisal_count": 275,
     "portable_only_count": 105,
-    "total_repository_count": 1083,
+    "total_repository_count": 1084,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50767,6 +50801,7 @@
     "R-1086",
     "R-1087",
     "R-1088",
-    "R-1089"
+    "R-1089",
+    "R-1090"
   ]
 }
