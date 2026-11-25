@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "a5e99835e6a2c50c920f2704ad3dca4bc408196286f96b685ba568da6d898f66",
   "appraisal_source_sha256": "dd3c2017cb4645af160bead80fc1345e5c282165e3b2bbcb6abb96b05d7251c3",
-  "repository_source_sha256": "c9d0482532366f50b4ddef7c583904e9db44681e8ee70a26a83ebad8c4e529d7",
+  "repository_source_sha256": "2103b466f772793a57c579fbab7f110e8d94fff54d93a2ff3277ce4981f3fc3a",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16894,6 +16894,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "evaluating-context-retrieval-for-agent-handoffs",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1083",
+      "repository": "liguozheng-ac/J-gamelqa",
+      "url": "https://github.com/liguozheng-ac/J-gamelqa",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "routing-machine-findings-to-localization-review",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
