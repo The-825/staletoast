@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "d8329946c65dbfb639d4dce21f41a588f3fd27287dbbff1a434795004641223a",
-  "appraisal_source_sha256": "75e2fb71df5d585bbd47758fe482e8f837c0abab96f6b91efc45b958a272cda9",
+  "research_source_sha256": "fd9a59136424140dc935e04056ea95823b45ee66bf38b225335811f5429c7e46",
+  "appraisal_source_sha256": "c2a3c7a1a0dd6ab87031f46bcdb73cbbad96ec7f59e33ffe5a2d619a9ac9c5d9",
   "repository_source_sha256": "06c86ab8491c2cb51b34123f4279862016a4dd5a270f3a6805c2395f6b1e3703",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -3040,6 +3040,28 @@
       ],
       "directness": "D2 adjacent",
       "family": "LAI-EMAIL-DRAFTING-PREFERENCES",
+      "horizon": "single",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 50,
+      "priority_key": [
+        13,
+        1,
+        2
+      ],
+      "priority_claim": "CI-003"
+    },
+    {
+      "id": "C-432",
+      "title": "Dialogue Collection for Recording the Process of Building Common Ground in a Collaborative Task",
+      "url": "https://aclanthology.org/2022.lrec-1.618/",
+      "claims": [
+        "CI-003"
+      ],
+      "directness": "D2 adjacent",
+      "family": "MITSUDA-COMMON-LAYOUT",
       "horizon": "single",
       "review_depth": "selected-full-text",
       "record_state": "candidate-not-promoted",
