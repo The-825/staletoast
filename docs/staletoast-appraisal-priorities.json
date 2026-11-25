@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "ff0878f908f3c4c3e38807d19d6aea424cfe867a0f735da95bb42e74993ca491",
   "appraisal_source_sha256": "35d92b03f265ec93df37381b6eaccc8e176b53e1c8ff3587519cd024832da1b2",
-  "repository_source_sha256": "75d0c1fe112f07bcc8ae1c203aee2315f3442299ef1ffa6839b283a5321ec84c",
+  "repository_source_sha256": "32f7623ecb5f094b2d523fcd84b7df2033c71bf3d10509d5368fc54a37e3a780",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16756,6 +16756,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "binding-agent-work-to-a-reviewed-commit",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1078",
+      "repository": "DataLLMHub/agentflow4j",
+      "url": "https://github.com/DataLLMHub/agentflow4j",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "resuming-a-graph-after-node-approval",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
