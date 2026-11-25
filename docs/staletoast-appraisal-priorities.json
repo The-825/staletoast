@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "12c1f65910fc35b71de51d8d541bc0776eecd4681212d81d452a28c9dba68ffa",
   "appraisal_source_sha256": "c5623d7b012d26eb3667db53c8bb5a3dc1cc5d1f48797b2647472326a7fb5144",
-  "repository_source_sha256": "7dfc29d62af5324d0fafc5140644db06e746ac3abde723476fea88fcb7179e8d",
+  "repository_source_sha256": "c9d0482532366f50b4ddef7c583904e9db44681e8ee70a26a83ebad8c4e529d7",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16854,6 +16854,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "handoff-of-a-human-brief-to-a-running-agent-job",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1082",
+      "repository": "TencentCloud/octop-memory",
+      "url": "https://github.com/TencentCloud/octop-memory",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "evaluating-context-retrieval-for-agent-handoffs",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [

@@ -49689,6 +49689,40 @@
       "license_status": "The root package.json declares ISC. No root license text was identified in this archive. Rights for bundled components and maintenance beyond the snapshot remain unverified.",
       "aliases": [],
       "readme_content_sha256": "0f6565b4ab9a9cdfa07b17020b64063eb433afd0ba2de47c4c81271731ae698b"
+    },
+    {
+      "id": "R-1082",
+      "repository": "TencentCloud/octop-memory",
+      "url": "https://github.com/TencentCloud/octop-memory",
+      "snapshot_commit": "396e9c9184a4faa7765dd35125f7c5fb0aadbacd",
+      "upstream_revision": "396e9c9184a4faa7765dd35125f7c5fb0aadbacd",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "evaluating-context-retrieval-for-agent-handoffs",
+      "category": "agent-memory",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/TencentCloud/octop-memory/blob/396e9c9184a4faa7765dd35125f7c5fb0aadbacd/evals/recall/run.py",
+      "evidence_note": "The README proposes carrying context across sessions. In evals/recall/run.py, the synthetic recall evaluator compares retrieval pipelines including raw full-text search and prompt-oriented retrieval. _evaluate_query scores the first relevant source by reciprocal rank. Its P@5 divides relevant hits by the number of results actually returned up to five, with a minimum denominator of one. One relevant result returned alone can therefore score 1.0. The fixtures favor easy entity lookups. These measures leave downstream handoff accuracy, user consent and real-world retrieval quality open. A proposed synthetic comparison would hold queries and expected source IDs fixed, report returned-list length and expected-source coverage alongside both metrics, and separately score whether a receiving agent finishes the task using the correct context. Selected evaluator and fixture text only.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "P",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains the MIT license, copyright 2026 orcakit. Third-party rights and maintenance beyond the snapshot are unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "da88236dbcef16e31add8790e8a0049abf4a8d83b6cdf03cd17114a827d94b62"
     }
   ],
   "unresolved_identities": [],
@@ -49715,9 +49749,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 266,
+    "detailed_appraisal_count": 267,
     "portable_only_count": 105,
-    "total_repository_count": 1075,
+    "total_repository_count": 1076,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50487,6 +50521,7 @@
     "R-1077",
     "R-1078",
     "R-1080",
-    "R-1081"
+    "R-1081",
+    "R-1082"
   ]
 }
