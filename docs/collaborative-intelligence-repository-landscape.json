@@ -49723,6 +49723,40 @@
       "license_status": "Root LICENSE contains the MIT license, copyright 2026 orcakit. Third-party rights and maintenance beyond the snapshot are unassessed.",
       "aliases": [],
       "readme_content_sha256": "da88236dbcef16e31add8790e8a0049abf4a8d83b6cdf03cd17114a827d94b62"
+    },
+    {
+      "id": "R-1083",
+      "repository": "liguozheng-ac/J-gamelqa",
+      "url": "https://github.com/liguozheng-ac/J-gamelqa",
+      "snapshot_commit": "89a53c597ed07aafab548cc8de76b7021b906f6b",
+      "upstream_revision": "89a53c597ed07aafab548cc8de76b7021b906f6b",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "routing-machine-findings-to-localization-review",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/liguozheng-ac/J-gamelqa/blob/89a53c597ed07aafab548cc8de76b7021b906f6b/src/j_gamelqa/hybrid.py",
+      "evidence_note": "merge_hybrid_predictions keeps all rule findings and includes model findings only for issue types assigned to the model. It lists exclusions and counts repeated string ID and issue type pairs. The combined list retains repeated findings. The separate evaluate_detections function groups predictions by detection key and scores unique keys against reference annotations. Its diagnostics distinguish raw and unique prediction counts, as checked by tests/test_hybrid.py. The README reports synthetic held-out precision 0.5859, recall 0.8788 and F1 0.7030 on 60 samples with 66 reference detections. These author-reported results were not reproduced. A proposed extension would measure false alarms and repeated alerts per reviewed string and time spent resolving them under rule-only and hybrid triage. Human review burden, production accuracy and adoption remain unknown.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root MIT license attributes Guozheng Li. Third-party rights and continuing maintenance have not been established.",
+      "aliases": [],
+      "readme_content_sha256": "fb8d6f2d12faa9e148a0a1db1b41deca6935090b4d5cb5aff4db487eb5b8be04"
     }
   ],
   "unresolved_identities": [],
@@ -49749,9 +49783,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 267,
+    "detailed_appraisal_count": 268,
     "portable_only_count": 105,
-    "total_repository_count": 1076,
+    "total_repository_count": 1077,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50522,6 +50556,7 @@
     "R-1078",
     "R-1080",
     "R-1081",
-    "R-1082"
+    "R-1082",
+    "R-1083"
   ]
 }
