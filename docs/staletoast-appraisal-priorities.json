@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "bc70856702dc865e8926baa19ee4118a1c6d5f3727a937f1023b5034d8637abd",
   "appraisal_source_sha256": "9925d4444b6a65f0274b60c3ced28b621ed27f8a67a61886c284fd5f18d5230c",
-  "repository_source_sha256": "a487bb2c582daca89f0c8f8bb628a8574bbc9cca38beb0b1d26b01d3259ef543",
+  "repository_source_sha256": "89e8099da1f7431d37b578af837cc84678eac02f6fb01d338cf90f04fb76e58f",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17014,6 +17014,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "reconciling-parallel-tool-decisions-on-resume",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1086",
+      "repository": "synergycodes/workflowbuilder",
+      "url": "https://github.com/synergycodes/workflowbuilder",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "carrying-a-human-corrected-field-into-a-downstream-step",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
