@@ -49825,6 +49825,40 @@
       "license_status": "Root LICENSE contains Apache License 2.0. Vendored rights and ongoing maintenance remain unverified.",
       "aliases": [],
       "readme_content_sha256": "4968b3cbd853678887f5444901bddb1b580aed4125c525b4372f6e3e2b8d11d5"
+    },
+    {
+      "id": "R-1086",
+      "repository": "synergycodes/workflowbuilder",
+      "url": "https://github.com/synergycodes/workflowbuilder",
+      "snapshot_commit": "9b6e3b01066967b94346aa66db0cd4b75dc78d05",
+      "upstream_revision": "9b6e3b01066967b94346aa66db0cd4b75dc78d05",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "carrying-a-human-corrected-field-into-a-downstream-step",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/apps/e2e/tests/approve-refund.spec.ts",
+      "evidence_note": "The README describes a user-drawn workflow editor and durable execution. R-1085 checks which of several pending calls may resume. Here a browser test for the Refund Review template changes a proposed refund amount before approval and checks that a later mock model request contains the corrected value. The test also checks completed backend status for the original execution ID. These assertions were inspected and not run. They do not demonstrate a real payment, a human outcome or what happens if the workflow definition changes mid-run. A synthetic native check would compare the proposed, approved and downstream values by execution ID while editing the workflow definition between draft and approval. Count mismatches and repeated sends. This check has not been run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains Apache License 2.0. Vendored rights and ongoing maintenance remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "347bb35351330750c52cc0a9d425a4de8e33f9ad63bbb12ca650f9924d4edf88"
     }
   ],
   "unresolved_identities": [],
@@ -49851,9 +49885,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 270,
+    "detailed_appraisal_count": 271,
     "portable_only_count": 105,
-    "total_repository_count": 1079,
+    "total_repository_count": 1080,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50627,6 +50661,7 @@
     "R-1082",
     "R-1083",
     "R-1084",
-    "R-1085"
+    "R-1085",
+    "R-1086"
   ]
 }
