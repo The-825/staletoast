@@ -49757,6 +49757,40 @@
       "license_status": "Root MIT license attributes Guozheng Li. Third-party rights and continuing maintenance have not been established.",
       "aliases": [],
       "readme_content_sha256": "fb8d6f2d12faa9e148a0a1db1b41deca6935090b4d5cb5aff4db487eb5b8be04"
+    },
+    {
+      "id": "R-1084",
+      "repository": "nebius/nebius-physical-ai",
+      "url": "https://github.com/nebius/nebius-physical-ai",
+      "snapshot_commit": "7fef01772c951120de7345e7c86558148e57db01",
+      "upstream_revision": "7fef01772c951120de7345e7c86558148e57db01",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "preserving-client-identity-when-selecting-a-workbench-namespace",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/nebius/nebius-physical-ai/blob/7fef01772c951120de7345e7c86558148e57db01/npa/tests/workbench/test_namespaces.py",
+      "evidence_note": "The README describes selecting team namespaces and private SkyPilot contexts. The workbench namespace CLI forwards an explicit source context and output directory to write_namespace_context. In test_private_context_preserves_identity_and_source the Kubernetes command is mocked. The generated kubeconfig is expected to keep the fixture user, cluster and user credentials while selecting the requested namespace. The synthetic token is absent from the returned summary but the copied user entry retains it in the file. This test does not prove that a real source config remains unchanged. The selected tests were inspected and not run. No server decision or second actor is exercised. An observable synthetic check would compare two distinct identities with different server permissions, record each out-of-namespace request and verify the server decision separately from the selected client context. That check remains unrun.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains Apache License 2.0. Vendored rights and maintenance beyond the pinned revision remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "403d153a36c8b2a5d2ea0dad7063dd90da81203892c48480cfcfcabe84ed9ee9"
     }
   ],
   "unresolved_identities": [],
@@ -49783,9 +49817,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 268,
+    "detailed_appraisal_count": 269,
     "portable_only_count": 105,
-    "total_repository_count": 1077,
+    "total_repository_count": 1078,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50557,6 +50591,7 @@
     "R-1080",
     "R-1081",
     "R-1082",
-    "R-1083"
+    "R-1083",
+    "R-1084"
   ]
 }
