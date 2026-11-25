@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "ff0878f908f3c4c3e38807d19d6aea424cfe867a0f735da95bb42e74993ca491",
   "appraisal_source_sha256": "35d92b03f265ec93df37381b6eaccc8e176b53e1c8ff3587519cd024832da1b2",
-  "repository_source_sha256": "870701cb9ce856600c3b4a0549e9cc511fd580c681e6e66f417d3edb27bba223",
+  "repository_source_sha256": "b124be8645310e630bba6f1b40627826ae4a3c929a8372c17c7900b3becb1fd3",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -16720,6 +16720,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "operator-confirmation-of-proposed-corrections",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1076",
+      "repository": "1va7/skill2loop",
+      "url": "https://github.com/1va7/skill2loop",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "skill-correction-review-from-session-feedback",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [

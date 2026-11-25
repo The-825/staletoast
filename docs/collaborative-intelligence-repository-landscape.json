@@ -49519,6 +49519,40 @@
       "license_status": "Root MIT license, copyright Tongwu. Dependency rights and ongoing maintenance unassessed.",
       "aliases": [],
       "readme_content_sha256": "fcc3c41ed0f27afb59763a6e33a5ac9e2a5b2d247fe853c659784288be3e9a03"
+    },
+    {
+      "id": "R-1076",
+      "repository": "1va7/skill2loop",
+      "url": "https://github.com/1va7/skill2loop",
+      "snapshot_commit": "1b21514ce383e4415d9d988c82a840042cb20b13",
+      "upstream_revision": "1b21514ce383e4415d9d988c82a840042cb20b13",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "skill-correction-review-from-session-feedback",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/1va7/skill2loop/blob/1b21514ce383e4415d9d988c82a840042cb20b13/skill2loop/review.py",
+      "evidence_note": "In skill2loop/proposals.py, build_proposal clusters feedback and includes representative examples, affected stages and proposed actions. build_review_packet combines the proposal with evaluation seeds and episode rows. One synthetic fixture test asserts that the proposal and first action await review with approval false. It checks for an action and evaluation seed, without testing adoption or improvement. Compare repeated synthetic corrections against an unrelated correction and inspect proposal attribution, evidence and initial approval state. Selected code and test inspection only.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The inspected archive has no license-named file, and neither the README nor pyproject.toml declares a reuse license. Code reuse rights and ongoing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "b55f753526a946f8c422b87ab6f27995a8328add34b9d5c2b10de506faebd7ba"
     }
   ],
   "unresolved_identities": [],
@@ -49545,9 +49579,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 261,
+    "detailed_appraisal_count": 262,
     "portable_only_count": 105,
-    "total_repository_count": 1070,
+    "total_repository_count": 1071,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50312,6 +50346,7 @@
     "R-1070",
     "R-1072",
     "R-1073",
-    "R-1074"
+    "R-1074",
+    "R-1076"
   ]
 }
