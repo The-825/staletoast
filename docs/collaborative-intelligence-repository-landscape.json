@@ -49553,6 +49553,40 @@
       "license_status": "The inspected archive has no license-named file, and neither the README nor pyproject.toml declares a reuse license. Code reuse rights and ongoing maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "b55f753526a946f8c422b87ab6f27995a8328add34b9d5c2b10de506faebd7ba"
+    },
+    {
+      "id": "R-1077",
+      "repository": "liza-mas/liza",
+      "url": "https://github.com/liza-mas/liza",
+      "snapshot_commit": "9e0ae7f3b58e2a0776d73deabcd8ff4acc8d8ced",
+      "upstream_revision": "9e0ae7f3b58e2a0776d73deabcd8ff4acc8d8ced",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "binding-agent-work-to-a-reviewed-commit",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/liza-mas/liza/blob/9e0ae7f3b58e2a0776d73deabcd8ff4acc8d8ced/internal/ops/merge_preconditions.go",
+      "evidence_note": "In internal/ops/merge_preconditions.go, checkPreconditions checks approved task state, a review commit and reconciled verdicts. checkWorktreeHead compares the current task worktree with the recorded commit when the worktree exists. TestMergeWorktree_HEADMismatch supplies a different valid recorded commit and expects refusal with recovery guidance. The missing-worktree path skips the head comparison. This inspection does not establish that a human personally approved a commit or that every entry point enforces the same policy. A synthetic check would compare matching, diverged and missing worktrees and record the integration reference before and after each request. Selected source and test text only.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The root LICENSE contains Apache License 2.0. Third-party rights and maintenance beyond the snapshot are unassessed.",
+      "aliases": [],
+      "readme_content_sha256": "940400e774bbc10d478c6895d265c3f55c939cbc53393c59cf9a81fd970af005"
     }
   ],
   "unresolved_identities": [],
@@ -49579,9 +49613,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 262,
+    "detailed_appraisal_count": 263,
     "portable_only_count": 105,
-    "total_repository_count": 1071,
+    "total_repository_count": 1072,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50347,6 +50381,7 @@
     "R-1072",
     "R-1073",
     "R-1074",
-    "R-1076"
+    "R-1076",
+    "R-1077"
   ]
 }
