@@ -49791,6 +49791,40 @@
       "license_status": "Root LICENSE contains Apache License 2.0. Vendored rights and maintenance beyond the pinned revision remain unverified.",
       "aliases": [],
       "readme_content_sha256": "403d153a36c8b2a5d2ea0dad7063dd90da81203892c48480cfcfcabe84ed9ee9"
+    },
+    {
+      "id": "R-1085",
+      "repository": "cloudgeni-ai/opengeni",
+      "url": "https://github.com/cloudgeni-ai/opengeni",
+      "snapshot_commit": "969cb9b6b75096c1e6b6babfbcb56c404c139937",
+      "upstream_revision": "969cb9b6b75096c1e6b6babfbcb56c404c139937",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "reconciling-parallel-tool-decisions-on-resume",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/cloudgeni-ai/opengeni/blob/969cb9b6b75096c1e6b6babfbcb56c404c139937/apps/worker/test/parallel-approval-resume.test.ts",
+      "evidence_note": "The README describes shared agents with tool approvals. R-1078 covers resuming a graph after a node decision. This fixture instead checks multiple pending tool calls in one session. A first resume expects only call A to execute while call C remains unresolved. A later resume expects C to execute and the accumulated executions to be A and C. A second test covers a decision arriving while a resume settles. These selected tests were inspected and were not run. Cross-workspace isolation, human usability and production reliability remain unverified. A synthetic native check would vary approval and rejection order for three concurrent calls and count duplicate executions, unresolved calls and repeated prompts. This check has not been run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains Apache License 2.0. Vendored rights and ongoing maintenance remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "4968b3cbd853678887f5444901bddb1b580aed4125c525b4372f6e3e2b8d11d5"
     }
   ],
   "unresolved_identities": [],
@@ -49817,9 +49851,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 269,
+    "detailed_appraisal_count": 270,
     "portable_only_count": 105,
-    "total_repository_count": 1078,
+    "total_repository_count": 1079,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50592,6 +50626,7 @@
     "R-1081",
     "R-1082",
     "R-1083",
-    "R-1084"
+    "R-1084",
+    "R-1085"
   ]
 }
