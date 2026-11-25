@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "10623ea2793ea17bc5b64f7c2824b39cc0539ac8a740df7b0e30eef57fa72152",
   "appraisal_source_sha256": "a5a7285b46aa90307ecd96f7c284310093b4de99d7ed819d049fb037d836fc3e",
-  "repository_source_sha256": "463fbf8e5d632ea64d7b15975cbada96235c9b5d723d717d8665c3ed257036ee",
+  "repository_source_sha256": "fd6c565018a5a7a56095bdbdaa1054497381a399d0589a90884c273d9930bbac",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17072,6 +17072,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "attributing-tool-messages-to-the-correct-resumed-turn",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1088",
+      "repository": "jack81st/launchguard-ai",
+      "url": "https://github.com/jack81st/launchguard-ai",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "retaining-a-reviewer-edit-on-a-rejected-draft",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [

@@ -49893,6 +49893,40 @@
       "license_status": "Root LICENSE contains the MIT License. Vendored rights and ongoing maintenance remain unverified.",
       "aliases": [],
       "readme_content_sha256": "d17e75c379070a52a29c38f00985b79f11b15ee53f8c7ae03dc89250dbd9fa2a"
+    },
+    {
+      "id": "R-1088",
+      "repository": "jack81st/launchguard-ai",
+      "url": "https://github.com/jack81st/launchguard-ai",
+      "snapshot_commit": "e02d0ffd4a3afa016b4945032165d6d7bb95a379",
+      "upstream_revision": "e02d0ffd4a3afa016b4945032165d6d7bb95a379",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "retaining-a-reviewer-edit-on-a-rejected-draft",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/jack81st/launchguard-ai/blob/e02d0ffd4a3afa016b4945032165d6d7bb95a379/tests/test_workflow.py",
+      "evidence_note": "The README describes a listing draft that pauses for human review. R-1086 follows an approved edit into a downstream mock request. Here the rejection test edits the title while rejecting a run and expects the revised title to remain in the returned listing, the run to be rejected and the delivery mode to be skipped. Another test closes one workflow object and creates another with the same settings, then approves the saved run ID and checks for completed status and a resumed event. These tests were inspected and not run. They do not verify an operating-system process restart, binding to a particular policy revision, or an external delivery. A synthetic native check would edit a draft, reject it, restart the process and compare the stored title, decision and number of delivery attempts with the pre-restart values. This check has not been run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains the MIT License. Vendored rights and ongoing maintenance remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "0ff3e8845f3670466c4e2537f2187ce18a5a537de4ac0fbf0863b1fbf17b7e12"
     }
   ],
   "unresolved_identities": [],
@@ -49919,9 +49953,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 272,
+    "detailed_appraisal_count": 273,
     "portable_only_count": 105,
-    "total_repository_count": 1081,
+    "total_repository_count": 1082,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50697,6 +50731,7 @@
     "R-1084",
     "R-1085",
     "R-1086",
-    "R-1087"
+    "R-1087",
+    "R-1088"
   ]
 }
