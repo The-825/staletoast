@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "d8329946c65dbfb639d4dce21f41a588f3fd27287dbbff1a434795004641223a",
   "appraisal_source_sha256": "75e2fb71df5d585bbd47758fe482e8f837c0abab96f6b91efc45b958a272cda9",
-  "repository_source_sha256": "f5fdf1da88cd1247a410b5b77467cf9139ed9ed7de0dda1f2867a1887fd08494",
+  "repository_source_sha256": "06c86ab8491c2cb51b34123f4279862016a4dd5a270f3a6805c2395f6b1e3703",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17130,6 +17130,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "recovering-accepted-human-input-after-process-exit",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1090",
+      "repository": "danielpdev/annotation-review-studio",
+      "url": "https://github.com/danielpdev/annotation-review-studio",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "retaining-decisions-while-exporting-only-resolved-labels",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
