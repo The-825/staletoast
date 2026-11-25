@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "077e674feb4ac10c47a9600cad9be79701af7e2caf4ab8696d4a9e373210b2fa",
-  "appraisal_source_sha256": "c8208258b1baaced98e7d725293d791a95cc2461c01f0c56dcb0b1b542833ea1",
+  "research_source_sha256": "12c1f65910fc35b71de51d8d541bc0776eecd4681212d81d452a28c9dba68ffa",
+  "appraisal_source_sha256": "c5623d7b012d26eb3667db53c8bb5a3dc1cc5d1f48797b2647472326a7fb5144",
   "repository_source_sha256": "32f7623ecb5f094b2d523fcd84b7df2033c71bf3d10509d5368fc54a37e3a780",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -3040,6 +3040,28 @@
       ],
       "directness": "D2 adjacent",
       "family": "HACO-HUMAN-TAKEOVER",
+      "horizon": "technical",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 51,
+      "priority_key": [
+        13,
+        1,
+        3
+      ],
+      "priority_claim": "CI-003"
+    },
+    {
+      "id": "C-425",
+      "title": "Two-Stage Learning to Defer with Multiple Experts",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/0b17d256cf1fe1cc084922a8c6b565b7-Abstract-Conference.html",
+      "claims": [
+        "CI-003"
+      ],
+      "directness": "D2 adjacent",
+      "family": "TWO-STAGE-MULTI-EXPERT-DEFERRAL",
       "horizon": "technical",
       "review_depth": "selected-full-text",
       "record_state": "candidate-not-promoted",
