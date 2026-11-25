@@ -49621,6 +49621,40 @@
       "license_status": "The root LICENSE contains Apache License 2.0. Third-party rights and maintenance beyond the snapshot are unassessed.",
       "aliases": [],
       "readme_content_sha256": "ef610c9acc6f69e9d258ea3021328e9691e86d2b1a330d0402e8e502bf060f32"
+    },
+    {
+      "id": "R-1081",
+      "repository": "olivomarco/vbd-copilot",
+      "url": "https://github.com/olivomarco/vbd-copilot",
+      "snapshot_commit": "c7fb855680f6bb72c8c6e885d0e8e1ff095dbb56",
+      "upstream_revision": "c7fb855680f6bb72c8c6e885d0e8e1ff095dbb56",
+      "snapshot_date": "2026-11-24",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "handoff-of-a-human-brief-to-a-running-agent-job",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/olivomarco/vbd-copilot/blob/c7fb855680f6bb72c8c6e885d0e8e1ff095dbb56/frontend/src/hooks/useAutoSendBrief.ts",
+      "evidence_note": "In frontend/src/hooks/useAutoSendBrief.ts, buildPromptFromBrief constructs the initial message from job metadata and returns null for the topic Resumed session. On a job ID change the hook treats any existing job event as a reason to skip sending. With a running job, a prompt and a clear local flag, it sets that flag before calling sendMessage. This shows a client-side handoff rule. It leaves delivery acknowledgement, concurrent clients and recovery after a failed send open. The documented human review of plans is outside this code path. A synthetic check could record attempted sends and acknowledged deliveries for new, resumed and already-active jobs, including a failed send and two open clients. Selected source inspection only.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The root package.json declares ISC. No root license text was identified in this archive. Rights for bundled components and maintenance beyond the snapshot remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "0f6565b4ab9a9cdfa07b17020b64063eb433afd0ba2de47c4c81271731ae698b"
     }
   ],
   "unresolved_identities": [],
@@ -49647,9 +49681,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 264,
+    "detailed_appraisal_count": 265,
     "portable_only_count": 105,
-    "total_repository_count": 1073,
+    "total_repository_count": 1074,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50417,6 +50451,7 @@
     "R-1074",
     "R-1076",
     "R-1077",
-    "R-1078"
+    "R-1078",
+    "R-1081"
   ]
 }
