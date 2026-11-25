@@ -49859,6 +49859,40 @@
       "license_status": "Root LICENSE contains Apache License 2.0. Vendored rights and ongoing maintenance remain unverified.",
       "aliases": [],
       "readme_content_sha256": "347bb35351330750c52cc0a9d425a4de8e33f9ad63bbb12ca650f9924d4edf88"
+    },
+    {
+      "id": "R-1087",
+      "repository": "cacheplane/threadplane",
+      "url": "https://github.com/cacheplane/threadplane",
+      "snapshot_commit": "e914b9220f3e751c3e961f6fa8255fb4e3c5c3c6",
+      "upstream_revision": "e914b9220f3e751c3e961f6fa8255fb4e3c5c3c6",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "attributing-tool-messages-to-the-correct-resumed-turn",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/cacheplane/threadplane/blob/e914b9220f3e751c3e961f6fa8255fb4e3c5c3c6/libs/langgraph/src/runtime/resume.spec.ts",
+      "evidence_note": "The README identifies Threadplane as an agent interface for Angular. R-1085 inspects which pending calls execute after approval. This LangGraph adapter fixture instead asks which turn owns a later tool message. Its synthetic stream first emits a saved message and a later user message, then a tool message with an unfamiliar call ID. It expects resume to succeed and the handler to remain uncalled. This selected test was inspected and not run. Cross-adapter equivalence, real multi-user isolation and production behavior remain unknown. A synthetic native check would replay identical attributed turns against two adapters, vary the timing of the later user message, and record which call IDs each handler receives. This check has not been run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains the MIT License. Vendored rights and ongoing maintenance remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "d17e75c379070a52a29c38f00985b79f11b15ee53f8c7ae03dc89250dbd9fa2a"
     }
   ],
   "unresolved_identities": [],
@@ -49885,9 +49919,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 271,
+    "detailed_appraisal_count": 272,
     "portable_only_count": 105,
-    "total_repository_count": 1080,
+    "total_repository_count": 1081,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50662,6 +50696,7 @@
     "R-1083",
     "R-1084",
     "R-1085",
-    "R-1086"
+    "R-1086",
+    "R-1087"
   ]
 }
