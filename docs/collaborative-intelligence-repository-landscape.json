@@ -50199,6 +50199,40 @@
       "license_status": "No root license file in the pinned archive. Reuse rights and ongoing maintenance remain unverified.",
       "aliases": [],
       "readme_content_sha256": "b4828eac20dbe0744a7e94ff1c8a4cf169fbffe0101ab12f7e5f5d1281ed30de"
+    },
+    {
+      "id": "R-1097",
+      "repository": "tuvl-io/tuvl",
+      "url": "https://github.com/tuvl-io/tuvl",
+      "snapshot_commit": "b60532f1536848509c87ccb31b72a9a7f1312b20",
+      "upstream_revision": "b60532f1536848509c87ccb31b72a9a7f1312b20",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "checking-human-edits-before-resuming-a-tool-call",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/tuvl-io/tuvl/blob/b60532f1536848509c87ccb31b72a9a7f1312b20/tests/runtime/test_loop_engine.py",
+      "evidence_note": "In test_approval_mid_loop a scripted model requests a refund of 900. The test expects a pending approval and an empty ledger. After the lead decides, a different worker drives the run. Approval records 900, an edit records 450 and rejection leaves the ledger empty. Only the edit case expects approver_changed_arguments in the next tool observation. In test_edited_args_are_validated_again a nonnumeric edit produces an invalid arguments observation and the run escalates with an empty ledger. R-1086 checks that a later mock model request contains a corrected refund amount. R-1097 adds an explicit edit marker, separate effect assertions for all three decisions and revalidation of an invalid edit after resumption. These are assertions inspected in source. The worker handoff occurs in the test harness and does not establish crash recovery, behavior after a workflow-definition change or actual payment behavior. A synthetic native check would compare the post-resume observation and recorded effect for unchanged, edited, rejected and invalid decisions. No native check or upstream test was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains Apache License 2.0. Component and dependency rights and continuing maintenance were not independently assessed.",
+      "aliases": [],
+      "readme_content_sha256": "7d657ca00422ba2eac3a13e25215fffe8ddeca75f5d794eb0da0d0705f9fc846"
     }
   ],
   "unresolved_identities": [],
@@ -50225,9 +50259,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 281,
+    "detailed_appraisal_count": 282,
     "portable_only_count": 105,
-    "total_repository_count": 1090,
+    "total_repository_count": 1091,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51012,6 +51046,7 @@
     "R-1093",
     "R-1094",
     "R-1095",
-    "R-1096"
+    "R-1096",
+    "R-1097"
   ]
 }
