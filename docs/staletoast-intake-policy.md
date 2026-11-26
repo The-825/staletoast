@@ -7,23 +7,33 @@ The [machine-readable policy](staletoast-intake-policy.json) records the limits.
 
 ## Daily round
 
-The October 21 operating update broadens discovery without increasing additions.
-Discover up to 50 metadata-only candidates per category against a named gap; this
+The November 26 capacity update raises the daily limits to match review capacity
+(see below). The October 21 operating update broadened discovery. Discover up to 50 metadata-only candidates per category against a named gap; this
 is a ceiling, not a quota. Normalize identities, aliases and evidence families,
-then screen at most five primary sources per category. Reserve the main effort
-for one or two eligible existing-pool candidates before expanding the pool.
+then screen at most twenty primary sources per category. Reserve the main effort
+for existing-pool candidates (target at least four, at most twelve a day) before
+expanding the pool.
 Record actual queries, source dates, exclusions, duplicates, access limits and
 separate discovery/screen/appraisal counts. Report shortfalls rather than force
-screens or additions. The original daily and monthly addition limits still apply.
+screens or additions. The daily and monthly limits below still apply.
 
-Add one or two sources per category only when quality supports their inclusion.
-Two is the daily maximum, including sources already added that day. Zero is
-valid. Use the existing appraisal and ranking method; do not lower its evidence
+Add sources per category only when quality supports their inclusion. Twelve is
+the daily maximum, including sources already added that day. Zero is valid. Use the existing appraisal and ranking method; do not lower its evidence
 requirements to fill a quota. Rediscovery and reconsideration are not new growth.
 
 Keep unselected leads in the existing next-round pool with a stable pool ID,
 canonical source, observed version, evidence depth, selection reason and next
 check. Retention is not approval or an adoption recommendation.
+
+## Why twelve
+
+On November 26 the limit moved from two to twelve per category. From November 23
+to 25 about 26 reviewed records merged each day, one an hour, so two was no longer
+the operating limit. At that pace the 1,042 automated screens still awaiting
+appraisal (377 papers, 665 repositories) take about six weeks to clear. The limit
+follows review capacity, not discovery volume. Raise it again only when the
+awaiting-appraisal count falls well below a week of work. Lower it if review
+quality slips or the merge gate backs up.
 
 ## Monthly round
 
