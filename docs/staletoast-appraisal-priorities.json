@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "1ce5f55186a105c44d6c1c0d6d07e2a8eff945b8e4d4a125bff45d6f27fb78d9",
   "appraisal_source_sha256": "5fc4d2f97f58f7250019db83c4b962b35bbad525ce52ff8c81dd3497ff21d4bb",
-  "repository_source_sha256": "1c24f39d025b45aabbd3db938b34e86860058d0d35f957dc760358d3499cb72d",
+  "repository_source_sha256": "fddc52fe1e3a31770988e80d4884faaba45f38b6639bf1cdbda244c5864412db",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17348,6 +17348,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "reconciling-an-uncertain-delivery-with-receiver-evidence",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1096",
+      "repository": "DatadrivenAlex/llm-annotation-workbench",
+      "url": "https://github.com/DatadrivenAlex/llm-annotation-workbench",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "measuring-paired-agreement-before-adjudication",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
