@@ -6,7 +6,7 @@ const CHART_DEPTH_LABELS = {
   "prior-screened-candidate": "Earlier screened candidate, not promoted"
 };
 let chartData;
-let currentCounts;
+let currentCoverage;
 const chartKindPath = kind => kind === "research" ? "research" : "repositories";
 function chartDepthLabel(kind, row) {
   if (kind === "research") return CHART_DEPTH_LABELS[row.evidence_depth] || CatalogUI.titleCase(row.evidence_depth);
@@ -37,8 +37,16 @@ function renderChart() {
   const chart = edition.charts[kind];
   const query = document.querySelector("#chart-search").value;
   const rows = filterChartEntries(chart.entries, query, id => EvidenceTopics.label(id));
-  document.querySelector("#chart-summary").textContent = `${rows.length} of ${chart.entries.length} chart entries shown. Current collection: ${currentCounts[kind]} source records. Edition ${edition.edition_date} preserves its original archive of ${chart.archive_count} records.`;
-  document.querySelector("#chart-boundary").textContent = `${chart.eligible_count} records were eligible for this dated edition. New automated relevance checks await appraisal and are not automatically selected. ${chart.cutoff_tied_outside_chart ? `${chart.cutoff_tied_outside_chart} records share the cutoff priority but are outside this 100-position edition. ` : ""}A place on the chart grants no adoption authority. The edition date marks an editorial reevaluation of recorded evidence, not a freshness check on each source.`;
+  const {total, screened, awaiting} = currentCoverage[kind];
+  const current = document.querySelector("#current-collection");
+  current.textContent = `Current collection: ${total} records. ${screened} source-screened. ${awaiting} await appraisal after automated screening.`;
+  current.href = `${chartKindPath(kind)}.html`;
+  current.hidden = false;
+  document.querySelector("#chart-summary").textContent = `${rows.length} of ${chart.entries.length} chart entries shown.`;
+  const latest = chartData.latest.edition_date;
+  const editionLabel = edition.edition_date === latest ? "Latest edition" : "Historical edition";
+  const latestNote = edition.edition_date === latest ? "" : ` Latest edition: ${latest}.`;
+  document.querySelector("#chart-boundary").textContent = `${editionLabel} ${edition.edition_date}: ${chart.eligible_count} of ${chart.archive_count} records were eligible on that date.${latestNote} ${chart.cutoff_tied_outside_chart ? `${chart.cutoff_tied_outside_chart} records share the cutoff priority but are outside this 100-position edition. ` : ""}Source screening depth varies. The edition reflects an editorial review of recorded evidence.`;
   document.querySelector("#chart-reset").disabled = !query.trim();
   document.querySelector("#chart-empty").hidden = rows.length > 0;
   document.querySelector("#chart-list").innerHTML = rows.map(row => chartItem(kind, row)).join("");
@@ -51,19 +59,27 @@ function resetChartSearch() {
 }
 async function loadCharts() {
   try {
-    const response = await fetch("data/charts.json");
+    const response = await fetch("data/charts.json", {cache: "no-cache"});
     if (!response.ok) throw new Error("Chart data is unavailable.");
     const claimsResponse = await fetch("data/claims.json");
     if (!claimsResponse.ok) throw new Error("Topic labels are unavailable.");
     EvidenceTopics.install(await claimsResponse.json());
     chartData = await response.json();
     const catalogs = await Promise.all(["research", "repositories"].map(async name => {
-      const result = await fetch(`data/${name}.json`);
+      const result = await fetch(`data/${name}.json`, {cache: "no-cache"});
       if (!result.ok) throw new Error("Current collection counts are unavailable.");
-      return [name, (await result.json()).length];
+      const records = await result.json();
+      return [name, {
+        total: records.length,
+        screened: records.filter(row => row.appraisal_state === "source-screened").length,
+        awaiting: records.filter(row => row.appraisal_state === "automated-screen").length
+      }];
     }));
-    currentCounts = Object.fromEntries(catalogs);
-    document.querySelector("#edition").innerHTML = chartData.history.slice().reverse().map(row => `<option value="${chartEscape(row.edition_date)}">${chartEscape(row.edition_date)}</option>`).join("");
+    currentCoverage = Object.fromEntries(catalogs);
+    const edition = document.querySelector("#edition");
+    const latest = chartData.latest.edition_date;
+    edition.innerHTML = chartData.history.slice().reverse().map(row => `<option value="${chartEscape(row.edition_date)}">${chartEscape(row.edition_date)}${row.edition_date === latest ? " (latest)" : ""}</option>`).join("");
+    edition.value = latest;
     for (const selector of ["#chart-kind", "#edition", "#chart-search"]) document.querySelector(selector).addEventListener(selector === "#chart-search" ? "input" : "change", renderChart);
     document.querySelector("#chart-reset").addEventListener("click", resetChartSearch);
     document.querySelector("#chart-empty-reset").addEventListener("click", resetChartSearch);
