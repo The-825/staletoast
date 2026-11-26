@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "e57b6d5c9d68f6535041f1accf454cbb2a6e8bb207d7c0ba9dc03bdec46017ca",
   "appraisal_source_sha256": "0885a8204586d2c56ea15ef079df86b121d967456ebf7c278b449592802336bb",
-  "repository_source_sha256": "65970f74ef4b779234e561023848ce1e116aeb16d1923fe31fe66bd6e9cb8d85",
+  "repository_source_sha256": "4955710fc5971019e95ed4057857447dc58bfef2cf7bafb5054c32254525dd04",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17228,6 +17228,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "separating-runtime-permission-from-final-task-acceptance",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1093",
+      "repository": "dylanmerigaud/approvals-ui",
+      "url": "https://github.com/dylanmerigaud/approvals-ui",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "detecting-approval-paths-that-can-skip-a-human",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
