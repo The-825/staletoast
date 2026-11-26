@@ -50097,6 +50097,40 @@
       "license_status": "Root LICENSE contains the MIT License. Dependency rights and continuing maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "472744f4d3c0cc26e76f4a4e1e08340fb4743eff77d5a4993c83d89f5ab40fd1"
+    },
+    {
+      "id": "R-1094",
+      "repository": "steward-grc/steward-workflow",
+      "url": "https://github.com/steward-grc/steward-workflow",
+      "snapshot_commit": "810e0181829ffe2b814c327885a62707d4bb5d22",
+      "upstream_revision": "810e0181829ffe2b814c327885a62707d4bb5d22",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "separating-individual-and-group-approval-seats",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/steward-grc/steward-workflow/blob/810e0181829ffe2b814c327885a62707d4bb5d22/internal/grpcsvc/seats_test.go",
+      "evidence_note": "In the selected Go service tests one person is both an individual approver and a member of the finance group. An approval without a group identifier decides the individual assignment and leaves the group assignment pending. Naming the finance group decides that assignment and leaves the individual one pending. If the approver has one group assignment and no individual assignment, omitting the group identifier decides that group assignment. When the fixture gives that approver assignment rows in two groups, the unqualified request returns InvalidArgument. The tests use stub stores and do not establish production authentication, durable vote storage or quorum enforcement in deployment. R-1093 checks a proposed policy graph before activation. This entry addresses which assignment receives a decision. A synthetic native check would assign one reviewer both roles, submit one group decision, restart the workflow service and replay that decision. Compare both stored assignments before and after replay. Only the named group assignment should be decided. Static inspection only. The proposed restart check and source tests were not run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains the Apache License, Version 2.0. Dependency rights and continuing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "053be883362c2034b876605dde6efd4d3e4c3abb46361978d332dd2e1d98531e"
     }
   ],
   "unresolved_identities": [],
@@ -50123,9 +50157,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 278,
+    "detailed_appraisal_count": 279,
     "portable_only_count": 105,
-    "total_repository_count": 1087,
+    "total_repository_count": 1088,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50907,6 +50941,7 @@
     "R-1090",
     "R-1091",
     "R-1092",
-    "R-1093"
+    "R-1093",
+    "R-1094"
   ]
 }
