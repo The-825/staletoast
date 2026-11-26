@@ -50369,6 +50369,40 @@
       "license_status": "The root LICENSE is Apache License 2.0. Dataset and dependency terms and current maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "637fd41e6ded4366fd8ade81b71caa3769fe98e049f03ba0111721a46dc4841b"
+    },
+    {
+      "id": "R-1103",
+      "repository": "jkkummerfeld/slate",
+      "url": "https://github.com/jkkummerfeld/slate",
+      "snapshot_commit": "40f76338799b7fbfd067f8b1d95c4d60446d56fd",
+      "upstream_revision": "40f76338799b7fbfd067f8b1d95c4d60446d56fd",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "annotation-disagreement-navigation",
+      "category": "evaluation-tools",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/jkkummerfeld/slate/blob/40f76338799b7fbfd067f8b1d95c4d60446d56fd/slate/data.py",
+      "evidence_note": "Slate compares annotation files for the same document. R-1096 measures agreement on shared items. In Slate, Datum counts occurrences of each hashed span and label tuple across comparison files, then subtracts the count from the number of comparison files. The interface uses these counts and span locations for adjudication. The loader appends one item per line. With two comparison files, two identical lines in one file and none in the other yield a stored difference count of zero. A synthetic check would compare that result with one matching line in each file and record whether the interface distinguishes them. This source inspection provides no measured effect on annotator time or accuracy. No upstream code or native check was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "LICENSE.txt grants use, copying, modification and distribution subject to retaining the notices. Current maintenance and rights to external annotation data are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "33500c095aa2203fc354183433363846c8aa4ef89471d20dc32a6addd7ef8fcc"
     }
   ],
   "unresolved_identities": [],
@@ -50395,9 +50429,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 286,
+    "detailed_appraisal_count": 287,
     "portable_only_count": 105,
-    "total_repository_count": 1095,
+    "total_repository_count": 1096,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51187,6 +51221,7 @@
     "R-1099",
     "R-1100",
     "R-1101",
-    "R-1102"
+    "R-1102",
+    "R-1103"
   ]
 }
