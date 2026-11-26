@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "c052cab213a5ba6163879af622fc35c436505dd088e6efa32f1368f68e328c4d",
-  "appraisal_source_sha256": "c740e89d52efde97a2ce3b98517536fe3574d431f3c2114dde0316976fdc9caf",
+  "research_source_sha256": "ad0b6c8466eb6cf989ffe79d99009a1f1b8311b330b429ed7b712b7255bc60e8",
+  "appraisal_source_sha256": "b3c370b4e411a981936e16acc0b042a1b66b2c5cf3324f8189c2add65d23389a",
   "repository_source_sha256": "4eac969642f685bbe8fb343f5afea5d52b4c9e4990c6bb2c0dd6c913379314ab",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -1726,6 +1726,28 @@
       ],
       "directness": "D2 adjacent",
       "family": "BABBAR-PREDICTION-SETS",
+      "horizon": "technical",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 20,
+      "priority_key": [
+        4,
+        1,
+        3
+      ],
+      "priority_claim": "CI-004"
+    },
+    {
+      "id": "C-440",
+      "title": "Learning to Defer in Congested Systems: The AI-Human Interplay",
+      "url": "https://arxiv.org/abs/2402.12237v4",
+      "claims": [
+        "CI-004"
+      ],
+      "directness": "D2 adjacent",
+      "family": "LYKOURIS-WENG-CONGESTION",
       "horizon": "technical",
       "review_depth": "selected-full-text",
       "record_state": "candidate-not-promoted",
