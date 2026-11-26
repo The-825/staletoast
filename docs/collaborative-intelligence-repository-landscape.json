@@ -50301,6 +50301,40 @@
       "license_status": "The root LICENSE grants the MIT License and credits Every, Inc. in 2026. Dependency rights and ongoing maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "121c17e5fd9b18a69e9ce88f49c7f70ab6b4855694d66a4234cc5706f379a8fb"
+    },
+    {
+      "id": "R-1101",
+      "repository": "ygccoder/routebr",
+      "url": "https://github.com/ygccoder/routebr",
+      "snapshot_commit": "c6c59e48784e6d4e0a368c46e706ce6dc0136bce",
+      "upstream_revision": "c6c59e48784e6d4e0a368c46e706ce6dc0136bce",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "preserving-the-primary-action-at-handoff",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/ygccoder/routebr/blob/c6c59e48784e6d4e0a368c46e706ce6dc0136bce/tests/test_controller.py",
+      "evidence_note": "R-1097 tests editing an action under approval. RouteBR tests whether the controller retains the primary action identity when routing a request to a human. Controller.route evaluates the proposed primary action against runtime policy. With state enforcement on, a non-ALLOW boundary returns the original action ID and a bounded terminal. A replay test expects HANDOFF and A1_ADVISORY as the returned action ID. The proposed alternative remains in the recorded top-k trace. Its escalation rule applies to all actions. Despite the test name, this fixture cannot show that the secondary action was independently allowed. Disabling state enforcement in the ablation test permits dispatch. These assertions cover the routing result. They do not establish delivery to a human. A synthetic check would separately verify an advisory-only handoff rule and an allowed alternative, then inspect the returned action and terminal. No upstream code or native check was executed.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The root LICENSE is MIT. Dependency rights and current maintenance remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "1057a7715f21039a5879f0849d0fda05f06d8f82acd8f61761141f81117276a1"
     }
   ],
   "unresolved_identities": [],
@@ -50327,9 +50361,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 284,
+    "detailed_appraisal_count": 285,
     "portable_only_count": 105,
-    "total_repository_count": 1093,
+    "total_repository_count": 1094,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51117,6 +51151,7 @@
     "R-1096",
     "R-1097",
     "R-1099",
-    "R-1100"
+    "R-1100",
+    "R-1101"
   ]
 }
