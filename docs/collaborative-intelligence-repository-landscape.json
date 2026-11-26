@@ -50029,6 +50029,40 @@
       "license_status": "No license-named file was found in the inspected archive. Neither root nor core package manifest declares a license. Reuse rights and ongoing maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "994eba5d2c925496b27b259f5b66f33a06b6d58772770a593429732e83b90718"
+    },
+    {
+      "id": "R-1092",
+      "repository": "masonlee39/orchvia",
+      "url": "https://github.com/masonlee39/orchvia",
+      "snapshot_commit": "060d0abb6d9ed18760ac3c6ce101c7129038070c",
+      "upstream_revision": "060d0abb6d9ed18760ac3c6ce101c7129038070c",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "separating-runtime-permission-from-final-task-acceptance",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/masonlee39/orchvia/blob/060d0abb6d9ed18760ac3c6ce101c7129038070c/tests/engine/runtime-approval.test.ts",
+      "evidence_note": "In the selected engine test a fake adapter requests permission to read a file during a task configured for human acceptance. The test checks that the pending runtime permission targets the active dispatch. For approval and denial it submits the same decision twice with the same expected revision and idempotency key and compares decision IDs. After approval, denial or expiry the test expects a separate pending task acceptance request with a different ID. Across the tested modes, a later approval submitted against the original revision must fail with STALE_TARGET. R-1091 covers conflicting registration of a pending question. Here an approval for one tool operation leaves final acceptance to a separate decision. Static inspection only. The test was not run and does not demonstrate real provider enforcement or mailbox persistence across a restart. A synthetic native check would attempt completion before deciding the final acceptance request and count any tasks completed prematurely. This check has not been run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains the MIT License. Dependency rights and continuing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "a28df4b2a2caee7eedb9b8d48fa03f1201de8e7677637927a65d818e405765e1"
     }
   ],
   "unresolved_identities": [],
@@ -50055,9 +50089,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 276,
+    "detailed_appraisal_count": 277,
     "portable_only_count": 105,
-    "total_repository_count": 1085,
+    "total_repository_count": 1086,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50837,6 +50871,7 @@
     "R-1088",
     "R-1089",
     "R-1090",
-    "R-1091"
+    "R-1091",
+    "R-1092"
   ]
 }
