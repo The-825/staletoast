@@ -49995,6 +49995,40 @@
       "license_status": "Root LICENSE contains the MIT License. Dependency rights and maintenance remain unverified.",
       "aliases": [],
       "readme_content_sha256": "df0db83388a6fdb2b5092ab1192df22d85f6127475a64a1fac2601e6718352f6"
+    },
+    {
+      "id": "R-1091",
+      "repository": "restatedev/agent",
+      "url": "https://github.com/restatedev/agent",
+      "snapshot_commit": "40802576f4d29ec94fb6640322419b14cb036091",
+      "upstream_revision": "40802576f4d29ec94fb6640322419b14cb036091",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "rejecting-a-changed-question-on-a-pending-approval-id",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/restatedev/agent/blob/40802576f4d29ec94fb6640322419b14cb036091/packages/libs/core/test/approvals.test.mjs",
+      "evidence_note": "In the core state fixture an identical approval request can be registered twice while the list retains one pending item. A second test reuses the pending approval ID with a different question and expects rejection while preserving the first request. The first test also checks the approval decision signal for the active turn. R-1044 describes single-use approval of exact arguments. Here the selected tests exercise conflicting registration before a decision is issued. These tests were inspected statically. They do not establish that requests remain bound across deployed workflow revisions or that differently worded questions authorize equivalent effects. A synthetic native check would vary the turn and question independently while reusing a pending ID and count accepted registrations, retained requests and decision signals. This check has not been run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "No license-named file was found in the inspected archive. Neither root nor core package manifest declares a license. Reuse rights and ongoing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "994eba5d2c925496b27b259f5b66f33a06b6d58772770a593429732e83b90718"
     }
   ],
   "unresolved_identities": [],
@@ -50021,9 +50055,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 275,
+    "detailed_appraisal_count": 276,
     "portable_only_count": 105,
-    "total_repository_count": 1084,
+    "total_repository_count": 1085,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50802,6 +50836,7 @@
     "R-1087",
     "R-1088",
     "R-1089",
-    "R-1090"
+    "R-1090",
+    "R-1091"
   ]
 }
