@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "76569d8c9f2f2b501d0da72c95ef3db5c81b71fc3839cae647bdfc97123010fa",
-  "appraisal_source_sha256": "b56f499fcaae95a50f649e2dc73804f6c6de4485d6e805ed1fdb68350fec2733",
+  "research_source_sha256": "1ce5f55186a105c44d6c1c0d6d07e2a8eff945b8e4d4a125bff45d6f27fb78d9",
+  "appraisal_source_sha256": "5fc4d2f97f58f7250019db83c4b962b35bbad525ce52ff8c81dd3497ff21d4bb",
   "repository_source_sha256": "1c24f39d025b45aabbd3db938b34e86860058d0d35f957dc760358d3499cb72d",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -1682,6 +1682,28 @@
       ],
       "directness": "D2 adjacent",
       "family": "TESTONI-CODRAW",
+      "horizon": "technical",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 20,
+      "priority_key": [
+        4,
+        1,
+        3
+      ],
+      "priority_claim": "CI-004"
+    },
+    {
+      "id": "C-436",
+      "title": "Python Code Generation by Asking Clarification Questions",
+      "url": "https://aclanthology.org/2023.acl-long.799/",
+      "claims": [
+        "CI-004"
+      ],
+      "directness": "D2 adjacent",
+      "family": "LI-CODECLARQA",
       "horizon": "technical",
       "review_depth": "selected-full-text",
       "record_state": "candidate-not-promoted",
