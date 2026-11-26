@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "ad0b6c8466eb6cf989ffe79d99009a1f1b8311b330b429ed7b712b7255bc60e8",
   "appraisal_source_sha256": "b3c370b4e411a981936e16acc0b042a1b66b2c5cf3324f8189c2add65d23389a",
-  "repository_source_sha256": "7334e1e22726169963fe3de5b03d8cb661fc5a7a5dbf721248d80a22d27eb497",
+  "repository_source_sha256": "d39e84b692141322cacd7b87d46efe0d449b482f7a19ae221b16cfc9e22a54f3",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17540,6 +17540,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "annotation-disagreement-navigation",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1104",
+      "repository": "xisen-w/commsfail",
+      "url": "https://github.com/xisen-w/commsfail",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "matching-incident-annotations-in-agent-team-traces",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
