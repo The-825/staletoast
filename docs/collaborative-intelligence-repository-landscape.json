@@ -50131,6 +50131,40 @@
       "license_status": "Root LICENSE contains the Apache License, Version 2.0. Dependency rights and continuing maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "053be883362c2034b876605dde6efd4d3e4c3abb46361978d332dd2e1d98531e"
+    },
+    {
+      "id": "R-1095",
+      "repository": "ason5861/tahu",
+      "url": "https://github.com/ason5861/tahu",
+      "snapshot_commit": "cf4c008392d73c3422d9737b87f3c16861b1c3e1",
+      "upstream_revision": "cf4c008392d73c3422d9737b87f3c16861b1c3e1",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "reconciling-an-uncertain-delivery-with-receiver-evidence",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/ason5861/tahu/blob/cf4c008392d73c3422d9737b87f3c16861b1c3e1/tests/test_execution.py",
+      "evidence_note": "A local mail test uses a callback that executes a queued delivery against a guarded receiver and then raises an error to simulate a lost acknowledgement. The gateway reports UNKNOWN. The test reopens the mailbox with its SQLite receipt file and creates another gateway object using the existing gateway path. After a stop call, the gateway reconciles the delivery automatically using the receiver receipt. Both reconciliation and a subsequent execution request must return SUCCEEDED, with just one receiver message. A separate fixture marks a pending execution EXECUTING. With no receipt, a wrong delivery ID with an invalid hash, or a matching ID with an invalid hash, both reconciliation and execution must report UNKNOWN and the sink stays empty. R-1061 tests binding approval to a simulated effect. This test concerns automatic recovery of delivery state without resending. No human decision is exercised. Both fixtures were inspected statically. They do not establish production crash recovery or third-party receipt trust. A synthetic native check would interrupt the gateway after receiver acceptance, restart it in another process and compare duplicate effects across matching and mismatched receipts. No native check was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains the Apache License, Version 2.0. Dependency rights and continuing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "ecbbaa638e17efef56bb25fd7f14b891259f605e945c61b6ba2ac2438424e3df"
     }
   ],
   "unresolved_identities": [],
@@ -50157,9 +50191,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 279,
+    "detailed_appraisal_count": 280,
     "portable_only_count": 105,
-    "total_repository_count": 1088,
+    "total_repository_count": 1089,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50942,6 +50976,7 @@
     "R-1091",
     "R-1092",
     "R-1093",
-    "R-1094"
+    "R-1094",
+    "R-1095"
   ]
 }

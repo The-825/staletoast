@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "76569d8c9f2f2b501d0da72c95ef3db5c81b71fc3839cae647bdfc97123010fa",
   "appraisal_source_sha256": "b56f499fcaae95a50f649e2dc73804f6c6de4485d6e805ed1fdb68350fec2733",
-  "repository_source_sha256": "9963eafeb7b7e38d95a4de1d880c40395886a5662de8a23948df4faf16f4be4f",
+  "repository_source_sha256": "1c24f39d025b45aabbd3db938b34e86860058d0d35f957dc760358d3499cb72d",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17308,6 +17308,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "separating-individual-and-group-approval-seats",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1095",
+      "repository": "ason5861/tahu",
+      "url": "https://github.com/ason5861/tahu",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "reconciling-an-uncertain-delivery-with-receiver-evidence",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
