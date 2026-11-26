@@ -50403,6 +50403,40 @@
       "license_status": "LICENSE.txt grants use, copying, modification and distribution subject to retaining the notices. Current maintenance and rights to external annotation data are unverified.",
       "aliases": [],
       "readme_content_sha256": "33500c095aa2203fc354183433363846c8aa4ef89471d20dc32a6addd7ef8fcc"
+    },
+    {
+      "id": "R-1104",
+      "repository": "xisen-w/commsfail",
+      "url": "https://github.com/xisen-w/commsfail",
+      "snapshot_commit": "4b4680b3cca378ec7b394d2aab8adb1a3d0331ef",
+      "upstream_revision": "4b4680b3cca378ec7b394d2aab8adb1a3d0331ef",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "matching-incident-annotations-in-agent-team-traces",
+      "category": "evaluation-tools",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/xisen-w/commsfail/blob/4b4680b3cca378ec7b394d2aab8adb1a3d0331ef/commsfail/annotators/standard/agree.py",
+      "evidence_note": "Commsfail compares two annotations of a shared agent run. R-1096 measures agreement on overlapping annotation items. Here the matching step must first decide which incidents refer to the same event. In match(), equal anchors or post-set Jaccard overlap of at least 0.5 create candidate pairs. The function takes the highest scoring available pairs greedily, using each incident ID at most once per side. In compare(), incident F1 credits matched pairs only when their classes agree. The upstream test expects F1 of 0.5 with one match and one unmatched incident on each side. A synthetic check would reverse two equal-score candidates with different classes and compare the resulting pair IDs and F1. Agreement between annotations does not establish which incident actually occurred. Static source inspection only.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE is MIT, copyright 2026 Xisen Wang. Rights to third-party traces and current maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "cc2bc4fa8cc7e831006c856f584c14db6653b0afaea916b57f3fff011a07d0e9"
     }
   ],
   "unresolved_identities": [],
@@ -50429,9 +50463,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 287,
+    "detailed_appraisal_count": 288,
     "portable_only_count": 105,
-    "total_repository_count": 1096,
+    "total_repository_count": 1097,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51222,6 +51256,7 @@
     "R-1100",
     "R-1101",
     "R-1102",
-    "R-1103"
+    "R-1103",
+    "R-1104"
   ]
 }
