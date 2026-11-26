@@ -50233,6 +50233,40 @@
       "license_status": "Root LICENSE contains Apache License 2.0. Component and dependency rights and continuing maintenance were not independently assessed.",
       "aliases": [],
       "readme_content_sha256": "7d657ca00422ba2eac3a13e25215fffe8ddeca75f5d794eb0da0d0705f9fc846"
+    },
+    {
+      "id": "R-1100",
+      "repository": "everyinc/tend",
+      "url": "https://github.com/everyinc/tend",
+      "snapshot_commit": "73b5e724a8a7465741de69bb7b7fbc7b2cf593c4",
+      "upstream_revision": "73b5e724a8a7465741de69bb7b7fbc7b2cf593c4",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "linking-preference-and-later-feedback-to-a-reading-revision",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/everyinc/tend/blob/73b5e724a8a7465741de69bb7b7fbc7b2cf593c4/test/domain.test.ts",
+      "evidence_note": "R-1076 assembles skill-correction proposals from feedback. Tend addresses a prior step: retaining which version a person preferred and which card revision a later explanation concerned. In test/domain.test.ts the preference-comparison test records a preference and a subsequent voice instruction on a card, completes the voice work, then claims the queued learning work. It expects the two feedback events in order, the original preference event ID, and the voice event linked to the card ID and its content revision. It expects the separate reaction map to stay empty. In server/domain.ts the learning operation selects reading feedback events from feed history. These checks concern evidence carried to the next task. They do not measure a change in generated content, learning quality, consent or production behavior. A synthetic check would attach a later explanation to one of two similar card revisions and verify that the next task retains the intended revision without converting the explanation into a rating. Static inspection only; no upstream test or native check was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "P",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The root LICENSE grants the MIT License and credits Every, Inc. in 2026. Dependency rights and ongoing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "121c17e5fd9b18a69e9ce88f49c7f70ab6b4855694d66a4234cc5706f379a8fb"
     }
   ],
   "unresolved_identities": [],
@@ -50259,9 +50293,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 282,
+    "detailed_appraisal_count": 283,
     "portable_only_count": 105,
-    "total_repository_count": 1091,
+    "total_repository_count": 1092,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51047,6 +51081,7 @@
     "R-1094",
     "R-1095",
     "R-1096",
-    "R-1097"
+    "R-1097",
+    "R-1100"
   ]
 }
