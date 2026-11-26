@@ -50235,6 +50235,40 @@
       "readme_content_sha256": "7d657ca00422ba2eac3a13e25215fffe8ddeca75f5d794eb0da0d0705f9fc846"
     },
     {
+      "id": "R-1099",
+      "repository": "jcambrac/ei-bench",
+      "url": "https://github.com/jcambrac/ei-bench",
+      "snapshot_commit": "1ebd9d9745a3b224c1f77aff934ad60f8e1b9f3f",
+      "upstream_revision": "1ebd9d9745a3b224c1f77aff934ad60f8e1b9f3f",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "recording-which-evidence-an-annotator-could-see",
+      "category": "evaluation-tools",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/jcambrac/ei-bench/blob/1ebd9d9745a3b224c1f77aff934ad60f8e1b9f3f/annotate/annotate.py",
+      "evidence_note": "The annotation interface starts with a title and link. The annotator can toggle an AI-generated summary and reveal article text. The saved record includes revealed_summary, viewed_article_text, opened_url and time_spent_seconds. In annotate/annotate.py the summary flag is toggled on each summary keypress and its current value is copied into the record. Showing and then hiding the summary can therefore leave the same final flag as never showing it. The separate keypress log may provide additional evidence of interaction. R-1096 compares agreement on overlapping labels. This tool raises a different evaluation question: did the annotators whose labels are compared have access to equivalent evidence? Recorded interface state cannot show what the annotator read. A synthetic check would compare records for never showing a summary, showing it once, and showing then hiding it before saving. Static inspection only. No upstream code or native check was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The pinned archive has no root license file. Reuse rights and ongoing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "467327f11ee0cb68582717fd234f35a7e50c2339dc0a86e25c2e0bd4938cf047"
+    },
+    {
       "id": "R-1100",
       "repository": "everyinc/tend",
       "url": "https://github.com/everyinc/tend",
@@ -50293,9 +50327,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 283,
+    "detailed_appraisal_count": 284,
     "portable_only_count": 105,
-    "total_repository_count": 1092,
+    "total_repository_count": 1093,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51082,6 +51116,7 @@
     "R-1095",
     "R-1096",
     "R-1097",
+    "R-1099",
     "R-1100"
   ]
 }
