@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "fd9a59136424140dc935e04056ea95823b45ee66bf38b225335811f5429c7e46",
-  "appraisal_source_sha256": "c2a3c7a1a0dd6ab87031f46bcdb73cbbad96ec7f59e33ffe5a2d619a9ac9c5d9",
+  "research_source_sha256": "e57b6d5c9d68f6535041f1accf454cbb2a6e8bb207d7c0ba9dc03bdec46017ca",
+  "appraisal_source_sha256": "0885a8204586d2c56ea15ef079df86b121d967456ebf7c278b449592802336bb",
   "repository_source_sha256": "24c5a829f7d761c24d3c90cf1a1e94f8dce3cab515985490027e687f07885bde",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -3062,6 +3062,28 @@
       ],
       "directness": "D2 adjacent",
       "family": "MITSUDA-COMMON-LAYOUT",
+      "horizon": "single",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 50,
+      "priority_key": [
+        13,
+        1,
+        2
+      ],
+      "priority_claim": "CI-003"
+    },
+    {
+      "id": "C-433",
+      "title": "Team learning: building shared mental models",
+      "url": "https://doi.org/10.1007/s11251-010-9128-3",
+      "claims": [
+        "CI-003"
+      ],
+      "directness": "D2 adjacent",
+      "family": "VAN-DEN-BOSSCHE-SHARED-MAPS",
       "horizon": "single",
       "review_depth": "selected-full-text",
       "record_state": "candidate-not-promoted",
