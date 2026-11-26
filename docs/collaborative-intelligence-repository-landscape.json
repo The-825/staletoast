@@ -50063,6 +50063,40 @@
       "license_status": "Root LICENSE contains the MIT License. Dependency rights and continuing maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "a28df4b2a2caee7eedb9b8d48fa03f1201de8e7677637927a65d818e405765e1"
+    },
+    {
+      "id": "R-1093",
+      "repository": "dylanmerigaud/approvals-ui",
+      "url": "https://github.com/dylanmerigaud/approvals-ui",
+      "snapshot_commit": "5e1ce2fda8c16d4cbff94a4d55767d6dcfef6f37",
+      "upstream_revision": "5e1ce2fda8c16d4cbff94a4d55767d6dcfef6f37",
+      "snapshot_date": "2026-11-25",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "detecting-approval-paths-that-can-skip-a-human",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/dylanmerigaud/approvals-ui/blob/5e1ce2fda8c16d4cbff94a4d55767d6dcfef6f37/lib/approvals-ui/validate.test.ts",
+      "evidence_note": "The policy validator tests describe a proposed approval graph before activation. A path consisting solely of an approved terminal produces no-approval-before-terminal, yet the test expects isActivatable to return true. A dangling edge produces an error and the test expects activation eligibility to be false. Another fixture with the same reviewer on sequential gates expects a segregation-of-duties warning. These checks expose choices a human can make when designing a workflow. R-1092 examines permission and acceptance on a running task. This entry concerns design-time graph checks. Static inspection only. The tests were not run. The fixtures establish neither identity verification nor production activation behavior. A synthetic native check would compare warnings and activation eligibility for a terminal-only graph, a broken link and a two-reviewer graph before accepting a proposed policy edit. This check has not been run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE contains the MIT License. Dependency rights and continuing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "472744f4d3c0cc26e76f4a4e1e08340fb4743eff77d5a4993c83d89f5ab40fd1"
     }
   ],
   "unresolved_identities": [],
@@ -50089,9 +50123,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 277,
+    "detailed_appraisal_count": 278,
     "portable_only_count": 105,
-    "total_repository_count": 1086,
+    "total_repository_count": 1087,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50872,6 +50906,7 @@
     "R-1089",
     "R-1090",
     "R-1091",
-    "R-1092"
+    "R-1092",
+    "R-1093"
   ]
 }
