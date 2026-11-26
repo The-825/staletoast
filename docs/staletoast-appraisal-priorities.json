@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "c052cab213a5ba6163879af622fc35c436505dd088e6efa32f1368f68e328c4d",
   "appraisal_source_sha256": "c740e89d52efde97a2ce3b98517536fe3574d431f3c2114dde0316976fdc9caf",
-  "repository_source_sha256": "bb0897e940d8a3417bb2fc84a48604aca33a4ff83e0e43872e3bccdea7ca7c42",
+  "repository_source_sha256": "4eac969642f685bbe8fb343f5afea5d52b4c9e4990c6bb2c0dd6c913379314ab",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17482,6 +17482,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "preserving-the-primary-action-at-handoff",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1102",
+      "repository": "rdnfn/icai",
+      "url": "https://github.com/rdnfn/icai",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "separating-preference-agreement-from-rule-coverage",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [

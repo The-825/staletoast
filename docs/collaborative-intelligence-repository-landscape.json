@@ -50335,6 +50335,40 @@
       "license_status": "The root LICENSE is MIT. Dependency rights and current maintenance remain unverified.",
       "aliases": [],
       "readme_content_sha256": "1057a7715f21039a5879f0849d0fda05f06d8f82acd8f61761141f81117276a1"
+    },
+    {
+      "id": "R-1102",
+      "repository": "rdnfn/icai",
+      "url": "https://github.com/rdnfn/icai",
+      "snapshot_commit": "cb88e6588e9a01e8c1f216ea3cfe1b7461ddee7d",
+      "upstream_revision": "cb88e6588e9a01e8c1f216ea3cfe1b7461ddee7d",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "separating-preference-agreement-from-rule-coverage",
+      "category": "evaluation-tools",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/rdnfn/icai/blob/cb88e6588e9a01e8c1f216ea3cfe1b7461ddee7d/src/inverse_cai/app/metrics_test.py",
+      "evidence_note": "Inverse Constitutional AI derives candidate principles from pairwise preference data. R-1096 compares agreement on overlapping annotations. The acc metric (Accuracy) divides Agree by Agree plus Disagree. The relevance metric divides Agree plus Disagree by all votes. The separately named agreement metric divides Agree by all votes, including Not applicable. For four Agree votes and one Not applicable, acc is 1.0, relevance is 0.8 and the test expects perf to be 0.8. In src/inverse_cai/experiment/core.py, run() sets preferred_text to text_a and logs a warning when the training data lacks that column. Metrics against this synthetic default cannot establish a human preference. A synthetic check would compare a narrow rule and a broad rule against held-out labeled pairs, report acc and relevance separately, and include a majority-side baseline. Static inspection only. No upstream test or native check was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The root LICENSE is Apache License 2.0. Dataset and dependency terms and current maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "637fd41e6ded4366fd8ade81b71caa3769fe98e049f03ba0111721a46dc4841b"
     }
   ],
   "unresolved_identities": [],
@@ -50361,9 +50395,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 285,
+    "detailed_appraisal_count": 286,
     "portable_only_count": 105,
-    "total_repository_count": 1094,
+    "total_repository_count": 1095,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51152,6 +51186,7 @@
     "R-1097",
     "R-1099",
     "R-1100",
-    "R-1101"
+    "R-1101",
+    "R-1102"
   ]
 }
