@@ -50165,6 +50165,40 @@
       "license_status": "Root LICENSE contains the Apache License, Version 2.0. Dependency rights and continuing maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "ecbbaa638e17efef56bb25fd7f14b891259f605e945c61b6ba2ac2438424e3df"
+    },
+    {
+      "id": "R-1096",
+      "repository": "DatadrivenAlex/llm-annotation-workbench",
+      "url": "https://github.com/DatadrivenAlex/llm-annotation-workbench",
+      "snapshot_commit": "fc7ebe227e981b66370f22514a02040a6ba01a4e",
+      "upstream_revision": "fc7ebe227e981b66370f22514a02040a6ba01a4e",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "measuring-paired-agreement-before-adjudication",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/DatadrivenAlex/llm-annotation-workbench/blob/fc7ebe227e981b66370f22514a02040a6ba01a4e/tests/test_api.py",
+      "evidence_note": "In annotation/main.py the /agreement SQL joins the two named annotators on case ID, which excludes unpaired cases. The test with three paired cases expects observed agreement of 0.6667 and Cohen kappa of 0.4. Without paired labels it expects null kappa. The test does not cover partial overlap. Adjudication can replace the prior decision and removes a case from the disagreements queue. Unlike R-1090, the specific evidence here is how the paired denominator and missing overlap affect agreement reporting. A synthetic check could vary overlap while holding matched labels constant and report the paired count alongside kappa. No native check or upstream test was run. The observable agreement cannot establish that either label is correct. Reviewer authentication and production use were not verified.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "No root license file in the pinned archive. Reuse rights and ongoing maintenance remain unverified.",
+      "aliases": [],
+      "readme_content_sha256": "b4828eac20dbe0744a7e94ff1c8a4cf169fbffe0101ab12f7e5f5d1281ed30de"
     }
   ],
   "unresolved_identities": [],
@@ -50191,9 +50225,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 280,
+    "detailed_appraisal_count": 281,
     "portable_only_count": 105,
-    "total_repository_count": 1089,
+    "total_repository_count": 1090,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -50977,6 +51011,7 @@
     "R-1092",
     "R-1093",
     "R-1094",
-    "R-1095"
+    "R-1095",
+    "R-1096"
   ]
 }
