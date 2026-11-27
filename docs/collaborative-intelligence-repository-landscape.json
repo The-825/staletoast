@@ -50748,6 +50748,40 @@
       "license_status": "Apache License 2.0 in the pinned archive. Current maintenance cadence and deployment history unverified.",
       "aliases": [],
       "readme_content_sha256": "7cbcb4f7024a19a6917f792abee9d30e8da5ffa1d0b5622fc41fd2c4c0184d05"
+    },
+    {
+      "id": "R-1116",
+      "repository": "cordum-io/cordum",
+      "url": "https://github.com/cordum-io/cordum",
+      "snapshot_commit": "b0718be8419e9ff69042eb3ab7ec2117f626b4d2",
+      "upstream_revision": "b0718be8419e9ff69042eb3ab7ec2117f626b4d2",
+      "snapshot_date": "2026-11-27",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "approval-bound-to-the-proposed-action",
+      "category": "human-review-workflow",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/cordum-io/cordum/blob/b0718be8419e9ff69042eb3ab7ec2117f626b4d2/core/policy/actiongates/approval_binding.go",
+      "evidence_note": "R-1115 examines the transition from an outbound message approval to a queued job. Cordum checks whether a stored approval still applies to the action presented for execution. The backend looks up the approval reference for the tenant, then compares its action hash with the canonical hash of the proposed action. The validator rejects expired or consumed approvals, tenant mismatches and a nonempty resolver ID equal to the requesting principal. A missing approval reference requests human review. Lookup failure denies the action. Separate edge route tests specify replay of a cached response for an identical approval request. That replay does not demonstrate exactly-once downstream execution. A proposed synthetic check would keep the approval and principal fixed, vary the action hash, then repeat with an expired approval. Observe the decision and reason for each case. Static inspection only. Neither the native check nor a production approval was executed.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "P",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root Business Source License 1.1. The additional use grant excludes a competitive offering. The named change date is January 1, 2029, with Apache License 2.0 as the change license. Current maintenance cadence unverified.",
+      "aliases": [],
+      "readme_content_sha256": "c45e957adf69e19854c25219686db05fb642e5706494047f27214f2adbfc27cb"
     }
   ],
   "unresolved_identities": [],
@@ -50774,9 +50808,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 297,
+    "detailed_appraisal_count": 298,
     "portable_only_count": 105,
-    "total_repository_count": 1106,
+    "total_repository_count": 1107,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51577,6 +51611,7 @@
     "R-1112",
     "R-1113",
     "R-1114",
-    "R-1115"
+    "R-1115",
+    "R-1116"
   ]
 }
