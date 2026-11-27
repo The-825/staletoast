@@ -50544,6 +50544,40 @@
       "license_status": "Software license, third-party rights and current maintenance remain unverified in the selected evidence.",
       "aliases": [],
       "readme_content_sha256": "af486b1eeab2c1c4d994a432a2898c5f606a6b99b0de6ba47cd4d4e8a95528b6"
+    },
+    {
+      "id": "R-1110",
+      "repository": "l-gevity/l-gevity-skills",
+      "url": "https://github.com/l-gevity/l-gevity-skills",
+      "snapshot_commit": "5d5cbc523c835a6e2fb2795a914c9fa27c7e3c64",
+      "upstream_revision": "5d5cbc523c835a6e2fb2795a914c9fa27c7e3c64",
+      "snapshot_date": "2026-11-27",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "named-amendment-reviewer",
+      "category": "task-coordination",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://raw.githubusercontent.com/l-gevity/l-gevity-skills/5d5cbc523c835a6e2fb2795a914c9fa27c7e3c64/.agents/skills/alchemy-orchestrate/scripts/check_orchestration.py",
+      "evidence_note": "R-1093's inspected policy-design fixture expects a warning for the same reviewer on sequential gates. ALCHEMY instead checks who is recorded as verifying a rework criterion. In the paired medium-risk amendment fixtures, independent review is off. The case with a bystander expects REVIEW_NOT_INDEPENDENT and FAIL. The named-reviewer variant expects PASS. For a reviewed amendment the inspected branch can add the named reviewer to the eligible verify-package owners when independence is off, risk is below high and the name differs from the package owner. This is a check on recorded identities. It does not authenticate agents or establish independent reasoning. A synthetic check would hold the plan and criterion fixed, give neither agent a verify package, and change only the recorded verifier from bystander to named non-owner. Compare the error code and overall verdict. Then turn independent review on: the named reviewer alone should no longer qualify. No native check or upstream code was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "P",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The pinned package.json declares MIT. The root LICENSE is listed but its terms and third-party rights were not inspected. Current maintenance is unverified.",
+      "aliases": [],
+      "readme_content_sha256": "3013e8987e88ddc37c835094f94822d04e714b009664fdb8ffc4a1cb3314b78f"
     }
   ],
   "unresolved_identities": [],
@@ -50570,9 +50604,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 291,
+    "detailed_appraisal_count": 292,
     "portable_only_count": 105,
-    "total_repository_count": 1100,
+    "total_repository_count": 1101,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51367,6 +51401,7 @@
     "R-1104",
     "R-1106",
     "R-1107",
-    "R-1108"
+    "R-1108",
+    "R-1110"
   ]
 }
