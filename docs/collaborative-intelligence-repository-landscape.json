@@ -50437,6 +50437,40 @@
       "license_status": "Root LICENSE is MIT, copyright 2026 Xisen Wang. Rights to third-party traces and current maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "cc2bc4fa8cc7e831006c856f584c14db6653b0afaea916b57f3fff011a07d0e9"
+    },
+    {
+      "id": "R-1106",
+      "repository": "IMNMV/ClaudeR",
+      "url": "https://github.com/IMNMV/ClaudeR",
+      "snapshot_commit": "4bd96b261cd1c82cce90b0b31b0fd0a7ee4a0ce5",
+      "upstream_revision": "4bd96b261cd1c82cce90b0b31b0fd0a7ee4a0ce5",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "session-bound-coordination-logs",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/IMNMV/ClaudeR/blob/4bd96b261cd1c82cce90b0b31b0fd0a7ee4a0ce5/clauder-mcp/src/clauder_mcp/server.py",
+      "evidence_note": "R-1095 tests recovery after a lost delivery acknowledgment. ClaudeR addresses an earlier step: selecting a live coordination log before send_message posts. With no existing target and exactly one discovered session, get_r_addin_url sets the target session name. A bound name with zero or multiple matches raises SessionBindingError. The _coord_target helper checks for binding errors and empty discovery, and reports a change from a previously recorded coordination name. Selected tests substitute session discovery and inspect the helper result. They do not verify delivery or acknowledgment. A synthetic check would supply a missing bound name, call send_message and count post attempts (expected zero), then start unbound with one live session and an older coordination name and inspect the reported old and new names. No native check or upstream code was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "P",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The root LICENSE.md contains the MIT license, copyright 2025 I M NV. The separate root LICENSE lists the year and holder. Rights to user session data and current maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "c1b08a08334640e350a8425ea6f9ab5b9a58f03a3c5a5a2e2d369f7331c4f87a"
     }
   ],
   "unresolved_identities": [],
@@ -50463,9 +50497,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 288,
+    "detailed_appraisal_count": 289,
     "portable_only_count": 105,
-    "total_repository_count": 1097,
+    "total_repository_count": 1098,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51257,6 +51291,7 @@
     "R-1101",
     "R-1102",
     "R-1103",
-    "R-1104"
+    "R-1104",
+    "R-1106"
   ]
 }
