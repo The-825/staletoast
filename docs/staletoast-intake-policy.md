@@ -25,6 +25,21 @@ Keep unselected leads in the existing next-round pool with a stable pool ID,
 canonical source, observed version, evidence depth, selection reason and next
 check. Retention is not approval or an adoption recommendation.
 
+## Scope components
+
+Effective November 27, 2026, by the owner's instruction, the search scope is
+named in the [scope map](staletoast-scope-map.md). It keeps the seven components
+the November 1 routing already compared sources against and adds four that no
+round had named: security and containment, deliberation and dissent, learning
+from operation, and orchestration and automation.
+
+Each round records one component alongside its named gap. Claims stay the unit
+of evidence and the gap order is unchanged. For an added component, screen the
+existing retained pool against its terms first; discover new candidates only
+where that leaves the component thin. The limits in this policy do not change,
+and the awaiting-appraisal backlog still takes the main effort. Queries listed
+for an added component are proposals until a dated batch records what was run.
+
 ## Why twelve
 
 On November 26 the limit moved from two to twelve per category. From November 23

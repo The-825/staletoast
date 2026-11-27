@@ -1,0 +1,492 @@
+{
+  "schema_version": "1.0",
+  "effective_date": "2026-11-27",
+  "canonical_owner": "The-825/staletoast",
+  "authority": "evidence-only; a component names what to look for. It is not a finding, a grade, a chart position or an adoption decision.",
+  "purpose": "The named components of collaborative intelligence that StaleToast searches and compares sources against. Claims (CI-###) remain the unit of evidence and the named gap of a round; a component says which part of a collaborative system a source is about.",
+  "owner_instruction": {
+    "date": "2026-11-27",
+    "summary": "Expand the search scope with the missing aspects as additional categories and components of collaborative intelligence."
+  },
+  "baseline_artifact": "docs/staletoast-system-fit-triage-2026-11-01.json",
+  "statuses": {
+    "established": "Compared against retained sources in the baseline artifact. Its screen terms and comparison question are copied from that artifact and must not drift from it.",
+    "added-unscreened": "Added to scope. Its search terms and queries are proposals that have not been run. It holds no screened source, routing count or finding."
+  },
+  "rules": [
+    "A daily or monthly round records one component id alongside its named gap. The claim-based gap order in the appraisal priorities is unchanged.",
+    "For an added-unscreened component, screen the existing retained pool against its screen terms before any new discovery. New discovery follows only where that screen leaves the component thin.",
+    "Queries listed under an added-unscreened component are proposals. Record the queries actually run, their dates and their counts in the dated batch artifact, as for any other round.",
+    "A component moves to established only when a dated routing artifact compares retained sources against it. Update baseline_artifact in the same change.",
+    "Adding a component changes no catalog record, appraisal, chart position, export or daily limit.",
+    "Keep every component public and generic. A component describes a mechanism, never a private system."
+  ],
+  "related_claims_meaning": "A pointer to claims a component is likely to inform. It is not an evidence link and adds no support to any claim.",
+  "owner_scope_terms": {
+    "memory": [
+      "memory-and-correction"
+    ],
+    "learning": [
+      "learning-from-operation"
+    ],
+    "execution": [
+      "recovery-and-replay",
+      "security-and-containment"
+    ],
+    "coordination": [
+      "authority-and-handoff",
+      "cross-harness-tracing"
+    ],
+    "orchestration": [
+      "orchestration-and-automation"
+    ],
+    "automation": [
+      "orchestration-and-automation"
+    ],
+    "collaboration": [
+      "authority-and-handoff",
+      "deliberation-and-dissent"
+    ],
+    "evaluation": [
+      "evaluation-and-evidence"
+    ],
+    "security": [
+      "security-and-containment"
+    ],
+    "efficiency": [
+      "cost-and-coordination-burden"
+    ],
+    "token utilization": [
+      "cost-and-coordination-burden"
+    ],
+    "deliberation": [
+      "deliberation-and-dissent"
+    ]
+  },
+  "components": [
+    {
+      "id": "authority-and-handoff",
+      "label": "Authority and handoff",
+      "status": "established",
+      "since": "2026-11-01",
+      "definition": "Who may act, on what, under whose approval, and how that passes intact from one person or agent to the next.",
+      "comparison_question": "Does the source add a check at a boundary our control record only describes?",
+      "screen_terms": [
+        "handover",
+        "handoff",
+        "authorization",
+        "authority",
+        "permission",
+        "revocation",
+        "revoked",
+        "capability",
+        "human oversight"
+      ],
+      "related_claims": [
+        "CI-007",
+        "CI-011"
+      ]
+    },
+    {
+      "id": "memory-and-correction",
+      "label": "Memory and correction",
+      "status": "established",
+      "since": "2026-11-01",
+      "definition": "What a system keeps between sessions, how it retrieves it, and how a corrected or superseded fact stops being used.",
+      "comparison_question": "Does the source improve retrieval or update behavior without losing source versions, correction survival or access boundaries?",
+      "screen_terms": [
+        "memory",
+        "retrieval",
+        "supersed",
+        "forget",
+        "revision",
+        "tombstone",
+        "context window",
+        "knowledge update"
+      ],
+      "related_claims": [
+        "CI-009",
+        "CI-010",
+        "CI-014"
+      ]
+    },
+    {
+      "id": "recovery-and-replay",
+      "label": "Recovery and replay",
+      "status": "established",
+      "since": "2026-11-01",
+      "definition": "How interrupted, failed or duplicated work is detected, attributed and resumed without repeating its effects.",
+      "comparison_question": "Does this provide a better failure drill or attribution method than our current evidence replay?",
+      "screen_terms": [
+        "replay",
+        "recovery",
+        "rollback",
+        "counterfactual",
+        "idempot",
+        "retry",
+        "fault-inject",
+        "failure attribution"
+      ],
+      "related_claims": [
+        "CI-006"
+      ]
+    },
+    {
+      "id": "evaluation-and-evidence",
+      "label": "Evaluation and evidence",
+      "status": "established",
+      "since": "2026-11-01",
+      "definition": "How a result is checked against a baseline, and what evidence supports calling it done.",
+      "comparison_question": "Does it supply executable checks or better measurement that the existing method leaves to an adopter?",
+      "screen_terms": [
+        "evaluat",
+        "benchmark",
+        "rubric",
+        "baseline",
+        "denominator",
+        "judge",
+        "ground truth",
+        "test harness"
+      ],
+      "related_claims": [
+        "CI-001",
+        "CI-002",
+        "CI-017"
+      ]
+    },
+    {
+      "id": "provenance-and-data-diff",
+      "label": "Provenance and data diff",
+      "status": "established",
+      "since": "2026-11-01",
+      "definition": "Where a result came from, which source version it used, and exactly what changed between two versions.",
+      "comparison_question": "Does it expose a source-to-result or row-level change that hashes and counts alone miss?",
+      "screen_terms": [
+        "provenance",
+        "lineage",
+        "data quality",
+        "data diff",
+        "snapshot",
+        "schema",
+        "dataset",
+        "audit trail"
+      ],
+      "related_claims": [
+        "CI-008"
+      ]
+    },
+    {
+      "id": "cost-and-coordination-burden",
+      "label": "Cost and coordination burden",
+      "status": "established",
+      "since": "2026-11-01",
+      "definition": "Tokens, time, rework and human attention spent, including the overhead that coordination itself adds.",
+      "comparison_question": "Can it reduce observed work or inspection cost without trading away correctness or authority?",
+      "screen_terms": [
+        "cost",
+        "token",
+        "latency",
+        "budget",
+        "efficien",
+        "resource",
+        "throughput",
+        "time budget"
+      ],
+      "related_claims": [
+        "CI-004",
+        "CI-016"
+      ]
+    },
+    {
+      "id": "cross-harness-tracing",
+      "label": "Cross-harness tracing",
+      "status": "established",
+      "since": "2026-11-01",
+      "definition": "Following one piece of work across different tools and agents with a record each of them can read.",
+      "comparison_question": "Does it normalize useful evidence across tools without overcollecting private content or equating traces with authenticated completion?",
+      "screen_terms": [
+        "trace",
+        "instrument",
+        "observability",
+        "cross-harness",
+        "interoperab",
+        "multi-agent",
+        "coordination",
+        "span"
+      ],
+      "related_claims": [
+        "CI-006"
+      ]
+    },
+    {
+      "id": "security-and-containment",
+      "label": "Security and containment",
+      "status": "added-unscreened",
+      "since": "2026-11-27",
+      "definition": "Limits on what an agent can read, run and change, and tests that those limits hold when the agent meets hostile or misleading content.",
+      "comparison_question": "Does the source give a repeatable test that a stated limit holds under hostile or misleading input, rather than a description of the limit?",
+      "screen_terms": [
+        "prompt injection",
+        "sandbox",
+        "least privilege",
+        "permission boundar",
+        "tool poisoning",
+        "exfiltrat",
+        "guardrail",
+        "threat model",
+        "jailbreak"
+      ],
+      "related_claims": [
+        "CI-007",
+        "CI-010"
+      ],
+      "research_topics": [
+        {
+          "topic": "agent-prompt-injection",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "prompt",
+            "injection"
+          ]
+        },
+        {
+          "topic": "agent-sandboxing",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "sandbox"
+          ]
+        },
+        {
+          "topic": "agent-tool-permissions",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "tool",
+            "permission"
+          ]
+        }
+      ],
+      "repository_queries": [
+        {
+          "category": "agent-containment",
+          "query": "topic:prompt-injection fork:false archived:false stars:>=5"
+        },
+        {
+          "category": "agent-containment",
+          "query": "topic:llm-security fork:false archived:false stars:>=5"
+        },
+        {
+          "category": "agent-containment",
+          "query": "agent sandbox in:name,description fork:false archived:false stars:>=5"
+        }
+      ],
+      "prior_coverage": "The 2026-11-01 expansion searched the research topic agent-safety and the repository category agent-security. No component compared those sources to a containment baseline.",
+      "boundary": "Defensive containment and its tests only. A source that emphasizes offensive technique, evasion, bypass or unverified access claims stays held for the separate scope and misuse-boundary appraisal recorded in the 2026-11-01 expansion. This component does not release a held source."
+    },
+    {
+      "id": "deliberation-and-dissent",
+      "label": "Deliberation and dissent",
+      "status": "added-unscreened",
+      "since": "2026-11-27",
+      "definition": "Structured disagreement between agents, or between people and agents: independent first answers, bounded rounds, how a minority view is kept, and whether a second view changed the result.",
+      "comparison_question": "Does the source measure whether a second independent view changed the outcome, against a single-agent baseline at comparable cost?",
+      "screen_terms": [
+        "debate",
+        "deliberat",
+        "dissent",
+        "consensus",
+        "disagree",
+        "adjudicat",
+        "second opinion",
+        "red team",
+        "ensemble"
+      ],
+      "related_claims": [
+        "CI-001",
+        "CI-015",
+        "CI-016",
+        "CI-017"
+      ],
+      "research_topics": [
+        {
+          "topic": "multi-agent-debate",
+          "all_terms": [
+            "language",
+            "model",
+            "multi",
+            "agent",
+            "debate"
+          ]
+        },
+        {
+          "topic": "agent-disagreement",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "disagreement"
+          ]
+        },
+        {
+          "topic": "human-ai-deliberation",
+          "all_terms": [
+            "human",
+            "AI",
+            "deliberation"
+          ]
+        }
+      ],
+      "repository_queries": [
+        {
+          "category": "agent-deliberation",
+          "query": "topic:multi-agent-debate fork:false archived:false stars:>=5"
+        },
+        {
+          "category": "agent-deliberation",
+          "query": "agent debate in:name,description fork:false archived:false stars:>=5"
+        }
+      ],
+      "prior_coverage": "The 2026-11-01 expansion searched the research topic multi-agent-systems. The terms multi-agent and coordination were screened under cross-harness-tracing, which asks about shared records, not about whether disagreement improved a result.",
+      "boundary": "Agreement between agents is not verification. A source that reports only that agents converged does not answer the comparison question."
+    },
+    {
+      "id": "learning-from-operation",
+      "label": "Learning from operation",
+      "status": "added-unscreened",
+      "since": "2026-11-27",
+      "definition": "How a system changes its own rules, checks or prompts from its recorded failures and corrections, and how it shows that the change reduced repeats.",
+      "comparison_question": "Does the source show a recorded failure becoming an enforced check with a measured drop in repeats, rather than a longer instruction file?",
+      "screen_terms": [
+        "self-improv",
+        "lesson",
+        "postmortem",
+        "retrospective",
+        "failure taxonomy",
+        "recurrence",
+        "continual learning",
+        "reflection",
+        "skill library"
+      ],
+      "related_claims": [
+        "CI-006",
+        "CI-008",
+        "CI-017"
+      ],
+      "research_topics": [
+        {
+          "topic": "agent-self-improvement",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "self",
+            "improvement"
+          ]
+        },
+        {
+          "topic": "agent-failure-taxonomy",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "failure",
+            "taxonomy"
+          ]
+        },
+        {
+          "topic": "agent-experience-reuse",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "experience",
+            "reuse"
+          ]
+        }
+      ],
+      "repository_queries": [
+        {
+          "category": "agent-learning",
+          "query": "self-improving agent in:name,description fork:false archived:false stars:>=5"
+        },
+        {
+          "category": "agent-learning",
+          "query": "agent postmortem in:name,description fork:false archived:false stars:>=5"
+        }
+      ],
+      "prior_coverage": "No research topic or repository category searched for it. memory-and-correction covers a corrected fact, not a changed rule or check.",
+      "boundary": "A system revising its own instructions is not independent verification that the revision helped. Model fine-tuning and weight updates are out of scope; this component covers changes to rules, checks, prompts and procedures."
+    },
+    {
+      "id": "orchestration-and-automation",
+      "label": "Orchestration and automation",
+      "status": "added-unscreened",
+      "since": "2026-11-27",
+      "definition": "Deciding which agent, model or tool does which part of a task and in what order, and running that on a schedule or trigger without a person starting each step.",
+      "comparison_question": "Does the source show that its routing or scheduling rule beats a fixed single-agent assignment on the same task, with the rule open to inspection and its cost reported?",
+      "screen_terms": [
+        "orchestrat",
+        "routing",
+        "router",
+        "scheduler",
+        "workflow engine",
+        "planner",
+        "dispatch",
+        "trigger",
+        "delegat"
+      ],
+      "related_claims": [
+        "CI-004",
+        "CI-005",
+        "CI-016"
+      ],
+      "research_topics": [
+        {
+          "topic": "agent-orchestration",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "orchestration"
+          ]
+        },
+        {
+          "topic": "agent-task-routing",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "task",
+            "routing"
+          ]
+        },
+        {
+          "topic": "agent-delegation",
+          "all_terms": [
+            "language",
+            "model",
+            "agent",
+            "delegation"
+          ]
+        }
+      ],
+      "repository_queries": [
+        {
+          "category": "agent-orchestration",
+          "query": "topic:agent-orchestration fork:false archived:false stars:>=5"
+        },
+        {
+          "category": "agent-orchestration",
+          "query": "topic:multi-agent-systems fork:false archived:false stars:>=5"
+        }
+      ],
+      "prior_coverage": "The 2026-11-01 expansion searched the repository category workflow-runtime. No component asked whether a routing or scheduling rule beat a fixed assignment.",
+      "boundary": "More agents are not a general advantage (CI-016). A source that adds a coordinating model without a single-agent comparison does not answer the comparison question."
+    }
+  ]
+}
