@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "3e32a9f57b310b3ab0112a294d24725bec2122fe9fe49b3c5e19fa41f1c15055",
   "appraisal_source_sha256": "9c41f895f53464f68c922df02ad496945b599c622cf2c2e4985f37f300edaf3f",
-  "repository_source_sha256": "41e9cb97c2a027e7b9cddc55ad38805957da76201fb3cc0bed2f372263d17de9",
+  "repository_source_sha256": "a1581638f0c5fdf414ac10be62c653547f98716f5ec3f34c29bf67b28f3f8c45",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17598,6 +17598,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "session-bound-coordination-logs",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1107",
+      "repository": "StochasticResult/cto-agent-team",
+      "url": "https://github.com/StochasticResult/cto-agent-team",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "multi-resource-lease-conflict",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
