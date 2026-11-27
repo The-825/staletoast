@@ -1,8 +1,8 @@
 """Prepare one offline weekly Hot100 review from the existing editorial method.
 
 Standard library only. No network, provider, git or upstream execution. The command
-reuses build_priorities.build and build_discovery.make_edition, so it adds no second
-ranking system. It never commits, freezes an export or pushes. Default is a dry run.
+reuses build_priorities.build and build_discovery.make_edition for weekly writes.
+The optional rubric comparison is read-only. The command never pushes.
 """
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "site"))
 
+import collaboration_rubric as rubric
 import build_discovery as discovery  # noqa: E402
 import build_priorities as priorities  # noqa: E402
 from intake_state import AUTOMATED, IntakeState  # noqa: E402
@@ -200,7 +201,8 @@ def plan(root, review_date):
     payload = priorities.build(docs, review_date)
     landscape = discovery.read(docs / "collaborative-intelligence-repository-landscape.json")
     edition = discovery.make_edition(review_date, payload, landscape, earlier,
-                                     IntakeState(docs).held_ids('repository'))
+                                     IntakeState(docs).held_ids('repository'), cards=rubric.load_cards(docs, review_date)
+                                     if review_date >= rubric.FIRST_EDITION else None)
     edition["source_hashes"] = {field: payload[field] for field in priorities.SOURCES}
     edition_path, edition_text = history / f"{review_date}.json", dump(edition)
     prior = earlier[-1]
@@ -262,21 +264,44 @@ def apply(changes):
 def run(root, review_date, write=False):
     proposal = plan(root, review_date)
     if write:
+        discovery.verify_publishable(json.loads(proposal["changes"][0][1]))
         apply(proposal["changes"])
     return proposal
+
+
+def compare_rubric(root, review_date):
+    import hot100_rubric
+
+    docs = root / "docs"
+    history = discovery.editions(docs / "staletoast-chart-history")
+    if not history or review_date <= history[-1]["edition_date"]:
+        raise ValueError("rubric comparison requires a date after the latest frozen edition")
+    payload = priorities.build(docs, check_date(review_date))
+    landscape = discovery.read(docs / priorities.SOURCES["repository_source_sha256"])
+    return hot100_rubric.compare(review_date, payload, landscape, history,
+                                 IntakeState(docs).held_ids("repository"))
 
 
 def main(argv=None, root=ROOT):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--date", required=True, help=f"operator-supplied ISO local {TIMEZONE} date, YYYY-MM-DD")
-    parser.add_argument("--write", action="store_true", help="write the files; default is a dry run")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--write", action="store_true", help="write the files; default is a dry run")
+    mode.add_argument("--compare-rubric", action="store_true", help="compare the candidate rubric without writing")
     parser.add_argument("--root", default=str(root), help="repository root (default: this checkout)")
     args = parser.parse_args(argv)
     try:
+        if args.compare_rubric:
+            print(json.dumps(compare_rubric(Path(args.root), args.date), indent=2))
+            return 0
         proposal = run(Path(args.root), args.date, args.write)
     except ValueError as error:
         print(f"weekly-hot100: refused: {error}", file=sys.stderr)
         return 2
+    if proposal["receipt"]["current_edition"]["method_version"] == rubric.METHOD:
+        edition = json.loads(proposal["changes"][0][1])
+        for name, chart in edition["charts"].items():
+            print(f"{name}: {chart['complete_scorecards']} complete, {len(chart['provisional'])} provisional")
     mode = "written" if args.write else "dry-run, nothing written"
     print(f"weekly-hot100 {proposal['review_date']} ({mode})")
     for path, _, action in proposal["changes"]:
