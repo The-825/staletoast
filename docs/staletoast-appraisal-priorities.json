@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "a57ee18f5e3a5abea9db7a7d1983993f6152cd5202222adaf6786003e23f9eb2",
   "appraisal_source_sha256": "a2e1e0427f0d5292fdd7aaf401bf2121cd662b3a3826f8fb4b026403e0b96450",
-  "repository_source_sha256": "211d19ea85c11af15e5e3e5a391ad6740d00cf251884b2a7e5bb4d2bbdef80ce",
+  "repository_source_sha256": "110a8f2359a7e95cbe66ced17eae645c999329202e630be5648fe155c61c0de7",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17718,6 +17718,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "named-amendment-reviewer",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1111",
+      "repository": "znxzsy/AlignLedger",
+      "url": "https://github.com/znxzsy/AlignLedger",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "second-pass-label-resolution",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [

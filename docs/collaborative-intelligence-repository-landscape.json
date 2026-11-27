@@ -50578,6 +50578,40 @@
       "license_status": "The pinned package.json declares MIT. The root LICENSE is listed but its terms and third-party rights were not inspected. Current maintenance is unverified.",
       "aliases": [],
       "readme_content_sha256": "3013e8987e88ddc37c835094f94822d04e714b009664fdb8ffc4a1cb3314b78f"
+    },
+    {
+      "id": "R-1111",
+      "repository": "znxzsy/AlignLedger",
+      "url": "https://github.com/znxzsy/AlignLedger",
+      "snapshot_commit": "b04062bba6dfe35a567ca0e3c620935b77e46305",
+      "upstream_revision": "b04062bba6dfe35a567ca0e3c620935b77e46305",
+      "snapshot_date": "2026-11-27",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "second-pass-label-resolution",
+      "category": "annotation-curation",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/znxzsy/AlignLedger/blob/b04062bba6dfe35a567ca0e3c620935b77e46305/annotation_platform/exporter.py",
+      "evidence_note": "R-032 describes human labeling, model-assisted review and exports. AlignLedger makes a narrower decision observable. Its exporter copies the original slot judgment and applies a second reviewer’s final label to that copy when the recheck marks the first judgment inaccurate. An unresolved inaccuracy excludes the group from the complete five-slot export. Other eligible slots can still produce preference candidates. The selected correction tests expect the stored first-pass verdict to survive and check both exclusion and recovery in exported groups. Proposed native check: compare two otherwise identical five-slot fixtures with one disputed label. Supply a valid final correction in only one. Expect the unresolved group to be absent from complete groups, the resolved group to contain the correction, and both first-pass rows to retain their original values. The fixtures do not establish reviewer independence, label correctness or downstream training benefit. No upstream code or native fixture was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Pinned root LICENSE states MIT, copyright 2026 znxzsy. Rights to underlying annotated material and ongoing maintenance are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "24533bd6c6ac5df2421b76421ef35fdee7e1565983510b56ff984f07b51482cb"
     }
   ],
   "unresolved_identities": [],
@@ -50604,9 +50638,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 292,
+    "detailed_appraisal_count": 293,
     "portable_only_count": 105,
-    "total_repository_count": 1101,
+    "total_repository_count": 1102,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51402,6 +51436,7 @@
     "R-1106",
     "R-1107",
     "R-1108",
-    "R-1110"
+    "R-1110",
+    "R-1111"
   ]
 }
