@@ -226,6 +226,49 @@ jobs:
               throw error;
             };
 
+            // A merge made with GITHUB_TOKEN does not trigger the repository's
+            // delete_branch_on_merge setting, so merged branches piled up.
+            // Delete the head ref only after a fresh read shows the PR merged on
+            // the checked head, the branch lives in this repo, is not the
+            // default branch, and still points at that head. A failure here
+            // is logged and never fails the merge.
+            const deleteMergedBranch = async (pr) => {
+              const ref = pr.head.ref;
+              try {
+                const { data: latest } = await github.rest.pulls.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                });
+                if (!mergedOnHead(latest, pr.head.sha)) {
+                  core.info(`PR #${pr.number} not confirmed merged on ${pr.head.sha}; keeping ${ref}.`);
+                  return;
+                }
+                if (latest.head.repo?.full_name !== `${context.repo.owner}/${context.repo.repo}` ||
+                    ref === latest.base.repo.default_branch) {
+                  core.info(`Branch ${ref} is a fork or the default branch; keeping it.`);
+                  return;
+                }
+                const { data: current } = await github.rest.git.getRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `heads/${ref}`,
+                });
+                if (current.object.sha !== pr.head.sha) {
+                  core.warning(`Branch ${ref} moved past the merged head; keeping it.`);
+                  return;
+                }
+                await github.rest.git.deleteRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `heads/${ref}`,
+                });
+                core.info(`Deleted merged branch ${ref} at ${pr.head.sha}.`);
+              } catch (error) {
+                core.warning(`Could not delete merged branch ${ref}: ${error.status || ""} ${error.message}`);
+              }
+            };
+
             // Apply the same guards (non-draft, open, agent branch, operator
             // label when required, all required checks green on head SHA)
             // and merge. Shared by both event paths so the gate stays
@@ -327,7 +370,9 @@ jobs:
                 });
               } catch (error) {
                 await reconcileMergeError(pr, error);
+                return;
               }
+              await deleteMergedBranch(pr);
             };
 
             if (context.eventName === "workflow_run") {
