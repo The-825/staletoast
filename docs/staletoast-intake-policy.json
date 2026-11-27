@@ -43,6 +43,13 @@
     "rechecks": "append dated source-bound observations",
     "missing_history": "unknown; never fabricate"
   },
+  "scope": {
+    "map": "docs/staletoast-scope-map.json",
+    "effective_date": "2026-11-27",
+    "round_records": "one component id alongside the named gap",
+    "added_component_order": "screen the existing retained pool before new discovery",
+    "limits_changed": false
+  },
   "authority": "evidence-only; existing review, publication and adoption gates apply",
-  "last_reconciled": "2026-11-26"
+  "last_reconciled": "2026-11-27"
 }

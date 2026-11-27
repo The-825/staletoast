@@ -50,6 +50,7 @@ python -m unittest discover -s site -p 'test_*.py'
 python scripts/repository_landscape.py --check
 python scripts/repository_review_promotions.py --check
 python scripts/repository_triage.py --check
+python site/build_scope_map.py --check
 ```
 
 For a reviewed new intake, rebuild priorities with `--write --date YYYY-MM-DD`,
@@ -69,6 +70,12 @@ rank the strongest ten eligible records per category and propose the top three
 for consideration. Sources outside the current Hot100 can return to the pool
 under their original identity. Preserve original analysis and dated rankings.
 See [intake and pool policy](docs/staletoast-intake-policy.md).
+
+The [scope map](docs/staletoast-scope-map.md) names the components of
+collaborative intelligence a round can search for. On November 27 it added
+security and containment, deliberation and dissent, learning from operation,
+and orchestration and automation. They are in scope and unscreened: no source,
+count or finding is claimed for them yet.
 
 ## History and export
 
