@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "a57ee18f5e3a5abea9db7a7d1983993f6152cd5202222adaf6786003e23f9eb2",
   "appraisal_source_sha256": "a2e1e0427f0d5292fdd7aaf401bf2121cd662b3a3826f8fb4b026403e0b96450",
-  "repository_source_sha256": "64b5702d2aa6587b7176f7c3c8712058994095ee9021451bfe6dc438dd8ca197",
+  "repository_source_sha256": "b4a881effe5b197ff1e2eafdc5a0934e82cbdf250306e6a0cf48d887791481bd",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17772,6 +17772,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "approval-expiry-after-patch-change",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1114",
+      "repository": "sizigi/animescore",
+      "url": "https://github.com/sizigi/animescore",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "human-preference-pair-weighting",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
