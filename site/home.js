@@ -9,7 +9,7 @@ function latestEditionText(chartData) {
 }
 async function showEdition() {
   const target = document.querySelector("#edition-date");
-  const response = await fetch("data/charts.json");
+  const response = await fetch("data/charts.json", {cache: "no-cache"});
   if (!response.ok) throw new Error("Chart data unavailable");
   const text = latestEditionText(await response.json());
   if (text) target.textContent = text;

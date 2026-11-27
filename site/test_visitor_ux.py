@@ -130,6 +130,28 @@ function pure() {
   };
 }
 
+async function chartCoverage() {
+  const dom = makeDom("charts.html", "research");
+  const ctx = context(dom.document);
+  for (const f of ["topics.js", "catalog-ui.js", "charts.js"]) run(ctx, f);
+  const get = dom.get;
+  await until(() => !get("#current-collection").hidden);
+  const snap = () => ({
+    date: get("#edition").value,
+    coverage: get("#current-collection").textContent,
+    href: get("#current-collection").href,
+    boundary: get("#chart-boundary").textContent,
+    summary: get("#chart-summary").textContent
+  });
+  const latest = snap();
+  get("#edition").value = "2026-11-02"; dom.fire("#edition", "change");
+  const historical = snap();
+  get("#chart-kind").value = "repositories"; dom.fire("#chart-kind", "change");
+  const repositories = snap();
+  get("#chart-search").value = "zzzzqqqq"; dom.fire("#chart-search", "input");
+  return {latest, historical, repositories, filtered: snap()};
+}
+
 function charts() {
   const ctx = context(null);
   for (const f of ["topics.js", "catalog-ui.js", "charts.js"]) run(ctx, f);
@@ -164,6 +186,7 @@ async function detail(search) {
   const result = {
     research: await runCatalog("research"), repositories: await runCatalog("repositories"),
     researchFail: await runCatalog("research", true), pure: pure(), charts: charts(),
+    chartCoverage: await chartCoverage(),
     detailResearch: await detail("?type=research&id=012"), detailRepo: await detail("?type=repositories&id=R-242"),
     detailAutomated: await detail("?type=research&id=C-026"),
     detailMissing: await detail("?type=research&id=NOPE"), detailBad: await detail("?type=other"),
@@ -281,6 +304,25 @@ class BehaviorTests(unittest.TestCase):
         cls.result = json.loads(completed.stdout.strip().splitlines()[-1])
         cls.research = json.loads((SITE / "data/research.json").read_text(encoding="utf-8"))
         cls.repositories = json.loads((SITE / "data/repositories.json").read_text(encoding="utf-8"))
+
+    def test_chart_keeps_current_coverage_separate_from_edition_and_search(self):
+        views = self.result["chartCoverage"]
+        latest = json.loads((SITE / "data/charts.json").read_text(encoding="utf-8"))["latest"]
+        self.assertEqual(latest["edition_date"], views["latest"]["date"])
+        self.assertIn(f'Latest edition {latest["edition_date"]}:', views["latest"]["boundary"])
+        self.assertIn("Historical edition 2026-11-02: 123 of 500", views["historical"]["boundary"])
+        self.assertIn(f'Latest edition: {latest["edition_date"]}.', views["historical"]["boundary"])
+        self.assertEqual(views["latest"]["coverage"], views["historical"]["coverage"])
+        self.assertEqual(views["repositories"]["coverage"], views["filtered"]["coverage"])
+        self.assertIn("0 of ", views["filtered"]["summary"])
+        for name, records, href in (("latest", self.research, "research.html"),
+                                    ("repositories", self.repositories, "repositories.html")):
+            screened = sum(row["appraisal_state"] == "source-screened" for row in records)
+            awaiting = sum(row["appraisal_state"] == "automated-screen" for row in records)
+            self.assertEqual(
+                f"Current collection: {len(records)} records. {screened} source-screened. "
+                f"{awaiting} await appraisal after automated screening.", views[name]["coverage"])
+            self.assertEqual(href, views[name]["href"])
 
     def test_default_view_is_twelve_cards_with_separate_counts(self):
         for kind, rows in (("research", self.research), ("repositories", self.repositories)):
