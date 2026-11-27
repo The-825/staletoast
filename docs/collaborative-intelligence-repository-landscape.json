@@ -50714,6 +50714,40 @@
       "license_status": "The pinned root README labels code MIT and assigns audio rights to the source corpus licensors. Independent license-file verification, label reuse rights and ongoing maintenance are unknown.",
       "aliases": [],
       "readme_content_sha256": "745d218c9edc9074379380233059ecad40934a5e949a0ee3efce119b3fc79c37"
+    },
+    {
+      "id": "R-1115",
+      "repository": "Anil-matcha/open-agent-email",
+      "url": "https://github.com/Anil-matcha/open-agent-email",
+      "snapshot_commit": "ec7bdc095029790444613abb3f5bd8fdc9731dfe",
+      "upstream_revision": "ec7bdc095029790444613abb3f5bd8fdc9731dfe",
+      "snapshot_date": "2026-11-27",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "outbound-message-review-and-uncertain-delivery",
+      "category": "human-review-workflow",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/Anil-matcha/open-agent-email/blob/ec7bdc095029790444613abb3f5bd8fdc9731dfe/server/app/services/hitl_service.py",
+      "evidence_note": "An agent mailbox can hold outbound mail for a reviewer. HitlService.resolve_review changes a pending review only once, records the reviewer, and adds an outbound job on approval. A rejected review adds no job. The review tests specify that five concurrent approvals for a held message produce one success, four conflicts and one queued job. That job count does not establish exactly-once delivery. If a dispatch lease expires while processing, the worker can mark the job uncertain and the in-flight recipient delivery_unknown. This distinction adds a delivery boundary to a generic human approval gate. A synthetic native check would race five approval requests, inspect the job count, then simulate expiry during dispatch and check for an uncertain job rather than automatic redelivery. No upstream test, message transmission or native check was run. Effects on reviewer workload and production delivery remain unknown.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "P",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Apache License 2.0 in the pinned archive. Current maintenance cadence and deployment history unverified.",
+      "aliases": [],
+      "readme_content_sha256": "7cbcb4f7024a19a6917f792abee9d30e8da5ffa1d0b5622fc41fd2c4c0184d05"
     }
   ],
   "unresolved_identities": [],
@@ -50740,9 +50774,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 296,
+    "detailed_appraisal_count": 297,
     "portable_only_count": 105,
-    "total_repository_count": 1105,
+    "total_repository_count": 1106,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51542,6 +51576,7 @@
     "R-1111",
     "R-1112",
     "R-1113",
-    "R-1114"
+    "R-1114",
+    "R-1115"
   ]
 }
