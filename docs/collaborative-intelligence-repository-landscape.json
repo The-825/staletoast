@@ -50646,6 +50646,40 @@
       "license_status": "Pinned root LICENSE states MIT, copyright 2026 human-again. Maintenance and rights in third-party inputs are unverified.",
       "aliases": [],
       "readme_content_sha256": "ddd337097d39dc6ab2d194f01b553d8e04ae7394dec1eb9b3c3f816b41cdbc83"
+    },
+    {
+      "id": "R-1113",
+      "repository": "withgraphite/dismiss-stale-approvals",
+      "url": "https://github.com/withgraphite/dismiss-stale-approvals",
+      "snapshot_commit": "23da77dd04e4549404329f3078a3d978e4db13c2",
+      "upstream_revision": "23da77dd04e4549404329f3078a3d978e4db13c2",
+      "snapshot_date": "2026-11-27",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "approval-expiry-after-patch-change",
+      "category": "review-automation",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/withgraphite/dismiss-stale-approvals/blob/23da77dd04e4549404329f3078a3d978e4db13c2/action.yml",
+      "evidence_note": "R-1093 describes review gates at policy-design time. This action asks whether an earlier human approval still applies after a contributor changes a PR. It compares the prior and current commit series using git range-diff. If every parsed comparison indicates equality, the dismissal step is skipped. With missing previous SHAs or a detected change, the action requests dismissal through a separate action on a moving main branch. Its dry-run setting is forwarded to that dependency. The fetch-depth setting bounds retrieved history; the source does not count branch commits against an explicit length threshold. The inspected CI workflow checks shell syntax. A proposed synthetic check compares a rebase with unchanged patches, an edited patch and a missing prior SHA, observing whether the dismissal step is selected. No command, dismissal or agent interaction was tested. This is a deterministic approval-expiry pattern for human-directed automation. Effects on review quality are unknown.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "P",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "No root license file in the pinned archive. GitHub reported no license, an unarchived repository and a last push on 2026-10-07. Reuse permission and ongoing maintenance are unknown.",
+      "aliases": [],
+      "readme_content_sha256": "f79240ab79c6b4da6cf489de8ab389a60b16421edea1709d02fb79643e618b1a"
     }
   ],
   "unresolved_identities": [],
@@ -50672,9 +50706,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 294,
+    "detailed_appraisal_count": 295,
     "portable_only_count": 105,
-    "total_repository_count": 1103,
+    "total_repository_count": 1104,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51472,6 +51506,7 @@
     "R-1108",
     "R-1110",
     "R-1111",
-    "R-1112"
+    "R-1112",
+    "R-1113"
   ]
 }
