@@ -50471,6 +50471,45 @@
       "license_status": "The root LICENSE.md contains the MIT license, copyright 2025 I M NV. The separate root LICENSE lists the year and holder. Rights to user session data and current maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "c1b08a08334640e350a8425ea6f9ab5b9a58f03a3c5a5a2e2d369f7331c4f87a"
+    },
+    {
+      "id": "R-1107",
+      "repository": "StochasticResult/cto-agent-team",
+      "url": "https://github.com/StochasticResult/cto-agent-team",
+      "snapshot_commit": "1fcb84a453463680ea78a896179dd61b3546695a",
+      "upstream_revision": "1fcb84a453463680ea78a896179dd61b3546695a",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "multi-resource-lease-conflict",
+      "category": "workflow-runtime",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/StochasticResult/cto-agent-team/blob/1fcb84a453463680ea78a896179dd61b3546695a/tests/test_agent_guard.py",
+      "evidence_note": "R-136 serializes work in a FIFO queue. This project instead offers advisory leases for named resources. The selected test gives the first owner resource A, renews it under the same task, and has a second owner request B then A. It expects RESOURCE_LOCKED, exit code 2 and one active lease after the conflict. In cmd_acquire the conflict path attempts to remove slots newly created by that request. The test uses sequential CLI calls and a temporary lock directory. It does not test simultaneous writers or establish that other applications respect the leases. A synthetic check would repeat the two-owner sequence, inspect the remaining lease identity and owner, and verify a third owner can acquire B while A stays reserved. No upstream commands or native checks were run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root LICENSE at the selected revision states MIT, copyright 2026 StochasticResult. Continued maintenance is unverified.",
+      "aliases": [
+        {
+          "key": "stochasticresult/codex-cto-agent-team",
+          "evidence": "https://api.github.com/repos/stochasticresult/codex-cto-agent-team"
+        }
+      ],
+      "readme_content_sha256": "c8f54005da45fbd9f12e60ff3b4b6c2d0e614b09a9e34dd1b5bc8882b1f89692"
     }
   ],
   "unresolved_identities": [],
@@ -50497,9 +50536,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 289,
+    "detailed_appraisal_count": 290,
     "portable_only_count": 105,
-    "total_repository_count": 1098,
+    "total_repository_count": 1099,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51292,6 +51331,7 @@
     "R-1102",
     "R-1103",
     "R-1104",
-    "R-1106"
+    "R-1106",
+    "R-1107"
   ]
 }
