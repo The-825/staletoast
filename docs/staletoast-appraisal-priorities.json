@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "38586d091299522a7f2cdb547a9e709477b29d443d498c21abf329e72f814a6e",
   "appraisal_source_sha256": "3858a5b623ca43d0d5cc7bb66e412772fa5148b60db33ab1c25c40a225170623",
-  "repository_source_sha256": "58228d6711738ea7e282463350cd5225456d900504ce4f02a783d8e07eceb5d9",
+  "repository_source_sha256": "834ade57255b345edcc7b56865b50814223fb7fc7f52a7d241b52209954e895c",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17870,6 +17870,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "approval-bound-to-the-proposed-action",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1117",
+      "repository": "ragsaniarumal/personalized-meme-recommendation-from-pairwise-feedback",
+      "url": "https://github.com/ragsaniarumal/personalized-meme-recommendation-from-pairwise-feedback",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "active-pair-selection-from-personal-feedback",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [
