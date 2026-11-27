@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "3e32a9f57b310b3ab0112a294d24725bec2122fe9fe49b3c5e19fa41f1c15055",
-  "appraisal_source_sha256": "9c41f895f53464f68c922df02ad496945b599c622cf2c2e4985f37f300edaf3f",
+  "research_source_sha256": "920fa3e7245398c0c67e11a85e92927d93920292f3fe55f3dd0dea93eb79bd2d",
+  "appraisal_source_sha256": "316f55c1b66649dc14ec5e2c85bda14bb873578f4a757934607660b027a2a902",
   "repository_source_sha256": "a1581638f0c5fdf414ac10be62c653547f98716f5ec3f34c29bf67b28f3f8c45",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -2142,6 +2142,28 @@
       "horizon": "single",
       "review_depth": "screened-structural",
       "record_state": "reviewed-catalog",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 28,
+      "priority_key": [
+        6,
+        1,
+        2
+      ],
+      "priority_claim": "CI-001"
+    },
+    {
+      "id": "C-443",
+      "title": "Explainable AI improves task performance in human–AI collaboration",
+      "url": "https://doi.org/10.1038/s41598-024-82501-9",
+      "claims": [
+        "CI-001"
+      ],
+      "directness": "D2 adjacent",
+      "family": "SENONER-INSPECTION",
+      "horizon": "single",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
       "appraisal_state": "source-screened",
       "automated_screen": false,
       "appraisal_priority_rank": 28,
