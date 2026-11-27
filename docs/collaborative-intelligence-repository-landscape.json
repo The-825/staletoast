@@ -50782,6 +50782,40 @@
       "license_status": "Root Business Source License 1.1. The additional use grant excludes a competitive offering. The named change date is January 1, 2029, with Apache License 2.0 as the change license. Current maintenance cadence unverified.",
       "aliases": [],
       "readme_content_sha256": "c45e957adf69e19854c25219686db05fb642e5706494047f27214f2adbfc27cb"
+    },
+    {
+      "id": "R-1117",
+      "repository": "ragsaniarumal/personalized-meme-recommendation-from-pairwise-feedback",
+      "url": "https://github.com/ragsaniarumal/personalized-meme-recommendation-from-pairwise-feedback",
+      "snapshot_commit": "47f1e660b0c01c57f5252b4e1dd31c6c6fc82b47",
+      "upstream_revision": "47f1e660b0c01c57f5252b4e1dd31c6c6fc82b47",
+      "snapshot_date": "2026-11-27",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "active-pair-selection-from-personal-feedback",
+      "category": "human-feedback-learning",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/ragsaniarumal/personalized-meme-recommendation-from-pairwise-feedback/blob/47f1e660b0c01c57f5252b4e1dd31c6c6fc82b47/src/humordna/active.py",
+      "evidence_note": "AnimeScore (R-1114) weights preference comparisons during evaluation. HumorDNA uses a choice to update a personal preference model and select the next comparison. The Streamlit interface offers two items. After a preference click it logs the choice, updates the model, excludes the seen pair, and asks the selector for another pair. Among the sampled candidates the selector chooses the pair whose predicted preference probability is closest to 0.5. The preference test checks that choosing an item increases its predicted preference probability. The evaluation script uses simulated personas. Simulations cannot establish satisfaction or workload for real users. Local preference logs may reveal personal taste. A proposed synthetic check supplies three unseen pairs with predicted probabilities 0.20, 0.49 and 0.80, then excludes the middle pair. Check that it is selected first and cannot be selected again after exclusion. No native check, upstream code or live user trial was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Root source license MIT. Dataset and image rights require separate verification. Maintenance cadence unverified.",
+      "aliases": [],
+      "readme_content_sha256": "e5eede45fb8e666522c6e3077cad3111009893beaadcea60474479a7283ca5dd"
     }
   ],
   "unresolved_identities": [],
@@ -50808,9 +50842,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 298,
+    "detailed_appraisal_count": 299,
     "portable_only_count": 105,
-    "total_repository_count": 1107,
+    "total_repository_count": 1108,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51612,6 +51646,7 @@
     "R-1113",
     "R-1114",
     "R-1115",
-    "R-1116"
+    "R-1116",
+    "R-1117"
   ]
 }
