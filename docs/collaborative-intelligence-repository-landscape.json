@@ -50612,6 +50612,40 @@
       "license_status": "Pinned root LICENSE states MIT, copyright 2026 znxzsy. Rights to underlying annotated material and ongoing maintenance are unverified.",
       "aliases": [],
       "readme_content_sha256": "24533bd6c6ac5df2421b76421ef35fdee7e1565983510b56ff984f07b51482cb"
+    },
+    {
+      "id": "R-1112",
+      "repository": "human-again/orbit",
+      "url": "https://github.com/human-again/orbit",
+      "snapshot_commit": "91ba52cea2013473a9072db16cf0caa022743813",
+      "upstream_revision": "91ba52cea2013473a9072db16cf0caa022743813",
+      "snapshot_date": "2026-11-27",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "validation-before-backlog-completion",
+      "category": "task-coordination",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/human-again/orbit/blob/91ba52cea2013473a9072db16cf0caa022743813/orchestrator.py",
+      "evidence_note": "R-1110 checks a named reviewer on an amendment. Orbit illustrates a different gate on a human-owned mission backlog. In orchestrator.py an agent-reported complete status plus validation_ok marks a task done. A nonzero validation result makes that task todo. An empty result list sets validation_ok to true, including when validation is disabled. The logged reviewer recommendation is not an argument to update_task. A proposed synthetic check would hold complete status fixed and compare no validation commands, one failing command and one passing command, with expected backlog states done, todo and done. The selected test covers command dispatch, not this three-way outcome. No upstream code or native fixture was run. No measured team outcome is established.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Pinned root LICENSE states MIT, copyright 2026 human-again. Maintenance and rights in third-party inputs are unverified.",
+      "aliases": [],
+      "readme_content_sha256": "ddd337097d39dc6ab2d194f01b553d8e04ae7394dec1eb9b3c3f816b41cdbc83"
     }
   ],
   "unresolved_identities": [],
@@ -50638,9 +50672,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 293,
+    "detailed_appraisal_count": 294,
     "portable_only_count": 105,
-    "total_repository_count": 1102,
+    "total_repository_count": 1103,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51437,6 +51471,7 @@
     "R-1107",
     "R-1108",
     "R-1110",
-    "R-1111"
+    "R-1111",
+    "R-1112"
   ]
 }
