@@ -4,7 +4,7 @@
   "kind": "derived appraisal routing projection, not a second findings ledger",
   "research_source_sha256": "e11e3ef60265974e74041a4502b33659c06cd8dacc0635fddb4c0d08512ebb81",
   "appraisal_source_sha256": "f23a5577c54292f0c4e83812da62a25d9283ef21c89bda85902ce895cd01fbb2",
-  "repository_source_sha256": "a1581638f0c5fdf414ac10be62c653547f98716f5ec3f34c29bf67b28f3f8c45",
+  "repository_source_sha256": "27354e75a174d3e1c9922b01adfd512f9a7974cc5b4e6aa9cb80e69352199c12",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
   "rank_meaning": "dense priority groups; ties remain ties, stable IDs order display only",
@@ -17660,6 +17660,24 @@
       "review_depth": "readme-screened",
       "lifecycle": "unknown",
       "selection_aspect": "multi-resource-lease-conflict",
+      "appraisal_state": "source-screened",
+      "appraisal_priority_rank": 18,
+      "priority_key": [
+        17,
+        0,
+        1
+      ],
+      "priority_claim": "unknown"
+    },
+    {
+      "id": "R-1108",
+      "repository": "synaptic-ai-consulting/AAMAD",
+      "url": "https://github.com/synaptic-ai-consulting/AAMAD",
+      "claims": [],
+      "family": "unresolved-lineage",
+      "review_depth": "readme-screened",
+      "lifecycle": "unknown",
+      "selection_aspect": "phase-specific-operator-decision",
       "appraisal_state": "source-screened",
       "appraisal_priority_rank": 18,
       "priority_key": [

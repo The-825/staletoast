@@ -50510,6 +50510,40 @@
         }
       ],
       "readme_content_sha256": "c8f54005da45fbd9f12e60ff3b4b6c2d0e614b09a9e34dd1b5bc8882b1f89692"
+    },
+    {
+      "id": "R-1108",
+      "repository": "synaptic-ai-consulting/AAMAD",
+      "url": "https://github.com/synaptic-ai-consulting/AAMAD",
+      "snapshot_commit": "af3f29faa7de5f0a241209b3a25a5c67d70b3082",
+      "upstream_revision": "af3f29faa7de5f0a241209b3a25a5c67d70b3082",
+      "snapshot_date": "2026-11-26",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "phase-specific-operator-decision",
+      "category": "coding-tools",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/synaptic-ai-consulting/AAMAD/blob/af3f29faa7de5f0a241209b3a25a5c67d70b3082/tests/test_validator.py",
+      "evidence_note": "Static inspection of R-1092's fake-adapter engine test distinguished tool permission from a later task-acceptance request. AAMAD checks a written Operator Decision against the validation phase. The review fixture accepts a pending decision. For an existing project in brownfield Define, the rejected-status fixture supplies a requirements document and expects validation to fail. The corresponding approved fixture expects success. The validator parses status text. These checks do not authenticate the author or demonstrate that a deployment is blocked. A synthetic check would keep all required artifacts fixed and vary only the status between pending, rejected and approved. Compare the Operator Decision errors in review and brownfield Define. No upstream code or native check was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "P",
+        "human_authority": "P",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "U",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Software license, third-party rights and current maintenance remain unverified in the selected evidence.",
+      "aliases": [],
+      "readme_content_sha256": "af486b1eeab2c1c4d994a432a2898c5f606a6b99b0de6ba47cd4d4e8a95528b6"
     }
   ],
   "unresolved_identities": [],
@@ -50536,9 +50570,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 290,
+    "detailed_appraisal_count": 291,
     "portable_only_count": 105,
-    "total_repository_count": 1099,
+    "total_repository_count": 1100,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51332,6 +51366,7 @@
     "R-1103",
     "R-1104",
     "R-1106",
-    "R-1107"
+    "R-1107",
+    "R-1108"
   ]
 }
