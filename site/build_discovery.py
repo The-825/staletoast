@@ -5,6 +5,7 @@ Standard library only. No network, execution of upstream code, or adoption write
 from __future__ import annotations
 
 import argparse
+import collaboration_rubric as rubric
 import copy
 import hashlib
 import json
@@ -71,7 +72,7 @@ def editions(history=None):
         record = read(path)
         if date.fromisoformat(record["edition_date"]).isoformat() != record["edition_date"]:
             raise ValueError("chart dates must use YYYY-MM-DD")
-        if path.stem != record["edition_date"] or record.get("method_version") != METHOD:
+        if path.stem != record["edition_date"] or record.get("method_version") not in (METHOD, rubric.METHOD):
             raise ValueError("chart history identity or method mismatch")
         for kind in ("research", "repositories"):
             rows = record["charts"][kind]["entries"]
@@ -83,7 +84,7 @@ def editions(history=None):
     return result
 
 
-def make_edition(edition_date, priorities, landscape, prior_editions, held_repository_ids=None):
+def make_edition(edition_date, priorities, landscape, prior_editions, held_repository_ids=None, *, cards=None):
     if date.fromisoformat(edition_date).isoformat() != edition_date:
         raise ValueError("chart dates must use YYYY-MM-DD")
     if prior_editions and edition_date <= prior_editions[-1]["edition_date"]:
@@ -101,14 +102,20 @@ def make_edition(edition_date, priorities, landscape, prior_editions, held_repos
             raise ValueError("duplicate priority IDs")
     if {row["id"] for row in priorities["repositories"]} != set(repositories):
         raise ValueError("repository priorities do not cover the ledger")
-    result = dict(schema_version=1, edition_date=edition_date, method_version=METHOD,
+    result = dict(schema_version=1, edition_date=edition_date, method_version=METHOD if cards is None else rubric.METHOD,
                   question=priorities["named_question"], charts={})
+    if cards is not None:
+        result["scorecards_sha256"] = hashlib.sha256(json.dumps(cards, sort_keys=True).encode()).hexdigest()
+    used_cards = set()
     for kind in ("research", "repositories"):
         eligible = [row for row in priorities[kind]
                     if (kind == "research" and not row.get("automated_screen", False) and row.get("appraisal_state") != "automated-screen") or
                        (kind == "repositories" and row["review_depth"] == "readme-screened" and row.get("appraisal_state") != "automated-screen")]
         # Tied priority groups remain visible; position is a display order, not a score.
         eligible.sort(key=lambda row: (row["priority_key"], row["id"]))
+        if cards is not None:
+            used_cards.update(row["id"] for row in eligible if row["id"] in cards)
+            eligible, provisional = rubric.prepare(eligible, cards)
         last = {row["id"]: row for row in prior_editions[-1]["charts"][kind]["entries"]} if prior_editions else {}
         entries = []
         for position, row in enumerate(eligible[:100], 1):
@@ -130,15 +137,31 @@ def make_edition(edition_date, priorities, landscape, prior_editions, held_repos
                 entry.update(snapshot_commit=source["snapshot_commit"], reviewed_date=source["snapshot_date"],
                              category=source["category"], license_status=source["license_status"],
                              stars_observed=source["stars_observed"], stars_observed_date=source.get("popularity_observed_date", source.get("stars_observed_date", landscape["popularity_observed_date"])))
+            if cards is not None:
+                entry["rubric_score"] = row["rubric_score"]
+                entry["reason"] = "Weighted collaboration score: " + str(row["rubric_score"]["established"])
             entries.append(entry)
         cutoff = eligible[99]["appraisal_priority_rank"] if len(eligible) >= 100 else None
         result["charts"][kind] = dict(eligible_count=len(eligible), archive_count=len(priorities[kind]), entries=entries,
                                       cutoff_tied_outside_chart=sum(row["appraisal_priority_rank"] == cutoff for row in eligible[100:]) if cutoff else 0,
                                       off_chart_ids=[row["id"] for row in eligible[100:]])
+        if cards is not None:
+            chart = result["charts"][kind]
+            chart["complete_scorecards"] = len(eligible)
+            chart["eligible_count"] += len(provisional)
+            chart["provisional"] = provisional
+    if cards is not None and set(cards) != used_cards:
+        raise ValueError("scorecard ID outside current chart eligibility")
     return result
 
 
+def verify_publishable(edition):
+    if edition["method_version"] == rubric.METHOD and any(len(chart["entries"]) < min(100, chart["eligible_count"]) for chart in edition["charts"].values()):
+        raise ValueError("too few completed scorecards to fill the eligible Hot 100 places")
+
+
 def freeze(path, edition):
+    verify_publishable(edition)
     if path.exists():
         if read(path) != edition:
             raise ValueError("a frozen chart edition cannot be overwritten")
@@ -170,7 +193,8 @@ def main():
         if any(priorities.get(field) != value for field, value in state.source_hashes().items()):
             raise ValueError("appraisal priorities have stale intake or held-source hashes")
         edition = make_edition(args.edition_date, priorities, read(DOCS / "collaborative-intelligence-repository-landscape.json"), earlier,
-                               state.held_ids('repository'))
+                               state.held_ids('repository'), cards=rubric.load_cards(DOCS, args.edition_date)
+                               if args.edition_date >= rubric.FIRST_EDITION else None)
         edition["source_hashes"] = {field: priorities[field] for field in sources}
         path = HISTORY / f"{args.edition_date}.json"
         if args.check:

@@ -50,6 +50,7 @@ python -m unittest discover -s site -p 'test_*.py'
 python scripts/repository_landscape.py --check
 python scripts/repository_review_promotions.py --check
 python scripts/repository_triage.py --check
+python site/build_scope_map.py --check
 ```
 
 For a reviewed new intake, rebuild priorities with `--write --date YYYY-MM-DD`,
@@ -61,14 +62,20 @@ versions, review limits, contrary evidence and stable IDs. A chart position
 guides attention; it does not certify findings or grant adoption authority.
 
 The daily scout discovers up to 50 metadata leads per category, screens at most
-five primary sources per category, and prioritizes one or two deeper appraisals
-from the existing pool. Add at most two research articles and two repositories
-per day only when quality supports it.
+twenty primary sources per category, and prioritizes four to twelve deeper
+appraisals from the existing pool. Add at most twelve research articles and
+twelve repositories per day only when quality supports it.
 Zero additions is valid. Retain unselected leads in the pool. Each month,
 rank the strongest ten eligible records per category and propose the top three
 for consideration. Sources outside the current Hot100 can return to the pool
 under their original identity. Preserve original analysis and dated rankings.
 See [intake and pool policy](docs/staletoast-intake-policy.md).
+
+The [scope map](docs/staletoast-scope-map.md) names the components of
+collaborative intelligence a round can search for. On November 27 it added
+security and containment, deliberation and dissent, learning from operation,
+and orchestration and automation. They are in scope and unscreened: no source,
+count or finding is claimed for them yet.
 
 ## History and export
 
