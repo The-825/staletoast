@@ -50680,6 +50680,40 @@
       "license_status": "No root license file in the pinned archive. GitHub reported no license, an unarchived repository and a last push on 2026-10-07. Reuse permission and ongoing maintenance are unknown.",
       "aliases": [],
       "readme_content_sha256": "f79240ab79c6b4da6cf489de8ab389a60b16421edea1709d02fb79643e618b1a"
+    },
+    {
+      "id": "R-1114",
+      "repository": "sizigi/animescore",
+      "url": "https://github.com/sizigi/animescore",
+      "snapshot_commit": "3e80a3c723b06b4e238c67af2411b5656866a57a",
+      "upstream_revision": "3e80a3c723b06b4e238c67af2411b5656866a57a",
+      "snapshot_date": "2026-11-27",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "human-preference-pair-weighting",
+      "category": "preference-evaluation",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/sizigi/animescore/blob/3e80a3c723b06b4e238c67af2411b5656866a57a/model/eval_ranknet_ckpt_v2.py",
+      "evidence_note": "Park and Li describe training a speech-style ranker from human A/B preferences. The repository adds an inspectable evaluation detail to that paper's evidence family (arXiv:2603.11482). validate_pairwise_primary compares the sign of each score difference with the supplied preference sign. It reports the arithmetic mean of per-batch accuracies, giving a short final batch as much weight as a full one. A synthetic check would use three unambiguous pairs batched two then one. If the first two comparisons are correct and the last is wrong, the reported batch mean should be 0.5 versus 2/3 for pooled pair accuracy. This concerns aggregation only. It neither reproduces the authors' headline result nor establishes that weighting changed it. The mapping from raw human choices to loader values and any effect on people using the scorer remain unverified. No upstream model, audio or evaluation code was run.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "U",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "The pinned root README labels code MIT and assigns audio rights to the source corpus licensors. Independent license-file verification, label reuse rights and ongoing maintenance are unknown.",
+      "aliases": [],
+      "readme_content_sha256": "745d218c9edc9074379380233059ecad40934a5e949a0ee3efce119b3fc79c37"
     }
   ],
   "unresolved_identities": [],
@@ -50706,9 +50740,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 295,
+    "detailed_appraisal_count": 296,
     "portable_only_count": 105,
-    "total_repository_count": 1104,
+    "total_repository_count": 1105,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51507,6 +51541,7 @@
     "R-1110",
     "R-1111",
     "R-1112",
-    "R-1113"
+    "R-1113",
+    "R-1114"
   ]
 }
