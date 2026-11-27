@@ -226,48 +226,64 @@ jobs:
               throw error;
             };
 
+            // BEGIN deleteMergedBranch
             // A merge made with GITHUB_TOKEN does not trigger the repository's
             // delete_branch_on_merge setting, so merged branches piled up.
-            // Delete the head ref only after a fresh read shows the PR merged on
-            // the checked head, the branch lives in this repo, is not the
-            // default branch, and still points at that head. A failure here
-            // is logged and never fails the merge.
+            // The head ref is deleted only when a fresh read shows the PR merged
+            // on the checked head, the branch lives in this repo, is not the
+            // default branch, and has no branch protection or ruleset (an
+            // unreadable protection state keeps the branch). The delete is a
+            // git push with --force-with-lease pinned to the merged head, so the
+            // server refuses it if the tip moved. Every failure keeps the branch
+            // and only warns; it never fails the merge.
             const deleteMergedBranch = async (pr) => {
               const ref = pr.head.ref;
+              const sha = pr.head.sha;
+              const repo = { owner: context.repo.owner, repo: context.repo.repo };
               try {
                 const { data: latest } = await github.rest.pulls.get({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  pull_number: pr.number,
+                  ...repo, pull_number: pr.number,
                 });
-                if (!mergedOnHead(latest, pr.head.sha)) {
-                  core.info(`PR #${pr.number} not confirmed merged on ${pr.head.sha}; keeping ${ref}.`);
+                if (!mergedOnHead(latest, sha)) {
+                  core.info(`PR #${pr.number} not confirmed merged on ${sha}; keeping ${ref}.`);
                   return;
                 }
-                if (latest.head.repo?.full_name !== `${context.repo.owner}/${context.repo.repo}` ||
+                if (latest.head.repo?.full_name !== `${repo.owner}/${repo.repo}` ||
                     ref === latest.base.repo.default_branch) {
                   core.info(`Branch ${ref} is a fork or the default branch; keeping it.`);
                   return;
                 }
-                const { data: current } = await github.rest.git.getRef({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  ref: `heads/${ref}`,
-                });
-                if (current.object.sha !== pr.head.sha) {
-                  core.warning(`Branch ${ref} moved past the merged head; keeping it.`);
+                if (!/^[0-9a-f]{40}$/.test(sha)) {
+                  core.warning(`Head ${sha} is not a full commit SHA; keeping ${ref}.`);
                   return;
                 }
-                await github.rest.git.deleteRef({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  ref: `heads/${ref}`,
-                });
-                core.info(`Deleted merged branch ${ref} at ${pr.head.sha}.`);
+                let guarded = true;
+                try {
+                  const { data: branch } = await github.rest.repos.getBranch({
+                    ...repo, branch: ref,
+                  });
+                  const { data: rules } = await github.rest.repos.getBranchRules({
+                    ...repo, branch: ref,
+                  });
+                  guarded = branch.protected !== false ||
+                    !Array.isArray(rules) || rules.length > 0;
+                } catch (error) {
+                  core.warning(`Could not verify protection on ${ref}: ${error.status || ""} ${error.message}`);
+                }
+                if (guarded) {
+                  core.info(`Branch ${ref} is protected or unverifiable; keeping it.`);
+                  return;
+                }
+                const { execFileSync } = require("child_process");
+                execFileSync("git", ["push", "--porcelain", "origin",
+                  `--force-with-lease=refs/heads/${ref}:${sha}`,
+                  `:refs/heads/${ref}`], { encoding: "utf-8", stdio: "pipe" });
+                core.info(`Deleted merged branch ${ref} at ${sha}.`);
               } catch (error) {
-                core.warning(`Could not delete merged branch ${ref}: ${error.status || ""} ${error.message}`);
+                core.warning(`Kept merged branch ${ref}: ${error.status || ""} ${String(error.stderr || error.message).trim()}`);
               }
             };
+            // END deleteMergedBranch
 
             // Apply the same guards (non-draft, open, agent branch, operator
             // label when required, all required checks green on head SHA)
