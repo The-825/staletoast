@@ -37,8 +37,8 @@ REPO_ID_RE = re.compile(r"^R-\d{3,}$")
 HEX40_RE = re.compile(r"^[0-9a-f]{40}$")
 ARXIV_RE = re.compile(r"arxiv\.org/(?:abs|pdf|html)/([0-9]{4}\.[0-9]{4,5}|[a-z-]+/[0-9]{7})(?:v\d+)?(?:\.pdf)?", re.I)
 ARXIV_TEXT_RE = re.compile(r"\barxiv[:\s]+([0-9]{4}\.[0-9]{4,5})(?:v\d+)?\b", re.I)
-DOI_URL_RE = re.compile(r"doi\.org/(10\.\d{4,9}/[^\s\)\"'>]+)", re.I)
-DOI_TEXT_RE = re.compile(r"\bDOI[:\s]+(10\.\d{4,9}/[^\s,;|\)\"'>]+)", re.I)
+DOI_URL_RE = re.compile(r"doi\.org/(10\.\d{4,9}/[^\s\"'>]+)", re.I)
+DOI_TEXT_RE = re.compile(r"\bDOI[:\s]+(10\.\d{4,9}/[^\s,;|\">]+)", re.I)
 GITHUB_URL_RE = re.compile(r"^https?://(?:www\.)?github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)(?:/.*)?$")
 FORBIDDEN_DASHES = ("\u2014", "\u2013")
 
@@ -141,10 +141,16 @@ def canonical_identities(url: str | None = None, text: str = "", repository: str
     for match in ARXIV_TEXT_RE.finditer(combined):
         keys.add(f"arxiv:{match.group(1).lower()}")
 
-    for regex in (DOI_URL_RE, DOI_TEXT_RE):
-        for match in regex.finditer(combined):
-            cleaned = match.group(1).rstrip(".,;)")
-            keys.add(f"doi:{cleaned.lower()}")
+    for match in DOI_URL_RE.finditer(url or ""):
+        cleaned = match.group(1).rstrip(".,;")
+        while cleaned.endswith(")") and cleaned.count(")") > cleaned.count("("):
+            cleaned = cleaned[:-1].rstrip(".,;")
+        keys.add(f"doi:{cleaned.lower()}")
+    for match in DOI_TEXT_RE.finditer(text or ""):
+        cleaned = match.group(1).rstrip(".,;")
+        while cleaned.endswith(")") and cleaned.count(")") > cleaned.count("("):
+            cleaned = cleaned[:-1].rstrip(".,;")
+        keys.add(f"doi:{cleaned.lower()}")
 
     if url:
         gh = GITHUB_URL_RE.match(url.strip())

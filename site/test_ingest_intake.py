@@ -19,6 +19,11 @@ class IngestIntakeTests(unittest.TestCase):
         )
         self.assertIn("arxiv:2605.12015", keys)
         self.assertIn("doi:10.18653/v1/2026.findings-acl.845", keys)
+        elsevier_keys = intake.canonical_identities(
+            url="https://doi.org/10.1016/0005-1098(83)90046-8",
+            text='Lisanne Bainbridge, ["Ironies of Automation"](https://doi.org/10.1016/0005-1098(83)90046-8), 1983',
+        )
+        self.assertIn("doi:10.1016/0005-1098(83)90046-8", elsevier_keys)
 
         repo_keys = intake.canonical_identities(
             url="https://www.github.com/OpenAI/OpenAI-Agents-Python.git/",

@@ -276,10 +276,9 @@ def load_cards_through(docs, edition_date, *, held_ids=None, held_since=None):
 
 def format_rubric_reason(score: dict) -> str:
     strongest = [DIMENSIONS[name]["label"].lower() for name in score.get("strongest", []) if name in DIMENSIONS]
-    base = f"Weighted collaboration score: {score['established']}"
     if strongest:
-        return f"{base} (strongest: {', '.join(strongest[:2])})"
-    return base
+        return f"Completed seven-dimension rubric; strongest evidence in {', '.join(strongest[:2])}"
+    return "Completed seven-dimension collaboration rubric"
 
 
 def export_web_scorecards(docs: Path, repositories: list[dict] | None = None) -> dict:
