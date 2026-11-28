@@ -50816,6 +50816,40 @@
       "license_status": "Root source license MIT. Dataset and image rights require separate verification. Maintenance cadence unverified.",
       "aliases": [],
       "readme_content_sha256": "e5eede45fb8e666522c6e3077cad3111009893beaadcea60474479a7283ca5dd"
+    },
+    {
+      "id": "R-1118",
+      "repository": "pablokrupa/prefGNEP",
+      "url": "https://github.com/pablokrupa/prefGNEP",
+      "snapshot_commit": "b3b6b5c654058090b5f9b757bd02abf2ba6dc23d",
+      "upstream_revision": "b3b6b5c654058090b5f9b757bd02abf2ba6dc23d",
+      "snapshot_date": "2026-11-27",
+      "stars_observed": null,
+      "popularity_observed_date": null,
+      "selection_aspect": "player-specific-preference-oracles",
+      "category": "agent-evaluation",
+      "lifecycle": "unknown",
+      "evidence_depth": "readme-screened",
+      "evidence_pointer": "https://github.com/pablokrupa/prefGNEP/blob/b3b6b5c654058090b5f9b757bd02abf2ba6dc23d/src/pref_gnep.py",
+      "evidence_note": "R-1117 updates one personal model from a click. prefGNEP fits surrogate costs for players with coupled strategies. In oracle_preference it holds the other players fixed, substitutes two candidate strategies for one player and labels the lower cost using that player's own objective. Ties select the first candidate. augment_dataset_AL appends per-player labels to one joint sample. The Picheny example supplies synthetic objectives and compares its estimated solution with best responses. This is a simulation of interacting preferences. Human agreement, real-user participation and convergence outside the examples remain unverified. A proposed check holds player B fixed and compares A at 0 versus 1: with cost equal to A the label should be 1, with cost equal to minus A it should be 0, and with equal costs it should be 1. Verify B was unchanged in all evaluations. Source inspected without execution.",
+      "claims": [],
+      "mechanisms": {
+        "collaboration_topology": "P",
+        "workflow_state": "U",
+        "human_authority": "U",
+        "memory_context": "U",
+        "trace_recovery": "U",
+        "evaluation_surface": "P",
+        "collaboration_baseline": "U",
+        "cost_burden": "U",
+        "change_expiry": "U",
+        "independent_verification": "U",
+        "interoperability": "U"
+      },
+      "assessment_status": "mechanism-screened",
+      "license_status": "Apache-2.0 root license. Dependency licenses and maintenance cadence unverified.",
+      "aliases": [],
+      "readme_content_sha256": "6ac04acd33e71d99204c21e1673f703e12bc2d832c0ad4f4d6186ca44147a262"
     }
   ],
   "unresolved_identities": [],
@@ -50842,9 +50876,9 @@
     "authority": "descriptive-only"
   },
   "review_summary": {
-    "detailed_appraisal_count": 299,
+    "detailed_appraisal_count": 300,
     "portable_only_count": 105,
-    "total_repository_count": 1108,
+    "total_repository_count": 1109,
     "latest_review_wave": "R4",
     "latest_review_wave_count": 106,
     "portable_only_triaged_count": 105,
@@ -51647,6 +51681,7 @@
     "R-1114",
     "R-1115",
     "R-1116",
-    "R-1117"
+    "R-1117",
+    "R-1118"
   ]
 }
