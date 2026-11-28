@@ -5,6 +5,7 @@ const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, char => ({
 const APPRAISAL_STATES = ["automated-screen", "source-screened"];
 let items = [];
 let claimsById = {};
+let hot100Positions = {};
 let page = 1;
 let tableView = false;
 
@@ -13,16 +14,28 @@ const label = CatalogUI.titleCase;
 const isAutomated = CatalogUI.isAutomated;
 const detailLink = (kind, id, text) =>
   `<a href="detail.html?type=${kind}&id=${encodeURIComponent(id)}">${escapeHtml(text)}</a>`;
-const claimLinks = claims => claims.map(claim => `<a class="pill" href="claims.html#${claim.toLowerCase()}">${escapeHtml(EvidenceTopics.label(claim))}</a>`).join("");
+const safeHttps = value => {
+  const raw = String(value ?? "").trim();
+  return /^https:\/\/[^\s"'<>]+$/i.test(raw) ? raw : "";
+};
+const claimLinks = claims => claims.map(claim => `<a class="pill" href="claims.html#${encodeURIComponent(String(claim).toLowerCase())}">${escapeHtml(EvidenceTopics.label(claim))}</a>`).join("");
 const fact = (name, value, note = "") => `<div><dt>${escapeHtml(name)}</dt><dd>${value}${note ? `<small>${escapeHtml(note)}</small>` : ""}</dd></div>`;
+const hotBadge = item => {
+  const pos = hot100Positions[item.id];
+  if (!pos) return "";
+  const q = encodeURIComponent(item.title || item.repository || "");
+  const qs = type === "repositories" ? `?kind=repositories&q=${q}` : `?q=${q}`;
+  return `<a class="pill hot-pill" href="charts.html${qs}">Hot 100 #${escapeHtml(pos)}</a>`;
+};
 
 function researchCard(item) {
   const automated = isAutomated(item);
   const depth = CatalogUI.researchDepth(item);
   const directness = CatalogUI.directnessText(item);
   const order = automated ? "Not ranked, awaiting appraisal" : `${item.evidenceOrder} of ${item.evidenceOrderCount}`;
+  const sourceHref = safeHttps(item.url);
   return `<article class="record-card">
-    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${item.record_state === "candidate-not-promoted" ? '<span class="pill">Candidate, not promoted</span>' : ""}</p>
+    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${hotBadge(item)}${item.record_state === "candidate-not-promoted" ? '<span class="pill">Candidate, not promoted</span>' : ""}</p>
     <h3>${detailLink("research", item.id, item.title)}</h3>
     <p class="finding">${escapeHtml(EvidenceTopics.text(item.finding))}</p>
     <dl class="facts">
@@ -33,7 +46,7 @@ function researchCard(item) {
       ${fact("Publication or review date", "Not recorded", "Check the original source for its date.")}
     </dl>
     ${item.claims.length ? `<p class="topics"><span class="topics-label">Topics</span> ${claimLinks(item.claims)}</p>` : ""}
-    <p class="card-actions">${detailLink("research", item.id, "View profile")} <a class="button secondary" href="${escapeHtml(item.url)}">Open original source</a></p>
+    <p class="card-actions">${detailLink("research", item.id, "View profile")}${sourceHref ? ` <a class="button secondary" href="${escapeHtml(sourceHref)}">Open original source</a>` : ""}</p>
     <details class="reference"><summary>Reference details</summary>
       <p>${escapeHtml(depth.note)}</p>
       <p>Review number: <code>${escapeHtml(item.id)}</code></p>
@@ -52,8 +65,9 @@ function repositoryCard(item) {
   const mechanisms = automated
     ? `All ${item.mechanismTotal} unknown`
     : `${item.visibleMechanisms} visible, ${item.partialMechanisms} partial, ${item.unknownMechanisms} unknown, of ${item.mechanismTotal}`;
+  const sourceHref = safeHttps(item.url);
   return `<article class="record-card">
-    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${automated ? '<span class="pill">Unvetted third-party repository</span>' : ""}</p>
+    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${hotBadge(item)}${automated ? '<span class="pill">Unvetted third-party repository</span>' : ""}</p>
     <h3>${detailLink("repositories", item.id, item.repository)}</h3>
     <p class="finding">${escapeHtml(EvidenceTopics.text(item.evidence_note))}</p>
     <dl class="facts">
@@ -64,7 +78,7 @@ function repositoryCard(item) {
       ${fact(automated ? "Screen recorded" : "Review recorded", escapeHtml(CatalogUI.dateOrNotRecorded(item.lastReviewed)), "A metadata or README screen is not a full appraisal.")}
     </dl>
     ${item.claims.length ? `<p class="topics"><span class="topics-label">Topics</span> ${claimLinks(item.claims)}</p>` : ""}
-    <p class="card-actions">${detailLink("repositories", item.id, "View profile")} <a class="button secondary" href="${escapeHtml(item.url)}">${automated ? "Open GitHub repository (unvetted)" : "Open GitHub repository"}</a></p>
+    <p class="card-actions">${detailLink("repositories", item.id, "View profile")}${sourceHref ? ` <a class="button secondary" href="${escapeHtml(sourceHref)}">${automated ? "Open GitHub repository (unvetted)" : "Open GitHub repository"}</a>` : ""}</p>
     <details class="reference"><summary>Reference details</summary>
       <p>${escapeHtml(depth.note)}</p>
       <p>Record ID: <code>${escapeHtml(item.id)}</code></p>
@@ -129,14 +143,21 @@ function render() {
   $("#cards").innerHTML = visible.map(type === "research" ? researchCard : repositoryCard).join("");
   $("tbody").innerHTML = visible.map(type === "research" ? researchRow : repositoryRow).join("");
   $("#count").textContent = CatalogUI.countText(items.length, matches.length, range, type === "research" ? "research records" : "repositories");
-  const active = CatalogUI.activeFilters([
-    {name: "Search", value: state.query.trim(), text: `"${state.query.trim()}"`},
-    {name: type === "research" ? "Directness" : "Category", value: state.filter, text: state.filter ? selectedText("#filter") : ""},
-    {name: type === "research" ? "Evidence family" : "Repository status", value: state.theme, text: state.theme ? selectedText("#theme") : ""},
-    {name: "Topic", value: state.claim, text: state.claim ? selectedText("#claim") : ""},
-    {name: "Evidence depth", value: state.depth, text: state.depth ? selectedText("#depth") : ""}
-  ]);
+  const filterDescriptors = [
+    {selector: "#search", name: "Search", value: state.query.trim(), text: `"${state.query.trim()}"`},
+    {selector: "#filter", name: type === "research" ? "Directness" : "Category", value: state.filter, text: state.filter ? selectedText("#filter") : ""},
+    {selector: "#theme", name: type === "research" ? "Evidence family" : "Repository status", value: state.theme, text: state.theme ? selectedText("#theme") : ""},
+    {selector: "#claim", name: "Topic", value: state.claim, text: state.claim ? selectedText("#claim") : ""},
+    {selector: "#depth", name: "Evidence depth", value: state.depth, text: state.depth ? selectedText("#depth") : ""}
+  ];
+  const active = CatalogUI.activeFilters(filterDescriptors);
   $("#filter-summary").textContent = CatalogUI.filterSummaryText(active);
+  const activeDescriptors = filterDescriptors.filter(entry => String(entry.value || "").trim());
+  const chipsContainer = $("#active-filter-chips");
+  chipsContainer.hidden = activeDescriptors.length === 0;
+  chipsContainer.innerHTML = activeDescriptors.map(entry =>
+    `<button type="button" class="filter-chip" data-clear="${escapeHtml(entry.selector)}" aria-label="Remove ${escapeHtml(entry.name)} filter">${escapeHtml(entry.name)}: ${escapeHtml(entry.text)} <span aria-hidden="true">&times;</span></button>`
+  ).join("");
   $("#reset").disabled = active.length === 0 && state.sort === "rank";
   $("#empty").hidden = matches.length > 0;
   $("#pager").hidden = matches.length === 0;
@@ -164,8 +185,46 @@ function resetFilters() {
   for (const selector of ["#search", "#filter", "#theme", "#claim", "#depth"]) $(selector).value = "";
   $("#sort").value = "rank";
   page = 1;
+  syncLocation();
   render();
   $("#search").focus();
+}
+
+function hasOptionValue(control, candidate) {
+  if (!candidate || !control) return false;
+  return Array.from(control.options || []).some(opt => opt.value === candidate);
+}
+
+function applyLocationFilters() {
+  if (typeof location === "undefined" || !location.search) return;
+  const params = new URLSearchParams(location.search);
+  const query = (params.get("q") || params.get("query") || "").trim();
+  if (query) $("#search").value = query.slice(0, 200);
+  const claimParam = (params.get("claim") || "").trim().toUpperCase();
+  if (hasOptionValue($("#claim"), claimParam)) $("#claim").value = claimParam;
+  const filterParam = (params.get("filter") || "").trim();
+  if (hasOptionValue($("#filter"), filterParam)) $("#filter").value = filterParam;
+  const themeParam = (params.get("theme") || "").trim();
+  if (hasOptionValue($("#theme"), themeParam)) $("#theme").value = themeParam;
+  const depthParam = (params.get("depth") || "").trim();
+  if (hasOptionValue($("#depth"), depthParam)) $("#depth").value = depthParam;
+  const sortParam = (params.get("sort") || "").trim();
+  if (hasOptionValue($("#sort"), sortParam)) $("#sort").value = sortParam;
+}
+
+function syncLocation() {
+  if (typeof history === "undefined" || typeof history.replaceState !== "function" || typeof location === "undefined") return;
+  const state = currentState();
+  const params = new URLSearchParams();
+  if (state.query.trim()) params.set("q", state.query.trim());
+  if (state.filter) params.set("filter", state.filter);
+  if (state.theme) params.set("theme", state.theme);
+  if (state.claim) params.set("claim", state.claim);
+  if (state.depth) params.set("depth", state.depth);
+  if (state.sort && state.sort !== "rank") params.set("sort", state.sort);
+  const queryString = params.toString();
+  const base = location.pathname || `${type}.html`;
+  history.replaceState(null, "", `${base}${queryString ? `?${queryString}` : ""}${location.hash || ""}`);
 }
 
 function goToPage(delta) {
@@ -202,9 +261,15 @@ async function catalog() {
     $(".catalog-head .lede").textContent =
       `${detailed} were README screened against a pinned revision, ${portable} are portable records (identity and provenance only), and ${relevance} are README relevance checks awaiting appraisal and are unvetted third-party repositories. Mechanisms stay unknown until a human appraises them. Stars are popularity only and do not establish quality.`;
   }
-  const claims = await fetch("data/claims.json").then(result => result.json());
+  const [claims, chartsPayload] = await Promise.all([
+    fetch("data/claims.json").then(result => result.json()),
+    fetch("data/charts.json").then(result => result.ok ? result.json() : null).catch(() => null)
+  ]);
   EvidenceTopics.install(claims);
   claimsById = Object.fromEntries(claims.map(item => [item.id, item]));
+  if (chartsPayload && chartsPayload.latest && chartsPayload.latest.charts && chartsPayload.latest.charts[type]) {
+    hot100Positions = Object.fromEntries(chartsPayload.latest.charts[type].entries.map(entry => [entry.id, entry.position]));
+  }
   if (type === "research") {
     addOptions($("#filter"), ["D3", "D2", "D1", "D0"].map(key => [key, CatalogUI.DIRECTNESS[key].name]));
     if (items.some(isAutomated)) addOptions($("#filter"), [[CatalogUI.UNAPPRAISED, "Awaiting appraisal (no grade yet)"]]);
@@ -214,13 +279,26 @@ async function catalog() {
     addOptions($("#filter"), [...new Set(items.map(item => item.category))].sort().map(value => [value, label(value)]));
     addOptions($("#theme"), [...new Set(items.map(item => item.lifecycle))].sort().map(value => [value, label(value)]));
   }
-  addOptions($("#claim"), [...new Set(items.flatMap(item => item.claims))].sort().map(value => [value, EvidenceTopics.label(value)]));
+  const claimIds = new Set([...claims.map(item => item.id), ...items.flatMap(item => item.claims)]);
+  addOptions($("#claim"), [...claimIds].sort().map(value => [value, EvidenceTopics.label(value)]));
   addOptions($("#depth"), [...new Set(items.map(item => CatalogUI.depthValue(type, item)))].sort().map(value => [value, depthOptionText(value)]));
+  applyLocationFilters();
   for (const selector of ["#search", "#filter", "#theme", "#claim", "#depth", "#sort", "#page-size"]) {
-    $(selector).addEventListener(selector === "#search" ? "input" : "change", () => { page = 1; render(); });
+    $(selector).addEventListener(selector === "#search" ? "input" : "change", () => { page = 1; syncLocation(); render(); });
   }
   $("#reset").addEventListener("click", resetFilters);
   $("#empty-reset").addEventListener("click", resetFilters);
+  $("#active-filter-chips").addEventListener("click", event => {
+    const button = event && event.target && typeof event.target.closest === "function" ? event.target.closest("button[data-clear]") : null;
+    if (!button) return;
+    const selector = button.getAttribute("data-clear");
+    if (!selector || !$(selector)) return;
+    $(selector).value = "";
+    page = 1;
+    syncLocation();
+    render();
+    $(selector).focus();
+  });
   $("#prev").addEventListener("click", () => goToPage(-1));
   $("#next").addEventListener("click", () => goToPage(1));
   $("#view-toggle").addEventListener("click", () => setView(!tableView));

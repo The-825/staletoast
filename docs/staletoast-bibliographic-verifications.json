@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "authority": "bibliographic-identity-only; does not verify scientific claims, study quality, or adoption fitness",
+  "baseline": {
+    "promoted_max_id": "123",
+    "candidate_max_id": "C-449",
+    "historical_year_exempt_ids": [
+      "C-409",
+      "C-411",
+      "C-441",
+      "C-443",
+      "C-444"
+    ]
+  },
+  "verifications": [
+    {
+      "id": "051",
+      "verified_first_author": "Prateek Chhikara",
+      "verified_title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+      "venue_or_record_type": "arXiv preprint",
+      "year": 2025,
+      "canonical_url": "https://arxiv.org/abs/2504.19413",
+      "verified_date": "2026-11-27",
+      "claim_verification_status": "not-verified-by-bibliographic-check"
+    },
+    {
+      "id": "C-447",
+      "verified_first_author": "Mohammad Aliannejadi",
+      "verified_title": "Building and Evaluating Open-Domain Dialogue Corpora with Clarifying Questions",
+      "venue_or_record_type": "EMNLP",
+      "year": 2021,
+      "canonical_url": "https://aclanthology.org/2021.emnlp-main.367/",
+      "verified_date": "2026-11-27",
+      "claim_verification_status": "not-verified-by-bibliographic-check"
+    },
+    {
+      "id": "C-448",
+      "verified_first_author": "Tom Lotze",
+      "verified_title": "Ranking Clarifying Questions Based on Predicted User Engagement",
+      "venue_or_record_type": "arXiv preprint",
+      "year": 2021,
+      "canonical_url": "https://arxiv.org/abs/2103.06192v3",
+      "verified_date": "2026-11-27",
+      "claim_verification_status": "not-verified-by-bibliographic-check"
+    },
+    {
+      "id": "C-449",
+      "verified_first_author": "Jingjing Xu",
+      "verified_title": "Asking Clarification Questions in Knowledge-Based Question Answering",
+      "venue_or_record_type": "EMNLP-IJCNLP",
+      "year": 2019,
+      "canonical_url": "https://aclanthology.org/D19-1172/",
+      "verified_date": "2026-11-27",
+      "claim_verification_status": "not-verified-by-bibliographic-check"
+    }
+  ]
+}

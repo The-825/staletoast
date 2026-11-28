@@ -1,6 +1,11 @@
 import copy
 import json
+from pathlib import Path
+import subprocess
+import sys
+from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
 
 import build_scope_map as scope_map
 
@@ -69,6 +74,34 @@ class ScopeMapTests(unittest.TestCase):
         reached = {target for targets in self.scope['owner_scope_terms'].values() for target in targets}
         added = {item['id'] for item in self.scope['components'] if item['status'] == 'added-unscreened'}
         self.assertTrue(added <= reached)
+
+    def test_web_json_is_deterministic_and_labels_unscreened_components_explicitly(self):
+        first = scope_map.render_web_json(self.scope, scope_map.lf_sha256(scope_map.SOURCE))
+        second = scope_map.render_web_json(self.scope, scope_map.lf_sha256(scope_map.SOURCE))
+        self.assertEqual(first, second)
+        self.assertNotIn(chr(0x2014), first)
+        payload = json.loads(first)
+        self.assertEqual('docs/staletoast-scope-map.json', payload['source_path'])
+        by_id = {row['id']: row for row in payload['components']}
+        self.assertEqual('Established in baseline routing', by_id['authority-and-handoff']['status_label'])
+        self.assertIsNone(by_id['authority-and-handoff']['boundary'])
+        self.assertIn('not yet screened', by_id['security-and-containment']['status_label'])
+        self.assertTrue(by_id['security-and-containment']['boundary'])
+
+    def test_check_fails_when_web_view_is_missing_or_stale(self):
+        with TemporaryDirectory() as tmp:
+            web_path = Path(tmp) / 'scope-map.json'
+            with patch.object(scope_map, 'WEB_VIEW', web_path), patch.object(sys, 'argv', ['build_scope_map.py', '--check', '--require-web']):
+                with self.assertRaisesRegex(SystemExit, 'missing'):
+                    scope_map.main()
+            web_path.write_text('{"stale": true}\n', encoding='utf-8')
+            with patch.object(scope_map, 'WEB_VIEW', web_path), patch.object(sys, 'argv', ['build_scope_map.py', '--check']):
+                with self.assertRaisesRegex(SystemExit, 'stale'):
+                    scope_map.main()
+            with patch.object(scope_map, 'WEB_VIEW', web_path), patch.object(sys, 'argv', ['build_scope_map.py', '--web-only']):
+                scope_map.main()
+            with patch.object(scope_map, 'WEB_VIEW', web_path), patch.object(sys, 'argv', ['build_scope_map.py', '--check', '--require-web']):
+                scope_map.main()
 
 
 if __name__ == '__main__':

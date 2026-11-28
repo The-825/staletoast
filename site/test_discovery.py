@@ -138,6 +138,14 @@ class DiscoveryTests(unittest.TestCase):
                     discovery.main()
             self.assertFalse(history.exists())
 
+    def test_empty_rubric_chart_is_refused_on_publish(self):
+        priorities, landscape = inputs(1)
+        priorities["research"][0]["automated_screen"] = True
+        priorities["repositories"][0]["review_depth"] = "readme-relevance-screened"
+        edition = discovery.make_edition("2026-11-23", priorities, landscape, [], cards={})
+        with self.assertRaisesRegex(ValueError, "0 eligible records"):
+            discovery.verify_publishable(edition)
+
     def test_frozen_source_counts_match_the_current_first_edition(self):
         latest = next(row for row in discovery.editions() if row["edition_date"] == "2026-10-12")
         self.assertEqual(122, latest["charts"]["research"]["archive_count"])

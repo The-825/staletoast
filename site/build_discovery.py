@@ -115,7 +115,7 @@ def make_edition(edition_date, priorities, landscape, prior_editions, held_repos
         eligible.sort(key=lambda row: (row["priority_key"], row["id"]))
         if cards is not None:
             used_cards.update(row["id"] for row in eligible if row["id"] in cards)
-            eligible, provisional = rubric.prepare(eligible, cards)
+            eligible, provisional = rubric.prepare(eligible, cards, repositories_by_id=repositories if kind == "repositories" else None)
         last = {row["id"]: row for row in prior_editions[-1]["charts"][kind]["entries"]} if prior_editions else {}
         entries = []
         for position, row in enumerate(eligible[:100], 1):
@@ -139,7 +139,7 @@ def make_edition(edition_date, priorities, landscape, prior_editions, held_repos
                              stars_observed=source["stars_observed"], stars_observed_date=source.get("popularity_observed_date", source.get("stars_observed_date", landscape["popularity_observed_date"])))
             if cards is not None:
                 entry["rubric_score"] = row["rubric_score"]
-                entry["reason"] = "Weighted collaboration score: " + str(row["rubric_score"]["established"])
+                entry["reason"] = rubric.format_rubric_reason(row["rubric_score"])
             entries.append(entry)
         cutoff = eligible[99]["appraisal_priority_rank"] if len(eligible) >= 100 else None
         result["charts"][kind] = dict(eligible_count=len(eligible), archive_count=len(priorities[kind]), entries=entries,
@@ -156,8 +156,22 @@ def make_edition(edition_date, priorities, landscape, prior_editions, held_repos
 
 
 def verify_publishable(edition):
-    if edition["method_version"] == rubric.METHOD and any(len(chart["entries"]) < min(100, chart["eligible_count"]) for chart in edition["charts"].values()):
-        raise ValueError("too few completed scorecards to fill the eligible Hot 100 places")
+    if edition["method_version"] != rubric.METHOD:
+        return
+    shortfalls = []
+    for name, chart in edition["charts"].items():
+        if chart["eligible_count"] <= 0:
+            shortfalls.append(f"{name}: 0 eligible records")
+            continue
+        needed = min(100, chart["eligible_count"])
+        actual = len(chart["entries"])
+        if actual < needed:
+            shortfalls.append(f"{name}: {actual}/{needed} complete")
+    if shortfalls:
+        raise ValueError(
+            "too few completed scorecards to fill the eligible Hot 100 places "
+            f"({'; '.join(shortfalls)})"
+        )
 
 
 def freeze(path, edition):
@@ -192,8 +206,9 @@ def main():
         state = IntakeState(DOCS)
         if any(priorities.get(field) != value for field, value in state.source_hashes().items()):
             raise ValueError("appraisal priorities have stale intake or held-source hashes")
+        held_all = state.held_ids('research') | state.held_ids('repository')
         edition = make_edition(args.edition_date, priorities, read(DOCS / "collaborative-intelligence-repository-landscape.json"), earlier,
-                               state.held_ids('repository'), cards=rubric.load_cards(DOCS, args.edition_date)
+                               state.held_ids('repository'), cards=rubric.load_cards_through(DOCS, args.edition_date, held_ids=held_all)
                                if args.edition_date >= rubric.FIRST_EDITION else None)
         edition["source_hashes"] = {field: priorities[field] for field in sources}
         path = HISTORY / f"{args.edition_date}.json"

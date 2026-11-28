@@ -1,0 +1,1924 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-11-27",
+  "kind": "routing-proposal",
+  "authority": "evidence-only; deterministic term screen over the retained pool. Does not promote components to established, assign grades, release held sources, or authorize adoption.",
+  "method": {
+    "rule_version": "added-component-retained-pool-screen-v1",
+    "description": "Deterministic case-insensitive screen_terms match across retained expansion titles, topics, categories, descriptions, recorded matched_terms, and source-ledger or landscape notes. Held sources remain excluded.",
+    "thin_coverage_threshold": 10
+  },
+  "scope_map_status_unchanged": true,
+  "inputs": [
+    {
+      "path": "docs/staletoast-scope-map.json",
+      "sha256": "6de0d52ef6809c15708bdc8562294d85bd5e4a059441ecda6146bba2eee38f9c"
+    },
+    {
+      "path": "docs/staletoast-expansion-2026-11-01.json",
+      "sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d"
+    },
+    {
+      "path": "docs/staletoast-source-dispositions.json",
+      "sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434"
+    },
+    {
+      "path": "docs/collaborative-intelligence-research-ledger.md",
+      "sha256": "1ee6310b0d1d82ec57e876ff196966e153df010c81cf37c5f61d709151f927f0"
+    },
+    {
+      "path": "docs/collaborative-intelligence-repository-landscape.json",
+      "sha256": "e9e44b1739a5fef23af71892af5ea0ed154adcb066c4c9631a2320070955cd1a"
+    }
+  ],
+  "components": [
+    {
+      "id": "security-and-containment",
+      "label": "Security and containment",
+      "status_in_scope_map": "added-unscreened",
+      "screen_terms": [
+        "prompt injection",
+        "sandbox",
+        "least privilege",
+        "permission boundar",
+        "tool poisoning",
+        "exfiltrat",
+        "guardrail",
+        "threat model",
+        "jailbreak"
+      ],
+      "related_claims": [
+        "CI-007",
+        "CI-010"
+      ],
+      "comparison_question": "Does the source give a repeatable test that a stated limit holds under hostile or misleading input, rather than a description of the limit?",
+      "boundary": "Defensive containment and its tests only. A source that emphasizes offensive technique, evasion, bypass or unverified access claims stays held for the separate scope and misuse-boundary appraisal recorded in the 2026-11-01 expansion. This component does not release a held source."
+    },
+    {
+      "id": "deliberation-and-dissent",
+      "label": "Deliberation and dissent",
+      "status_in_scope_map": "added-unscreened",
+      "screen_terms": [
+        "debate",
+        "deliberat",
+        "dissent",
+        "consensus",
+        "disagree",
+        "adjudicat",
+        "second opinion",
+        "red team",
+        "ensemble"
+      ],
+      "related_claims": [
+        "CI-001",
+        "CI-015",
+        "CI-016",
+        "CI-017"
+      ],
+      "comparison_question": "Does the source measure whether a second independent view changed the outcome, against a single-agent baseline at comparable cost?",
+      "boundary": "Agreement between agents is not verification. A source that reports only that agents converged does not answer the comparison question."
+    },
+    {
+      "id": "learning-from-operation",
+      "label": "Learning from operation",
+      "status_in_scope_map": "added-unscreened",
+      "screen_terms": [
+        "self-improv",
+        "lesson",
+        "postmortem",
+        "retrospective",
+        "failure taxonomy",
+        "recurrence",
+        "continual learning",
+        "reflection",
+        "skill library"
+      ],
+      "related_claims": [
+        "CI-006",
+        "CI-008",
+        "CI-017"
+      ],
+      "comparison_question": "Does the source show a recorded failure becoming an enforced check with a measured drop in repeats, rather than a longer instruction file?",
+      "boundary": "A system revising its own instructions is not independent verification that the revision helped. Model fine-tuning and weight updates are out of scope; this component covers changes to rules, checks, prompts and procedures."
+    },
+    {
+      "id": "orchestration-and-automation",
+      "label": "Orchestration and automation",
+      "status_in_scope_map": "added-unscreened",
+      "screen_terms": [
+        "orchestrat",
+        "routing",
+        "router",
+        "scheduler",
+        "workflow engine",
+        "planner",
+        "dispatch",
+        "trigger",
+        "delegat"
+      ],
+      "related_claims": [
+        "CI-004",
+        "CI-005",
+        "CI-016"
+      ],
+      "comparison_question": "Does the source show that its routing or scheduling rule beats a fixed single-agent assignment on the same task, with the rule open to inspection and its cost reported?",
+      "boundary": "More agents are not a general advantage (CI-016). A source that adds a coordinating model without a single-agent comparison does not answer the comparison question."
+    }
+  ],
+  "counts": {
+    "retained_pool_total": 1083,
+    "held_excluded_total": 41,
+    "active_pool_screened": 1042,
+    "candidates_with_any_match": 91,
+    "total_component_assignments": 94,
+    "held_component_matches_total": 2,
+    "per_component": {
+      "security-and-containment": {
+        "label": "Security and containment",
+        "active_matches": 24,
+        "research_matches": 4,
+        "repository_matches": 20,
+        "held_excluded_matches": 0,
+        "thin_coverage": false
+      },
+      "deliberation-and-dissent": {
+        "label": "Deliberation and dissent",
+        "active_matches": 6,
+        "research_matches": 2,
+        "repository_matches": 4,
+        "held_excluded_matches": 0,
+        "thin_coverage": true
+      },
+      "learning-from-operation": {
+        "label": "Learning from operation",
+        "active_matches": 11,
+        "research_matches": 4,
+        "repository_matches": 7,
+        "held_excluded_matches": 0,
+        "thin_coverage": false
+      },
+      "orchestration-and-automation": {
+        "label": "Orchestration and automation",
+        "active_matches": 53,
+        "research_matches": 8,
+        "repository_matches": 45,
+        "held_excluded_matches": 2,
+        "thin_coverage": false
+      }
+    }
+  },
+  "candidates": [
+    {
+      "source_id": "C-028",
+      "pool_id": "Q-NEXT-096",
+      "kind": "research",
+      "title_or_repo": "Reflection on Data Storytelling Tools in the Generative AI Era from the Human-AI Collaboration Perspective",
+      "source_url": "https://arxiv.org/abs/2503.02631v2",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "reflection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-112",
+      "pool_id": "Q-NEXT-180",
+      "kind": "research",
+      "title_or_repo": "AgentGuard: Repurposing Agentic Orchestrator for Safety Evaluation of Tool Orchestration",
+      "source_url": "https://arxiv.org/abs/2502.09809v1",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-128",
+      "pool_id": "Q-NEXT-196",
+      "kind": "research",
+      "title_or_repo": "MobileUse: A GUI Agent with Hierarchical Reflection for Autonomous Mobile Operation",
+      "source_url": "https://arxiv.org/abs/2507.16853v1",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "reflection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-133",
+      "pool_id": "Q-NEXT-201",
+      "kind": "research",
+      "title_or_repo": "SBOMs into Agentic AIBOMs: Schema Extensions, Agentic Orchestration, and Reproducibility Evaluation",
+      "source_url": "https://arxiv.org/abs/2603.10057v1",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-142",
+      "pool_id": "Q-NEXT-210",
+      "kind": "research",
+      "title_or_repo": "Qwen-Planner-Agent: A Closed-Loop AI-for-AI Framework for Real-World Mobile Planner Agents",
+      "source_url": "https://arxiv.org/abs/2609.29892v1",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "planner"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-169",
+      "pool_id": "Q-NEXT-236",
+      "kind": "research",
+      "title_or_repo": "MemFlow: Intent-Driven Memory Orchestration for Small Language Model Agents",
+      "source_url": "https://arxiv.org/abs/2605.03312v1",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-192",
+      "pool_id": "Q-NEXT-259",
+      "kind": "research",
+      "title_or_repo": "Autoreflection: How Agentic Strange Loops Turn Human Culture into AI Infrastructure",
+      "source_url": "https://arxiv.org/abs/2608.03800v1",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "reflection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-194",
+      "pool_id": "Q-NEXT-261",
+      "kind": "research",
+      "title_or_repo": "Prime Agent: A Self-Improving RLM Harness",
+      "source_url": "https://arxiv.org/abs/2608.23552v1",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "self-improv"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-238",
+      "pool_id": "Q-NEXT-305",
+      "kind": "research",
+      "title_or_repo": "Multi-Agent Consensus Seeking via Large Language Models",
+      "source_url": "https://arxiv.org/abs/2310.20151v2",
+      "matched_components": [
+        {
+          "component_id": "deliberation-and-dissent",
+          "matched_terms": [
+            "consensus"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-253",
+      "pool_id": "Q-NEXT-320",
+      "kind": "research",
+      "title_or_repo": "TwoStep: Multi-agent Task Planning using Classical Planners and Large Language Models",
+      "source_url": "https://arxiv.org/abs/2403.17246v2",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "planner"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-271",
+      "pool_id": "Q-NEXT-338",
+      "kind": "research",
+      "title_or_repo": "SwarmBench: Can Large Language Models Act as Agent Swarm Orchestrators?",
+      "source_url": "https://arxiv.org/abs/2608.30661v1",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-283",
+      "pool_id": "Q-NEXT-350",
+      "kind": "research",
+      "title_or_repo": "Enhancing Multi-Agent Consensus through Third-Party LLM Integration: Analyzing Uncertainty and Mitigating Hallucinations in Large Language Models",
+      "source_url": "https://arxiv.org/abs/2411.16189v1",
+      "matched_components": [
+        {
+          "component_id": "deliberation-and-dissent",
+          "matched_terms": [
+            "consensus"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-340",
+      "pool_id": "Q-NEXT-407",
+      "kind": "research",
+      "title_or_repo": "Unsupervised Query Routing for Retrieval Augmented Generation",
+      "source_url": "https://arxiv.org/abs/2501.07793v1",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "routing"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-351",
+      "pool_id": "Q-NEXT-418",
+      "kind": "research",
+      "title_or_repo": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+      "source_url": "https://arxiv.org/abs/2502.05206v6",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-353",
+      "pool_id": "Q-NEXT-420",
+      "kind": "research",
+      "title_or_repo": "Adversarial Reinforcement Learning for Large Language Model Agent Safety",
+      "source_url": "https://arxiv.org/abs/2510.05442v1",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-371",
+      "pool_id": "Q-NEXT-438",
+      "kind": "research",
+      "title_or_repo": "Delegated Misalignment: How Multi-Agent Structures Amplify LLM Safety Risks",
+      "source_url": "https://arxiv.org/abs/2609.27900v1",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "delegat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-392",
+      "pool_id": "Q-NEXT-459",
+      "kind": "research",
+      "title_or_repo": "Agent libOS: A Runtime Substrate for Capability-Controlled Self-Evolving LLM Agents",
+      "source_url": "https://arxiv.org/abs/2606.03895v3",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "C-397",
+      "pool_id": "Q-NEXT-464",
+      "kind": "research",
+      "title_or_repo": "AgentSafeEvo: Adversarial Co-Evolution for LLM Agent Safety",
+      "source_url": "https://arxiv.org/abs/2610.19422v1",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-1009",
+      "pool_id": "Q-NEXT-1144",
+      "kind": "repository",
+      "title_or_repo": "amitshekhariitbhu/ai-agents-tutorial",
+      "source_url": "https://github.com/amitshekhariitbhu/ai-agents-tutorial",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-1012",
+      "pool_id": "Q-NEXT-1147",
+      "kind": "repository",
+      "title_or_repo": "UiPath/coder_eval",
+      "source_url": "https://github.com/UiPath/coder_eval",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "sandbox"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-1028",
+      "pool_id": "Q-NEXT-1163",
+      "kind": "repository",
+      "title_or_repo": "Cre4T3Tiv3/ai-agents-reality-check",
+      "source_url": "https://github.com/Cre4T3Tiv3/ai-agents-reality-check",
+      "matched_components": [
+        {
+          "component_id": "deliberation-and-dissent",
+          "matched_terms": [
+            "ensemble"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-342",
+      "pool_id": "Q-NEXT-475",
+      "kind": "repository",
+      "title_or_repo": "bytedance/deer-flow",
+      "source_url": "https://github.com/bytedance/deer-flow",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "sandbox"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-345",
+      "pool_id": "Q-NEXT-478",
+      "kind": "repository",
+      "title_or_repo": "dair-ai/Prompt-Engineering-Guide",
+      "source_url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "lesson"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-346",
+      "pool_id": "Q-NEXT-479",
+      "kind": "repository",
+      "title_or_repo": "microsoft/ai-agents-for-beginners",
+      "source_url": "https://github.com/microsoft/ai-agents-for-beginners",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "lesson"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-363",
+      "pool_id": "Q-NEXT-496",
+      "kind": "repository",
+      "title_or_repo": "Yeachan-Heo/oh-my-claudecode",
+      "source_url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-377",
+      "pool_id": "Q-NEXT-510",
+      "kind": "repository",
+      "title_or_repo": "letta-ai/letta",
+      "source_url": "https://github.com/letta-ai/letta",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "self-improv"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-378",
+      "pool_id": "Q-NEXT-511",
+      "kind": "repository",
+      "title_or_repo": "HKUDS/DeepCode",
+      "source_url": "https://github.com/HKUDS/DeepCode",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-393",
+      "pool_id": "Q-NEXT-526",
+      "kind": "repository",
+      "title_or_repo": "HolmesGPT/holmesgpt",
+      "source_url": "https://github.com/HolmesGPT/holmesgpt",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "sandbox"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-406",
+      "pool_id": "Q-NEXT-539",
+      "kind": "repository",
+      "title_or_repo": "AgentEra/Agently",
+      "source_url": "https://github.com/AgentEra/Agently",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "trigger"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-410",
+      "pool_id": "Q-NEXT-543",
+      "kind": "repository",
+      "title_or_repo": "hhyqhh/inno-agent",
+      "source_url": "https://github.com/hhyqhh/inno-agent",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "scheduler"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-434",
+      "pool_id": "Q-NEXT-567",
+      "kind": "repository",
+      "title_or_repo": "Tencent/AI-Infra-Guard",
+      "source_url": "https://github.com/Tencent/AI-Infra-Guard",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "jailbreak"
+          ]
+        },
+        {
+          "component_id": "deliberation-and-dissent",
+          "matched_terms": [
+            "red team"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-441",
+      "pool_id": "Q-NEXT-574",
+      "kind": "repository",
+      "title_or_repo": "future-agi/future-agi",
+      "source_url": "https://github.com/future-agi/future-agi",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "guardrail"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-443",
+      "pool_id": "Q-NEXT-576",
+      "kind": "repository",
+      "title_or_repo": "cyberark/FuzzyAI",
+      "source_url": "https://github.com/cyberark/FuzzyAI",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "jailbreak"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-458",
+      "pool_id": "Q-NEXT-591",
+      "kind": "repository",
+      "title_or_repo": "HowieHwong/TrustLLM",
+      "source_url": "https://github.com/HowieHwong/TrustLLM",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-475",
+      "pool_id": "Q-NEXT-608",
+      "kind": "repository",
+      "title_or_repo": "Danielxu0208/rsi_eval",
+      "source_url": "https://github.com/Danielxu0208/rsi_eval",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "self-improv"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-477",
+      "pool_id": "Q-NEXT-610",
+      "kind": "repository",
+      "title_or_repo": "Continuum-AI-Corp/OrcaReplay",
+      "source_url": "https://github.com/Continuum-AI-Corp/OrcaReplay",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "router"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-540",
+      "pool_id": "Q-NEXT-673",
+      "kind": "repository",
+      "title_or_repo": "labring/FastGPT",
+      "source_url": "https://github.com/labring/FastGPT",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-602",
+      "pool_id": "Q-NEXT-735",
+      "kind": "repository",
+      "title_or_repo": "mksglu/context-mode",
+      "source_url": "https://github.com/mksglu/context-mode",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "sandbox"
+          ]
+        },
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "routing"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-607",
+      "pool_id": "Q-NEXT-740",
+      "kind": "repository",
+      "title_or_repo": "MervinPraison/PraisonAI",
+      "source_url": "https://github.com/MervinPraison/PraisonAI",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "self-improv"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-615",
+      "pool_id": "Q-NEXT-748",
+      "kind": "repository",
+      "title_or_repo": "ModelEngine-Group/nexent",
+      "source_url": "https://github.com/ModelEngine-Group/nexent",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-620",
+      "pool_id": "Q-NEXT-753",
+      "kind": "repository",
+      "title_or_repo": "ai-boost/awesome-harness-engineering",
+      "source_url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-631",
+      "pool_id": "Q-NEXT-764",
+      "kind": "repository",
+      "title_or_repo": "Asymptote-Labs/agent-beacon",
+      "source_url": "https://github.com/Asymptote-Labs/agent-beacon",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "self-improv"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-633",
+      "pool_id": "Q-NEXT-766",
+      "kind": "repository",
+      "title_or_repo": "moltis-org/moltis",
+      "source_url": "https://github.com/moltis-org/moltis",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "sandbox"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-644",
+      "pool_id": "Q-NEXT-777",
+      "kind": "repository",
+      "title_or_repo": "conductor-oss/conductor",
+      "source_url": "https://github.com/conductor-oss/conductor",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "workflow engine"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-650",
+      "pool_id": "Q-NEXT-783",
+      "kind": "repository",
+      "title_or_repo": "cft0808/edict",
+      "source_url": "https://github.com/cft0808/edict",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-654",
+      "pool_id": "Q-NEXT-787",
+      "kind": "repository",
+      "title_or_repo": "cadence-workflow/cadence",
+      "source_url": "https://github.com/cadence-workflow/cadence",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-664",
+      "pool_id": "Q-NEXT-797",
+      "kind": "repository",
+      "title_or_repo": "foryourhealth111-pixel/Vibe-Skills",
+      "source_url": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat",
+            "routing"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-665",
+      "pool_id": "Q-NEXT-798",
+      "kind": "repository",
+      "title_or_repo": "Arcenox-co/TickerQ",
+      "source_url": "https://github.com/Arcenox-co/TickerQ",
+      "matched_components": [
+        {
+          "component_id": "learning-from-operation",
+          "matched_terms": [
+            "reflection"
+          ]
+        },
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "scheduler"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-672",
+      "pool_id": "Q-NEXT-805",
+      "kind": "repository",
+      "title_or_repo": "moazbuilds/CodeMachine-CLI",
+      "source_url": "https://github.com/moazbuilds/CodeMachine-CLI",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-679",
+      "pool_id": "Q-NEXT-812",
+      "kind": "repository",
+      "title_or_repo": "rulego/rulego",
+      "source_url": "https://github.com/rulego/rulego",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-685",
+      "pool_id": "Q-NEXT-818",
+      "kind": "repository",
+      "title_or_repo": "durable-workflow/workflow",
+      "source_url": "https://github.com/durable-workflow/workflow",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-686",
+      "pool_id": "Q-NEXT-819",
+      "kind": "repository",
+      "title_or_repo": "heymrun/heym",
+      "source_url": "https://github.com/heymrun/heym",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-690",
+      "pool_id": "Q-NEXT-823",
+      "kind": "repository",
+      "title_or_repo": "bubblelabai/BubbleLab",
+      "source_url": "https://github.com/bubblelabai/BubbleLab",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "workflow engine"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-693",
+      "pool_id": "Q-NEXT-826",
+      "kind": "repository",
+      "title_or_repo": "kdlbs/kandev",
+      "source_url": "https://github.com/kdlbs/kandev",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-696",
+      "pool_id": "Q-NEXT-829",
+      "kind": "repository",
+      "title_or_repo": "dapr/dapr",
+      "source_url": "https://github.com/dapr/dapr",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-698",
+      "pool_id": "Q-NEXT-831",
+      "kind": "repository",
+      "title_or_repo": "windmill-labs/windmill",
+      "source_url": "https://github.com/windmill-labs/windmill",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-699",
+      "pool_id": "Q-NEXT-832",
+      "kind": "repository",
+      "title_or_repo": "argoproj/argo-workflows",
+      "source_url": "https://github.com/argoproj/argo-workflows",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "workflow engine"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-704",
+      "pool_id": "Q-NEXT-837",
+      "kind": "repository",
+      "title_or_repo": "danielgerlag/workflow-core",
+      "source_url": "https://github.com/danielgerlag/workflow-core",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "workflow engine"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-708",
+      "pool_id": "Q-NEXT-841",
+      "kind": "repository",
+      "title_or_repo": "dagucloud/dagu",
+      "source_url": "https://github.com/dagucloud/dagu",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat",
+            "scheduler"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-710",
+      "pool_id": "Q-NEXT-843",
+      "kind": "repository",
+      "title_or_repo": "camunda/camunda",
+      "source_url": "https://github.com/camunda/camunda",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-711",
+      "pool_id": "Q-NEXT-844",
+      "kind": "repository",
+      "title_or_repo": "Netflix/maestro",
+      "source_url": "https://github.com/Netflix/maestro",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-722",
+      "pool_id": "Q-NEXT-855",
+      "kind": "repository",
+      "title_or_repo": "optimajet/WorkflowEngine.NET",
+      "source_url": "https://github.com/optimajet/WorkflowEngine.NET",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "workflow engine"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-724",
+      "pool_id": "Q-NEXT-857",
+      "kind": "repository",
+      "title_or_repo": "couler-proj/couler",
+      "source_url": "https://github.com/couler-proj/couler",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "workflow engine"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-725",
+      "pool_id": "Q-NEXT-858",
+      "kind": "repository",
+      "title_or_repo": "commsor/titanoboa",
+      "source_url": "https://github.com/commsor/titanoboa",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-726",
+      "pool_id": "Q-NEXT-859",
+      "kind": "repository",
+      "title_or_repo": "besley/Slickflow",
+      "source_url": "https://github.com/besley/Slickflow",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "workflow engine"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-731",
+      "pool_id": "Q-NEXT-864",
+      "kind": "repository",
+      "title_or_repo": "runabol/tork",
+      "source_url": "https://github.com/runabol/tork",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "workflow engine"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-733",
+      "pool_id": "Q-NEXT-866",
+      "kind": "repository",
+      "title_or_repo": "indeedeng/iwf",
+      "source_url": "https://github.com/indeedeng/iwf",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-756",
+      "pool_id": "Q-NEXT-889",
+      "kind": "repository",
+      "title_or_repo": "HarnessRouter/harnessrouter",
+      "source_url": "https://github.com/HarnessRouter/harnessrouter",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "router"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-762",
+      "pool_id": "Q-NEXT-895",
+      "kind": "repository",
+      "title_or_repo": "fuxicodex/Fuxi",
+      "source_url": "https://github.com/fuxicodex/Fuxi",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "routing"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-772",
+      "pool_id": "Q-NEXT-905",
+      "kind": "repository",
+      "title_or_repo": "amElnagdy/delegate-skills",
+      "source_url": "https://github.com/amElnagdy/delegate-skills",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "delegat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-774",
+      "pool_id": "Q-NEXT-907",
+      "kind": "repository",
+      "title_or_repo": "OpenCoworkAI/open-cowork",
+      "source_url": "https://github.com/OpenCoworkAI/open-cowork",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "sandbox"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-776",
+      "pool_id": "Q-NEXT-909",
+      "kind": "repository",
+      "title_or_repo": "happier-dev/happier",
+      "source_url": "https://github.com/happier-dev/happier",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-791",
+      "pool_id": "Q-NEXT-924",
+      "kind": "repository",
+      "title_or_repo": "NVIDIA/SkillSpector",
+      "source_url": "https://github.com/NVIDIA/SkillSpector",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "exfiltrat",
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-798",
+      "pool_id": "Q-NEXT-931",
+      "kind": "repository",
+      "title_or_repo": "nolabs-ai/nono",
+      "source_url": "https://github.com/nolabs-ai/nono",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "sandbox"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-802",
+      "pool_id": "Q-NEXT-935",
+      "kind": "repository",
+      "title_or_repo": "Kritt-ai/open-kritt",
+      "source_url": "https://github.com/Kritt-ai/open-kritt",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-820",
+      "pool_id": "Q-NEXT-953",
+      "kind": "repository",
+      "title_or_repo": "mrwadams/stride-gpt",
+      "source_url": "https://github.com/mrwadams/stride-gpt",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "threat model"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-822",
+      "pool_id": "Q-NEXT-955",
+      "kind": "repository",
+      "title_or_repo": "hashgraph-online/hol-guard",
+      "source_url": "https://github.com/hashgraph-online/hol-guard",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-825",
+      "pool_id": "Q-NEXT-958",
+      "kind": "repository",
+      "title_or_repo": "Commando-X/vuln-bank",
+      "source_url": "https://github.com/Commando-X/vuln-bank",
+      "matched_components": [
+        {
+          "component_id": "deliberation-and-dissent",
+          "matched_terms": [
+            "deliberat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-826",
+      "pool_id": "Q-NEXT-959",
+      "kind": "repository",
+      "title_or_repo": "pipelab-org/pipelock",
+      "source_url": "https://github.com/pipelab-org/pipelock",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "exfiltrat",
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-828",
+      "pool_id": "Q-NEXT-961",
+      "kind": "repository",
+      "title_or_repo": "toby-bridges/api-relay-audit",
+      "source_url": "https://github.com/toby-bridges/api-relay-audit",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-834",
+      "pool_id": "Q-NEXT-967",
+      "kind": "repository",
+      "title_or_repo": "arcjet/arcjet-js",
+      "source_url": "https://github.com/arcjet/arcjet-js",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-839",
+      "pool_id": "Q-NEXT-972",
+      "kind": "repository",
+      "title_or_repo": "secureagentics/Adrian",
+      "source_url": "https://github.com/secureagentics/Adrian",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-847",
+      "pool_id": "Q-NEXT-980",
+      "kind": "repository",
+      "title_or_repo": "latitude-dev/latitude-llm",
+      "source_url": "https://github.com/latitude-dev/latitude-llm",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "dispatch"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-864",
+      "pool_id": "Q-NEXT-997",
+      "kind": "repository",
+      "title_or_repo": "sina2266/Gozar",
+      "source_url": "https://github.com/sina2266/Gozar",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "routing"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-868",
+      "pool_id": "Q-NEXT-1001",
+      "kind": "repository",
+      "title_or_repo": "inferock/inferock-bench",
+      "source_url": "https://github.com/inferock/inferock-bench",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "router"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-871",
+      "pool_id": "Q-NEXT-1004",
+      "kind": "repository",
+      "title_or_repo": "shyftlabs/continuum",
+      "source_url": "https://github.com/shyftlabs/continuum",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-878",
+      "pool_id": "Q-NEXT-1011",
+      "kind": "repository",
+      "title_or_repo": "ByteYellow/AgentProvenance",
+      "source_url": "https://github.com/ByteYellow/AgentProvenance",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "sandbox"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-886",
+      "pool_id": "Q-NEXT-1019",
+      "kind": "repository",
+      "title_or_repo": "VoltAgent/ai-agent-platform",
+      "source_url": "https://github.com/VoltAgent/ai-agent-platform",
+      "matched_components": [
+        {
+          "component_id": "orchestration-and-automation",
+          "matched_terms": [
+            "orchestrat"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-888",
+      "pool_id": "Q-NEXT-1021",
+      "kind": "repository",
+      "title_or_repo": "CollieAi/llm-firewall",
+      "source_url": "https://github.com/CollieAi/llm-firewall",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "jailbreak",
+            "prompt injection"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-889",
+      "pool_id": "Q-NEXT-1022",
+      "kind": "repository",
+      "title_or_repo": "cristianodabc/aludel",
+      "source_url": "https://github.com/cristianodabc/aludel",
+      "matched_components": [
+        {
+          "component_id": "deliberation-and-dissent",
+          "matched_terms": [
+            "red team"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    },
+    {
+      "source_id": "R-989",
+      "pool_id": "Q-NEXT-1122",
+      "kind": "repository",
+      "title_or_repo": "databendlabs/databend",
+      "source_url": "https://github.com/databendlabs/databend",
+      "matched_components": [
+        {
+          "component_id": "security-and-containment",
+          "matched_terms": [
+            "sandbox"
+          ]
+        }
+      ],
+      "grade": null,
+      "disposition": "retained-pool-routing-proposal-only",
+      "adoption": "not adopted",
+      "hot100_selection": "not selected"
+    }
+  ]
+}

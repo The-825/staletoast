@@ -51,9 +51,12 @@ python scripts/repository_landscape.py --check
 python scripts/repository_review_promotions.py --check
 python scripts/repository_triage.py --check
 python site/build_scope_map.py --check
+python scripts/verify_bibliographic_metadata.py --check
+python scripts/screen_added_components.py --check
+python scripts/ingest_intake.py --check-corpus
 ```
 
-For a reviewed new intake, rebuild priorities with `--write --date YYYY-MM-DD`,
+For a reviewed new intake, validate and stage coordinated updates across the ledger, appraisals, bibliographic verifications, repository landscape, and priorities with `python scripts/ingest_intake.py --prepare <candidate.json> --date YYYY-MM-DD [--write]` (or rank the unappraised intake backlog with `python scripts/ingest_intake.py --next-batch`),
 then freeze a new chart with `python site/build_discovery.py --edition-date
 YYYY-MM-DD`. For the weekly offline preparation of both steps with a dated
 review receipt, see [weekly Hot100 preparation](docs/weekly-hot100.md).

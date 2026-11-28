@@ -5,6 +5,8 @@ import re
 from pathlib import Path
 from ledger_markdown import cells, source_link
 from build_priorities import identified_rows
+import build_scope_map as scope_map
+import collaboration_rubric as rubric
 from intake_state import AUTOMATED, IntakeState, validate_catalog_semantics
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -202,3 +204,11 @@ if __name__ == "__main__":
     write("research.json", research)
     write("repositories.json", repositories)
     write("claims.json", claim_catalog())
+    write("scorecards.json", rubric.export_web_scorecards(DOCS, repositories))
+    loaded_scope = scope_map.load()
+    scope_map.WEB_VIEW.parent.mkdir(parents=True, exist_ok=True)
+    scope_map.WEB_VIEW.write_text(
+        scope_map.render_web_json(loaded_scope, scope_map.lf_sha256(scope_map.SOURCE)),
+        encoding="utf-8",
+        newline="\n",
+    )

@@ -162,11 +162,13 @@ function charts() {
   const pieces = html => { const cut = html.indexOf('<details class="reference">'); return [html.slice(0, cut), html.slice(cut)]; };
   const research = ctx.chartItem("research", entries[0]);
   const repo = ctx.chartItem("repositories", repoEntry);
+  const unsafe = ctx.chartItem("research", Object.assign({}, entries[0], {url: "javascript:alert(1)"}));
   const none = ctx.filterChartEntries(entries, "zzzzqqqq", id => id);
   const some = ctx.filterChartEntries(entries, "", id => id);
   return {
     researchPrimary: pieces(research)[0], researchReference: pieces(research)[1], researchId: entries[0].id,
     repoPrimary: pieces(repo)[0], repoReference: pieces(repo)[1], repoId: repoEntry.id, repoCommit: repoEntry.snapshot_commit || null,
+    unsafeChartHtml: unsafe,
     noneLength: none.length, allLength: some.length, entriesLength: entries.length,
     positionsKept: some.map(e => e.position).join() === entries.map(e => e.position).join(),
     movement: [ctx.chartMovement({entry_state: "new"}), ctx.chartMovement({entry_state: "continuing", movement: 2}), ctx.chartMovement({entry_state: "continuing", movement: -3}), ctx.chartMovement({entry_state: "continuing", movement: 0})]
@@ -182,12 +184,76 @@ async function detail(search) {
   return mainEl.innerHTML;
 }
 
+async function runCatalogDeepLink(catalog, search) {
+  const dom = makeDom(catalog + ".html", catalog);
+  const replaced = [];
+  const loc = {pathname: "/" + catalog + ".html", search, hash: ""};
+  const history = {replaceState(_s, _t, url) { replaced.push(url); }};
+  const ctx = context(dom.document, {location: loc, history});
+  for (const f of ["topics.js", "catalog-ui.js", "app.js"]) run(ctx, f);
+  const get = dom.get;
+  await until(() => get("#cards").innerHTML.length > 0 || !get("#empty").hidden);
+  const initial = {
+    claim: get("#claim").value,
+    search: get("#search").value,
+    filter: get("#filter").value,
+    filters: get("#filter-summary").textContent,
+    count: get("#count").textContent,
+    cardsHtml: get("#cards").innerHTML
+  };
+  dom.fire("#reset", "click");
+  return {initial, afterReset: {claim: get("#claim").value, search: get("#search").value, replaced}};
+}
+
+async function runClaims(hash) {
+  const target = {innerHTML: "", textContent: ""};
+  const inspectorEl = {innerHTML: "", scrollIntoView() {}};
+  const document = {
+    querySelector: sel => sel === "#claims" ? target : sel === "#claim-inspector" ? inspectorEl : null,
+    querySelectorAll: () => []
+  };
+  const replaced = [];
+  const ctx = context(document, {
+    location: {hash: hash || ""},
+    history: {replaceState(_s, _t, url) { replaced.push(url); }}
+  });
+  for (const f of ["topics.js", "claims.js"]) run(ctx, f);
+  await until(() => target.innerHTML.length > 0);
+  return {pageHtml: target.innerHTML, inspectorHtml: inspectorEl.innerHTML, replaced};
+}
+
+async function chartDeepLink(search) {
+  const dom = makeDom("charts.html", "research");
+  const replaced = [];
+  const loc = {pathname: "/charts.html", search, hash: ""};
+  const history = {replaceState(_s, _t, url) { replaced.push(url); }};
+  const ctx = context(dom.document, {location: loc, history});
+  for (const f of ["topics.js", "catalog-ui.js", "charts.js"]) run(ctx, f);
+  const get = dom.get;
+  await until(() => !get("#current-collection").hidden);
+  const before = {
+    kind: get("#chart-kind").value,
+    claim: get("#chart-claim").value,
+    depth: get("#chart-depth").value,
+    summary: get("#chart-summary").textContent,
+    resetDisabled: get("#chart-reset").disabled
+  };
+  dom.fire("#chart-reset", "click");
+  return {before, afterReset: {claim: get("#chart-claim").value, depth: get("#chart-depth").value, replaced}};
+}
+
 (async () => {
   const result = {
     research: await runCatalog("research"), repositories: await runCatalog("repositories"),
     researchFail: await runCatalog("research", true), pure: pure(), charts: charts(),
     chartCoverage: await chartCoverage(),
+    chartDeep: await chartDeepLink("?kind=repositories&claim=ci-007&depth=readme-screened"),
+    deepLinkResearch: await runCatalogDeepLink("research", "?claim=ci-007&q=authority&filter=NOPE"),
+    deepLinkRepo: await runCatalogDeepLink("repositories", "?claim=CI-007"),
+    claimsView: await runClaims("#ci-007"),
     detailResearch: await detail("?type=research&id=012"), detailRepo: await detail("?type=repositories&id=R-242"),
+    detailRubricRepo: await detail("?type=repositories&id=R-031"),
+    detailGuidedRepo: await detail("?type=repositories&id=R-336"),
     detailAutomated: await detail("?type=research&id=C-026"),
     detailMissing: await detail("?type=research&id=NOPE"), detailBad: await detail("?type=other"),
     homeText: vm.runInContext("latestEditionText({latest: {edition_date: '2026-11-02'}})", (() => { const c = context(null); run(c, "home.js"); return c; })()),
@@ -498,6 +564,66 @@ class BehaviorTests(unittest.TestCase):
         self.assertIn("Latest edition: 2026-11-02.", self.result["homeText"])
         self.assertIn("not the freshness", self.result["homeText"])
         self.assertEqual("", self.result["homeBad"])
+
+    def test_catalog_url_parameters_filter_safely_and_reset_cleanly(self):
+        deep = self.result["deepLinkResearch"]
+        self.assertEqual("CI-007", deep["initial"]["claim"])
+        self.assertEqual("authority", deep["initial"]["search"])
+        self.assertEqual("", deep["initial"]["filter"])
+        self.assertIn("Who can approve each action", deep["initial"]["filters"])
+        self.assertEqual("", deep["afterReset"]["claim"])
+        self.assertEqual("", deep["afterReset"]["search"])
+        self.assertIn("/research.html", deep["afterReset"]["replaced"])
+        repo_deep = self.result["deepLinkRepo"]
+        self.assertEqual("CI-007", repo_deep["initial"]["claim"])
+        expected_repos = sum("CI-007" in (r.get("claims") or []) for r in self.repositories)
+        self.assertIn(f"{expected_repos} of {len(self.repositories)} repositories match.", repo_deep["initial"]["count"])
+
+    def test_claims_page_links_back_to_catalogs_and_labels_scope_components(self):
+        view = self.result["claimsView"]
+        inspector = view["inspectorHtml"]
+        expected_res = sum("CI-007" in (r.get("claims") or []) for r in self.research)
+        expected_repos = sum("CI-007" in (r.get("claims") or []) for r in self.repositories)
+        self.assertIn('href="research.html?claim=CI-007"', inspector)
+        self.assertIn('href="repositories.html?claim=CI-007"', inspector)
+        self.assertIn(f"Browse research ({expected_res})", inspector)
+        self.assertIn(f"Browse repositories ({expected_repos})", inspector)
+        self.assertIn("Authority and handoff", inspector)
+        self.assertIn("Established in baseline routing", inspector)
+        self.assertIn("Security and containment", inspector)
+        self.assertIn("not yet screened", inspector)
+        self.assertIn("Components of collaborative intelligence.", view["pageHtml"])
+        primary, _, reference = inspector.partition('<details class="reference">')
+        visible_primary = re.sub(r"<[^>]+>", " ", primary)
+        self.assertNotRegex(visible_primary, r"\bCI-\d{3}\b")
+        self.assertIn("<code>CI-007</code>", reference)
+
+    def test_chart_deep_links_and_detail_rubric_scorecard_render_cleanly(self):
+        deep = self.result["chartDeep"]
+        self.assertEqual("repositories", deep["before"]["kind"])
+        self.assertEqual("CI-007", deep["before"]["claim"])
+        self.assertEqual("readme-screened", deep["before"]["depth"])
+        self.assertFalse(deep["before"]["resetDisabled"])
+        self.assertEqual("", deep["afterReset"]["claim"])
+        self.assertEqual("", deep["afterReset"]["depth"])
+        self.assertIn("/charts.html?kind=repositories", deep["afterReset"]["replaced"])
+
+        rubric_html = self.result["detailRubricRepo"]
+        primary, _, reference = rubric_html.partition('<details class="reference">')
+        self.assertIn("Seven-dimension collaboration rubric", primary)
+        self.assertIn("Provisional scorecard", primary)
+        self.assertNotIn("100 established points", primary)
+        self.assertNotIn("points unresolved", primary)
+        self.assertIn("Delegated authority and consent", primary)
+        self.assertIn("Recorded mechanism breakdown", primary)
+        visible_primary = re.sub(r"<[^>]+>", " ", primary)
+        self.assertNotRegex(visible_primary, r"\bR-\d{3}\b|\bCI-\d{3}\b")
+        self.assertIn("Rubric source revision", reference)
+        self.assertNotIn("javascript:", self.result["charts"]["unsafeChartHtml"])
+
+        guided_html = self.result["detailGuidedRepo"]
+        self.assertIn("Guided reading path", guided_html)
+        self.assertIn("Explore all guided reading paths", guided_html)
 
 
 if __name__ == "__main__":

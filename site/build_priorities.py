@@ -20,7 +20,9 @@ GAPS = ['CI-006', 'CI-007', 'CI-008', 'CI-009', 'CI-004', 'CI-017', 'CI-001',
         'CI-002', 'CI-010', 'CI-011', 'CI-016', 'CI-012', 'CI-015', 'CI-003',
         'CI-005', 'CI-013', 'CI-014']
 QUESTION = "Which evidence reduces uncertainty about handoff recovery, authority, revision-sensitive memory, and total evaluation burden?"
-IDENTITY = re.compile(r"(?:\d{3}|C-\d{3})")
+IDENTITY = re.compile(r"(?:\d{3,}|C-\d{3,})")
+HEADER_IDS = {"ID", "Candidate ID"}
+MALFORMED_IDENTITY = re.compile(r"(?:\d{1,2}|R-\S*|C-\S*)")
 # Automated intake shares one constant key after every named gap and unclaimed appraised record.
 INTAKE_RANK = len(GAPS) + 1
 INTAKE_KEY = (INTAKE_RANK, 0, 0)
@@ -32,8 +34,14 @@ def identified_rows(text, widths):
         if not line.startswith("|"):
             continue
         row = cells(line)
-        if not IDENTITY.fullmatch(row[0]):
+        head = row[0].strip() if row else ""
+        if not head or head in HEADER_IDS or set(head) <= {"-", ":"}:
             continue
+        if not IDENTITY.fullmatch(head):
+            if MALFORMED_IDENTITY.fullmatch(head):
+                raise ValueError(f"{head}: invalid research source ID")
+            continue
+        row[0] = head
         if len(row) not in widths:
             raise ValueError(f"{row[0]}: malformed source row")
         if row[0] in rows:
