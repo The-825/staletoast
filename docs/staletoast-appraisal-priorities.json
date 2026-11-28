@@ -2,8 +2,8 @@
   "schema_version": 1,
   "date": "2026-11-23",
   "kind": "derived appraisal routing projection, not a second findings ledger",
-  "research_source_sha256": "f99dfda1669598d0a33771936d1ef31ba77850abca37bfcda493d142b24202d5",
-  "appraisal_source_sha256": "c07acbf284b87bed6ff804e9621c4852f87b274a33a747f4ad59b525550e9ec8",
+  "research_source_sha256": "1ee6310b0d1d82ec57e876ff196966e153df010c81cf37c5f61d709151f927f0",
+  "appraisal_source_sha256": "6e497fd90af5e178c9f33efc711dfe05f7c4b7e38ec8a6e22080dbcc1b5b4909",
   "repository_source_sha256": "834ade57255b345edcc7b56865b50814223fb7fc7f52a7d241b52209954e895c",
   "disposition_source_sha256": "c5d59720d5702b4870fb816a2c7e83aee98ed395fc15e767467913911b3ad434",
   "batch_source_sha256": "4f24036774410a577c08ff1563a208dab3a22f4b7b4b9024d51b731439fd444d",
@@ -2271,6 +2271,28 @@
       ],
       "directness": "D2 adjacent",
       "family": "LOTZE-MIMICS-ENGAGEMENT",
+      "horizon": "single",
+      "review_depth": "selected-full-text",
+      "record_state": "candidate-not-promoted",
+      "appraisal_state": "source-screened",
+      "automated_screen": false,
+      "appraisal_priority_rank": 28,
+      "priority_key": [
+        6,
+        1,
+        2
+      ],
+      "priority_claim": "CI-001"
+    },
+    {
+      "id": "C-449",
+      "title": "Asking Clarification Questions in Knowledge-Based Question Answering",
+      "url": "https://aclanthology.org/D19-1172/",
+      "claims": [
+        "CI-001"
+      ],
+      "directness": "D2 adjacent",
+      "family": "XU-CLAQUA-KBQA",
       "horizon": "single",
       "review_depth": "selected-full-text",
       "record_state": "candidate-not-promoted",
