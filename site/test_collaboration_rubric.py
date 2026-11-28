@@ -62,6 +62,10 @@ class RubricTests(unittest.TestCase):
             self.assertEqual(100, score["established"])
         with self.assertRaisesRegex(ValueError, "finding direction"):
             assess(self._full_card(finding_direction="hype-only"))
+        bad_basis = self._full_card()
+        bad_basis["ratings"]["direction"]["basis"] = None
+        with self.assertRaisesRegex(ValueError, "missing evidence basis"):
+            assess(bad_basis)
 
     def test_stale_repository_commit_moves_card_to_provisional(self):
         card = self._full_card(source_revision="a" * 40)
@@ -88,6 +92,8 @@ class RubricTests(unittest.TestCase):
             )
             carried = load_cards_through(docs, "2026-11-30", held_ids={"R-HELD"})
             self.assertEqual({"R-001"}, set(carried))
+            earlier_before_hold = load_cards_through(docs, "2026-11-30", held_since={"R-HELD": "2026-12-07"})
+            self.assertEqual({"R-001", "R-HELD"}, set(earlier_before_hold))
             exported = export_web_scorecards(docs, repositories=[{"id": "R-001", "snapshot_commit": "a" * 40}])
             self.assertEqual("2026-11-23", exported["latest_scorecard_date"])
             self.assertTrue(exported["cards"]["R-001"]["complete"])

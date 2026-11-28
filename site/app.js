@@ -14,19 +14,28 @@ const label = CatalogUI.titleCase;
 const isAutomated = CatalogUI.isAutomated;
 const detailLink = (kind, id, text) =>
   `<a href="detail.html?type=${kind}&id=${encodeURIComponent(id)}">${escapeHtml(text)}</a>`;
-const claimLinks = claims => claims.map(claim => `<a class="pill" href="claims.html#${claim.toLowerCase()}">${escapeHtml(EvidenceTopics.label(claim))}</a>`).join("");
+const safeHttps = value => {
+  const raw = String(value ?? "").trim();
+  return /^https:\/\/[^\s"'<>]+$/i.test(raw) ? raw : "";
+};
+const claimLinks = claims => claims.map(claim => `<a class="pill" href="claims.html#${encodeURIComponent(String(claim).toLowerCase())}">${escapeHtml(EvidenceTopics.label(claim))}</a>`).join("");
 const fact = (name, value, note = "") => `<div><dt>${escapeHtml(name)}</dt><dd>${value}${note ? `<small>${escapeHtml(note)}</small>` : ""}</dd></div>`;
-const hotBadge = id => hot100Positions[id]
-  ? `<a class="pill hot-pill" href="charts.html${type === "repositories" ? "?kind=repositories" : ""}">Hot 100 #${hot100Positions[id]}</a>`
-  : "";
+const hotBadge = item => {
+  const pos = hot100Positions[item.id];
+  if (!pos) return "";
+  const q = encodeURIComponent(item.title || item.repository || "");
+  const qs = type === "repositories" ? `?kind=repositories&q=${q}` : `?q=${q}`;
+  return `<a class="pill hot-pill" href="charts.html${qs}">Hot 100 #${escapeHtml(pos)}</a>`;
+};
 
 function researchCard(item) {
   const automated = isAutomated(item);
   const depth = CatalogUI.researchDepth(item);
   const directness = CatalogUI.directnessText(item);
   const order = automated ? "Not ranked, awaiting appraisal" : `${item.evidenceOrder} of ${item.evidenceOrderCount}`;
+  const sourceHref = safeHttps(item.url);
   return `<article class="record-card">
-    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${hotBadge(item.id)}${item.record_state === "candidate-not-promoted" ? '<span class="pill">Candidate, not promoted</span>' : ""}</p>
+    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${hotBadge(item)}${item.record_state === "candidate-not-promoted" ? '<span class="pill">Candidate, not promoted</span>' : ""}</p>
     <h3>${detailLink("research", item.id, item.title)}</h3>
     <p class="finding">${escapeHtml(EvidenceTopics.text(item.finding))}</p>
     <dl class="facts">
@@ -37,7 +46,7 @@ function researchCard(item) {
       ${fact("Publication or review date", "Not recorded", "Check the original source for its date.")}
     </dl>
     ${item.claims.length ? `<p class="topics"><span class="topics-label">Topics</span> ${claimLinks(item.claims)}</p>` : ""}
-    <p class="card-actions">${detailLink("research", item.id, "View profile")} <a class="button secondary" href="${escapeHtml(item.url)}">Open original source</a></p>
+    <p class="card-actions">${detailLink("research", item.id, "View profile")}${sourceHref ? ` <a class="button secondary" href="${escapeHtml(sourceHref)}">Open original source</a>` : ""}</p>
     <details class="reference"><summary>Reference details</summary>
       <p>${escapeHtml(depth.note)}</p>
       <p>Review number: <code>${escapeHtml(item.id)}</code></p>
@@ -56,8 +65,9 @@ function repositoryCard(item) {
   const mechanisms = automated
     ? `All ${item.mechanismTotal} unknown`
     : `${item.visibleMechanisms} visible, ${item.partialMechanisms} partial, ${item.unknownMechanisms} unknown, of ${item.mechanismTotal}`;
+  const sourceHref = safeHttps(item.url);
   return `<article class="record-card">
-    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${hotBadge(item.id)}${automated ? '<span class="pill">Unvetted third-party repository</span>' : ""}</p>
+    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${hotBadge(item)}${automated ? '<span class="pill">Unvetted third-party repository</span>' : ""}</p>
     <h3>${detailLink("repositories", item.id, item.repository)}</h3>
     <p class="finding">${escapeHtml(EvidenceTopics.text(item.evidence_note))}</p>
     <dl class="facts">
@@ -68,7 +78,7 @@ function repositoryCard(item) {
       ${fact(automated ? "Screen recorded" : "Review recorded", escapeHtml(CatalogUI.dateOrNotRecorded(item.lastReviewed)), "A metadata or README screen is not a full appraisal.")}
     </dl>
     ${item.claims.length ? `<p class="topics"><span class="topics-label">Topics</span> ${claimLinks(item.claims)}</p>` : ""}
-    <p class="card-actions">${detailLink("repositories", item.id, "View profile")} <a class="button secondary" href="${escapeHtml(item.url)}">${automated ? "Open GitHub repository (unvetted)" : "Open GitHub repository"}</a></p>
+    <p class="card-actions">${detailLink("repositories", item.id, "View profile")}${sourceHref ? ` <a class="button secondary" href="${escapeHtml(sourceHref)}">${automated ? "Open GitHub repository (unvetted)" : "Open GitHub repository"}</a>` : ""}</p>
     <details class="reference"><summary>Reference details</summary>
       <p>${escapeHtml(depth.note)}</p>
       <p>Record ID: <code>${escapeHtml(item.id)}</code></p>

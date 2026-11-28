@@ -136,6 +136,12 @@ def _valid_iso_date(value: str) -> bool:
 
 
 def assess(card, *, expected_commit=None):
+    if not isinstance(card, dict) or not isinstance(card.get("ratings"), dict):
+        raise ValueError("scorecard ratings must be an object")
+    if not isinstance(card.get("patterns"), list):
+        raise ValueError("scorecard patterns must be a list")
+    if not isinstance(card.get("source"), str):
+        raise ValueError("scorecard requires a pinned evidence reference")
     ratings = card["ratings"]
     if set(ratings) != set(WEIGHTS):
         raise ValueError("scorecard needs all seven dimensions")
@@ -152,8 +158,11 @@ def assess(card, *, expected_commit=None):
         if item is None:
             unresolved += weight
             continue
-        rating = item["rating"]
-        if type(rating) is not int or not 0 <= rating <= 4 or not item.get("basis", "").strip():
+        if not isinstance(item, dict):
+            raise ValueError(f"invalid rating object for {name}")
+        rating = item.get("rating")
+        basis = item.get("basis")
+        if type(rating) is not int or not 0 <= rating <= 4 or not isinstance(basis, str) or not basis.strip():
             raise ValueError(f"invalid rating or missing evidence basis for {name}")
         points += rating * weight / 4
         if name != "evidence" and rating > 0 and rating >= highest:
@@ -238,13 +247,14 @@ def load_cards(docs, edition_date):
     return load_cards_through(docs, edition_date)
 
 
-def load_cards_through(docs, edition_date, *, held_ids=None):
+def load_cards_through(docs, edition_date, *, held_ids=None, held_since=None):
     if not _valid_iso_date(edition_date):
         raise ValueError("edition_date must use YYYY-MM-DD")
     folder = Path(docs) / "staletoast-scorecards"
     if not folder.exists():
         return {}
     held = set(held_ids or ())
+    held_dates = dict(held_since or {})
     merged: dict[str, dict] = {}
     for path in sorted(folder.glob("*.json")):
         file_date = path.stem
@@ -254,14 +264,13 @@ def load_cards_through(docs, edition_date, *, held_ids=None):
             continue
         cards = _read_scorecard_file(path)
         for identity, card in cards.items():
-            if identity in held and file_date < edition_date:
+            is_held_at_edition = (
+                (identity in held_dates and held_dates[identity] <= edition_date)
+                or (identity in held and identity not in held_dates)
+            )
+            if is_held_at_edition and file_date < edition_date:
                 continue
             merged[identity] = card
-    for identity in list(merged):
-        if identity in held:
-            # Same-date held cards stay in merged so make_edition rejects invalid active targets;
-            # earlier carried-forward cards for later-held records are skipped above.
-            pass
     return merged
 
 

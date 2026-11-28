@@ -27,6 +27,16 @@ class IngestIntakeTests(unittest.TestCase):
         )
         self.assertIn("github:openai/openai-agents-python", repo_keys)
         self.assertIn("github:openai/swarm-next", repo_keys)
+        self.assertNotEqual(
+            intake.canonical_url_key("https://publisher.example.org/doc/AbCdEf"),
+            intake.canonical_url_key("https://publisher.example.org/doc/abcdef"),
+        )
+        with self.assertRaisesRegex(ValueError, "exceeds daily cap"):
+            intake.validate_candidate_payload({"research": [{}] * 13, "repositories": []})
+        with TemporaryDirectory() as tmp:
+            p = Path(tmp) / "dup.txt"
+            with self.assertRaisesRegex(ValueError, "duplicate target path"):
+                intake._atomic_swap([(p, "a"), (p, "b")])
 
     def test_live_corpus_has_no_same_kind_canonical_collisions(self):
         report = intake.check_corpus(ROOT)

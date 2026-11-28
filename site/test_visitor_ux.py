@@ -162,11 +162,13 @@ function charts() {
   const pieces = html => { const cut = html.indexOf('<details class="reference">'); return [html.slice(0, cut), html.slice(cut)]; };
   const research = ctx.chartItem("research", entries[0]);
   const repo = ctx.chartItem("repositories", repoEntry);
+  const unsafe = ctx.chartItem("research", Object.assign({}, entries[0], {url: "javascript:alert(1)"}));
   const none = ctx.filterChartEntries(entries, "zzzzqqqq", id => id);
   const some = ctx.filterChartEntries(entries, "", id => id);
   return {
     researchPrimary: pieces(research)[0], researchReference: pieces(research)[1], researchId: entries[0].id,
     repoPrimary: pieces(repo)[0], repoReference: pieces(repo)[1], repoId: repoEntry.id, repoCommit: repoEntry.snapshot_commit || null,
+    unsafeChartHtml: unsafe,
     noneLength: none.length, allLength: some.length, entriesLength: entries.length,
     positionsKept: some.map(e => e.position).join() === entries.map(e => e.position).join(),
     movement: [ctx.chartMovement({entry_state: "new"}), ctx.chartMovement({entry_state: "continuing", movement: 2}), ctx.chartMovement({entry_state: "continuing", movement: -3}), ctx.chartMovement({entry_state: "continuing", movement: 0})]
@@ -610,11 +612,14 @@ class BehaviorTests(unittest.TestCase):
         primary, _, reference = rubric_html.partition('<details class="reference">')
         self.assertIn("Seven-dimension collaboration rubric", primary)
         self.assertIn("Provisional scorecard", primary)
+        self.assertNotIn("100 established points", primary)
+        self.assertNotIn("points unresolved", primary)
         self.assertIn("Delegated authority and consent", primary)
         self.assertIn("Recorded mechanism breakdown", primary)
         visible_primary = re.sub(r"<[^>]+>", " ", primary)
         self.assertNotRegex(visible_primary, r"\bR-\d{3}\b|\bCI-\d{3}\b")
         self.assertIn("Rubric source revision", reference)
+        self.assertNotIn("javascript:", self.result["charts"]["unsafeChartHtml"])
 
         guided_html = self.result["detailGuidedRepo"]
         self.assertIn("Guided reading path", guided_html)

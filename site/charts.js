@@ -1,5 +1,9 @@
 "use strict";
 const chartEscape = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+const safeChartHttps = value => {
+  const raw = String(value ?? "").trim();
+  return /^https:\/\/[^\s"'<>]+$/i.test(raw) ? raw : "";
+};
 const CHART_DEPTH_LABELS = {
   "selected-full-text": "Selected full-text review",
   "screened-structural": "Structural source screen",
@@ -57,8 +61,17 @@ function chartMetaContext(kind, row) {
 }
 function chartItem(kind, row) {
   const detail = `detail.html?type=${chartKindPath(kind)}&id=${encodeURIComponent(row.id)}`;
-  const topicPills = (row.claims || []).map(id => `<a class="pill" href="claims.html#${id.toLowerCase()}">${chartEscape(EvidenceTopics.label(id))}</a>`).join("");
-  return `<li><span class="chart-position" aria-label="Position ${row.position}">${row.position}</span><div><h2><a href="${chartEscape(detail)}">${chartEscape(row.title)}</a></h2><p class="badges"><span class="evidence-badge">${chartEscape(chartDepthLabel(kind, row))}</span>${row.record_state === "candidate-not-promoted" ? '<span class="evidence-badge">Candidate, not promoted</span>' : ""}</p><p class="chart-focus">${chartEscape(chartFocus(row))}</p>${row.source_link_correction ? `<p class="note">Source link corrected ${chartEscape(row.source_link_correction.recorded_date)}. <a href="${chartEscape(row.source_link_correction.evidence_url)}">See the source evidence</a>.</p>` : ""}${topicPills ? `<p class="topics"><span class="topics-label">Topics</span> ${topicPills}</p>` : ""}<p class="chart-priority">Review priority ${row.priority_group} (tied entries share a number)${chartEscape(chartMetaContext(kind, row))}</p><p class="card-actions"><a href="${chartEscape(detail)}">View profile</a> <a class="button secondary" href="${chartEscape(row.url)}">Open original source</a></p><details class="reference"><summary>Reference details</summary><p>Record ID: <code>${chartEscape(row.id)}</code></p><p>Evidence depth code: <code>${chartEscape(row.evidence_depth)}</code></p><p>Family code: <code>${chartEscape(row.family)}</code></p><p>Priority group: ${chartEscape(row.priority_group)}</p><p>Recorded reason: ${chartEscape(EvidenceTopics.text(row.reason))}</p>${row.snapshot_commit ? `<p>Source commit: <code>${chartEscape(row.snapshot_commit)}</code></p>` : ""}</details></div><aside><span class="${chartMovementClass(row)}">${chartEscape(chartMovement(row))}</span><span>Previous: ${row.previous_position ?? (row.entry_state === "reentry" ? "Off chart" : "First appearance")}</span><span>Peak: ${row.peak_position}</span><span>Appearances: ${row.appearances}</span></aside></li>`;
+  const sourceHref = safeChartHttps(row.url);
+  const sourceAction = sourceHref ? ` <a class="button secondary" href="${chartEscape(sourceHref)}">Open original source</a>` : "";
+  const topicPills = (row.claims || []).map(id => `<a class="pill" href="claims.html#${encodeURIComponent(String(id).toLowerCase())}">${chartEscape(EvidenceTopics.label(id))}</a>`).join("");
+  const correctionHref = row.source_link_correction ? safeChartHttps(row.source_link_correction.evidence_url) : "";
+  const correctionNote = row.source_link_correction
+    ? `<p class="note">Source link corrected ${chartEscape(row.source_link_correction.recorded_date)}.${correctionHref ? ` <a href="${chartEscape(correctionHref)}">See the source evidence</a>.` : ""}</p>`
+    : "";
+  const prevText = row.previous_position !== null && row.previous_position !== undefined
+    ? chartEscape(row.previous_position)
+    : (row.entry_state === "reentry" ? "Off chart" : "First appearance");
+  return `<li><span class="chart-position" aria-label="Position ${chartEscape(row.position)}">${chartEscape(row.position)}</span><div><h2><a href="${chartEscape(detail)}">${chartEscape(row.title)}</a></h2><p class="badges"><span class="evidence-badge">${chartEscape(chartDepthLabel(kind, row))}</span>${row.record_state === "candidate-not-promoted" ? '<span class="evidence-badge">Candidate, not promoted</span>' : ""}</p><p class="chart-focus">${chartEscape(chartFocus(row))}</p>${correctionNote}${topicPills ? `<p class="topics"><span class="topics-label">Topics</span> ${topicPills}</p>` : ""}<p class="chart-priority">Review priority ${chartEscape(row.priority_group)} (tied entries share a number)${chartEscape(chartMetaContext(kind, row))}</p><p class="card-actions"><a href="${chartEscape(detail)}">View profile</a>${sourceAction}</p><details class="reference"><summary>Reference details</summary><p>Record ID: <code>${chartEscape(row.id)}</code></p><p>Evidence depth code: <code>${chartEscape(row.evidence_depth)}</code></p><p>Family code: <code>${chartEscape(row.family)}</code></p><p>Priority group: ${chartEscape(row.priority_group)}</p><p>Recorded reason: ${chartEscape(EvidenceTopics.text(row.reason))}</p>${row.snapshot_commit ? `<p>Source commit: <code>${chartEscape(row.snapshot_commit)}</code></p>` : ""}</details></div><aside><span class="${chartMovementClass(row)}">${chartEscape(chartMovement(row))}</span><span>Previous: ${prevText}</span><span>Peak: ${chartEscape(row.peak_position)}</span><span>Appearances: ${chartEscape(row.appearances)}</span></aside></li>`;
 }
 function syncChartSelectOptions(kind, entries) {
   const claimEl = document.querySelector("#chart-claim");

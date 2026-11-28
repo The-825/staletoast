@@ -160,6 +160,9 @@ def verify_publishable(edition):
         return
     shortfalls = []
     for name, chart in edition["charts"].items():
+        if chart["eligible_count"] <= 0:
+            shortfalls.append(f"{name}: 0 eligible records")
+            continue
         needed = min(100, chart["eligible_count"])
         actual = len(chart["entries"])
         if actual < needed:

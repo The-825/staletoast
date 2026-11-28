@@ -1,13 +1,17 @@
 const esc = (value = "") => String(value ?? "").replace(/[&<>'"]/g, character => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[character]));
+const safeDetailHttps = value => {
+  const raw = String(value ?? "").trim();
+  return /^https:\/\/[^\s"'<>]+$/i.test(raw) ? raw : "";
+};
 const params = new URLSearchParams(location.search);
 const type = params.get("type");
 const id = params.get("id");
 const pills = values => values.map(value => `<span class="pill">${esc(value)}</span>`).join("");
-const bar = (label, value, total, tone = "visible") => value === null || value === undefined ? `<p>${esc(label)}: not appraised</p>` : `<div class="bar-row"><span>${esc(label)}</span><div class="bar-track" aria-hidden="true"><i class="${tone}" style="width:${Math.round((value / total) * 100)}%"></i></div><strong>${value} / ${total}</strong></div>`;
+const bar = (label, value, total, tone = "visible") => value === null || value === undefined ? `<p>${esc(label)}: not appraised</p>` : `<div class="bar-row"><span>${esc(label)}</span><div class="bar-track" aria-hidden="true"><i class="${tone}" style="width:${Math.round((value / total) * 100)}%"></i></div><strong>${esc(value)} / ${esc(total)}</strong></div>`;
 const sentence = value => value ? value.charAt(0).toUpperCase() + value.slice(1) : "";
 const claimsOf = item => Array.isArray(item.claims) ? item.claims : [];
 const relatedByClaims = (candidates, item, name) => candidates.filter(candidate => candidate.id !== item.id && claimsOf(candidate).some(claim => claimsOf(item).includes(claim))).map(candidate => ({candidate, overlap: claimsOf(candidate).filter(claim => claimsOf(item).includes(claim)).length})).sort((a, b) => b.overlap - a.overlap || name(a.candidate).localeCompare(name(b.candidate))).slice(0, 5).map(result => result.candidate);
-const claimLinks = values => values.map(value => `<a class="claim-link" href="claims.html#${value.toLowerCase()}"><strong>${esc(EvidenceTopics.label(value))}</strong></a>`).join("");
+const claimLinks = values => values.map(value => `<a class="claim-link" href="claims.html#${encodeURIComponent(String(value).toLowerCase())}"><strong>${esc(EvidenceTopics.label(value))}</strong></a>`).join("");
 const relatedList = (records, kind, name, emptyText) => records.map(candidate => `<a href="detail.html?type=${kind}&id=${encodeURIComponent(candidate.id)}">${esc(name(candidate))}</a>`).join("") || `<p>${esc(emptyText)}</p>`;
 const backLink = (href, text) => `<p class="back-link"><a href="${href}">&larr; ${esc(text)}</a></p>`;
 
@@ -16,13 +20,15 @@ function chartStanding(kind, recordId, chartsPayload) {
   const latestDate = chartsPayload.latest.edition_date;
   const current = chartsPayload.latest.charts[kind].entries.find(entry => entry.id === recordId);
   if (current) {
-    return `<p class="note"><strong>Hot 100 (${esc(latestDate)}):</strong> Position #${current.position} of ${chartsPayload.latest.charts[kind].entries.length} (peak #${current.peak_position}, ${current.appearances} ${current.appearances === 1 ? "appearance" : "appearances"}). <a href="charts.html${kind === "repositories" ? "?kind=repositories" : ""}">Open the Hot 100</a>.</p>`;
+    return `<p class="note"><strong>Hot 100 (${esc(latestDate)}):</strong> Position #${esc(current.position)} of ${esc(chartsPayload.latest.charts[kind].entries.length)} (peak #${esc(current.peak_position)}, ${esc(current.appearances)} ${current.appearances === 1 ? "appearance" : "appearances"}). <a href="charts.html${kind === "repositories" ? "?kind=repositories" : ""}">Open the Hot 100</a>.</p>`;
   }
-  const appearances = (chartsPayload.history || []).flatMap(ed => (ed.charts && ed.charts[kind] ? ed.charts[kind].entries : []).filter(entry => entry.id === recordId).map(entry => ({date: ed.edition_date, position: entry.position})));
+  const appearances = (chartsPayload.history || [])
+    .flatMap(ed => (ed.charts && ed.charts[kind] ? ed.charts[kind].entries : []).filter(entry => entry.id === recordId).map(entry => ({date: String(ed.edition_date || ""), position: entry.position})))
+    .sort((a, b) => a.date.localeCompare(b.date));
   if (!appearances.length) return "";
   const peak = Math.min(...appearances.map(entry => entry.position));
   const lastSeen = appearances[appearances.length - 1];
-  return `<p class="note"><strong>Prior Hot 100 history:</strong> Last appeared on ${esc(lastSeen.date)} at #${lastSeen.position} (peak #${peak} across ${appearances.length} ${appearances.length === 1 ? "edition" : "editions"}). Outside the ${esc(latestDate)} edition.</p>`;
+  return `<p class="note"><strong>Prior Hot 100 history:</strong> Last appeared on ${esc(lastSeen.date)} at #${esc(lastSeen.position)} (peak #${esc(peak)} across ${esc(appearances.length)} ${appearances.length === 1 ? "edition" : "editions"}). Outside the ${esc(latestDate)} edition.</p>`;
 }
 
 function readingPathContext(kind, recordId, guidePayload) {
@@ -42,19 +48,20 @@ function scorecardSection(recordId, scorecardsPayload) {
   if (!scorecardsPayload || !scorecardsPayload.cards || !scorecardsPayload.cards[recordId]) return "";
   const card = scorecardsPayload.cards[recordId];
   const dimensions = scorecardsPayload.dimensions || [];
+  const unboundReason = !card.evidence_bound && !card.revision_stale ? "; awaiting verified source pin and evidence family" : "";
   const statusLabel = card.complete
-    ? `Complete scorecard (${card.established} / 100 established points)`
-    : `Provisional scorecard (${card.rated_dimensions} of ${card.total_dimensions} dimensions assessed; ${card.established} points established, ${card.unresolved} points unresolved)`;
+    ? `All ${card.total_dimensions} dimensions assessed (pinned source)`
+    : `Provisional scorecard (${card.rated_dimensions} of ${card.total_dimensions} dimensions assessed${unboundReason})`;
   const staleNote = card.revision_stale ? `<p class="note">Source snapshot moved since this scorecard was pinned; ratings remain provisional until rechecked.</p>` : "";
   const directionNote = card.finding_direction ? `<p><strong>Empirical finding direction:</strong> ${esc(CatalogUI.titleCase(card.finding_direction))}</p>` : "";
   const rows = dimensions.map(dim => {
     const ratingObj = card.ratings ? card.ratings[dim.id] : null;
     if (!ratingObj) {
-      return `<li class="rubric-row is-unassessed"><div class="rubric-row-head"><strong>${esc(dim.label)}</strong><span class="pill">Unassessed (${dim.weight} pts)</span></div><p class="rubric-basis">${esc(dim.question)}</p></li>`;
+      return `<li class="rubric-row is-unassessed"><div class="rubric-row-head"><strong>${esc(dim.label)}</strong><span class="pill">Unassessed (weight ${esc(dim.weight)})</span></div><p class="rubric-basis">${esc(dim.question)}</p></li>`;
     }
-    return `<li class="rubric-row"><div class="rubric-row-head"><strong>${esc(dim.label)}</strong><span class="pill depth">${ratingObj.rating} / 4 (weight ${dim.weight})</span></div><p class="rubric-basis">${esc(EvidenceTopics.text(ratingObj.basis))}</p></li>`;
+    return `<li class="rubric-row"><div class="rubric-row-head"><strong>${esc(dim.label)}</strong><span class="pill depth">${esc(ratingObj.rating)} / 4 (weight ${esc(dim.weight)})</span></div><p class="rubric-basis">${esc(EvidenceTopics.text(ratingObj.basis))}</p></li>`;
   }).join("");
-  return `<section class="section"><div class="card"><p class="eyebrow">Seven-dimension collaboration rubric (${esc(card.recorded_edition_date)})</p><h2>${esc(statusLabel)}</h2>${staleNote}${directionNote}<p class="lede">Scores reflect documented evidence across seven dimensions rather than a single quality verdict. Incomplete cards stay provisional and do not rank on the Hot 100.</p><ul class="rubric-grid">${rows}</ul></div></section>`;
+  return `<section class="section"><div class="card"><p class="eyebrow">Seven-dimension collaboration rubric (${esc(card.recorded_edition_date)})</p><h2>${esc(statusLabel)}</h2>${staleNote}${directionNote}<p class="lede">Each dimension is recorded separately against its own evidence basis rather than collapsed into a single quality verdict. Incomplete or unpinned cards stay provisional and do not rank on the Hot 100.</p><ul class="rubric-grid">${rows}</ul></div></section>`;
 }
 
 function mechanismMatrix(mechanisms) {
@@ -87,7 +94,7 @@ function research(item, all, repositories, extras) {
     <div class="profile"><div class="meter"><small>Evidence order</small><strong>${automated ? "Unranked" : `${item.evidenceOrder} / ${item.evidenceOrderCount}`}</strong>${automated ? "<span>awaiting appraisal</span>" : ""}</div><div class="meter"><small>Directness</small><strong>${automated || item.directnessValue === null ? "Not appraised" : `${item.directnessValue} / 3`}</strong><span>${esc(directness.short)}</span></div><div class="meter"><small>Horizon</small><strong>${automated || item.horizonValue === null ? "Not appraised" : `${item.horizonValue} / 3`}</strong><span>${esc(CatalogUI.horizonText(item))}</span></div><div class="meter"><small>Citation signal</small><strong>${esc(item.citationSignal)}</strong></div></div>
     <section class="detail split-detail"><div><p class="eyebrow">Our reading</p><h2>What this changes</h2><p>${esc(EvidenceTopics.text(sentence(item.impact)))}</p><h3>Boundary and next question</h3><p>${esc(EvidenceTopics.text(sentence(item.boundary)))}</p></div><div class="signal-panel"><h3>Evidence profile</h3>${bar("Directness", item.directnessValue, 3)}${bar("Horizon", item.horizonValue, 3, "partial")}<p><strong>Evidence depth:</strong> ${esc(depth.label)}. ${esc(depth.note)}</p><p><strong>What directness means here:</strong> ${esc(directness.note)}</p><p><strong>Evidence family:</strong> ${esc(item.familyLabel)}</p><p><strong>Study design:</strong> ${esc(sentence(item.design))}</p><p><strong>Publication or review date:</strong> not recorded. Open the original source to check its date.</p></div></section>
     ${rubricHtml}${guideHtml}
-    <section class="section related"><div class="card"><h2>Visible risks</h2><p>${esc(EvidenceTopics.text(sentence(item.flags)))}</p><h3>Linked topics</h3><div class="claim-links">${claimLinks(claimsOf(item)) || "<p>No linked topics recorded.</p>"}</div></div><div class="card"><h2>What to do next</h2><p>Read the original source, compare its setting with your own, then decide whether the boundary above lets you apply it. The original source remains authoritative. This profile is a bounded interpretation.</p><p><a class="button" href="${esc(item.url)}">Open original source</a></p><p><a href="https://the-825.github.io/breadcrumbs/start.html">Try a small change with Breadcrumbs</a></p></div></section>
+    <section class="section related"><div class="card"><h2>Visible risks</h2><p>${esc(EvidenceTopics.text(sentence(item.flags)))}</p><h3>Linked topics</h3><div class="claim-links">${claimLinks(claimsOf(item)) || "<p>No linked topics recorded.</p>"}</div></div><div class="card"><h2>What to do next</h2><p>Read the original source, compare its setting with your own, then decide whether the boundary above lets you apply it. The original source remains authoritative. This profile is a bounded interpretation.</p>${safeDetailHttps(item.url) ? `<p><a class="button" href="${esc(safeDetailHttps(item.url))}">Open original source</a></p>` : ""}<p><a href="https://the-825.github.io/breadcrumbs/start.html">Try a small change with Breadcrumbs</a></p></div></section>
     <section class="section related"><div class="card"><h2>Related research</h2>${relatedList(related, "research", candidate => candidate.title, "No related research was found through shared topics.")}</div><div class="card"><h2>Related repositories</h2>${relatedList(linked, "repositories", candidate => candidate.repository, "No related repositories were found through shared topics.")}</div></section>
     <details class="reference"><summary>Reference details</summary><p>Review number: <code>${esc(item.id)}</code></p><p>Evidence family code: <code>${esc(item.family)}</code></p><p>Review depth code: <code>${esc(item.review_depth)}</code></p><p>Appraisal state: <code>${esc(item.appraisal_state)}</code></p><p>Record state: <code>${esc(item.record_state)}</code></p><p>Directness grade: <code>${esc(item.directness ?? "not graded")}</code></p><p>Horizon grade: <code>${esc(item.horizon ?? "not graded")}</code></p><p>Topic IDs: <code>${esc(claimsOf(item).join(", ") || "none")}</code></p><p>Evidence level as recorded: ${esc(item.levelEvidence)}</p>${cardRef}</details>
     ${backLink("research.html", "Back to all research")}`;
@@ -125,7 +132,7 @@ function repository(item, all, researchItems, extras) {
     <section class="section related"><div class="card"><h2>Visible mechanisms</h2>${pills(visible) || "<p>None observed.</p>"}</div><div class="card"><h2>Partial mechanisms</h2>${pills(partial) || "<p>None observed.</p>"}</div></section>
     ${matrixHtml}${rubricHtml}${guideHtml}
     <section class="section related"><div class="card"><h2>Related repositories</h2>${relatedList(related, "repositories", candidate => candidate.repository, "No related repositories were found through shared topics.")}</div><div class="card"><h2>Related research</h2>${relatedList(linked, "research", candidate => candidate.title, "No related research was found through shared topics.")}</div></section>
-    <section class="section"><div class="card"><h2>What to do next</h2><p>Open the repository and read it yourself before relying on it. Stars are a dated audience signal, popularity only, and can change as the collection grows. Evidence depth describes the review performed. Neither proves quality.</p><a class="button" href="${esc(item.url)}">${automated ? "Open GitHub repository (unvetted third party)" : "Open GitHub repository"}</a> <a class="button secondary" href="https://the-825.github.io/breadcrumbs/start.html">Try a small change with Breadcrumbs</a></div></section>
+    <section class="section"><div class="card"><h2>What to do next</h2><p>Open the repository and read it yourself before relying on it. Stars are a dated audience signal, popularity only, and can change as the collection grows. Evidence depth describes the review performed. Neither proves quality.</p>${safeDetailHttps(item.url) ? `<a class="button" href="${esc(safeDetailHttps(item.url))}">${automated ? "Open GitHub repository (unvetted third party)" : "Open GitHub repository"}</a> ` : ""}<a class="button secondary" href="https://the-825.github.io/breadcrumbs/start.html">Try a small change with Breadcrumbs</a></div></section>
     <details class="reference"><summary>Reference details</summary><p>Record ID: <code>${esc(item.id)}</code></p><p>Snapshot commit: <code>${esc(item.snapshot_commit ?? "not recorded")}</code></p><p>Upstream revision: <code>${esc(item.upstream_revision ?? "not recorded")}</code></p><p>Evidence depth code: <code>${esc(item.evidence_depth)}</code></p><p>Evidence pointer: <code>${esc(item.evidence_pointer ?? "not recorded")}</code></p><p>Assessment status: <code>${esc(item.assessment_status ?? "not recorded")}</code></p><p>Appraisal state: <code>${esc(item.appraisal_state)}</code></p><p>License status as recorded: ${esc(item.license_status ?? "not recorded")}</p>${item.readme_content_sha256 ? `<p>README digest: <code>${esc(item.readme_content_sha256)}</code></p>` : ""}${cardRef}${mechanismRows ? `<p>Mechanism codes:</p><ul>${mechanismRows}</ul>` : ""}</details>
     ${backLink("repositories.html", "Back to all repositories")}`;
 }

@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import sys
 import tempfile
 from datetime import date
@@ -104,6 +105,9 @@ def _assert_no_dashes(value: object, context: str) -> None:
             raise ValueError(f"{context}: forbidden em-dash or en-dash character detected")
 
 
+CASE_INSENSITIVE_PATH_HOSTS = {"github.com", "arxiv.org", "doi.org", "dx.doi.org"}
+
+
 def canonical_url_key(url: str | None) -> str | None:
     if not url or not isinstance(url, str):
         return None
@@ -114,16 +118,18 @@ def canonical_url_key(url: str | None) -> str | None:
     host = parsed.hostname.lower()
     if host.startswith("www."):
         host = host[4:]
+    port_part = f":{parsed.port}" if parsed.port else ""
     path = re.sub(r"/+", "/", parsed.path or "/").rstrip("/")
     if path.endswith(".git"):
         path = path[:-4]
+    normalized_path = path.lower() if host in CASE_INSENSITIVE_PATH_HOSTS else path
     kept_query = [
         (k, v)
         for k, v in parse_qsl(parsed.query, keep_blank_values=False)
         if not k.lower().startswith("utm_") and k.lower() not in {"ref", "source"}
     ]
     query_part = f"?{urlencode(sorted(kept_query))}" if kept_query else ""
-    return f"url:{host}{path.lower()}{query_part}"
+    return f"url:{host}{port_part}{normalized_path}{query_part}"
 
 
 def canonical_identities(url: str | None = None, text: str = "", repository: str | None = None, aliases: list[str] | None = None) -> set[str]:
@@ -650,9 +656,18 @@ def prepare_intake(payload: dict, as_of: str, root: Path = ROOT, *, write: bool 
 
 
 def _atomic_swap(pending: list[tuple[Path, str]]) -> None:
+    """Stage all modified files in temp siblings before swapping, with in-process rollback on error."""
+    resolved = [path.resolve() for path, _ in pending]
+    if len(set(resolved)) != len(resolved):
+        raise ValueError("duplicate target path in staged intake write")
     backups: dict[Path, bytes | None] = {}
+    created_dirs: list[Path] = []
     staged: list[tuple[Path, Path]] = []
     try:
+        for path, _ in pending:
+            if not path.parent.exists():
+                path.parent.mkdir(parents=True, exist_ok=True)
+                created_dirs.append(path.parent)
         for path, text in pending:
             with tempfile.NamedTemporaryFile(
                 mode="wb",
@@ -661,19 +676,36 @@ def _atomic_swap(pending: list[tuple[Path, str]]) -> None:
                 dir=path.parent,
                 delete=False,
             ) as handle:
-                staged.append((Path(handle.name), path))
+                staged_path = Path(handle.name)
+                staged.append((staged_path, path))
                 handle.write(text.replace("\r\n", "\n").encode("utf-8"))
+            if path.exists():
+                try:
+                    shutil.copymode(path, staged_path)
+                except OSError:
+                    pass
         for temp, path in staged:
             backups[path] = path.read_bytes() if path.exists() else None
             os.replace(temp, path)
     except BaseException:
         for path, old in backups.items():
-            if old is None:
-                path.unlink(missing_ok=True)
-            else:
-                path.write_bytes(old)
+            try:
+                if old is None:
+                    path.unlink(missing_ok=True)
+                else:
+                    path.write_bytes(old)
+            except OSError:
+                pass
         for temp, _ in staged:
-            temp.unlink(missing_ok=True)
+            try:
+                temp.unlink(missing_ok=True)
+            except OSError:
+                pass
+        for directory in reversed(created_dirs):
+            try:
+                directory.rmdir()
+            except OSError:
+                pass
         raise
 
 
