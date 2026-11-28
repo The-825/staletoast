@@ -220,15 +220,38 @@ async function runClaims(hash) {
   return {pageHtml: target.innerHTML, inspectorHtml: inspectorEl.innerHTML, replaced};
 }
 
+async function chartDeepLink(search) {
+  const dom = makeDom("charts.html", "research");
+  const replaced = [];
+  const loc = {pathname: "/charts.html", search, hash: ""};
+  const history = {replaceState(_s, _t, url) { replaced.push(url); }};
+  const ctx = context(dom.document, {location: loc, history});
+  for (const f of ["topics.js", "catalog-ui.js", "charts.js"]) run(ctx, f);
+  const get = dom.get;
+  await until(() => !get("#current-collection").hidden);
+  const before = {
+    kind: get("#chart-kind").value,
+    claim: get("#chart-claim").value,
+    depth: get("#chart-depth").value,
+    summary: get("#chart-summary").textContent,
+    resetDisabled: get("#chart-reset").disabled
+  };
+  dom.fire("#chart-reset", "click");
+  return {before, afterReset: {claim: get("#chart-claim").value, depth: get("#chart-depth").value, replaced}};
+}
+
 (async () => {
   const result = {
     research: await runCatalog("research"), repositories: await runCatalog("repositories"),
     researchFail: await runCatalog("research", true), pure: pure(), charts: charts(),
     chartCoverage: await chartCoverage(),
+    chartDeep: await chartDeepLink("?kind=repositories&claim=ci-007&depth=readme-screened"),
     deepLinkResearch: await runCatalogDeepLink("research", "?claim=ci-007&q=authority&filter=NOPE"),
     deepLinkRepo: await runCatalogDeepLink("repositories", "?claim=CI-007"),
     claimsView: await runClaims("#ci-007"),
     detailResearch: await detail("?type=research&id=012"), detailRepo: await detail("?type=repositories&id=R-242"),
+    detailRubricRepo: await detail("?type=repositories&id=R-031"),
+    detailGuidedRepo: await detail("?type=repositories&id=R-336"),
     detailAutomated: await detail("?type=research&id=C-026"),
     detailMissing: await detail("?type=research&id=NOPE"), detailBad: await detail("?type=other"),
     homeText: vm.runInContext("latestEditionText({latest: {edition_date: '2026-11-02'}})", (() => { const c = context(null); run(c, "home.js"); return c; })()),
@@ -572,6 +595,30 @@ class BehaviorTests(unittest.TestCase):
         visible_primary = re.sub(r"<[^>]+>", " ", primary)
         self.assertNotRegex(visible_primary, r"\bCI-\d{3}\b")
         self.assertIn("<code>CI-007</code>", reference)
+
+    def test_chart_deep_links_and_detail_rubric_scorecard_render_cleanly(self):
+        deep = self.result["chartDeep"]
+        self.assertEqual("repositories", deep["before"]["kind"])
+        self.assertEqual("CI-007", deep["before"]["claim"])
+        self.assertEqual("readme-screened", deep["before"]["depth"])
+        self.assertFalse(deep["before"]["resetDisabled"])
+        self.assertEqual("", deep["afterReset"]["claim"])
+        self.assertEqual("", deep["afterReset"]["depth"])
+        self.assertIn("/charts.html?kind=repositories", deep["afterReset"]["replaced"])
+
+        rubric_html = self.result["detailRubricRepo"]
+        primary, _, reference = rubric_html.partition('<details class="reference">')
+        self.assertIn("Seven-dimension collaboration rubric", primary)
+        self.assertIn("Provisional scorecard", primary)
+        self.assertIn("Delegated authority and consent", primary)
+        self.assertIn("Recorded mechanism breakdown", primary)
+        visible_primary = re.sub(r"<[^>]+>", " ", primary)
+        self.assertNotRegex(visible_primary, r"\bR-\d{3}\b|\bCI-\d{3}\b")
+        self.assertIn("Rubric source revision", reference)
+
+        guided_html = self.result["detailGuidedRepo"]
+        self.assertIn("Guided reading path", guided_html)
+        self.assertIn("Explore all guided reading paths", guided_html)
 
 
 if __name__ == "__main__":

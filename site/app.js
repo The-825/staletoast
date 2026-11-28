@@ -5,6 +5,7 @@ const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, char => ({
 const APPRAISAL_STATES = ["automated-screen", "source-screened"];
 let items = [];
 let claimsById = {};
+let hot100Positions = {};
 let page = 1;
 let tableView = false;
 
@@ -15,6 +16,9 @@ const detailLink = (kind, id, text) =>
   `<a href="detail.html?type=${kind}&id=${encodeURIComponent(id)}">${escapeHtml(text)}</a>`;
 const claimLinks = claims => claims.map(claim => `<a class="pill" href="claims.html#${claim.toLowerCase()}">${escapeHtml(EvidenceTopics.label(claim))}</a>`).join("");
 const fact = (name, value, note = "") => `<div><dt>${escapeHtml(name)}</dt><dd>${value}${note ? `<small>${escapeHtml(note)}</small>` : ""}</dd></div>`;
+const hotBadge = id => hot100Positions[id]
+  ? `<a class="pill hot-pill" href="charts.html${type === "repositories" ? "?kind=repositories" : ""}">Hot 100 #${hot100Positions[id]}</a>`
+  : "";
 
 function researchCard(item) {
   const automated = isAutomated(item);
@@ -22,7 +26,7 @@ function researchCard(item) {
   const directness = CatalogUI.directnessText(item);
   const order = automated ? "Not ranked, awaiting appraisal" : `${item.evidenceOrder} of ${item.evidenceOrderCount}`;
   return `<article class="record-card">
-    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${item.record_state === "candidate-not-promoted" ? '<span class="pill">Candidate, not promoted</span>' : ""}</p>
+    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${hotBadge(item.id)}${item.record_state === "candidate-not-promoted" ? '<span class="pill">Candidate, not promoted</span>' : ""}</p>
     <h3>${detailLink("research", item.id, item.title)}</h3>
     <p class="finding">${escapeHtml(EvidenceTopics.text(item.finding))}</p>
     <dl class="facts">
@@ -53,7 +57,7 @@ function repositoryCard(item) {
     ? `All ${item.mechanismTotal} unknown`
     : `${item.visibleMechanisms} visible, ${item.partialMechanisms} partial, ${item.unknownMechanisms} unknown, of ${item.mechanismTotal}`;
   return `<article class="record-card">
-    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${automated ? '<span class="pill">Unvetted third-party repository</span>' : ""}</p>
+    <p class="badges"><span class="pill depth">${escapeHtml(depth.label)}</span>${hotBadge(item.id)}${automated ? '<span class="pill">Unvetted third-party repository</span>' : ""}</p>
     <h3>${detailLink("repositories", item.id, item.repository)}</h3>
     <p class="finding">${escapeHtml(EvidenceTopics.text(item.evidence_note))}</p>
     <dl class="facts">
@@ -129,14 +133,21 @@ function render() {
   $("#cards").innerHTML = visible.map(type === "research" ? researchCard : repositoryCard).join("");
   $("tbody").innerHTML = visible.map(type === "research" ? researchRow : repositoryRow).join("");
   $("#count").textContent = CatalogUI.countText(items.length, matches.length, range, type === "research" ? "research records" : "repositories");
-  const active = CatalogUI.activeFilters([
-    {name: "Search", value: state.query.trim(), text: `"${state.query.trim()}"`},
-    {name: type === "research" ? "Directness" : "Category", value: state.filter, text: state.filter ? selectedText("#filter") : ""},
-    {name: type === "research" ? "Evidence family" : "Repository status", value: state.theme, text: state.theme ? selectedText("#theme") : ""},
-    {name: "Topic", value: state.claim, text: state.claim ? selectedText("#claim") : ""},
-    {name: "Evidence depth", value: state.depth, text: state.depth ? selectedText("#depth") : ""}
-  ]);
+  const filterDescriptors = [
+    {selector: "#search", name: "Search", value: state.query.trim(), text: `"${state.query.trim()}"`},
+    {selector: "#filter", name: type === "research" ? "Directness" : "Category", value: state.filter, text: state.filter ? selectedText("#filter") : ""},
+    {selector: "#theme", name: type === "research" ? "Evidence family" : "Repository status", value: state.theme, text: state.theme ? selectedText("#theme") : ""},
+    {selector: "#claim", name: "Topic", value: state.claim, text: state.claim ? selectedText("#claim") : ""},
+    {selector: "#depth", name: "Evidence depth", value: state.depth, text: state.depth ? selectedText("#depth") : ""}
+  ];
+  const active = CatalogUI.activeFilters(filterDescriptors);
   $("#filter-summary").textContent = CatalogUI.filterSummaryText(active);
+  const activeDescriptors = filterDescriptors.filter(entry => String(entry.value || "").trim());
+  const chipsContainer = $("#active-filter-chips");
+  chipsContainer.hidden = activeDescriptors.length === 0;
+  chipsContainer.innerHTML = activeDescriptors.map(entry =>
+    `<button type="button" class="filter-chip" data-clear="${escapeHtml(entry.selector)}" aria-label="Remove ${escapeHtml(entry.name)} filter">${escapeHtml(entry.name)}: ${escapeHtml(entry.text)} <span aria-hidden="true">&times;</span></button>`
+  ).join("");
   $("#reset").disabled = active.length === 0 && state.sort === "rank";
   $("#empty").hidden = matches.length > 0;
   $("#pager").hidden = matches.length === 0;
@@ -240,9 +251,15 @@ async function catalog() {
     $(".catalog-head .lede").textContent =
       `${detailed} were README screened against a pinned revision, ${portable} are portable records (identity and provenance only), and ${relevance} are README relevance checks awaiting appraisal and are unvetted third-party repositories. Mechanisms stay unknown until a human appraises them. Stars are popularity only and do not establish quality.`;
   }
-  const claims = await fetch("data/claims.json").then(result => result.json());
+  const [claims, chartsPayload] = await Promise.all([
+    fetch("data/claims.json").then(result => result.json()),
+    fetch("data/charts.json").then(result => result.ok ? result.json() : null).catch(() => null)
+  ]);
   EvidenceTopics.install(claims);
   claimsById = Object.fromEntries(claims.map(item => [item.id, item]));
+  if (chartsPayload && chartsPayload.latest && chartsPayload.latest.charts && chartsPayload.latest.charts[type]) {
+    hot100Positions = Object.fromEntries(chartsPayload.latest.charts[type].entries.map(entry => [entry.id, entry.position]));
+  }
   if (type === "research") {
     addOptions($("#filter"), ["D3", "D2", "D1", "D0"].map(key => [key, CatalogUI.DIRECTNESS[key].name]));
     if (items.some(isAutomated)) addOptions($("#filter"), [[CatalogUI.UNAPPRAISED, "Awaiting appraisal (no grade yet)"]]);
@@ -261,6 +278,17 @@ async function catalog() {
   }
   $("#reset").addEventListener("click", resetFilters);
   $("#empty-reset").addEventListener("click", resetFilters);
+  $("#active-filter-chips").addEventListener("click", event => {
+    const button = event && event.target && typeof event.target.closest === "function" ? event.target.closest("button[data-clear]") : null;
+    if (!button) return;
+    const selector = button.getAttribute("data-clear");
+    if (!selector || !$(selector)) return;
+    $(selector).value = "";
+    page = 1;
+    syncLocation();
+    render();
+    $(selector).focus();
+  });
   $("#prev").addEventListener("click", () => goToPage(-1));
   $("#next").addEventListener("click", () => goToPage(1));
   $("#view-toggle").addEventListener("click", () => setView(!tableView));

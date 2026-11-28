@@ -129,6 +129,27 @@ def sidecar_review(docs, payload, edition):
     return dict(sidecars=sidecars, review_ready=ready, other_state_records=other)
 
 
+def rubric_coverage(edition):
+    if edition["method_version"] != rubric.METHOD:
+        return None
+    summary = {}
+    for chart, _ in CHARTS:
+        block = edition["charts"][chart]
+        needed = min(100, block["eligible_count"])
+        complete = block.get("complete_scorecards", len(block["entries"]))
+        provisional = block.get("provisional", [])
+        partial = sum(1 for row in provisional if row.get("established", 0) > 0)
+        summary[chart] = dict(
+            complete_scorecards=complete,
+            required_for_publish=needed,
+            shortfall=max(0, needed - complete),
+            provisional_count=len(provisional),
+            partially_scored_count=partial,
+            publishable=complete >= needed,
+        )
+    return summary
+
+
 def build_receipt(review_date, prior, edition, edition_text, prior_text, payload, docs):
     state = IntakeState(docs)
     automated_papers = sum(bool(row.get("automated_screen")) for row in payload["research"])
@@ -137,7 +158,13 @@ def build_receipt(review_date, prior, edition, edition_text, prior_text, payload
     if charted & ({row["id"] for row in payload["research"] if row.get("automated_screen")} |
                   {row["id"] for row in payload["repositories"] if row["appraisal_state"] == AUTOMATED}):
         raise ValueError("an automated screen reached the chart; refusing to prepare the edition")
-    return dict(
+    is_rubric = edition["method_version"] == rubric.METHOD
+    order_limit = (
+        "Positions order completed seven-dimension collaboration scorecards by established points, evidence, outcomes and contribution; incomplete or unpinned cards remain provisional."
+        if is_rubric
+        else "Positions are a display order of editorial routing groups, not scores. No score, grade or finding was created and tied groups remain ties."
+    )
+    receipt = dict(
         schema_version=1,
         kind="weekly Hot100 offline preparation receipt, not a findings ledger and not a catalog promotion",
         review_date=review_date, review_timezone=TIMEZONE,
@@ -166,7 +193,7 @@ def build_receipt(review_date, prior, edition, edition_text, prior_text, payload
         primary_source_recheck=dict(performed=False, statement="Primary sources were not rechecked by this offline command. Earlier observation dates and unknowns are carried forward, not refreshed."),
         limits=[
             "Offline run: no primary source, repository, provider or other remote service was contacted.",
-            "Positions are a display order of editorial routing groups, not scores. No score, grade or finding was created and tied groups remain ties.",
+            order_limit,
             "Review-ready sidecar appraisals are proposals for editorial review. They do not change appraisal_state, evidence_depth, mechanisms or ranking.",
             "This receipt does not validate findings, authorize adoption, execute source code, commit, freeze an export or release anything."],
         performed=["recomputed appraisal priorities with build_priorities.build",
@@ -177,6 +204,10 @@ def build_receipt(review_date, prior, edition, edition_text, prior_text, payload
                    "run site/build_catalogs.py, site/build_reader_guide.py and site/build_discovery.py, then commit",
                    "run site/build_export.py --freeze and commit the new export in a second commit",
                    "run the README checks, open a PR and let the merge gate decide, then check the live site"])
+    coverage = rubric_coverage(edition)
+    if coverage is not None:
+        receipt["rubric_coverage"] = coverage
+    return receipt
 
 
 def plan(root, review_date):
@@ -200,8 +231,10 @@ def plan(root, review_date):
         raise ValueError("appraisal priorities already carry a later date; older dates cannot overwrite")
     payload = priorities.build(docs, review_date)
     landscape = discovery.read(docs / "collaborative-intelligence-repository-landscape.json")
+    state = IntakeState(docs)
+    held_all = state.held_ids('research') | state.held_ids('repository')
     edition = discovery.make_edition(review_date, payload, landscape, earlier,
-                                     IntakeState(docs).held_ids('repository'), cards=rubric.load_cards(docs, review_date)
+                                     state.held_ids('repository'), cards=rubric.load_cards_through(docs, review_date, held_ids=held_all)
                                      if review_date >= rubric.FIRST_EDITION else None)
     edition["source_hashes"] = {field: payload[field] for field in priorities.SOURCES}
     edition_path, edition_text = history / f"{review_date}.json", dump(edition)
@@ -279,7 +312,7 @@ def compare_rubric(root, review_date):
     payload = priorities.build(docs, check_date(review_date))
     landscape = discovery.read(docs / priorities.SOURCES["repository_source_sha256"])
     return hot100_rubric.compare(review_date, payload, landscape, history,
-                                 IntakeState(docs).held_ids("repository"))
+                                 IntakeState(docs).held_ids("repository"), docs=docs)
 
 
 def main(argv=None, root=ROOT):

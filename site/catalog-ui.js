@@ -21,7 +21,7 @@ const CatalogUI = (() => {
     repeated: "Observed repeatedly",
     longitudinal: "Observed over a long period"
   };
-  const MECHANISM_STATE = {V: "Visible", P: "Partial", U: "Unknown", N: "Not observed or out of scope"};
+  const MECHANISM_STATE = {V: "Visible", P: "Partial", U: "Unknown", N: "Not observed", O: "Out of scope"};
 
   const isAutomated = item => item.appraisal_state === "automated-screen";
   const directnessKey = item => {

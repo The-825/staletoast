@@ -346,6 +346,35 @@ class WeeklyTests(unittest.TestCase):
         self.assertEqual(before, tree(self.root))
         self.assertFalse((self.docs / 'staletoast-weekly-review').exists())
 
+    def test_post_nov23_dry_run_carries_forward_scorecards_and_blocks_incomplete_write(self):
+        card = dict(
+            id='R-001',
+            source='https://example.org/r/R-001',
+            source_revision='a' * 40,
+            evidence_family='synthetic-family',
+            patterns=['one-human-one-agent'],
+            ratings={
+                'direction': {'rating': 2, 'basis': 'documented constraint'},
+                'authority': None,
+                'coordination': None,
+                'execution': None,
+                'outcomes': None,
+                'evidence': None,
+                'contribution': None,
+            },
+        )
+        put(
+            self.docs / 'staletoast-scorecards' / '2026-11-23.json',
+            weekly.dump({'edition_date': '2026-11-23', 'method': 'collaborative-intelligence-v1', 'cards': [card]}),
+        )
+        proposal = weekly.plan(self.root, '2026-11-30')
+        coverage = proposal['receipt']['rubric_coverage']
+        self.assertEqual(0, coverage['repositories']['complete_scorecards'])
+        self.assertEqual(1, coverage['repositories']['partially_scored_count'])
+        self.assertFalse(coverage['repositories']['publishable'])
+        with self.assertRaisesRegex(ValueError, 'too few completed scorecards'):
+            weekly.run(self.root, '2026-11-30', write=True)
+
     def test_command_has_no_network_process_or_provider_code(self):
         source = (ROOT / 'scripts' / 'weekly_hot100.py').read_text(encoding='utf-8')
         for token in ('subprocess', 'urllib', 'socket', 'http.client', 'requests', 'os.system'):

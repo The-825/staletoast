@@ -91,6 +91,23 @@ class PriorityTests(unittest.TestCase):
             priorities.claim_priority(['CI-999'])
         self.assertEqual(len(priorities.GAPS), priorities.claim_priority([]))
 
+    def test_four_digit_ids_are_retained_and_malformed_ids_fail_closed(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.fixture(
+                root,
+                '| 1000 | ["Promoted 1000"](https://example.org/1000) | scope | finding | impact | limit |\n'
+                '| C-1005 | ["Candidate 1005"](https://example.org/c1005) | scope | finding | impact | limit | candidate |\n',
+                '| 1000 | design | D3 direct | SYNTHETIC | longitudinal | limits | CI-006 |\n'
+                '| C-1005 | design | D2 adjacent | SYNTHETIC | single | selected-full-text: bounded | CI-007 |\n',
+            )
+            actual = priorities.build(root, '2026-11-28')
+            ids = {row['id'] for row in actual['research']}
+            self.assertEqual({'001', '1000', 'C-1005'}, ids)
+        for bad_id in ('42', 'C-12', 'R-100', 'C-bad'):
+            with self.assertRaisesRegex(ValueError, 'invalid research source ID'):
+                priorities.identified_rows(f'| {bad_id} | a | b | c | d | e |', {6})
+
     def test_crlf_and_lf_sources_produce_identical_hashes_and_priorities(self):
         with TemporaryDirectory() as directory:
             root = Path(directory)
