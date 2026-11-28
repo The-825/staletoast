@@ -182,11 +182,52 @@ async function detail(search) {
   return mainEl.innerHTML;
 }
 
+async function runCatalogDeepLink(catalog, search) {
+  const dom = makeDom(catalog + ".html", catalog);
+  const replaced = [];
+  const loc = {pathname: "/" + catalog + ".html", search, hash: ""};
+  const history = {replaceState(_s, _t, url) { replaced.push(url); }};
+  const ctx = context(dom.document, {location: loc, history});
+  for (const f of ["topics.js", "catalog-ui.js", "app.js"]) run(ctx, f);
+  const get = dom.get;
+  await until(() => get("#cards").innerHTML.length > 0 || !get("#empty").hidden);
+  const initial = {
+    claim: get("#claim").value,
+    search: get("#search").value,
+    filter: get("#filter").value,
+    filters: get("#filter-summary").textContent,
+    count: get("#count").textContent,
+    cardsHtml: get("#cards").innerHTML
+  };
+  dom.fire("#reset", "click");
+  return {initial, afterReset: {claim: get("#claim").value, search: get("#search").value, replaced}};
+}
+
+async function runClaims(hash) {
+  const target = {innerHTML: "", textContent: ""};
+  const inspectorEl = {innerHTML: "", scrollIntoView() {}};
+  const document = {
+    querySelector: sel => sel === "#claims" ? target : sel === "#claim-inspector" ? inspectorEl : null,
+    querySelectorAll: () => []
+  };
+  const replaced = [];
+  const ctx = context(document, {
+    location: {hash: hash || ""},
+    history: {replaceState(_s, _t, url) { replaced.push(url); }}
+  });
+  for (const f of ["topics.js", "claims.js"]) run(ctx, f);
+  await until(() => target.innerHTML.length > 0);
+  return {pageHtml: target.innerHTML, inspectorHtml: inspectorEl.innerHTML, replaced};
+}
+
 (async () => {
   const result = {
     research: await runCatalog("research"), repositories: await runCatalog("repositories"),
     researchFail: await runCatalog("research", true), pure: pure(), charts: charts(),
     chartCoverage: await chartCoverage(),
+    deepLinkResearch: await runCatalogDeepLink("research", "?claim=ci-007&q=authority&filter=NOPE"),
+    deepLinkRepo: await runCatalogDeepLink("repositories", "?claim=CI-007"),
+    claimsView: await runClaims("#ci-007"),
     detailResearch: await detail("?type=research&id=012"), detailRepo: await detail("?type=repositories&id=R-242"),
     detailAutomated: await detail("?type=research&id=C-026"),
     detailMissing: await detail("?type=research&id=NOPE"), detailBad: await detail("?type=other"),
@@ -498,6 +539,39 @@ class BehaviorTests(unittest.TestCase):
         self.assertIn("Latest edition: 2026-11-02.", self.result["homeText"])
         self.assertIn("not the freshness", self.result["homeText"])
         self.assertEqual("", self.result["homeBad"])
+
+    def test_catalog_url_parameters_filter_safely_and_reset_cleanly(self):
+        deep = self.result["deepLinkResearch"]
+        self.assertEqual("CI-007", deep["initial"]["claim"])
+        self.assertEqual("authority", deep["initial"]["search"])
+        self.assertEqual("", deep["initial"]["filter"])
+        self.assertIn("Who can approve each action", deep["initial"]["filters"])
+        self.assertEqual("", deep["afterReset"]["claim"])
+        self.assertEqual("", deep["afterReset"]["search"])
+        self.assertIn("/research.html", deep["afterReset"]["replaced"])
+        repo_deep = self.result["deepLinkRepo"]
+        self.assertEqual("CI-007", repo_deep["initial"]["claim"])
+        expected_repos = sum("CI-007" in (r.get("claims") or []) for r in self.repositories)
+        self.assertIn(f"{expected_repos} of {len(self.repositories)} repositories match.", repo_deep["initial"]["count"])
+
+    def test_claims_page_links_back_to_catalogs_and_labels_scope_components(self):
+        view = self.result["claimsView"]
+        inspector = view["inspectorHtml"]
+        expected_res = sum("CI-007" in (r.get("claims") or []) for r in self.research)
+        expected_repos = sum("CI-007" in (r.get("claims") or []) for r in self.repositories)
+        self.assertIn('href="research.html?claim=CI-007"', inspector)
+        self.assertIn('href="repositories.html?claim=CI-007"', inspector)
+        self.assertIn(f"Browse research ({expected_res})", inspector)
+        self.assertIn(f"Browse repositories ({expected_repos})", inspector)
+        self.assertIn("Authority and handoff", inspector)
+        self.assertIn("Established in baseline routing", inspector)
+        self.assertIn("Security and containment", inspector)
+        self.assertIn("not yet screened", inspector)
+        self.assertIn("Components of collaborative intelligence.", view["pageHtml"])
+        primary, _, reference = inspector.partition('<details class="reference">')
+        visible_primary = re.sub(r"<[^>]+>", " ", primary)
+        self.assertNotRegex(visible_primary, r"\bCI-\d{3}\b")
+        self.assertIn("<code>CI-007</code>", reference)
 
 
 if __name__ == "__main__":

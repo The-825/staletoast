@@ -1,14 +1,17 @@
-"""Validate the collaborative intelligence scope map and render its reader view."""
+"""Validate the collaborative intelligence scope map and render its Markdown and web views."""
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
 
-DOCS = Path(__file__).resolve().parents[1] / 'docs'
+ROOT = Path(__file__).resolve().parents[1]
+DOCS = ROOT / 'docs'
 SOURCE = DOCS / 'staletoast-scope-map.json'
 VIEW = DOCS / 'staletoast-scope-map.md'
+WEB_VIEW = Path(__file__).resolve().parent / 'data' / 'scope-map.json'
 CLAIMS = DOCS / 'collaborative-intelligence-claim-register.md'
 STATUSES = ('established', 'added-unscreened')
 COMPONENT_ID = re.compile(r'[a-z]+(?:-[a-z]+)+')
@@ -17,6 +20,11 @@ PROPOSAL_FIELDS = ('research_topics', 'repository_queries', 'prior_coverage', 'b
 
 def claim_ids(text):
     return set(re.findall(r'^### (CI-\d{3}):', text, flags=re.M))
+
+
+def lf_sha256(path: Path) -> str:
+    raw = path.read_text(encoding='utf-8').replace('\r\n', '\n').encode('utf-8')
+    return hashlib.sha256(raw).hexdigest()
 
 
 def validate(scope, baseline, known_claims):
@@ -111,6 +119,42 @@ def render(scope):
     return '\n'.join(lines) + '\n'
 
 
+def render_web_json(scope, source_sha256: str) -> str:
+    components = []
+    for item in scope['components']:
+        status = item['status']
+        if status == 'established':
+            status_label = 'Established in baseline routing'
+        elif status == 'added-unscreened':
+            status_label = f"Added to scope ({item['since']}), not yet screened"
+        else:
+            status_label = f"Scope status: {status}"
+        components.append({
+            'id': item['id'],
+            'label': item['label'],
+            'status': status,
+            'status_label': status_label,
+            'since': item['since'],
+            'definition': item['definition'],
+            'comparison_question': item['comparison_question'],
+            'related_claims': list(item['related_claims']),
+            'boundary': None if status == 'established' else item.get('boundary'),
+        })
+    payload = {
+        'schema_version': scope['schema_version'],
+        'effective_date': scope['effective_date'],
+        'canonical_owner': scope['canonical_owner'],
+        'authority': scope['authority'],
+        'purpose': scope['purpose'],
+        'related_claims_meaning': scope['related_claims_meaning'],
+        'source_path': 'docs/staletoast-scope-map.json',
+        'source_sha256': source_sha256,
+        'statuses': scope['statuses'],
+        'components': components,
+    }
+    return json.dumps(payload, indent=2, ensure_ascii=False) + '\n'
+
+
 def load():
     scope = json.loads(SOURCE.read_text(encoding='utf-8'))
     baseline = json.loads((DOCS.parent / scope['baseline_artifact']).read_text(encoding='utf-8'))
@@ -121,13 +165,24 @@ def load():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--check', action='store_true')
+    parser.add_argument('--web-only', action='store_true')
+    parser.add_argument('--require-web', action='store_true')
     args = parser.parse_args()
-    view = render(load())
+    scope = load()
+    view = render(scope)
+    web_json = render_web_json(scope, lf_sha256(SOURCE))
     if args.check:
         if not VIEW.exists() or VIEW.read_text(encoding='utf-8') != view:
             raise SystemExit('docs/staletoast-scope-map.md is stale; run python site/build_scope_map.py')
+        if args.require_web and not WEB_VIEW.exists():
+            raise SystemExit('site/data/scope-map.json is missing; run python site/build_scope_map.py --web-only')
+        if WEB_VIEW.exists() and WEB_VIEW.read_text(encoding='utf-8') != web_json:
+            raise SystemExit('site/data/scope-map.json is stale; run python site/build_scope_map.py')
         return
-    VIEW.write_text(view, encoding='utf-8', newline='\n')
+    if not args.web_only:
+        VIEW.write_text(view, encoding='utf-8', newline='\n')
+    WEB_VIEW.parent.mkdir(parents=True, exist_ok=True)
+    WEB_VIEW.write_text(web_json, encoding='utf-8', newline='\n')
 
 
 if __name__ == '__main__':

@@ -164,8 +164,46 @@ function resetFilters() {
   for (const selector of ["#search", "#filter", "#theme", "#claim", "#depth"]) $(selector).value = "";
   $("#sort").value = "rank";
   page = 1;
+  syncLocation();
   render();
   $("#search").focus();
+}
+
+function hasOptionValue(control, candidate) {
+  if (!candidate || !control) return false;
+  return Array.from(control.options || []).some(opt => opt.value === candidate);
+}
+
+function applyLocationFilters() {
+  if (typeof location === "undefined" || !location.search) return;
+  const params = new URLSearchParams(location.search);
+  const query = (params.get("q") || params.get("query") || "").trim();
+  if (query) $("#search").value = query.slice(0, 200);
+  const claimParam = (params.get("claim") || "").trim().toUpperCase();
+  if (hasOptionValue($("#claim"), claimParam)) $("#claim").value = claimParam;
+  const filterParam = (params.get("filter") || "").trim();
+  if (hasOptionValue($("#filter"), filterParam)) $("#filter").value = filterParam;
+  const themeParam = (params.get("theme") || "").trim();
+  if (hasOptionValue($("#theme"), themeParam)) $("#theme").value = themeParam;
+  const depthParam = (params.get("depth") || "").trim();
+  if (hasOptionValue($("#depth"), depthParam)) $("#depth").value = depthParam;
+  const sortParam = (params.get("sort") || "").trim();
+  if (hasOptionValue($("#sort"), sortParam)) $("#sort").value = sortParam;
+}
+
+function syncLocation() {
+  if (typeof history === "undefined" || typeof history.replaceState !== "function" || typeof location === "undefined") return;
+  const state = currentState();
+  const params = new URLSearchParams();
+  if (state.query.trim()) params.set("q", state.query.trim());
+  if (state.filter) params.set("filter", state.filter);
+  if (state.theme) params.set("theme", state.theme);
+  if (state.claim) params.set("claim", state.claim);
+  if (state.depth) params.set("depth", state.depth);
+  if (state.sort && state.sort !== "rank") params.set("sort", state.sort);
+  const queryString = params.toString();
+  const base = location.pathname || `${type}.html`;
+  history.replaceState(null, "", `${base}${queryString ? `?${queryString}` : ""}${location.hash || ""}`);
 }
 
 function goToPage(delta) {
@@ -214,10 +252,12 @@ async function catalog() {
     addOptions($("#filter"), [...new Set(items.map(item => item.category))].sort().map(value => [value, label(value)]));
     addOptions($("#theme"), [...new Set(items.map(item => item.lifecycle))].sort().map(value => [value, label(value)]));
   }
-  addOptions($("#claim"), [...new Set(items.flatMap(item => item.claims))].sort().map(value => [value, EvidenceTopics.label(value)]));
+  const claimIds = new Set([...claims.map(item => item.id), ...items.flatMap(item => item.claims)]);
+  addOptions($("#claim"), [...claimIds].sort().map(value => [value, EvidenceTopics.label(value)]));
   addOptions($("#depth"), [...new Set(items.map(item => CatalogUI.depthValue(type, item)))].sort().map(value => [value, depthOptionText(value)]));
+  applyLocationFilters();
   for (const selector of ["#search", "#filter", "#theme", "#claim", "#depth", "#sort", "#page-size"]) {
-    $(selector).addEventListener(selector === "#search" ? "input" : "change", () => { page = 1; render(); });
+    $(selector).addEventListener(selector === "#search" ? "input" : "change", () => { page = 1; syncLocation(); render(); });
   }
   $("#reset").addEventListener("click", resetFilters);
   $("#empty-reset").addEventListener("click", resetFilters);

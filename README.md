@@ -51,6 +51,8 @@ python scripts/repository_landscape.py --check
 python scripts/repository_review_promotions.py --check
 python scripts/repository_triage.py --check
 python site/build_scope_map.py --check
+python scripts/verify_bibliographic_metadata.py --check
+python scripts/screen_added_components.py --check
 ```
 
 For a reviewed new intake, rebuild priorities with `--write --date YYYY-MM-DD`,

@@ -203,3 +203,10 @@ details.reference p, details.reference li { color: var(--muted); overflow-wrap: 
 .clip { margin: 1.5rem 0 0; max-width: 960px; }
 .clip video { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: var(--forest); }
 .clip figcaption { color: var(--muted); font-size: .9rem; margin-top: .5rem; }
+.claim-actions { margin: 1rem 0 1.25rem; }
+.pill.depth { background: rgba(45, 106, 79, .55); }
+.unscreened-pill { border-style: dashed; border-color: rgba(243, 217, 153, .75); background: rgba(199, 154, 63, .14); color: var(--gold-text); }
+.scope-component-list { margin: 0 0 .45rem; }
+.scope-note { display: block; color: var(--muted); font-size: .85rem; }
+.reading-paths-stack { display: grid; gap: 1.5rem; margin-top: 1.25rem; }
+#reading-paths .section { padding: 1.5rem 0 0; }
